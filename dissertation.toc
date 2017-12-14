@@ -1,0 +1,37 @@
+\select@language {english}
+\contentsline {chapter}{\nonumberline Preamble}{3}
+\contentsline {chapter}{\numberline {1}Theory und Methodology}{7}
+\contentsline {section}{\numberline {1.1}DFT}{7}
+\contentsline {section}{\numberline {1.2}Periodic Boundary Conditions}{7}
+\contentsline {section}{\numberline {1.3}Atom Centered Basis and Peculiarities}{8}
+\contentsline {section}{\numberline {1.4}{\it Ab-initio} Molecular Dynamics}{9}
+\contentsline {section}{\numberline {1.5}Frequencies and Intensities}{9}
+\contentsline {section}{\numberline {1.6}Finding Transition States}{10}
+\contentsline {section}{\numberline {1.7}From Density Functionals to Hybrids and Perturbation Theory}{10}
+\contentsline {section}{\numberline {1.8}Computational Details and Used Programs}{11}
+\contentsline {section}{\numberline {1.9}Experimental Techniques}{11}
+\contentsline {subsection}{\numberline {1.9.1}Vibrational Sum Frequency Generation}{11}
+\contentsline {subsection}{\numberline {1.9.2}Thermal Desorption Spectroscopy}{11}
+\contentsline {subsection}{\numberline {1.9.3}Molecular Beam Source vs. Pinhole Dosing}{11}
+\contentsline {subsection}{\numberline {1.9.4}Low-Energy Electron Diffraction}{12}
+\contentsline {chapter}{\numberline {2}Water on $\upalpha $-Al$_2$O$_3$(11\=20)}{13}
+\contentsline {section}{\numberline {2.1}Surface Model}{13}
+\contentsline {section}{\numberline {2.2}Structure Search}{13}
+\contentsline {section}{\numberline {2.3}Frequencies of OH/OD species}{14}
+\contentsline {subsection}{\numberline {2.3.1}Normal Mode Analysis}{14}
+\contentsline {subsection}{\numberline {2.3.2}Velocity-Velocity Autocorrelation Function}{15}
+\contentsline {section}{\numberline {2.4}Reactions and Microkinetic Model}{15}
+\contentsline {section}{\numberline {2.5}Phonons}{16}
+\contentsline {section}{\numberline {2.6}Desorption Process}{16}
+\contentsline {chapter}{\numberline {3}Water on $\upalpha $-Al$_2$O$_3$(0001)}{17}
+\contentsline {section}{\numberline {3.1}Surface Model}{17}
+\contentsline {section}{\numberline {3.2}AIMD for Dissociation Process}{17}
+\contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{18}
+\contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{19}
+\contentsline {subsection}{\numberline {3.3.2}PIMD}{19}
+\contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{20}
+\contentsline {chapter}{\nonumberline Summary}{21}
+\contentsline {chapter}{\nonumberline Appendix}{23}
+\contentsline {subsubsection}{\nonumberline This Work:}{25}
+\contentsline {chapter}{\nonumberline References}{27}
+\contentsfinish 
