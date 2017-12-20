@@ -160,7 +160,7 @@ This work has been done between January 2015 and xx 2018 in the workgroup of Pro
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \addchap{Preamble}
-Importance of surface science, understand catalytic processes. Al$_2$O$_3$ used in rocket fuel. 
+Importance of surface science, understand catalytic processes. Al$_2$O$_3$ used in rocket fuels. 
 \\
  metal oxide surfaces used in catalysts as well as catalyst support materials, Al$_2$O$_3$ model systems for more complex alumosilicates
  \\
@@ -239,17 +239,13 @@ Problem of plane waves for necessity of atom centered bases; Whenver there are a
 
 
 \section{{\it Ab-initio} Molecular Dynamics}
-Microcanonical and Canonical ensemble, also called NVT and NVE. Difference between the two. theory behind, calcuation of time propagation, time steps, forces acting on atoms. Verlet algorithm for time propagation, Nose Hoover thermostat.
+Microcanonical and Canonical ensemble, also called NVT and NVE. Difference between the two. theory behind, calcuation of time propagation with Verlet algorithm, time steps, forces acting on atoms, Nos\'{e} Hoover thermostat.
 \\
 Solve Newton's equations of motion, in principle $F=m\cdot a$ for force acting on each atom, classical ansatz.
-
-\section{Finding Transition States}
-Eyring theory of transition states,
 \begin{equation}
-k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)}
+ -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 \end{equation}
-with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the Gibb's free energy for the transition state $\Delta G^\ddagger$ and a tunneling constant prefactor $\kappa$.
-tunneling corrections (seldomly applied in this work, not mention them here?) Nudged Elastic Band calculations, with Climbing Image, Reaction path is approximated as a series of connected images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First normal NEB than afterwards climbing image, where the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient. Check for transition state via frequency analysis, tst of first order has to have one imaginary mode alongside the reaction whose tst it is
+
 
 \section{Frequencies and Intensities}
 Normal Mode Analysis, diagonalization of the Hessian, eigenvalues are frequencies squared. While this is a good approximation for the high energy vibration it becomes worse for lattice vibrations, which are way more localized.
@@ -260,17 +256,30 @@ A characteritic of stationary points on the potential energy surface is, that th
 Here, $Q_i$ are mass weighed coordinates $Q_i=\sqrt{m_i}R_i$, with the mass $m_i$ and the displacement from the equilibrium position $R_i$.
 Then the matrix problem for the Hessian ${\color{red} H}$ has to be solved:
 \begin{equation}
- \stackrel{H}{=}\vec{A}_j=\lambda_j\vec{A}_j.
+ \stackrel{H}{=}\vec{A}_i=\lambda_i\vec{A}_i.
 \end{equation}
+with the vectors of the normal modes $A_i$ and $\lambda_i$ being the squares of vibrational freqencies $\omega_i$: 
+\begin{equation}
+ \omega_i=\sqrt{\lambda_i}.
+\end{equation}
+One has to distinguish two physically relevant cases: all eigenvalues are positive ($\lambda_i\geq 0 \forall i$) so the structure is a minimum on the PES. This could be the educt and product of a reaction. The second relevant case is if there is one negative eigenvalue, one imaginary frequency, respectively. This is in a mathematical sense a saddlepoint of first order and can be interpreted as a transition state.
 \\
 dipole corrected NMA intensity can be calculated for IR spectra, not the same selection rules as for SFG but as a first approach should be feasible. Selection rules for SFG IR+Raman active, also the medium mustn't be version symmetric.
 \\
 Calculation of spectrum via velocity-velocity autocorrelation function from canonical MD trajectories. The vibrational density of states (VDOS) reflects the peaks of the spectrum. Within through the motion of the atoms are some kind of quantum effects (not explicitly).
 \begin{equation}
-VDOS=\int <v(t) v(0)>exp(-i\omega t)dt blaaa
+ VDOS(\omega)=\sum_{i=1}^N\int_{-\infty}^{+\infty}<v_i(t)\cdot v_i(0)>e^{i\omega t}dt
 \end{equation}
 \\
 Tests with Born-effective charges.
+
+\section{Finding Transition States}
+Eyring theory of transition states,
+\begin{equation}
+k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)}
+\end{equation}
+with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the Gibb's free energy for the transition state $\Delta G^\ddagger$ and a tunneling constant prefactor $\kappa$.
+tunneling corrections (seldomly applied in this work, not mention them here?) Nudged Elastic Band calculations, with Climbing Image, Reaction path is approximated as a series of connected images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First normal NEB than afterwards climbing image, where the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient. Check for transition state via frequency analysis, tst of first order has to have one imaginary mode alongside the reaction whose tst it is
 
 \section{From Density Functionals to Hybrids and Perturbation Theory}
 Going beyond GGA, known to underestimate reaction rates, therefore desirable to use more sophisticated methods. First approach is using hybrid functionals, where a fraction of exact exchange is mixed into the potential
@@ -287,7 +296,7 @@ For (11\=20) surface parameters were adopted and used as well.
 For the other programs that were not used before for the calculation of alumina in our group the geometries from the vasp output were used as starting points and the usual convergence criteria of the programs were applied.
 
 \section{Experimental Techniques}
-In this work several experimental techniques were used from our collaborating group at the FHI, that is why one shold explain the basics of those methods
+In this work several experimental techniques were used from our collaborating group at the FHI, that is why the basics of those methods are explained shortly.
 \subsection{Vibrational Sum Frequency Generation}
 energy scheme, uv and IR/visible Laser beam are overlapped spatially and in time, polarization is important, s and p polarized, selection rules, specificity for surface only in systems that are not inversion symmetric, good for studying surfaces, no bulk signals due to selection rules
 
@@ -312,7 +321,7 @@ Other methods as tunneling based methods do not work on isolating materials like
 The structure of $\upalpha$-alumina is well known for hundred years (?). It crystallizes in the hexagonal cell, that means a=b$\neq$c, with an angle of $60$\textdegree between $a$ and $b$.
 \\
 Crystal structure of $\upalpha$-Al$_2$O$_3$ with surface cuts (0001) and (11\=20) in comparison.
-naked surface, cutting from bulk structure, $2\times 2$ supercell, vectors were used from the bulk structure. $\vec{k}$-point tests ({\color{blue} look for masterarbeits results..}).
+naked surface, cutting from bulk structure, $2\times 2$ supercell, vectors were used from the bulk structure. $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. Figure with convergence? ({\color{blue} look for masterarbeits results..}).
 \\
 The unit cell consists of 5 atomic layers (O-O$_2$-Al$_4$-O$_2$-O), our supercell has 10, where the lowest 5 were fixed to the bulk value. For the phonon calculations more layers were considered (up to 25 layers), here also for each slab size the lowest 5 layers were kept fixed, respectively.
 \\
@@ -320,6 +329,18 @@ Starting from this supercell approach there are 16 CUS Al-atoms (ccordinatively 
 \\
 Different types of CUS atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors.
 
+\begin{figure}[!h]
+    \centering
+    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
+             \caption{.}
+            \label{abb:crystal_11-20}
+     \end{figure}
 \section{Structure Search}
 First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types.
 There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.

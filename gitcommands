@@ -1,0 +1,14 @@
+git status
+git add '*' # adds all in directory and subdirectories
+git commit -m "initial commit" #one can name the current commit in " "
+git add dissertation.tex #add single files
+git log #?
+git diff #show difference
+git diff HEAD #?
+git reset #?
+git commit -m "fixed a typo"
+git remote add origin https://github.com/soheiden/DISS.git
+git push -u origin master #-u ist nicht jedes mal nötig..??
+git config --global credential.helper 'cache --timeout=604800' #dann fragt er die Zeit nicht mehr nach dem Passwort
+
+git commit --amend -m "added figures" amend #ergänzt/berichtig/fügt es an das letzte commit an, macht kein neues auf

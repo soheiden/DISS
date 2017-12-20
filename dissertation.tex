@@ -329,6 +329,18 @@ Starting from this supercell approach there are 16 CUS Al-atoms (ccordinatively 
 \\
 Different types of CUS atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors.
 
+\begin{figure}[!h]
+    \centering
+    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
+             \caption{.}
+            \label{abb:crystal_11-20}
+     \end{figure}
 \section{Structure Search}
 First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types.
 There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
@@ -337,9 +349,37 @@ The dissociated species in direct neighborhood are more stable than those where 
 Dissociation where the proton is located at a two-fold coordinated surface oxygen is far more stable than the corresponding systems where the three-fold coordinated is occupied.
 \\
 Also systems with a higher water coverage were considered, tests for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get IR spectra. 
-
+\begin{figure}[!ht]
+ \centering
+\subfigure[CUSb]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb.pdf}}
+ \quad\quad
+ \subfigure[inter-CUSa||O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCa2.pdf}}
+  \quad
+\subfigure[CUSb||O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb2.pdf}}
+ \quad
+\subfigure[inter-CUSb||O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb2.pdf}}
+\quad
+\subfigure[inter-CUSa||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCa3.pdf}}
+ \quad
+\subfigure[CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb3.pdf}}
+ \quad
+\subfigure[inter-CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb3.pdf}}
+ \caption{{\it change text! Adsorption geometries for molecular (a) and (six) dissociated water 
+molecules ((b)-(g)) are shown, as obtained by periodic PBE+D2. The most favorable 
+molecularly and dissociatively adsorbed configurations are shown. This means that 
+we show nearest neighbor structures only (see text). The color code is the same 
+as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2$ orange and O-$
+\mu_3$ red; Hydrogen is displayed in white, subsurface layers are in pale colors.}}
+        \label{abb:ads-geoms}
+ \end{figure}
 \section{Frequencies of OH/OD species}
-Frequencies for OH and also OD were calculated. Our experimental partner from FHI use D$_2$O instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system.
+Frequencies for OH and also OD were calculated. Our experimental partner from FHI use D$_2$O instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra for the OD range is shown in fig.~\ref{abb:exp-sfg}.
+\begin{figure}[!ht]
+ \centering
+\includegraphics[width=0.2\textwidth]{figures/11-20/SFG_fit.jpg}
+ \caption{Experimental SFG results including fit.}
+        \label{abb:exp-sfg}
+ \end{figure}
 Of course, the frequencies for a deuterated system are different from OH, but the isotope can be calculated easily within vasp.
 Listed all frequencies for all possible next neighboring structures are shown but in comparison with the experiment, we only focus on the 3 most stable adsorbate structures, since only those are expected to be seen in experiment.
 \\
@@ -370,6 +410,28 @@ Proton diffusion reactions are way more variable giving reaction rates at $300\,
 \\
 Also reactions leading to a not next-neighbored situation, increasing the distance between OH and H are also not favorable since gemoetries with the residues further apart are energetically less stable.
 
+\begin{figure*} [!ht]
+\centering
+\subfigure[D-I: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.7\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
+         \quad
+\subfigure[D-II: CUSb $\rightarrow$CUSb||O-$\mu_3$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diss_Cb-Cb3.pdf}}
+ \quad
+\subfigure[Df-OH-III: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSb||O-$\mu_2$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-OH_Cb2-iCb2.pdf}}
+ \quad
+\subfigure[Df-OH-IV: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSa||O-$\mu_2$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-OH_Cb2-iCa2.pdf}}
+\caption{PBE+D2 minimum energy paths with transition states (inlay; if available), 
+  and both educt (left) and product (right) states for D-I, D-II, Df-OH-III and Df-OH-IV reactions, respectively. The color code is as explained above.}
+       \label{mep}
+\end{figure*}
+\begin{figure*} [!ht]
+\centering
+\subfigure[Df-H-V: inter-CUSa||O-$\mu_2\rightarrow$inter-CUSa||O-$\mu_3^\prime$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCa2-iCa3p.pdf}}
+ \quad
+\subfigure[Df-H-VI: inter-CUSb||O-$\mu_3^{\prime\prime}$ $\rightarrow$inter-CUSb||O-$\mu_3^{\prime\prime\prime}$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCb3pp-iCb3ppp.png}}
+\caption{PBE+D2 minimum energy paths with transition states, and both educt and product states for Df-H-V and Df-H-VI reactions, respectively. The color code is as explained above.}
+       \label{mep2}
+\end{figure*}
+
 \section{Phonons}
 For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers, both for the naked surface and for the covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses.
 
@@ -386,8 +448,27 @@ We applied here a $2\times 2$ supercell with, as before, vectors as in the bulk 
 1 Water  molecule per $2\times 2$ supercell was already studied by Dr. Jonas Wirth, but in order to understanf the chemistry, one has to know how water reacts in this system. There is one molecular minimum on top of a CUS atom and mainly 3 dissociated states, the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the Hydrogen atom being one position further and the 1-4$^\prime$ that is the configuration with the greatest distance that is possible for this slab size. The 1-2 diss is the most stable on and the 1-4$^\prime$ is the least stable one. For the molecular and the 1-4 diss, the stability is, depending on the method, but lies between the previously mentioned ones, for some methods PW91+D2(?) it is the same adsorption energy (the value is calculated as for the (11\=20)), or for some methods and basis sets tested with crystal the one or the other is more stable.
 \\
 Of course there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of a OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work.
+\begin{figure}[!ht]
+ \centering
+\subfigure[(0001), top view]{\includegraphics[width=0.2\textwidth]{figures/0001/surf_0K_axes.pdf}}
+ \quad\quad
+ \subfigure[(0001), side view]{\includegraphics[width=0.2\textwidth]{figures/0001/surf_0K-side.pdf}}
+ \caption{Surface model (0001).}
+        \label{abb:surf_0001}
+ \end{figure}
 
-
+ \begin{figure*} [!ht]
+\centering
+\subfigure[mol]{\includegraphics[width=0.7\textwidth]{figures/0001/0001_mol_top.jpg}}
+         \quad
+\subfigure[1-2]{\includegraphics[width=.7\textwidth]{figures/0001/0001_1-2-diss_top.jpg}}
+ \quad
+\subfigure[1-4]{\includegraphics[width=.7\textwidth]{figures/0001/0001_1-4-diss_top.jpg}}
+ \quad
+\subfigure[1-4$^\prime$]{\includegraphics[width=.7\textwidth]{figures/0001/0001_1-4p-diss_top_label.pdf}}
+\caption{Adsorption geometries molecular and 3 dissociated species.}
+       \label{abb:0001_ads}
+\end{figure*}
 \section{AIMD for Dissociation Process}
 Hass et. al. discussed the idea whether water will adsorb molecularly first and then dissociate or if direct dissociation upon adsorption is possible. To tackle this question for the experimental technique of the molecular beam source, we apply both microcanonical and canonical {\it ab-initio} MD to simulate the water molecules in the beam approaching the surface. We start in the low coverage limit by letting one single, rigid molecule approach the $2\times 2$ supercell. We later on continue with different approaches to more realistic beams and to more realistic surface situations. In the beam regime we probe water clusters, namely pre-optimized (H$_2$O)$_2$ and (H$_2$O)$_4$ cluster, which are shot onto the surface. Another improvement to the beam lies in having the molecule either vibrationally and/or rotationally excited. These excitations were chosen from a normal mode analysis and the resulting stretch and bending modes.
 \\
@@ -396,8 +477,26 @@ For improving the surface we first use a preequilibrated surface at $300\,$K, bu
 We could show that water can both dissociate upon direct contact with the surface and also dissocioate after being adsorbed molecularly first and then after a time have enough energy to dissociate. This is mostly to the 1-2 dissociated state but also 1-4 and more surprisingly 1-4$^\prime$. It seems that the rotation of the water molecule before hitting the surface is crucial for direct dissociation. This energy can also be delivered by the heated surface, it has more energy in form of vibration, in this case prolongation of the respective OH bond and can therefore lead to dissociation. On the other hand hitting the surface directly on top of a CUS atoms was shown to lead mainly to reflection of the molecule, because the energy of the incoming molecule could not be absorbed by the surface.
 \\
 Trajectories with the vibrationally excited modes led to statistically higher levels of dissociation. Also temperature effects of the thermalized trajectories (canonical MD) seem to have a positive influence on the dissociation.
+\begin{figure}[!ht]
+ \centering
+\includegraphics[width=0.2\textwidth]{figures/11-20/perspective+h2o_new.png}
+ \caption{Sketch for inital parameters of the trajectories.}
+        \label{abb:initial_parameters}
+ \end{figure}
+ \subsection{Microcanonical}
+\subsubsection{Cluster}
+\begin{figure*} [!ht]
+\centering
+\subfigure[2D$_2$O]{\includegraphics[width=.7\textwidth]{figures/0001/2H2O.pdf}}
+ \quad
+\subfigure[4D$_2$O]{\includegraphics[width=.7\textwidth]{figures/0001/4H2O.pdf}}
+\caption{Clusters for simulation of effects of higher coverages.}
+       \label{abb:D2Ocluster}
+\end{figure*}
+\subsubsection{Preadsorbed Surface}
+ \subsection{Canonical}
 
-\section{Improvement of Reaction Rates}
+ \section{Improvement of Reaction Rates}
 For a model reaction we try to improve the reaction rate with different new methods. This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction, that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state.
 The rates were before calcualted with PBE+D2/3? and Nudged Elastic Band. An approach were singlepoint calculations were done for the minima and the transition state was also done. For this process also a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway.
 \\
