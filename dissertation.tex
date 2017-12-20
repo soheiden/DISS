@@ -146,10 +146,12 @@ This work has been done between January 2015 and xx 2018 in the workgroup of Pro
 %Diese Arbeit ist zwischen Januar 2015 und xx 2018 in der Arbeitsgruppe von Prof. Dr. Peter Saalfrank am Institut für Chemie der Universität Potsdam entstanden.
 }
 \lowertitleback{Potsdam, xx 2018\\
-  
-  Erstgutachter: Prof. Dr. Peter Saalfrank\\
-  Zweitgutachterin: Prof. Dr. Beate Paulus\\
-  Drittgutachter: Prof. Dr. xy}
+\begin{tabular}{ll}
+Erstgutachter: &Prof. Dr. Peter Saalfrank \\
+Zweitgutachter:&Prof. Dr. Beate Paulus \\
+Drittgutachter:&Prof. Dr. xy \\
+\end{tabular}
+ }
 
 %\dedication{Für meinen Vater.}
 
@@ -375,7 +377,7 @@ as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2
 Frequencies for OH and also OD were calculated. Our experimental partner from FHI use D$_2$O instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra for the OD range is shown in fig.~\ref{abb:exp-sfg}.
 \begin{figure}[!ht]
  \centering
-\includegraphics[width=0.2\textwidth]{figures/11-20/SFG_fit.jpg}
+\includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
  \caption{Experimental SFG results including fit.}
         \label{abb:exp-sfg}
  \end{figure}
@@ -449,22 +451,22 @@ We applied here a $2\times 2$ supercell with, as before, vectors as in the bulk 
 Of course there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of a OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work.
 \begin{figure}[!ht]
  \centering
-\subfigure[(0001), top view]{\includegraphics[width=0.2\textwidth]{figures/0001/surf_0K_axes.pdf}}
+\subfigure[(0001), top view]{\includegraphics[width=0.45\textwidth]{figures/0001/surf_0K_axes.pdf}}
  \quad\quad
- \subfigure[(0001), side view]{\includegraphics[width=0.2\textwidth]{figures/0001/surf_0K-side.pdf}}
+ \subfigure[(0001), side view]{\includegraphics[width=0.45\textwidth]{figures/0001/surf_0K-side.pdf}}
  \caption{Surface model (0001).}
         \label{abb:surf_0001}
  \end{figure}
 
  \begin{figure*} [!ht]
 \centering
-\subfigure[mol]{\includegraphics[width=0.7\textwidth]{figures/0001/0001_mol_top.jpg}}
+\subfigure[mol]{\includegraphics[width=0.4\textwidth]{figures/0001/0001_mol_top.jpg}}
          \quad
-\subfigure[1-2]{\includegraphics[width=.7\textwidth]{figures/0001/0001_1-2-diss_top.jpg}}
+\subfigure[1-2]{\includegraphics[width=.4\textwidth]{figures/0001/0001_1-2-diss_top.jpg}}
  \quad
-\subfigure[1-4]{\includegraphics[width=.7\textwidth]{figures/0001/0001_1-4-diss_top.jpg}}
+\subfigure[1-4]{\includegraphics[width=.4\textwidth]{figures/0001/0001_1-4-diss_top.jpg}}
  \quad
-\subfigure[1-4$^\prime$]{\includegraphics[width=.7\textwidth]{figures/0001/0001_1-4p-diss_top_label.pdf}}
+\subfigure[1-4$^\prime$]{\includegraphics[width=.4\textwidth]{figures/0001/0001_1-4p-diss_top_label.pdf}}
 \caption{Adsorption geometries molecular and 3 dissociated species.}
        \label{abb:0001_ads}
 \end{figure*}
@@ -478,7 +480,7 @@ We could show that water can both dissociate upon direct contact with the surfac
 Trajectories with the vibrationally excited modes led to statistically higher levels of dissociation. Also temperature effects of the thermalized trajectories (canonical MD) seem to have a positive influence on the dissociation.
 \begin{figure}[!ht]
  \centering
-\includegraphics[width=0.2\textwidth]{figures/11-20/perspective+h2o_new.png}
+\includegraphics[width=0.4\textwidth]{figures/0001/perspective+h2o_new.png}
  \caption{Sketch for inital parameters of the trajectories.}
         \label{abb:initial_parameters}
  \end{figure}
@@ -486,15 +488,16 @@ Trajectories with the vibrationally excited modes led to statistically higher le
 \subsubsection{Cluster}
 \begin{figure*} [!ht]
 \centering
-\subfigure[2D$_2$O]{\includegraphics[width=.7\textwidth]{figures/0001/2H2O.pdf}}
+\subfigure[2D$_2$O]{\includegraphics[width=.35\textwidth]{figures/0001/2H2O.pdf}}
  \quad
-\subfigure[4D$_2$O]{\includegraphics[width=.7\textwidth]{figures/0001/4H2O.pdf}}
+\subfigure[4D$_2$O]{\includegraphics[width=.55\textwidth]{figures/0001/4H2O.pdf}}
 \caption{Clusters for simulation of effects of higher coverages.}
        \label{abb:D2Ocluster}
 \end{figure*}
 \subsubsection{Preadsorbed Surface}
+\subsubsection{Rotationally and Vibrationally Preexcited Water}
  \subsection{Canonical}
-
+\clearpage
  \section{Improvement of Reaction Rates}
 For a model reaction we try to improve the reaction rate with different new methods. This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction, that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state.
 The rates were before calcualted with PBE+D2/3? and Nudged Elastic Band. An approach were singlepoint calculations were done for the minima and the transition state was also done. For this process also a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway.

@@ -18,24 +18,25 @@
 \contentsline {section}{\numberline {2.1}Surface Model}{13}
 \contentsline {section}{\numberline {2.2}Structure Search}{13}
 \contentsline {section}{\numberline {2.3}Frequencies of OH/OD species}{14}
-\contentsline {subsection}{\numberline {2.3.1}Normal Mode Analysis}{15}
+\contentsline {subsection}{\numberline {2.3.1}Normal Mode Analysis}{16}
 \contentsline {subsection}{\numberline {2.3.2}Velocity-Velocity Autocorrelation Function}{16}
 \contentsline {section}{\numberline {2.4}Reactions and Microkinetic Model}{16}
 \contentsline {section}{\numberline {2.5}Phonons}{17}
 \contentsline {section}{\numberline {2.6}Desorption Process}{17}
 \contentsline {chapter}{\numberline {3}Water on $\upalpha $-Al$_2$O$_3$(0001)}{21}
 \contentsline {section}{\numberline {3.1}Surface Model}{21}
-\contentsline {section}{\numberline {3.2}AIMD for Dissociation Process}{22}
-\contentsline {subsection}{\numberline {3.2.1}Microcanonical}{23}
-\contentsline {subsubsection}{\nonumberline Cluster}{23}
-\contentsline {subsubsection}{\nonumberline Preadsorbed Surface}{23}
-\contentsline {subsection}{\numberline {3.2.2}Canonical}{23}
-\contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{23}
-\contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{23}
-\contentsline {subsection}{\numberline {3.3.2}PIMD}{24}
-\contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{24}
-\contentsline {chapter}{\nonumberline Summary}{29}
-\contentsline {chapter}{\nonumberline Appendix}{31}
-\contentsline {subsubsection}{\nonumberline This Work:}{33}
-\contentsline {chapter}{\nonumberline References}{35}
+\contentsline {section}{\numberline {3.2}AIMD for Dissociation Process}{21}
+\contentsline {subsection}{\numberline {3.2.1}Microcanonical}{24}
+\contentsline {subsubsection}{\nonumberline Cluster}{24}
+\contentsline {subsubsection}{\nonumberline Preadsorbed Surface}{24}
+\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{24}
+\contentsline {subsection}{\numberline {3.2.2}Canonical}{24}
+\contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{25}
+\contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{25}
+\contentsline {subsection}{\numberline {3.3.2}PIMD}{26}
+\contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{26}
+\contentsline {chapter}{\nonumberline Summary}{27}
+\contentsline {chapter}{\nonumberline Appendix}{29}
+\contentsline {subsubsection}{\nonumberline This Work:}{31}
+\contentsline {chapter}{\nonumberline References}{33}
 \contentsfinish 
