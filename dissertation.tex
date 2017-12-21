@@ -137,7 +137,7 @@
 \publishers{\sffamily\large an der\\
   Mathematisch-Naturwissenschaftlichen Fakultät\\
   der Universität Potsdam\\ \vspace{1.5\baselineskip}
-  \includegraphics[width=0.2\textwidth]{./figures/UP-Logo_Matjpg.jpg}\\ \vspace{\baselineskip}
+  \includegraphics[width=0.1\textwidth]{figures/UP-Logo_Matjpg.jpg}\\ \vspace{\baselineskip}
   Potsdam, xx 2018}
 \date{}
 
@@ -281,20 +281,20 @@ The equation for the rate constant is described by
 \begin{equation}
 k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
 \end{equation}
-with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the Gibb's free energy for the transition state $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a tuneling constant prefactor [tunneling corrections (seldomly applied in this work, not mention them here?)], give the reaction rate constant as a function of temperature and barrier height. To calculate it, one has to find the energy of the transition state and the educt.
-To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of connected images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First normal NEB than afterwards climbing image, where the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient. Check for transition state via frequency analysis, tst of first order has to have one imaginary mode alongside the reaction whose tst it is
+with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a tunneling constant prefactor [tunneling corrections (seldomly applied in this work, not mention them here?)], give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
+To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of associated images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First a regular NEB, then afterwards climbing image was done which gives better convergence. In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode, that vibrates alongside the reaction path.
 
 \section{From Density Functionals to Hybrids and Perturbation Theory}
-In this work we also want to go beyond GGA, because it is known to underestimate reaction rates. Since we are interested in reaction kinetics it therefore is desirable to use more sophisticated methods to improve the rates. First approach is using hybrid functionals, where a fraction of exact exchange is mixed into the potential.
+In this work we also want to go beyond GGA (here the PBE functional), because it is known to underestimate reaction rates. Since we are interested in reaction kinetics it therefore is desirable to use more sophisticated methods to improve the rates. The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential.
 \\
-Other ansatz is using Local M\o{}ller Plesset Peturbation Theory of 2$^{\textrm{nd}}$ order (LMP2) as implemented in crystal/cryscor. These calculations are way more computationally demanding but offer better results on a higher level of theory.
+Another ansatz is using Local M\o{}ller Plesset Peturbation Theory of 2$^{\textrm{nd}}$ order (LMP2) as implemented in crystal/cryscor. These calculations are way more computationally demanding but offer better results on a higher level of theory.
 
 \section{Computational Details and Used Programs}
 Vasp4.x, 5.2 and version x (newer), crystal, cryscor, cp2k+i-pi, Turbomole
 \\
-For all the vasp calculations for the (0001) surface the parameters from prior work in our workgroup was used, like vacuum gap and convergence criteria, because these were converged carefully by Dr. Jonas Wirth.
+For all the vasp calculations for the (0001) surface the parameters from prior work in our workgroup was used, like vacuum gap and convergence criteria, because these were converged carefully by Dr. Jonas Wirth. Convergence was achieved when energies between 2 SCF steps was smaller then $10^{-5}\,$eV.
 \\
-For (11\=20) surface parameters were adopted and used as well.
+For (11\=20) surface parameters were adopted and used as well. Also here the convergence criterion for the energy of 2 SCF cycles was $10^{-5}\,$eV.
 
 For the other programs that were not used before for the calculation of alumina in our group the geometries from the vasp output were used as starting points and the usual convergence criteria of the programs were applied with some exception when convergence was hard to achieve.
 
@@ -321,9 +321,9 @@ Other methods as tunneling based methods do not work on isolating materials like
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 \section{Surface Model}
-The structure of $\upalpha$-alumina is well known for several years. It crystallizes in the hexagonal cell, that means a=b$\neq$c, with an angle of $60$\textdegree between $a$ and $b$.
+The structure of $\upalpha$-alumina is well known for several years. It crystallizes in the hexagonal cell, that means a=b$\neq$c, with an angle of $60$\textdegree~ between $a$ and $b$.
 \\
-naked surface, cutting from bulk structure, $2\times 2$ supercell, vectors were used from the bulk structure. $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. Figure with convergence? ({\color{blue} look for masterarbeits results..}).
+To obtain the clean surface we cut a $2\times 2$ supercell from bulk structure. The cell vectors were used from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced. $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It was shown that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface. Figure with convergence? ({\color{blue} look for masterarbeits results..}).
 \\
 The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), our supercell has 10, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), here also for each slab size the lowest 5 layers were kept fixed, respectively.
 \\

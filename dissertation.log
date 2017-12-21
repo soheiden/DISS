@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/TeX Live for SUSE Linux) (preloaded format=pdflatex 2016.12.2)  21 DEC 2017 13:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/TeX Live for SUSE Linux) (preloaded format=pdflatex 2016.12.2)  21 DEC 2017 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -681,33 +681,25 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 158.
 
-<./figures/UP-Logo_Matjpg.jpg, id=1, 2243.38126pt x 2421.045pt>
-File: ./figures/UP-Logo_Matjpg.jpg Graphic file (type jpg)
+<figures/UP-Logo_Matjpg.jpg, id=1, 2243.38126pt x 2421.045pt>
+File: figures/UP-Logo_Matjpg.jpg Graphic file (type jpg)
 
-<use ./figures/UP-Logo_Matjpg.jpg>
-Package pdftex.def Info: ./figures/UP-Logo_Matjpg.jpg used on input line 158.
-(pdftex.def)             Requested size: 4486.75162pt x 4842.07822pt.
-
-Overfull \hbox (4038.07349pt too wide) in paragraph at lines 158--158
- [][] 
- []
-
-[1
+<use figures/UP-Logo_Matjpg.jpg>
+Package pdftex.def Info: figures/UP-Logo_Matjpg.jpg used on input line 158.
+(pdftex.def)             Requested size: 44.87054pt x 48.39418pt.
+ [1
 
 
 
-] [2{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \vbox (4236.07822pt too high) has occurred while \output is active []
-
-
-[3 <./figures/UP-Logo_Matjpg.jpg>] [4] [5
-
-] [6
-
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/UP-Logo_Matjpg
+.jpg>] [2
 
 ]
 chapter without number
-[7] [8
+[3
+
+
+] [4
 
 
 
@@ -726,17 +718,17 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
 (scrbook)              by `\normalfont \itshape ' on input line 7.
 
-[9])
+[5])
 \tf@toc=\write3
 \openout3 = `dissertation.toc'.
 
- [10]
+ [6]
 chapter 1.
-[11
+[7
 
 
 
-] [12]
+] [8]
 
 Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              You should note, that in 1994 font command `\it' has
@@ -751,7 +743,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
 (scrbook)              by `\normalfont \itshape ' on input line 244.
 
-[13] [14] [15] [16] [17] [18
+[9] [10] [11] [12] [13] [14
 
 
 ]
@@ -765,14 +757,14 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 324.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<figures/al2o3-crystal.png, id=79, 394.47375pt x 557.08125pt>
+<figures/al2o3-crystal.png, id=67, 394.47375pt x 557.08125pt>
 File: figures/al2o3-crystal.png Graphic file (type png)
 
 <use figures/al2o3-crystal.png>
 Package pdftex.def Info: figures/al2o3-crystal.png used on input line 335.
 (pdftex.def)             Requested size: 134.6048pt x 190.08514pt.
 
-<figures/11-20/supercell_opt.png, id=81, 1168.365pt x 897.3525pt>
+<figures/11-20/supercell_opt.png, id=69, 1168.365pt x 897.3525pt>
 File: figures/11-20/supercell_opt.png Graphic file (type png)
 
 <use figures/11-20/supercell_opt.png>
@@ -780,7 +772,7 @@ Package pdftex.def Info: figures/11-20/supercell_opt.png used on input line 338
 .
 (pdftex.def)             Requested size: 134.6048pt x 103.3782pt.
 
-<figures/11-20/uc_opt.png, id=82, 1116.973pt x 683.353pt>
+<figures/11-20/uc_opt.png, id=70, 1116.973pt x 683.353pt>
 File: figures/11-20/uc_opt.png Graphic file (type png)
 
 <use figures/11-20/uc_opt.png>
@@ -790,14 +782,14 @@ Package pdftex.def Info: figures/11-20/uc_opt.png used on input line 341.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/11-20/test-Cb.pdf, id=83, 586.19pt x 586.19pt>
+<figures/11-20/test-Cb.pdf, id=71, 586.19pt x 586.19pt>
 File: figures/11-20/test-Cb.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb.pdf>
 Package pdftex.def Info: figures/11-20/test-Cb.pdf used on input line 355.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCa2.pdf, id=84, 586.19pt x 586.19pt>
+<figures/11-20/test-iCa2.pdf, id=72, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCa2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCa2.pdf>
@@ -808,35 +800,35 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 357.
 
-<figures/11-20/test-Cb2.pdf, id=85, 585.2871pt x 585.2871pt>
+<figures/11-20/test-Cb2.pdf, id=73, 585.2871pt x 585.2871pt>
 File: figures/11-20/test-Cb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb2.pdf>
 Package pdftex.def Info: figures/11-20/test-Cb2.pdf used on input line 359.
 (pdftex.def)             Requested size: 89.73425pt x 89.72725pt.
 
-<figures/11-20/test-iCb2.pdf, id=86, 586.19pt x 586.19pt>
+<figures/11-20/test-iCb2.pdf, id=74, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCb2.pdf>
 Package pdftex.def Info: figures/11-20/test-iCb2.pdf used on input line 361.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCa3.pdf, id=87, 585.16321pt x 585.16327pt>
+<figures/11-20/test-iCa3.pdf, id=75, 585.16321pt x 585.16327pt>
 File: figures/11-20/test-iCa3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCa3.pdf>
 Package pdftex.def Info: figures/11-20/test-iCa3.pdf used on input line 363.
 (pdftex.def)             Requested size: 89.73425pt x 89.73505pt.
 
-<figures/11-20/test-Cb3.pdf, id=88, 586.19pt x 586.19pt>
+<figures/11-20/test-Cb3.pdf, id=76, 586.19pt x 586.19pt>
 File: figures/11-20/test-Cb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb3.pdf>
 Package pdftex.def Info: figures/11-20/test-Cb3.pdf used on input line 365.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCb3.pdf, id=89, 586.19pt x 586.19pt>
+<figures/11-20/test-iCb3.pdf, id=77, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCb3.pdf>
@@ -871,14 +863,14 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
 (scrbook)              by `\normalfont \itshape ' on input line 373.
 
-[19] <figures/11-20/SFG_fit.jpg, id=97, 1134.1572pt x 394.1124pt>
+[15] <figures/11-20/SFG_fit.jpg, id=84, 1134.1572pt x 394.1124pt>
 File: figures/11-20/SFG_fit.jpg Graphic file (type jpg)
 
 <use figures/11-20/SFG_fit.jpg>
 Package pdftex.def Info: figures/11-20/SFG_fit.jpg used on input line 380.
 (pdftex.def)             Requested size: 403.80757pt x 140.3228pt.
- [20 <./figures/al2o3-crystal.png> <./figures/11-20/supercell_opt.png> <./figur
-es/11-20/uc_opt.png>] [21 <./figures/11-20/test-Cb.pdf> <./figures/11-20/test-i
+ [16 <./figures/al2o3-crystal.png> <./figures/11-20/supercell_opt.png> <./figur
+es/11-20/uc_opt.png>] [17 <./figures/11-20/test-Cb.pdf> <./figures/11-20/test-i
 Ca2.pdf
 
 pdfTeX warning: pdflatex (file ./figures/11-20/test-iCa2.pdf): PDF inclusion: m
@@ -903,22 +895,22 @@ ltiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/11-20/test-iCb3.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
-> <./figures/11-20/SFG_fit.jpg>] [22]
-<figures/11-20/Diss_Cb-Cb2.pdf, id=156, 1203.186pt x 361.9829pt>
+> <./figures/11-20/SFG_fit.jpg>] [18]
+<figures/11-20/Diss_Cb-Cb2.pdf, id=143, 1203.186pt x 361.9829pt>
 File: figures/11-20/Diss_Cb-Cb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diss_Cb-Cb2.pdf>
 Package pdftex.def Info: figures/11-20/Diss_Cb-Cb2.pdf used on input line 416.
 (pdftex.def)             Requested size: 314.07332pt x 94.48892pt.
 
-<figures/11-20/Diss_Cb-Cb3.pdf, id=157, 1206.67169pt x 363.87859pt>
+<figures/11-20/Diss_Cb-Cb3.pdf, id=144, 1206.67169pt x 363.87859pt>
 File: figures/11-20/Diss_Cb-Cb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diss_Cb-Cb3.pdf>
 Package pdftex.def Info: figures/11-20/Diss_Cb-Cb3.pdf used on input line 418.
 (pdftex.def)             Requested size: 314.07332pt x 94.70613pt.
 
-<figures/11-20/Diff-OH_Cb2-iCb2.pdf, id=158, 1202.80127pt x 361.82608pt>
+<figures/11-20/Diff-OH_Cb2-iCb2.pdf, id=145, 1202.80127pt x 361.82608pt>
 File: figures/11-20/Diff-OH_Cb2-iCb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-OH_Cb2-iCb2.pdf>
@@ -926,7 +918,7 @@ Package pdftex.def Info: figures/11-20/Diff-OH_Cb2-iCb2.pdf used on input line
 420.
 (pdftex.def)             Requested size: 314.07332pt x 94.47559pt.
 
-<figures/11-20/Diff-OH_Cb2-iCa2.pdf, id=159, 1202.54886pt x 362.04207pt>
+<figures/11-20/Diff-OH_Cb2-iCa2.pdf, id=146, 1202.54886pt x 362.04207pt>
 File: figures/11-20/Diff-OH_Cb2-iCa2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-OH_Cb2-iCa2.pdf>
@@ -934,7 +926,7 @@ Package pdftex.def Info: figures/11-20/Diff-OH_Cb2-iCa2.pdf used on input line
 422.
 (pdftex.def)             Requested size: 314.07332pt x 94.55408pt.
 
-<figures/11-20/Diff-H_iCa2-iCa3p.pdf, id=160, 1206.04863pt x 362.30223pt>
+<figures/11-20/Diff-H_iCa2-iCa3p.pdf, id=147, 1206.04863pt x 362.30223pt>
 File: figures/11-20/Diff-H_iCa2-iCa3p.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-H_iCa2-iCa3p.pdf>
@@ -942,14 +934,14 @@ Package pdftex.def Info: figures/11-20/Diff-H_iCa2-iCa3p.pdf used on input line
  429.
 (pdftex.def)             Requested size: 314.07332pt x 94.34561pt.
 
-<figures/11-20/Diff-H_iCb3pp-iCb3ppp.png, id=161, 2278.5125pt x 451.6875pt>
+<figures/11-20/Diff-H_iCb3pp-iCb3ppp.png, id=148, 2278.5125pt x 451.6875pt>
 File: figures/11-20/Diff-H_iCb3pp-iCb3ppp.png Graphic file (type png)
 
 <use figures/11-20/Diff-H_iCb3pp-iCb3ppp.png>
 Package pdftex.def Info: figures/11-20/Diff-H_iCb3pp-iCb3ppp.png used on input 
 line 431.
 (pdftex.def)             Requested size: 314.07332pt x 62.25713pt.
- [23] [24 <./figures/11-20/Diss_Cb-Cb2.pdf> <./figures/11-20/Diss_Cb-Cb3.pdf
+ [19] [20 <./figures/11-20/Diss_Cb-Cb2.pdf> <./figures/11-20/Diss_Cb-Cb3.pdf
 
 pdfTeX warning: pdflatex (file ./figures/11-20/Diss_Cb-Cb3.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
@@ -961,34 +953,34 @@ sion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/11-20/Diff-OH_Cb2-iCa2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
->] [25 <./figures/11-20/Diff-H_iCa2-iCa3p.pdf> <./figures/11-20/Diff-H_iCb3pp-i
-Cb3ppp.png>] [26
+>] [21 <./figures/11-20/Diff-H_iCa2-iCa3p.pdf> <./figures/11-20/Diff-H_iCb3pp-i
+Cb3ppp.png>] [22
 
 
 ]
 chapter 3.
-<figures/0001/surf_0K_axes.pdf, id=253, 967.93118pt x 687.71014pt>
+<figures/0001/surf_0K_axes.pdf, id=240, 967.93118pt x 687.71014pt>
 File: figures/0001/surf_0K_axes.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K_axes.pdf>
 Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 455.
 (pdftex.def)             Requested size: 201.90378pt x 143.44748pt.
 
-<figures/0001/surf_0K-side.pdf, id=254, 1541.76pt x 819.86299pt>
+<figures/0001/surf_0K-side.pdf, id=241, 1541.76pt x 819.86299pt>
 File: figures/0001/surf_0K-side.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K-side.pdf>
 Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 457.
 (pdftex.def)             Requested size: 201.90378pt x 107.36156pt.
 
-<figures/0001/0001_mol_top.jpg, id=255, 1042.89626pt x 784.9325pt>
+<figures/0001/0001_mol_top.jpg, id=242, 1042.89626pt x 784.9325pt>
 File: figures/0001/0001_mol_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_mol_top.jpg>
 Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 464.
 (pdftex.def)             Requested size: 179.4685pt x 135.06564pt.
 
-<figures/0001/0001_1-2-diss_top.jpg, id=256, 1041.8925pt x 783.92876pt>
+<figures/0001/0001_1-2-diss_top.jpg, id=243, 1041.8925pt x 783.92876pt>
 File: figures/0001/0001_1-2-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-2-diss_top.jpg>
@@ -996,7 +988,7 @@ Package pdftex.def Info: figures/0001/0001_1-2-diss_top.jpg used on input line
 466.
 (pdftex.def)             Requested size: 179.4685pt x 135.0245pt.
 
-<figures/0001/0001_1-4-diss_top.jpg, id=257, 1041.8925pt x 785.93625pt>
+<figures/0001/0001_1-4-diss_top.jpg, id=244, 1041.8925pt x 785.93625pt>
 File: figures/0001/0001_1-4-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-4-diss_top.jpg>
@@ -1004,7 +996,7 @@ Package pdftex.def Info: figures/0001/0001_1-4-diss_top.jpg used on input line
 468.
 (pdftex.def)             Requested size: 179.4685pt x 135.37027pt.
 
-<figures/0001/0001_1-4p-diss_top_label.pdf, id=258, 833.51402pt x 626.34pt>
+<figures/0001/0001_1-4p-diss_top_label.pdf, id=245, 833.51402pt x 626.34pt>
 File: figures/0001/0001_1-4p-diss_top_label.pdf Graphic file (type pdf)
 
 <use figures/0001/0001_1-4p-diss_top_label.pdf>
@@ -1026,14 +1018,14 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
 (scrbook)              by `\normalfont \itshape ' on input line 475.
 
-<figures/0001/perspective+h2o_new.png, id=259, 1222.166pt x 1554.608pt>
+<figures/0001/perspective+h2o_new.png, id=246, 1222.166pt x 1554.608pt>
 File: figures/0001/perspective+h2o_new.png Graphic file (type png)
 
 <use figures/0001/perspective+h2o_new.png>
 Package pdftex.def Info: figures/0001/perspective+h2o_new.png used on input lin
 e 484.
 (pdftex.def)             Requested size: 179.4685pt x 228.27081pt.
- [27] [28 <./figures/0001/surf_0K_axes.pdf> <./figures/0001/surf_0K-side.pdf
+ [23] [24 <./figures/0001/surf_0K_axes.pdf> <./figures/0001/surf_0K-side.pdf
 
 pdfTeX warning: pdflatex (file ./figures/0001/surf_0K-side.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
@@ -1058,20 +1050,20 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
 (scrbook)              by `\normalfont \itshape ' on input line 489.
 
-<figures/0001/2H2O.pdf, id=309, 1541.76pt x 819.86299pt>
+<figures/0001/2H2O.pdf, id=296, 1541.76pt x 819.86299pt>
 File: figures/0001/2H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/2H2O.pdf>
 Package pdftex.def Info: figures/0001/2H2O.pdf used on input line 492.
 (pdftex.def)             Requested size: 157.04007pt x 83.50482pt.
 
-<figures/0001/4H2O.pdf, id=310, 1541.76pt x 819.86299pt>
+<figures/0001/4H2O.pdf, id=297, 1541.76pt x 819.86299pt>
 File: figures/0001/4H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/4H2O.pdf>
 Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 494.
 (pdftex.def)             Requested size: 246.77434pt x 131.21828pt.
- [29 <./figures/0001/perspective+h2o_new.png>]
+ [25 <./figures/0001/perspective+h2o_new.png>]
 
 Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              You should note, that in 1994 font command `\it' has
@@ -1100,11 +1092,11 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
 (scrbook)              by `\normalfont \itshape ' on input line 499.
 
-[30 <./figures/0001/2H2O.pdf> <./figures/0001/4H2O.pdf
+[26 <./figures/0001/2H2O.pdf> <./figures/0001/4H2O.pdf
 
 pdfTeX warning: pdflatex (file ./figures/0001/4H2O.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
->] [31
+>] [27
 
 ]
 
@@ -1121,19 +1113,19 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
 (scrbook)              by `\normalfont \itshape ' on input line 532.
 
-[32]
+[28]
 chapter without number
-[33
+[29
 
 
-] [34
+] [30
 
 ]
 chapter without number
-[35
+[31
 
 
-] [36
+] [32
 
 ]
 
@@ -1234,14 +1226,14 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
 (scrbook)              by `\normalfont \itshape ' on input line 588.
 
-[37
+[33
 
-] [38
+] [34
 
 
 ]
 chapter without number
-[39]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 621--622
 
  []
@@ -1251,17 +1243,17 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-[40
+[36
 
 ] (./dissertation.aux) ) 
 Here is how much of TeX's memory you used:
- 8899 strings out of 493091
- 134509 string characters out of 6142992
+ 8898 strings out of 493091
+ 134491 string characters out of 6142992
  271702 words of memory out of 5000000
  12111 multiletter control sequences out of 15000+600000
  147273 words of font info for 120 fonts, out of 8000000 for 9000
  1158 hyphenation exceptions out of 8191
- 47i,12n,66p,975b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,11n,66p,975b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/sh
 are/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm
 /lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf
@@ -1283,10 +1275,10 @@ ic/lm/lmro10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share
 mf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
 y6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/font
 s/type1/public/lm/lmsy9.pfb>
-Output written on dissertation.pdf (40 pages, 23244751 bytes).
+Output written on dissertation.pdf (36 pages, 23245109 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
+ 445 PDF objects out of 1000 (max. 8388607)
+ 285 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

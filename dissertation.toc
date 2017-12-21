@@ -1,42 +1,42 @@
 \select@language {english}
-\contentsline {chapter}{\nonumberline Preamble}{7}
-\contentsline {chapter}{\numberline {1}Theory und Methodology}{11}
-\contentsline {section}{\numberline {1.1}DFT}{11}
-\contentsline {section}{\numberline {1.2}Periodic Boundary Conditions}{12}
-\contentsline {section}{\numberline {1.3}Atom Centered Basis and Peculiarities}{13}
-\contentsline {section}{\numberline {1.4}{\it Ab-initio} Molecular Dynamics}{13}
-\contentsline {section}{\numberline {1.5}Frequencies and Intensities}{13}
-\contentsline {section}{\numberline {1.6}Finding Transition States}{14}
-\contentsline {section}{\numberline {1.7}From Density Functionals to Hybrids and Perturbation Theory}{15}
-\contentsline {section}{\numberline {1.8}Computational Details and Used Programs}{15}
-\contentsline {section}{\numberline {1.9}Experimental Techniques}{16}
-\contentsline {subsection}{\numberline {1.9.1}Vibrational Sum Frequency Generation}{16}
-\contentsline {subsection}{\numberline {1.9.2}Thermal Desorption Spectroscopy}{16}
-\contentsline {subsection}{\numberline {1.9.3}Molecular Beam Source vs. Pinhole Dosing}{16}
-\contentsline {subsection}{\numberline {1.9.4}Low-Energy Electron Diffraction}{16}
-\contentsline {chapter}{\numberline {2}Water on $\upalpha $-Al$_2$O$_3$(11\=20)}{19}
-\contentsline {section}{\numberline {2.1}Surface Model}{19}
-\contentsline {section}{\numberline {2.2}Structure Search}{19}
-\contentsline {section}{\numberline {2.3}Frequencies of OH/OD species}{20}
-\contentsline {subsection}{\numberline {2.3.1}Normal Mode Analysis}{22}
-\contentsline {subsection}{\numberline {2.3.2}Velocity-Velocity Autocorrelation Function}{22}
-\contentsline {section}{\numberline {2.4}Reactions and Microkinetic Model}{22}
-\contentsline {section}{\numberline {2.5}Phonons}{23}
-\contentsline {section}{\numberline {2.6}Desorption Process}{23}
-\contentsline {chapter}{\numberline {3}Water on $\upalpha $-Al$_2$O$_3$(0001)}{27}
-\contentsline {section}{\numberline {3.1}Surface Model}{27}
-\contentsline {section}{\numberline {3.2}AIMD for Dissociation Process}{27}
-\contentsline {subsection}{\numberline {3.2.1}Microcanonical}{30}
-\contentsline {subsubsection}{\nonumberline Cluster}{30}
-\contentsline {subsubsection}{\nonumberline Preadsorbed Surface}{30}
-\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{30}
-\contentsline {subsection}{\numberline {3.2.2}Canonical}{30}
-\contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{31}
-\contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{31}
-\contentsline {subsection}{\numberline {3.3.2}PIMD}{32}
-\contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{32}
-\contentsline {chapter}{\nonumberline Summary}{33}
-\contentsline {chapter}{\nonumberline Appendix}{35}
-\contentsline {subsubsection}{\nonumberline This Work:}{37}
-\contentsline {chapter}{\nonumberline References}{39}
+\contentsline {chapter}{\nonumberline Preamble}{3}
+\contentsline {chapter}{\numberline {1}Theory und Methodology}{7}
+\contentsline {section}{\numberline {1.1}DFT}{7}
+\contentsline {section}{\numberline {1.2}Periodic Boundary Conditions}{8}
+\contentsline {section}{\numberline {1.3}Atom Centered Basis and Peculiarities}{9}
+\contentsline {section}{\numberline {1.4}{\it Ab-initio} Molecular Dynamics}{9}
+\contentsline {section}{\numberline {1.5}Frequencies and Intensities}{9}
+\contentsline {section}{\numberline {1.6}Finding Transition States}{10}
+\contentsline {section}{\numberline {1.7}From Density Functionals to Hybrids and Perturbation Theory}{11}
+\contentsline {section}{\numberline {1.8}Computational Details and Used Programs}{11}
+\contentsline {section}{\numberline {1.9}Experimental Techniques}{12}
+\contentsline {subsection}{\numberline {1.9.1}Vibrational Sum Frequency Generation}{12}
+\contentsline {subsection}{\numberline {1.9.2}Thermal Desorption Spectroscopy}{12}
+\contentsline {subsection}{\numberline {1.9.3}Molecular Beam Source vs. Pinhole Dosing}{12}
+\contentsline {subsection}{\numberline {1.9.4}Low-Energy Electron Diffraction}{13}
+\contentsline {chapter}{\numberline {2}Water on $\upalpha $-Al$_2$O$_3$(11\=20)}{15}
+\contentsline {section}{\numberline {2.1}Surface Model}{15}
+\contentsline {section}{\numberline {2.2}Structure Search}{16}
+\contentsline {section}{\numberline {2.3}Frequencies of OH/OD species}{17}
+\contentsline {subsection}{\numberline {2.3.1}Normal Mode Analysis}{18}
+\contentsline {subsection}{\numberline {2.3.2}Velocity-Velocity Autocorrelation Function}{18}
+\contentsline {section}{\numberline {2.4}Reactions and Microkinetic Model}{18}
+\contentsline {section}{\numberline {2.5}Phonons}{19}
+\contentsline {section}{\numberline {2.6}Desorption Process}{19}
+\contentsline {chapter}{\numberline {3}Water on $\upalpha $-Al$_2$O$_3$(0001)}{23}
+\contentsline {section}{\numberline {3.1}Surface Model}{23}
+\contentsline {section}{\numberline {3.2}AIMD for Dissociation Process}{23}
+\contentsline {subsection}{\numberline {3.2.1}Microcanonical}{26}
+\contentsline {subsubsection}{\nonumberline Cluster}{26}
+\contentsline {subsubsection}{\nonumberline Preadsorbed Surface}{26}
+\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{26}
+\contentsline {subsection}{\numberline {3.2.2}Canonical}{26}
+\contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{27}
+\contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{27}
+\contentsline {subsection}{\numberline {3.3.2}PIMD}{28}
+\contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{28}
+\contentsline {chapter}{\nonumberline Summary}{29}
+\contentsline {chapter}{\nonumberline Appendix}{31}
+\contentsline {subsubsection}{\nonumberline This Work:}{33}
+\contentsline {chapter}{\nonumberline References}{35}
 \contentsfinish 

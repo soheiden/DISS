@@ -25,4 +25,6 @@ PIMD path integral molecula dynamics
 CCSD coupled cluster singles and doubles
 VASP vienna ab-initio simulation package
 QM/QM combination of quantum mechanical and quantum mechanical method (in contrast to QM/MM where QM and molecular mechanis are combined)
+PES potential energy surface
+TS(T) Transition state
 
