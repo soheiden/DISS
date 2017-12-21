@@ -1,0 +1,28 @@
+DFT density functional theory
+PBE Perdew Burke Ernzerhof
+B3LYP Becke 3 parameters Lee Yang Parr
+HSE06 Heyd-Scuseria-Ernzerhof 2006
+D2/D3 dispersion corrections (van-der-Waals interactions)
+PW plane waves
+GGA generalized gradient approximation
+BSSE basis set superposition error
+NVT
+NVE
+NEB nudged elastic band
+NEB-CI nudged elastic band with climbing image
+MP2 M\o{}ller Plesset perturbation theory of second order
+LMP2 local MP2
+CUS coordinatively unsaturated site
+VSF vibrational sum frequency
+SFG sum frequency generation
+TDS thermal desorption spectroscopy
+MBS molecular beam source
+LEED low energy electron diffraction
+ML mono layer
+PAW projector augmented wave
+MD molecular dynamics
+PIMD path integral molecula dynamics
+CCSD coupled cluster singles and doubles
+VASP vienna ab-initio simulation package
+QM/QM combination of quantum mechanical and quantum mechanical method (in contrast to QM/MM where QM and molecular mechanis are combined)
+
