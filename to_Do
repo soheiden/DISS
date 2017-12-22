@@ -1,0 +1,27 @@
+add figures
+	0001 trajectories?
+	crystal structures or comparison to vasp..
+	slab sizes 10-25(/30?)
+	PIMD(?)
+	cluster(?)
+
+introduction
+
+11-20 evaluation
+	structures
+	vibrations
+		comparison with crystal (stability and vibrations)
+	reaction paths
+	phonons (dipole, BEC, VDOS)
+	desorption/tds (didn't work so well, kMC, scheme with rate constants)
+
+0001 evaluation
+	trajectories for dissociation process
+	crystal, comparison with vasp results (stability of minima, rates)
+	cluster calculations (didn't work)
+	PIMD (didn't work)
+
+summary and conclusion
+
+look for citations
+
