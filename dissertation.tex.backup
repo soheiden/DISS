@@ -11,6 +11,7 @@
 \usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
 \usepackage{setspace}
 \usepackage{titletoc}
 \usepackage{scrpage2}
@@ -22,6 +23,7 @@
 \renewcommand\thesubfigure{\,(\alph{subfigure})}
 \usepackage{rotating}
 \usepackage{enumitem}
+\usepackage{multirow}
 \usepackage{color}
 \usepackage{etoolbox}
 \usepackage{bibentry}
@@ -36,8 +38,8 @@
 \KOMAoptions{DIV=last}
 
 %Links im Inhaltsverzeichnis
-%\usepackage{hyperref}
-%\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}
+\usepackage{hyperref}
+\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}
 
 %Eigene Befehle
 \newcommand*{\mystrut}{\rule[-.2\baselineskip]{0pt}{-.2\baselineskip}}
@@ -164,10 +166,10 @@ Drittgutachter:&Prof. Dr. xy \\
 The importance of surface science in our industrialized world is overwhelming, because most processes in industry need (heterogeneous) catalysts, because these do not have to be separated from the reactands and the product after the process, which is mostly a costly step in the production of chemicals. It is therefore desirable to understand heterogeneous catalytic processes by learning more about the processes that take place on the surface of materials. Metal oxide materials are frequently used in catalysts as well as catalyst support materials, so that understanding their properties in contact with chemicals, in this work water, is crucial.
 \\
 
-Aluminum is used in rocket fuels as a reduction agent so that during launch alumina particles are ejected in the atmosphere during the start. For a space shuttle the start can produce around $760,000\,$kg of alumina particles. It can be measured that approximately one third of these particles can be deposited in the stratosphere (in an altitude between $15$ and $50\,$km above the surface of the earth) and there it can react with the water and other molecules in the stratosphere where these particles are accumulated after the launch of a shuttle.
+Aluminum is used in rocket fuels as a reduction agent so that during launch alumina particles are ejected in the atmosphere during the start (see also lit.dat!). For a space shuttle the start can produce around $760,000\,$kg of alumina particles. It can be measured that approximately one third of these particles can be deposited in the stratosphere (in an altitude between $15$ and $50\,$km above the surface of the earth) and there it can react with the water and other molecules in the stratosphere where these particles are accumulated after the launch of a shuttle.
 \\
 
-Also in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since it and it also can be seen as a model systems for more complex alumosilicates. Oxide rocks are omnipresent in the crust of the earth and henceforth in most geochemical processes since the times the earth's atmosphere became oxidizing with rise of photosynthetic life forms/(bacteria?) a few million years ago. Before sulfides were dominant but when photosythesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew.
+Also in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the third most common element in the crust with $6.3\%$ ({\color{red} \begin{verbatim} http://www.uniterra.de/rutherford/tab_hauf.htm\end{verbatim} check also dtv atlas der chemie band 1!}) and it also can be seen as a model systems for more complex alumosilicates. Oxide rocks are omnipresent in the crust of the earth and henceforth in most geochemical processes since the times the earth's atmosphere became oxidizing with rise of photosynthetic life forms/(bacteria?) a few million years ago. Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -278,7 +280,7 @@ Calculation of power spectra via velocity-velocity autocorrelation function from
 \end{equation}
 
 \section{Finding Transition States}
-One of the most prominent theories describing the transition state and the rate constants is Eyring theory of transition states. The most important approximations that are made are the following: all particles that reached the transition state will react towards the product. at the transition state geometry, the motion along the reaction coordinate can be separated from all other degrees of freedom and can be seen as a translation.
+One of the most prominent theories describing the transition state and the rate constants is Eyring theory of transition states {\color{red} figure of reaction path?}. The most important approximations that are made are the following: all particles that reached the transition state will react towards the product. at the transition state geometry, the motion along the reaction coordinate can be separated from all other degrees of freedom and can be seen as a translation.
 The equation for the rate constant is described by
 \begin{equation}
 k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
@@ -325,13 +327,21 @@ Other methods as tunneling based methods do not work on isolating materials like
 \section{Surface Model}
 The structure of $\upalpha$-alumina is well known for several years. It crystallizes in the hexagonal cell, that means a=b$\neq$c, with an angle of $60$\textdegree~ between $a$ and $b$.
 \\
-To obtain the clean surface we cut a $2\times 2$ supercell from bulk structure. The cell vectors were used from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced. $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It was shown that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface. Figure with convergence? ({\color{blue} look for masterarbeits results..}).
+To obtain the clean surface we cut a $2\times 2$ supercell from bulk structure. The cell vectors were used from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced. 
 \\
-The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), our supercell has 10, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), here also for each slab size the lowest 5 layers were kept fixed, respectively.
+The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), our supercell has 10, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}).
 \\
-Starting from this supercell approach there are 16 CUS Al-atoms (cordinatively unsaturated sites), these have less bonds than the aluminum atoms in the bulk structure since the surface layers has to be  depleted. These atoms are very interesting for adorbate molecules/atoms, because these atoms are electron rich and can be addressed for adsorption. These 16 atoms when covered with adsorbates, here water, are 1 mono layer (ML). Difference: one monolayer is not built by 16 adsorbates since not all 16, but only 12 CUS positions can be covered, as is shown later (bridging water adsorption).
+$\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It was shown that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface, see fig.~\ref{abb:11-20-kpointsampling}.
+\begin{figure}[!h]
+\centering
+ \includegraphics[width=0.4\textwidth]{figures/11-20/irreducibles-E.eps}
+   \caption{Sampling of the $\vec{k}$-points, shown is the energy of the super cell with respect to the number of irreducible $\vec{k}$-points. The even values correspond to the $2\times 2 \times 1$ (2 irreducibles) and $4\times 4\times 1$ (8 irr.), whereas the odd, that contain the $\Gamma$-point, are described by $1\times 1\times 1$ (1 irr.), $3\times 3\times 1$ (5 irr.) and $5\times 5\times 1$ (13 irr.).}
+            \label{abb:11-20-kpointsampling}
+\end{figure}
 \\
-Different types of CUS atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors.
+Starting from this supercell approach there are 16 CUS Al-atoms (cordinatively unsaturated sites), these have less bonds than the aluminum atoms in the bulk structure since the surface layers has to be  depleted. These atoms are very interesting for adorbate molecules/atoms, because these atoms are electron rich and can be addressed for adsorption. If these 16 atoms are covered with adsorbates, here water, we get the system with 1 mono layer (ML). But one has to keep in mind the difference between these 16 surface atoms and the number of potential adsorbates: one monolayer is not built by 16 adsorbates since not all 16 CUS positions can be covered, but only 12, as is shown later (bridging water adsorption).
+\\
+As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa, the two-fold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the three-fold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
 \begin{figure}[!h]
     \centering
     \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
@@ -341,17 +351,41 @@ Different types of CUS atoms with different coordination neighborhood and 2 diff
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
     \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
-             \caption{.}
+             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers.}
             \label{abb:crystal_11-20}
      \end{figure}
 \section{Structure Search}
-First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types.
+First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types, for adsorption energy and Gibb's free energy results see table \ref{tab:ads_1water}.
 There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
-The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, also in comparison with the more stable surface cuts (0001) and (1\=102) that were investigated before in our group.
-The dissociated species in direct neighborhood are more stable than those where the proton and the OH residue are further apart, for example because of further diffusion reactions.
-Dissociation where the proton is located at a two-fold coordinated surface oxygen is far more stable than the corresponding systems where the three-fold coordinated is occupied.
+\begin{table}[!ht]
+  \centering
+ \caption{Adsorption energies $E_\textrm{ads}=E_\text{ads. species}-E_\text{free 
+molecule+surface}$ for molecular and (singly) dissociated water on $\upalpha$-\ce{Al2O3}(11\=20)
+according to periodic PBE+D2 calculations. Also the corresponding 
+adsorption free energies $G_\textrm{ads}$ at $130$, $300$ and $400\,$K defined 
+analogously are also given. The three most stable configurations are in bold. All 
+energies are given in eV. 
+\vspace*{.2cm} 
+  }
+  \begin{tabular}{cl|cccc}
+   \multicolumn{2}{c|}{Adsorbed Species}  & $E_\text{ads}$ & $G_\text{ads, 130 K}$  &  $G_\text{ads, 300 K}$  & $G_\text{ads, 400 K}$ \\
+\hline
+\multirow{1}{*}{molecular} & CUSb          &   -1.78  &-1.60 & -1.51  & -1.46 \\
+  \hline
+ \multirow{6}{*}{dissociated} & \bf inter-CUSa||O-$\mu_2$ & \bf-2.50 &-2.27 & -2.16 & -2.09 \\
+  & inter-CUSa||O-$\mu_3$ & -1.67 &-1.44 &-1.33 & -1.27 \\
+  & \bf CUSb||O-$\mu_2$ & \bf -2.28 & -2.12& -2.03 &-1.97  \\
+ & CUSb||O-$\mu_3$ & -1.19 &-1.05 &-0.98 & -0.95 \\%Cb3_other
+ & \bf inter-CUSb||O-$\mu_2$ & \bf -2.09 &-1.88 &-1.80 & -1.76 \\
+ & inter-CUSb||O-$\mu_3$ & -1.89 &-1.71 & -1.63 & -1.58 \\
+  \end{tabular}
+  \label{tab:ads_1water}
+\end{table}
+The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, also in comparison with the more stable surface cuts (0001) and (1\=102) that were investigated before in our group by Dr. Jonas Wirth\cite{C6CP01397J,WirthJPCC2012}. Dissociated species, where the proton is located at a two-fold coordinated surface oxygen is far more stable than the corresponding systems where the three-fold coordinated is occupied, since the chemical affinity towards protonation of such a two-folded oxygen atom is higher and the acidity is also major in comparison with the more saturated three-fold coordinated O-$\mu_3$ oxygen atom.
 \\
-Also systems with a higher water coverage were considered, tests for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get IR spectra. 
+The dissociated species in direct neighborhood as shown in table \ref{tab:ads_1water} and figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart, for example because of further diffusion reactions, that are shown in chapter \ref{reactions}.
+\\
+Also systems with a higher water coverage were considered, tests for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get vibrational spectra, see also chapter \ref{phonons}. 
 \begin{figure}[!ht]
  \centering
 \subfigure[CUSb]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb.pdf}}
@@ -399,7 +433,7 @@ Comparison of intensities with dipole corrections and Born effective charges.
 \subsection{Velocity-Velocity Autocorrelation Function}
 Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate Modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage?
 
-\section{Reactions and Microkinetic Model}
+\section{Reactions and Microkinetic Model}\label{reactions}
 Based on the minimum structures one has to identify reaction pathways to fully understand a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 types of reactions: dissociation, OH-diffusion and H-diffusion. Since the molecular minimum is very low in stability, and also the barrier is very low for the process. 
 Also tried to study the adsorption/desorption process but didn't find a barrier, energy profile behaves smoothly from water molecule above the surface to the adsorbed water system.
 \\
@@ -435,13 +469,16 @@ Also reactions leading to a not next-neighbored situation, increasing the distan
        \label{mep2}
 \end{figure*}
 
-\section{Phonons}
+\section{Lattice Vibrations}\label{phonons}
 For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers, both for the naked surface and for the covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses.
 
 \section{Desorption Process}
 As mentioned before the experimentalists measure TPD in order to understand the adsorption strength and possible exchange reactions. We tried to simulate the desorption process using the following scheme: take the water in the gas phase + the naked surface as the standard. In the thermal equilibrium, the water should be equally distributed to Boltzman's distribution in the most stable structures. From this situation the water can recombine to the molecularly adsorbed water. The recombined water then can desorb to the gas phase. Since the spectrum is measured in ultra high vacuum it can be assumed that all the water that has left the surface will not return to the system, because it is dragged out of the equilibrium by the vacuum pumps.
 Applying the reaction rates of the corresponding reactions in a kinetic Monte Carlo approach leads to 
 {\color{red} REDO THESE CALCULATIONS}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(0001)}
 The most stable surface site under UHV conditions, subject of several studies so far.
@@ -606,8 +643,8 @@ Christiane Wunderlich who was my school teacher in chemistry, without whom I wou
 \renewcommand*{\chapterheadstartvskip}{\vspace*{-2\baselineskip}}
 \begin{small}
 \bibliographystyle{achemso_mod}
-%\addcontentsline{toc}{chapter}{Literaturverzeichnis}
-%\bibliography{literatur}
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\bibliography{literatur}
 \end{small}
 \endgroup
 
