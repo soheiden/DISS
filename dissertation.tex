@@ -356,11 +356,16 @@ As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c),
      \end{figure}
 \section{Structure Search}
 First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types, for adsorption energy and Gibb's free energy results see table \ref{tab:ads_1water}. There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
-The nomenclature that is used in the following gives at first the type of Al site where the OH-residue (OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH-site$\parallel$H-site).
+The adsorption energy is defined by equation \ref{eq:Eads} as the energy of the adsorbed system compared to the energies of the clean surface and the isolated water molecule:
+\begin{equation}\label{eq:Eads}
+ E_\textrm{ads}=E_\text{ads. species}-(E_\text{free water molecule}+E_\text{surface}).
+\end{equation}
+
+The nomenclature for the adsorption sites that is used in the following gives at first the type of Al site where the OH-residue (OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH-site$\parallel$H-site). The notation with the $\prime$ that will occur later denotes greater distances between the residues.
 \begin{table}[!ht]
   \centering
- \caption{{\it change text! Adsorption energies $E_\textrm{ads}=E_\text{ads. species}-E_\text{free 
-molecule+surface}$ for molecular and (singly) dissociated water on $\upalpha$-\ce{Al2O3}(11\=20)
+ \caption{{\it change text! Adsorption energies as calculated from equation \ref{eq:Eads}
+ for molecular and (singly) dissociated water on $\upalpha$-\ce{Al2O3}(11\=20)
 according to periodic PBE+D2 calculations. Also the corresponding 
 adsorption free energies $G_\textrm{ads}$ at $130$, $300$ and $400\,$K defined 
 analogously are also given. The three most stable configurations are in bold. All 
@@ -400,16 +405,16 @@ energies are given in eV.}
 molecules ((b)-(g)) are shown, as obtained by periodic PBE+D2. The most favorable 
 molecularly and dissociatively adsorbed configurations are shown. This means that 
 we show nearest neighbor structures only (see text). The color code is the same 
-as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2$ orange and O-$
+as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2$ yellow and O-$
 \mu_3$ red; Hydrogen is displayed in white, subsurface layers are in pale colors.}}
         \label{abb:ads-geoms}
  \end{figure}
 The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, also in comparison with the more stable surface cuts (0001) and (1\=102) that were investigated before in our group by Dr. Jonas Wirth\cite{C6CP01397J,WirthJPCC2012}. Dissociated species, where the proton is located at a two-fold coordinated surface oxygen is far more stable than the corresponding systems where the three-fold coordinated is occupied, since the higher negative charge and the higher basicity of such a two-folded oxygen atom in comparison with the more saturated three-fold coordinated O-$\mu_3$ oxygen atom. Also the adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site, because the former corresponds to a site where in the bulk system another oxygen atom would be situated, which is not the case for the CUSb position.
 \\
-Dissociated species in direct neighborhood as shown in table \ref{tab:ads_1water} and figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H. For example of further diffusion reactions, see chapter \ref{reactions}.
+Dissociated species in direct neighborhood as shown in table \ref{tab:ads_1water} and figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H. In the table one can see, that the inter-CUSb||O-$\mu_3^{\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^\prime$. This is due to the fact, that the periodic conditions lead to the decrease of the distance between OH groups again, so that between 3 neighboring OH groups in the O-$\mu_3^\prime$ system the distances are $0.68$ and $0.77\,$nm, whereas in the O-$\mu_3^{\prime\prime}$ system the distances are $0.93$ and $0.62\,$nm, where the latter one is closer by, so there is more stabilization. For examples of further diffusion reactions, see chapter \ref{reactions}.
 \begin{table}[!ht]
   \centering
- \caption{comparison of next neighbor dissociated species and species where OH and H are further apart. 
+ \caption{Comparison of next neighbor dissociated species and species where OH and H are further apart. 
 \vspace*{.2cm} 
   }
   \begin{tabular}{cc}
@@ -422,23 +427,48 @@ Dissociated species in direct neighborhood as shown in table \ref{tab:ads_1water
   \end{tabular}
   \label{tab:ads_1waterfurther}
 \end{table}
-\\
-Also systems with a higher water coverage were considered, tests for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get vibrational spectra, see also chapter \ref{phonons}. 
+
+Also systems with a higher water coverage were considered, tests for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get vibrational spectra, see also chapter \ref{phonons}.
+
+The stability of those species with higher water coverage is defined as
+\begin{equation}
+ E_\textrm{ads}=E_\text{ads. species}-(E_\text{free molecule}\times n+E_\text{surface}),
+\end{equation}
+ with $n$ being the number of water molecules adsorbed on the surface. In table \ref{tab:higher_water}, the adsorption energies are given.
+\begin{table}[!ht]
+  \centering
+ \caption{Adsorption energies in eV for higher water coverages. For comparison in the third column the added energies for singly adsorbed water are shown.
+\vspace*{.2cm} 
+  }
+  \begin{tabular}{lcc}
+  Adsorbed Species  & $E_\text{ads}$ &isolated species \\
+   CUSb(mol)+CUSb||O-$\mu_2$ & -4.57 & -4.06\\
+   inter-CUSa||O-$\mu_2$+CUSb||O-$\mu_2$ & -4.77 & -4.78\\
+   2inter-CUSa||O-$\mu_2$& -4.84 &-5.0 \\\hline
+   4inter-CUSa||O-$\mu_2$ & -9.55 & -10.0\\\hline
+   12H$_2$O & -23.39&{\color{red}\tiny{unclear..}}\\
+  \end{tabular}
+  \label{tab:higher_water}
+\end{table}
+Comparing these results for the higher coverages to results with only one adsorbate, just by adding the adsorption energy one can see the following (see also column 3 in table \ref{tab:higher_water}):
+For all systems the added energy of the singly adsorbed species is more stable than the doubly adsorbed water systems. Instead of stabilizing the whole system, they are destabilized by the adsorption neighborhood, even in structures that contain hydrogen bonds.
 
 \section{Frequencies of OH/OD species}
-Frequencies for OH and also OD were calculated. Our experimental partner from FHI use D$_2$O instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra for the OD range is shown in fig.~\ref{abb:exp-sfg}.
+A great source of knowledge comes from vibrational spectroscopy, so we were interested in frequencies of the systems. These were calculated for OH and also OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system, so we did all calculations both for H$_2$O and D$_2$O. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in fig.~\ref{abb:exp-sfg}.
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
  \caption{Experimental SFG results including fit.}
         \label{abb:exp-sfg}
  \end{figure}
-Of course, the frequencies for a deuterated system are different from OH, but the isotope can be calculated easily within vasp.
+Of course, the frequencies for a deuterated system are different from OH, but the isotope can be calculated easily within vasp. To calculate the modes we mainly applied two methods: Normal mode analyses (see section \ref{nma}) and power spectra from velocity-velocity autocorrelation function (section \ref{vvacf}).
+\\
+{\color{red} TODO:
 Listed all frequencies for all possible next neighboring structures are shown but in comparison with the experiment, we only focus on the 3 most stable adsorbate structures, since only those are expected to be seen in experiment.
 \\
-Also results for higher coverage.
+Also results for higher coverage.}
 
-\subsection{Normal Mode Analysis}
+\subsection{Normal Mode Analysis}\label{nma}
 The classical modes calculated with a normal mode analysis are dependent on the mass and the spring constant of the bond.
 We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OH group and one for the surface group). We expect 6 frequencies. when evaluating those values one can see that one is out of the experimental range (strongly hydrogen bonded species, wave number is shifted to low $\tilde{\nu}$ and some of the others are except for numerical differences the same, so there should be only 3 bands visible. Very good agreement with the experimental modes. The numbers itself do not compare too good, but the relative modes are in really good agreement.
 \\
@@ -446,7 +476,7 @@ Comparison of different slab sizes.
 \\
 Comparison of intensities with dipole corrections and Born effective charges.
 
-\subsection{Velocity-Velocity Autocorrelation Function}
+\subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
 Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate Modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage?
 
 \section{Reactions and Microkinetic Model}\label{reactions}
@@ -484,6 +514,8 @@ Also reactions leading to a not next-neighbored situation, increasing the distan
 \caption{PBE+D2 minimum energy paths with transition states, and both educt and product states for Df-H-V and Df-H-VI reactions, respectively. The color code is as explained above.}
        \label{mep2}
 \end{figure*}
+
+{\color{red} add newly started iCb2'-iCb3pp and the path from iCb3 over iCb2' over iCb3pp to iCb3ppp as an example for proton diffusion pathways.}
 
 \section{Lattice Vibrations}\label{phonons}
 For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers, both for the naked surface and for the covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses.

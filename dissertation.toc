@@ -18,25 +18,25 @@
 \contentsline {section}{\numberline {2.1}Surface Model}{15}{section.2.1}
 \contentsline {section}{\numberline {2.2}Structure Search}{17}{section.2.2}
 \contentsline {section}{\numberline {2.3}Frequencies of OH/OD species}{19}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Normal Mode Analysis}{19}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Velocity-Velocity Autocorrelation Function}{20}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Reactions and Microkinetic Model}{20}{section.2.4}
-\contentsline {section}{\numberline {2.5}Lattice Vibrations}{22}{section.2.5}
-\contentsline {section}{\numberline {2.6}Desorption Process}{22}{section.2.6}
+\contentsline {subsection}{\numberline {2.3.1}Normal Mode Analysis}{20}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Velocity-Velocity Autocorrelation Function}{21}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Reactions and Microkinetic Model}{21}{section.2.4}
+\contentsline {section}{\numberline {2.5}Lattice Vibrations}{23}{section.2.5}
+\contentsline {section}{\numberline {2.6}Desorption Process}{23}{section.2.6}
 \contentsline {chapter}{\numberline {3}Water on $\upalpha $-Al$_2$O$_3$(0001)}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}Surface Model}{25}{section.3.1}
 \contentsline {section}{\numberline {3.2}AIMD for Dissociation Process}{25}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Microcanonical}{28}{subsection.3.2.1}
-\contentsline {subsubsection}{\nonumberline Cluster}{28}{section*.14}
-\contentsline {subsubsection}{\nonumberline Preadsorbed Surface}{28}{section*.16}
-\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{28}{section*.17}
+\contentsline {subsubsection}{\nonumberline Cluster}{28}{section*.15}
+\contentsline {subsubsection}{\nonumberline Preadsorbed Surface}{28}{section*.17}
+\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{28}{section*.18}
 \contentsline {subsection}{\numberline {3.2.2}Canonical}{28}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{29}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{29}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}PIMD}{30}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{30}{subsection.3.3.3}
-\contentsline {chapter}{\nonumberline Summary}{31}{chapter*.18}
-\contentsline {chapter}{\nonumberline Appendix}{33}{chapter*.20}
-\contentsline {subsubsection}{\nonumberline This Work:}{35}{section*.22}
-\contentsline {chapter}{\nonumberline References}{37}{chapter*.23}
+\contentsline {chapter}{\nonumberline Summary}{31}{chapter*.19}
+\contentsline {chapter}{\nonumberline Appendix}{33}{chapter*.21}
+\contentsline {subsubsection}{\nonumberline This Work:}{35}{section*.23}
+\contentsline {chapter}{\nonumberline References}{37}{chapter*.24}
 \contentsfinish 
