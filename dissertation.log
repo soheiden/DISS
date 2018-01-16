@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/TeX Live for SUSE Linux) (preloaded format=pdflatex 2017.11.28)  12 JAN 2018 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/TeX Live for SUSE Linux) (preloaded format=pdflatex 2017.11.28)  16 JAN 2018 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1486,52 +1486,52 @@ File: figures/11-20/SFG_fit.jpg Graphic file (type jpg)
 Package pdftex.def Info: figures/11-20/SFG_fit.jpg used on input line 460.
 (pdftex.def)             Requested size: 403.80757pt x 140.3228pt.
  [19] [20 <./figures/11-20/SFG_fit.jpg>]
-<figures/11-20/Diss_Cb-Cb2.pdf, id=418, 1203.186pt x 361.9829pt>
+[21] <figures/11-20/Diss_Cb-Cb2.pdf, id=422, 1203.186pt x 361.9829pt>
 File: figures/11-20/Diss_Cb-Cb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diss_Cb-Cb2.pdf>
-Package pdftex.def Info: figures/11-20/Diss_Cb-Cb2.pdf used on input line 498.
+Package pdftex.def Info: figures/11-20/Diss_Cb-Cb2.pdf used on input line 501.
 (pdftex.def)             Requested size: 314.07332pt x 94.48892pt.
 
-<figures/11-20/Diss_Cb-Cb3.pdf, id=419, 1206.67169pt x 363.87859pt>
+<figures/11-20/Diss_Cb-Cb3.pdf, id=423, 1206.67169pt x 363.87859pt>
 File: figures/11-20/Diss_Cb-Cb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diss_Cb-Cb3.pdf>
-Package pdftex.def Info: figures/11-20/Diss_Cb-Cb3.pdf used on input line 500.
+Package pdftex.def Info: figures/11-20/Diss_Cb-Cb3.pdf used on input line 503.
 (pdftex.def)             Requested size: 314.07332pt x 94.70613pt.
 
-<figures/11-20/Diff-OH_Cb2-iCb2.pdf, id=420, 1202.80127pt x 361.82608pt>
+<figures/11-20/Diff-OH_Cb2-iCb2.pdf, id=424, 1202.80127pt x 361.82608pt>
 File: figures/11-20/Diff-OH_Cb2-iCb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-OH_Cb2-iCb2.pdf>
 Package pdftex.def Info: figures/11-20/Diff-OH_Cb2-iCb2.pdf used on input line 
-502.
+505.
 (pdftex.def)             Requested size: 314.07332pt x 94.47559pt.
 
-<figures/11-20/Diff-OH_Cb2-iCa2.pdf, id=421, 1202.54886pt x 362.04207pt>
+<figures/11-20/Diff-OH_Cb2-iCa2.pdf, id=425, 1202.54886pt x 362.04207pt>
 File: figures/11-20/Diff-OH_Cb2-iCa2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-OH_Cb2-iCa2.pdf>
 Package pdftex.def Info: figures/11-20/Diff-OH_Cb2-iCa2.pdf used on input line 
-504.
+507.
 (pdftex.def)             Requested size: 314.07332pt x 94.55408pt.
 
-<figures/11-20/Diff-H_iCa2-iCa3p.pdf, id=422, 1206.04863pt x 362.30223pt>
+<figures/11-20/Diff-H_iCa2-iCa3p.pdf, id=426, 1206.04863pt x 362.30223pt>
 File: figures/11-20/Diff-H_iCa2-iCa3p.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-H_iCa2-iCa3p.pdf>
 Package pdftex.def Info: figures/11-20/Diff-H_iCa2-iCa3p.pdf used on input line
- 511.
+ 514.
 (pdftex.def)             Requested size: 314.07332pt x 94.34561pt.
 
-<figures/11-20/Diff-H_iCb3pp-iCb3ppp.png, id=423, 2278.5125pt x 451.6875pt>
+<figures/11-20/Diff-H_iCb3pp-iCb3ppp.png, id=427, 2278.5125pt x 451.6875pt>
 File: figures/11-20/Diff-H_iCb3pp-iCb3ppp.png Graphic file (type png)
 
 <use figures/11-20/Diff-H_iCb3pp-iCb3ppp.png>
 Package pdftex.def Info: figures/11-20/Diff-H_iCb3pp-iCb3ppp.png used on input 
-line 513.
+line 516.
 (pdftex.def)             Requested size: 314.07332pt x 62.25713pt.
- [21] [22 <./figures/11-20/Diss_Cb-Cb2.pdf> <./figures/11-20/Diss_Cb-Cb3.pdf
+ [22 <./figures/11-20/Diss_Cb-Cb2.pdf> <./figures/11-20/Diss_Cb-Cb3.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/11-20/Diss_Cb-Cb3.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
@@ -1548,59 +1548,59 @@ Cb3ppp.png>] [24]
 chapter 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 534.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\upalpha' on input line 531.
+(hyperref)                removing `\upalpha' on input line 534.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 534.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 534.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 531.
+(hyperref)                removing `subscript' on input line 534.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 534.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 534.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 531.
+(hyperref)                removing `subscript' on input line 534.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 534.
 
 <figures/0001/surf_0K_axes.pdf, id=526, 967.93118pt x 687.71014pt>
 File: figures/0001/surf_0K_axes.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K_axes.pdf>
-Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 542.
+Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 545.
 (pdftex.def)             Requested size: 201.90378pt x 143.44748pt.
 
 <figures/0001/surf_0K-side.pdf, id=527, 1541.76pt x 819.86299pt>
 File: figures/0001/surf_0K-side.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K-side.pdf>
-Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 544.
+Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 547.
 (pdftex.def)             Requested size: 201.90378pt x 107.36156pt.
 
 <figures/0001/0001_mol_top.jpg, id=528, 1042.89626pt x 784.9325pt>
 File: figures/0001/0001_mol_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_mol_top.jpg>
-Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 551.
+Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 554.
 (pdftex.def)             Requested size: 179.4685pt x 135.06564pt.
 
 <figures/0001/0001_1-2-diss_top.jpg, id=529, 1041.8925pt x 783.92876pt>
@@ -1608,7 +1608,7 @@ File: figures/0001/0001_1-2-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-2-diss_top.jpg>
 Package pdftex.def Info: figures/0001/0001_1-2-diss_top.jpg used on input line 
-553.
+556.
 (pdftex.def)             Requested size: 179.4685pt x 135.0245pt.
 
 <figures/0001/0001_1-4-diss_top.jpg, id=530, 1041.8925pt x 785.93625pt>
@@ -1616,7 +1616,7 @@ File: figures/0001/0001_1-4-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-4-diss_top.jpg>
 Package pdftex.def Info: figures/0001/0001_1-4-diss_top.jpg used on input line 
-555.
+558.
 (pdftex.def)             Requested size: 179.4685pt x 135.37027pt.
 
 <figures/0001/0001_1-4p-diss_top_label.pdf, id=531, 833.51402pt x 626.34pt>
@@ -1624,7 +1624,7 @@ File: figures/0001/0001_1-4p-diss_top_label.pdf Graphic file (type pdf)
 
 <use figures/0001/0001_1-4p-diss_top_label.pdf>
 Package pdftex.def Info: figures/0001/0001_1-4p-diss_top_label.pdf used on inpu
-t line 557.
+t line 560.
 (pdftex.def)             Requested size: 179.4685pt x 134.86116pt.
 
 
@@ -1639,14 +1639,14 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 562.
+(scrbook)              by `\normalfont \itshape ' on input line 565.
 
 <figures/0001/perspective+h2o_new.png, id=532, 1222.166pt x 1554.608pt>
 File: figures/0001/perspective+h2o_new.png Graphic file (type png)
 
 <use figures/0001/perspective+h2o_new.png>
 Package pdftex.def Info: figures/0001/perspective+h2o_new.png used on input lin
-e 571.
+e 574.
 (pdftex.def)             Requested size: 179.4685pt x 228.27081pt.
  [25
 
@@ -1674,20 +1674,20 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 576.
+(scrbook)              by `\normalfont \itshape ' on input line 579.
 
 <figures/0001/2H2O.pdf, id=593, 1541.76pt x 819.86299pt>
 File: figures/0001/2H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/2H2O.pdf>
-Package pdftex.def Info: figures/0001/2H2O.pdf used on input line 579.
+Package pdftex.def Info: figures/0001/2H2O.pdf used on input line 582.
 (pdftex.def)             Requested size: 157.04007pt x 83.50482pt.
 
 <figures/0001/4H2O.pdf, id=594, 1541.76pt x 819.86299pt>
 File: figures/0001/4H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/4H2O.pdf>
-Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 581.
+Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 584.
 (pdftex.def)             Requested size: 246.77434pt x 131.21828pt.
  [27 <./figures/0001/perspective+h2o_new.png>]
 
@@ -1702,7 +1702,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 585.
+(scrbook)              by `\normalfont \itshape ' on input line 588.
 
 
 Class scrbook Warning: Usage of deprecated font command `\it'!
@@ -1716,7 +1716,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 586.
+(scrbook)              by `\normalfont \itshape ' on input line 589.
 
 [28 <./figures/0001/2H2O.pdf> <./figures/0001/4H2O.pdf
 
@@ -1737,7 +1737,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 619.
+(scrbook)              by `\normalfont \itshape ' on input line 622.
 
 [30]
 chapter without number
@@ -1766,7 +1766,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 675.
+(scrbook)              by `\normalfont \itshape ' on input line 678.
 
 
 Class scrbook Warning: Usage of deprecated font command `\it'!
@@ -1780,7 +1780,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 679.
+(scrbook)              by `\normalfont \itshape ' on input line 682.
 
 
 Class scrbook Warning: Usage of deprecated font command `\bf'!
@@ -1794,7 +1794,7 @@ Class scrbook Warning: Usage of deprecated font command `\bf'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\bf' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrbook)              by `\normalfont \bfseries ' on input line 679.
+(scrbook)              by `\normalfont \bfseries ' on input line 682.
 
 
 Class scrbook Warning: Usage of deprecated font command `\it'!
@@ -1808,7 +1808,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 679.
+(scrbook)              by `\normalfont \itshape ' on input line 682.
 
 
 Class scrbook Warning: Usage of deprecated font command `\it'!
@@ -1822,7 +1822,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 680.
+(scrbook)              by `\normalfont \itshape ' on input line 683.
 
 
 Class scrbook Warning: Usage of deprecated font command `\bf'!
@@ -1836,7 +1836,7 @@ Class scrbook Warning: Usage of deprecated font command `\bf'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\bf' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrbook)              by `\normalfont \bfseries ' on input line 680.
+(scrbook)              by `\normalfont \bfseries ' on input line 683.
 
 
 Class scrbook Warning: Usage of deprecated font command `\it'!
@@ -1850,7 +1850,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 (scrbook)              Note also, that KOMA-Script will remove the definition
 (scrbook)              of `\it' anytime until release of about version 3.20.
 (scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 680.
+(scrbook)              by `\normalfont \itshape ' on input line 683.
 
 [35
 
@@ -1860,7 +1860,7 @@ Class scrbook Warning: Usage of deprecated font command `\it'!
 ]
 chapter without number
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 713--714
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
 
  []
 
@@ -1869,16 +1869,16 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 719.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 722.
 [38
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 719.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 722.
  (./dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 719.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 719.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 722.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 722.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 3F7D446AE5B75088F02C0A782C21AA7B;2518.
+(rerunfilecheck)             Checksum: F55E7E6815018B52D2178F0A2E85B71B;2518.
 
 
 LaTeX Warning: There were undefined references.
@@ -1915,7 +1915,7 @@ exmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 msy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pf
 b>
-Output written on dissertation.pdf (38 pages, 23333316 bytes).
+Output written on dissertation.pdf (38 pages, 23333754 bytes).
 PDF statistics:
  809 PDF objects out of 1000 (max. 8388607)
  636 compressed objects within 7 object streams

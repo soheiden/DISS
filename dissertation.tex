@@ -453,20 +453,23 @@ The stability of those species with higher water coverage is defined as
 Comparing these results for the higher coverages to results with only one adsorbate, just by adding the adsorption energy one can see the following (see also column 3 in table \ref{tab:higher_water}):
 For all systems the added energy of the singly adsorbed species is more stable than the doubly adsorbed water systems. Instead of stabilizing the whole system, they are destabilized by the adsorption neighborhood, even in structures that contain hydrogen bonds.
 
-\section{Frequencies of OH/OD species}
-A great source of knowledge comes from vibrational spectroscopy, so we were interested in frequencies of the systems. These were calculated for OH and also OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system, so we did all calculations both for H$_2$O and D$_2$O. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in fig.~\ref{abb:exp-sfg}.
+\section{Frequencies of OH/OD Species}
+A great source of knowledge about chemical systems comes from vibrational spectroscopy, so we were interested in frequencies of the systems, since the frequencies of these vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in fig.~\ref{abb:exp-sfg}.
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
  \caption{Experimental SFG results including fit.}
         \label{abb:exp-sfg}
  \end{figure}
-Of course, the frequencies for a deuterated system are different from OH, but the isotope can be calculated easily within vasp. To calculate the modes we mainly applied two methods: Normal mode analyses (see section \ref{nma}) and power spectra from velocity-velocity autocorrelation function (section \ref{vvacf}).
+Of course, the frequencies for a deuterated system are different from OH, but the different isotope names can be calculated easily within vasp by changing the mass. To calculate the modes we mainly applied two methods: Normal mode analyses (see section \ref{nma}) and power spectra from velocity-velocity autocorrelation function (section \ref{vvacf}).
+\\
+The intensities are implicitly in the power spectra and for the normal mode analyses we follow 2 different approaches, dipole corrections and Born effective charges. But mostly we are interested in the position of the modes and not in the relative intensities, because these are not too reliable.
+\\
+In another part, the modes for higher coverage systems are also examined.
 \\
 {\color{red} TODO:
 Listed all frequencies for all possible next neighboring structures are shown but in comparison with the experiment, we only focus on the 3 most stable adsorbate structures, since only those are expected to be seen in experiment.
-\\
-Also results for higher coverage.}
+}
 
 \subsection{Normal Mode Analysis}\label{nma}
 The classical modes calculated with a normal mode analysis are dependent on the mass and the spring constant of the bond.
