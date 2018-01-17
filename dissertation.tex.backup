@@ -282,7 +282,7 @@ Calculation of power spectra via velocity-velocity autocorrelation function from
 \section{Finding Transition States}
 One of the most prominent theories describing the transition state and the rate constants is Eyring theory of transition states {\color{red} figure of reaction path?}. The most important approximations that are made are the following: all particles that reached the transition state will react towards the product. at the transition state geometry, the motion along the reaction coordinate can be separated from all other degrees of freedom and can be seen as a translation.
 The equation for the rate constant is described by
-\begin{equation}
+\begin{equation}\label{eyring}
 k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
 \end{equation}
 with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a tunneling constant prefactor [tunneling corrections (seldomly applied in this work, not mention them here?)], give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
@@ -354,7 +354,7 @@ As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c),
              \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers.}
             \label{abb:crystal_11-20}
      \end{figure}
-\section{Structure Search}
+\section{Structure Search}\label{structure_search11-20}
 First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types, for adsorption energy and Gibb's free energy results see table \ref{tab:ads_1water}. There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
 The adsorption energy is defined by equation \ref{eq:Eads} as the energy of the adsorbed system compared to the energies of the clean surface and the isolated water molecule:
 \begin{equation}\label{eq:Eads}
@@ -432,7 +432,7 @@ Also systems with a higher water coverage were considered, tests for 2 water mol
 
 The stability of those species with higher water coverage is defined as
 \begin{equation}
- E_\textrm{ads}=E_\text{ads. species}-(E_\text{free molecule}\times n+E_\text{surface}),
+ E_\textrm{ads}=E_\text{ads. species}-(E_\text{free water molecule}\times n+E_\text{surface}),
 \end{equation}
  with $n$ being the number of water molecules adsorbed on the surface. In table \ref{tab:higher_water}, the adsorption energies are given.
 \begin{table}[!ht]
@@ -453,34 +453,39 @@ The stability of those species with higher water coverage is defined as
 Comparing these results for the higher coverages to results with only one adsorbate, just by adding the adsorption energy one can see the following (see also column 3 in table \ref{tab:higher_water}):
 For all systems the added energy of the singly adsorbed species is more stable than the doubly adsorbed water systems. Instead of stabilizing the whole system, they are destabilized by the adsorption neighborhood, even in structures that contain hydrogen bonds.
 
-\section{Frequencies of OH/OD Species}
-A great source of knowledge about chemical systems comes from vibrational spectroscopy, so we were interested in frequencies of the systems, since the frequencies of these vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system, so we did all calculations both for H$_2$O and D$_2$O. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in fig.~\ref{abb:exp-sfg}.
-\begin{figure}[!ht]
- \centering
-\includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
- \caption{Experimental SFG results including fit.}
-        \label{abb:exp-sfg}
- \end{figure}
-Of course, the frequencies for a deuterated system are different from OH, but the isotope can be calculated easily within vasp. To calculate the modes we mainly applied two methods: Normal mode analyses (see section \ref{nma}) and power spectra from velocity-velocity autocorrelation function (section \ref{vvacf}).
-\\
-{\color{red} TODO:
-Listed all frequencies for all possible next neighboring structures are shown but in comparison with the experiment, we only focus on the 3 most stable adsorbate structures, since only those are expected to be seen in experiment.
-\\
-Also results for higher coverage.}
-
-\subsection{Normal Mode Analysis}\label{nma}
-The classical modes calculated with a normal mode analysis are dependent on the mass and the spring constant of the bond.
-We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OH group and one for the surface group). We expect 6 frequencies. when evaluating those values one can see that one is out of the experimental range (strongly hydrogen bonded species, wave number is shifted to low $\tilde{\nu}$ and some of the others are except for numerical differences the same, so there should be only 3 bands visible. Very good agreement with the experimental modes. The numbers itself do not compare too good, but the relative modes are in really good agreement.
-\\
-Comparison of different slab sizes.
-\\
-Comparison of intensities with dipole corrections and Born effective charges.
-
-\subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
-Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate Modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage?
 
 \section{Reactions and Microkinetic Model}\label{reactions}
-Based on the minimum structures one has to identify reaction pathways to fully understand a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 types of reactions: dissociation, OH-diffusion and H-diffusion. Since the molecular minimum is very low in stability, and also the barrier is very low for the process. 
+Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH-diffusion and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df in table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}.
+\\
+Two different dissociation reactions were analyzed. As can be seen from chapter \ref{structure_search11-20} (table \ref{tab:ads_1water}), the molecular minimum is compared to the dissociated minima very low in stability. The first reaction, D-I leads from the molecular minimum at CUSb to the two-fold coordinated CUSb$\parallel$O-$\mu_2$. The barrier is very low for this dissociation process, see figure \ref{mep}(a). The barrier is very small, about $0.002\,$eV as one can see from table \ref{tab:reaction-rates}, hence the reaction rate constant is very high, in the range of $10^{12}\,$s$^{-1}$. This barrier is very low and might be due to underestimation of barrier heights with the used functional. For the other dissociation reaction D-II from CUSb to CUSb$\parallel$O-$\mu_3$, there is no barrier found at all, the reaction pathway shows simply an upgoing path without any barrier, since the molecular minimum is by $0.15\,$eV more stable than the dissociated structure on CUSb$\parallel$O-$\mu_3$. The OD diffusion reaction Df-OD-III moves from CUSb$\parallel$O-$\mu_2$ to the inter-CUSb position, which is 
+\\
+\begin{table*}[ht]
+  \centering
+  \caption{{\it Reaction rates for selected reaction paths examined. $\Delta 
+E=E(\textrm{product}) - E(\textrm{educt})$, $\Delta E^{\ddagger}=E^\ddagger - 
+E(\textrm{educt})$, respectively for the free energy, $G$, obtained from PBE+D2 
+calculations. $k$ is the rate constant from eq.~(\ref{eyring}). Thermodynamic 
+quantities and rates are given for $T=300\,$ K. ``n.f.'' indicates ``not found''. 
+The reactions are either water dissociation (D), OH 
+diffusion (Df-OH) or H diffusion (Df-H).}}
+  \begin{tabular}{cl|cc|cc|c}
+  \multicolumn{2}{c|}{\small{Reaction Type}}             & \small{$\Delta E$(eV)}& \small{$\Delta G_\text{300 K}$(eV)} & \small{$\Delta E^{\ddagger}$(eV)} & \small{$\Delta G_\text{300 K}^{\ddagger}$(eV)} & \small{$k_\text{300 K}$(s$^{-1}$)}  \\
+    \hline
+\multirow{2}{*}{\small{\ce{H2O} dissociation}} &
+   \small{D-I}  & \small{-0.50} & \small{-0.52} & \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\
+ & \small{D-II} & \small{0.59} & \small{0.53} & \small{n.f.} & \small{n.f.} & \small{n.f.} \\
+    \hline
+ \multirow{2}{*}{\small{OH diffusion}} &
+   \small{Df-OH-III} & \small{0.19} & \small{0.22} & \small{0.35} & \small{0.39} & \small{1.88 $\times  10^6$}\\
+ & \small{Df-OH-IV}  & \small{-0.21} & \small{-0.13} & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\
+    \hline
+\multirow{2}{*}{\small{H diffusion}} &
+  \small{Df-H-V}  & \small{1.08} & \small{1.04} & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\
+& \small{Df-H-VI} & \small{-0.06} & \small{-0.07} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\
+  \end{tabular}
+  \label{tab:reaction-rates}
+\end{table*}
+\\
 Also tried to study the adsorption/desorption process but didn't find a barrier, energy profile behaves smoothly from water molecule above the surface to the adsorbed water system.
 \\
 Problem of GGA underestimating barriers is well known. {\color{red} Optimizing structure with HSE06 is nearly impossible due to high cost and doing single point calculations on the PBE transition state is not very accurate and doesn't deliver better results. (at least for crystal calculations... so don't bring it her?)}
@@ -492,7 +497,8 @@ For the OH diffusion we find  that a special case of CUSb to inter-CUSb diffusio
 Proton diffusion reactions are way more variable giving reaction rates at $300\,$K ranging from $10^{-x}$ to $10^{+y}$s$^{-1}$. The barriers and therefore also rate constants for H-diffusion cover a wider range depending on the distance between OH and H and of course more importantly on the fact between which type of O$\mu_2$ the proton is diffusing.
 \\
 Also reactions leading to a not next-neighbored situation, increasing the distance between OH and H are also not favorable since gemoetries with the residues further apart are energetically less stable.
-
+\\
+{\color{red} what about backreactions?}
 \begin{figure*} [!ht]
 \centering
 \subfigure[D-I: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.7\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
@@ -517,10 +523,46 @@ Also reactions leading to a not next-neighbored situation, increasing the distan
 
 {\color{red} add newly started iCb2'-iCb3pp and the path from iCb3 over iCb2' over iCb3pp to iCb3ppp as an example for proton diffusion pathways.}
 
-\section{Lattice Vibrations}\label{phonons}
+
+\section{Vibrational Frequencies / Spectroscopic Properties}
+A great source of knowledge about chemical systems comes from vibrational spectroscopy, so we were interested in frequencies of the systems, since the frequencies of these vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in fig.~\ref{abb:exp-sfg}.
+\begin{figure}[!ht]
+ \centering
+\includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
+ \caption{Experimental SFG results including fit.}
+        \label{abb:exp-sfg}
+ \end{figure}
+Of course, the frequencies for a deuterated system are different from OH, but the different isotope names can be calculated easily within vasp by changing the mass. To calculate the modes we mainly applied two methods: Normal mode analyses (see section \ref{nma}) and power spectra from velocity-velocity autocorrelation function (section \ref{vvacf}).
+\\
+The intensities are implicitly in the power spectra and for the normal mode analyses we follow 2 different approaches, dipole corrections and Born effective charges. But mostly we are interested in the position of the modes and not in the relative intensities, because these are not too reliable.
+\\
+In another part, the modes for higher coverage systems are also examined.
+\\
+{\color{red} TODO:
+Listed all frequencies for all possible next neighboring structures are shown but in comparison with the experiment, we only focus on the 3 most stable adsorbate structures, since only those are expected to be seen in experiment.
+}
+\subsection{OH/OD Vibrations}
+\subsubsection{Normal Mode Analysis}\label{nma}
+The classical modes calculated with a normal mode analysis are dependent on the mass and the spring constant of the bond.
+We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OH group and one for the surface group). We expect 6 frequencies. when evaluating those values one can see that one is out of the experimental range (strongly hydrogen bonded species, wave number is shifted to low $\tilde{\nu}$ and some of the others are except for numerical differences the same, so there should be only 3 bands visible. Very good agreement with the experimental modes. The numbers itself do not compare too good, but the relative modes are in really good agreement.
+\\
+Comparison of different slab sizes.
+\\
+Comparison of intensities with dipole corrections and Born effective charges.
+
+\subsubsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
+Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate Modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage?
+
+\subsection{Lattice Vibrations}\label{phonons}
 For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers, both for the naked surface and for the covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses.
 
+
 \section{Desorption Process}
+calculation with NEB didn't lead to anything, there is no barrier visible
+\begin{verbatim}
+  /und/sophia/bigger-cell_newcrystalcut/2x2cell/2layers/gasphase-physisorbed
+\end{verbatim}
+
 As mentioned before the experimentalists measure TPD in order to understand the adsorption strength and possible exchange reactions. We tried to simulate the desorption process using the following scheme: take the water in the gas phase + the naked surface as the standard. In the thermal equilibrium, the water should be equally distributed to Boltzman's distribution in the most stable structures. From this situation the water can recombine to the molecularly adsorbed water. The recombined water then can desorb to the gas phase. Since the spectrum is measured in ultra high vacuum it can be assumed that all the water that has left the surface will not return to the system, because it is dragged out of the equilibrium by the vacuum pumps.
 Applying the reaction rates of the corresponding reactions in a kinetic Monte Carlo approach leads to 
 {\color{red} REDO THESE CALCULATIONS}.

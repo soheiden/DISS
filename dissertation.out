@@ -16,21 +16,20 @@
 \BOOKMARK [0][-]{chapter.2}{Water on -Al2O3\(1120\)}{}% 16
 \BOOKMARK [1][-]{section.2.1}{Surface Model}{chapter.2}% 17
 \BOOKMARK [1][-]{section.2.2}{Structure Search}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.3}{Frequencies of OH/OD Species}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.3.1}{Normal Mode Analysis}{section.2.3}% 20
-\BOOKMARK [2][-]{subsection.2.3.2}{Velocity-Velocity Autocorrelation Function}{section.2.3}% 21
-\BOOKMARK [1][-]{section.2.4}{Reactions and Microkinetic Model}{chapter.2}% 22
-\BOOKMARK [1][-]{section.2.5}{Lattice Vibrations}{chapter.2}% 23
-\BOOKMARK [1][-]{section.2.6}{Desorption Process}{chapter.2}% 24
-\BOOKMARK [0][-]{chapter.3}{Water on -Al2O3\(0001\)}{}% 25
-\BOOKMARK [1][-]{section.3.1}{Surface Model}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.2}{AIMD for Dissociation Process}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.2.1}{Microcanonical}{section.3.2}% 28
-\BOOKMARK [2][-]{subsection.3.2.2}{Canonical}{section.3.2}% 29
-\BOOKMARK [1][-]{section.3.3}{Improvement of Reaction Rates}{chapter.3}% 30
-\BOOKMARK [2][-]{subsection.3.3.1}{MP2 and B3LYP}{section.3.3}% 31
-\BOOKMARK [2][-]{subsection.3.3.2}{PIMD}{section.3.3}% 32
-\BOOKMARK [2][-]{subsection.3.3.3}{QM/QM Embedding Scheme}{section.3.3}% 33
-\BOOKMARK [0][-]{chapter*.19}{Summary}{}% 34
-\BOOKMARK [0][-]{chapter*.21}{Appendix}{}% 35
-\BOOKMARK [0][-]{chapter*.24}{References}{}% 36
+\BOOKMARK [1][-]{section.2.3}{Reactions and Microkinetic Model}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.4}{Vibrational Frequencies / Spectroscopic Properties}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.4.1}{OH/OD Vibrations}{section.2.4}% 21
+\BOOKMARK [2][-]{subsection.2.4.2}{Lattice Vibrations}{section.2.4}% 22
+\BOOKMARK [1][-]{section.2.5}{Desorption Process}{chapter.2}% 23
+\BOOKMARK [0][-]{chapter.3}{Water on -Al2O3\(0001\)}{}% 24
+\BOOKMARK [1][-]{section.3.1}{Surface Model}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{AIMD for Dissociation Process}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.2.1}{Microcanonical}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.2}{Canonical}{section.3.2}% 28
+\BOOKMARK [1][-]{section.3.3}{Improvement of Reaction Rates}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.1}{MP2 and B3LYP}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.2}{PIMD}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.3}{QM/QM Embedding Scheme}{section.3.3}% 32
+\BOOKMARK [0][-]{chapter*.22}{Summary}{}% 33
+\BOOKMARK [0][-]{chapter*.24}{Appendix}{}% 34
+\BOOKMARK [0][-]{chapter*.27}{References}{}% 35
