@@ -455,9 +455,49 @@ For all systems the added energy of the singly adsorbed species is more stable t
 
 
 \section{Reactions and Microkinetic Model}\label{reactions}
-Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH-diffusion and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df in table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}.
+Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH-diffusion and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df in table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}. In reference {\color{red} 11-20paper} only some reactions were introduced, additional reactions paths are given.
 \\
-Two different dissociation reactions were analyzed. As can be seen from chapter \ref{structure_search11-20} (table \ref{tab:ads_1water}), the molecular minimum is compared to the dissociated minima very low in stability. The first reaction, D-I leads from the molecular minimum at CUSb to the two-fold coordinated CUSb$\parallel$O-$\mu_2$. The barrier is very low for this dissociation process, see figure \ref{mep}(a). The barrier is very small, about $0.002\,$eV as one can see from table \ref{tab:reaction-rates}, hence the reaction rate constant is very high, in the range of $10^{12}\,$s$^{-1}$. This barrier is very low and might be due to underestimation of barrier heights with the used functional. For the other dissociation reaction D-II from CUSb to CUSb$\parallel$O-$\mu_3$, there is no barrier found at all, the reaction pathway shows simply an upgoing path without any barrier, since the molecular minimum is by $0.15\,$eV more stable than the dissociated structure on CUSb$\parallel$O-$\mu_3$. The OD diffusion reaction Df-OD-III moves from CUSb$\parallel$O-$\mu_2$ to the inter-CUSb position, which is relatively fast for OD diffusion reactions compared to the reactions at other alumina surfaces. In this special reaction, the OH residue diffuses from an on top CUS position into a gap between two CUSb atoms, so that there is not much interaction with neighboring surface oxygen atoms and other CUS atoms nearby. In contrast to that the reaction Df-OH-IV is much slower. It is a diffusion from CUSb to inter-CUSa with the hydrogen residue staying at an O-$\mu_2$ position. This barrier is with $1.07\,$eV higher. {\color{red} continue here!!!!!!}
+We investigated 5 different dissociation reactions, 2 of them converged but showed a two step process and are therefore not interesting in the first place ({\color{blue} put them into appendix?}). One additional dissociation starts from the metastable inter-CUSa molecular structure that is, as was shown before, no minimum structure. The two that were already shown in the publication {\color{red} 11-20paper} are the reactions from CUSb to the two fold coordinated oxygen and one to the three fold coordinated O. These dissociation reactions are labeled D-a, D-b and D-c:
+ \begin{equation} \label{dissa}
+ \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \tag{D-a}
+\end{equation}
+\begin{equation}
+  \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{D-b}
+      \label{dissb}
+\end{equation}
+\begin{equation}
+  \text{H$_2$O(inter-CUSa)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{D-c}
+      \label{dissc}
+\end{equation}
+As can be seen from chapter \ref{structure_search11-20} (table \ref{tab:ads_1water}), the molecular minimum CUSb is very low in stability compared to the dissociated minima. The first reaction, D-a leads from the molecular minimum at CUSb to the two-fold coordinated CUSb$\parallel$O-$\mu_2$. The barrier is very low for this dissociation process, see figure \ref{mep}(a). The barrier is very small, about $0.002\,$eV as one can see from table \ref{tab:reaction-rates}, hence the reaction rate constant is very high, in the range of $10^{12}\,$s$^{-1}$. This barrier is very low and might be due to underestimation of barrier heights with the used functional. For the other dissociation reaction D-b from CUSb to CUSb$\parallel$O-$\mu_3$, there is no barrier found at all, the reaction pathway shows simply an upgoing path in energy without any barrier, since the molecular minimum is by $0.15\,$eV more stable than the dissociated structure on CUSb$\parallel$O-$\mu_3$. A further dissociation D-c from the metastable inter-CUSa species also shows no barrier, probably because the educt is no real minimum. {\color{green} optimizations with the intact water molecule placed over CUSb and inter-CUSa lead to a intermittent structure of a molecularly adsorbed species which dissociated later for both cases.}
+\\
+The OD diffusion reaction Df-OH-a moves from CUSb$\parallel$O-$\mu_2$ to the inter-CUSb position, which is relatively fast for OD diffusion reactions compared to the reactions at other alumina surfaces. In this special reaction, the OH residue diffuses from an on top CUS position into a gap between two CUSb atoms, so that there is not much interaction with neighboring surface oxygen atoms and other CUS atoms nearby. In contrast to that the reaction Df-OH-b   is much slower. It is a diffusion from CUSb to inter-CUSa with the hydrogen residue staying at an O-$\mu_2$ position. This barrier is with $1.07\,$eV higher.
+\begin{equation}
+ \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{Df-OH-a}
+     \label{diffOHa}
+\end{equation}
+\begin{equation}
+ \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_2$)} \tag{Df-OH-b}
+     \label{diffOHb}
+\end{equation}
+\\
+H diffusion:
+\begin{equation}
+ \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{Df-H-a}
+     \label{diffHa}
+\end{equation}
+\begin{equation}
+ \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_3$)} \tag{Df-H-b}
+     \label{diffHb}
+\end{equation}
+\begin{equation}
+ \text{OH(inter-CUSb)} + \text{H(O-$\mu_2^{(\prime)}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \tag{Df-H-c}
+     \label{diffHc}
+\end{equation}
+\begin{equation}
+ \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime\prime}$)} \tag{Df-H-d}
+     \label{diffHd}
+\end{equation}
 \\
 \begin{table*}[ht]
   \centering
@@ -699,7 +739,7 @@ Christiane Wunderlich who was my school teacher in chemistry, without whom I wou
 %\renewcommand*{\chapterheadstartvskip}{\vspace*{-\baselineskip}}
 \addchap{Appendix}
 %\endgroup
-
+reaction pathways: dissociationCb-iCa2 and Cb-iCb2?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
