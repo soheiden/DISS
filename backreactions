@@ -1,0 +1,10 @@
+reaction	&reaction rate	&rate backreaction	 &$\delta$E$&\delta$G&$\delta$E$^\ddagger$&$\delta$G$^\ddagger$\\
+D-a		&$5.76\times 10^{12}$&$1.17\times 10^{4}$	&0.50	&0.52	&0.51	&0.52 	\\
+D-b		&-		&-			&	&	&	&	\\
+D-c		&-		&-			&	&	&	&	\\
+Df-OH-a		&$1.88\times 10^6$	&$9.87\times 10^9$	&-0.19	&-0.22	&0.15	&0.17	\\
+Df-OH-b		&$2.4\times 10^{-6}$	&$1.69\times 10^{-8}$	&0.21	&0.13	&1.29	&1.22	\\
+Df-H-a		&?		&			&	&	&	&	\\
+Df-H-b		&$4.90\times 10^{-13}$&$1.49\times 10^{5}$	&-1.08	&-1.04	&0.57	&0.45	\\
+Df-H-c		&still running  &			&	&	&	&	\\
+Df-H-d		&$1.05\times 10^{-3}$	&$7.12\times 10^{-5}$	&0.06	&0.07	&1.12	&1.01	\\

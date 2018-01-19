@@ -58,7 +58,7 @@
 \addtokomafont{chapter}{\LARGE}
 \addtokomafont{section}{\Large}
 \addtokomafont{subsection}{\large}
-\addtokomafont{subsubsection}{\large\sffamily\it}
+\addtokomafont{subsubsection}{\large\sffamily\textit}
 
 %Captions anpassen
 \setcapindent{1em}
@@ -245,7 +245,7 @@ To describe periodic systems with quantum mechanical methods, one has to introdu
 Problem of plane waves for necessity of atom centered bases; Whenver there are atom centered basid sets the orbitals can overlap and due to this electrons are considered multiple times. This is called Basis Set Superposition Error (BSSE). One can apply Counterpoise corrections to get rid of this source of error. This is done here by calculating ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms. Then one applies a substractive scheme to cancel out the effect of the orbital overlap. On the other hand one can use a huge basis set, that doesn't have this problem, which comes with a higher computational demand.
 
 
-\section{{\it Ab-initio} Molecular Dynamics}
+\section{{\textit Ab-initio} Molecular Dynamics}
 Microcanonical and Canonical ensemble, also called NVT and NVE. Difference between the two, N number of (?), V volume of the cell, T temperature and E energy; are kept constant. theory behind, calcuation of time propagation with Verlet algorithm, time steps chosen so that we don't miss the fastest processes, forces acting on atoms, Nos\'{e} Hoover thermostat.
 \\
 Solve Newton's equations of motion, in principle $F=m\cdot a$ for force acting on each atom, classical ansatz.
@@ -288,7 +288,7 @@ k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
 with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a tunneling constant prefactor [tunneling corrections (seldomly applied in this work, not mention them here?)], give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
 To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of associated images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First a regular NEB, then afterwards climbing image was done which gives better convergence. In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode, that vibrates alongside the reaction path.
 
-\section{From Density Functionals to Hybrids and Perturbation Theory}
+\section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
 In this work we also want to go beyond GGA (here the PBE functional), because it is known to underestimate reaction rates. Since we are interested in reaction kinetics it therefore is desirable to use more sophisticated methods to improve the rates. The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential.
 \\
 Another ansatz is using Local M\o{}ller Plesset Peturbation Theory of 2$^{\textrm{nd}}$ order (LMP2) as implemented in crystal/cryscor. These calculations are way more computationally demanding but offer better results on a higher level of theory.
@@ -341,7 +341,7 @@ $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times
 \\
 Starting from this supercell approach there are 16 CUS Al-atoms (cordinatively unsaturated sites), these have less bonds than the aluminum atoms in the bulk structure since the surface layers has to be  depleted. These atoms are very interesting for adorbate molecules/atoms, because these atoms are electron rich and can be addressed for adsorption. If these 16 atoms are covered with adsorbates, here water, we get the system with 1 mono layer (ML). But one has to keep in mind the difference between these 16 surface atoms and the number of potential adsorbates: one monolayer is not built by 16 adsorbates since not all 16 CUS positions can be covered, but only 12, as is shown later (bridging water adsorption).
 \\
-As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa, the two-fold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the three-fold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
+As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa, the twofold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the threefold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
 \begin{figure}[!h]
     \centering
     \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
@@ -364,7 +364,7 @@ The adsorption energy is defined by equation \ref{eq:Eads} as the energy of the 
 The nomenclature for the adsorption sites that is used in the following gives at first the type of Al site where the OH-residue (OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH-site$\parallel$H-site). The notation with the $\prime$ that will occur later denotes greater distances between the residues.
 \begin{table}[!ht]
   \centering
- \caption{{\it change text! Adsorption energies as calculated from equation \ref{eq:Eads}
+ \caption{{\textit change text! Adsorption energies as calculated from equation \ref{eq:Eads}
  for molecular and (singly) dissociated water on $\upalpha$-\ce{Al2O3}(11\=20)
 according to periodic PBE+D2 calculations. Also the corresponding 
 adsorption free energies $G_\textrm{ads}$ at $130$, $300$ and $400\,$K defined 
@@ -377,11 +377,11 @@ energies are given in eV.}
 \hline
 \multirow{1}{*}{molecular} & CUSb          &   -1.78  &-1.60 & -1.51  & -1.46 \\
   \hline
- \multirow{6}{*}{dissociated} & \bf inter-CUSa||O-$\mu_2$ & \bf-2.50 &-2.27 & -2.16 & -2.09 \\
+ \multirow{6}{*}{dissociated} & \textbf inter-CUSa||O-$\mu_2$ & \bf-2.50 &-2.27 & -2.16 & -2.09 \\
   & inter-CUSa||O-$\mu_3$ & -1.67 &-1.44 &-1.33 & -1.27 \\
-  & \bf CUSb||O-$\mu_2$ & \bf -2.28 & -2.12& -2.03 &-1.97  \\
+  & \textbf CUSb||O-$\mu_2$ & \textbf -2.28 & -2.12& -2.03 &-1.97  \\
  & CUSb||O-$\mu_3$ & -1.19 &-1.05 &-0.98 & -0.95 \\%Cb3_other
- & \bf inter-CUSb||O-$\mu_2$ & \bf -2.09 &-1.88 &-1.80 & -1.76 \\
+ & \textbf inter-CUSb||O-$\mu_2$ & \textbf -2.09 &-1.88 &-1.80 & -1.76 \\
  & inter-CUSb||O-$\mu_3$ & -1.89 &-1.71 & -1.63 & -1.58 \\
   \end{tabular}
   \label{tab:ads_1water}
@@ -401,7 +401,7 @@ energies are given in eV.}
 \subfigure[CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb3.pdf}}
  \quad
 \subfigure[inter-CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb3.pdf}}
- \caption{{\it change text! Adsorption geometries for molecular (a) and (six) dissociated water 
+ \caption{{\textit change text! Adsorption geometries for molecular (a) and (six) dissociated water 
 molecules ((b)-(g)) are shown, as obtained by periodic PBE+D2. The most favorable 
 molecularly and dissociatively adsorbed configurations are shown. This means that 
 we show nearest neighbor structures only (see text). The color code is the same 
@@ -409,7 +409,7 @@ as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2
 \mu_3$ red; Hydrogen is displayed in white, subsurface layers are in pale colors.}}
         \label{abb:ads-geoms}
  \end{figure}
-The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, also in comparison with the more stable surface cuts (0001) and (1\=102) that were investigated before in our group by Dr. Jonas Wirth\cite{C6CP01397J,WirthJPCC2012}. Dissociated species, where the proton is located at a two-fold coordinated surface oxygen is far more stable than the corresponding systems where the three-fold coordinated is occupied, since the higher negative charge and the higher basicity of such a two-folded oxygen atom in comparison with the more saturated three-fold coordinated O-$\mu_3$ oxygen atom. Also the adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site, because the former corresponds to a site where in the bulk system another oxygen atom would be situated, which is not the case for the CUSb position.
+The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, also in comparison with the more stable surface cuts (0001) and (1\=102) that were investigated before in our group by Dr. Jonas Wirth\cite{C6CP01397J,WirthJPCC2012}. Dissociated species, where the proton is located at a twofold coordinated surface oxygen is far more stable than the corresponding systems where the threefold coordinated is occupied, since the higher negative charge and the higher basicity of such a twofolded oxygen atom in comparison with the more saturated threefold coordinated O-$\mu_3$ oxygen atom. Also the adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site, because the former corresponds to a site where in the bulk system another oxygen atom would be situated, which is not the case for the CUSb position.
 \\
 Dissociated species in direct neighborhood as shown in table \ref{tab:ads_1water} and figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H. In the table one can see, that the inter-CUSb||O-$\mu_3^{\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^\prime$. This is due to the fact, that the periodic conditions lead to the decrease of the distance between OH groups again, so that between 3 neighboring OH groups in the O-$\mu_3^\prime$ system the distances are $0.68$ and $0.77\,$nm, whereas in the O-$\mu_3^{\prime\prime}$ system the distances are $0.93$ and $0.62\,$nm, where the latter one is closer by, so there is more stabilization. For examples of further diffusion reactions, see chapter \ref{reactions}.
 \begin{table}[!ht]
@@ -455,17 +455,17 @@ For all systems the added energy of the singly adsorbed species is more stable t
 
 
 \section{Reactions and Microkinetic Model}\label{reactions}
-Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH-diffusion and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df in table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}. In reference {\color{red} 11-20paper} only some reactions were introduced, additional reactions paths are given.
+Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH- and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df-OH and Df-H, respectively, in table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}. In reference {\color{red} 11-20paper} only some reactions were introduced, additional reactions paths are given here.
 \\
-We investigated 5 different dissociation reactions. The two that were already shown in the publication {\color{red} 11-20paper} are the reactions from CUSb to the two fold coordinated oxygen (D-a) and one to the three fold coordinated O (D-b). One additional dissociation starts from the metastable inter-CUSa molecular structure that is, as was shown before, no minimum structure end goes to the most stable species inter-CUSa$\parallel$O-$\mu_2$ (D-c). 2 dissociation reactions converged but showed a two step process and are therefore not interesting in the first place (these reactions are CUSb$\rightarrow$inter-CUSa$\parallel$O-$\mu_2$ and CUSb$\rightarrow$inter-CUSb$\parallel$O-$\mu_2$ {\color{blue} put them into appendix?}).
-As can be seen from chapter \ref{structure_search11-20} (table \ref{tab:ads_1water}), the molecular minimum CUSb is very low in stability compared to the dissociated minima. The first reaction, D-a leads from the molecular minimum at CUSb to the two-fold coordinated CUSb$\parallel$O-$\mu_2$.
+We investigated 5 different dissociation reactions. The two that were already shown in the publication {\color{red} 11-20paper} are the reactions from CUSb to the twofold coordinated oxygen (D-a) and one to the threefold coordinated O (D-b). One additional dissociation starts from the metastable inter-CUSa molecular structure that is, as was shown before, no minimum structure and goes to the most stable species inter-CUSa$\parallel$O-$\mu_2$ (D-c). 2 further dissociation reactions converged but showed a two step process and are therefore not interesting in the first place (these reactions are CUSb$\rightarrow$inter-CUSa$\parallel$O-$\mu_2$ and CUSb$\rightarrow$inter-CUSb$\parallel$O-$\mu_2$ and both went via the dissociated CUSb$\parallel$O-$\mu2$ intermediate {\color{blue} put them into appendix?}).
+As can be seen from chapter \ref{structure_search11-20} (table \ref{tab:ads_1water}), the molecular minimum CUSb is very low in stability compared to the dissociated minima. The reaction D-a leads from the molecular minimum at CUSb to the twofold coordinated CUSb$\parallel$O-$\mu_2$:
  \begin{equation}
  \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \tag{D-a}
       \label{dissa}
 \end{equation}
-The barrier is very low, about $0.002\,$eV as one can see from table \ref{tab:reaction-rates} and figure \ref{mep}(a), hence the reaction rate constant is very high, in the range of $10^{12}\,$s$^{-1}$. This low barrier might be due to underestimation of barrier heights with the used functional PBE.
+The barrier is very low, about $0.002\,$eV as one can see from table \ref{tab:reaction-rates} and figure \ref{mep}(a), hence the reaction rate constant is very high, in the range of $k_{\text{300K}}=10^{12}\,$s$^{-1}$. This low barrier might be due to underestimation of barrier heights with the used functional PBE (compare chapter {\color{red} citation x}, \ref{theorybeyond}).
 \\ 
-For the other dissociation reaction D-b from CUSb to CUSb$\parallel$O-$\mu_3$, there is no barrier found at all, the reaction pathway shows simply an upgoing path in energy without any barrier, since the molecular minimum is by $0.15\,$eV more stable than the dissociated structure on CUSb$\parallel$O-$\mu_3$. 
+For the other dissociation reaction D-b from CUSb to CUSb$\parallel$O-$\mu_3$, there is no barrier found at all, the reaction pathway shows simply an upgoing path in energy without any barrier, since the molecular minimum is by $0.15\,$eV more stable than the dissociated structure on CUSb$\parallel$O-$\mu_3$. Thus, no reaction rate constant can be calculated.
 \begin{equation}
   \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{D-b}
       \label{dissb}
@@ -475,53 +475,58 @@ A further dissociation D-c from the metastable inter-CUSa species also shows no 
   \text{H$_2$O(inter-CUSa)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{D-c}
       \label{dissc}
 \end{equation}
-{\color{green} optimizations with the intact water molecule placed over CUSb and inter-CUSa lead to a intermittent structure of a molecularly adsorbed species which dissociated later for both cases.}
+On the other hand reaction D-b does also not show a barrier, so it remains unclear whether it is due to methodology or the barrier is too low to be detected with the settings applied for the calculations.
+To consider this, geometry optimizations were done where an intact water molecule was planted right above a CUSb and an inter-CUSa position {\color{red} (did I also do MD for this?)}, with the result that one could see in both cases an intermittend molecularly adsorbed structure, that dissociated afterwards to the more stable twofold coordinated oxygen atom.
 \\
-The OD diffusion reaction Df-OH-a moves from CUSb$\parallel$O-$\mu_2$ to the inter-CUSb position, which is relatively fast for OD diffusion reactions compared to the reactions at other alumina surfaces.
+Apart from dissociation that is highly favoured on this surface cut compared to more stable alumina surfaces, diffusion reactions starting from the dissociated species are important for understanding processes.
+The OD diffusion reaction Df-OH-a moves from CUSb$\parallel$O-$\mu_2$ to the inter-CUSb position, which is relatively fast for OD diffusion reactions compared to the reactions at other alumina surfaces {\color{red} cite Jonas}.
 \begin{equation}
- \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{Df-OH-a}
+ \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_2$)} \tag{Df-OH-a}
      \label{diffOHa}
 \end{equation}
-In this special reaction, the OH residue diffuses from an on top CUS position into a gap between two CUSb atoms, so that there is not much interaction with neighboring surface oxygen atoms and other CUS atoms nearby during the diffusion.
-In contrast to that the reaction Df-OH-b is much slower. It is a diffusion from CUSb to inter-CUSa with the hydrogen residue staying at an O-$\mu_2$ position. This barrier is with $1.07\,$eV higher.
+In this special reaction, the OH residue diffuses from an on top CUS position into a gap between two CUSb atoms, so that there is not much repulsion with neighboring surface oxygen atoms and other CUS atoms nearby during the diffusion. ALso the distance that has to be bridged is very small. The barrier height equals $0.35\,$eV and the corresponding rate constant $k_{\text{300K}}=1.88\times 10^6$s$^{-1}$.
+In contrast to that the real CUS-to-CUS reaction Df-OH-b that is much slower. It is a diffusion from CUSb to inter-CUSa with the hydrogen residue staying at an O-$\mu_2$ position. This barrier is with $1.07\,$eV relatively high and leads to $k_{\text{300K}}=2.41\times 10^{-6}$s$^{-1}$.
 \begin{equation}
- \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_2$)} \tag{Df-OH-b}
+ \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{Df-OH-b}
      \label{diffOHb}
 \end{equation}
-This is more in the range of OH diffusion reactions for other alumina surfaces (compare to doctoral thesis of Dr. Jonas Wirht, UP 2016??), where the rates for the (0001) surface is $10^{x}$s$^{-1}$ and for the (1\=102) surface the corresponding process is around $10^{y}$s$^{-1}$. {\color{red} check these numbers in Jonas' thesis!}
+This is still faster than OH diffusion reaction for the (0001) alumina surface ({\color{red} cite Jonas} and compare to doctoral thesis of Dr. Jonas Wirth, UP 2016), where the rates constant $k_{\text{300K}}=4\times 10^{-45}$s$^{-1}$.
+For the (1\=102) surface there was no OH diffusion calculated, but the corresponding H$_2$O diffusion process is around $k_{\text{300K}}=1.4\times 10^{-3}$s$^{-1}$, whereas the H$_2$O diffusion process for the (0001) surface is in the range of $k_{\text{300K}}=8\times 10^{-3}$s$^{-1}$, too. For the (11\=20) surface no H$_2$O diffusion reactions can be observed due to the instability of the molecularly adsorbed species that would rather dissociate than diffuse.
 \\
 A bigger variety can be achieved when looking at H diffusion reactions. The different types of surface oxygen atoms and also the distances between OH and H residue make differences in the observed reactions.
-As seen before, the hydrogen is preferably found on the two fold coordianted oxygen atom, but the reaction to a neighboring three fold coordinated oxygen is very plausible and opens the gate to structures with greater proximity. The reaction takes place with the OH residue being on a CUSb site:
+{\color{blue} As seen before, the hydrogen is preferably found on the twofold coordianted oxygen atom, but the reaction to a neighboring threefold coordinated oxygen is possible and opens the gate to structures with greater proximity. The reaction takes place with the OH residue being on a CUSb site:
 \begin{equation}
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{Df-H-a}
      \label{diffHa}
 \end{equation}
-barrier heigt and rate at $300\,$K...
-A similar reaction starting from the most stable inter-CUSa$\parallel$O-$\mu_2$
+The reaction shows a barrier heigt of $0.95\,$eV, but the NEB transition state has no imaginary frequency so that no rate can be derived, although the NEB path clearly shows a smooth barrier profile.}
+An analogue reaction starting from the most stable inter-CUSa$\parallel$O-$\mu_2$ to the threefold coordinated oxygen is reaction Df-H-b:
 \begin{equation}
- \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_3$)} \tag{Df-H-b}
+ \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_3^\prime$)} \tag{Df-H-b}
      \label{diffHb}
 \end{equation}
-barrier, rate constant at $300\,$K..
-The following reactions deliver structures with increased distance between OH and H residues. As mentioned before, the nomenclature uses for these structures primes ($\prime$) to display the distance.
-This reaction starts with OH sittign on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2\prime$ position, diffusing further away to O-$\mu_3^{\prime\prime}$, which is less in stability:
+the barrier of the free energy is $1.50\,$eV, rate constant at $300\,$K of $4.90\times 10^{-13}$s$^{-1}$. This is so unlikely because a less favored O-$\mu_3$ position is occcupied and this position is also less stabilized by reason of the greater distance of OH$_{\text{surf}}$ and OH$_{\text{ads}}$ groups. This reaction increases the distance to a position further away than next neighbor.
+As mentioned before, the nomenclature for these structures uses different amounts of primes ($\prime$) to display the distance.
+A similar reaction for the with OH sitting on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2\prime$ position, diffusing further away to O-$\mu_3^{\prime\prime}$, which is less in stability:
 \begin{equation}
  \text{OH(inter-CUSb)} + \text{H(O-$\mu_2^{(\prime)}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \tag{Df-H-c}
      \label{diffHc}
 \end{equation}
-this reaction is not ready yet; barrier and rate constant.
-The last reaction leads to the position where OH and H have the greatest possible distance with the applied periodic bounding conditions:
+{\color{green} this reaction is not ready yet; barrier and rate constant has to be calculated.}
+
+Going one step further from reaction Df-H-d, the last reaction leads to the position where OH and H have the greatest possible distance with the applied periodic bounding conditions:
 \begin{equation}
  \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime\prime}$)} \tag{Df-H-d}
      \label{diffHd}
 \end{equation}
-rate constant and barrier.
+With an energy barrier of $0.94\,$eV the rate at $300\,$K is $1.1\times 10^{-3}$s$^{-1}$.
 \\
-{\color{blue} add here the part with the diffusion part for the proton from next neighbor to highest distance possible!}
+{\color{blue} Possible path from inter-CUSb$\parallel$O-$\mu_3$ to O-$\mu_3^\prime$ to O-$\mu_3^{\prime\prime}$and to the furthest possible O-$\mu_3^{\prime\prime\prime}$. The first reaction was calculated but did not converge for unknown reasons. The two next steps of this hydrogen migration path were studied..
+}
 \\
 \begin{table*}[ht]
   \centering
-  \caption{{\color{red} CHANGE THIS TABLE COMPLETELY!!}{\it Reaction rates for selected reaction paths examined. $\Delta 
+  \caption{{\color{red} CHANGE THIS TABLE COMPLETELY!!}{\textit Reaction rates for selected reaction paths examined. $\Delta 
 E=E(\textrm{product}) - E(\textrm{educt})$, $\Delta E^{\ddagger}=E^\ddagger - 
 E(\textrm{educt})$, respectively for the free energy, $G$, obtained from PBE+D2 
 calculations. $k$ is the rate constant from eq.~(\ref{eyring}). Thermodynamic 
@@ -531,57 +536,57 @@ diffusion (Df-OH) or H diffusion (Df-H).}}
   \begin{tabular}{cl|cc|cc|c}
   \multicolumn{2}{c|}{\small{Reaction Type}}             & \small{$\Delta E$(eV)}& \small{$\Delta G_\text{300 K}$(eV)} & \small{$\Delta E^{\ddagger}$(eV)} & \small{$\Delta G_\text{300 K}^{\ddagger}$(eV)} & \small{$k_\text{300 K}$(s$^{-1}$)}  \\
     \hline
-\multirow{2}{*}{\small{\ce{H2O} dissociation}} &
-   \small{D-I}  & \small{-0.50} & \small{-0.52} & \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\
- & \small{D-II} & \small{0.59} & \small{0.53} & \small{n.f.} & \small{n.f.} & \small{n.f.} \\
+\multirow{3}{*}{\small{\ce{H2O} dissociation}} &
+   \small{D-a}  & \small{-0.50} & \small{-0.52} & \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\
+ & \small{D-b} & \small{0.59} & \small{0.53} & \small{n.f.} & \small{n.f.} & \small{n.f.} \\
+ & \small{D-c} & & & \small{n.f.} & \small{n.f.} & \small{n.f.}  \\
     \hline
  \multirow{2}{*}{\small{OH diffusion}} &
-   \small{Df-OH-III} & \small{0.19} & \small{0.22} & \small{0.35} & \small{0.39} & \small{1.88 $\times  10^6$}\\
- & \small{Df-OH-IV}  & \small{-0.21} & \small{-0.13} & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\
+   \small{Df-OH-a} & \small{0.19} & \small{0.22} & \small{0.35} & \small{0.39} & \small{1.88 $\times  10^6$}\\
+ & \small{Df-OH-b}  & \small{-0.21} & \small{-0.13} & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\
     \hline
-\multirow{2}{*}{\small{H diffusion}} &
-  \small{Df-H-V}  & \small{1.08} & \small{1.04} & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\
-& \small{Df-H-VI} & \small{-0.06} & \small{-0.07} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\
+\multirow{4}{*}{\small{H diffusion}} &
+  \small{Df-H-a} & & & &no TST & \\
+& \small{Df-H-b}  & \small{1.08} & \small{1.04} & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\
+& \small{Df-H-c} & & & &still running & \\
+& \small{Df-H-d} & \small{-0.06} & \small{-0.07} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\
   \end{tabular}
   \label{tab:reaction-rates}
 \end{table*}
 \\
-Also tried to study the adsorption/desorption process but didn't find a barrier, energy profile behaves smoothly from water molecule above the surface to the adsorbed water system.
+It was also tried to study the adsorption/desorption process with NEB but there was no minimum structure in the gas phase nor physisorbed state. The energy profile is smooth from any tested point on the potential energy surface above the alumina surface toward the adsorbed water system without showing a barrier.
 \\
-Problem of GGA underestimating barriers is well known. {\color{red} Optimizing structure with HSE06 is nearly impossible due to high cost and doing single point calculations on the PBE transition state is not very accurate and doesn't deliver better results. (at least for crystal calculations... so don't bring it her?)}
-\\
-For the OH diffusion we find  that a special case of CUSb to inter-CUSb diffusion is favored, because the distance that has to be brigded is very small; but real CUS to CUS diffusion like the one from CUSb to inter-CUSa is very slow.
+As mentioned before a huge problem of GGA is that in this approximation barriers are well known to be underestimated. {\color{red} Optimizing structure with HSE06 is nearly impossible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (see also work of Dr. J. Wirth). {\textit (at least for crystal calculations... so don't bring it her?)}}
 \\
 {\color{red} TEST?? What doesn't work is the molecular diffusion from CUSb to CUSb, the molecular minimum is not stable enough, during the path, dissociation would occur? Or it would have to be a two step reaction from CUSb to inter-CUSb what does not exist and then further to CUSb..}
 \\
-Proton diffusion reactions are way more variable giving reaction rates at $300\,$K ranging from $10^{-x}$ to $10^{+y}$s$^{-1}$. The barriers and therefore also rate constants for H-diffusion cover a wider range depending on the distance between OH and H and of course more importantly on the fact between which type of O$\mu_2$ the proton is diffusing.
+Proton diffusion reactions are way more variable giving reaction rates at $300\,$K ranging from $10^{-13}$ to $10^{-3}$s$^{-1}$. The barriers and therefore also rate constants for H-diffusion cover a wider range depending on the distance between OH and H and of course more importantly on the fact between which type of O$\mu_{2/3}$ the proton is diffusing.
 \\
-Also reactions leading to a not next-neighbored situation, increasing the distance between OH and H are also not favorable since gemoetries with the residues further apart are energetically less stable.
+Also reactions leading to a not next-neighbored situation, increasing the distance between OH and H are also not favorable since geometries with the residues further apart are energetically less stable.
 \\
 {\color{red} what about backreactions?}
 \begin{figure*} [!ht]
 \centering
-\subfigure[D-I: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.7\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
+\subfigure[D-a: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.7\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
          \quad
-\subfigure[D-II: CUSb $\rightarrow$CUSb||O-$\mu_3$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diss_Cb-Cb3.pdf}}
+\subfigure[D-I: CUSb $\rightarrow$CUSb||O-$\mu_3$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diss_Cb-Cb3.pdf}}
  \quad
-\subfigure[Df-OH-III: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSb||O-$\mu_2$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-OH_Cb2-iCb2.pdf}}
+\subfigure[Df-OH-a: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSb||O-$\mu_2$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-OH_Cb2-iCb2.pdf}}
  \quad
-\subfigure[Df-OH-IV: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSa||O-$\mu_2$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-OH_Cb2-iCa2.pdf}}
+\subfigure[Df-OH-b: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSa||O-$\mu_2$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-OH_Cb2-iCa2.pdf}}
 \caption{PBE+D2 minimum energy paths with transition states (inlay; if available), 
   and both educt (left) and product (right) states for D-I, D-II, Df-OH-III and Df-OH-IV reactions, respectively. The color code is as explained above.}
        \label{mep}
 \end{figure*}
 \begin{figure*} [!ht]
 \centering
-\subfigure[Df-H-V: inter-CUSa||O-$\mu_2\rightarrow$inter-CUSa||O-$\mu_3^\prime$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCa2-iCa3p.pdf}}
+\subfigure[Df-H-b: inter-CUSa||O-$\mu_2\rightarrow$inter-CUSa||O-$\mu_3^\prime$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCa2-iCa3p.pdf}}
  \quad
-\subfigure[Df-H-VI: inter-CUSb||O-$\mu_3^{\prime\prime}$ $\rightarrow$inter-CUSb||O-$\mu_3^{\prime\prime\prime}$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCb3pp-iCb3ppp.png}}
+\subfigure[Df-H-d: inter-CUSb||O-$\mu_3^{\prime\prime}$ $\rightarrow$inter-CUSb||O-$\mu_3^{\prime\prime\prime}$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCb3pp-iCb3ppp.png}}
 \caption{PBE+D2 minimum energy paths with transition states, and both educt and product states for Df-H-V and Df-H-VI reactions, respectively. The color code is as explained above.}
        \label{mep2}
 \end{figure*}
 
-{\color{red} add newly started iCb2'-iCb3pp and the path from iCb3 over iCb2' over iCb3pp to iCb3ppp as an example for proton diffusion pathways.}
 
 
 \section{Vibrational Frequencies / Spectroscopic Properties}
@@ -661,7 +666,7 @@ Of course there are reactions linking these minima, dissociation, OH- and H-diff
        \label{abb:0001_ads}
 \end{figure*}
 \section{AIMD for Dissociation Process}
-Hass et. al. discussed the idea whether water will adsorb molecularly first and then dissociate or if direct dissociation upon adsorption is possible. To tackle this question for the experimental technique of the molecular beam source, we apply both microcanonical and canonical {\it ab-initio} MD to simulate the water molecules in the beam approaching the surface. We start in the low coverage limit by letting one single, rigid molecule approach the $2\times 2$ supercell. We later on continue with different approaches to more realistic beams and to more realistic surface situations. In the beam regime we probe water clusters, namely pre-optimized (H$_2$O)$_2$ and (H$_2$O)$_4$ cluster, which are shot onto the surface. Another improvement to the beam lies in having the molecule either vibrationally and/or rotationally excited. These excitations were chosen from a normal mode analysis and the resulting stretch and bending modes.
+Hass et. al. discussed the idea whether water will adsorb molecularly first and then dissociate or if direct dissociation upon adsorption is possible. To tackle this question for the experimental technique of the molecular beam source, we apply both microcanonical and canonical {\textit ab-initio} MD to simulate the water molecules in the beam approaching the surface. We start in the low coverage limit by letting one single, rigid molecule approach the $2\times 2$ supercell. We later on continue with different approaches to more realistic beams and to more realistic surface situations. In the beam regime we probe water clusters, namely pre-optimized (H$_2$O)$_2$ and (H$_2$O)$_4$ cluster, which are shot onto the surface. Another improvement to the beam lies in having the molecule either vibrationally and/or rotationally excited. These excitations were chosen from a normal mode analysis and the resulting stretch and bending modes.
 \\
 For improving the surface we first use a preequilibrated surface at $300\,$K, but also go to a surface situation in which already one water molecule is adsorbed. To pay attention to the equilibrium situation we considered a molecular preadsorbed water molecule,  the most stable 1-2 dissociated state as well as the 1-4 dissociated structure.
 \\
@@ -718,7 +723,7 @@ Instead of examining reactions with a defined reaction pathway as with NEB, we a
  We used also PBE but without dispersion corrections and for the trajectories at $300\,$K we applied the Nos\'{e} Hoover thermostat.
  
 \subsection{QM/QM Embedding Scheme}
-In order to recalculate adsorption energies and reaction rate constants with a higher level method we tried to apply the mechanical embedding scheme developed in the Sauer group from HU Berlin. One uses a substractive scheme to correct energies, after calculating the complete system with the low level method (here PBE), the interesting part, namely the cluster, with both the low level method and the high level method (B3LYP, MP2 or CCSD). The high-level:low-level corrected energy is then calculated by the following equation: {\it equation}
+In order to recalculate adsorption energies and reaction rate constants with a higher level method we tried to apply the mechanical embedding scheme developed in the Sauer group from HU Berlin. One uses a substractive scheme to correct energies, after calculating the complete system with the low level method (here PBE), the interesting part, namely the cluster, with both the low level method and the high level method (B3LYP, MP2 or CCSD). The high-level:low-level corrected energy is then calculated by the following equation: {\textit equation}
 \\
 First of all, a reasonable cluster has to be chosen, which is difficult since the 1-4$^\prime$ needs a big cluster to be considered. We chose then the Al$_8$O$_{12}$-cluster used in unpublished work from the same group. This cluster was used for tests but when it came to embedding, the Turbomole package failed to compute the embedded system, because hexagonal cells were not yet implemented into the code.
 
@@ -778,8 +783,8 @@ reaction pathways: dissociationCb-iCa2 and Cb-iCb2?
 
 \begin{enumerate}[itemsep=0.25\baselineskip]
 %  \item \bibentry{Wirth12}.
-  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}title{\flqq}, {\it Journal} {\bf year,} {\it vol,} pp.
-  \item Heiden, S.;  Saalfrank, P.: {\frqq}title{\flqq}, {\it Journal} {\bf year,} {\it vol,} pp.
+  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}title{\flqq}, {\textit Journal} {\textbf year,} {\textit vol,} pp.
+  \item Heiden, S.;  Saalfrank, P.: {\frqq}title{\flqq}, {\textit Journal} {\textbf year,} {\textit vol,} pp.
 
 \end{enumerate}
 
