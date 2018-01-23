@@ -325,11 +325,28 @@ Other methods as tunneling based methods do not work on isolating materials like
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 \section{Surface Model}
-The structure of $\upalpha$-alumina is well known for several years. It crystallizes in the hexagonal cell, that means a=b$\neq$c, with an angle of $60$\textdegree~ between $a$ and $b$.
+The structure of $\upalpha$-alumina is well known for several years and was studied in many publications {\color{red} cite here some}. It crystallizes in the hexagonal cell, that means $a=b\neq c$, with an angle of $60$\textdegree~ between $a$ and $b$.
 \\
-To obtain the clean surface we cut a $2\times 2$ supercell from bulk structure. The cell vectors were used from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced. 
+To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. {\color{red} Since the (11\=20) surface is not the crystal cut of the top of the shown crystal in figure \ref{abb:crystal_11-20}(a), the cell vectors are not as in the hexagonal cell but $a=10.36$\AA, $b=14.16$\AA and $c=20.5$\AA, with the angle between $a$ and $b$ of $\theta=84.56$\textdegree. CHECK THESE VALUES AGAIN! but should be fine poscar vectors are given like this: a1,a2,a2;b1,b2,b3;c1,c2,c3}
 \\
-The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), our supercell has 10, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}).
+The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O, see fig.~\ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal (in parantheses for comparison) are given in \AA:  $d_{12}=0.232$ (0.193) (O-O$_2$ layer distance), $d_{23}=0.642$ (0.741) (O$_2$-Al$_4$), $d_{34}=0.656$ (0.741) (Al$_4$-O$_2$), and $d_{45}=0.198$ (0.191) (O$_2$-O).
+\\
+The applied supercell has 10, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers){\color{red} see figure xy}, here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}).
+\\
+{\color{red} Evaluate spacing for the bigger slab sizes and compare}
+\begin{figure}[!h]
+    \centering
+    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
+             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the geometry optimized unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers, see main text.}
+            \label{abb:crystal_11-20}
+     \end{figure}
+{\color{red} Put here the figures of the different slab sizes! Not much difference for the clean surface with more atomic layers..}
 \\
 $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It was shown that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface, see fig.~\ref{abb:11-20-kpointsampling}.
 \begin{figure}[!h]
@@ -342,22 +359,7 @@ $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times
 Starting from this supercell approach there are 16 CUS Al-atoms (cordinatively unsaturated sites), these have less bonds than the aluminum atoms in the bulk structure since the surface layers has to be  depleted. These atoms are very interesting for adorbate molecules/atoms, because these atoms are electron rich and can be addressed for adsorption. If these 16 atoms are covered with adsorbates, here water, we get the system with 1 mono layer (ML). But one has to keep in mind the difference between these 16 surface atoms and the number of potential adsorbates: one monolayer is not built by 16 adsorbates since not all 16 CUS positions can be covered, but only 12, as is shown later (bridging water adsorption).
 \\
 As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa, the twofold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the threefold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
-\begin{figure}[!h]
-    \centering
-    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
-             \quad
-             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
-             \quad
-             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
-             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers.}
-            \label{abb:crystal_11-20}
-     \end{figure}
-     
-{\color{red} Maybe put here figures of the different slab sizes? Makes sense to bring it here!
-\\
-Not much difference for the clean surface with more atomic layers..}
+
 \section{Structure Search}\label{structure_search11-20}
 First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types, for adsorption energy and Gibb's free energy results see table \ref{tab:ads_1water}. There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
 The adsorption energy is defined by equation \ref{eq:Eads} as the energy of the adsorbed system compared to the energies of the clean surface and the isolated water molecule:

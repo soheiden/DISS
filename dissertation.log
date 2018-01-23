@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.7.31)  21 JAN 2018 20:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.7.31)  23 JAN 2018 23:22
 entering extended mode
 **./dissertation.tex
 (dissertation.tex
@@ -1215,6 +1215,27 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 328.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+<figures/al2o3-crystal.png, id=276, 394.47375pt x 557.08125pt>
+File: figures/al2o3-crystal.png Graphic file (type png)
+
+<use figures/al2o3-crystal.png>
+Package pdftex.def Info: figures/al2o3-crystal.png used on input line 339.
+(pdftex.def)             Requested size: 134.6048pt x 190.08514pt.
+
+<figures/11-20/supercell_opt.png, id=278, 1168.365pt x 897.3525pt>
+File: figures/11-20/supercell_opt.png Graphic file (type png)
+
+<use figures/11-20/supercell_opt.png>
+Package pdftex.def Info: figures/11-20/supercell_opt.png used on input line 342
+.
+(pdftex.def)             Requested size: 134.6048pt x 103.3782pt.
+
+<figures/11-20/uc_opt.png, id=279, 1116.973pt x 683.353pt>
+File: figures/11-20/uc_opt.png Graphic file (type png)
+
+<use figures/11-20/uc_opt.png>
+Package pdftex.def Info: figures/11-20/uc_opt.png used on input line 345.
+(pdftex.def)             Requested size: 134.6048pt x 82.34291pt.
 Package epstopdf Info: Source file: <figures/11-20/irreducibles-E.eps>
 (epstopdf)                    date: 2018-01-18 16:30:38
 (epstopdf)                    size: 22167 bytes
@@ -1224,116 +1245,99 @@ Package epstopdf Info: Source file: <figures/11-20/irreducibles-E.eps>
 (epstopdf)                    size: 6442 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/11-20/irreducibles-
 E-eps-converted-to.pdf figures/11-20/irreducibles-E.eps>
-(epstopdf)             \includegraphics on input line 337.
+(epstopdf)             \includegraphics on input line 354.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/11-20/irreducibles-E-eps-converted-to.pdf, id=275, 361.35pt x 252.945p
+<figures/11-20/irreducibles-E-eps-converted-to.pdf, id=281, 361.35pt x 252.945p
 t>
 File: figures/11-20/irreducibles-E-eps-converted-to.pdf Graphic file (type pdf)
 
  <use figures/11-20/irreducibles-E-eps-converted-to.pdf>
 Package pdftex.def Info: figures/11-20/irreducibles-E-eps-converted-to.pdf used
- on input line 337.
+ on input line 354.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 338.
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 355.
 
 
-<figures/al2o3-crystal.png, id=277, 394.47375pt x 557.08125pt>
-File: figures/al2o3-crystal.png Graphic file (type png)
 
-<use figures/al2o3-crystal.png>
-Package pdftex.def Info: figures/al2o3-crystal.png used on input line 347.
-(pdftex.def)             Requested size: 134.6048pt x 190.08514pt.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/11-20/supercell_opt.png, id=279, 1168.365pt x 897.3525pt>
-File: figures/11-20/supercell_opt.png Graphic file (type png)
 
-<use figures/11-20/supercell_opt.png>
-Package pdftex.def Info: figures/11-20/supercell_opt.png used on input line 350
-.
-(pdftex.def)             Requested size: 134.6048pt x 103.3782pt.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/11-20/uc_opt.png, id=280, 1116.973pt x 683.353pt>
-File: figures/11-20/uc_opt.png Graphic file (type png)
 
-<use figures/11-20/uc_opt.png>
-Package pdftex.def Info: figures/11-20/uc_opt.png used on input line 353.
-(pdftex.def)             Requested size: 134.6048pt x 82.34291pt.
- [15 <./figures/11-20/irreducibles-E-eps-converted-to.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1248) has occurred while \output is active []
+
+ [15]
+Underfull \vbox (badness 1226) has occurred while \output is active []
 
  [16 <./figures/al2o3-crystal.png> <./figures/11-20/supercell_opt.png> <./figur
-es/11-20/uc_opt.png>]
+es/11-20/uc_opt.png> <./figures/11-20/irreducibles-E-eps-converted-to.pdf>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 378.
- <figures/11-20/test-Cb.pdf, id=310, 586.19pt x 586.19pt>
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 380.
+
+<figures/11-20/test-Cb.pdf, id=312, 586.19pt x 586.19pt>
 File: figures/11-20/test-Cb.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb.pdf>
-Package pdftex.def Info: figures/11-20/test-Cb.pdf used on input line 395.
+Package pdftex.def Info: figures/11-20/test-Cb.pdf used on input line 397.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCa2.pdf, id=311, 586.19pt x 586.19pt>
+<figures/11-20/test-iCa2.pdf, id=313, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCa2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCa2.pdf>
-Package pdftex.def Info: figures/11-20/test-iCa2.pdf used on input line 397.
+Package pdftex.def Info: figures/11-20/test-iCa2.pdf used on input line 399.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 397.
+(Font)              <9> on input line 399.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 397.
+(Font)              <5> on input line 399.
 
-<figures/11-20/test-Cb2.pdf, id=312, 585.2871pt x 585.2871pt>
+<figures/11-20/test-Cb2.pdf, id=314, 585.2871pt x 585.2871pt>
 File: figures/11-20/test-Cb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb2.pdf>
-Package pdftex.def Info: figures/11-20/test-Cb2.pdf used on input line 399.
+Package pdftex.def Info: figures/11-20/test-Cb2.pdf used on input line 401.
 (pdftex.def)             Requested size: 89.73425pt x 89.72725pt.
 
-<figures/11-20/test-iCb2.pdf, id=313, 586.19pt x 586.19pt>
+<figures/11-20/test-iCb2.pdf, id=315, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCb2.pdf>
-Package pdftex.def Info: figures/11-20/test-iCb2.pdf used on input line 401.
+Package pdftex.def Info: figures/11-20/test-iCb2.pdf used on input line 403.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCa3.pdf, id=314, 585.16321pt x 585.16327pt>
+<figures/11-20/test-iCa3.pdf, id=316, 585.16321pt x 585.16327pt>
 File: figures/11-20/test-iCa3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCa3.pdf>
-Package pdftex.def Info: figures/11-20/test-iCa3.pdf used on input line 403.
+Package pdftex.def Info: figures/11-20/test-iCa3.pdf used on input line 405.
 (pdftex.def)             Requested size: 89.73425pt x 89.73505pt.
 
-<figures/11-20/test-Cb3.pdf, id=315, 586.19pt x 586.19pt>
+<figures/11-20/test-Cb3.pdf, id=317, 586.19pt x 586.19pt>
 File: figures/11-20/test-Cb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb3.pdf>
-Package pdftex.def Info: figures/11-20/test-Cb3.pdf used on input line 405.
+Package pdftex.def Info: figures/11-20/test-Cb3.pdf used on input line 407.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCb3.pdf, id=316, 586.19pt x 586.19pt>
+<figures/11-20/test-iCb3.pdf, id=318, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCb3.pdf>
-Package pdftex.def Info: figures/11-20/test-iCb3.pdf used on input line 407.
+Package pdftex.def Info: figures/11-20/test-iCb3.pdf used on input line 409.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
 
-LaTeX Warning: Citation `C6CP01397J' on page 17 undefined on input line 416.
+LaTeX Warning: Citation `C6CP01397J' on page 17 undefined on input line 418.
 
 
-LaTeX Warning: Citation `WirthJPCC2012' on page 17 undefined on input line 416.
+LaTeX Warning: Citation `WirthJPCC2012' on page 17 undefined on input line 418.
 
 
-
-Underfull \vbox (badness 1418) has occurred while \output is active []
-
- [17]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18 <./figures/11-20/test-Cb.pdf> <./figures/11-20/test-iCa2.pdf
+[17] [18 <./figures/11-20/test-Cb.pdf> <./figures/11-20/test-iCa2.pdf
 
 pdfTeX warning: pdflatex (file ./figures/11-20/test-iCa2.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
@@ -1357,200 +1361,200 @@ ltiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/11-20/test-iCb3.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] [19]
+>] [19] [20pdfTeX warning (ext4): destination with the same identifier (name{eq
+uation.2.3.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.486 \end{equation}
+                    ]pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.492 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.492 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.492 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.492 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.498 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.498 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.498 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.498 \begin{equation}
+                      
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20pdfTeX warning (ext4): destination with the same identifier (name{equation.
+ [21pdfTeX warning (ext4): destination with the same identifier (name{equation.
 2.3.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.490 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.490 \begin{equation}
+l.507 \begin{equation}
                       ]pdfTeX warning (ext4): destination with the same identif
 ier (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.490 \begin{equation}
+l.507 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.490 \begin{equation}
+l.507 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.490 \begin{equation}
+l.507 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.490 \begin{equation}
+l.507 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.496 \begin{equation}
+l.513 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.496 \begin{equation}
+l.513 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.496 \begin{equation}
+l.513 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.496 \begin{equation}
+l.513 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.505 \begin{equation}
+l.520 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.505 \begin{equation}
+l.520 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.505 \begin{equation}
+l.520 \begin{equation}
                       pdfTeX warning (ext4): destination with the same identifi
 er (name{equation.2.3.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.505 \begin{equation}
+l.520 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.527 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.527 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.527 \begin{equation}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.3.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.527 \begin{equation}
                       
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]pdfTeX warning (ext4): destination with the same identifier (name{equation
-.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.511 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.511 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.511 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.511 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.518 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.518 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.518 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.518 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.525 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.525 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.525 \begin{equation}
-                      pdfTeX warning (ext4): destination with the same identifi
-er (name{equation.2.3.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.525 \begin{equation}
-                      
-<figures/11-20/Diss_Cb-Cb2.pdf, id=429, 1203.186pt x 361.9829pt>
+<figures/11-20/Diss_Cb-Cb2.pdf, id=430, 1203.186pt x 361.9829pt>
 File: figures/11-20/Diss_Cb-Cb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diss_Cb-Cb2.pdf>
-Package pdftex.def Info: figures/11-20/Diss_Cb-Cb2.pdf used on input line 577.
+Package pdftex.def Info: figures/11-20/Diss_Cb-Cb2.pdf used on input line 579.
 (pdftex.def)             Requested size: 314.07332pt x 94.48892pt.
 
-<figures/11-20/Diss_Cb-Cb3.pdf, id=430, 1206.67169pt x 363.87859pt>
+<figures/11-20/Diss_Cb-Cb3.pdf, id=431, 1206.67169pt x 363.87859pt>
 File: figures/11-20/Diss_Cb-Cb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diss_Cb-Cb3.pdf>
-Package pdftex.def Info: figures/11-20/Diss_Cb-Cb3.pdf used on input line 579.
+Package pdftex.def Info: figures/11-20/Diss_Cb-Cb3.pdf used on input line 581.
 (pdftex.def)             Requested size: 314.07332pt x 94.70613pt.
 
-<figures/11-20/Diff-OH_Cb2-iCb2.pdf, id=431, 1202.80127pt x 361.82608pt>
+<figures/11-20/Diff-OH_Cb2-iCb2.pdf, id=432, 1202.80127pt x 361.82608pt>
 File: figures/11-20/Diff-OH_Cb2-iCb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-OH_Cb2-iCb2.pdf>
 Package pdftex.def Info: figures/11-20/Diff-OH_Cb2-iCb2.pdf used on input line 
-581.
+583.
 (pdftex.def)             Requested size: 314.07332pt x 94.47559pt.
 
-<figures/11-20/Diff-OH_Cb2-iCa2.pdf, id=432, 1202.54886pt x 362.04207pt>
+<figures/11-20/Diff-OH_Cb2-iCa2.pdf, id=433, 1202.54886pt x 362.04207pt>
 File: figures/11-20/Diff-OH_Cb2-iCa2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-OH_Cb2-iCa2.pdf>
 Package pdftex.def Info: figures/11-20/Diff-OH_Cb2-iCa2.pdf used on input line 
-583.
+585.
 (pdftex.def)             Requested size: 314.07332pt x 94.55408pt.
 
-<figures/11-20/Diff-H_iCa2-iCa3p.pdf, id=433, 1206.04863pt x 362.30223pt>
+<figures/11-20/Diff-H_iCa2-iCa3p.pdf, id=434, 1206.04863pt x 362.30223pt>
 File: figures/11-20/Diff-H_iCa2-iCa3p.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-H_iCa2-iCa3p.pdf>
 Package pdftex.def Info: figures/11-20/Diff-H_iCa2-iCa3p.pdf used on input line
- 590.
+ 592.
 (pdftex.def)             Requested size: 314.07332pt x 94.34561pt.
 
-<figures/11-20/Diff-H_iCb3pp-iCb3ppp.png, id=434, 2278.5125pt x 451.6875pt>
+<figures/11-20/Diff-H_iCb3pp-iCb3ppp.png, id=435, 2278.5125pt x 451.6875pt>
 File: figures/11-20/Diff-H_iCb3pp-iCb3ppp.png Graphic file (type png)
 
 <use figures/11-20/Diff-H_iCb3pp-iCb3ppp.png>
 Package pdftex.def Info: figures/11-20/Diff-H_iCb3pp-iCb3ppp.png used on input 
-line 592.
+line 594.
 (pdftex.def)             Requested size: 314.07332pt x 62.25713pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-<figures/11-20/SFG_fit.jpg, id=443, 1134.1572pt x 394.1124pt>
+<figures/11-20/SFG_fit.jpg, id=445, 1134.1572pt x 394.1124pt>
 File: figures/11-20/SFG_fit.jpg Graphic file (type jpg)
 
 <use figures/11-20/SFG_fit.jpg>
-Package pdftex.def Info: figures/11-20/SFG_fit.jpg used on input line 603.
+Package pdftex.def Info: figures/11-20/SFG_fit.jpg used on input line 605.
 (pdftex.def)             Requested size: 403.80757pt x 140.3228pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [23]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1566,109 +1570,107 @@ sion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./figures/11-20/Diff-OH_Cb2-iCa2.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
->]
+>] [25 <./figures/11-20/Diff-H_iCa2-iCa3p.pdf> <./figures/11-20/Diff-H_iCb3pp-i
+Cb3ppp.png> <./figures/11-20/SFG_fit.jpg>]
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 618.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <./figures/11-20/Diff-H_iCa2-iCa3p.pdf> <./figures/11-20/Diff-H_iCb3pp-iCb
-3ppp.png> <./figures/11-20/SFG_fit.jpg>]
-LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
-(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 616.
-
- [26] [27] [28
-
-
-]
+ [26]
+[27] [28]
 chapter 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 648.
+(hyperref)                removing `math shift' on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\upalpha' on input line 648.
+(hyperref)                removing `\upalpha' on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 648.
+(hyperref)                removing `math shift' on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 648.
+(hyperref)                removing `math shift' on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 648.
+(hyperref)                removing `subscript' on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 648.
+(hyperref)                removing `math shift' on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 648.
+(hyperref)                removing `math shift' on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 648.
+(hyperref)                removing `subscript' on input line 650.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 648.
+(hyperref)                removing `math shift' on input line 650.
 
-
-LaTeX Warning: Reference `0001surf' on page 29 undefined on input line 655.
-
-<figures/0001/surf_0K_axes.pdf, id=564, 967.93118pt x 687.71014pt>
+<figures/0001/surf_0K_axes.pdf, id=567, 967.93118pt x 687.71014pt>
 File: figures/0001/surf_0K_axes.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K_axes.pdf>
-Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 666.
+Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 668.
 (pdftex.def)             Requested size: 201.90378pt x 143.44748pt.
 
-<figures/0001/surf_0K-side.pdf, id=565, 1541.76pt x 819.86299pt>
+<figures/0001/surf_0K-side.pdf, id=568, 1541.76pt x 819.86299pt>
 File: figures/0001/surf_0K-side.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K-side.pdf>
-Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 668.
+Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 670.
 (pdftex.def)             Requested size: 201.90378pt x 107.36156pt.
- [29]
-<figures/0001/0001_mol_top.jpg, id=570, 1042.89626pt x 784.9325pt>
+ [29
+
+
+]
+<figures/0001/0001_mol_top.jpg, id=573, 1042.89626pt x 784.9325pt>
 File: figures/0001/0001_mol_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_mol_top.jpg>
-Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 675.
+Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 677.
 (pdftex.def)             Requested size: 179.4685pt x 135.06564pt.
 
-<figures/0001/0001_1-2-diss_top.jpg, id=571, 1041.8925pt x 783.92876pt>
+<figures/0001/0001_1-2-diss_top.jpg, id=574, 1041.8925pt x 783.92876pt>
 File: figures/0001/0001_1-2-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-2-diss_top.jpg>
 Package pdftex.def Info: figures/0001/0001_1-2-diss_top.jpg used on input line 
-677.
+679.
 (pdftex.def)             Requested size: 179.4685pt x 135.0245pt.
 
-<figures/0001/0001_1-4-diss_top.jpg, id=572, 1041.8925pt x 785.93625pt>
+<figures/0001/0001_1-4-diss_top.jpg, id=575, 1041.8925pt x 785.93625pt>
 File: figures/0001/0001_1-4-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-4-diss_top.jpg>
 Package pdftex.def Info: figures/0001/0001_1-4-diss_top.jpg used on input line 
-679.
+681.
 (pdftex.def)             Requested size: 179.4685pt x 135.37027pt.
 
-<figures/0001/0001_1-4p-diss_top_label.pdf, id=573, 833.51402pt x 626.34pt>
+<figures/0001/0001_1-4p-diss_top_label.pdf, id=576, 833.51402pt x 626.34pt>
 File: figures/0001/0001_1-4p-diss_top_label.pdf Graphic file (type pdf)
 
 <use figures/0001/0001_1-4p-diss_top_label.pdf>
 Package pdftex.def Info: figures/0001/0001_1-4p-diss_top_label.pdf used on inpu
-t line 681.
+t line 683.
 (pdftex.def)             Requested size: 179.4685pt x 134.86116pt.
 
-<figures/0001/perspective+h2o_new.png, id=574, 1222.166pt x 1554.608pt>
+<figures/0001/perspective+h2o_new.png, id=577, 1222.166pt x 1554.608pt>
 File: figures/0001/perspective+h2o_new.png Graphic file (type png)
 
 <use figures/0001/perspective+h2o_new.png>
 Package pdftex.def Info: figures/0001/perspective+h2o_new.png used on input lin
-e 695.
+e 697.
 (pdftex.def)             Requested size: 179.4685pt x 228.27081pt.
  [30 <./figures/0001/surf_0K_axes.pdf> <./figures/0001/surf_0K-side.pdf
 
@@ -1680,18 +1682,18 @@ igures/0001/0001_1-4-diss_top.jpg> <./figures/0001/0001_1-4p-diss_top_label.pdf
 
 pdfTeX warning: pdflatex (file ./figures/0001/0001_1-4p-diss_top_label.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
->] <figures/0001/2H2O.pdf, id=630, 1541.76pt x 819.86299pt>
+>] <figures/0001/2H2O.pdf, id=633, 1541.76pt x 819.86299pt>
 File: figures/0001/2H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/2H2O.pdf>
-Package pdftex.def Info: figures/0001/2H2O.pdf used on input line 703.
+Package pdftex.def Info: figures/0001/2H2O.pdf used on input line 705.
 (pdftex.def)             Requested size: 157.04007pt x 83.50482pt.
 
-<figures/0001/4H2O.pdf, id=631, 1541.76pt x 819.86299pt>
+<figures/0001/4H2O.pdf, id=634, 1541.76pt x 819.86299pt>
 File: figures/0001/4H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/4H2O.pdf>
-Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 705.
+Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 707.
 (pdftex.def)             Requested size: 246.77434pt x 131.21828pt.
  [31] [32 <./figures/0001/perspective+h2o_new.png> <./figures/0001/2H2O.pdf> <.
 /figures/0001/4H2O.pdf
@@ -1722,32 +1724,29 @@ chapter without number
 ]
 chapter without number
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 837--838
+Underfull \hbox (badness 10000) in paragraph at lines 839--840
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 843.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 845.
 [42
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 843.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 845.
  (dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 843.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 843.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 845.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 845.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
 (rerunfilecheck)             Checksum: A51C59FAB94B1C2ECE3754DC014F0050;2482.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  22205 strings out of 493323
  399874 string characters out of 3139063
- 579457 words of memory out of 3000000
+ 580532 words of memory out of 3000000
  25247 multiletter control sequences out of 15000+200000
  699566 words of font info for 139 fonts, out of 3000000 for 9000
  1158 hyphenation exceptions out of 8191
@@ -1781,9 +1780,9 @@ ic/lm/lmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/lm/lmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmtt10.pfb>
-Output written on dissertation.pdf (42 pages, 23446859 bytes).
+Output written on dissertation.pdf (42 pages, 23449300 bytes).
 PDF statistics:
- 852 PDF objects out of 1000 (max. 8388607)
+ 855 PDF objects out of 1000 (max. 8388607)
  152 named destinations out of 1000 (max. 500000)
  421 words of extra memory for PDF output out of 10000 (max. 10000000)
 
