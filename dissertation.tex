@@ -327,13 +327,24 @@ Other methods as tunneling based methods do not work on isolating materials like
 \section{Surface Model}
 The structure of $\upalpha$-alumina is well known for several years and was studied in many publications {\color{red} cite here some}. It crystallizes in the hexagonal cell, that means $a=b\neq c$, with an angle of $60$\textdegree~ between $a$ and $b$.
 \\
-To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. {\color{red} Since the (11\=20) surface is not the crystal cut of the top of the shown crystal in figure \ref{abb:crystal_11-20}(a), the cell vectors are not as in the hexagonal cell but $a=10.36$\AA, $b=14.16$\AA and $c=20.5$\AA, with the angle between $a$ and $b$ of $\theta=84.56$\textdegree. CHECK THESE VALUES AGAIN! but should be fine poscar vectors are given like this: a1,a2,a2;b1,b2,b3;c1,c2,c3}
+To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. Since the (11\=20) surface is not the crystal cut of the top of the shown crystal in figure \ref{abb:crystal_11-20}(a), the cell vectors $a$ and $b$ are not equal as in the hexagonal cell, but $a=10.36$\AA, $b=14.16$\AA and $c=20.5$\AA, with the angle between $a$ and $b$ of $\theta=84.56$\textdegree.
 \\
-The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O, see fig.~\ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal (in parantheses for comparison) are given in \AA:  $d_{12}=0.232$ (0.193) (O-O$_2$ layer distance), $d_{23}=0.642$ (0.741) (O$_2$-Al$_4$), $d_{34}=0.656$ (0.741) (Al$_4$-O$_2$), and $d_{45}=0.198$ (0.191) (O$_2$-O).
-\\
-The applied supercell has 10, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers){\color{red} see figure xy}, here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}).
-\\
-{\color{red} Evaluate spacing for the bigger slab sizes and compare}
+The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), see fig.~\ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal are given in table \ref{tab:layer-dist}. The supercell that is mostly used in this work has 10 layers, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), see figure \ref{abb:cell_sizes}, here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}). The spacing between the 5 top layers is displayed in table \ref{tab:layer-dist}:
+\begin{table}[!ht]
+  \centering
+ \caption{Distances between the top 5 layers for different slab sizes and the unrelaxed bulk structure. All values are given in \AA.} 
+\vspace*{.2cm}
+\begin{tabular}{c|cccc|c}
+ &\multicolumn{4}{c}{atomic layer} &\\
+    distance    & 10   & 15   & 20   & 25   &bulk \\\hline
+ d$_{12}$	&0.232 &0.234 &0.247 &0.245 &0.193 \\
+ d$_{23}$	&0.642 &0.649 &0.638 &0.639 &0.741 \\
+ d$_{34}$	&0.656 &0.655 &0.671 &0.672 &0.741 \\
+ d$_{45}$	&0.198 &0.205 &0.209 &0.213 &0.191 \\
+  \end{tabular}
+  \label{tab:layer-dist}
+\end{table}
+
 \begin{figure}[!h]
     \centering
     \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
@@ -345,9 +356,13 @@ The applied supercell has 10, where the lowest 5 were fixed to the bulk value to
     \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
              \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the geometry optimized unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers, see main text.}
             \label{abb:crystal_11-20}
-     \end{figure}
-{\color{red} Put here the figures of the different slab sizes! Not much difference for the clean surface with more atomic layers..}
-\\
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.80\textwidth]{figures/11-20/cell_sizes.pdf}
+             \caption{Side view for the different cell sizes from left to right 10, 15, 20 and 25 layers. Surface atoms are shown in the color code as used before.}
+            \label{abb:cell_sizes}
+\end{figure}
 $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It was shown that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface, see fig.~\ref{abb:11-20-kpointsampling}.
 \begin{figure}[!h]
 \centering
@@ -433,10 +448,25 @@ Dissociated species in direct neighborhood as shown in table \ref{tab:ads_1water
   \end{tabular}
   \label{tab:ads_1waterfurther}
 \end{table}
-
-{\color{red} Put here stuff with bigger slab size in z direction. Table with Eads for different amount of layers. Explain differences, iCb3 (was it this one?) is slightly different, except from that the ordering is basically the same, the 10 layer cell is already converged with respect to eads and OH frequencies..
-}
-
+\\
+Systems with more layers were also studied and the adsorption energy results are shown in table \ref{tab:eads_layers}. Basically the results don't change much with increasing slab size. The molecular species is still less stable than most of the dissociated species, inter-CUSa$\parallel$O-$\mu_2$ is the most stable structure through all the sampled systems, inter-CUSb$\parallel$O-$\mu_2$ and CUSb$\parallel$O-$\mu_2$ change their stability depending on the number of layers but still are some orders of magnitude less probable than inter-CUSa$\parallel$O-$\mu_2$. Dissociated systems occupying the threefold coordinated surface oxygen atom are in the same stability order, relatively to each other. For higher number of layers, the inter-CUSb gets more favourable than CUSb, both for O-$\mu_2$ and O-$\mu_3$. This might be due to less interaction between neighboring oxygen atoms with the inter-CUSb adsorbed OH group.
+  \begin{table}[!ht]
+  \centering
+  \caption{Adsorption energies calculated from equation \ref{eq:Eads} for molecular and dissociated species for different vertical slab sizes. All values are in eV.}
+ \begin{tabular}{l|cccc}
+ System                     & 10 layers& 15 layers& 20 layers&  25 layers \\\hline
+CUSb                                    &-1.78 &-1.80     &-1.81     &-1.83      \\\hline
+\textbf{inter-CUSa$\parallel$O-$\mu_2$}    &\textbf{-2.50} &-2.46 &-2.54 &-2.56  \\
+inter-CUSa$\parallel$O-$\mu_3$          &-1.67 &-1.67 &-1.78 &-1.80 \\
+\textbf{CUSb$\parallel$O-$\mu_2$}          &\textbf{-2.28} &-2.35 &-2.36 &-2.35 \\
+CUSb$\parallel$O-$\mu_3$                &-1.19 &-1.71 &-     &-      \\
+\textbf{inter-CUSb$\parallel$O-$\mu_2$}    &\textbf{-2.09} &-2.43 &-2.48 &-2.36  \\
+inter-CUSb$\parallel$O-$\mu_3$          &-1.89 &-1.59 &-1.65 &-2.09 
+\label{tab:eads_layers}
+\end{tabular}
+ \end{table}
+This brings the point into attention that the system is already converged for the 10-layer slab referring to adsorption energies (and also vibrational OH/OD frequencies as can be seen later in section \ref{nma}).
+\\
 Also systems with a higher water coverage were considered, tests for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get vibrational spectra, see also chapter \ref{phonons}.
 
 The stability of those species with higher water coverage is defined as
@@ -578,13 +608,12 @@ Also reactions leading to a not next-neighbored situation, increasing the distan
 \centering
 \subfigure[D-a: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.7\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
          \quad
-\subfigure[D-I: CUSb $\rightarrow$CUSb||O-$\mu_3$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diss_Cb-Cb3.pdf}}
+\subfigure[D-b: CUSb $\rightarrow$CUSb||O-$\mu_3$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diss_Cb-Cb3.pdf}}
  \quad
 \subfigure[Df-OH-a: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSb||O-$\mu_2$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-OH_Cb2-iCb2.pdf}}
  \quad
 \subfigure[Df-OH-b: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSa||O-$\mu_2$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-OH_Cb2-iCa2.pdf}}
-\caption{PBE+D2 minimum energy paths with transition states (inlay; if available), 
-  and both educt (left) and product (right) states for D-I, D-II, Df-OH-III and Df-OH-IV reactions, respectively. The color code is as explained above.}
+\caption{Minimum energy paths with transition states (inlay; if available), and both educt (left) and product (right) states for D-a, D-b, D-c, Df-OH-a and Df-OH-b reactions, respectively. The color code is as explained above.}
        \label{mep}
 \end{figure*}
 \begin{figure*} [!ht]
@@ -592,7 +621,7 @@ Also reactions leading to a not next-neighbored situation, increasing the distan
 \subfigure[Df-H-b: inter-CUSa||O-$\mu_2\rightarrow$inter-CUSa||O-$\mu_3^\prime$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCa2-iCa3p.pdf}}
  \quad
 \subfigure[Df-H-d: inter-CUSb||O-$\mu_3^{\prime\prime}$ $\rightarrow$inter-CUSb||O-$\mu_3^{\prime\prime\prime}$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCb3pp-iCb3ppp.png}}
-\caption{PBE+D2 minimum energy paths with transition states, and both educt and product states for Df-H-V and Df-H-VI reactions, respectively. The color code is as explained above.}
+\caption{Minimum energy paths with transition states, and both educt and product states for Df-H-a - Df-H-d reactions. The color code is as explained above.}
        \label{mep2}
 \end{figure*}
 
@@ -802,8 +831,8 @@ reaction pathways: dissociationCb-iCa2 and Cb-iCb2?
 
 \begin{enumerate}[itemsep=0.25\baselineskip]
 %  \item \bibentry{Wirth12}.
-  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}title{\flqq}, {\textit Journal} {\textbf year,} {\textit vol,} pp.
-  \item Heiden, S.;  Saalfrank, P.: {\frqq}title{\flqq}, {\textit Journal} {\textbf year,} {\textit vol,} pp.
+  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}title{\flqq}, {\textit Journal} \textbf{year,} {\textit vol,} pp.
+  \item Heiden, S.;  Saalfrank, P.: {\frqq}title{\flqq}, {\textit Journal} \textbf{year,} {\textit vol,} pp.
 
 \end{enumerate}
 

@@ -325,12 +325,44 @@ Other methods as tunneling based methods do not work on isolating materials like
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 \section{Surface Model}
-The structure of $\upalpha$-alumina is well known for several years. It crystallizes in the hexagonal cell, that means a=b$\neq$c, with an angle of $60$\textdegree~ between $a$ and $b$.
+The structure of $\upalpha$-alumina is well known for several years and was studied in many publications {\color{red} cite here some}. It crystallizes in the hexagonal cell, that means $a=b\neq c$, with an angle of $60$\textdegree~ between $a$ and $b$.
 \\
-To obtain the clean surface we cut a $2\times 2$ supercell from bulk structure. The cell vectors were used from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced. 
+To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. Since the (11\=20) surface is not the crystal cut of the top of the shown crystal in figure \ref{abb:crystal_11-20}(a), the cell vectors $a$ and $b$ are not equal as in the hexagonal cell, but $a=10.36$\AA, $b=14.16$\AA and $c=20.5$\AA, with the angle between $a$ and $b$ of $\theta=84.56$\textdegree.
 \\
-The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), our supercell has 10, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}).
-\\
+The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), see fig.~\ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal are given in table \ref{tab:layer-dist}. The supercell that is mostly used in this work has 10 layers, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), see figure \ref{abb:cell_sizes}, here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}). The spacing between the 5 top layers is displayed in table \ref{tab:layer-dist}:
+\begin{table}[!ht]
+  \centering
+ \caption{Distances between the top 5 layers for different slab sizes and the unrelaxed bulk structure. All values are given in \AA.} 
+\vspace*{.2cm}
+\begin{tabular}{c|cccc|c}
+ &\multicolumn{4}{c}{atomic layer} &\\
+    distance    & 10   & 15   & 20   & 25   &bulk \\\hline
+ d$_{12}$	&0.232 &0.234 &0.247 &0.245 &0.193 \\
+ d$_{23}$	&0.642 &0.649 &0.638 &0.639 &0.741 \\
+ d$_{34}$	&0.656 &0.655 &0.671 &0.672 &0.741 \\
+ d$_{45}$	&0.198 &0.205 &0.209 &0.213 &0.191 \\
+  \end{tabular}
+  \label{tab:layer-dist}
+\end{table}
+
+\begin{figure}[!h]
+    \centering
+    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
+             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the geometry optimized unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers, see main text.}
+            \label{abb:crystal_11-20}
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.80\textwidth]{figures/11-20/cell_sizes.pdf}
+             \caption{Side view for the different cell sizes from left to right 10, 15, 20 and 25 layers. Surface atoms are shown in the color code as used before.}
+            \label{abb:cell_sizes}
+\end{figure}
 $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It was shown that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface, see fig.~\ref{abb:11-20-kpointsampling}.
 \begin{figure}[!h]
 \centering
@@ -342,18 +374,7 @@ $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times
 Starting from this supercell approach there are 16 CUS Al-atoms (cordinatively unsaturated sites), these have less bonds than the aluminum atoms in the bulk structure since the surface layers has to be  depleted. These atoms are very interesting for adorbate molecules/atoms, because these atoms are electron rich and can be addressed for adsorption. If these 16 atoms are covered with adsorbates, here water, we get the system with 1 mono layer (ML). But one has to keep in mind the difference between these 16 surface atoms and the number of potential adsorbates: one monolayer is not built by 16 adsorbates since not all 16 CUS positions can be covered, but only 12, as is shown later (bridging water adsorption).
 \\
 As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa, the twofold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the threefold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
-\begin{figure}[!h]
-    \centering
-    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
-             \quad
-             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
-             \quad
-             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
-             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers.}
-            \label{abb:crystal_11-20}
-     \end{figure}
+
 \section{Structure Search}\label{structure_search11-20}
 First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types, for adsorption energy and Gibb's free energy results see table \ref{tab:ads_1water}. There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
 The adsorption energy is defined by equation \ref{eq:Eads} as the energy of the adsorbed system compared to the energies of the clean surface and the isolated water molecule:
@@ -377,7 +398,7 @@ energies are given in eV.}
 \hline
 \multirow{1}{*}{molecular} & CUSb          &   -1.78  &-1.60 & -1.51  & -1.46 \\
   \hline
- \multirow{6}{*}{dissociated} & \textbf inter-CUSa||O-$\mu_2$ & \bf-2.50 &-2.27 & -2.16 & -2.09 \\
+ \multirow{6}{*}{dissociated} & \textbf inter-CUSa||O-$\mu_2$ & \textbf -2.50 &-2.27 & -2.16 & -2.09 \\
   & inter-CUSa||O-$\mu_3$ & -1.67 &-1.44 &-1.33 & -1.27 \\
   & \textbf CUSb||O-$\mu_2$ & \textbf -2.28 & -2.12& -2.03 &-1.97  \\
  & CUSb||O-$\mu_3$ & -1.19 &-1.05 &-0.98 & -0.95 \\%Cb3_other
@@ -427,6 +448,26 @@ Dissociated species in direct neighborhood as shown in table \ref{tab:ads_1water
   \end{tabular}
   \label{tab:ads_1waterfurther}
 \end{table}
+\\
+Systems with more layers were also studied and the adsorption energy results are shown in table \ref{tab:eads_layers}. Basically the results don't change much with increasing slab size. The molecular species is still less stable than the 
+  \begin{table}[!ht]
+  \centering
+  \caption{Adsorption energies calculated from equation \ref{eq:Eads} for molecular and dissociated species for different vertical slab sizes. All values are in eV.}
+ \begin{tabular}{l|cccc}
+ System                     & 10 layers& 15 layers& 20 layers&  25 layers \\\hline
+CUSb                                    &-1.78 &-1.80     &-1.81     &-1.83      \\\hline
+\textbf{inter-CUSa$\parallel$O-$\mu_2$}    &\textbf{-2.50} &-2.46 &-2.54 &-2.56  \\
+inter-CUSa$\parallel$O-$\mu_3$          &-1.67 &-1.67 &-1.78 &-1.80 \\
+\textbf{CUSb$\parallel$O-$\mu_2$}          &\textbf{-2.28} &-2.35 &-2.36 &-2.35 \\
+CUSb$\parallel$O-$\mu_3$                &-1.19 &-1.71 &-     &-      \\
+\textbf{inter-CUSb$\parallel$O-$\mu_2$}    &\textbf{-2.09} &-2.43 &-2.48 &-2.36  \\
+inter-CUSb$\parallel$O-$\mu_3$          &-1.89 &-1.59 &-1.65 &-2.09 
+\label{tab:eads_layers}
+\end{tabular}
+ \end{table}
+
+{\color{red} Put here stuff with bigger slab size in z direction. Table with Eads for different amount of layers. Explain differences, iCb3 (was it this one?) is slightly different, except from that the ordering is basically the same, the 10 layer cell is already converged with respect to eads and OH frequencies..
+}
 
 Also systems with a higher water coverage were considered, tests for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get vibrational spectra, see also chapter \ref{phonons}.
 
@@ -470,7 +511,7 @@ For the other dissociation reaction D-b from CUSb to CUSb$\parallel$O-$\mu_3$, t
   \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{D-b}
       \label{dissb}
 \end{equation}
-A further dissociation D-c from the metastable inter-CUSa species also shows no barrier, probably because the educt is no real minimum.
+A further dissociation D-c from the metastable inter-CUSa species also shows no barrier, probably because the educt is no stable minimum and because the product is much more stable:
 \begin{equation}
   \text{H$_2$O(inter-CUSa)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{D-c}
       \label{dissc}
@@ -590,24 +631,26 @@ Also reactions leading to a not next-neighbored situation, increasing the distan
 
 
 \section{Vibrational Frequencies / Spectroscopic Properties}
-A great source of knowledge about chemical systems comes from vibrational spectroscopy, so we were interested in frequencies of the systems, since the frequencies of these vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in fig.~\ref{abb:exp-sfg}.
+A great source of knowledge about chemical systems is vibrational spectroscopy, so we were interested in frequencies of the systems, since the frequencies of these vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system adsorbed with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in fig.~\ref{abb:exp-sfg}.
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
  \caption{Experimental SFG results including fit.}
         \label{abb:exp-sfg}
  \end{figure}
-Of course, the frequencies for a deuterated system are different from OH, but the different isotope names can be calculated easily within vasp by changing the mass. To calculate the modes we mainly applied two methods: Normal mode analyses (see section \ref{nma}) and power spectra from velocity-velocity autocorrelation function (section \ref{vvacf}).
+Of course, the frequencies for a deuterated system are different from OH, but the different isotope names can be calculated easily within vasp, just by changing the mass. To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and for some systems also power spectra from \textit{ab-initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
 \\
-The intensities are implicitly in the power spectra and for the normal mode analyses we follow 2 different approaches, dipole corrections and Born effective charges. But mostly we are interested in the position of the modes and not in the relative intensities, because these are not too reliable.
+We focus mainly on the position of the peaks rather than the intensities, for the reason of this being not obvious for SFG selection rules (standard programms can do IR or Raman intensities, but not SFG) and the unreliability of those obtained intensities.
+In the power spectra the intensities are implicitly received and for the normal mode analyses this work follows 2 different approaches, dipole corrections and Born effective charges.
 \\
-In another part, the modes for higher coverage systems are also examined.
+In subsection \ref{nma}, also modes for higher coverage systems are also examined.
 \\
+But not only the OH/OD frequencies are of interest, but also the lattice vibrations, see subsection \ref{phonons}.
+\subsection{OH/OD Vibrations}
+\subsubsection{Normal Mode Analysis}\label{nma}
 {\color{red} TODO:
 Listed all frequencies for all possible next neighboring structures are shown but in comparison with the experiment, we only focus on the 3 most stable adsorbate structures, since only those are expected to be seen in experiment.
 }
-\subsection{OH/OD Vibrations}
-\subsubsection{Normal Mode Analysis}\label{nma}
 The classical modes calculated with a normal mode analysis are dependent on the mass and the spring constant of the bond.
 We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OH group and one for the surface group). We expect 6 frequencies. when evaluating those values one can see that one is out of the experimental range (strongly hydrogen bonded species, wave number is shifted to low $\tilde{\nu}$ and some of the others are except for numerical differences the same, so there should be only 3 bands visible. Very good agreement with the experimental modes. The numbers itself do not compare too good, but the relative modes are in really good agreement.
 \\
@@ -616,28 +659,36 @@ Comparison of different slab sizes.
 Comparison of intensities with dipole corrections and Born effective charges.
 
 \subsubsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
-Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate Modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage?
+Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage? So for Giacomo's system it makes sense, but here it is unnecessary.
 
 \subsection{Lattice Vibrations}\label{phonons}
-For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers, both for the naked surface and for the covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses.
+For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers (with 5 being the number of layers in the unit cell), both for the clean surface and for the adsorbate covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses. The additional geometries with more layers do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20}. {\color{red} Table with no. of layers and adsorption energies? Put it to section \ref{structure_search11-20}? Probably better do do it there!}
 
 
 \section{Desorption Process}
-calculation with NEB didn't lead to anything, there is no barrier visible
+calculation with NEB didn't lead to anything, there is no barrier visible, check if NEB was done and if not do it!
 \begin{verbatim}
   /und/sophia/bigger-cell_newcrystalcut/2x2cell/2layers/gasphase-physisorbed
 \end{verbatim}
 
-As mentioned before the experimentalists measure TPD in order to understand the adsorption strength and possible exchange reactions. We tried to simulate the desorption process using the following scheme: take the water in the gas phase + the naked surface as the standard. In the thermal equilibrium, the water should be equally distributed to Boltzman's distribution in the most stable structures. From this situation the water can recombine to the molecularly adsorbed water. The recombined water then can desorb to the gas phase. Since the spectrum is measured in ultra high vacuum it can be assumed that all the water that has left the surface will not return to the system, because it is dragged out of the equilibrium by the vacuum pumps.
+As mentioned before the experimentalists measure TPD in order to understand the adsorption strength and possible exchange reactions. We tried to simulate the desorption process using the following scheme: take the water in the gas phase + the clean surface as the standard. In the thermal equilibrium, the water should be equally distributed to Boltzman's distribution in the most stable structures. From this situation the water can recombine to the molecularly adsorbed water. The recombined water then can desorb to the gas phase. Since the spectrum is measured in ultra high vacuum it can be assumed that all the water that has left the surface will not return to the system, because it is dragged out of the equilibrium by the vacuum pumps.
 Applying the reaction rates of the corresponding reactions in a kinetic Monte Carlo approach leads to 
 {\color{red} REDO THESE CALCULATIONS}.
 
+{\color{green} does it make sense to bring this cause there is no good agreement between our theory and the experimental findings..? The NEB didn't lead to anything since there is no minimum (just try a NEB??), optimization doesn't show any kind of barrier and just modelling the desorption from the rates is not good enough, sonce the rate for Cb2-Cb is too small to }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(0001)}
-The most stable surface site under UHV conditions, subject of several studies so far.
-\section{Surface Model}
+The (0001) surface is the most stable surface site under UHV conditions, and was subject of several studies so far. Both experimental and theoretical studies discovered lots of characteristics and specialties of this crystal cut. In our workgroup previous work was done concerning the stability of low limit water coverage and their vibrational spectroscopic behaviour, reaction pathways between these stable minima, and also higher water coverages and hydroxylated surface systems. In this work, the focus lies more on two topics:
+\\
+understanding the dissociation process of a water molecule (D$_2$O) being shot at the surface with the help of \textit{ab-initio} Molecular Dynamics and
+\\
+the improvement of reaction rates with different methods beyond GGA functionals (as PBE).
+\\
+First, the surface and the most stable adsorption patterns are introduced (section \ref{0001surf}), followed by the results for the dissociation process and last the improvements for the reaction rates.
+	
+\section{Surface Model}\label{0001surf}
 Crystal structure of $\upalpha$-Al$_2$O$_3$ with surface cuts (0001) and (11\=20) in comparison.
 We applied here a $2\times 2$ supercell with, as before, vectors as in the bulk (did Jonas optimize them?) Al terminated surface, only one type of CUS, all oxygen atoms are 3-fold coordinated, topography is not as complicated as for the higher indexed surface. x layers, y fixed.
 \\
@@ -783,8 +834,8 @@ reaction pathways: dissociationCb-iCa2 and Cb-iCb2?
 
 \begin{enumerate}[itemsep=0.25\baselineskip]
 %  \item \bibentry{Wirth12}.
-  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}title{\flqq}, {\textit Journal} {\textbf year,} {\textit vol,} pp.
-  \item Heiden, S.;  Saalfrank, P.: {\frqq}title{\flqq}, {\textit Journal} {\textbf year,} {\textit vol,} pp.
+  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}title{\flqq}, {\textit Journal} \textbf{year,} {\textit vol,} pp.
+  \item Heiden, S.;  Saalfrank, P.: {\frqq}title{\flqq}, {\textit Journal} \textbf{year,} {\textit vol,} pp.
 
 \end{enumerate}
 
