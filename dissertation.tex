@@ -515,7 +515,6 @@ A further dissociation D-c from the metastable inter-CUSa species also shows no 
       \label{dissc}
 \end{equation}
 On the other hand reaction D-b does also not show a barrier, so it remains unclear whether it is due to methodology or the barrier is too low to be detected with the settings applied for the calculations.
-To consider this, geometry optimizations were done where an intact water molecule was planted right above a CUSb and an inter-CUSa position {\color{red} (did I also do MD for this?)}, with the result that one could see in both cases an intermittend molecularly adsorbed structure, that dissociated afterwards to the more stable twofold coordinated oxygen atom.
 \\
 Apart from dissociation that is highly favoured on this surface cut compared to more stable alumina surfaces, diffusion reactions starting from the dissociated species are important for understanding processes.
 The OD diffusion reaction Df-OH-a moves from CUSb$\parallel$O-$\mu_2$ to the inter-CUSb position, which is relatively fast for OD diffusion reactions compared to the reactions at other alumina surfaces {\color{red} cite Jonas}.
@@ -523,7 +522,7 @@ The OD diffusion reaction Df-OH-a moves from CUSb$\parallel$O-$\mu_2$ to the int
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_2$)} \tag{Df-OH-a}
      \label{diffOHa}
 \end{equation}
-In this special reaction, the OH residue diffuses from an on top CUS position into a gap between two CUSb atoms, so that there is not much repulsion with neighboring surface oxygen atoms and other CUS atoms nearby during the diffusion. ALso the distance that has to be bridged is very small. The barrier height equals $0.35\,$eV and the corresponding rate constant $k_{\text{300K}}=1.88\times 10^6$s$^{-1}$.
+In this special reaction, the OH residue diffuses from an on top CUS position into a gap between two CUSb atoms, so that there is not much repulsion with neighboring surface oxygen atoms and other CUS atoms nearby during the diffusion. Also the distance that has to be bridged is very small. The barrier height equals $0.35\,$eV and the corresponding rate constant $k_{\text{300K}}=1.88\times 10^6$s$^{-1}$.
 In contrast to that the real CUS-to-CUS reaction Df-OH-b that is much slower. It is a diffusion from CUSb to inter-CUSa with the hydrogen residue staying at an O-$\mu_2$ position. This barrier is with $1.07\,$eV relatively high and leads to $k_{\text{300K}}=2.41\times 10^{-6}$s$^{-1}$.
 \begin{equation}
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{Df-OH-b}
@@ -593,17 +592,11 @@ diffusion (Df-OH) or H diffusion (Df-H).}}
   \label{tab:reaction-rates}
 \end{table*}
 \\
-It was also tried to study the adsorption/desorption process with NEB but there was no minimum structure in the gas phase nor physisorbed state. The energy profile is smooth from any tested point on the potential energy surface above the alumina surface toward the adsorbed water system without showing a barrier.
-\\
-As mentioned before a huge problem of GGA is that in this approximation barriers are well known to be underestimated. {\color{red} Optimizing structure with HSE06 is nearly impossible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (see also work of Dr. J. Wirth). {\textit (at least for crystal calculations... so don't bring it her?)}}
-\\
-{\color{red} TEST?? What doesn't work is the molecular diffusion from CUSb to CUSb, the molecular minimum is not stable enough, during the path, dissociation would occur? Or it would have to be a two step reaction from CUSb to inter-CUSb what does not exist and then further to CUSb..}
+As mentioned before a huge well known problem of GGA is that barriers are underestimated. {\color{red} Optimizing structure with HSE06 is nearly impossible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (see also work of Dr. J. Wirth). {\textit (at least for crystal calculations... so don't bring it her?)}}
 \\
 Proton diffusion reactions are way more variable giving reaction rates at $300\,$K ranging from $10^{-13}$ to $10^{-3}$s$^{-1}$. The barriers and therefore also rate constants for H-diffusion cover a wider range depending on the distance between OH and H and of course more importantly on the fact between which type of O$\mu_{2/3}$ the proton is diffusing.
 \\
 Also reactions leading to a not next-neighbored situation, increasing the distance between OH and H are also not favorable since geometries with the residues further apart are energetically less stable.
-\\
-{\color{red} what about backreactions?}
 \begin{figure*} [!ht]
 \centering
 \subfigure[D-a: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.7\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
@@ -625,20 +618,43 @@ Also reactions leading to a not next-neighbored situation, increasing the distan
        \label{mep2}
 \end{figure*}
 
-
-
+{\color{red} what about backreactions?}
+Rates for backreactions can also be calculated and the results are shown in table \ref{tab:backreactions}.
+\begin{table*}[ht]
+  \centering
+  \caption{Reaction rate constants for the backreactions in comparison with forward reactions (left). These rates can be calculated via detailed balance $\stackrel{\leftarrow}{k}  = \stackrel{\rightarrow}{k} \ e^{-\Delta G/k_B T}$. All values are given in s$^{-1}$ and at a temperature of $300\,$K.}
+  \begin{tabular}{cl|cc|cc|c}
+\small{Reaction Type} & \small{$k_\text{300 K}$(s$^{-1}$)} &  \small{$k_\text{300 K}$(s$^{-1}$)} \\
+ &forward reaction &back reaction \\\hline
+ \small{D-a}   & \small{5.76$\times 10^{12}$} &\small{1.17$\times 10^4$}\\
+ \small{D-b}   & \small{n.f.} & \small{n.f.} \\
+ \small{D-c}   & \small{n.f.} & \small{n.f.}  \\\hline
+ \small{Df-OH-a} & \small{1.88 $\times  10^6$}&\small{9.86$\times 10^9$} \\
+ \small{Df-OH-b}  & \small{2.41$\times 10^{-6}$}& \small{1.69$\times 10^{-8}$}\\\hline
+ \small{Df-H-a} & \textit{no TST} &\textit{no TST} \\
+ \small{Df-H-b}  & \small{4.90$\times 10^{-13}$} &\small{1.49$\times 10^5$} \\
+ \small{Df-H-c} & still running & still running\\
+ \small{Df-H-d} & \small{1.05$\times 10^{-3}$} &\small{7.12$\times 10^{-5}$} \\
+  \end{tabular}
+  \label{tab:backreactions}
+\end{table*}
+\clearpage
 \section{Vibrational Frequencies / Spectroscopic Properties}
 A great source of knowledge about chemical systems is vibrational spectroscopy, so we were interested in frequencies of the systems, since the frequencies of these vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system adsorbed with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in fig.~\ref{abb:exp-sfg}.
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
- \caption{Experimental SFG results including fit.}
+ \caption{Experimental SFG results for (11\=20) surface with 0.14ML (mono layer, left spectrum) and 0.05ML water coverage (right) including fit. The experiment was conducted by Yanhua Yue, FHI Berlin. Coverage only influences intensity of the peaks but not the peak position itself. The different coverages are achieved via different preparing temperatures of the sample.}
         \label{abb:exp-sfg}
  \end{figure}
-Of course, the frequencies for a deuterated system are different from OH, but the different isotope names can be calculated easily within vasp, just by changing the mass. To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and for some systems also power spectra from \textit{ab-initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
+Of course, the frequencies for a deuterated system are different from OH, but the different isotope names can be calculated easily within vasp, just by changing the mass.
+{\color{red} Better put this in theory part? \\
+In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in UHV and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source. For further details see cite{11-20paper}.}
 \\
-We focus mainly on the position of the peaks rather than the intensities, for the reason of this being not obvious for SFG selection rules (standard programms can do IR or Raman intensities, but not SFG) and the unreliability of those obtained intensities.
-In the power spectra the intensities are implicitly received and for the normal mode analyses this work follows 2 different approaches, dipole corrections and Born effective charges.
+To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and for some systems also power spectra from \textit{ab-initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
+\\
+We focus mainly on the position of the peaks rather than the intensities, because in the first place it is of greater interest what kind of vibrations gives which peak than the intensity of this peak. It is also still challenging to get the frequencies right before heading to intensities.
+In the power spectra from MD calculations the intensities are implicitly received and for the normal mode analyses this work follows 2 different approaches, dipole corrections and Born effective charges.
 \\
 In subsection \ref{nma}, also modes for higher coverage systems are also examined.
 \\
@@ -663,11 +679,20 @@ For the phonons as a first test the same normal modes analyses were checked to g
 
 
 \section{Desorption Process}
-calculation with NEB didn't lead to anything, there is no barrier visible, check if NEB was done and if not do it!
+Not only the reactions at the surface are of interest but also the process of adsorption and desorption were studied. The experimentalist's method to do so is TPD (thermal desorption spectroscopy). It is possible to measure the bond strength of the adsorbates, depending at which temperature they can be found in the corresponding spectrum. To interpret these results, one has to think of a possible reaction scheme from the most stable adsorption sites via the molecular state leading to the gas phase molecule.
+\\
+Here the most stable inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$ and their reactions
+
+
+\textit{not sure if this is worth a whole chapter..}
+\\
+calculation with NEB was not done, instead geometry optimization for a water molecule above 3 interesting points on the potential energy surface (above inter-CUSa, CUSb and inter-CUSb).
 \begin{verbatim}
   /und/sophia/bigger-cell_newcrystalcut/2x2cell/2layers/gasphase-physisorbed
 \end{verbatim}
 
+It was also tried to study the adsorption/desorption process (not with NEB), since there was no minimum structure in the gas phase nor physisorbed state. But from a single water molecule above the surface, geometry optimizations were done. Two structures were tested above inter-CUSa and CUSb. The energy profile is smooth from any tested point on the potential energy surface above the alumina surface towards the adsorbed water system without showing a barrier but indeed both showing an intermittend molecularly adsorbed structure.
+\\
 As mentioned before the experimentalists measure TPD in order to understand the adsorption strength and possible exchange reactions. We tried to simulate the desorption process using the following scheme: take the water in the gas phase + the clean surface as the standard. In the thermal equilibrium, the water should be equally distributed to Boltzman's distribution in the most stable structures. From this situation the water can recombine to the molecularly adsorbed water. The recombined water then can desorb to the gas phase. Since the spectrum is measured in ultra high vacuum it can be assumed that all the water that has left the surface will not return to the system, because it is dragged out of the equilibrium by the vacuum pumps.
 Applying the reaction rates of the corresponding reactions in a kinetic Monte Carlo approach leads to 
 {\color{red} REDO THESE CALCULATIONS}.
