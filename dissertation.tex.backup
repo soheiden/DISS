@@ -647,7 +647,7 @@ A great source of knowledge about chemical systems is vibrational spectroscopy, 
  \caption{Experimental SFG results for (11\=20) surface with 0.14ML (mono layer, left spectrum) and 0.05ML water coverage (right) including fit. The experiment was conducted by Yanhua Yue, FHI Berlin. Coverage only influences intensity of the peaks but not the peak position itself. The different coverages are achieved via different preparing temperatures of the sample.}
         \label{abb:exp-sfg}
  \end{figure}
-Of course, the frequencies for a deuterated system are different from OH, but the different isotope names can be calculated easily within vasp, just by changing the mass.
+Of course, the frequencies for a deuterated system are different from OH, but the different isotopes can be calculated easily within vasp, just by changing the mass.
 {\color{red} Better put this in theory part? \\
 In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in UHV and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source. For further details see cite{11-20paper}.}
 \\
@@ -658,28 +658,43 @@ In the power spectra from MD calculations the intensities are implicitly receive
 \\
 In subsection \ref{nma}, also modes for higher coverage systems are also examined.
 \\
-But not only the OH/OD frequencies are of interest, but also the lattice vibrations, see subsection \ref{phonons}.
-\subsection{OH/OD Vibrations}
-\subsubsection{Normal Mode Analysis}\label{nma}
-{\color{red} TODO:
-Listed all frequencies for all possible next neighboring structures are shown but in comparison with the experiment, we only focus on the 3 most stable adsorbate structures, since only those are expected to be seen in experiment.
-}
+But not only the OH/OD frequencies are of interest, but also the lattice vibrations, and are covered in both subsections.
+
+\subsection{Normal Mode Analysis}\label{nma}
+\subsubsection{OH/OD Vibrations}
+For this part, more atomic layers in the slab are considered. As it was mentioned in section \ref{structure_search11-20}, the slab was already converged with 10 layers. In table \ref{tab:freq_layers} the OD frequencies for the vibrations that could be identified in cooperation with experiment for different sizes are shown.
+\begin{table*}[th]
+  \centering
+ \caption{Comparison of the different slab sizes (normal modes): OD stretching modes for each of the most stable minima. In parantheses, the angle of the OD bonding vector to the surface normal ($\theta$ in \textdegree) is given. The left value reflects the adsorbed OD group and the right wavenumber the surface OD group, respectively.}
+\vspace*{.2cm} 
+ \begin{tabular}{l|cccc}
+  \hline
+  Layers&inter-CUSa$\parallel$O-$\mu_2$ &CUSb$\parallel$O-$\mu_2$  &inter-CUSb$\parallel$O-$\mu_2$ \\\hline
+  10 &2731 (44), 2694 (36) &2785 (26), 1711 (61) &2692 (41), 2689 (54) \\
+  15 &2728 (44), 2695 (36) &2783 (24), 1812 (60) &2711 (34), 2656 (60) \\
+  20 &2729 (44), 2694 (35) &2783 (24), 1838 (60) &2715 (34), 2665 (58) \\
+  25 &2728 (44), 2696 (35) &2767 (59), 1750 (62) &2764 (29), 2724 (41) \\\hline
+  exp. & \multicolumn{3}{c}{2839, 2812, 2762} \\
+  \end{tabular} 
+  \label{tab:freq_layers}
+\end{table*}
+Comparing the experimental wavenumbers with the computational results one can assign the vibrations in the measurement with the calculated vibrations for both inter-CUSa$\parallel$O-$\mu_2$ vibrations and the adsorbed OD group of CUSb$\parallel$O-$\mu_2$.
+
 The classical modes calculated with a normal mode analysis are dependent on the mass and the spring constant of the bond.
 We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OH group and one for the surface group). We expect 6 frequencies. when evaluating those values one can see that one is out of the experimental range (strongly hydrogen bonded species, wave number is shifted to low $\tilde{\nu}$ and some of the others are except for numerical differences the same, so there should be only 3 bands visible. Very good agreement with the experimental modes. The numbers itself do not compare too good, but the relative modes are in really good agreement.
 \\
 Comparison of different slab sizes.
 \\
 Comparison of intensities with dipole corrections and Born effective charges.
-
-\subsubsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
-Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage? So for Giacomo's system it makes sense, but here it is unnecessary.
-
-\subsection{Lattice Vibrations}\label{phonons}
+\subsubsection{Lattice Vibrations}\label{phonons}
 For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers (with 5 being the number of layers in the unit cell), both for the clean surface and for the adsorbate covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses. The additional geometries with more layers do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20}. {\color{red} Table with no. of layers and adsorption energies? Put it to section \ref{structure_search11-20}? Probably better do do it there!}
+
+\subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
+Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage? So for Giacomo's system it makes sense, but here it is unnecessary.
 
 
 \section{Desorption Process}
-Not only the reactions at the surface are of interest but also the process of adsorption and desorption were studied. The experimentalist's method to do so is TPD (thermal desorption spectroscopy). It is possible to measure the bond strength of the adsorbates, depending on the temperature they can be found in the corresponding spectrum. The sample was heated to  The results showed two peaks
+Not only the reactions at the surface are of interest but also the process of adsorption and desorption were studied. The experimentalist's method to do so is TPD (thermal desorption spectroscopy). It is possible to measure the bond strength of the adsorbates, depending on the temperature they can be found in the corresponding spectrum. The sample was flashed to $400\,$K to get rid of impurities. The results showed two peaks, one beneath $400\,$K and one above. This peak beneath $400\,$K hould not be visible, since the sample was heated to that temperature and all adsorbates that are released beneath this temperature should not be there any more. The only plausible explanation to this is, that there are reactions, that fill this species up and so the desorption can still be from this species.
 \\
 To interpret these results, one has to think of a possible reaction scheme from the most stable adsorption sites via the molecular state leading to the gas phase molecule.
 \\
