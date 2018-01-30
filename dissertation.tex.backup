@@ -661,7 +661,10 @@ In subsection \ref{nma}, also modes for higher coverage systems are also examine
 But not only the OH/OD frequencies are of interest, but also the lattice vibrations, and are covered in both subsections.
 
 \subsection{Normal Mode Analysis}\label{nma}
-\subsubsection{OH/OD Vibrations}
+\subsubsection{OD Vibrations}
+The classical modes calculated with normal mode analysis are dependent on the mass and the spring constant of the bond. This ansatz is quite good for high frequency modes like OD stretch vibrations.
+We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OD group and one for the surface OD group). When evaluating those values, for example for the 10 layer slab values in tab.~\ref{tab:freq_layers} one can see that There are three nearly identical vibrations at $2689$, $2692$ and $2694\,$cm$^{-1}$, so that in experiment due to line broadening we expect to see only a single peak. Then there are 3 further peaks, one at $2731\,$cm$^{-1}$ and another one at $2785\,$cm$^{-1}$. The vibrations at $1711\,$cm${-1}$ is out of the experimental range due to its strongly hydrogen bonded nature the wave number is shifted to low $\tilde{\nu}$. SUmming up those findings in experiment there should be only 3 bands visible, see figure. Very good agreement with the experimental modes. The numbers itself do not compare too good, but the relative modes are in really good agreement.
+\\
 For this part, more atomic layers in the slab are considered. As it was mentioned in section \ref{structure_search11-20}, the slab was already converged with 10 layers. In table \ref{tab:freq_layers} the OD frequencies for the vibrations that could be identified in cooperation with experiment for different sizes are shown.
 \begin{table*}[th]
   \centering
@@ -678,10 +681,7 @@ For this part, more atomic layers in the slab are considered. As it was mentione
   \end{tabular} 
   \label{tab:freq_layers}
 \end{table*}
-Comparing the experimental wavenumbers with the computational results one can assign the vibrations in the measurement with the calculated vibrations for both inter-CUSa$\parallel$O-$\mu_2$ vibrations and the adsorbed OD group of CUSb$\parallel$O-$\mu_2$.
-
-The classical modes calculated with a normal mode analysis are dependent on the mass and the spring constant of the bond.
-We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OH group and one for the surface group). We expect 6 frequencies. when evaluating those values one can see that one is out of the experimental range (strongly hydrogen bonded species, wave number is shifted to low $\tilde{\nu}$ and some of the others are except for numerical differences the same, so there should be only 3 bands visible. Very good agreement with the experimental modes. The numbers itself do not compare too good, but the relative modes are in really good agreement.
+Comparing the experimental wavenumbers with the computational results one can assign the vibrations in the measurement with the calculated vibrations for both inter-CUSa$\parallel$O-$\mu_2$ vibrations and the adsorbed OD group of CUSb$\parallel$O-$\mu_2$. {\color{red} add chart with delta nu to show this}.
 \\
 Comparison of different slab sizes.
 \\

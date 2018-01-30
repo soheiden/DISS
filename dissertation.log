@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.1.23)  29 JAN 2018 13:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.1.23)  30 JAN 2018 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1599,105 +1599,126 @@ Package pdftex.def Info: figures/11-20/SFG_fit.jpg used on input line 646.
 LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <12> not available
 (Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 664.
 
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 671
-.
 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.672 F
+       or this part, more atomic layers in the slab are considered. As it wa...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 675
+.
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [28] [29] [30]
-chapter 3.
+)
+Underfull \vbox (badness 6859) has occurred while \output is active []
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 721.
+ [28]
+Underfull \vbox (badness 6063) has occurred while \output is active []
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\upalpha' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 721.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 721.
-
-<figures/0001/surf_0K_axes.pdf, id=596, 967.93118pt x 687.71014pt>
-File: figures/0001/surf_0K_axes.pdf Graphic file (type pdf)
-
-<use figures/0001/surf_0K_axes.pdf>
-Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 739.
-(pdftex.def)             Requested size: 201.90378pt x 143.44748pt.
-
-<figures/0001/surf_0K-side.pdf, id=597, 1541.76pt x 819.86299pt>
-File: figures/0001/surf_0K-side.pdf Graphic file (type pdf)
-
-<use figures/0001/surf_0K-side.pdf>
-Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 741.
-(pdftex.def)             Requested size: 201.90378pt x 107.36156pt.
- [31
+ [29]
+[30] [31] [32
 
 
 ]
-<figures/0001/0001_mol_top.jpg, id=604, 1042.89626pt x 784.9325pt>
+chapter 3.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\upalpha' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 725.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 725.
+
+<figures/0001/surf_0K_axes.pdf, id=609, 967.93118pt x 687.71014pt>
+File: figures/0001/surf_0K_axes.pdf Graphic file (type pdf)
+
+<use figures/0001/surf_0K_axes.pdf>
+Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 743.
+(pdftex.def)             Requested size: 201.90378pt x 143.44748pt.
+
+<figures/0001/surf_0K-side.pdf, id=610, 1541.76pt x 819.86299pt>
+File: figures/0001/surf_0K-side.pdf Graphic file (type pdf)
+
+<use figures/0001/surf_0K-side.pdf>
+Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 745.
+(pdftex.def)             Requested size: 201.90378pt x 107.36156pt.
+ [33]
+<figures/0001/0001_mol_top.jpg, id=615, 1042.89626pt x 784.9325pt>
 File: figures/0001/0001_mol_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_mol_top.jpg>
-Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 748.
+Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 752.
 (pdftex.def)             Requested size: 179.4685pt x 135.06564pt.
 
-<figures/0001/0001_1-2-diss_top.jpg, id=605, 1041.8925pt x 783.92876pt>
+<figures/0001/0001_1-2-diss_top.jpg, id=616, 1041.8925pt x 783.92876pt>
 File: figures/0001/0001_1-2-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-2-diss_top.jpg>
 Package pdftex.def Info: figures/0001/0001_1-2-diss_top.jpg used on input line 
-750.
+754.
 (pdftex.def)             Requested size: 179.4685pt x 135.0245pt.
 
-<figures/0001/0001_1-4-diss_top.jpg, id=606, 1041.8925pt x 785.93625pt>
+<figures/0001/0001_1-4-diss_top.jpg, id=617, 1041.8925pt x 785.93625pt>
 File: figures/0001/0001_1-4-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-4-diss_top.jpg>
 Package pdftex.def Info: figures/0001/0001_1-4-diss_top.jpg used on input line 
-752.
+756.
 (pdftex.def)             Requested size: 179.4685pt x 135.37027pt.
 
-<figures/0001/0001_1-4p-diss_top_label.pdf, id=607, 833.51402pt x 626.34pt>
+<figures/0001/0001_1-4p-diss_top_label.pdf, id=618, 833.51402pt x 626.34pt>
 File: figures/0001/0001_1-4p-diss_top_label.pdf Graphic file (type pdf)
 
 <use figures/0001/0001_1-4p-diss_top_label.pdf>
 Package pdftex.def Info: figures/0001/0001_1-4p-diss_top_label.pdf used on inpu
-t line 754.
+t line 758.
 (pdftex.def)             Requested size: 179.4685pt x 134.86116pt.
 
-<figures/0001/perspective+h2o_new.png, id=608, 1222.166pt x 1554.608pt>
+<figures/0001/perspective+h2o_new.png, id=619, 1222.166pt x 1554.608pt>
 File: figures/0001/perspective+h2o_new.png Graphic file (type png)
 
 <use figures/0001/perspective+h2o_new.png>
 Package pdftex.def Info: figures/0001/perspective+h2o_new.png used on input lin
-e 768.
+e 772.
 (pdftex.def)             Requested size: 179.4685pt x 228.27081pt.
- [32 <./figures/0001/surf_0K_axes.pdf> <./figures/0001/surf_0K-side.pdf
+ [34 <./figures/0001/surf_0K_axes.pdf> <./figures/0001/surf_0K-side.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/0001/surf_0K-side.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
@@ -1707,60 +1728,60 @@ igures/0001/0001_1-4-diss_top.jpg> <./figures/0001/0001_1-4p-diss_top_label.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/0001/0001_1-4p-diss_top_label
 .pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <figures/0001/2H2O.pdf, id=664, 1541.76pt x 819.86299pt>
+>] <figures/0001/2H2O.pdf, id=675, 1541.76pt x 819.86299pt>
 File: figures/0001/2H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/2H2O.pdf>
-Package pdftex.def Info: figures/0001/2H2O.pdf used on input line 776.
+Package pdftex.def Info: figures/0001/2H2O.pdf used on input line 780.
 (pdftex.def)             Requested size: 157.04007pt x 83.50482pt.
 
-<figures/0001/4H2O.pdf, id=665, 1541.76pt x 819.86299pt>
+<figures/0001/4H2O.pdf, id=676, 1541.76pt x 819.86299pt>
 File: figures/0001/4H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/4H2O.pdf>
-Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 778.
+Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 782.
 (pdftex.def)             Requested size: 246.77434pt x 131.21828pt.
- [33] [34 <./figures/0001/perspective+h2o_new.png> <./figures/0001/2H2O.pdf> <.
+ [35] [36 <./figures/0001/perspective+h2o_new.png> <./figures/0001/2H2O.pdf> <.
 /figures/0001/4H2O.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/0001/4H2O.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
->] [35
+>] [37
 
-] [36]
-chapter without number
-[37
-
-
-] [38
-
-]
+] [38]
 chapter without number
 [39
 
 
 ] [40
 
-] [41
+]
+chapter without number
+[41
+
 
 ] [42
+
+] [43
+
+] [44
 
 
 ]
 chapter without number
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 910--911
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 916.
-[44
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 920.
+[46
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 916.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 920.
  (./dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 916.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 916.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 920.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 920.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
 (rerunfilecheck)             Checksum: AEF98401B90609E0A255F3B5F542C745;2475.
 
@@ -1769,10 +1790,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 21838 strings out of 493089
- 387808 string characters out of 6144303
- 567144 words of memory out of 5000000
- 24833 multiletter control sequences out of 15000+600000
+ 21842 strings out of 493089
+ 387854 string characters out of 6144303
+ 567189 words of memory out of 5000000
+ 24834 multiletter control sequences out of 15000+600000
  173304 words of font info for 132 fonts, out of 8000000 for 9000
  1158 hyphenation exceptions out of 8191
  51i,24n,66p,10375b,785s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1800,10 +1821,10 @@ sy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmtt10.pfb>
-Output written on dissertation.pdf (44 pages, 31505313 bytes).
+Output written on dissertation.pdf (46 pages, 31506987 bytes).
 PDF statistics:
- 892 PDF objects out of 1000 (max. 8388607)
- 707 compressed objects within 8 object streams
- 159 named destinations out of 1000 (max. 500000)
+ 903 PDF objects out of 1000 (max. 8388607)
+ 716 compressed objects within 8 object streams
+ 162 named destinations out of 1000 (max. 500000)
  426 words of extra memory for PDF output out of 10000 (max. 10000000)
 
