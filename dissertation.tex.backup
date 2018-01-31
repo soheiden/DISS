@@ -376,6 +376,7 @@ Starting from this supercell approach there are 16 CUS Al-atoms (cordinatively u
 As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa, the twofold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the threefold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
 
 \section{Structure Search}\label{structure_search11-20}
+{\color{red} acid base character of the adsorption, undercoordination of the alumina sites, bidentate adsorption, different types of Al and O cause large variety of possible adsorption sites}
 First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types, for adsorption energy and Gibb's free energy results see table \ref{tab:ads_1water}. There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
 The adsorption energy is defined by equation \ref{eq:Eads} as the energy of the adsorbed system compared to the energies of the clean surface and the isolated water molecule:
 \begin{equation}\label{eq:Eads}
@@ -663,7 +664,24 @@ But not only the OH/OD frequencies are of interest, but also the lattice vibrati
 \subsection{Normal Mode Analysis}\label{nma}
 \subsubsection{OD Vibrations}
 The classical modes calculated with normal mode analysis are dependent on the mass and the spring constant of the bond. This ansatz is quite good for high frequency modes like OD stretch vibrations.
-We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OD group and one for the surface OD group). When evaluating those values, for example for the 10 layer slab values in tab.~\ref{tab:freq_layers} one can see that There are three nearly identical vibrations at $2689$, $2692$ and $2694\,$cm$^{-1}$, so that in experiment due to line broadening we expect to see only a single peak. Then there are 3 further peaks, one at $2731\,$cm$^{-1}$ and another one at $2785\,$cm$^{-1}$. The vibrations at $1711\,$cm${-1}$ is out of the experimental range due to its strongly hydrogen bonded nature the wave number is shifted to low $\tilde{\nu}$. SUmming up those findings in experiment there should be only 3 bands visible, see figure. Very good agreement with the experimental modes. The numbers itself do not compare too good, but the relative modes are in really good agreement.
+We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OD group and one for the surface OD group). When evaluating those values, for example for the 10 layer slab values in tab.~\ref{tab:freq_layers} one can see that There are three nearly identical vibrations at $2689$, $2692$ and $2694\,$cm$^{-1}$, so that in experiment due to line broadening we expect to see only a single peak. Then there are 3 further peaks, one at $2731\,$cm$^{-1}$ and another one at $2785\,$cm$^{-1}$. The vibrations at $1711\,$cm${-1}$ is out of the experimental range due to its strongly hydrogen bonded nature the wave number is shifted to low $\tilde{\nu}$. Summing up those findings in experiment there should be only 3 bands visible, see figure \ref{abb:exp-sfg}. What we get is very good qualitative agreement with the experimental modes. Quantitatively, the numbers itself do not compare too good, but the relative modes are in really good agreement. So first we calculate the Boltzman population to see find out the probability of occupied states:
+\begin{equation}\label{boltzmann-weight}
+ P_i=exp(-G_i/(k_BT))
+\end{equation}
+With this analysis it is possible to show the relative population for different temperatures is, see table \ref{tab:boltzmann-pop}.
+\begin{table*}[th]
+  \centering
+ \caption{Boltzmann population relative to the most stable inter-CUSa$\parallel$O$\mu_2$, calculated according to eq.~\ref{boltzmann-weight}.}
+\vspace*{.2cm} 
+ \begin{tabular}{l|cccc}
+  & P$_{130K}$ & P$_{300K}$ & P$_{400K}$\\\hline
+  inter-CUSa$\parallel$O-$\mu_2$ &1 &1 &1 \\
+  CUSb$\parallel$O-$\mu_2$ & 1.4$\times 10^{-6}$& 6.1$\times 10^{-3}$& 3.2$\times 10^{-2}$\\
+  inter-CUSb$\parallel$O-$\mu_2$ & 1.0$\times 10^{-15}$ & 1.2$\times 10^{-6}$ & 6.6$\times 10^{-5}$\\
+  \end{tabular} 
+  \label{tab:boltzmann-pop}
+\end{table*}
+This shows, that the probability for the third stable site is so low, that its influence is merely expected in experiment.
 \\
 For this part, more atomic layers in the slab are considered. As it was mentioned in section \ref{structure_search11-20}, the slab was already converged with 10 layers. In table \ref{tab:freq_layers} the OD frequencies for the vibrations that could be identified in cooperation with experiment for different sizes are shown.
 \begin{table*}[th]
@@ -671,7 +689,6 @@ For this part, more atomic layers in the slab are considered. As it was mentione
  \caption{Comparison of the different slab sizes (normal modes): OD stretching modes for each of the most stable minima. In parantheses, the angle of the OD bonding vector to the surface normal ($\theta$ in \textdegree) is given. The left value reflects the adsorbed OD group and the right wavenumber the surface OD group, respectively.}
 \vspace*{.2cm} 
  \begin{tabular}{l|cccc}
-  \hline
   Layers&inter-CUSa$\parallel$O-$\mu_2$ &CUSb$\parallel$O-$\mu_2$  &inter-CUSb$\parallel$O-$\mu_2$ \\\hline
   10 &2731 (44), 2694 (36) &2785 (26), 1711 (61) &2692 (41), 2689 (54) \\
   15 &2728 (44), 2695 (36) &2783 (24), 1812 (60) &2711 (34), 2656 (60) \\
