@@ -663,27 +663,7 @@ But not only the OH/OD frequencies are of interest, but also the lattice vibrati
 
 \subsection{Normal Mode Analysis}\label{nma}
 \subsubsection{OD Vibrations}
-The classical modes calculated with normal mode analysis are dependent on the mass and the spring constant of the bond. This ansatz is quite good for high frequency modes like OD stretch vibrations.
-We assumed that the OH/OD stretching modes for the 3 most stable structures (of course for all others as well in order to check whether a structure is a minimum) would contribute to the spectrum the most. Following this approach we expect 6 modes (2 for each, one of the adsorbed OD group and one for the surface OD group). When evaluating those values, for example for the 10 layer slab values in tab.~\ref{tab:freq_layers} one can see that There are three nearly identical vibrations at $2689$, $2692$ and $2694\,$cm$^{-1}$, so that in experiment due to line broadening we expect to see only a single peak. Then there are 3 further peaks, one at $2731\,$cm$^{-1}$ and another one at $2785\,$cm$^{-1}$. The vibrations at $1711\,$cm${-1}$ is out of the experimental range due to its strongly hydrogen bonded nature the wave number is shifted to low $\tilde{\nu}$. Summing up those findings in experiment there should be only 3 bands visible, see figure \ref{abb:exp-sfg}. What we get is very good qualitative agreement with the experimental modes. Quantitatively, the numbers itself do not compare too good, but the relative modes are in really good agreement. So first we calculate the Boltzman population to see find out the probability of occupied states:
-\begin{equation}\label{boltzmann-weight}
- P_i=exp(-G_i/(k_BT))
-\end{equation}
-With this analysis it is possible to show the relative population for different temperatures is, see table \ref{tab:boltzmann-pop}.
-\begin{table*}[th]
-  \centering
- \caption{Boltzmann population relative to the most stable inter-CUSa$\parallel$O$\mu_2$, calculated according to eq.~\ref{boltzmann-weight}.}
-\vspace*{.2cm} 
- \begin{tabular}{l|cccc}
-  & P$_{130K}$ & P$_{300K}$ & P$_{400K}$\\\hline
-  inter-CUSa$\parallel$O-$\mu_2$ &1 &1 &1 \\
-  CUSb$\parallel$O-$\mu_2$ & 1.4$\times 10^{-6}$& 6.1$\times 10^{-3}$& 3.2$\times 10^{-2}$\\
-  inter-CUSb$\parallel$O-$\mu_2$ & 1.0$\times 10^{-15}$ & 1.2$\times 10^{-6}$ & 6.6$\times 10^{-5}$\\
-  \end{tabular} 
-  \label{tab:boltzmann-pop}
-\end{table*}
-This shows, that the probability for the third stable site is so low, that its influence is merely expected in experiment.
-\\
-For this part, more atomic layers in the slab are considered. As it was mentioned in section \ref{structure_search11-20}, the slab was already converged with 10 layers. In table \ref{tab:freq_layers} the OD frequencies for the vibrations that could be identified in cooperation with experiment for different sizes are shown.
+The normal modes are within the harmonic approximation and depend on the mass and the spring constant of the bond. This ansatz is quite good for high frequency modes like OD stretch vibrations. We assumed that the OD stretching modes for the 3 most stable structures would contribute to the spectrum the most (see table \ref{tab:freq_layers}).
 \begin{table*}[th]
   \centering
  \caption{Comparison of the different slab sizes (normal modes): OD stretching modes for each of the most stable minima. In parantheses, the angle of the OD bonding vector to the surface normal ($\theta$ in \textdegree) is given. The left value reflects the adsorbed OD group and the right wavenumber the surface OD group, respectively.}
@@ -698,10 +678,62 @@ For this part, more atomic layers in the slab are considered. As it was mentione
   \end{tabular} 
   \label{tab:freq_layers}
 \end{table*}
-Comparing the experimental wavenumbers with the computational results one can assign the vibrations in the measurement with the calculated vibrations for both inter-CUSa$\parallel$O-$\mu_2$ vibrations and the adsorbed OD group of CUSb$\parallel$O-$\mu_2$. {\color{red} add chart with delta nu to show this}.
+Of course all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although as it was mentioned in section \ref{structure_search11-20} that the slab was already converged with 10 layers concerning OD stretch frequencies. Following this approach we expect 6 modes, for each of the three an OD$_{surf}$ and an OD$_{ads}$. In all cases the relationship is portrayed by $\tilde{\nu}$(OD$_{ads}$)>$\tilde{\nu}$(OD$_{surf}$. This can be explained with the different reduced mass for both vibrations: The OD$_{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can be more seen as a quasi-free OD group cite{kirsch2014}.
 \\
-Comparison of different slab sizes.
+To consider the probability of observing these species, we calculated their respective Boltzmann weights:
+\begin{equation}\label{boltzmann-weight}
+ P_i=exp(-G_i/(k_BT)).
+\end{equation}
+With this analysis it is possible to show the relative population for different temperatures, see table \ref{tab:boltzmann-pop}. In the whole temperature range relevant for the experiments, it is shown that the population of the species inter-CUSb$\parallel$O-$\mu_2$ is very low, compared to the others.
+\begin{table*}[th]
+  \centering
+ \caption{Boltzmann population relative to the most stable inter-CUSa$\parallel$O$\mu_2$, calculated according to eq.~\ref{boltzmann-weight}.}
+\vspace*{.2cm} 
+ \begin{tabular}{l|ccc}
+  & P$_{130K}$ & P$_{300K}$ & P$_{400K}$\\\hline
+  inter-CUSa$\parallel$O-$\mu_2$ &1 &1 &1 \\
+  CUSb$\parallel$O-$\mu_2$ & 1.4$\times 10^{-6}$& 6.1$\times 10^{-3}$& 3.2$\times 10^{-2}$\\
+  inter-CUSb$\parallel$O-$\mu_2$ & 1.0$\times 10^{-15}$ & 1.2$\times 10^{-6}$ & 6.6$\times 10^{-5}$\\
+  \end{tabular} 
+  \label{tab:boltzmann-pop}
+\end{table*}
 \\
+With the results for the frequencies of the three most stable structures (here the inter-CUSb$\parallel$O-$\mu_2$ results are shown for completeness), one can see, that for all slab sizes, there are 4 relevant modes. One of them is noticeable lower in energy that is due to hydrogen bonding. Also the angle of the bonding vector with respect to the surface normal is very high (i.e. the bond is more in plain, values shown tab.~\ref{tab:freq_layers}, schematic representation in fig.~\ref{OD_angle}) so that the expected intensity is remarkably lower and may be not visible in experiment because of the angle dependence of the intensity in VSF. 
+\begin{figure}[h]
+      \centering
+ \includegraphics[width=2.0cm, clip]{figures/11-20/ODangle.png}
+  \caption{Sketch of the angle $\theta$ between the OD bond and the surface normal.}
+%  \vspace{-10mm}
+ \label{OD_angle}
+\end{figure}
+\\
+With this in mind, we are able to predict 3 peaks, which fits well to the experimental results (see fig.~\ref{abb:exp-sfg}). Comparing these results in absolute numbers is not very convincing as before in the literature, but relative numbers are in good agreement (see results for experiment and all different sized layer slabs in table \ref{tab:rel_modes}).
+\begin{table*}[!h]
+\begin{center}
+\caption{Frequency differences $\Delta \tilde{\nu}$ are given in [cm$^{-1}$]. $\Delta \tilde{\nu}_1$ depicts the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$.}
+%{Vibrational frequencies and VSF resonances as observed at $300$ and $400\,$K, all in cm$^{-1}$. Also listed are frequency differences $\Delta {\tilde{\nu}}$, relative to the lowest frequency. An assignment of the modes is given. The O-D tilting angles $\theta$ are listed once more for clarity.}
+\begin{tabular}{cccc}
+layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$&\multicolumn{6}{c}{ bla}\\% \includegraphics[width=2.0cm, clip]{figures/11-20/ODangle.png}}\\\hline
+10  &37 &91 & \\
+15  &33 &88 & \\
+20  &35 &89 & \\
+25  &32 &71 & \\\hline
+exp.&50 &77 & \\
+% \begin{tabular}{cl|c|cc|cc}
+% \multicolumn{2}{c|}{assignment}   & $\theta / ^{\circ}$ & $\tilde{\nu} _\mathrm{cal}$  & $\Delta{\tilde{\nu}}_{\mathrm{cal}}$ & $\tilde{\nu}_\mathrm{exp}$ & $ \Delta{\tilde{\nu}}_{\mathrm{exp}}$ \\\hline
+% \multirow{2}{*}{inter-CUSa||O-$\mu_2$} & D(O-$\mu_2$) & 36 &  2694 &    & 2762 &  \\
+% & OD(inter-CUSa)  & 44 & 2731 & 37 & 2812 & 50  \\\hline
+% CUSb||O-$\mu_2$ & OD(CUSb)       & 26 & 2785 & 91 & 2839 & 77 \\
+  \end{tabular}
+\label{tab:rel_modes}
+\end{center}
+\end{table*}
+\\
+Problems of this approach is, that we neglect anharmonicities, that are especially important for hydrogen bonded vibrations and also the absence of neighbor effects, that can be solved by computing higher coverage systems.
+
+
+% Comparison of different slab sizes.
+% \\
 Comparison of intensities with dipole corrections and Born effective charges.
 \subsubsection{Lattice Vibrations}\label{phonons}
 For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers (with 5 being the number of layers in the unit cell), both for the clean surface and for the adsorbate covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses. The additional geometries with more layers do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20}. {\color{red} Table with no. of layers and adsorption energies? Put it to section \ref{structure_search11-20}? Probably better do do it there!}
