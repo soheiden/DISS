@@ -492,7 +492,7 @@ The stability of those species with higher water coverage is defined as
 \end{table}
 Comparing these results for the higher coverages to results with only one adsorbate, just by adding the adsorption energy one can see the following (see also column 3 in table \ref{tab:higher_water}):
 For all systems the added energy of the singly adsorbed species is more stable than the doubly adsorbed water systems. Instead of stabilizing the whole system, they are destabilized by the adsorption neighborhood, even in structures that contain hydrogen bonds.
-
+{\color{red} do neighbors stabilize molecular adsorption?? What is the respective coverage? 0.xyML}
 
 \section{Reactions and Microkinetic Model}\label{reactions}
 Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH- and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df-OH and Df-H, respectively, in table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}. In reference {\color{red} 11-20paper} only some reactions were introduced, additional reactions paths are given here.
@@ -649,8 +649,8 @@ A great source of knowledge about chemical systems is vibrational spectroscopy, 
         \label{abb:exp-sfg}
  \end{figure}
 Of course, the frequencies for a deuterated system are different from OH, but the different isotopes can be calculated easily within vasp, just by changing the mass.
-{\color{red} Better put this in theory part? \\
-In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in UHV and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source. For further details see cite{11-20paper}.}
+\\
+{\color{red} Better put this in theory part? In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in UHV and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source. For further details see cite{11-20paper} and the supporting information.}
 \\
 To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and for some systems also power spectra from \textit{ab-initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
 \\
@@ -678,13 +678,13 @@ The normal modes are within the harmonic approximation and depend on the mass an
   \end{tabular} 
   \label{tab:freq_layers}
 \end{table*}
-Of course, all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although as it was mentioned in section \ref{structure_search11-20} that the slab was already converged with 10 layers concerning OD stretch frequencies. Following this approach we expect 6 modes, for each of the three an OD$_{surf}$ and an OD$_{ads}$. In all cases the relationship is portrayed by $\tilde{\nu}$(OD$_{ads}$)>$\tilde{\nu}$(OD$_{surf}$). This can be explained with the different reduced mass for both vibrations: The OD$_{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can be more seen as a quasi-free OD group {\color{red} cite{kirsch2014}}.
+Of course, all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although as it was mentioned in section \ref{structure_search11-20} that the slab was already converged with 10 layers concerning OD stretch frequencies. Following this approach we expect 6 modes, for each of the three an OD$_{surf}$ and an OD$_{ads}$. In all cases the relationship between the two individual modes for each considered structure is portrayed by $\tilde{\nu}$(OD$_{ads}$)>$\tilde{\nu}$(OD$_{surf}$). This can be explained with the different reduced mass for both vibrations: The OD$_{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can act more as a quasi-free OD group {\color{red} cite{kirsch2014}}. All these vibrations are clearly localized on one of the OD groups, which suggests that the normal modes ansatz is reasonable.
 \\
-To consider the probability of observing these species, we calculated their respective Boltzmann weights:
+To consider the probability of observing these species, we calculated their respective Boltzmann weights $P_i$:
 \begin{equation}\label{boltzmann-weight}
- P_i=exp(-G_i/(k_BT)).
+ P_i=e^{-G_i/(k_BT)}.
 \end{equation}
-With this analysis it is possible to show the relative population for different temperatures, see table \ref{tab:boltzmann-pop}. In the whole temperature range relevant for the experiments, it is shown that the population of the species inter-CUSb$\parallel$O-$\mu_2$ is very low, compared to the others.
+With this analysis it is possible to show the relative population for different temperatures, see table \ref{tab:boltzmann-pop}. In the whole temperature range relevant for the experiments, it is shown that the population of the species inter-CUSa$\parallel$O-$\mu_2$ clearly dominates and that the population of inter-CUSb$\parallel$O-$\mu_2$ is very low, compared to the others.
 \begin{table*}[th]
   \centering
  \caption{Boltzmann population relative to the most stable inter-CUSa$\parallel$O$\mu_2$, calculated according to eq.~\ref{boltzmann-weight}.}
@@ -698,7 +698,7 @@ With this analysis it is possible to show the relative population for different 
   \label{tab:boltzmann-pop}
 \end{table*}
 \\
-With the results for the frequencies of the three most stable structures (here the inter-CUSb$\parallel$O-$\mu_2$ results are shown for completeness), one can see, that for all slab sizes, there are 4 relevant modes. One of them is noticeable lower in energy that is due to hydrogen bonding. Also the angle of the bonding vector with respect to the surface normal is very high (i.e. the bond is more in plain, values shown tab.~\ref{tab:freq_layers}, schematic representation in tab.~\ref{tab:rel_modes}) so that the expected intensity is remarkably lower and may be not visible in experiment because of the angle dependence of the intensity in VSF. 
+With the results for the frequencies of the three most stable structures (here the inter-CUSb$\parallel$O-$\mu_2$ results are shown for completeness), one can see, that for all slab sizes, there are 4 relevant modes. One of them is noticeable lower in energy that is due to hydrogen bonding. Also the angle of the bonding vector with respect to the surface normal is very high (i.e. the bond is more in plain, values shown tab.~\ref{tab:freq_layers}, schematic representation in tab.~\ref{tab:rel_modes}) so that the expected intensity in experiment is remarkably lower and may be not visible in experiment because of the angle dependence of the intensity in VSF. 
 \\
 With this in mind, we are able to predict 3 peaks, which fits well to the experimental results (see fig.~\ref{abb:exp-sfg}). Comparing these results in absolute numbers is not very convincing as before in the literature, but relative numbers are in good agreement (see results for experiment and all different sized layer slabs in table \ref{tab:rel_modes}).
 \begin{table*}[!h]
@@ -706,7 +706,7 @@ With this in mind, we are able to predict 3 peaks, which fits well to the experi
 \caption{Frequency differences $\Delta \tilde{\nu}$ are given in [cm$^{-1}$]. $\Delta \tilde{\nu}_1$ depicts the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$. In the right half a sketch of the angle $\theta$ between the OD bond and the surface normal is shown.}
 %{Vibrational frequencies and VSF resonances as observed at $300$ and $400\,$K, all in cm$^{-1}$. Also listed are frequency differences $\Delta {\tilde{\nu}}$, relative to the lowest frequency. An assignment of the modes is given. The O-D tilting angles $\theta$ are listed once more for clarity.}
 \begin{tabular}{cccc}
-layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$&\multirow{6}{}{\includegraphics[width=2cm]{figures/11-20/ODangle.png}}\\\hline
+layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$&\multirow{6}{1pt}{\includegraphics[width=2cm]{figures/11-20/ODangle.png}}\\\hline
 10  &37 &91 & \\
 15  &33 &88 & \\
 20  &35 &89 & \\
@@ -722,19 +722,41 @@ exp.&50 &77 & \\
 \end{center}
 \end{table*}
 \\
-Problems of this approach is, that we neglect anharmonicities, that are especially important for hydrogen bonded vibrations and also the absence of neighbor effects, that can be solved by computing higher coverage systems.
+Two problems of this approach are, that we neglect anharmonicities, that are especially important for hydrogen bonded vibrations and also the absence of neighbor effects, that can be solved by computing higher coverage systems.
+\\
+The influence of higher coverage was examined for some test systems already presented in section \ref{structure_search11-20}. The coverage differs from 2D$_2$O molecules per super cell to 4 and 12 water molecules (equals 1ML). {\color{red} Here the frequencies of the OD stretching modes are affected due to the neighbor effects, for some structures more and for other less (e.g. the system with 2inter-CUSa$\parallel$O-$\mu_2$).
+compare modes of low coverage limit to spetra with higher coverage, ask Lu for more data of higher coverage.
+}
 
-
-% Comparison of different slab sizes.
-% \\
-Comparison of intensities with dipole corrections and Born effective charges.
+{\color{red} The simulation of intensities was done both with dipole corrections and Born effective charges and is shown here as a comparison. {\textit{show only high frequency part, comparing BEC and dipole, for the most stable configurations. These are only IR intensities in both cases, that can not be set equal to SFG intensities but can be a first hint.}}
+}
+\\
+{\color{blue} Frequencies for the low coverage limit were also calculated using the crystal code, that enables calculations with atomic centered bases and makes it possible to treat a real 2-D system without the need to calculate the repetition of the slab in z-direction, see also section \ref{crystal_calc}. With this code it is also possible to calculate hybrid functionals, here B3LYP easily. For both PBE and B3LYP, geometries of the most stable states were optimized and from those geometries normal modes were calculated. Also anharmonicities for OH/OD bonds could be calculated, results in comparison with vasp results are shown in table \ref{tab:freqs11-20crystal}. First of all, PBE results from both programs do not differ largely. anharmonicities decrease the wavenumbers and lead to worse agreement to experiment and to vasp calculations. Data from B3LYP calculations show great agreement with experiment, although here, anharmonic corrections make the agreement worse, too. One has to mention, that here influence of the basis set is strong and larger basis sets were not feasible due to high computational costs.
+ \begin{table}[!h]
+  \centering
+   \caption{Stretch wavenumbers for both of the OD groups at the (11\=20) surface for the 3 most stable species, calculated with atom centered basis functions with the program crystal. Frequencies were calculated at the B3LYP and PBE level of theory, optimized with the respective method. The used basis set was pob\_TZVP. The VASP results were obtained with a plane wave basis and PBD+D2 corrections.}
+  \begin{tabular}{ccc|cc|c}
+   & PBE& & B3LYP & &VASP result\\
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}$+anharm [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}$+anharm [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\hline
+  iCa2: OD$_{\textrm{surf}}$ &2682 &2599 &2773 &2695 & 2694\\
+  iCa2: OD$_{\textrm{ads}}$  &2728 &2644 &2811 &2729 & 2731\\
+  Cb2: OD$_{\textrm{surf}}$  &1658 &1310 &2019 &1722 & 1711\\
+  Cb2: OD$_{\textrm{ads}}$   &2769 &2687 &2843 &2765 & 2785\\
+  iCb2: OD$_{\textrm{surf}}$ &2657 &2595 &2778 &2694 & 2689\\
+  iCb2: OD$_{\textrm{ads}}$  &2688 &2569 &2777 &2689 & 2692\\
+  \end{tabular}
+  \label{tab:freqs11-20crystal}
+  \end{table}
+}
 \subsubsection{Lattice Vibrations}\label{phonons}
-For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers (with 5 being the number of layers in the unit cell), both for the clean surface and for the adsorbate covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses. The additional geometries with more layers do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20}. {\color{red} Table with no. of layers and adsorption energies? Put it to section \ref{structure_search11-20}? Probably better do do it there!}
-
+For the phonons as a first test the same normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into {\color{red} x} layers of the bulk {\color{red} ask Lu!}. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to 6*5=30 layers (with 5 being the number of layers in the unit cell in z direction), both for the clean surface and for the adsorbate covered surface, here we used again optimized geometries of the most stable structures. These results are also shown with intensities calculated from dipole corrected normal mode analyses. The additional geometries with more layers do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20}.
+\\
+{\color{red} Table with no. of layers and adsorption energies? Put it to section \ref{structure_search11-20}? Probably better do do it there!}
+{\color{red} compare clean surface for different sizes, iCa2, Cb2 and iCb2 for all slab sizes. Normal modes may not be a perfect description of these deeply delocalized vibrations.. intensities for lattice vibrations from BEC and dip..}
 \subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
 Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage? So for Giacomo's system it makes sense, but here it is unnecessary.
 
-
+{\color{red} totally different ansatz, no freq analysis, no harmonic approximation, but ab-initio MD trajectories at 300K, starting from optimized minimum structures. trajectory duration of 1-a few ps. calculating vac, fourier transform gives power spectra, no real IR, but still one can relate to intensities. results for trajectories.}
 \section{Desorption Process}
 Not only the reactions at the surface are of interest but also the process of adsorption and desorption were studied. The experimentalist's method to do so is TPD (thermal desorption spectroscopy). It is possible to measure the bond strength of the adsorbates, depending on the temperature they can be found in the corresponding spectrum. The sample was flashed to $400\,$K to get rid of impurities. The results showed two peaks, one beneath $400\,$K and one above. This peak beneath $400\,$K hould not be visible, since the sample was heated to that temperature and all adsorbates that are released beneath this temperature should not be there any more. The only plausible explanation to this is, that there are reactions, that fill this species up and so the desorption can still be from this species.
 \\
@@ -754,7 +776,7 @@ It was also tried to study the adsorption/desorption process (not with NEB), sin
 \\
 As mentioned before the experimentalists measure TPD in order to understand the adsorption strength and possible exchange reactions. We tried to simulate the desorption process using the following scheme: take the water in the gas phase + the clean surface as the standard. In the thermal equilibrium, the water should be equally distributed to Boltzman's distribution in the most stable structures. From this situation the water can recombine to the molecularly adsorbed water. The recombined water then can desorb to the gas phase. Since the spectrum is measured in ultra high vacuum it can be assumed that all the water that has left the surface will not return to the system, because it is dragged out of the equilibrium by the vacuum pumps.
 Applying the reaction rates of the corresponding reactions in a kinetic Monte Carlo approach leads to 
-{\color{red} REDO THESE CALCULATIONS}.
+{\color{red} Redo these calculations? I don't think that this is worth the effort..}.
 
 {\color{green} does it make sense to bring this cause there is no good agreement between our theory and the experimental findings..? The NEB didn't lead to anything since there is no minimum (just try a NEB??), optimization doesn't show any kind of barrier and just modelling the desorption from the rates is not good enough, sonce the rate for Cb2-Cb is too small to }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -835,7 +857,7 @@ Apart from that, we study this reaction with the help of Path Integral Molecular
 \\
 As a last approach, we want to apply other higher level methods in an embedded approach. We cut a cluster from the surface situation and embed this cluster in a field of point charges. By doing this we can calculate the cluster with a better method, let's say B3LYP, CCSD or MP2 and then apply a substractional scheme to get to corrected adsorption energies that can then be used to improve the rates with Eyring's equation for transtition states.
 
-\subsection{MP2 and B3LYP}
+\subsection{MP2 and B3LYP}\label{crystal_calc}
 Going beyond pure density functionals and also beyond DFT has been too costly for a long time, simply not applicable for surface adsorbat system that large and electron rich. In the crystal/cryscor code one uses atom centered bases instead of plane waves and so large scale systems can also be computed. We first optimized our parameters with HF calculations and then did calculations with PBE similar to prior plane wave based calculations.
 \\
 We found out, that BSSE takes a big part, but corrections are not easily applied because the ghosted calculations needed for that do not converge for all the structures with a bigger OH-H distance. Instead we have to use bigger basis sets containing diffuse functions in order to handle the BSSE. Such a self designed basis set by our cooperation partner Dr. Denis Usvyat (HU Berlin, group of Martin Sch\"utz) was used here. With this basis set we did the PBE calculations again (?) and the B3LYP as well as the MP2 calculations. First we compared the differences in adsorption energies. We furthermore compared the vibrational frequencies from B3LYP with the ones from VASP/PBE to see a methodological effect.
