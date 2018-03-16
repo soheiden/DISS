@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.1.23)  2 MAR 2018 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.1.23)  16 MAR 2018 16:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1695,14 +1695,14 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 793.
 
-<figures/0001/surf_0K_axes.pdf, id=622, 967.93118pt x 687.71014pt>
+<figures/0001/surf_0K_axes.pdf, id=623, 967.93118pt x 687.71014pt>
 File: figures/0001/surf_0K_axes.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K_axes.pdf>
 Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 811.
 (pdftex.def)             Requested size: 201.90378pt x 143.44748pt.
 
-<figures/0001/surf_0K-side.pdf, id=623, 1541.76pt x 819.86299pt>
+<figures/0001/surf_0K-side.pdf, id=624, 1541.76pt x 819.86299pt>
 File: figures/0001/surf_0K-side.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K-side.pdf>
@@ -1712,14 +1712,14 @@ Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 813.
 
 
 ]
-<figures/0001/0001_mol_top.jpg, id=628, 1042.89626pt x 784.9325pt>
+<figures/0001/0001_mol_top.jpg, id=629, 1042.89626pt x 784.9325pt>
 File: figures/0001/0001_mol_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_mol_top.jpg>
 Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 820.
 (pdftex.def)             Requested size: 179.4685pt x 135.06564pt.
 
-<figures/0001/0001_1-2-diss_top.jpg, id=629, 1041.8925pt x 783.92876pt>
+<figures/0001/0001_1-2-diss_top.jpg, id=630, 1041.8925pt x 783.92876pt>
 File: figures/0001/0001_1-2-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-2-diss_top.jpg>
@@ -1727,7 +1727,7 @@ Package pdftex.def Info: figures/0001/0001_1-2-diss_top.jpg used on input line
 822.
 (pdftex.def)             Requested size: 179.4685pt x 135.0245pt.
 
-<figures/0001/0001_1-4-diss_top.jpg, id=630, 1041.8925pt x 785.93625pt>
+<figures/0001/0001_1-4-diss_top.jpg, id=631, 1041.8925pt x 785.93625pt>
 File: figures/0001/0001_1-4-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-4-diss_top.jpg>
@@ -1735,7 +1735,7 @@ Package pdftex.def Info: figures/0001/0001_1-4-diss_top.jpg used on input line
 824.
 (pdftex.def)             Requested size: 179.4685pt x 135.37027pt.
 
-<figures/0001/0001_1-4p-diss_top_label.pdf, id=631, 833.51402pt x 626.34pt>
+<figures/0001/0001_1-4p-diss_top_label.pdf, id=632, 833.51402pt x 626.34pt>
 File: figures/0001/0001_1-4p-diss_top_label.pdf Graphic file (type pdf)
 
 <use figures/0001/0001_1-4p-diss_top_label.pdf>
@@ -1743,7 +1743,7 @@ Package pdftex.def Info: figures/0001/0001_1-4p-diss_top_label.pdf used on inpu
 t line 826.
 (pdftex.def)             Requested size: 179.4685pt x 134.86116pt.
 
-<figures/0001/perspective+h2o_new.png, id=632, 1222.166pt x 1554.608pt>
+<figures/0001/perspective+h2o_new.png, id=633, 1222.166pt x 1554.608pt>
 File: figures/0001/perspective+h2o_new.png Graphic file (type png)
 
 <use figures/0001/perspective+h2o_new.png>
@@ -1754,27 +1754,27 @@ e 840.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/0001/surf_0K-side.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
-> <./figures/0001/0001_mol_top.jpg> <./figures/0001/0001_1-2-diss_top.jpg> <./f
-igures/0001/0001_1-4-diss_top.jpg> <./figures/0001/0001_1-4p-diss_top_label.pdf
-
-
-pdfTeX warning: /usr/bin/pdflatex (file ./figures/0001/0001_1-4p-diss_top_label
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <figures/0001/2H2O.pdf, id=688, 1541.76pt x 819.86299pt>
+>] <figures/0001/2H2O.pdf, id=675, 1541.76pt x 819.86299pt>
 File: figures/0001/2H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/2H2O.pdf>
 Package pdftex.def Info: figures/0001/2H2O.pdf used on input line 848.
 (pdftex.def)             Requested size: 157.04007pt x 83.50482pt.
 
-<figures/0001/4H2O.pdf, id=689, 1541.76pt x 819.86299pt>
+<figures/0001/4H2O.pdf, id=676, 1541.76pt x 819.86299pt>
 File: figures/0001/4H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/4H2O.pdf>
 Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 850.
 (pdftex.def)             Requested size: 246.77434pt x 131.21828pt.
- [35] [36 <./figures/0001/perspective+h2o_new.png> <./figures/0001/2H2O.pdf> <.
-/figures/0001/4H2O.pdf
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35 <./figures/0001/0001_mol_top.jpg> <./figures/0001/0001_1-2-diss_top.jpg> <
+./figures/0001/0001_1-4-diss_top.jpg> <./figures/0001/0001_1-4p-diss_top_label.
+pdf>]
+[36 <./figures/0001/perspective+h2o_new.png> <./figures/0001/2H2O.pdf> <./figur
+es/0001/4H2O.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/0001/4H2O.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
@@ -1853,10 +1853,10 @@ onts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso
 ts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on dissertation.pdf (46 pages, 31547323 bytes).
+Output written on dissertation.pdf (46 pages, 31548771 bytes).
 PDF statistics:
- 919 PDF objects out of 1000 (max. 8388607)
- 728 compressed objects within 8 object streams
+ 921 PDF objects out of 1000 (max. 8388607)
+ 730 compressed objects within 8 object streams
  165 named destinations out of 1000 (max. 500000)
  431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

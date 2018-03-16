@@ -169,7 +169,10 @@ The importance of surface science in our industrialized world is overwhelming, b
 Aluminum is used in rocket fuels as a reduction agent so that during launch alumina particles are ejected in the atmosphere during the start (see also lit.dat!). For a space shuttle the start can produce around $760,000\,$kg of alumina particles. It can be measured that approximately one third of these particles can be deposited in the stratosphere (in an altitude between $15$ and $50\,$km above the surface of the earth) and there it can react with the water and other molecules in the stratosphere where these particles are accumulated after the launch of a shuttle.
 \\
 
-Also in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the third most common element in the crust with $6.3\%$ ({\color{red} \begin{verbatim} http://www.uniterra.de/rutherford/tab_hauf.htm\end{verbatim} check also dtv atlas der chemie band 1!}) and it also can be seen as a model systems for more complex alumosilicates. Oxide rocks are omnipresent in the crust of the earth and henceforth in most geochemical processes since the times the earth's atmosphere became oxidizing with rise of photosynthetic life forms/(bacteria?) a few million years ago. Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew.
+Also in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the third most common element in the crust with $6.3\%$ ({\color{red} \begin{verbatim} http://www.uniterra.de/rutherford/tab_hauf.htm\end{verbatim}}
+{\textit{Riedel\cite{Riedel}: Alumina is the most abundant metal in the crust and the third most element therein. Component of  feldspar, Glimmer and clay minerals (with silicates), more seldomly as corundum and "Schmirgel". Some of them are precious stones ruby, saphir}\\
+Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth crust and with that the far most abundant metal}
+) and it also can be seen as a model systems for more complex alumosilicates. Oxide rocks are omnipresent in the crust of the earth and henceforth in most geochemical processes since the times the earth's atmosphere became oxidizing with rise of photosynthetic life forms/(bacteria?) a few million years ago. Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -399,11 +402,11 @@ energies are given in eV.}
 \hline
 \multirow{1}{*}{molecular} & CUSb          &   -1.78  &-1.60 & -1.51  & -1.46 \\
   \hline
- \multirow{6}{*}{dissociated} & \textbf inter-CUSa||O-$\mu_2$ & \textbf -2.50 &-2.27 & -2.16 & -2.09 \\
+ \multirow{6}{*}{dissociated} & \textbf{inter-CUSa||O-$\mu_2$} & \textbf{-2.50} &-2.27 & -2.16 & -2.09 \\
   & inter-CUSa||O-$\mu_3$ & -1.67 &-1.44 &-1.33 & -1.27 \\
-  & \textbf CUSb||O-$\mu_2$ & \textbf -2.28 & -2.12& -2.03 &-1.97  \\
+  & \textbf{CUSb||O-$\mu_2$} & \textbf{-2.28} & -2.12& -2.03 &-1.97  \\
  & CUSb||O-$\mu_3$ & -1.19 &-1.05 &-0.98 & -0.95 \\%Cb3_other
- & \textbf inter-CUSb||O-$\mu_2$ & \textbf -2.09 &-1.88 &-1.80 & -1.76 \\
+ & \textbf{inter-CUSb||O-$\mu_2$} & \textbf{-2.09} &-1.88 &-1.80 & -1.76 \\
  & inter-CUSb||O-$\mu_3$ & -1.89 &-1.71 & -1.63 & -1.58 \\
   \end{tabular}
   \label{tab:ads_1water}
@@ -496,7 +499,8 @@ The stability of those species with higher water coverage is defined as
 \end{table}
 Comparing these results for the higher coverages to results with only one adsorbate, just by adding the adsorption energy one can see the following (see also column 3 in table \ref{tab:higher_water}):
 For all systems the added energy of the singly adsorbed species is more stable than the doubly adsorbed water systems. Instead of stabilizing the whole system, they are destabilized by the adsorption neighborhood, even in structures that contain hydrogen bonds.
-{\color{red} do neighbors stabilize molecular adsorption?? What is the respective coverage? 0.xyML}
+{\color{red} do neighbors stabilize molecular adsorption?? In Phonon paper, Eads(Cb+Cb2)=-4.57eV, sum of the two individually is -4.06eV, so there is in fact a stabilizing effect!, For inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$ there is no effect and for inter-CUSa$\parallel$O-$\mu_2$inter-CUSa$\parallel$O-$\mu_2$, there is clear destabilization!
+\\ What is the respective coverage? 0.xyML}
 
 \section{Reactions and Microkinetic Model}\label{reactions}
 Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH- and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df-OH and Df-H, respectively, in table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}. In reference {\color{red} 11-20paper} only some reactions were introduced, additional reactions paths are given here.
@@ -789,19 +793,19 @@ Applying the reaction rates of the corresponding reactions in a kinetic Monte Ca
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(0001)}
 The (0001) surface is the most stable surface site under UHV conditions, and was subject of several studies so far. Both experimental and theoretical studies discovered lots of characteristics and specialties of this crystal cut. In our workgroup previous work was done concerning the stability of low limit water coverage and their vibrational spectroscopic behaviour, reaction pathways between these stable minima, and also higher water coverages and hydroxylated surface systems. In this work, the focus lies more on two topics:
 \\
-understanding the dissociation process of a water molecule (D$_2$O) being shot at the surface with the help of \textit{ab-initio} Molecular Dynamics and
+(i) understanding the dissociation process of a water molecule (D$_2$O) being shot at the surface with the help of \textit{ab-initio} Molecular Dynamics and
 \\
-the improvement of reaction rates with different methods beyond GGA functionals (as PBE).
+(ii) the improvement of reaction rates with different methods beyond GGA functionals (as PBE).
 \\
 First, the surface and the most stable adsorption patterns are introduced (section \ref{0001surf}), followed by the results for the dissociation process and last the improvements for the reaction rates.
 	
 \section{Surface Model}\label{0001surf}
-Crystal structure of $\upalpha$-Al$_2$O$_3$ with surface cuts (0001) and (11\=20) in comparison.
-We applied here a $2\times 2$ supercell with, as before, vectors as in the bulk (did Jonas optimize them?) Al terminated surface, only one type of CUS, all oxygen atoms are 3-fold coordinated, topography is not as complicated as for the higher indexed surface. x layers, y fixed.
+{\textit{Crystal structure of $\upalpha$-Al$_2$O$_3$ with surface cuts (0001) and (11\=20) in comparison.}} \\
+We applied here a $2\times 2$ supercell with, as before, vectors as in the bulk ({\color{red} or did Jonas optimize them?}) Al terminated surface, only one type of CUS, all oxygen atoms are 3-fold coordinated, topography is not as complicated as for the higher indexed surface. The surface slab that was used consists of 9 atomic layers, that is three repeating units in z direction of the type Al-O$_3$-Al..., with the higher 5 layers being allowed to relax and the lowest 4 layers being fixed.
 \\
-1 Water  molecule per $2\times 2$ supercell was already studied by Dr. Jonas Wirth, but in order to understanf the chemistry, one has to know how water reacts in this system. There is one molecular minimum on top of a CUS atom and mainly 3 dissociated states, the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the Hydrogen atom being one position further and the 1-4$^\prime$ that is the configuration with the greatest distance that is possible for this slab size. The 1-2 diss is the most stable on and the 1-4$^\prime$ is the least stable one. For the molecular and the 1-4 diss, the stability is, depending on the method, but lies between the previously mentioned ones, for some methods PW91+D2(?) it is the same adsorption energy (the value is calculated as for the (11\=20)), or for some methods and basis sets tested with crystal the one or the other is more stable.
+The stability, vibrations and reactivity of one water  molecule per $2\times 2$ supercell were already studied by Dr. Jonas Wirth. As it was published in ref{jonas0001}, there is one molecular minimum on top of a CUS atom and 3 dissociated states, the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the Hydrogen atom being one position further and the 1-4$^\prime$ that is the configuration with the greatest distance that is possible for this slab size. From these, the 1-2 dissociated species is the most stable one and the 1-4$^\prime$ is the least stable one. For the molecular and the 1-4 dissociated species, the stability lies between the previously mentioned ones, depending on the method implied, for some methods PW91+D2(?) gives the same adsorption energy (the valus for the adsorption energy are calculated analogously to the (11\=20) surface cut, see eq.~\ref{eq:Eads}), or for some methods and basis sets tested with atom centered orbitals calculations with the  crystal code, the one or the other is more stable.
 \\
-Of course there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of a OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work.
+Of course, there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of an OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work.
 \begin{figure}[!ht]
  \centering
 \subfigure[(0001), top view]{\includegraphics[width=0.45\textwidth]{figures/0001/surf_0K_axes.pdf}}
