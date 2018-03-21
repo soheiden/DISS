@@ -505,7 +505,7 @@ For all systems the added energy of the singly adsorbed species is more stable t
 \section{Reactions and Microkinetic Model}\label{reactions}
 Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH- and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df-OH and Df-H, respectively, in table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}. In reference {\color{red} 11-20paper} only some reactions were introduced, additional reactions paths are given here.
 \\
-We investigated 5 different dissociation reactions. The two that were already shown in the publication {\color{red} 11-20paper} are the reactions from CUSb to the twofold coordinated oxygen (D-a) and one to the threefold coordinated O (D-b). One additional dissociation starts from the metastable inter-CUSa molecular structure that is, as was shown before, no minimum structure and goes to the most stable species inter-CUSa$\parallel$O-$\mu_2$ (D-c). 2 further dissociation reactions converged but showed a two step process and are therefore not interesting in the first place (these reactions are CUSb$\rightarrow$inter-CUSa$\parallel$O-$\mu_2$ and CUSb$\rightarrow$inter-CUSb$\parallel$O-$\mu_2$ and both went via the dissociated CUSb$\parallel$O-$\mu2$ intermediate {\color{blue} put them into appendix?}).
+We investigated 5 different dissociation reactions. The two that were already shown in the publication {\color{red} 11-20paper} are the reactions from CUSb to the twofold coordinated oxygen (D-a) and one to the threefold coordinated O (D-b). One additional dissociation starts from the metastable inter-CUSa molecular structure that is, as was shown before, no minimum structure and goes to the most stable species inter-CUSa$\parallel$O-$\mu_2$ (D-c). 2 further dissociation reactions converged but showed a two step process and are therefore not interesting in the first place (these reactions are CUSb$\rightarrow$inter-CUSa$\parallel$O-$\mu_2$ and CUSb$\rightarrow$inter-CUSb$\parallel$O-$\mu_2$ and both went via the dissociated CUSb$\parallel$O-$\mu_2$ intermediate {\color{blue} put them into appendix?}).
 As can be seen from chapter \ref{structure_search11-20} (table \ref{tab:ads_1water}), the molecular minimum CUSb is very low in stability compared to the dissociated minima. The reaction D-a leads from the molecular minimum at CUSb to the twofold coordinated CUSb$\parallel$O-$\mu_2$:
  \begin{equation}
  \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \tag{D-a}
@@ -540,7 +540,7 @@ In contrast to that the real CUS-to-CUS reaction Df-OH-b that is much slower. It
 This is still faster than OH diffusion reaction for the (0001) alumina surface ({\color{red} cite Jonas} and compare to doctoral thesis of Dr. Jonas Wirth, UP 2016), where the rates constant $k_{\text{300K}}=4\times 10^{-45}$s$^{-1}$.
 For the (1\=102) surface there was no OH diffusion calculated, but the corresponding H$_2$O diffusion process is around $k_{\text{300K}}=1.4\times 10^{-3}$s$^{-1}$, whereas the H$_2$O diffusion process for the (0001) surface is in the range of $k_{\text{300K}}=8\times 10^{-3}$s$^{-1}$, too. For the (11\=20) surface no H$_2$O diffusion reactions can be observed due to the instability of the molecularly adsorbed species that would rather dissociate than diffuse.
 \\
-A bigger variety can be achieved when looking at H diffusion reactions. The different types of surface oxygen atoms and also the distances between OH and H residue make differences in the observed reactions.
+A larger variety can be achieved when looking at H diffusion reactions. The different types of surface oxygen atoms and also the distances between OH and H residue make differences in the observed reactions.
 {\color{blue} As seen before, the hydrogen is preferably found on the twofold coordianted oxygen atom, but the reaction to a neighboring threefold coordinated oxygen is possible and opens the gate to structures with greater proximity. The reaction takes place with the OH residue being on a CUSb site:
 \begin{equation}
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{Df-H-a}
@@ -552,14 +552,14 @@ An analogue reaction starting from the most stable inter-CUSa$\parallel$O-$\mu_2
  \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_3^\prime$)} \tag{Df-H-b}
      \label{diffHb}
 \end{equation}
-the barrier of the free energy is $1.50\,$eV, rate constant at $300\,$K of $4.90\times 10^{-13}$s$^{-1}$. This is so unlikely because a less favored O-$\mu_3$ position is occcupied and this position is also less stabilized by reason of the greater distance of OH$_{\text{surf}}$ and OH$_{\text{ads}}$ groups. This reaction increases the distance to a position further away than next neighbor.
+the barrier of the free energy is $1.50\,$eV, rate constant at $300\,$K of $4.90\times 10^{-13}$s$^{-1}$. This process is so unlikely because a less favored O-$\mu_3$ position is occcupied and this position is also less stabilized by reason of the greater distance of OH$_{\text{surf}}$ and OH$_{\text{ads}}$ groups. This reaction increases the distance to a position further away than next neighbor.
 As mentioned before, the nomenclature for these structures uses different amounts of primes ($\prime$) to display the distance.
-A similar reaction for the with OH sitting on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2\prime$ position, diffusing further away to O-$\mu_3^{\prime\prime}$, which is less in stability:
+A similar reaction for the OH sitting on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2^\prime$ position, diffusing further away to O-$\mu_3^{\prime\prime}$, which is less in stability:
 \begin{equation}
  \text{OH(inter-CUSb)} + \text{H(O-$\mu_2^{(\prime)}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \tag{Df-H-c}
      \label{diffHc}
 \end{equation}
-{\color{green} this reaction is not ready yet; barrier and rate constant has to be calculated.}
+The free energy barrier is relatively high with $1.30\,$eV leading to a rate constant $k_\textrm{300K}=9.96\times 10^{-1}$s$^{-1}$. The $^\prime$ in the equation above is set in parantheses because it is the nearest possible O-$\mu_2$ position, but not the nearest possible distance from the OH$_\textrm{ads}$.
 
 Going one step further from reaction Df-H-d, the last reaction leads to the position where OH and H have the greatest possible distance with the applied periodic bounding conditions:
 \begin{equation}
@@ -595,7 +595,7 @@ diffusion (Df-OH) or H diffusion (Df-H).}}
 \multirow{4}{*}{\small{H diffusion}} &
   \small{Df-H-a} & & & &no TST & \\
 & \small{Df-H-b}  & \small{1.08} & \small{1.04} & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\
-& \small{Df-H-c} & & & &still running & \\
+& \small{Df-H-c} & \small{0.93} & \small{0.89} & \small{1.36} & \small{1.30} & \small{9.96$\times 10^{-10}$}\\
 & \small{Df-H-d} & \small{-0.06} & \small{-0.07} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\
   \end{tabular}
   \label{tab:reaction-rates}
@@ -627,7 +627,6 @@ Also reactions leading to a not next-neighbored situation, increasing the distan
        \label{mep2}
 \end{figure*}
 
-{\color{red} what about backreactions?}
 Rates for backreactions can also be calculated and the results are shown in table \ref{tab:backreactions}.
 \begin{table*}[ht]
   \centering
@@ -642,7 +641,7 @@ Rates for backreactions can also be calculated and the results are shown in tabl
  \small{Df-OH-b}  & \small{2.41$\times 10^{-6}$}& \small{1.69$\times 10^{-8}$}\\\hline
  \small{Df-H-a} & \textit{no TST} &\textit{no TST} \\
  \small{Df-H-b}  & \small{4.90$\times 10^{-13}$} &\small{1.49$\times 10^5$} \\
- \small{Df-H-c} & still running & still running\\
+ \small{Df-H-c} & \small{9.96$\times 10^{-10}$}& \small{9.95$\times 10^5$}\\
  \small{Df-H-d} & \small{1.05$\times 10^{-3}$} &\small{7.12$\times 10^{-5}$} \\
   \end{tabular}
   \label{tab:backreactions}
@@ -805,7 +804,7 @@ We applied here a $2\times 2$ supercell with, as before, vectors as in the bulk 
 \\
 The stability, vibrations and reactivity of one water  molecule per $2\times 2$ supercell were already studied by Dr. Jonas Wirth. As it was published in ref{jonas0001}, there is one molecular minimum on top of a CUS atom and 3 dissociated states, the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the Hydrogen atom being one position further and the 1-4$^\prime$ that is the configuration with the greatest distance that is possible for this slab size. From these, the 1-2 dissociated species is the most stable one and the 1-4$^\prime$ is the least stable one. For the molecular and the 1-4 dissociated species, the stability lies between the previously mentioned ones, depending on the method implied, for some methods PW91+D2(?) gives the same adsorption energy (the valus for the adsorption energy are calculated analogously to the (11\=20) surface cut, see eq.~\ref{eq:Eads}), or for some methods and basis sets tested with atom centered orbitals calculations with the  crystal code, the one or the other is more stable.
 \\
-Of course, there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of an OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work.
+Of course, there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of an OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work, especially the CUS to CUS diffusion of molecular water is very improbable due to the slow reaction rate.
 \begin{figure}[!ht]
  \centering
 \subfigure[(0001), top view]{\includegraphics[width=0.45\textwidth]{figures/0001/surf_0K_axes.pdf}}
