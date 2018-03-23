@@ -6,8 +6,8 @@ D2/D3 dispersion corrections (van-der-Waals interactions)
 PW plane waves
 GGA generalized gradient approximation
 BSSE basis set superposition error
-NVT
-NVE
+NVT number of particles/Volume/Temperature held constant
+NVE Number of particles/Volume/Energy kept constant
 NEB nudged elastic band
 NEB-CI nudged elastic band with climbing image
 MP2 M\o{}ller Plesset perturbation theory of second order
@@ -26,5 +26,5 @@ CCSD coupled cluster singles and doubles
 VASP vienna ab-initio simulation package
 QM/QM combination of quantum mechanical and quantum mechanical method (in contrast to QM/MM where QM and molecular mechanis are combined)
 PES potential energy surface
-TS(T) Transition state
+TS(T) Transition state (Theory)
 
