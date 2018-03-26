@@ -25,6 +25,7 @@
 \usepackage{enumitem}
 \usepackage{multirow}
 \usepackage{color}
+\usepackage{ulem}
 \usepackage{etoolbox}
 \usepackage{bibentry}
 \usepackage{placeins}
@@ -328,9 +329,9 @@ Other methods as tunneling based methods do not work on isolating materials like
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 \section{Surface Model}
-The structure of $\upalpha$-alumina is well known for several years and was studied in many publications {\color{red} cite here some}. It crystallizes in the hexagonal cell, that means $a=b\neq c$, with an angle of $60$\textdegree~ between $a$ and $b$.
+The structure of $\upalpha$-alumina is well known for several years and was studied in many publications {\color{red} cite here some}. It crystallizes in the hexagonal cell, that means $\uline{a}=\uline{b}\neq \uline{c}$, with an angle of $60$\textdegree~ between $\uline{a}$ and $\uline{b}$.
 \\
-To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. Since the (11\=20) surface is not the crystal cut of the top of the shown crystal in figure \ref{abb:crystal_11-20}(a), the cell vectors $a$ and $b$ are not equal as in the hexagonal cell, but $a=10.36$\AA, $b=14.16$\AA and $c=20.5$\AA, with the angle between $a$ and $b$ of $\theta=84.56$\textdegree.
+To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. Since the (11\=20) surface is not the crystal cut of the top of the shown crystal in figure \ref{abb:crystal_11-20}(a), the cell vectors $\uline{a}$ and $\uline{b}$ are not equal as in the hexagonal cell, but $\uline{a}=10.36$\AA, $\uline{b}=14.16$\AA~ and $\uline{c}=20.5$\AA, with the angle between $\uline{a}$ and $\uline{b}$ of $\theta=84.56$\textdegree.
 \\
 The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), see Fig.~\ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal are given in Table \ref{tab:layer-dist}. The supercell that is mostly used in this work has 10 layers, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), see figure \ref{abb:cell_sizes}, here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}). The spacing between the 5 top layers is displayed in Table \ref{tab:layer-dist}:
 \begin{table}[!ht]
@@ -801,7 +802,7 @@ The (0001) surface is the most stable surface site of alumina under UHV conditio
 First, the surface and the most stable adsorption patterns are introduced (section \ref{sec_0001surf}), followed by the results for the molecular beam scattering (section \ref{sec_0001AIMD}) and last the improvements for the reaction rates (see section \ref{sec_rates}).
 	
 \section{Surface Model}\label{sec_0001surf}
-The most stable surface cut is Al terminated, and in contrast to the (11\=20) surface there is only one type of Al-CUS atom. Also, all oxygen atoms are 3-fold coordinated, that leads to a topography that is not as complex as for the higher indexed surfaces. We applied here a $2\times 2$ supercell with vectors that were optimized from the bulk structure vectors. The surface slab consists of 9 atomic layers, that is three repeating units in z direction of the type Al-O$_3$-Al..., with the top 5 layers being allowed to relax and the lowest 4 layers being fixed to bulk values, see Fig.~\ref{abb:surf_0001}.
+The most stable surface cut is a stochiometric, Al terminated one, and in contrast to the (11\=20) surface there is only one type of Al-CUS atom, which is a reactive Lewis-acid site. Also, all oxygen atoms are 3-fold coordinated, that leads to a topography that is not as complex as for the higher indexed surfaces. We applied here a $2\times 2$ supercell with vectors that were optimized from the bulk structure vectors. The surface slab consists of 9 atomic layers, that is three repeating units in z direction of the type Al-O$_3$-Al..., with the top 5 layers being allowed to relax during optimization and AIMD and the lowest 4 layers being fixed to bulk values, see Fig.~\ref{abb:surf_0001}. The unit cell vectors in there are equal to $\uline{a}=\uline{b}=9.66\,$\AA  ~and a $60$\textdegree ~angle between them. The $\uline{c}$-vector of the slab model is $31.4\,$\AA~ long, hence the vacuum gap between two slabs in this direction is $26.4\,$\AA.
 \\
 The stability, vibrations and reactivity of one water  molecule per $2\times 2$ supercell were already studied by Dr. Jonas Wirth. As it was published in ref{jonas0001}, there is one molecular minimum on top of a CUS atom and 3 dissociated states (see figure \ref{abb:0001_ads}): the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the Hydrogen atom being one position further and the 1-4$^\prime$ that is the configuration with the greatest distance that is possible for this slab size. From these, the 1-2 dissociated species is the most stable one and the 1-4$^\prime$ is the least stable one. For the stability of the molecular and the 1-4 dissociated species, the situation is more controversial in the literature. In our periodic DFT studies with VASP, it lies between the previously mentioned ones, depending on the exact method employed, for PBE+D2 the molecular adsorbed species is more stable than 1-4, for PW91+D2 the 1-4 dissociated is more stable, whereas PW91 without dispersion corrections gives the same adsorption energy for both species (the values for the adsorption energy are calculated analogously to the (11\=20) surface cut, see eq.~\ref{eq:Eads}).
 Calculations with an atom centered basis instead of plane waves with the crystal code show, that for most basis sets the molecular species is more stable and for others, they are both equal in adsorption energy.
@@ -809,11 +810,12 @@ Calculations with an atom centered basis instead of plane waves with the crystal
 Of course, there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of an OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work, especially the CUS to CUS diffusion of molecular water is very improbable due to the slow reaction rate. Adsorption energies and reaction rates that are important for this work are shown in Table \ref{tab:0001_eads+rates}, these results were obtained by J. Wirth and were unpublished.
  \begin{table}[!h]
   \centering
-   \caption{Adsorption energies for the stable minima (left part) and reaction rate constants $k$ at $300\,$K for the processes connecting these minima (right part). All values were calculated with PBE including D2 dispersion corrections and are unpublished work of J. Wirth.}
+   \caption{Adsorption energies for the stable minima (left part) and reaction rate constants $k$ at $300\,$K for the processes connecting these minima (right part). Here the upper line shows the reaction in the direction given in the name and the lower line gives the back reaction's rates constants. All values were calculated with PBE including D2 dispersion corrections and are unpublished work of J. Wirth.}
   \begin{tabular}{cccc|ccccc}
    \multicolumn{4}{c}{E$_\textrm{ads}$ [eV]}&\multicolumn{5}{c}{k$_\textrm{300K}$ [s$^{-1}$]}\\
   mol &1-2 &1-4 &1-4$^\prime$&diss-1-2 & diss-1-4& diff-2-4 & diff-2-4$^\prime$ & diff-4-4$^\prime$\\
   -1.31 & -1.69 & -1.30 & -1.21&8.0$\times 10^{10}$ & 2.8$\times 10^{10}$ & 2.7$\times 10^1$ & 3.8$\times 10^1$&7.1$\times 10^5$ \\
+   & & & &2.3$\times 10^4$ & 2.7$\times 10^{10}$ & 9.1$\times 10^7$ & 3.1$\times 10^9$ & 1.7$\times 10^7$ \\
     \end{tabular}
   \label{tab:0001_eads+rates}
   \end{table}
@@ -840,6 +842,7 @@ Of course, there are reactions linking these minima, dissociation, OH- and H-dif
        \label{abb:0001_ads}
 \end{figure*}
 \section{AIMD for MBS Process}\label{sec_0001AIMD}
+Intro, Hass, pinhole dosing vs. molecular beam source (= equilibrium situation vs non-equilibrium) higher dissociation probability, understanding these differences via AIMD. heavy water (D$_2$O) was used instead of H$_2$O to better compare with existing MBS experiments by R. K. Campen.
 %%%%%%%%%%OLD VERSION%%%%%%%%%%%%%%%%%
 % Hass et. al. discussed the idea whether water will adsorb molecularly first and then dissociate or if direct dissociation upon adsorption is possible. To tackle this question for the experimental technique of the molecular beam source, we apply both microcanonical and canonical \textit{ab-initio} MD to simulate water in the beam approaching the surface. Interestingly, these experiments also show a higher disociation probability compared to pinhole dosing, that leads to an ensemble in thermal equilibrium, whereas MBS leads to a non-equilibrium situation. We start in the low coverage limit by letting one single, rigid molecule approach the $2\times 2$ supercell with only a linear momentum towards the surface. We later on continue with different approaches to more realistic beams and to more realistic surface situations. In the beam regime we probe water clusters, namely pre-optimized %(H$_2$O)$_2$ and
 % (H$_2$O)$_4$ cluster, which is shot onto the surface. Another improvement to the beam lies in exciting the molecule either vibrationally and/or rotationally. These excitations were chosen from a normal mode analysis and the resulting stretch and bending modes.
@@ -849,6 +852,10 @@ Of course, there are reactions linking these minima, dissociation, OH- and H-dif
 % We could show that water can both dissociate upon direct contact with the surface and also dissocioate after being adsorbed molecularly first and then after a time have enough energy to dissociate. This is mostly to the 1-2 dissociated state but also 1-4 and more surprisingly 1-4$^\prime$. It seems that the rotation of the water molecule before hitting the surface is crucial for direct dissociation. This energy can also be delivered by the heated surface, it has more energy in form of vibration, in this case prolongation of the respective OH bond and can therefore lead to dissociation. On the other hand hitting the surface directly on top of a CUS atoms was shown to lead mainly to reflection of the molecule, because the energy of the incoming molecule could not be absorbed by the surface.
 % \\
 % Trajectories with the vibrationally excited modes led to statistically higher levels of dissociation. Also temperature effects of the thermalized trajectories (canonical MD) seem to have a positive influence on the dissociation.
+\subsection{Beam Model}
+For the understanding of a Molecular Beam source experiment, the introduction of a beam is an essential part of the model. However, it was not possible to compute a fully realistic beam that was statistically converged, which would require wide knowledge about energy and velocity distributions and a systematic high dimensional sampling, that is not feasible with the computational power available at the moment. Instead as a first approach, a single, rigid water (D$_2$O) molecule (initial parameters are $d_{OD}=0.97$\AA~ and bond angle of $104.5$\textdegree) was sent perpendicularly from a center of mass position from a distance of $4\,$\AA~ onto the surface, in agreement with the experiment. Having these degrees of freedom excluded, from the 9 degrees of freedom, six are still left: two for the impact site [$a_0$,$b_0$] as it is given relative to the super cell vectors $\uline{a}$ and $\uline{b}$, three Euler angles $\alpha$, $\beta$ and $\gamma$ for the rotational orientation of the molecule with respect to the surface and the kinetic energy of the molecule, see Figure \ref{abb:initial_parameters}. These parameters are varied systematically to gain insight into the process.
+\\
+Further improvements of this simplest model are made in subsections \ref{clusters} and \ref{preex}, that address clustering and rotational and vibrational excited water, respectively. Further details are given there.
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.3\textwidth]{figures/0001/perspective+h2o_new.png}
@@ -932,8 +939,15 @@ Of course, there are reactions linking these minima, dissociation, OH- and H-dif
 \end{figure}
 
  
- \subsection{Microcanonical}
-\subsubsection{Cluster}\label{clusters}
+ \subsection{Microcanonical AIMD at clean surface}
+ first trajectories, tested for 8 orientations, 6 impact points and 5 kinetic energies.
+ \subsection{Thermalized Surface}
+ both the 100 trajectories for the 5 parameter sets and the two trajectories for all 6x8 parameters.
+ \subsection{Refined Surface Model}
+ precoverage, both 0K and 300K, water was shot in vecinity to preadsorbed D$_2$O and also around neighboring CUS atom.
+ \subsection{Refined Beam Model}
+\subsubsection{Clustering}\label{clusters}
+(D$_2$O)$_4$ cluster and also one type of (D$_2$O)$_2$ was tested
 \begin{figure*} [!ht]
 \centering
  \subfigure[Geometry]{\includegraphics[width=.55\textwidth]{figures/0001/4H2O.pdf}}
@@ -942,9 +956,9 @@ Of course, there are reactions linking these minima, dissociation, OH- and H-dif
 \caption{(D$_2$O)$_4$ cluster for simulation of effects of higher coverages. (a) shows the geometry, especially the DOD bond angle and the OD bond length of neighboring molecules and (b) shows the coordinate system for the rotations along the axes.}
        \label{abb:D2Ocluster}
 \end{figure*}
-\subsubsection{Preadsorbed Surface}
+
 \subsubsection{Rotationally and Vibrationally Preexcited Water}\label{preex}
- \subsection{Canonical}
+excitation, more qualitative. 
 \clearpage
 
  \section{Improvement of Reaction Rates}\label{sec_rates}
@@ -1038,7 +1052,7 @@ reaction pathways: dissociationCb-iCa2 and Cb-iCb2?
 \begin{enumerate}[itemsep=0.25\baselineskip]
 %  \item \bibentry{Wirth12}.
   \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}Water Dissociative Adsorption on $\upalpha$-Al$_2$O$_3$(11\=20) Is Controlled by Surface Site Undercoordination, Density, and Topology{\flqq}, \textit{Journal of Physical Chemistry C} \textbf{2018}, \textit{vol,} pp.
-  \item Heiden, S.; Wirth, J.;  Saalfrank, P.: {\frqq}Water MOlecular Beam Scattering at $\upalpha$-Al$_2$O$_3$(0001): An \textit{Ab Initio} Molecular Dynamics Study{\flqq}, \textit{Journal} \textbf{2018}, \textit{vol,} pp.
+  \item Heiden, S.; Wirth, J.;  Saalfrank, P.: {\frqq}Water Molecular Beam Scattering at $\upalpha$-Al$_2$O$_3$(0001): An \textit{Ab Initio} Molecular Dynamics Study{\flqq}, \textit{Journal} \textbf{2018}, \textit{vol,} pp.
 
 \end{enumerate}
 
