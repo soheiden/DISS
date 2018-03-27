@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.1.23)  26 MAR 2018 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.1.23)  27 MAR 2018 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,7 +1090,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 161.
 
-<figures/UP-Logo_Matjpg.jpg, id=156, 2243.38126pt x 2421.045pt>
+<figures/UP-Logo_Matjpg.jpg, id=160, 2243.38126pt x 2421.045pt>
 File: figures/UP-Logo_Matjpg.jpg Graphic file (type jpg)
 
 <use figures/UP-Logo_Matjpg.jpg>
@@ -1166,13 +1166,14 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 31.
 Package tocbasic Info: Using my definition of `\numberline' on input line 32.
 Package tocbasic Info: Using my definition of `\numberline' on input line 33.
 Package tocbasic Info: Using my definition of `\numberline' on input line 34.
-Package tocbasic Info: Using my definition of `\numberline' on input line 37.
+Package tocbasic Info: Using my definition of `\numberline' on input line 35.
 Package tocbasic Info: Using my definition of `\numberline' on input line 38.
 Package tocbasic Info: Using my definition of `\numberline' on input line 39.
 Package tocbasic Info: Using my definition of `\numberline' on input line 40.
 Package tocbasic Info: Using my definition of `\numberline' on input line 41.
 Package tocbasic Info: Using my definition of `\numberline' on input line 42.
-Package tocbasic Info: Using my definition of `\numberline' on input line 44.
+Package tocbasic Info: Using my definition of `\numberline' on input line 43.
+Package tocbasic Info: Using my definition of `\numberline' on input line 45.
 )
 \tf@toc=\write4
 \openout4 = `dissertation.toc'.
@@ -1255,14 +1256,14 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 332.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<figures/al2o3-crystal.png, id=298, 394.47375pt x 557.08125pt>
+<figures/al2o3-crystal.png, id=303, 394.47375pt x 557.08125pt>
 File: figures/al2o3-crystal.png Graphic file (type png)
 
 <use figures/al2o3-crystal.png>
 Package pdftex.def Info: figures/al2o3-crystal.png used on input line 354.
 (pdftex.def)             Requested size: 134.6048pt x 190.08514pt.
 
-<figures/11-20/supercell_opt.png, id=300, 935.495pt x 724.7075pt>
+<figures/11-20/supercell_opt.png, id=305, 935.495pt x 724.7075pt>
 File: figures/11-20/supercell_opt.png Graphic file (type png)
 
 <use figures/11-20/supercell_opt.png>
@@ -1270,7 +1271,7 @@ Package pdftex.def Info: figures/11-20/supercell_opt.png used on input line 357
 .
 (pdftex.def)             Requested size: 134.6048pt x 104.26712pt.
 
-<figures/11-20/uc_opt.png, id=301, 1116.973pt x 683.353pt>
+<figures/11-20/uc_opt.png, id=306, 1116.973pt x 683.353pt>
 File: figures/11-20/uc_opt.png Graphic file (type png)
 
 <use figures/11-20/uc_opt.png>
@@ -1280,7 +1281,7 @@ Package pdftex.def Info: figures/11-20/uc_opt.png used on input line 360.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/11-20/cell_sizes.pdf, id=302, 4863.771pt x 2289.353pt>
+<figures/11-20/cell_sizes.pdf, id=307, 4863.771pt x 2289.353pt>
 File: figures/11-20/cell_sizes.pdf Graphic file (type pdf)
 
 <use figures/11-20/cell_sizes.pdf>
@@ -1302,7 +1303,7 @@ Package epstopdf Info: Source file: <figures/11-20/irreducibles-E.eps>
 (epstopdf)             \includegraphics on input line 373.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/11-20/irreducibles-E-eps-converted-to.pdf, id=304, 361.35pt x 252.945p
+<figures/11-20/irreducibles-E-eps-converted-to.pdf, id=309, 361.35pt x 252.945p
 t>
 File: figures/11-20/irreducibles-E-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -1323,14 +1324,14 @@ educibles-E-eps-converted-to.pdf>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 400.
 
-<figures/11-20/test-Cb.pdf, id=346, 586.19pt x 586.19pt>
+<figures/11-20/test-Cb.pdf, id=351, 586.19pt x 586.19pt>
 File: figures/11-20/test-Cb.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb.pdf>
 Package pdftex.def Info: figures/11-20/test-Cb.pdf used on input line 417.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCa2.pdf, id=347, 586.19pt x 586.19pt>
+<figures/11-20/test-iCa2.pdf, id=352, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCa2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCa2.pdf>
@@ -1341,35 +1342,35 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 419.
 
-<figures/11-20/test-Cb2.pdf, id=348, 585.2871pt x 585.2871pt>
+<figures/11-20/test-Cb2.pdf, id=353, 585.2871pt x 585.2871pt>
 File: figures/11-20/test-Cb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb2.pdf>
 Package pdftex.def Info: figures/11-20/test-Cb2.pdf used on input line 421.
 (pdftex.def)             Requested size: 89.73425pt x 89.72725pt.
 
-<figures/11-20/test-iCb2.pdf, id=349, 586.19pt x 586.19pt>
+<figures/11-20/test-iCb2.pdf, id=354, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCb2.pdf>
 Package pdftex.def Info: figures/11-20/test-iCb2.pdf used on input line 423.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCa3.pdf, id=350, 585.16321pt x 585.16327pt>
+<figures/11-20/test-iCa3.pdf, id=355, 585.16321pt x 585.16327pt>
 File: figures/11-20/test-iCa3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCa3.pdf>
 Package pdftex.def Info: figures/11-20/test-iCa3.pdf used on input line 425.
 (pdftex.def)             Requested size: 89.73425pt x 89.73505pt.
 
-<figures/11-20/test-Cb3.pdf, id=351, 586.19pt x 586.19pt>
+<figures/11-20/test-Cb3.pdf, id=356, 586.19pt x 586.19pt>
 File: figures/11-20/test-Cb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-Cb3.pdf>
 Package pdftex.def Info: figures/11-20/test-Cb3.pdf used on input line 427.
 (pdftex.def)             Requested size: 89.73425pt x 89.73149pt.
 
-<figures/11-20/test-iCb3.pdf, id=352, 586.19pt x 586.19pt>
+<figures/11-20/test-iCb3.pdf, id=357, 586.19pt x 586.19pt>
 File: figures/11-20/test-iCb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/test-iCb3.pdf>
@@ -1574,21 +1575,21 @@ er (name{equation.2.3.3}) has been already used, duplicate ignored
                    \relax 
 l.566 \begin{equation}
                       
-<figures/11-20/Diss_Cb-Cb2.pdf, id=468, 1203.186pt x 361.9829pt>
+<figures/11-20/Diss_Cb-Cb2.pdf, id=473, 1203.186pt x 361.9829pt>
 File: figures/11-20/Diss_Cb-Cb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diss_Cb-Cb2.pdf>
 Package pdftex.def Info: figures/11-20/Diss_Cb-Cb2.pdf used on input line 612.
 (pdftex.def)             Requested size: 314.07332pt x 94.48892pt.
 
-<figures/11-20/Diss_Cb-Cb3.pdf, id=469, 1206.67169pt x 363.87859pt>
+<figures/11-20/Diss_Cb-Cb3.pdf, id=474, 1206.67169pt x 363.87859pt>
 File: figures/11-20/Diss_Cb-Cb3.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diss_Cb-Cb3.pdf>
 Package pdftex.def Info: figures/11-20/Diss_Cb-Cb3.pdf used on input line 614.
 (pdftex.def)             Requested size: 314.07332pt x 94.70613pt.
 
-<figures/11-20/Diff-OH_Cb2-iCb2.pdf, id=470, 1202.80127pt x 361.82608pt>
+<figures/11-20/Diff-OH_Cb2-iCb2.pdf, id=475, 1202.80127pt x 361.82608pt>
 File: figures/11-20/Diff-OH_Cb2-iCb2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-OH_Cb2-iCb2.pdf>
@@ -1596,7 +1597,7 @@ Package pdftex.def Info: figures/11-20/Diff-OH_Cb2-iCb2.pdf used on input line
 616.
 (pdftex.def)             Requested size: 314.07332pt x 94.47559pt.
 
-<figures/11-20/Diff-OH_Cb2-iCa2.pdf, id=471, 1202.54886pt x 362.04207pt>
+<figures/11-20/Diff-OH_Cb2-iCa2.pdf, id=476, 1202.54886pt x 362.04207pt>
 File: figures/11-20/Diff-OH_Cb2-iCa2.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-OH_Cb2-iCa2.pdf>
@@ -1604,7 +1605,7 @@ Package pdftex.def Info: figures/11-20/Diff-OH_Cb2-iCa2.pdf used on input line
 618.
 (pdftex.def)             Requested size: 314.07332pt x 94.55408pt.
 
-<figures/11-20/Diff-H_iCa2-iCa3p.pdf, id=472, 1206.04863pt x 362.30223pt>
+<figures/11-20/Diff-H_iCa2-iCa3p.pdf, id=477, 1206.04863pt x 362.30223pt>
 File: figures/11-20/Diff-H_iCa2-iCa3p.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-H_iCa2-iCa3p.pdf>
@@ -1612,7 +1613,7 @@ Package pdftex.def Info: figures/11-20/Diff-H_iCa2-iCa3p.pdf used on input line
  624.
 (pdftex.def)             Requested size: 314.07332pt x 94.34561pt.
 
-<figures/11-20/Diff-H_iCb2p-iCb3pp.pdf, id=473, 2333.48203pt x 591.23257pt>
+<figures/11-20/Diff-H_iCb2p-iCb3pp.pdf, id=478, 2333.48203pt x 591.23257pt>
 File: figures/11-20/Diff-H_iCb2p-iCb3pp.pdf Graphic file (type pdf)
 
 <use figures/11-20/Diff-H_iCb2p-iCb3pp.pdf>
@@ -1620,7 +1621,7 @@ Package pdftex.def Info: figures/11-20/Diff-H_iCb2p-iCb3pp.pdf used on input li
 ne 626.
 (pdftex.def)             Requested size: 314.07332pt x 79.56937pt.
 
-<figures/11-20/Diff-H_iCb3pp-iCb3ppp.png, id=474, 2278.5125pt x 451.6875pt>
+<figures/11-20/Diff-H_iCb3pp-iCb3ppp.png, id=479, 2278.5125pt x 451.6875pt>
 File: figures/11-20/Diff-H_iCb3pp-iCb3ppp.png Graphic file (type png)
 
 <use figures/11-20/Diff-H_iCb3pp-iCb3ppp.png>
@@ -1649,7 +1650,7 @@ b3pp.pdf
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/11-20/Diff-H_iCb2p-iCb3pp.pdf
 ): PDF inclusion: multiple pdfs with page group included in a single page
 > <./figures/11-20/Diff-H_iCb3pp-iCb3ppp.png>]
-<figures/11-20/SFG_fit.jpg, id=602, 1134.1572pt x 394.1124pt>
+<figures/11-20/SFG_fit.jpg, id=607, 1134.1572pt x 394.1124pt>
 File: figures/11-20/SFG_fit.jpg Graphic file (type jpg)
 
 <use figures/11-20/SFG_fit.jpg>
@@ -1667,7 +1668,7 @@ LaTeX Font Info:    Try loading font information for TS1+lmss on input line 679
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [28]
-<figures/11-20/ODangle.png, id=628, 175.857pt x 152.57pt>
+<figures/11-20/ODangle.png, id=633, 175.857pt x 152.57pt>
 File: figures/11-20/ODangle.png Graphic file (type png)
 
 <use figures/11-20/ODangle.png>
@@ -1723,62 +1724,315 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 [33
 
 
-] <figures/0001/surf_0K_axes.pdf, id=669, 851.01195pt x 631.91772pt>
+]
+Package epstopdf Info: Source file: <figures/0001/mol_ads_barrier.eps>
+(epstopdf)                    date: 2018-03-27 15:08:39
+(epstopdf)                    size: 24205 bytes
+(epstopdf)             Output file: <figures/0001/mol_ads_barrier-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2018-03-27 15:11:20
+(epstopdf)                    size: 6184 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/0001/mol_ads_barri
+er-eps-converted-to.pdf figures/0001/mol_ads_barrier.eps>
+(epstopdf)             \includegraphics on input line 828.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/0001/mol_ads_barrier-eps-converted-to.pdf, id=675, 361.35pt x 252.945p
+t>
+File: figures/0001/mol_ads_barrier-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use figures/0001/mol_ads_barrier-eps-converted-to.pdf>
+Package pdftex.def Info: figures/0001/mol_ads_barrier-eps-converted-to.pdf used
+ on input line 828.
+(pdftex.def)             Requested size: 201.90378pt x 141.33174pt.
+
+<figures/0001/surf_0K_axes.pdf, id=676, 851.01195pt x 631.91772pt>
 File: figures/0001/surf_0K_axes.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K_axes.pdf>
-Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 825.
+Package pdftex.def Info: figures/0001/surf_0K_axes.pdf used on input line 838.
 (pdftex.def)             Requested size: 201.90378pt x 149.91809pt.
 
-<figures/0001/surf_0K-side.pdf, id=670, 1541.76pt x 819.86299pt>
+<figures/0001/surf_0K-side.pdf, id=677, 1541.76pt x 819.86299pt>
 File: figures/0001/surf_0K-side.pdf Graphic file (type pdf)
 
 <use figures/0001/surf_0K-side.pdf>
-Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 827.
+Package pdftex.def Info: figures/0001/surf_0K-side.pdf used on input line 840.
 (pdftex.def)             Requested size: 201.90378pt x 107.36156pt.
 
-<figures/0001/0001_mol_top.jpg, id=671, 1042.89626pt x 784.9325pt>
+<figures/0001/0001_mol_top.jpg, id=678, 1042.89626pt x 784.9325pt>
 File: figures/0001/0001_mol_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_mol_top.jpg>
-Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 834.
+Package pdftex.def Info: figures/0001/0001_mol_top.jpg used on input line 847.
 (pdftex.def)             Requested size: 179.4685pt x 135.06564pt.
 
-<figures/0001/0001_1-2-diss_top.jpg, id=672, 1041.8925pt x 783.92876pt>
+<figures/0001/0001_1-2-diss_top.jpg, id=679, 1041.8925pt x 783.92876pt>
 File: figures/0001/0001_1-2-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-2-diss_top.jpg>
 Package pdftex.def Info: figures/0001/0001_1-2-diss_top.jpg used on input line 
-836.
+849.
 (pdftex.def)             Requested size: 179.4685pt x 135.0245pt.
 
-<figures/0001/0001_1-4-diss_top.jpg, id=673, 1041.8925pt x 785.93625pt>
+<figures/0001/0001_1-4-diss_top.jpg, id=680, 1041.8925pt x 785.93625pt>
 File: figures/0001/0001_1-4-diss_top.jpg Graphic file (type jpg)
 
 <use figures/0001/0001_1-4-diss_top.jpg>
 Package pdftex.def Info: figures/0001/0001_1-4-diss_top.jpg used on input line 
-838.
+851.
 (pdftex.def)             Requested size: 179.4685pt x 135.37027pt.
 
-<figures/0001/0001_1-4p-diss_top_label.pdf, id=674, 833.51402pt x 626.34pt>
+<figures/0001/0001_1-4p-diss_top_label.pdf, id=681, 833.51402pt x 626.34pt>
 File: figures/0001/0001_1-4p-diss_top_label.pdf Graphic file (type pdf)
 
 <use figures/0001/0001_1-4p-diss_top_label.pdf>
 Package pdftex.def Info: figures/0001/0001_1-4p-diss_top_label.pdf used on inpu
-t line 840.
+t line 853.
 (pdftex.def)             Requested size: 179.4685pt x 134.86116pt.
 
-<figures/0001/perspective+h2o_new.png, id=680, 1038.279pt x 1513.655pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35 <./figures/0001/mol_ads_barrier-eps-converted-to.pdf> <./figures/0001/surf
+_0K_axes.pdf> <./figures/0001/surf_0K-side.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./figures/0001/surf_0K-side.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+>] [36 <./figures/0001/0001_mol_top.jpg> <./figures/0001/0001_1-2-diss_top.jpg>
+ <./figures/0001/0001_1-4-diss_top.jpg> <./figures/0001/0001_1-4p-diss_top_labe
+l.pdf>]
+<figures/0001/perspective+h2o_new.png, id=759, 1038.279pt x 1513.655pt>
 File: figures/0001/perspective+h2o_new.png Graphic file (type png)
 
 <use figures/0001/perspective+h2o_new.png>
 Package pdftex.def Info: figures/0001/perspective+h2o_new.png used on input lin
-e 861.
+e 877.
 (pdftex.def)             Requested size: 134.6048pt x 196.22774pt.
 
-Underfull \vbox (badness 3219) has occurred while \output is active []
+<figures/0001/0_33-0_33test.png, id=760, 200.75pt x 263.98625pt>
+File: figures/0001/0_33-0_33test.png Graphic file (type png)
 
- [34]
+<use figures/0001/0_33-0_33test.png>
+Package pdftex.def Info: figures/0001/0_33-0_33test.png used on input line 884.
+
+(pdftex.def)             Requested size: 200.7495pt x 263.9856pt.
+
+<figures/0001/0_5-0_5test.png, id=761, 200.75pt x 266.9975pt>
+File: figures/0001/0_5-0_5test.png Graphic file (type png)
+
+<use figures/0001/0_5-0_5test.png>
+Package pdftex.def Info: figures/0001/0_5-0_5test.png used on input line 886.
+(pdftex.def)             Requested size: 200.7495pt x 266.99683pt.
+
+<figures/0001/0_35-0_5test.png, id=762, 200.75pt x 266.9975pt>
+File: figures/0001/0_35-0_5test.png Graphic file (type png)
+
+<use figures/0001/0_35-0_5test.png>
+Package pdftex.def Info: figures/0001/0_35-0_5test.png used on input line 888.
+(pdftex.def)             Requested size: 200.7495pt x 266.99683pt.
+
+<figures/0001/0_5-0_35test.png, id=763, 200.75pt x 264.99pt>
+File: figures/0001/0_5-0_35test.png Graphic file (type png)
+
+<use figures/0001/0_5-0_35test.png>
+Package pdftex.def Info: figures/0001/0_5-0_35test.png used on input line 890.
+(pdftex.def)             Requested size: 200.7495pt x 264.98935pt.
+
+<figures/0001/0_35-0_45test.png, id=764, 200.75pt x 265.99374pt>
+File: figures/0001/0_35-0_45test.png Graphic file (type png)
+
+<use figures/0001/0_35-0_45test.png>
+Package pdftex.def Info: figures/0001/0_35-0_45test.png used on input line 892.
+
+(pdftex.def)             Requested size: 200.7495pt x 265.99309pt.
+
+<figures/0001/0_4-0_5test.png, id=765, 200.75pt x 266.9975pt>
+File: figures/0001/0_4-0_5test.png Graphic file (type png)
+
+<use figures/0001/0_4-0_5test.png>
+Package pdftex.def Info: figures/0001/0_4-0_5test.png used on input line 894.
+(pdftex.def)             Requested size: 200.7495pt x 266.99683pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<figures/0001/Ausrichtungsbilder/0_0_0-toptest.png, id=766, 364.36125pt x 483.8
+075pt>
+File: figures/0001/Ausrichtungsbilder/0_0_0-toptest.png Graphic file (type png)
+
+ <use figures/0001/Ausrichtungsbilder/0_0_0-toptest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_0-toptest.png used
+ on input line 904.
+(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
+
+<figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png, id=767, 201.75375pt x 170.
+6375pt>
+File: figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png Graphic file (type png
+)
+ <use figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png use
+d on input line 905.
+(pdftex.def)             Requested size: 71.13188pt x 60.16144pt.
+
+<figures/0001/Ausrichtungsbilder/0_0_90-toptest.png, id=768, 364.36125pt x 483.
+8075pt>
+File: figures/0001/Ausrichtungsbilder/0_0_90-toptest.png Graphic file (type png
+)
+ <use figures/0001/Ausrichtungsbilder/0_0_90-toptest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_90-toptest.png use
+d on input line 906.
+(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
+
+<figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png, id=769, 200.75pt x 171.64
+125pt>
+File: figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png Graphic file (type pn
+g)
+ <use figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png us
+ed on input line 907.
+(pdftex.def)             Requested size: 71.13188pt x 60.81912pt.
+
+<figures/0001/Ausrichtungsbilder/0_90_0-toptest.png, id=770, 364.36125pt x 483.
+8075pt>
+File: figures/0001/Ausrichtungsbilder/0_90_0-toptest.png Graphic file (type png
+)
+ <use figures/0001/Ausrichtungsbilder/0_90_0-toptest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_0-toptest.png use
+d on input line 908.
+(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
+
+<figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png, id=771, 364.36125pt x 300
+.12125pt>
+File: figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png Graphic file (type pn
+g)
+ <use figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png us
+ed on input line 909.
+(pdftex.def)             Requested size: 71.13188pt x 58.5898pt.
+
+<figures/0001/Ausrichtungsbilder/0_90_90-toptest.png, id=772, 364.36125pt x 483
+.8075pt>
+File: figures/0001/Ausrichtungsbilder/0_90_90-toptest.png Graphic file (type pn
+g)
+ <use figures/0001/Ausrichtungsbilder/0_90_90-toptest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_90-toptest.png us
+ed on input line 910.
+(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
+
+<figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png, id=773, 200.75pt x 165.6
+1874pt>
+File: figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png Graphic file (type p
+ng)
+ <use figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png u
+sed on input line 911.
+(pdftex.def)             Requested size: 71.13188pt x 58.68512pt.
+
+<figures/0001/Ausrichtungsbilder/90_0_0-toptest.png, id=774, 364.36125pt x 482.
+80376pt>
+File: figures/0001/Ausrichtungsbilder/90_0_0-toptest.png Graphic file (type png
+)
+ <use figures/0001/Ausrichtungsbilder/90_0_0-toptest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_0-toptest.png use
+d on input line 912.
+(pdftex.def)             Requested size: 56.9055pt x 75.40106pt.
+
+<figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png, id=775, 200.75pt x 176.66
+pt>
+File: figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png Graphic file (type pn
+g)
+ <use figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png us
+ed on input line 913.
+(pdftex.def)             Requested size: 71.13188pt x 62.59747pt.
+
+<figures/0001/Ausrichtungsbilder/90_0_90-toptest.png, id=776, 364.36125pt x 483
+.8075pt>
+File: figures/0001/Ausrichtungsbilder/90_0_90-toptest.png Graphic file (type pn
+g)
+ <use figures/0001/Ausrichtungsbilder/90_0_90-toptest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_90-toptest.png us
+ed on input line 914.
+(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
+
+<figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png, id=777, 200.75pt x 176.6
+6pt>
+File: figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png Graphic file (type p
+ng)
+ <use figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png u
+sed on input line 915.
+(pdftex.def)             Requested size: 71.13188pt x 62.59747pt.
+
+<figures/0001/Ausrichtungsbilder/90_90_0-toptest.png, id=778, 364.36125pt x 482
+.80376pt>
+File: figures/0001/Ausrichtungsbilder/90_90_0-toptest.png Graphic file (type pn
+g)
+ <use figures/0001/Ausrichtungsbilder/90_90_0-toptest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_0-toptest.png us
+ed on input line 916.
+(pdftex.def)             Requested size: 56.9055pt x 75.40106pt.
+
+<figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png, id=779, 364.36125pt x 30
+0.12125pt>
+File: figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png Graphic file (type p
+ng)
+ <use figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png u
+sed on input line 917.
+(pdftex.def)             Requested size: 71.13188pt x 58.5898pt.
+
+<figures/0001/Ausrichtungsbilder/90_90_90-toptest.png, id=780, 364.36125pt x 48
+3.8075pt>
+File: figures/0001/Ausrichtungsbilder/90_90_90-toptest.png Graphic file (type p
+ng)
+ <use figures/0001/Ausrichtungsbilder/90_90_90-toptest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_90-toptest.png u
+sed on input line 918.
+(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
+
+<figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png, id=781, 200.75pt x 165.
+61874pt>
+File: figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png Graphic file (type 
+png)
+ <use figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png>
+Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png 
+used on input line 919.
+(pdftex.def)             Requested size: 71.13188pt x 58.68512pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/0001/graphs/E.png, id=782, 602.25pt x 401.5pt>
+File: figures/0001/graphs/E.png Graphic file (type png)
+
+<use figures/0001/graphs/E.png>
+Package pdftex.def Info: figures/0001/graphs/E.png used on input line 926.
+(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
+
+<figures/0001/graphs/impactpoint.png, id=783, 602.25pt x 401.5pt>
+File: figures/0001/graphs/impactpoint.png Graphic file (type png)
+
+<use figures/0001/graphs/impactpoint.png>
+Package pdftex.def Info: figures/0001/graphs/impactpoint.png used on input line
+ 928.
+(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
+
+<figures/0001/graphs/orientation.png, id=784, 602.25pt x 401.5pt>
+File: figures/0001/graphs/orientation.png Graphic file (type png)
+
+<use figures/0001/graphs/orientation.png>
+Package pdftex.def Info: figures/0001/graphs/orientation.png used on input line
+ 930.
+(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package epstopdf Info: Source file: <figures/0001/graphs/mol.eps>
 (epstopdf)                    date: 2018-03-22 16:17:46
 (epstopdf)                    size: 280817 bytes
@@ -1788,15 +2042,14 @@ df>
 (epstopdf)                    size: 74082 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/0001/graphs/mol-ep
 s-converted-to.pdf figures/0001/graphs/mol.eps>
-(epstopdf)             \includegraphics on input line 872.
+(epstopdf)             \includegraphics on input line 943.
 Package epstopdf Info: Output file is already uptodate.
-
-<figures/0001/graphs/mol-eps-converted-to.pdf, id=686, 361.35pt x 252.945pt>
+<figures/0001/graphs/mol-eps-converted-to.pdf, id=786, 361.35pt x 252.945pt>
 File: figures/0001/graphs/mol-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/0001/graphs/mol-eps-converted-to.pdf>
 Package pdftex.def Info: figures/0001/graphs/mol-eps-converted-to.pdf used on i
-nput line 872.
+nput line 943.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 Package epstopdf Info: Source file: <figures/0001/graphs/1-2.eps>
 (epstopdf)                    date: 2018-03-22 16:17:51
@@ -1807,15 +2060,15 @@ df>
 (epstopdf)                    size: 66500 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/0001/graphs/1-2-ep
 s-converted-to.pdf figures/0001/graphs/1-2.eps>
-(epstopdf)             \includegraphics on input line 874.
+(epstopdf)             \includegraphics on input line 945.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/0001/graphs/1-2-eps-converted-to.pdf, id=687, 361.35pt x 252.945pt>
+<figures/0001/graphs/1-2-eps-converted-to.pdf, id=787, 361.35pt x 252.945pt>
 File: figures/0001/graphs/1-2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/0001/graphs/1-2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/0001/graphs/1-2-eps-converted-to.pdf used on i
-nput line 874.
+nput line 945.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 Package epstopdf Info: Source file: <figures/0001/graphs/1-4.eps>
 (epstopdf)                    date: 2018-03-22 16:17:53
@@ -1826,15 +2079,15 @@ df>
 (epstopdf)                    size: 73141 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/0001/graphs/1-4-ep
 s-converted-to.pdf figures/0001/graphs/1-4.eps>
-(epstopdf)             \includegraphics on input line 876.
+(epstopdf)             \includegraphics on input line 947.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/0001/graphs/1-4-eps-converted-to.pdf, id=688, 361.35pt x 252.945pt>
+<figures/0001/graphs/1-4-eps-converted-to.pdf, id=788, 361.35pt x 252.945pt>
 File: figures/0001/graphs/1-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/0001/graphs/1-4-eps-converted-to.pdf>
 Package pdftex.def Info: figures/0001/graphs/1-4-eps-converted-to.pdf used on i
-nput line 876.
+nput line 947.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 Package epstopdf Info: Source file: <figures/0001/graphs/1-4d.eps>
 (epstopdf)                    date: 2018-03-22 16:17:58
@@ -1845,284 +2098,63 @@ pdf>
 (epstopdf)                    size: 38136 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/0001/graphs/1-4d-e
 ps-converted-to.pdf figures/0001/graphs/1-4d.eps>
-(epstopdf)             \includegraphics on input line 877.
+(epstopdf)             \includegraphics on input line 948.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/0001/graphs/1-4d-eps-converted-to.pdf, id=689, 361.35pt x 252.945pt>
+<figures/0001/graphs/1-4d-eps-converted-to.pdf, id=789, 361.35pt x 252.945pt>
 File: figures/0001/graphs/1-4d-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/0001/graphs/1-4d-eps-converted-to.pdf>
 Package pdftex.def Info: figures/0001/graphs/1-4d-eps-converted-to.pdf used on 
-input line 877.
+input line 948.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/0001/0_33-0_33test.png, id=696, 200.75pt x 263.98625pt>
-File: figures/0001/0_33-0_33test.png Graphic file (type png)
-
-<use figures/0001/0_33-0_33test.png>
-Package pdftex.def Info: figures/0001/0_33-0_33test.png used on input line 890.
-
-(pdftex.def)             Requested size: 200.7495pt x 263.9856pt.
-
-<figures/0001/0_5-0_5test.png, id=697, 200.75pt x 266.9975pt>
-File: figures/0001/0_5-0_5test.png Graphic file (type png)
-
-<use figures/0001/0_5-0_5test.png>
-Package pdftex.def Info: figures/0001/0_5-0_5test.png used on input line 892.
-(pdftex.def)             Requested size: 200.7495pt x 266.99683pt.
-
-<figures/0001/0_35-0_5test.png, id=698, 200.75pt x 266.9975pt>
-File: figures/0001/0_35-0_5test.png Graphic file (type png)
-
-<use figures/0001/0_35-0_5test.png>
-Package pdftex.def Info: figures/0001/0_35-0_5test.png used on input line 894.
-(pdftex.def)             Requested size: 200.7495pt x 266.99683pt.
-
-<figures/0001/0_5-0_35test.png, id=699, 200.75pt x 264.99pt>
-File: figures/0001/0_5-0_35test.png Graphic file (type png)
-
-<use figures/0001/0_5-0_35test.png>
-Package pdftex.def Info: figures/0001/0_5-0_35test.png used on input line 896.
-(pdftex.def)             Requested size: 200.7495pt x 264.98935pt.
-
-<figures/0001/0_35-0_45test.png, id=700, 200.75pt x 265.99374pt>
-File: figures/0001/0_35-0_45test.png Graphic file (type png)
-
-<use figures/0001/0_35-0_45test.png>
-Package pdftex.def Info: figures/0001/0_35-0_45test.png used on input line 898.
-
-(pdftex.def)             Requested size: 200.7495pt x 265.99309pt.
-
-<figures/0001/0_4-0_5test.png, id=701, 200.75pt x 266.9975pt>
-File: figures/0001/0_4-0_5test.png Graphic file (type png)
-
-<use figures/0001/0_4-0_5test.png>
-Package pdftex.def Info: figures/0001/0_4-0_5test.png used on input line 900.
-(pdftex.def)             Requested size: 200.7495pt x 266.99683pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<figures/0001/Ausrichtungsbilder/0_0_0-toptest.png, id=702, 364.36125pt x 483.8
-075pt>
-File: figures/0001/Ausrichtungsbilder/0_0_0-toptest.png Graphic file (type png)
-
- <use figures/0001/Ausrichtungsbilder/0_0_0-toptest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_0-toptest.png used
- on input line 910.
-(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
-
-<figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png, id=703, 201.75375pt x 170.
-6375pt>
-File: figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png Graphic file (type png
-)
- <use figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png use
-d on input line 911.
-(pdftex.def)             Requested size: 71.13188pt x 60.16144pt.
-
-<figures/0001/Ausrichtungsbilder/0_0_90-toptest.png, id=704, 364.36125pt x 483.
-8075pt>
-File: figures/0001/Ausrichtungsbilder/0_0_90-toptest.png Graphic file (type png
-)
- <use figures/0001/Ausrichtungsbilder/0_0_90-toptest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_90-toptest.png use
-d on input line 912.
-(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
-
-<figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png, id=705, 200.75pt x 171.64
-125pt>
-File: figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png Graphic file (type pn
-g)
- <use figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png us
-ed on input line 913.
-(pdftex.def)             Requested size: 71.13188pt x 60.81912pt.
-
-<figures/0001/Ausrichtungsbilder/0_90_0-toptest.png, id=706, 364.36125pt x 483.
-8075pt>
-File: figures/0001/Ausrichtungsbilder/0_90_0-toptest.png Graphic file (type png
-)
- <use figures/0001/Ausrichtungsbilder/0_90_0-toptest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_0-toptest.png use
-d on input line 914.
-(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
-
-<figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png, id=707, 364.36125pt x 300
-.12125pt>
-File: figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png Graphic file (type pn
-g)
- <use figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png us
-ed on input line 915.
-(pdftex.def)             Requested size: 71.13188pt x 58.5898pt.
-
-<figures/0001/Ausrichtungsbilder/0_90_90-toptest.png, id=708, 364.36125pt x 483
-.8075pt>
-File: figures/0001/Ausrichtungsbilder/0_90_90-toptest.png Graphic file (type pn
-g)
- <use figures/0001/Ausrichtungsbilder/0_90_90-toptest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_90-toptest.png us
-ed on input line 916.
-(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
-
-<figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png, id=709, 200.75pt x 165.6
-1874pt>
-File: figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png Graphic file (type p
-ng)
- <use figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png u
-sed on input line 917.
-(pdftex.def)             Requested size: 71.13188pt x 58.68512pt.
-
-<figures/0001/Ausrichtungsbilder/90_0_0-toptest.png, id=710, 364.36125pt x 482.
-80376pt>
-File: figures/0001/Ausrichtungsbilder/90_0_0-toptest.png Graphic file (type png
-)
- <use figures/0001/Ausrichtungsbilder/90_0_0-toptest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_0-toptest.png use
-d on input line 918.
-(pdftex.def)             Requested size: 56.9055pt x 75.40106pt.
-
-<figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png, id=711, 200.75pt x 176.66
-pt>
-File: figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png Graphic file (type pn
-g)
- <use figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png us
-ed on input line 919.
-(pdftex.def)             Requested size: 71.13188pt x 62.59747pt.
-
-<figures/0001/Ausrichtungsbilder/90_0_90-toptest.png, id=712, 364.36125pt x 483
-.8075pt>
-File: figures/0001/Ausrichtungsbilder/90_0_90-toptest.png Graphic file (type pn
-g)
- <use figures/0001/Ausrichtungsbilder/90_0_90-toptest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_90-toptest.png us
-ed on input line 920.
-(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
-
-<figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png, id=713, 200.75pt x 176.6
-6pt>
-File: figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png Graphic file (type p
-ng)
- <use figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png u
-sed on input line 921.
-(pdftex.def)             Requested size: 71.13188pt x 62.59747pt.
-
-<figures/0001/Ausrichtungsbilder/90_90_0-toptest.png, id=714, 364.36125pt x 482
-.80376pt>
-File: figures/0001/Ausrichtungsbilder/90_90_0-toptest.png Graphic file (type pn
-g)
- <use figures/0001/Ausrichtungsbilder/90_90_0-toptest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_0-toptest.png us
-ed on input line 922.
-(pdftex.def)             Requested size: 56.9055pt x 75.40106pt.
-
-<figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png, id=715, 364.36125pt x 30
-0.12125pt>
-File: figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png Graphic file (type p
-ng)
- <use figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png u
-sed on input line 923.
-(pdftex.def)             Requested size: 71.13188pt x 58.5898pt.
-
-<figures/0001/Ausrichtungsbilder/90_90_90-toptest.png, id=716, 364.36125pt x 48
-3.8075pt>
-File: figures/0001/Ausrichtungsbilder/90_90_90-toptest.png Graphic file (type p
-ng)
- <use figures/0001/Ausrichtungsbilder/90_90_90-toptest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_90-toptest.png u
-sed on input line 924.
-(pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
-
-<figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png, id=717, 200.75pt x 165.
-61874pt>
-File: figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png Graphic file (type 
-png)
- <use figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png>
-Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png 
-used on input line 925.
-(pdftex.def)             Requested size: 71.13188pt x 58.68512pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/0001/graphs/E.png, id=718, 602.25pt x 401.5pt>
-File: figures/0001/graphs/E.png Graphic file (type png)
-
-<use figures/0001/graphs/E.png>
-Package pdftex.def Info: figures/0001/graphs/E.png used on input line 932.
-(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
-
-<figures/0001/graphs/impactpoint.png, id=719, 602.25pt x 401.5pt>
-File: figures/0001/graphs/impactpoint.png Graphic file (type png)
-
-<use figures/0001/graphs/impactpoint.png>
-Package pdftex.def Info: figures/0001/graphs/impactpoint.png used on input line
- 934.
-(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
-
-<figures/0001/graphs/orientation.png, id=720, 602.25pt x 401.5pt>
-File: figures/0001/graphs/orientation.png Graphic file (type png)
-
-<use figures/0001/graphs/orientation.png>
-Package pdftex.def Info: figures/0001/graphs/orientation.png used on input line
- 936.
-(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[35 <./figures/0001/surf_0K_axes.pdf> <./figures/0001/surf_0K-side.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./figures/0001/surf_0K-side.pdf): PDF i
-nclusion: multiple pdfs with page group included in a single page
->] <figures/0001/4H2O.pdf, id=764, 1541.76pt x 819.86299pt>
+[37 <./figures/0001/perspective+h2o_new.png>]
+<figures/0001/4H2O.pdf, id=805, 1541.76pt x 819.86299pt>
 File: figures/0001/4H2O.pdf Graphic file (type pdf)
 
 <use figures/0001/4H2O.pdf>
-Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 953.
+Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 969.
 (pdftex.def)             Requested size: 246.77434pt x 131.21828pt.
 
-<figures/0001/4d2o_axes.png, id=765, 1017.8025pt x 895.345pt>
+<figures/0001/4d2o_axes.png, id=806, 1017.8025pt x 895.345pt>
 File: figures/0001/4d2o_axes.png Graphic file (type png)
 
 <use figures/0001/4d2o_axes.png>
-Package pdftex.def Info: figures/0001/4d2o_axes.png used on input line 955.
+Package pdftex.def Info: figures/0001/4d2o_axes.png used on input line 971.
 (pdftex.def)             Requested size: 157.04007pt x 138.13493pt.
+ [38 <./figures/0001/0_33-0_33test.png> <./figures/0001/0_5-0_5test.png> <./fig
+ures/0001/0_35-0_5test.png> <./figures/0001/0_5-0_35test.png> <./figures/0001/0
+_35-0_45test.png> <./figures/0001/0_4-0_5test.png> <./figures/0001/graphs/E.png
+> <./figures/0001/graphs/impactpoint.png> <./figures/0001/graphs/orientation.pn
+g>]
 
-Underfull \vbox (badness 1248) has occurred while \output is active []
+LaTeX Warning: Text page 39 contains only floats.
 
- [36 <./figures/0001/0001_mol_top.jpg> <./figures/0001/0001_1-2-diss_top.jpg> <
-./figures/0001/0001_1-4-diss_top.jpg> <./figures/0001/0001_1-4p-diss_top_label.
-pdf>]
-[37 <./figures/0001/perspective+h2o_new.png>] [38 <./figures/0001/graphs/mol-ep
-s-converted-to.pdf> <./figures/0001/graphs/1-2-eps-converted-to.pdf> <./figures
-/0001/graphs/1-4-eps-converted-to.pdf> <./figures/0001/graphs/1-4d-eps-converte
-d-to.pdf>] [39 <./figures/0001/0_33-0_33test.png> <./figures/0001/0_5-0_5test.p
-ng> <./figures/0001/0_35-0_5test.png> <./figures/0001/0_5-0_35test.png> <./figu
-res/0001/0_35-0_45test.png> <./figures/0001/0_4-0_5test.png> <./figures/0001/gr
-aphs/E.png> <./figures/0001/graphs/impactpoint.png> <./figures/0001/graphs/orie
-ntation.png>] [40 <./figures/0001/Ausrichtungsbilder/0_0_0-toptest.png> <./figu
-res/0001/Ausrichtungsbilder/0_0_0-sidetest.png> <./figures/0001/Ausrichtungsbil
-der/0_0_90-toptest.png> <./figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png>
- <./figures/0001/Ausrichtungsbilder/0_90_0-toptest.png> <./figures/0001/Ausrich
-tungsbilder/0_90_0-sidetest.png> <./figures/0001/Ausrichtungsbilder/0_90_90-top
-test.png> <./figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png> <./figures/0
-001/Ausrichtungsbilder/90_0_0-toptest.png> <./figures/0001/Ausrichtungsbilder/9
-0_0_0-sidetest.png> <./figures/0001/Ausrichtungsbilder/90_0_90-toptest.png> <./
-figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png> <./figures/0001/Ausrichtu
-ngsbilder/90_90_0-toptest.png> <./figures/0001/Ausrichtungsbilder/90_90_0-sidet
-est.png> <./figures/0001/Ausrichtungsbilder/90_90_90-toptest.png> <./figures/00
-01/Ausrichtungsbilder/90_90_90-sidetest.png>] [41 <./figures/0001/4H2O.pdf> <./
-figures/0001/4d2o_axes.png>] [42
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39 <./figures/0001/Ausrichtungsbilder/0_0_0-toptest.png> <./figures/0001/Ausr
+ichtungsbilder/0_0_0-sidetest.png> <./figures/0001/Ausrichtungsbilder/0_0_90-to
+ptest.png> <./figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png> <./figures/0
+001/Ausrichtungsbilder/0_90_0-toptest.png> <./figures/0001/Ausrichtungsbilder/0
+_90_0-sidetest.png> <./figures/0001/Ausrichtungsbilder/0_90_90-toptest.png> <./
+figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png> <./figures/0001/Ausrichtu
+ngsbilder/90_0_0-toptest.png> <./figures/0001/Ausrichtungsbilder/90_0_0-sidetes
+t.png> <./figures/0001/Ausrichtungsbilder/90_0_90-toptest.png> <./figures/0001/
+Ausrichtungsbilder/90_0_90-sidetest.png> <./figures/0001/Ausrichtungsbilder/90_
+90_0-toptest.png> <./figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png> <./f
+igures/0001/Ausrichtungsbilder/90_90_90-toptest.png> <./figures/0001/Ausrichtun
+gsbilder/90_90_90-sidetest.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40 <./figures/0001/graphs/mol-eps-converted-to.pdf> <./figures/0001/graphs/1-
+2-eps-converted-to.pdf> <./figures/0001/graphs/1-4-eps-converted-to.pdf> <./fig
+ures/0001/graphs/1-4d-eps-converted-to.pdf>] [41 <./figures/0001/4H2O.pdf> <./f
+igures/0001/4d2o_axes.png>] [42
 
 ] [43] [44
 
@@ -2146,31 +2178,31 @@ chapter without number
 ]
 chapter without number
 [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1087--1088
+Underfull \hbox (badness 10000) in paragraph at lines 1103--1104
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1093.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1109.
 [52
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1093.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1109.
  (./dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1093.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1093.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1109.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1109.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 69F2CCF4C0664A62D535FD23B320D4AA;2709.
+(rerunfilecheck)             Checksum: B9E0B0074CCD90A7B66FFC7359023E0F;2807.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 22120 strings out of 493089
- 395740 string characters out of 6144303
- 580842 words of memory out of 5000000
- 25048 multiletter control sequences out of 15000+600000
+ 22129 strings out of 493089
+ 396046 string characters out of 6144303
+ 582717 words of memory out of 5000000
+ 25054 multiletter control sequences out of 15000+600000
  156462 words of font info for 128 fonts, out of 8000000 for 9000
  1158 hyphenation exceptions out of 8191
  51i,24n,66p,10375b,786s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2199,10 +2231,10 @@ ts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/s
 hare/texmf/fonts/type1/public/tex-gyre/qhvr.pfb>
-Output written on dissertation.pdf (52 pages, 35689870 bytes).
+Output written on dissertation.pdf (52 pages, 35705121 bytes).
 PDF statistics:
- 1087 PDF objects out of 1200 (max. 8388607)
- 822 compressed objects within 9 object streams
- 188 named destinations out of 1000 (max. 500000)
- 605 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1102 PDF objects out of 1200 (max. 8388607)
+ 835 compressed objects within 9 object streams
+ 190 named destinations out of 1000 (max. 500000)
+ 618 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -25,21 +25,22 @@
 \contentsline {subsection}{\numberline {2.4.2}Velocity-Velocity Autocorrelation Function}{31}{subsection.2.4.2}
 \contentsline {section}{\numberline {2.5}Desorption Process}{31}{section.2.5}
 \contentsline {chapter}{\numberline {3}Water on $\upalpha $-Al$_2$O$_3$(0001)}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}Surface Model}{33}{section.3.1}
-\contentsline {section}{\numberline {3.2}AIMD for MBS Process}{34}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Beam Model}{35}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Microcanonical AIMD at clean surface}{35}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Thermalized Surface}{36}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Refined Surface Model}{36}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Refined Beam Model}{36}{subsection.3.2.5}
-\contentsline {subsubsection}{\nonumberline Clustering}{36}{section*.40}
-\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{37}{section*.42}
+\contentsline {section}{\numberline {3.1}Surface Model and Static Calculations}{33}{section.3.1}
+\contentsline {section}{\numberline {3.2}AIMD for MBS Process}{35}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Beam Model}{36}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Example Trajectories}{37}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Microcanonical AIMD at clean surface}{37}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Thermalized Surface}{37}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Refined Surface Model}{38}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Refined Beam Model}{40}{subsection.3.2.6}
+\contentsline {subsubsection}{\nonumberline Clustering}{40}{section*.41}
+\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{41}{section*.43}
 \contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{42}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{42}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}PIMD}{43}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{43}{subsection.3.3.3}
-\contentsline {chapter}{\nonumberline Summary}{45}{chapter*.43}
-\contentsline {chapter}{\nonumberline Appendix}{47}{chapter*.45}
-\contentsline {subsubsection}{\nonumberline This Work:}{49}{section*.47}
-\contentsline {chapter}{\nonumberline References}{51}{chapter*.48}
+\contentsline {chapter}{\nonumberline Summary}{45}{chapter*.44}
+\contentsline {chapter}{\nonumberline Appendix}{47}{chapter*.46}
+\contentsline {subsubsection}{\nonumberline This Work:}{49}{section*.48}
+\contentsline {chapter}{\nonumberline References}{51}{chapter*.49}
 \contentsfinish 
