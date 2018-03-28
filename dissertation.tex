@@ -802,7 +802,7 @@ The (0001) surface is the most stable surface site of alumina under UHV conditio
 First, the surface and the most stable adsorption patterns are introduced (section \ref{sec_0001surf}), followed by the results for the molecular beam scattering (section \ref{sec_0001AIMD}) and last the improvements for the reaction rates (see section \ref{sec_rates}).
 	
 \section{Surface Model and Static Calculations}\label{sec_0001surf}
-The most stable surface cut is a stochiometric, Al terminated one, and in contrast to the (11\=20) surface there is only one type of Al-CUS atom, which is a reactive Lewis-acid site. Also, all oxygen atoms are 3-fold coordinated, that leads to a topography that is not as complex as for the higher indexed surfaces. We applied here a $2\times 2$ supercell with vectors that were optimized from the bulk structure vectors. The surface slab consists of 9 atomic layers, that is three repeating units in z direction of the type Al-O$_3$-Al..., with the top 5 layers being allowed to relax during optimization and AIMD and the lowest 4 layers being fixed to bulk values, see Fig.~\ref{abb:surf_0001}. The unit cell vectors in there are equal to $\uline{a}=\uline{b}=9.66\,$\AA  ~and a $60$\textdegree ~angle between them. The $\uline{c}$-vector of the slab model is $31.4\,$\AA~ long, hence the vacuum gap between two slabs in this direction is $26.4\,$\AA.
+The most stable surface cut is a stochiometric, Al terminated one, and in contrast to the (11\=20) surface there is only one type of Al-CUS atom, which is a reactive Lewis-acid site. Also, all oxygen atoms are 3-fold coordinated, that leads to a topography that is not as complex as for the higher indexed surfaces. We applied here a $2\times 2$ supercell with vectors that were optimized from the bulk structure vectors (previous work of J. Wirth). The surface slab consists of 9 atomic layers, that is three repeating units in z direction of the type Al-O$_3$-Al..., with the top 5 layers being allowed to relax during optimization and AIMD and the lowest 4 layers being fixed to bulk values, see Fig.~\ref{abb:surf_0001}. The unit cell vectors in there are equal to $\uline{a}=\uline{b}=9.66\,$\AA  ~and a $60$\textdegree ~angle between them. The $\uline{c}$-vector of the slab model is $31.4\,$\AA~ long, hence the vacuum gap between two slabs in this direction is $26.4\,$\AA.
 \\
 The stability, vibrations and reactivity of one water  molecule per $2\times 2$ supercell were already studied by Dr. Jonas Wirth. As it was published in ref{jonas0001}, there is one molecular minimum on top of a CUS atom and 3 dissociated states (see figure \ref{abb:0001_ads}): the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the Hydrogen atom being one position further and the 1-4$^\prime$ that is the configuration with the greatest distance that is possible for this slab size. From these, the 1-2 dissociated species is the most stable one and the 1-4$^\prime$ is the least stable one. For the stability of the molecular and the 1-4 dissociated species, the situation is more controversial in the literature. In our periodic DFT studies with VASP, it lies between the previously mentioned ones, depending on the exact method employed, for PBE+D2 the molecular adsorbed species is more stable than 1-4, for PW91+D2 the 1-4 dissociated is more stable, whereas PW91 without dispersion corrections gives the same adsorption energy for both species (the values for the adsorption energy are calculated analogously to the (11\=20) surface cut, see eq.~\ref{eq:Eads}).
 Calculations with an atom centered basis instead of plane waves with the crystal code show, that for most basis sets the molecular species is more stable and for others, they are both equal in adsorption energy.
@@ -822,7 +822,7 @@ Of course, there are reactions linking these minima, dissociation, OH- and H-dif
   \label{tab:0001_eads+rates}
   \end{table}
 
-The adsorption process itself was studied, by starting from the molecular minimum, gradually doing optimizations with greater O-surface distance and letting everything except for the c-coordinate of the water-oxygen atom relax. This calculations gives an energy profile for the adsorption/desorption but no barrier could be found (see Fig.~\ref{abb:0001_desorption}), so the underlying adsorption process is thought to be barrierless.
+The adsorption process itself was studied, by starting from the molecular minimum, gradually doing optimizations with greater O-surface distance and letting everything relax except for the c-coordinate of the water-oxygen atom. This calculations gives an energy profile for the adsorption/desorption but no barrier could be found (see Fig.~\ref{abb:0001_desorption}), so the underlying adsorption process is thought to be barrierless.
   \begin{figure}[!ht]
    \centering
    \includegraphics[width=0.45\textwidth]{figures/0001/mol_ads_barrier.eps}
@@ -866,7 +866,7 @@ Intro, Hass, pinhole dosing vs. molecular beam source (= equilibrium situation v
 % \\
 % Trajectories with the vibrationally excited modes led to statistically higher levels of dissociation. Also temperature effects of the thermalized trajectories (canonical MD) seem to have a positive influence on the dissociation.
 \subsection{Beam Model}
-For the understanding of a Molecular Beam source experiment, the introduction of a beam is an essential part of the model. However, it was not possible to compute a fully realistic beam that was statistically converged, which would require wide knowledge about energy and velocity distributions and a systematic high dimensional sampling, that is not feasible with the computational power available at the moment. Instead as a first approach, a single, rigid water (D$_2$O) molecule (initial parameters are $d_{OD}=0.97$\AA~ and bond angle of $104.5$\textdegree) was sent perpendicularly from a center of mass position from a distance of $4\,$\AA~ onto the surface, in agreement with the experiment. Having these degrees of freedom excluded, from the 9 degrees of freedom, six are still left (see Figure \ref{abb:initial_parameters}): two for the impact site [$a_0$,$b_0$] as it is given relative to the super cell vectors $\uline{a}$ and $\uline{b}$, three Euler angles $\alpha$, $\beta$ and $\gamma$ for the rotational orientation of the molecule with respect to the surface and the kinetic energy E$_\textrm{kin}$ that gives the molecule a momentum towards the surface, solely as translational motion, no vibration or rotation included. These parameters are varied systematically to gain insight into the process.
+For the understanding of a Molecular Beam source experiment, the introduction of a beam is an essential part of the model. However, it was not possible to compute a fully realistic beam that was statistically converged, which would require wide knowledge about energy and velocity distributions and a systematic high dimensional sampling, that is not feasible with the computational power available at the moment. Instead as a first approach, a single, rigid water (D$_2$O) molecule (initial parameters are $d_{OD}=0.97$\AA~ and bond angle of $104.5$\textdegree) was sent perpendicularly from a center of mass position from a distance of $4\,$\AA~ onto the surface, in agreement with the experiment. Having these degrees of freedom excluded, from the 9 degrees of freedom, six are still left (see Figures \ref{abb:initial_parameters}, \ref{abb:impact_points} and Table \ref{tab:orientations}): two for the impact site [$a_0$,$b_0$] as it is given relative to the super cell vectors $\uline{a}$ and $\uline{b}$, three Euler angles $\alpha$, $\beta$ and $\gamma$ for the rotational orientation of the molecule with respect to the surface and the kinetic energy E$_\textrm{kin}$ that gives the molecule a momentum towards the surface, solely as translational motion, no vibration or rotation included. These parameters are varied systematically to gain insight into the process.
 \\
 As was mentioned before, the barriers can be high (and corresponding rates low), especially for the H-diffusion reactions, but the adsorption process itself is barrierless, and additionally the incoming water molecule has kinetic energy so that processes, that are slow at room temperature otherwise, can be speeded up.
 \\
@@ -893,7 +893,7 @@ Further improvements of this simplest model are made in subsections \ref{cluster
         \quad
  \subfigure[{[0.4,0.5]}]{\includegraphics[angle=90,scale=0.45]{figures/0001/0_4-0_5test.png}}
  \caption{The six impact points $[a_0,b_0]$ that were used in the AIMD calculations (shown for the rotational orientation $[0,0,0]$, topview).}
-        \label{fig4}
+        \label{abb:impact_points}
  \end{figure}
  
  \begin{table}[!h]
@@ -921,19 +921,11 @@ Further improvements of this simplest model are made in subsections \ref{cluster
  \label{tab:orientations}
 \end{table}
  
- \begin{figure}[h!]
-\centering
- \subfigure[Energy]{\includegraphics[width=0.3\textwidth]{figures/0001/graphs/E.png}} 
- \quad
- \subfigure[Impact Point]{\includegraphics[width=0.3\textwidth]{figures/0001/graphs/impactpoint.png}} 
- \quad
- \subfigure[Orientation]{\includegraphics[width=0.3\textwidth]{figures/0001/graphs/orientation.png}}
-\caption{{\color{blue} Statistics of AIMD trajectories at $T=0$ (NVE), for single D$_2$O approaching a clean alumina(0001) surface. In (a), for each of the five different initial kinetic energies $E_{\textrm kin}$, results are averaged over the $6 \times 8=48$ combinations of impact sites and rotational orientations. In (b), for each of six different initial impact points $[a_0,b_0]$, results are averaged over $5 \times 8=40$ combinations of kinetic energies and rotational orientations. In (c), each of the eight different initial rotational orientations $[\alpha,\beta,\gamma]$, results are averaged over $5 \times 6=30$ combinations of kinetic energies and impact points. Columns show percentages of trajectories leading to  reflection (``refl''), molecular adsorption (``mol''), and  direct and total 1-2 dissociation (``1-2 diss direct'' and  ``1-2 diss total''). (No columns if no trajectories of the  type were found.)}}
-\label{barchart_mic}
-\end{figure}
+
 
 \subsection{Example Trajectories}
-Before going to the details, example trajectories for each process, molecular adsorption, 1-2 dissociation, 1-4 dissociation and 1-4$^\prime$ dissociation are shown in Figure \ref{abb:ex_traj}.
+Before going to the details, example trajectories for each process leading to one of the four most stable adsorbed species, molecular adsorption, 1-2 dissociation, 1-4 dissociation and 1-4$^\prime$ dissociation are shown in Figure \ref{abb:ex_traj}, the applied parameters are reported in the respective caption. These figures were all obtained from canonical calculations (NVT) at $300\,$K (see Figure \ref{abb:ex_traj}, the trajectory shown in (d) was additionally preexcited in the asymmetric stretch mode leading to 1-4$^\prime$ dissociation). As one can see, molecular, 1-2 and 1-4 dissociated species can occur directly at the impact time of the water molecule at the surface and is henceforth called direct dissociation from the gas phase. For the 1-4$^\prime$ dissociation shown in Fig.~\ref{abb:ex_traj}(d), this process does not happen directly at the impact but (in this case) ca. $40\,$fs later, so this is referred to as indirect dissociation with a molecular intermediate. This indirect process is not unique for the 1-4$^\prime$ dissociated species, all the other species including the molecular can be observed to happen indirectly by either being reflected first from the surface before adsorbing/dissociating or by adsorbing molecularly before dissociating. However, the 1-4$^\prime$ species was the only one that could not be observed after direct dissociation.
+
   \begin{figure}[h!]
 \begin{center}
 \hspace*{-1cm}
@@ -948,19 +940,48 @@ Before going to the details, example trajectories for each process, molecular ad
 {\includegraphics[width=0.4\textwidth]{figures/0001/graphs/1-4d.eps}}
 \end{tabular}
 \end{center}
-\caption{{\color{blue} Examplary trajectories for trajectories of different initial parameters, leading to the four adsorption states of water at the $\upalpha$-Al$_2$O$_3$(0001) surface as indicated in Figs.\ref{abb:0001_ads}(a)-(d). For all cases these are canonical (NVT) trajectories at  $T=300$ K. The initial parameters: (a) $E_{\textrm kin}=0.7$ eV, $[a_0,b_0]=[0.33,0.33]$, $[\alpha,\beta,\gamma]=[0,0,90]$ (in \textdegree);
- (b) $E_{\textrm kin}=0.7$ eV, $[a_0,b_0]=[0.35,0.45]$, $[\alpha,\beta,\gamma]=[0,0,0]$;
- (c) $E_{\textrm kin}=0.7$ eV, $[a_0,b_0]=[0.33,0.33]$, $[\alpha,\beta,\gamma]=[0,90,0]$;
- (d) $E_{\textrm kin}=0.7$ eV, $[a_0,b_0]=[0.35,0.5]$, $[\alpha,\beta,\gamma]=[0,0,0]$, and the water molecule 
- was vibrationally preexcited along the asymmetric stretch normal coordinate as specified in Subsec. \ref{preex}. The $r$ values indicate bond lengths between water-O and the CUS Al atom on which either D$_2$O or the water hydroxyl unit OD adsorb (O-Al), the distance between water-O and D in non-dissociated (fragments of) D$_2$O (O-D or O-D$_{\textrm ads}$), and the  distance between water-O and D in dissociated (fragments) of D$_2$O (O-D$_{\textrm diss}$), respectively. The corresponding interatomic distances of the adsorbed species from the static DFT calculations reported in Figs.\ref{abb:0001_ads}(a)-(d) are shown as horizontal, dashed lines. In (d), the 1-4$^\prime$ state is reached \textit{via} a 1-2 dissociation intermediate, which is very short-lived around $0.1\,$ps.}}
+\caption{{\color{blue} Examplary trajectories for trajectories of different initial parameters, leading to the four adsorption states of water at the $\upalpha$-Al$_2$O$_3$(0001) surface as indicated in Figs.\ref{abb:0001_ads}(a)-(d). For all cases these are canonical (NVT) trajectories at  $T=300$ K. The initial parameters: (a) $E_\textrm{kin}=0.7$ eV, $[a_0,b_0]=[0.33,0.33]$, $[\alpha,\beta,\gamma]=[0,0,90]$ (in \textdegree);
+ (b) $E_\textrm{kin}=0.7$ eV, $[a_0,b_0]=[0.35,0.45]$, $[\alpha,\beta,\gamma]=[0,0,0]$;
+ (c) $E_\textrm{kin}=0.7$ eV, $[a_0,b_0]=[0.33,0.33]$, $[\alpha,\beta,\gamma]=[0,90,0]$;
+ (d) $E_\textrm{kin}=0.7$ eV, $[a_0,b_0]=[0.35,0.5]$, $[\alpha,\beta,\gamma]=[0,0,0]$, and the water molecule 
+ was vibrationally preexcited along the asymmetric stretch normal coordinate as specified in Subsec. \ref{preex}. The $r$ values indicate bond lengths between water-O and the CUS Al atom on which either D$_2$O or the water hydroxyl unit OD adsorb (O-Al), the distance between water-O and D in non-dissociated (fragments of) D$_2$O (O-D or O-D$_\textrm{ads}$), and the  distance between water-O and D in dissociated (fragments) of D$_2$O (O-D$_\textrm{diss}$), respectively. The corresponding interatomic distances of the adsorbed species from the static DFT calculations reported in Figs.\ref{abb:0001_ads}(a)-(d) are shown as horizontal, dashed lines. In (d), the 1-4$^\prime$ state is reached \textit{via} a 1-2 dissociation intermediate, which is very short-lived around $0.1\,$ps.}}
 \label{abb:ex_traj}
 \end{figure}
+
  \subsection{Microcanonical AIMD at clean surface}
- first trajectories, tested for 8 orientations, 6 impact points and 5 kinetic energies.
- \subsection{Thermalized Surface}
+ The effects of a single D$_2$O shot to the cool surface with a NVT ensemble (microcanonical AIMD) were studied systematically by probing over 5 different kinetic energies (from $0.5$ to $0.9\,$eV in $0.1\,$eV steps), six lateral impact points at the surface ([0.33,0.33], [0.5,0.5], [0.35,0.5], [0.5,0.35], [0.35,0.45], [0.4,0.5], see also Figure \ref{abb:impact_points}) and eight different orientations of the water with respect to the surface ([0,0,0], [0,0,90], [0,90,0], [0,90,90], [90,0,0], [90,0,90], [90,90,0], [90,90,90], see also Tab.\ref{tab:orientations}). These $5\times 6\times 8=240$ AIMD trajectories for the clean surface at $T=0\,$K were carried out for ca $1.2\,$ps each.
+ \\
+ In the trajectories  either molecular adsorption, 1-2 dissociation or reflection could be observed. Dissociation was assumed, if the OD distance was greater than $1.3\,$\AA{}, but it was made sure that the results did not differ for a greater cutoff distance. Interestingly, only 1-2 dissociation and no 1-4 dissociation could be observed for the conditions (NVT, clean surface), although the molecular and the 1-4 dissociated species are almost equal in energy, and also the barrier heigths for the dissociation to 1-2 ($0.13\,$eV) and 1-4 ($0.19\,$eV) do not differ largely. As it is shown later, other conditions are necessary for reaching 1-4 dissociation.
+ \\
+  \begin{figure}[h!]
+\centering
+ \subfigure[Energy]{\includegraphics[width=0.3\textwidth]{figures/0001/graphs/E.png}} 
+ \quad
+ \subfigure[Impact Point]{\includegraphics[width=0.3\textwidth]{figures/0001/graphs/impactpoint.png}} 
+ \quad
+ \subfigure[Orientation]{\includegraphics[width=0.3\textwidth]{figures/0001/graphs/orientation.png}}
+\caption{{\color{blue} Statistics of AIMD trajectories at $T=0$ (NVE), for single D$_2$O approaching a clean alumina(0001) surface. In (a), for each of the five different initial kinetic energies $E_\textrm{kin}$, results are averaged over the $6 \times 8=48$ combinations of impact sites and rotational orientations. In (b), for each of six different initial impact points $[a_0,b_0]$, results are averaged over $5 \times 8=40$ combinations of kinetic energies and rotational orientations. In (c), each of the eight different initial rotational orientations $[\alpha,\beta,\gamma]$, results are averaged over $5 \times 6=30$ combinations of kinetic energies and impact points. Columns show percentages of trajectories leading to  reflection (``refl''), molecular adsorption (``mol''), and  direct and total 1-2 dissociation (``1-2 diss direct'' and  ``1-2 diss total''). (No columns if no trajectories of the  type were found.)}}
+\label{abb:barchart_mic}
+\end{figure}
+For a statistical analysis of the data see Figure \ref{abb:barchart_mic}, where the probabilities for reflection, molecular adsorption and 1-2 dissociation are shown as a function of the kinetic energy (a), impact point (b) and the orientation (c). There also between direct and indirect dissociation is distinguished. Admittedly, this analysis is restricted by the number of trajectories (240). From these figures and the data one can derive the following conclusions:
+\\
+As anticipated, all three processes could be observed, reflection ($20.4\%$, 49 of the 240 trajectories), molecular adsorption ($55.4\%$, 133 trajectories) and 1-2 dissociation ($24.2\%$, 58 trajectories).
+\\
+Looking at the impact of the energy in Fig.~\ref{abb:barchart_mic}(a), the result do not depend largely on the initial kinetic energy of the molecule, at least for the probed energy range. In all cases molecular adsorption dominates, followed by 1-2 dissociation and reflection, that are in the same range around $20$-$25\%$. This reflecion probability P$_\textrm{diss}$ is only increased for $0.9\,$eV, at the expense of the molecular species. To tackle the low energy regime, one additional trajectory of $0.1\,$eV was done ([$a_0,b_0]=[0.35,0.45]$; $[\alpha,\beta,\gamma]=[0,0,0]$), for which $P_\textrm{diss}=1$ for all energies $\geq 0.5\,$eV. In the case of E$_\textrm{kin}=0.1\,$eV, the trajectory only shows molecular adsorption. This result was rather surprising, since the kinetic energy plus the adsorption energy minus the barrier height is with ($0.1+1.31-0.13$)eV=$.28\,$eV larger than the reaction barrier. It seems that the excess energy is not available for the OD-bond breaking and instead relaxes in other degrees of freedom of the system. That allows to draw the conclusion, that a minimum kinetic energy is necessary for the dissociation process. In the experiments of R. K. Campen, a kinetic energy of the beam between $0.6$ and $0.75\,$eV is used. This minimum energy constraint can be one possible explanation of the difference between MBS and pinhole dosing. In the latter case, the only energy of a water molecule comes from the thermal energy that is for a D$_2$O molecule in the gas phase at $300\,$K around $\frac{3}{2}k_BT\approx40\,$meV.
+\\
+In contrast to the kinetic energy, the lateral impact point at the surface has a great influence on adsorption and dissociation probabilities (see Fig.~\ref{abb:barchart_mic}). For the impact point [0.5,0.5], that is at a  non-surface Al position, $88\%$ of the trajectories get reflected and molecular adsorption and 1-2 dissociation are oppressed, whereas for [$0.33,0.33$] that is directly on top of a CUS position, $83\%$ adsorb molecularly and dominates clearly over 1-2 dissociation. In contrast to both sites, [$0.35,0.45$] which is a gap between an Al CUS position and a neighboring oxygen atom leads to a high dissociation probability of P$_\textrm{diss}\approx 68\%$ with a minor percentage of indirect dissociation. This high dissociation probability can be explained by the fact, that the molecule hits the surface already in a ``product-like'' geometry, so that the OD bond breakage.
+\\
+orientation
+\\
+direct vs indirect
+
+ 
+\subsection{Thermalized Surface}
  both the 100 trajectories for the 5 parameter sets and the two trajectories for all 6x8 parameters.
- \subsection{Refined Surface Model}
+ 
+\subsection{Refined Surface Model}
  precoverage, both 0K and 300K, water was shot in vecinity to preadsorbed D$_2$O and also around neighboring CUS atom.
+ 
  \subsection{Refined Beam Model}
 \subsubsection{Clustering}\label{clusters}
 (D$_2$O)$_4$ cluster and also one type of (D$_2$O)$_2$ was tested

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.1.23)  27 MAR 2018 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/TeX Live for SUSE Linux) (preloaded format=pdflatex 2018.1.23)  28 MAR 2018 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1804,7 +1804,7 @@ nclusion: multiple pdfs with page group included in a single page
 >] [36 <./figures/0001/0001_mol_top.jpg> <./figures/0001/0001_1-2-diss_top.jpg>
  <./figures/0001/0001_1-4-diss_top.jpg> <./figures/0001/0001_1-4p-diss_top_labe
 l.pdf>]
-<figures/0001/perspective+h2o_new.png, id=759, 1038.279pt x 1513.655pt>
+<figures/0001/perspective+h2o_new.png, id=763, 1038.279pt x 1513.655pt>
 File: figures/0001/perspective+h2o_new.png Graphic file (type png)
 
 <use figures/0001/perspective+h2o_new.png>
@@ -1812,7 +1812,7 @@ Package pdftex.def Info: figures/0001/perspective+h2o_new.png used on input lin
 e 877.
 (pdftex.def)             Requested size: 134.6048pt x 196.22774pt.
 
-<figures/0001/0_33-0_33test.png, id=760, 200.75pt x 263.98625pt>
+<figures/0001/0_33-0_33test.png, id=764, 200.75pt x 263.98625pt>
 File: figures/0001/0_33-0_33test.png Graphic file (type png)
 
 <use figures/0001/0_33-0_33test.png>
@@ -1820,28 +1820,28 @@ Package pdftex.def Info: figures/0001/0_33-0_33test.png used on input line 884.
 
 (pdftex.def)             Requested size: 200.7495pt x 263.9856pt.
 
-<figures/0001/0_5-0_5test.png, id=761, 200.75pt x 266.9975pt>
+<figures/0001/0_5-0_5test.png, id=765, 200.75pt x 266.9975pt>
 File: figures/0001/0_5-0_5test.png Graphic file (type png)
 
 <use figures/0001/0_5-0_5test.png>
 Package pdftex.def Info: figures/0001/0_5-0_5test.png used on input line 886.
 (pdftex.def)             Requested size: 200.7495pt x 266.99683pt.
 
-<figures/0001/0_35-0_5test.png, id=762, 200.75pt x 266.9975pt>
+<figures/0001/0_35-0_5test.png, id=766, 200.75pt x 266.9975pt>
 File: figures/0001/0_35-0_5test.png Graphic file (type png)
 
 <use figures/0001/0_35-0_5test.png>
 Package pdftex.def Info: figures/0001/0_35-0_5test.png used on input line 888.
 (pdftex.def)             Requested size: 200.7495pt x 266.99683pt.
 
-<figures/0001/0_5-0_35test.png, id=763, 200.75pt x 264.99pt>
+<figures/0001/0_5-0_35test.png, id=767, 200.75pt x 264.99pt>
 File: figures/0001/0_5-0_35test.png Graphic file (type png)
 
 <use figures/0001/0_5-0_35test.png>
 Package pdftex.def Info: figures/0001/0_5-0_35test.png used on input line 890.
 (pdftex.def)             Requested size: 200.7495pt x 264.98935pt.
 
-<figures/0001/0_35-0_45test.png, id=764, 200.75pt x 265.99374pt>
+<figures/0001/0_35-0_45test.png, id=768, 200.75pt x 265.99374pt>
 File: figures/0001/0_35-0_45test.png Graphic file (type png)
 
 <use figures/0001/0_35-0_45test.png>
@@ -1849,7 +1849,7 @@ Package pdftex.def Info: figures/0001/0_35-0_45test.png used on input line 892.
 
 (pdftex.def)             Requested size: 200.7495pt x 265.99309pt.
 
-<figures/0001/0_4-0_5test.png, id=765, 200.75pt x 266.9975pt>
+<figures/0001/0_4-0_5test.png, id=769, 200.75pt x 266.9975pt>
 File: figures/0001/0_4-0_5test.png Graphic file (type png)
 
 <use figures/0001/0_4-0_5test.png>
@@ -1860,7 +1860,7 @@ Package pdftex.def Info: figures/0001/0_4-0_5test.png used on input line 894.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/0001/Ausrichtungsbilder/0_0_0-toptest.png, id=766, 364.36125pt x 483.8
+<figures/0001/Ausrichtungsbilder/0_0_0-toptest.png, id=770, 364.36125pt x 483.8
 075pt>
 File: figures/0001/Ausrichtungsbilder/0_0_0-toptest.png Graphic file (type png)
 
@@ -1869,7 +1869,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_0-toptest.png used
  on input line 904.
 (pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
 
-<figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png, id=767, 201.75375pt x 170.
+<figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png, id=771, 201.75375pt x 170.
 6375pt>
 File: figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png Graphic file (type png
 )
@@ -1878,7 +1878,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png use
 d on input line 905.
 (pdftex.def)             Requested size: 71.13188pt x 60.16144pt.
 
-<figures/0001/Ausrichtungsbilder/0_0_90-toptest.png, id=768, 364.36125pt x 483.
+<figures/0001/Ausrichtungsbilder/0_0_90-toptest.png, id=772, 364.36125pt x 483.
 8075pt>
 File: figures/0001/Ausrichtungsbilder/0_0_90-toptest.png Graphic file (type png
 )
@@ -1887,7 +1887,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_90-toptest.png use
 d on input line 906.
 (pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
 
-<figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png, id=769, 200.75pt x 171.64
+<figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png, id=773, 200.75pt x 171.64
 125pt>
 File: figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png Graphic file (type pn
 g)
@@ -1896,7 +1896,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_0_90-sidetest.png us
 ed on input line 907.
 (pdftex.def)             Requested size: 71.13188pt x 60.81912pt.
 
-<figures/0001/Ausrichtungsbilder/0_90_0-toptest.png, id=770, 364.36125pt x 483.
+<figures/0001/Ausrichtungsbilder/0_90_0-toptest.png, id=774, 364.36125pt x 483.
 8075pt>
 File: figures/0001/Ausrichtungsbilder/0_90_0-toptest.png Graphic file (type png
 )
@@ -1905,7 +1905,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_0-toptest.png use
 d on input line 908.
 (pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
 
-<figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png, id=771, 364.36125pt x 300
+<figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png, id=775, 364.36125pt x 300
 .12125pt>
 File: figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png Graphic file (type pn
 g)
@@ -1914,7 +1914,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_0-sidetest.png us
 ed on input line 909.
 (pdftex.def)             Requested size: 71.13188pt x 58.5898pt.
 
-<figures/0001/Ausrichtungsbilder/0_90_90-toptest.png, id=772, 364.36125pt x 483
+<figures/0001/Ausrichtungsbilder/0_90_90-toptest.png, id=776, 364.36125pt x 483
 .8075pt>
 File: figures/0001/Ausrichtungsbilder/0_90_90-toptest.png Graphic file (type pn
 g)
@@ -1923,7 +1923,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_90-toptest.png us
 ed on input line 910.
 (pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
 
-<figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png, id=773, 200.75pt x 165.6
+<figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png, id=777, 200.75pt x 165.6
 1874pt>
 File: figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png Graphic file (type p
 ng)
@@ -1932,7 +1932,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/0_90_90-sidetest.png u
 sed on input line 911.
 (pdftex.def)             Requested size: 71.13188pt x 58.68512pt.
 
-<figures/0001/Ausrichtungsbilder/90_0_0-toptest.png, id=774, 364.36125pt x 482.
+<figures/0001/Ausrichtungsbilder/90_0_0-toptest.png, id=778, 364.36125pt x 482.
 80376pt>
 File: figures/0001/Ausrichtungsbilder/90_0_0-toptest.png Graphic file (type png
 )
@@ -1941,7 +1941,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_0-toptest.png use
 d on input line 912.
 (pdftex.def)             Requested size: 56.9055pt x 75.40106pt.
 
-<figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png, id=775, 200.75pt x 176.66
+<figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png, id=779, 200.75pt x 176.66
 pt>
 File: figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png Graphic file (type pn
 g)
@@ -1950,7 +1950,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_0-sidetest.png us
 ed on input line 913.
 (pdftex.def)             Requested size: 71.13188pt x 62.59747pt.
 
-<figures/0001/Ausrichtungsbilder/90_0_90-toptest.png, id=776, 364.36125pt x 483
+<figures/0001/Ausrichtungsbilder/90_0_90-toptest.png, id=780, 364.36125pt x 483
 .8075pt>
 File: figures/0001/Ausrichtungsbilder/90_0_90-toptest.png Graphic file (type pn
 g)
@@ -1959,7 +1959,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_90-toptest.png us
 ed on input line 914.
 (pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
 
-<figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png, id=777, 200.75pt x 176.6
+<figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png, id=781, 200.75pt x 176.6
 6pt>
 File: figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png Graphic file (type p
 ng)
@@ -1968,7 +1968,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_0_90-sidetest.png u
 sed on input line 915.
 (pdftex.def)             Requested size: 71.13188pt x 62.59747pt.
 
-<figures/0001/Ausrichtungsbilder/90_90_0-toptest.png, id=778, 364.36125pt x 482
+<figures/0001/Ausrichtungsbilder/90_90_0-toptest.png, id=782, 364.36125pt x 482
 .80376pt>
 File: figures/0001/Ausrichtungsbilder/90_90_0-toptest.png Graphic file (type pn
 g)
@@ -1977,7 +1977,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_0-toptest.png us
 ed on input line 916.
 (pdftex.def)             Requested size: 56.9055pt x 75.40106pt.
 
-<figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png, id=779, 364.36125pt x 30
+<figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png, id=783, 364.36125pt x 30
 0.12125pt>
 File: figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png Graphic file (type p
 ng)
@@ -1986,7 +1986,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png u
 sed on input line 917.
 (pdftex.def)             Requested size: 71.13188pt x 58.5898pt.
 
-<figures/0001/Ausrichtungsbilder/90_90_90-toptest.png, id=780, 364.36125pt x 48
+<figures/0001/Ausrichtungsbilder/90_90_90-toptest.png, id=784, 364.36125pt x 48
 3.8075pt>
 File: figures/0001/Ausrichtungsbilder/90_90_90-toptest.png Graphic file (type p
 ng)
@@ -1995,7 +1995,7 @@ Package pdftex.def Info: figures/0001/Ausrichtungsbilder/90_90_90-toptest.png u
 sed on input line 918.
 (pdftex.def)             Requested size: 56.9055pt x 75.55782pt.
 
-<figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png, id=781, 200.75pt x 165.
+<figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png, id=785, 200.75pt x 165.
 61874pt>
 File: figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png Graphic file (type 
 png)
@@ -2007,32 +2007,7 @@ used on input line 919.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/0001/graphs/E.png, id=782, 602.25pt x 401.5pt>
-File: figures/0001/graphs/E.png Graphic file (type png)
-
-<use figures/0001/graphs/E.png>
-Package pdftex.def Info: figures/0001/graphs/E.png used on input line 926.
-(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
-
-<figures/0001/graphs/impactpoint.png, id=783, 602.25pt x 401.5pt>
-File: figures/0001/graphs/impactpoint.png Graphic file (type png)
-
-<use figures/0001/graphs/impactpoint.png>
-Package pdftex.def Info: figures/0001/graphs/impactpoint.png used on input line
- 928.
-(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
-
-<figures/0001/graphs/orientation.png, id=784, 602.25pt x 401.5pt>
-File: figures/0001/graphs/orientation.png Graphic file (type png)
-
-<use figures/0001/graphs/orientation.png>
-Package pdftex.def Info: figures/0001/graphs/orientation.png used on input line
- 930.
-(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+[37 <./figures/0001/perspective+h2o_new.png>]
 Package epstopdf Info: Source file: <figures/0001/graphs/mol.eps>
 (epstopdf)                    date: 2018-03-22 16:17:46
 (epstopdf)                    size: 280817 bytes
@@ -2042,14 +2017,15 @@ df>
 (epstopdf)                    size: 74082 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/0001/graphs/mol-ep
 s-converted-to.pdf figures/0001/graphs/mol.eps>
-(epstopdf)             \includegraphics on input line 943.
+(epstopdf)             \includegraphics on input line 935.
 Package epstopdf Info: Output file is already uptodate.
-<figures/0001/graphs/mol-eps-converted-to.pdf, id=786, 361.35pt x 252.945pt>
+
+<figures/0001/graphs/mol-eps-converted-to.pdf, id=798, 361.35pt x 252.945pt>
 File: figures/0001/graphs/mol-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/0001/graphs/mol-eps-converted-to.pdf>
 Package pdftex.def Info: figures/0001/graphs/mol-eps-converted-to.pdf used on i
-nput line 943.
+nput line 935.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 Package epstopdf Info: Source file: <figures/0001/graphs/1-2.eps>
 (epstopdf)                    date: 2018-03-22 16:17:51
@@ -2060,15 +2036,15 @@ df>
 (epstopdf)                    size: 66500 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/0001/graphs/1-2-ep
 s-converted-to.pdf figures/0001/graphs/1-2.eps>
-(epstopdf)             \includegraphics on input line 945.
+(epstopdf)             \includegraphics on input line 937.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/0001/graphs/1-2-eps-converted-to.pdf, id=787, 361.35pt x 252.945pt>
+<figures/0001/graphs/1-2-eps-converted-to.pdf, id=799, 361.35pt x 252.945pt>
 File: figures/0001/graphs/1-2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/0001/graphs/1-2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/0001/graphs/1-2-eps-converted-to.pdf used on i
-nput line 945.
+nput line 937.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 Package epstopdf Info: Source file: <figures/0001/graphs/1-4.eps>
 (epstopdf)                    date: 2018-03-22 16:17:53
@@ -2079,15 +2055,15 @@ df>
 (epstopdf)                    size: 73141 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/0001/graphs/1-4-ep
 s-converted-to.pdf figures/0001/graphs/1-4.eps>
-(epstopdf)             \includegraphics on input line 947.
+(epstopdf)             \includegraphics on input line 939.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/0001/graphs/1-4-eps-converted-to.pdf, id=788, 361.35pt x 252.945pt>
+<figures/0001/graphs/1-4-eps-converted-to.pdf, id=800, 361.35pt x 252.945pt>
 File: figures/0001/graphs/1-4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/0001/graphs/1-4-eps-converted-to.pdf>
 Package pdftex.def Info: figures/0001/graphs/1-4-eps-converted-to.pdf used on i
-nput line 947.
+nput line 939.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 Package epstopdf Info: Source file: <figures/0001/graphs/1-4d.eps>
 (epstopdf)                    date: 2018-03-22 16:17:58
@@ -2098,39 +2074,45 @@ pdf>
 (epstopdf)                    size: 38136 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/0001/graphs/1-4d-e
 ps-converted-to.pdf figures/0001/graphs/1-4d.eps>
-(epstopdf)             \includegraphics on input line 948.
+(epstopdf)             \includegraphics on input line 940.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/0001/graphs/1-4d-eps-converted-to.pdf, id=789, 361.35pt x 252.945pt>
+<figures/0001/graphs/1-4d-eps-converted-to.pdf, id=801, 361.35pt x 252.945pt>
 File: figures/0001/graphs/1-4d-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/0001/graphs/1-4d-eps-converted-to.pdf>
 Package pdftex.def Info: figures/0001/graphs/1-4d-eps-converted-to.pdf used on 
-input line 948.
+input line 940.
 (pdftex.def)             Requested size: 179.4685pt x 125.62692pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[37 <./figures/0001/perspective+h2o_new.png>]
-<figures/0001/4H2O.pdf, id=805, 1541.76pt x 819.86299pt>
-File: figures/0001/4H2O.pdf Graphic file (type pdf)
+<figures/0001/graphs/E.png, id=810, 602.25pt x 401.5pt>
+File: figures/0001/graphs/E.png Graphic file (type png)
 
-<use figures/0001/4H2O.pdf>
-Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 969.
-(pdftex.def)             Requested size: 246.77434pt x 131.21828pt.
+<use figures/0001/graphs/E.png>
+Package pdftex.def Info: figures/0001/graphs/E.png used on input line 958.
+(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
 
-<figures/0001/4d2o_axes.png, id=806, 1017.8025pt x 895.345pt>
-File: figures/0001/4d2o_axes.png Graphic file (type png)
+<figures/0001/graphs/impactpoint.png, id=811, 602.25pt x 401.5pt>
+File: figures/0001/graphs/impactpoint.png Graphic file (type png)
 
-<use figures/0001/4d2o_axes.png>
-Package pdftex.def Info: figures/0001/4d2o_axes.png used on input line 971.
-(pdftex.def)             Requested size: 157.04007pt x 138.13493pt.
+<use figures/0001/graphs/impactpoint.png>
+Package pdftex.def Info: figures/0001/graphs/impactpoint.png used on input line
+ 960.
+(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
+
+<figures/0001/graphs/orientation.png, id=812, 602.25pt x 401.5pt>
+File: figures/0001/graphs/orientation.png Graphic file (type png)
+
+<use figures/0001/graphs/orientation.png>
+Package pdftex.def Info: figures/0001/graphs/orientation.png used on input line
+ 962.
+(pdftex.def)             Requested size: 134.6048pt x 89.7332pt.
  [38 <./figures/0001/0_33-0_33test.png> <./figures/0001/0_5-0_5test.png> <./fig
 ures/0001/0_35-0_5test.png> <./figures/0001/0_5-0_35test.png> <./figures/0001/0
-_35-0_45test.png> <./figures/0001/0_4-0_5test.png> <./figures/0001/graphs/E.png
-> <./figures/0001/graphs/impactpoint.png> <./figures/0001/graphs/orientation.pn
-g>]
+_35-0_45test.png> <./figures/0001/0_4-0_5test.png>]
 
 LaTeX Warning: Text page 39 contains only floats.
 
@@ -2149,47 +2131,66 @@ Ausrichtungsbilder/90_0_90-sidetest.png> <./figures/0001/Ausrichtungsbilder/90_
 90_0-toptest.png> <./figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png> <./f
 igures/0001/Ausrichtungsbilder/90_90_90-toptest.png> <./figures/0001/Ausrichtun
 gsbilder/90_90_90-sidetest.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 6348) has occurred while \output is active []
 
  [40 <./figures/0001/graphs/mol-eps-converted-to.pdf> <./figures/0001/graphs/1-
 2-eps-converted-to.pdf> <./figures/0001/graphs/1-4-eps-converted-to.pdf> <./fig
-ures/0001/graphs/1-4d-eps-converted-to.pdf>] [41 <./figures/0001/4H2O.pdf> <./f
-igures/0001/4d2o_axes.png>] [42
+ures/0001/graphs/1-4d-eps-converted-to.pdf>] [41 <./figures/0001/graphs/E.png> 
+<./figures/0001/graphs/impactpoint.png> <./figures/0001/graphs/orientation.png>
+]
+<figures/0001/4H2O.pdf, id=889, 1541.76pt x 819.86299pt>
+File: figures/0001/4H2O.pdf Graphic file (type pdf)
 
-] [43] [44
+<use figures/0001/4H2O.pdf>
+Package pdftex.def Info: figures/0001/4H2O.pdf used on input line 990.
+(pdftex.def)             Requested size: 246.77434pt x 131.21828pt.
+
+<figures/0001/4d2o_axes.png, id=890, 1017.8025pt x 895.345pt>
+File: figures/0001/4d2o_axes.png Graphic file (type png)
+
+<use figures/0001/4d2o_axes.png>
+Package pdftex.def Info: figures/0001/4d2o_axes.png used on input line 992.
+(pdftex.def)             Requested size: 157.04007pt x 138.13493pt.
+ [42] [43 <./figures/0001/4H2O.pdf> <./figures/0001/4d2o_axes.png>] [44
+
+] [45] [46
 
 
 ]
 chapter without number
-[45] [46
+[47] [48
 
 ]
 chapter without number
-[47
+[49
 
-
-] [48
-
-] [49
 
 ] [50
 
+] [51
+
+] [52
+
 
 ]
 chapter without number
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 1103--1104
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 1124--1125
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1109.
-[52
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1130.
+[54
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1109.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1130.
  (./dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1109.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1109.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1130.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1130.
 
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
 (rerunfilecheck)             Checksum: B9E0B0074CCD90A7B66FFC7359023E0F;2807.
@@ -2199,9 +2200,9 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 22129 strings out of 493089
- 396046 string characters out of 6144303
- 582717 words of memory out of 5000000
+ 22131 strings out of 493089
+ 396077 string characters out of 6144303
+ 582850 words of memory out of 5000000
  25054 multiletter control sequences out of 15000+600000
  156462 words of font info for 128 fonts, out of 8000000 for 9000
  1158 hyphenation exceptions out of 8191
@@ -2231,10 +2232,10 @@ ts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/s
 hare/texmf/fonts/type1/public/tex-gyre/qhvr.pfb>
-Output written on dissertation.pdf (52 pages, 35705121 bytes).
+Output written on dissertation.pdf (54 pages, 35708826 bytes).
 PDF statistics:
- 1102 PDF objects out of 1200 (max. 8388607)
- 835 compressed objects within 9 object streams
- 190 named destinations out of 1000 (max. 500000)
+ 1119 PDF objects out of 1200 (max. 8388607)
+ 850 compressed objects within 9 object streams
+ 192 named destinations out of 1000 (max. 500000)
  618 words of extra memory for PDF output out of 10000 (max. 10000000)
 
