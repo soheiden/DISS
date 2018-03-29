@@ -856,6 +856,8 @@ The adsorption process itself was studied, by starting from the molecular minimu
 \end{figure*}
 \section{AIMD for MBS Process}\label{sec_0001AIMD}
 Intro, Hass, pinhole dosing vs. molecular beam source (= equilibrium situation vs non-equilibrium) higher dissociation probability, understanding these differences via AIMD. heavy water (D$_2$O) was used instead of H$_2$O to better compare with existing MBS experiments by R. K. Campen.
+\\
+{\color{red} Should I put the data in the appendix?}
 %%%%%%%%%%OLD VERSION%%%%%%%%%%%%%%%%%
 % Hass et. al. discussed the idea whether water will adsorb molecularly first and then dissociate or if direct dissociation upon adsorption is possible. To tackle this question for the experimental technique of the molecular beam source, we apply both microcanonical and canonical \textit{ab-initio} MD to simulate water in the beam approaching the surface. Interestingly, these experiments also show a higher disociation probability compared to pinhole dosing, that leads to an ensemble in thermal equilibrium, whereas MBS leads to a non-equilibrium situation. We start in the low coverage limit by letting one single, rigid molecule approach the $2\times 2$ supercell with only a linear momentum towards the surface. We later on continue with different approaches to more realistic beams and to more realistic surface situations. In the beam regime we probe water clusters, namely pre-optimized %(H$_2$O)$_2$ and
 % (H$_2$O)$_4$ cluster, which is shot onto the surface. Another improvement to the beam lies in exciting the molecule either vibrationally and/or rotationally. These excitations were chosen from a normal mode analysis and the resulting stretch and bending modes.
@@ -921,8 +923,6 @@ Further improvements of this simplest model are made in subsections \ref{cluster
  \label{tab:orientations}
 \end{table}
  
-
-
 \subsection{Example Trajectories}
 Before going to the details, example trajectories for each process leading to one of the four most stable adsorbed species, molecular adsorption, 1-2 dissociation, 1-4 dissociation and 1-4$^\prime$ dissociation are shown in Figure \ref{abb:ex_traj}, the applied parameters are reported in the respective caption. These figures were all obtained from canonical calculations (NVT) at $300\,$K (see Figure \ref{abb:ex_traj}, the trajectory shown in (d) was additionally preexcited in the asymmetric stretch mode leading to 1-4$^\prime$ dissociation). As one can see, molecular, 1-2 and 1-4 dissociated species can occur directly at the impact time of the water molecule at the surface and is henceforth called direct dissociation from the gas phase. For the 1-4$^\prime$ dissociation shown in Fig.~\ref{abb:ex_traj}(d), this process does not happen directly at the impact but (in this case) ca. $40\,$fs later, so this is referred to as indirect dissociation with a molecular intermediate. This indirect process is not unique for the 1-4$^\prime$ dissociated species, all the other species including the molecular can be observed to happen indirectly by either being reflected first from the surface before adsorbing/dissociating or by adsorbing molecularly before dissociating. However, the 1-4$^\prime$ species was the only one that could not be observed after direct dissociation.
 
@@ -948,11 +948,11 @@ Before going to the details, example trajectories for each process leading to on
 \label{abb:ex_traj}
 \end{figure}
 
- \subsection{Microcanonical AIMD at clean surface}
- The effects of a single D$_2$O shot to the cool surface with a NVT ensemble (microcanonical AIMD) were studied systematically by probing over 5 different kinetic energies (from $0.5$ to $0.9\,$eV in $0.1\,$eV steps), six lateral impact points at the surface ([0.33,0.33], [0.5,0.5], [0.35,0.5], [0.5,0.35], [0.35,0.45], [0.4,0.5], see also Figure \ref{abb:impact_points}) and eight different orientations of the water with respect to the surface ([0,0,0], [0,0,90], [0,90,0], [0,90,90], [90,0,0], [90,0,90], [90,90,0], [90,90,90], see also Tab.\ref{tab:orientations}). These $5\times 6\times 8=240$ AIMD trajectories for the clean surface at $T=0\,$K were carried out for ca $1.2\,$ps each.
- \\
- In the trajectories  either molecular adsorption, 1-2 dissociation or reflection could be observed. Dissociation was assumed, if the OD distance was greater than $1.3\,$\AA{}, but it was made sure that the results did not differ for a greater cutoff distance. Interestingly, only 1-2 dissociation and no 1-4 dissociation could be observed for the conditions (NVT, clean surface), although the molecular and the 1-4 dissociated species are almost equal in energy, and also the barrier heigths for the dissociation to 1-2 ($0.13\,$eV) and 1-4 ($0.19\,$eV) do not differ largely. As it is shown later, other conditions are necessary for reaching 1-4 dissociation.
- \\
+\subsection{Microcanonical AIMD at clean surface}\label{sec:mic_clean}
+The effects of a single D$_2$O shot to the cool surface with a NVT ensemble (microcanonical AIMD) were studied systematically by probing over 5 different kinetic energies (from $0.5$ to $0.9\,$eV in $0.1\,$eV steps), six lateral impact points at the surface ([0.33,0.33], [0.5,0.5], [0.35,0.5], [0.5,0.35], [0.35,0.45], [0.4,0.5], see also Figure \ref{abb:impact_points}) and eight different orientations of the water with respect to the surface ([0,0,0], [0,0,90], [0,90,0], [0,90,90], [90,0,0], [90,0,90], [90,90,0], [90,90,90], see also Tab.\ref{tab:orientations}). These $5\times 6\times 8=240$ AIMD trajectories for the clean surface at $T=0\,$K were carried out for ca $1.2\,$ps each.
+\\
+In the trajectories  either molecular adsorption, 1-2 dissociation or reflection could be observed. Dissociation was assumed, if the OD distance was greater than $1.3\,$\AA{}, but it was made sure that the results did not differ for a greater cutoff distance. Interestingly, only 1-2 dissociation and no 1-4 dissociation could be observed for the conditions (NVT, clean surface), although the molecular and the 1-4 dissociated species are almost equal in energy, and also the barrier heigths for the dissociation to 1-2 ($0.13\,$eV) and 1-4 ($0.19\,$eV) do not differ largely. As it is shown later, other conditions are necessary for reaching 1-4 dissociation.
+\\
   \begin{figure}[h!]
 \centering
  \subfigure[Energy]{\includegraphics[width=0.3\textwidth]{figures/0001/graphs/E.png}} 
@@ -969,20 +969,49 @@ As anticipated, all three processes could be observed, reflection ($20.4\%$, 49 
 \\
 Looking at the impact of the energy in Fig.~\ref{abb:barchart_mic}(a), the result do not depend largely on the initial kinetic energy of the molecule, at least for the probed energy range. In all cases molecular adsorption dominates, followed by 1-2 dissociation and reflection, that are in the same range around $20$-$25\%$. This reflecion probability P$_\textrm{diss}$ is only increased for $0.9\,$eV, at the expense of the molecular species. To tackle the low energy regime, one additional trajectory of $0.1\,$eV was done ([$a_0,b_0]=[0.35,0.45]$; $[\alpha,\beta,\gamma]=[0,0,0]$), for which $P_\textrm{diss}=1$ for all energies $\geq 0.5\,$eV. In the case of E$_\textrm{kin}=0.1\,$eV, the trajectory only shows molecular adsorption. This result was rather surprising, since the kinetic energy plus the adsorption energy minus the barrier height is with ($0.1+1.31-0.13$)eV=$.28\,$eV larger than the reaction barrier. It seems that the excess energy is not available for the OD-bond breaking and instead relaxes in other degrees of freedom of the system. That allows to draw the conclusion, that a minimum kinetic energy is necessary for the dissociation process. In the experiments of R. K. Campen, a kinetic energy of the beam between $0.6$ and $0.75\,$eV is used. This minimum energy constraint can be one possible explanation of the difference between MBS and pinhole dosing. In the latter case, the only energy of a water molecule comes from the thermal energy that is for a D$_2$O molecule in the gas phase at $300\,$K around $\frac{3}{2}k_BT\approx40\,$meV.
 \\
-In contrast to the kinetic energy, the lateral impact point at the surface has a great influence on adsorption and dissociation (see Fig.~\ref{abb:barchart_mic}). 
+In contrast to the kinetic energy, the lateral impact point at the surface has a great influence on adsorption and dissociation probabilities (see Fig.~\ref{abb:barchart_mic}). For the impact point [0.5,0.5], that is at a  non-surface Al position, $88\%$ of the trajectories get reflected and molecular adsorption and 1-2 dissociation are oppressed, whereas for [$0.33,0.33$], directly on top of an Al CUS position, $83\%$ adsorb molecularly which dominates clearly over 1-2 dissociation. In contrast to both sites, [$0.35,0.45$] which is a gap between a CUS position and a neighboring oxygen atom leads to a high dissociation probability of P$_\textrm{diss}\approx 68\%$ with a minor percentage of indirect dissociation. This high dissociation probability can be explained by the fact, that the molecule hits the surface already in a ``product-like'' geometry, so that the OD bond breakage is facilitated.
 \\
-orientation
+The initial rotational orientation has also an effect, although not so clearly as for the impact point. This might be explained when looking at the trajectories in detail, so one can see, that the water molecule rotates due to the attractive and repulsive interaction with the surface atoms, that lead to a reorientation of the water molecule right before adsorbing, so that the initial orientation is not remembered by the system. The orientation that the molecule is in shortly before reaching the surface is more important, also here, if the molecule's orientation is already in a product-like state, the dissociation probability is elevated.
 \\
-direct vs indirect
+As can be seen from the data, direct dissociation dominates mostly over indirect dissociation, although it is dependend from the initial conditions, e.g. for the initial orientation [0,90,90] only indirect dissociation is observed (cf. Fig.~\ref{abb:barchart_mic}(c)).
 
  
 \subsection{Thermalized Surface}
- both the 100 trajectories for the 5 parameter sets and the two trajectories for all 6x8 parameters.
+After getting an impression about the system with the microcanonical MD with the clean surface, as a next step the thermalized surface at $300\,$K is studied. For this the naked surface was preequilibrated at $300\,$K for $1\,$ps and the obtained geometry with the included velocities was used as an input to the following calculations. Here, only a kinetic energy of $0.7\,$eV was considered, since this energy is the closest to previous experiments by Kramer and also the energy dependence was shown to be very low. The water molecule was then shot onto the equilibrated surface and the heat bath acted from the start on the water molecule. This is not a problem, since the molecule hits the surface quickly and thus hardly affects the dynamics.
+\\
+First, for a selection of 5 parameter sets 100  NVT trajectories were calculated each at a temperature of $300\,$K. These parameter sets are $[a_0,b_0][\alpha,\beta,\gamma]$= $[0.35,0.45]$,$[0,0,0]$; $[0.35,0.45]$,$[0,90,90]$; $[0.35,0,45]$,$[90,90,90]$; $[0.4,0.5]$,$[0,0,0]$;  $[0.5,0.35]$,$[90,0,90]$. These parameters led in the previous microcanonical ensemble to 1-2 dissociation and were chosen because the idea was that the thermal effects might trigger them to dissociate or diffuse to the 1-4 species. The duration of the trajectories was $1\,$ps and were done analogously to \ref{sec:mic_clean} except for now the thermalized surface. All of these 500 trajectories dissociated 1-2, no reflection, molecular adsorption or further dissociation could be observed. As it seems, the thermal contribution is low, which was unexpected. The energy of the thermalized surface can be estimated by $N_s\times 3k_BT=2.8\,$eV (with $N_s=36$ being the number of atoms in the surface slab that were allowed to relax/move). This energy is in the same range as the kinetic energy of the incoming water molecule ($\approx2\,$eV). Indeed, this surface energy is not valid for the small surface range where the impact takes place, so that the thermal energy of the atom(s) of the impingement is considerably smaller.
+\\
+As a next step, for all $6\times 8=48$ combinations of parameters, but with the thermalized surface, were done for all 6 impact points and 8 orientations presented in Section \ref{sec:mic_clean}, but only for a kinetic energy of $0.7\,$eV. For each of the sets, two trajectories of $4\,$ps duration were calculated. This restriction is due to high computational costs and  gives rise to only a limited statistical significance. The long duration accounts for processes that occur later after the impact, that could have been missed by shorter trajectories. In Table \ref{tab:nvt-nve_comp}, the probabilities for each process is shown, in comparison with the previous microcanonical AIMD trajectories. Because 6 of the trajectories aborted due to numerical reasons, here only 42 trajectories can be evaluated and the comparison is, of course, done only with the corresponding microcanonical trajectories.
+\begin{table}[!h]
+ \centering
+ \caption{{\color{blue} Statistics for NVE (upper two lines) and NVT ($T=$ 300 K, lowest line) AIMD trajectories. The initial impact parameters $[a_0,b_0]$ and $[\alpha,\beta,\gamma]$ were (selected from) the 48 impact parameters used in Sec. \ref{sec:mic_clean} as desribed in the text. In all cases, a single water molecule with initial $E_\textrm{kin}=0.7$ eV was fired on a clean surface.}}
+\vspace*{.2cm}
+  \begin{tabular}{lc|cccc}
+ \hline
+  ensemble & no. of trajectories & $P_\textrm{refl}$ & $P_\textrm{mol}$ & $P_\textrm{diss}$ (1-2) & $P_\textrm{diss}$(1-4) 
+ \\\hline
+ NVE$^1$         & 48 & 0.19 & 0.58 & 0.23 & 0.00 \\
+ NVE$^{1,3}$     & 42 & 0.19 & 0.55 & 0.26 & 0.00 \\
+ NVT$^2$ &$42\times 2$& 0.12 & 0.54 & 0.24 & 0.11 \\\hline
+  \end{tabular}
+\begin{tablenotes}
+ \footnotesize
+\item[] $^1$ Propagation time $1.22$ ps. $^2$ Propagation time 4 ps. $^3$ A subset of the NVE/48 data set,  corresponding to the same initial impact parameters as used for the NVT ensembles.
+\end{tablenotes}
+\label{tab:nvt-nve_comp}
+\end{table}
+In the first line of the table, the results for the complete probed space for the NVE (T=0) is shown, the second line gives the results for the corresponding 42 microcanonical trajectories and in the third line, the canonical results for 42 NVT trajectories ($T=300\,$K) are given. For all, the kinetic energy is $E_\textrm{kin}=0.7\,$eV. In contrast to the microcanonical MD, the canonical show 1-4 dissociation at a percentage of around $11\%$ and slight decreases in the reflection, whereas molecular adsorption and 1-2 dissociation almost are equal. From the 1-4 dissociated trajectories, $44\%$ dissociated directly and $56\%$ indirectly after initial molecular adsorption. Interestingly, all inital conditions in the trajectories that show 1-4 dissociation in the NVT led only to molecular adsorption in the NVE AIMD.
+\\
+Note, that the surface temperature indeed has an effect on the probabilities for the different processes and also 1-4 dissociation could be observed.
+As before, the first impact can lead to reflection and in a ``bouncing'' process, the molecule can also adsorb after another impact, in some cases also on another CUS atom as the initial impact was on.
  
 \subsection{Refined Surface Model}
  precoverage, both 0K and 300K, water was shot in vecinity to preadsorbed D$_2$O and also around neighboring CUS atom.
+ \subsubsection{Microcanonical}
  
- \subsection{Refined Beam Model}
+ \subsubsection{Canonical}
+ 
+\subsection{Refined Beam Model}
 \subsubsection{Clustering}\label{clusters}
 (D$_2$O)$_4$ cluster and also one type of (D$_2$O)$_2$ was tested
 \begin{figure*} [!ht]
@@ -998,7 +1027,8 @@ direct vs indirect
 excitation, more qualitative. 
 \clearpage
 
- \section{Improvement of Reaction Rates}\label{sec_rates}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Improvement of Reaction Rates}\label{sec_rates}
 For a model reaction we try to improve the reaction rate with different new methods. This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction, that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state.
 The rates were before calcualted with PBE+D2/3? and Nudged Elastic Band. An approach were singlepoint calculations were done for the minima and the transition state was also done. For this process also a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway.
 \\
@@ -1088,7 +1118,7 @@ reaction pathways: dissociationCb-iCa2 and Cb-iCb2?
 
 \begin{enumerate}[itemsep=0.25\baselineskip]
 %  \item \bibentry{Wirth12}.
-  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}Water Dissociative Adsorption on $\upalpha$-Al$_2$O$_3$(11\=20) Is Controlled by Surface Site Undercoordination, Density, and Topology{\flqq}, \textit{Journal of Physical Chemistry C} \textbf{2018}, \textit{vol,} pp.
+  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}Water Dissociative Adsorption on $\upalpha$-Al$_2$O$_3$(11\=20) Is Controlled by Surface Site Undercoordination, Density, and Topology{\flqq}, \textit{Journal of Physical Chemistry C} \textbf{2018}, \textit{122} (12), 6573-6584.
   \item Heiden, S.; Wirth, J.;  Saalfrank, P.: {\frqq}Water Molecular Beam Scattering at $\upalpha$-Al$_2$O$_3$(0001): An \textit{Ab Initio} Molecular Dynamics Study{\flqq}, \textit{Journal} \textbf{2018}, \textit{vol,} pp.
 
 \end{enumerate}
