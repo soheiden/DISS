@@ -810,14 +810,14 @@ Calculations with an atom centered basis instead of plane waves with the crystal
 Of course, there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of an OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work, especially the CUS to CUS diffusion of molecular water is very improbable due to the slow reaction rate. Adsorption energies and reaction rates that are important for this work are shown in Table \ref{tab:0001_eads+rates}, these results were obtained by J. Wirth and were unpublished.
  \begin{table}[!h]
   \centering
-   \caption{Adsorption energies for the stable minima (left part) and reaction rate constants $k$ in s$^{-1}$ at $300\,$K with corresponding barrier heigths $\Delta G^\ddagger$ in eV for the processes connecting these minima (right part). Here the upper two line shows the reaction in the direction given in the name and the lower two line gives the back reaction's rates constants and barriers. All values were calculated with PBE including D2 dispersion corrections and are unpublished work of J. Wirth.}
+   \caption{Adsorption energies for the stable minima (left part) and reaction rate constants $k$ in s$^{-1}$ at $300\,$K with corresponding barrier heigths $\Delta E^\ddagger$/$\Delta G^\ddagger_\textrm{300K}$ in eV for the processes connecting these minima (right part). Here the upper two line shows the reaction in the direction given in the name and the lower two line gives the back reaction's rates constants and barriers. All values were calculated with PBE including D2 dispersion corrections and are unpublished work of J. Wirth.}
   \begin{tabular}{cccc|ccccc}
    \multicolumn{4}{c}{E$_\textrm{ads}$ [eV]}&\multicolumn{5}{c}{k$_\textrm{300K}$ [s$^{-1}$]}\\
   mol &1-2 &1-4 &1-4$^\prime$  &diss-1-2            & diss-1-4            & diff-2-4         & diff-2-4$^\prime$ & diff-4-4$^\prime$\\
   -1.31 & -1.69 & -1.30 & -1.21&8.0$\times 10^{10}$  & 2.8$\times 10^{10}$ & 2.7$\times 10^1$  & 3.8$\times 10^1$  & 7.1$\times 10^5$ \\
-   & & & &0.13 & 0.19& 0.82&0.81 &  0.61\\\hline
+   & & & &0.13/0.11 & 0.19/0.14& 0.82/0.68&0.81/0.67 &  0.61/0.41\\\hline
    & & &                       &2.3$\times 10^4$    & 2.7$\times 10^{10}$ & 9.1$\times 10^7$ & 3.1$\times 10^9$ & 1.7$\times 10^7$ \\
-   & & & & 0.50 & 0.19 & 0.44 & 0.33 & 0.51\\
+   & & & & 0.50/0.50 & 0.19/0.14 & 0.44/0.29 & 0.33/0.20 & 0.51/0.33\\
     \end{tabular}
   \label{tab:0001_eads+rates}
   \end{table}
@@ -894,7 +894,7 @@ Further improvements of this simplest model are made in subsections \ref{cluster
  \subfigure[{[0.35,0.45]}]{\includegraphics[angle=90,scale=0.45]{figures/0001/0_35-0_45test.png}}
         \quad
  \subfigure[{[0.4,0.5]}]{\includegraphics[angle=90,scale=0.45]{figures/0001/0_4-0_5test.png}}
- \caption{The six impact points $[a_0,b_0]$ that were used in the AIMD calculations (shown for the rotational orientation $[0,0,0]$, topview).}
+ \caption{The six impact points $[a_0,b_0]$ that were used in the AIMD calculations (shown for the rotational orientation $[0,0,0]$, topview).The different points reflect the most important sites of the surface, [0.33,0.33] is on top of an Al CUS, [0.5,0.5] on top of an Al in a lower layer. [0.35,0.5] is on top of a surface oxygen atom, whereas [0.5,0.35] is on top of a subsurface oxygen atom. [0.35,0.45] is in a gap between an Al CUS and a surface oxygen and [0.4,0.5] is in the gap between a surface O and a subsurface Al atom.}
         \label{abb:impact_points}
  \end{figure}
  
@@ -949,6 +949,7 @@ Before going to the details, example trajectories for each process leading to on
 \end{figure}
 
 \subsection{Microcanonical AIMD at clean surface}\label{sec:mic_clean}
+{\color{red} All those tables in the appendix?}\\
 The effects of a single D$_2$O shot to the cool surface with a NVT ensemble (microcanonical AIMD) were studied systematically by probing over 5 different kinetic energies (from $0.5$ to $0.9\,$eV in $0.1\,$eV steps), six lateral impact points at the surface ([0.33,0.33], [0.5,0.5], [0.35,0.5], [0.5,0.35], [0.35,0.45], [0.4,0.5], see also Figure \ref{abb:impact_points}) and eight different orientations of the water with respect to the surface ([0,0,0], [0,0,90], [0,90,0], [0,90,90], [90,0,0], [90,0,90], [90,90,0], [90,90,90], see also Tab.\ref{tab:orientations}). These $5\times 6\times 8=240$ AIMD trajectories for the clean surface at $T=0\,$K were carried out for ca $1.2\,$ps each.
 \\
 In the trajectories  either molecular adsorption, 1-2 dissociation or reflection could be observed. Dissociation was assumed, if the OD distance was greater than $1.3\,$\AA{}, but it was made sure that the results did not differ for a greater cutoff distance. Interestingly, only 1-2 dissociation and no 1-4 dissociation could be observed for the conditions (NVT, clean surface), although the molecular and the 1-4 dissociated species are almost equal in energy, and also the barrier heigths for the dissociation to 1-2 ($0.13\,$eV) and 1-4 ($0.19\,$eV) do not differ largely. As it is shown later, other conditions are necessary for reaching 1-4 dissociation.
@@ -976,7 +977,7 @@ The initial rotational orientation has also an effect, although not so clearly a
 As can be seen from the data, direct dissociation dominates mostly over indirect dissociation, although it is dependend from the initial conditions, e.g. for the initial orientation [0,90,90] only indirect dissociation is observed (cf. Fig.~\ref{abb:barchart_mic}(c)).
 
  
-\subsection{Thermalized Surface}
+\subsection{Thermalized Surface}\label{therm_surf}
 After getting an impression about the system with the microcanonical MD with the clean surface, as a next step the thermalized surface at $300\,$K is studied. For this the naked surface was preequilibrated at $300\,$K for $1\,$ps and the obtained geometry with the included velocities was used as an input to the following calculations. Here, only a kinetic energy of $0.7\,$eV was considered, since this energy is the closest to previous experiments by Kramer and also the energy dependence was shown to be very low. The water molecule was then shot onto the equilibrated surface and the heat bath acted from the start on the water molecule. This is not a problem, since the molecule hits the surface quickly and thus hardly affects the dynamics.
 \\
 First, for a selection of 5 parameter sets 100  NVT trajectories were calculated each at a temperature of $300\,$K. These parameter sets are $[a_0,b_0][\alpha,\beta,\gamma]$= $[0.35,0.45]$,$[0,0,0]$; $[0.35,0.45]$,$[0,90,90]$; $[0.35,0,45]$,$[90,90,90]$; $[0.4,0.5]$,$[0,0,0]$;  $[0.5,0.35]$,$[90,0,90]$. These parameters led in the previous microcanonical ensemble to 1-2 dissociation and were chosen because the idea was that the thermal effects might trigger them to dissociate or diffuse to the 1-4 species. The duration of the trajectories was $1\,$ps and were done analogously to \ref{sec:mic_clean} except for now the thermalized surface. All of these 500 trajectories dissociated 1-2, no reflection, molecular adsorption or further dissociation could be observed. As it seems, the thermal contribution is low, which was unexpected. The energy of the thermalized surface can be estimated by $N_s\times 3k_BT=2.8\,$eV (with $N_s=36$ being the number of atoms in the surface slab that were allowed to relax/move). This energy is in the same range as the kinetic energy of the incoming water molecule ($\approx2\,$eV). Indeed, this surface energy is not valid for the small surface range where the impact takes place, so that the thermal energy of the atom(s) of the impingement is considerably smaller.
@@ -1006,12 +1007,55 @@ Note, that the surface temperature indeed has an effect on the probabilities for
 As before, the first impact can lead to reflection and in a ``bouncing'' process, the molecule can also adsorb after another impact, in some cases also on another CUS atom as the initial impact was on.
  
 \subsection{Refined Surface Model}
- precoverage, both 0K and 300K, water was shot in vecinity to preadsorbed D$_2$O and also around neighboring CUS atom.
- \subsubsection{Microcanonical}
- 
- \subsubsection{Canonical}
- 
+In the experiment, after a certain time, the coverage will be higher, which will have an impact on the incoming molecule. To account for this a preadsorbed surface model was applied, where the minimum structure of the surface with a single adsorbed water molecule was used and a second D$_2$O was sent onto this surface. For the preadsorbed water, the three minima were assumed: (a) the molecular minimum, (b) the 1-2 dissociated species and (c) the less stable 1-4 dissociated water. The preadsorbed OD/D$_2$O was adsorbed at the position [0.33,0.33], in the lower right $1\times 1$ sub cell of the super cell in Figure \ref{abb:0001_ads}, that is located around the CUS atom at this lateral impact point.
+\\
+For the incoming second water molecule with an initial kinetic energy of $0.7\,$eV, one has to distinguish two cases: The impact points [$a_0,b_0$] were chosen such that (i) the second water molecule is shot in the same $1\times 1$ sub cell where the preadsorbed water is adsorbed (the lower right part of the super cell) and (ii) in another sub cell, here, the lower left part. Once again, various initial orientations and impact points were probed for a propagation time of $1\,$ps.
+\\
+First, NVE (microcanonical, $T=0\,$K of the initial surface) were done. (i) In the first case, the incoming water is shot to the vecinity (same sub cell) of the preadsorbed molecular water, the second \textit{incoming} D$_2$O is observed to be either reflected or adsorb molecularly at another CUS atom after initial reflection from the preadsorbed water molecule. In the case of molecular preadsorbed water, the impact of the second molecule can make the molecular \textit{preadsorbed} water dissociate to 1-2, 1-4 and even 1-4$^\prime$. Assumingly, part of the energy is not used to overcome the barrier to diffusion/dissociation but to interaction with the preadsorbed molecular species. The same does not happen for the 1-2 and the 1-4 preadsorbed species only in one case reacts to the molecular adsorbed species. As can be seen in Table \ref{tab:preads_mic}, there is a difference between impact points direct on the CUS atom ($[0.33,0.33]$) and the impact position next to the CUS position $[0.35,0.45]$. Additional data is shown in the Appendix.
+\begin{table}[!h]
+  \centering
+  \caption{{\color{blue} Outcome of selected microcanonical (NVE, $T=0$) trajectories with $E_{\textrm{kin}}=0.7\,$eV, after the end of propagation, for three cases of a single water molecule being molecularly or dissociatively preadsorbed on the surface. R=reflection, M= molecular adsorption (chemisorption), P=molecular physisorption, D(1-2)=1-2 dissociation, D(1-4)=1-4 dissociation. In each entry, the first letter gives the outcome for the \textit{incoming} molecule, the second one the fate of the preadsorbed species. In case the latter has changed its character, a $*$ was added. ``term.'' means terminated trajectory. Where no entry was made, no calculation was performed.}}
+\hspace*{-1cm}
+ \begin{tabular}{l|cc|cc|cc}
+ \toprule
+               & \multicolumn{6}{c}{type of preadsorption } \\\hline
+               & \multicolumn{2}{c|}{molecular} & \multicolumn{2}{c|}{1-2 dissociated} & \multicolumn{2}{c}{1-4 dissociated} \\\hline
+    orientation& \multicolumn{2}{c|}{impact position $[a_0,b_0]$} & \multicolumn{2}{c|}{impact position $[a_0,b_0]$} & \multicolumn{2}{c}{impact position $[a_0,b_0]$} \\
+    $[\alpha,\beta,\gamma]$ & [0.33,0.33] & [0.35,0.45] & [0.33,0.33] & [0.35,0.45] & [0.33,0.33] & [0.35,0.45] \\
+    \midrule
+   $[0,0,0]$    &          & P, D(1-2)$^*$  &  & M, D(1-2) &  & R, D(1-4) \\
+   $[0,0,90]$   &          & M, D(1-2)$^*$  &  & M, D(1-2) &  & P, D(1-4) \\
+   $[0,90,0]$   & M, D(1-2)$^*$ & P, D(1-4)$^*$  & R, D(1-2) & M, D(1-2) & R, D(1-4) & P, D(1-4) \\
+   $[0,90,90]$  &          & P, D(1-4')$^*$ &  & M, D(1-2) &          & term. \\
+   $[90,0,0]$   &          & P, D(1-2)$^*$  &  & M, D(1-2) &  & M, D(1-4) \\
+   $[90,0,90]$  &          & P, M      &  & D(1-2), D(1-2) &  & P, D(1-4) \\
+   $[90,90,0]$  &          & P, D(1-4)$^*$  &  & M, D(1-2) &  & R, D(1-4) \\
+   $[90,90,90]$ & M, D(1-2)$^*$ & P, D(1-4)$^*$  & R, D(1-2) & M, D(1-2) & M, D(1-4) & P, D(1-4)
+\\\hline
+  \end{tabular}
+  \label{tab:preads_mic}
+\end{table}
+
+Considering the impact point [0.33,0.33] of the incoming water, that is exactly where the preadsorbed water is located, one can see either reflection (R) or molecular adsorption after diffusion to another CUS site (M in Table \ref{tab:preads_mic}).\\
+In contrast to that, an impact point near the CUS atom, [0.35,0.45], gives rise to a greater number of different outcomes. In the case of the molecular preadsorbed species, molecular adsorption on a neighboring CUS and physisorption above the preadsorbed molecular species (\textit{i.e.} the molecule is not bound directly to a CUS atom but  to water (fragments) via hydrogen bonds) can be observed, which leads to the conclusion, that clustering occurs at the surface.
+For the 1-2 dissociated preadsorbed system, also 1-2 dissociation on a neighboring CUS can be discovered. The 1-4 dissociated preadsorbed species gives in addition to molecular adsorption, physisorption also reflection.
+If the preadsorbed species is dissociated, molecular adsorption is clearly favored, followed by physisorption.
+\\
+Looking at the preadsorbed species, the molecular species is mostly affected by the incoming molecule by showing dissociation to all dissociated states (1-2, 1-4 and also 1-4$^\prime$), whereas the 1-2 dissociated preadsorbed species is not influenced at all. Only for one of the 1-4 preadsorbed trajectories, a change of the state is observed, to a molecular species via proton transfer from the incoming water molecule.
+\\
+(ii) In the second case, a neighboring sub cell (the lower left one) is the aim of the molecular beam, where no water is preadsorbed. The preadsorbed water or water fragments are hardly disturbed by the incoming D$_2$O, due to the great distance of the residues. Only a single trajectory out of 36 changed its character, namely the molecularly preadsorbed species exchanged a proton with the neighboring 1-2 dissociated incoming species after the impact and therefore dissociated.
+\\
+Surprisingly, the incoming molecule is affected by the preadsorbed species in the way that  the dissociation probability is increased and 1-4 dissociation occurs, in contrast to comparable previous microcanonical with a clean surface: Mostly molecular adsorption (P$_\textrm{mol}$=0.47), dissociation (P$_\textrm{1-2}$=0.22 and P$_\textrm{1-4}$=0.14), physisorption (P$_\textrm{phys}$=0.11) take place. Reflection is drastically decreased (P$_\textrm{refl}$=0.06). [Respective values for microcanonical MD of the clean surface are P$_\textrm{mol}$=0.58, P$_\textrm{1-2}$=0.23, P$_\textrm{1-4}$=0, P$_\textrm{phys}$=0 and P$_\textrm{refl}$=0.19]. Although the statistics may not be sufficient, the reduced probability of reflection can be interpreted with attractive interaction of both the incoming and the preadsorbed molecule and leads to a higher probability of dissociation.
+\\
+Summarizing these findings, one can say, that the preadsorbed enhancement of the system leads to further outcomes of the scattering as physisorption/clustering on the surface and the so far unreached 1-4 and 1-4$^\prime$ species, the latter by dissociation of preadsorbed molecular water.
+As it is not surprising, the influence is bigger with the incoming water molecule being near the preadsorbed species.
+\\
+In analogy to these NVE trajectories, canonical (NVT with $T=300\,$K) trajectories with the preadsorbed systems were done. As before (Section \ref{therm_surf}), as a starting point the preequilibrated structures of molecular adsorption, 1-2 and 1-4 dissociation were used, that were equilibrated at $300\,$K for $1\,$ps. The following trajectories including the $0.7\,$eV water ``beam'' were run for $1\,$ps. As for the respective microcanonical trajectories, one has to distinguish between the water aiming at (i) the same sub cell (lower right) and (ii) the neighboring sub cell (lower left 1$\times$ 1 sub cell). The results do not differ largely, but some probabilities are altered.
+For case (i) in comparison with the microcanonical preadsorbed surface one can see that only physisorption is enhanced, whereas the other processes (molecular adsorption, 1-2, 1-4 dissociation and reflection) are suppressed. In the case of the water hitting the neighboring subcell (ii) similar effects can be seen, although here molecular adsorption is favored and the other processes (1-4 dissociation, physisorption and reflection) are reduced, and 1-2 dissociation happens with almost the same amount as in the NVE ensemble. Also concerning the preadsorbed water (fragment) there are changes, especially for the molecular preadsorbed species in case (i): Only in 4 out of 24 cases the character of the preadsorbed water changes.
+For the case of molecular preadsorption and the neighboring CUS, there is an increase in the molecular adsorption (P$_\textrm{1-2}$=0.34 instead of 0.23 for microcanonical) leads to the conclusion, that the influence of the preadsorbed species is high despite the distance so that the non-locality of the process is enhanced.
+
 \subsection{Refined Beam Model}
+
 \subsubsection{Clustering}\label{clusters}
 (D$_2$O)$_4$ cluster and also one type of (D$_2$O)$_2$ was tested
 \begin{figure*} [!ht]
