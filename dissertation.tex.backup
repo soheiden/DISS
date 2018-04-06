@@ -1055,9 +1055,10 @@ For case (i) in comparison with the microcanonical preadsorbed surface one can s
 For the case of molecular preadsorption and the neighboring CUS, there is an increase in the molecular adsorption (P$_\textrm{1-2}$=0.34 instead of 0.23 for microcanonical) leads to the conclusion, that the influence of the preadsorbed species is high despite the distance so that the non-locality of the process is enhanced.
 
 \subsection{Refined Beam Model}
-
+Enhancing the beam is a further refinement and is done here in two different ways: assuming a water cluster as the approaching species and as a second improving method exciting the water molecule rotationally, vibrationally and with a combination of both.
 \subsubsection{Clustering}\label{clusters}
-(D$_2$O)$_4$ cluster and also one type of (D$_2$O)$_2$ was tested
+As a cluster, the (D$_2$O)$_4$ system was optimized in the same periodic boundary conditions as the cell before but without the surface, for geometry see Figure \ref{abb:D2Ocluster}. The same cluster was already shown to be the most stable one by Wales et al.\cite{Wales97}, there it is called ``up-down-up-down''. This cluster was then fired with a kinetic energy of $0.9\,$eV at the cold clean surface (NVE) from a distance of $4\,$\AA{} above the Al surface layer, with a duration of around $1.22\,$ps. Once again, several impact points and orientations of the cluster were considered. These orientations were applied analogously to the previous ones with the axes of the rotations shown in Figure \ref{abb:D2Ocluster}(b).
+\\
 \begin{figure*} [!ht]
 \centering
  \subfigure[Geometry]{\includegraphics[width=.55\textwidth]{figures/0001/4H2O.pdf}}
@@ -1066,15 +1067,47 @@ For the case of molecular preadsorption and the neighboring CUS, there is an inc
 \caption{(D$_2$O)$_4$ cluster for simulation of effects of higher coverages. (a) shows the geometry, especially the DOD bond angle and the OD bond length of neighboring molecules and (b) shows the coordinate system for the rotations along the axes.}
        \label{abb:D2Ocluster}
 \end{figure*}
+Evaluating the data shows that the cluster breaks up upon contact with the surface into individual D$_2$O molecules and these undergo different processes, to a great extent influenced by the surrounding water molecules, due to the high coverage of $1\,$ML. The water can adsorb molecularly or dissociatively (both directly and indirectly), physisorb, Deuterium atoms can diffuse or single molecules can be reflected totally.\\
+{\color{blue} example trajectories/final figure for cluster calculations?}\\
+Mostly independent of the settings, the molecules interact strongly with each other showing a profoundly dynamic behavior. This gives rise to processes that were not possible for the clean surface NVE and a single water situation, where no 1-4 dissociation nor physisorption was observed. Of course, the probabilities for dissociation, molecular adsorption and reflection are different, the probability of molecular adsorption is strongly diminished to the advance of 1-2, 1-4 and 1-4$^\prime$ dissociation and physisorption. For details see Appendix.
+\\
+{\color{red} \textit{Mention here, in the appendix or not at all?!} Also one type of (D$_2$O)$_2$ was tested (see Figure \ref{abb:D2O2clusters}). The structure is not the minimum structure but another dimolecular water cluster. Even in the case of the (D$_2$O)$_2$ cluster, strong interaction between the molecules can be observed, although not as much as for the tetramer. Also ``only'' molecular adsorption, 1-2 and 1-4 dissociation occur within the sampling. Interestingly, there is no case, where both molecules react in the same way. For most dissociated trajectories there is only direct dissociation at the moment of the impact, with the only one dissiciating $0.3\,$ps later. Apart from that, no further dissociation and diffusion reactions were observed.
+}
+\begin{figure}[!t]
+\centering
+\subfigure[(D$_2$O)$_2$]{\includegraphics[width=0.33\textwidth]{figures/0001/2H2O.pdf}}
+         \quad
+\subfigure[sketch of (D$_2$O)$_2$ cluster]{\includegraphics[angle=90,width=0.3\textwidth]{figures/0001/2H2Oexample.png}}
+          \quad
+          %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line
+\caption{Structure of the optimized (D$_2$O)$_2$ cluster (a). (b) shows an example situation at the last step (after $1.2\,$ps) for 2 water molecules for the initial parameters [$a_0,b_0$]=[0.35,0.45], [$\alpha,\beta,\gamma$][90,0,90].}
+       \label{abb:D2O2clusters}
+\end{figure}
 
 \subsubsection{Rotationally and Vibrationally Preexcited Water}\label{preex}
-excitation, more qualitative. 
+Here, qualitative results are given for  a D$_2$O molecule that is at the start of the trajectory not rigid as before but excited rotationally and/or vibrationally. It is shot with a kinetic energy of $0.7\,$eV at the clean surface in an NVE ensemble for a trajectory duration of $2\,$ps at the impact point [$0.35,0.5$] with the initial orientation [$0,0,0$]. With these applied conditions in the rigid case (microcanonical without rotational or vibrational excitation), the molecule dissociates to the 1-2 structure, the same for the thermal surface at $T=300\,$K.
+\\
+The vibrational excitations were chosen as follows: For the single water molecule in the periodic boundary conditions a normal mode analyses was done and the modes for the symmetric stretch, asymmetric stretch and the bending mode were used as an input for the MD trajectories in addition to the initial momentum towards the surface. For the rotational preexcitations along the three axes, D atoms were given initial momenta to induce a rotational motion corresponding to rotational energies of $\sim 0.2\,$eV.
+\\
+The results for the rotation around the $\gamma$-axis (cp. Fig.~\ref{abb:initial_parameters}) shows molecular adsorption whereas rotations around the other two axes give 1-2 dissociation as in the initial microcanonical trajectories without rotational excitation.
+In the cases of vibrational preexcitation, the symmetric stretch leads to reflection, the asymmetric stretch gives 1-4$^\prime$ dissociation after initial 1-2 dissociation (as was already mentioned in Fig.~\ref{abb:ex_traj}) and with the bending mode being excited, the water dissociates to 1-2. Also, a small collection of combinations of vibrations with rotations were calculated, that lead to either molecular adsorption (rotation around $\alpha$? and bending mode), or 1-2 dissociation (rotation around $\gamma$ and asymmetric stretch; and rotation around $\beta$ ans symmetric stretch).
+\\
+Quantitatively, the results may depend strongly on the excitation energy, that was not of concern here, one can say, that preexcitation has an effect on the dynamics of the water adsorption and dissociation, respectively, that were not possible with the rigid water molecule.
+\\
+\\
+Although a large number of trajectories were done with the contingent at the HLRN facility a reliable statistics could not be achieved. It was only computationally feasible to do trajectories with $1-4\,$ps duration. Also not all degrees of freedom could be probed, \textit{e.g.} the angle of the beam with respect to the surface other than 90\textdegree~ and initial orientations were only probed in 90\textdegree ~steps. Apart from that, no quantum effects were considered.
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Improvement of Reaction Rates}\label{sec_rates}
-For a model reaction we try to improve the reaction rate with different new methods. This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction, that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state.
-The rates were before calcualted with PBE+D2/3? and Nudged Elastic Band. An approach were singlepoint calculations were done for the minima and the transition state was also done. For this process also a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway.
+For a model reaction we try to improve the reaction rate of a specific chosen reaction with different new methods. This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction, that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state (see Figure \ref{abb:df-h-4-2}).
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/0001/NEB-path/df-h-4-2.pdf}
+\caption{Reaction path of the Df-H-4-2 proton diffusion reaction, \textit{data with friendly permission by Jonas Wirth}.}
+       \label{abb:df-h-4-2}
+\end{figure}
+The rates were before calculated with PBE+D2/3? and Nudged Elastic Band. An approach were singlepoint calculations were done for the minima and the transition state was also done. For this process also a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway.
 \\
 Now we want to expand these methods to the following 3/4/don't know? First we want to calculate the adsorption energies and the barrier within a atom centered orbital method with the hybrid functional B3LYP and also go beyond density functional theory and go to perturbation theory (LMP2).
 \\
