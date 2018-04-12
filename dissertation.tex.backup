@@ -1104,10 +1104,10 @@ For a model reaction we try to improve the reaction rate of a specific chosen re
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/0001/NEB-path/df-h-4-2.pdf}
-\caption{Reaction path of the Df-H-4-2 proton diffusion reaction, \textit{data with friendly permission by Jonas Wirth}.}
+\caption{Reaction path of the Df-H-4-2 proton diffusion reaction in the PBE-D2 level of theory, left is the educt (1-4), in the middle the minimum energy path with the transition state geometry as an inlay and on the right the product (1-2) of the reaction. \textit{Data with friendly permission by Jonas Wirth}.}
        \label{abb:df-h-4-2}
 \end{figure}
-The rates were before calculated with PBE+D2/3? and Nudged Elastic Band. An approach were singlepoint calculations were done for the minima and the transition state was also done. For this process also a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway.
+The rates were before calculated with PBE+D2 and the implementation of Nudged Elastic Band in VASP. An approach were singlepoint calculations were done for the minima and the transition state was also done. For this process also a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway.
 \\
 Now we want to expand these methods to the following 3/4/don't know? First we want to calculate the adsorption energies and the barrier within a atom centered orbital method with the hybrid functional B3LYP and also go beyond density functional theory and go to perturbation theory (LMP2).
 \\

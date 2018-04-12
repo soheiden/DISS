@@ -18,29 +18,29 @@
 \contentsline {section}{\numberline {2.1}Surface Model}{15}{section.2.1}
 \contentsline {section}{\numberline {2.2}Structure Search}{17}{section.2.2}
 \contentsline {section}{\numberline {2.3}Reactions and Microkinetic Model}{21}{section.2.3}
-\contentsline {section}{\numberline {2.4}Vibrational Frequencies / Spectroscopic Properties}{27}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Normal Mode Analysis}{28}{subsection.2.4.1}
-\contentsline {subsubsection}{\nonumberline OD Vibrations}{28}{section*.26}
-\contentsline {subsubsection}{\nonumberline Lattice Vibrations}{30}{section*.31}
-\contentsline {subsection}{\numberline {2.4.2}Velocity-Velocity Autocorrelation Function}{31}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Desorption Process}{31}{section.2.5}
-\contentsline {chapter}{\numberline {3}Water on $\upalpha $-Al$_2$O$_3$(0001)}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}Surface Model and Static Calculations}{33}{section.3.1}
-\contentsline {section}{\numberline {3.2}AIMD for MBS Process}{35}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Beam Model}{36}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Example Trajectories}{37}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Microcanonical AIMD at clean surface}{38}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Thermalized Surface}{42}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Refined Surface Model}{44}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Refined Beam Model}{47}{subsection.3.2.6}
-\contentsline {subsubsection}{\nonumberline Clustering}{47}{section*.43}
-\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{48}{section*.46}
-\contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{50}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{51}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}PIMD}{51}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{51}{subsection.3.3.3}
-\contentsline {chapter}{\nonumberline Summary}{53}{chapter*.48}
-\contentsline {chapter}{\nonumberline Appendix}{55}{chapter*.50}
-\contentsline {subsubsection}{\nonumberline This Work:}{57}{section*.52}
-\contentsline {chapter}{\nonumberline References}{59}{chapter*.53}
+\contentsline {section}{\numberline {2.4}Vibrational Frequencies / Spectroscopic Properties}{28}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Normal Mode Analysis}{29}{subsection.2.4.1}
+\contentsline {subsubsection}{\nonumberline OD Vibrations}{29}{section*.26}
+\contentsline {subsubsection}{\nonumberline Lattice Vibrations}{31}{section*.31}
+\contentsline {subsection}{\numberline {2.4.2}Velocity-Velocity Autocorrelation Function}{32}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Desorption Process}{32}{section.2.5}
+\contentsline {chapter}{\numberline {3}Water on $\upalpha $-Al$_2$O$_3$(0001)}{35}{chapter.3}
+\contentsline {section}{\numberline {3.1}Surface Model and Static Calculations}{35}{section.3.1}
+\contentsline {section}{\numberline {3.2}AIMD for MBS Process}{37}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Beam Model}{38}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Example Trajectories}{39}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Microcanonical AIMD at clean surface}{40}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Thermalized Surface}{44}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Refined Surface Model}{46}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Refined Beam Model}{49}{subsection.3.2.6}
+\contentsline {subsubsection}{\nonumberline Clustering}{49}{section*.43}
+\contentsline {subsubsection}{\nonumberline Rotationally and Vibrationally Preexcited Water}{50}{section*.46}
+\contentsline {section}{\numberline {3.3}Improvement of Reaction Rates}{52}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}MP2 and B3LYP}{53}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}PIMD}{53}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}QM/QM Embedding Scheme}{53}{subsection.3.3.3}
+\contentsline {chapter}{\nonumberline Summary}{55}{chapter*.48}
+\contentsline {chapter}{\nonumberline Appendix}{57}{chapter*.50}
+\contentsline {subsubsection}{\nonumberline This Work:}{59}{section*.52}
+\contentsline {chapter}{\nonumberline References}{61}{chapter*.53}
 \contentsfinish 
