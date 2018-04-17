@@ -11,10 +11,11 @@ NVE Number of particles/Volume/Energy kept constant
 NEB nudged elastic band
 NEB-CI nudged elastic band with climbing image
 MP2 M\o{}ller Plesset perturbation theory of second order
+LDA Local Density Approximation
 LMP2 local MP2
-CUS coordinatively unsaturated site
-VSF vibrational sum frequency
-SFG sum frequency generation
+CUS Coordinatively Unsaturated Site
+VSF Vibrational Sum Frequency
+SFG Sum Frequency Generation
 TDS thermal desorption spectroscopy
 MBS molecular beam source
 LEED low energy electron diffraction
@@ -23,8 +24,8 @@ PAW projector augmented wave
 MD molecular dynamics
 PIMD path integral molecula dynamics
 CCSD coupled cluster singles and doubles
-VASP vienna ab-initio simulation package
+VASP Vienna ab-initio Simulation Package
 QM/QM combination of quantum mechanical and quantum mechanical method (in contrast to QM/MM where QM and molecular mechanis are combined)
-PES potential energy surface
-TS(T) Transition state (Theory)
+PES Potential Energy Surface
+TS(T) Transition State (Theory)
 

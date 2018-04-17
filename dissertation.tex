@@ -196,13 +196,9 @@ Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth cru
 %Tabellenverzeichnis?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theory und Methodology}
-In this chapter the basics of the applied theoretical methods shall be explained.
-\section{DFT}
-basic idea of DFT, only 3 dimensional system instead of 3N-dimensional with N being the number of electrons, Kohn-Sham DFT use orbitals again, methods amd algorithms known from wave function based methods can be applied, functionals difference pure density functionals and hybrid, some exact exchange from Hartree Fock is mixed into the potential, functionals like B3LYP, HSE06. Dispersion corrections that account for van-der-Waals interactions, and are important for the adsorbate-surface interaction and the adsorbate-adsorbate interaction.
-
-A test system with non-interacting electrons that reflects the systems electron density, is set and calculated.
-
-Hohenberg-Kohn theorem connect the Hamiltonian of a many-particle system to its ground-state density $n(\vec{r})$. If $\Psi(\vec{r}^N)$ is an N-electron wavefunction, then the  electron density can be given as
+In this chapter the basics of the applied theoretical methods shall be explained. {\color{red} MAKE SURE THAT ALL VARIABLES ARE CONSISTENT!}
+\section{Density Functional Theory}
+The idea of density functional theory (DFT) is based on the Hohenberg Kohn teorems, that connect the ground state electronic energy to the electron density $n(\vec{r})$, there exists a one to one correspondence. If $\Psi(\vec{r}^N)$ is a N-electron wavefunction, then the  electron density can be given as
 \begin{equation}
  n(\vec{r})=N\int ... \int \Psi^\ast(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N)\Psi(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N) d \vec{r}_2...d \vec{r}_N 
 \end{equation}
@@ -211,17 +207,26 @@ with Hohenberg-Kohn Theorem I the total energy $E[n]$ can be determined as:
  E[n]=T[n] + V_{ext}[n] + V_{ee}[n]=\int n(\vec{r})v_{ext}(\vec{r})d\vec{r} + T[n]+E_H[n]+E_{xc}[n]
 \end{equation}
 with the kinetic energy $T[n]$, the potential energy $V[n]$ for electron electron interaction $ee$ and  external potential $ext$, the Hartree energy $E_H[n]$, corresponding to the classical Coulomb interaction and the exchange correlation energy $E_{xc}[n]$ for the non-classical exchange correlation interactions.
+A big advantage over wave function based methods is that only a three dimensional system instead of 3N-dimensional system (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional) has to be solved, with N being the number of electrons that have to be considered for three spatial coordinates $n(x,y,z)$ . The size of a system calculated with wave function methods increases exponentially with the number of electrons, while for density calculations, we have always three spatial coordinates, independent from the number of electrons.
+Problematic in this ansatz is, that the explicit form of the interacting kinetic energy $T[n]$ and the exchange correlation functional $E_{xc}[n]$ are unknown. To make clear the difference between a funcion and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas in a functional (F[f]) gives a number from a function which depends on variables.
 \\
-A problem is, that the explicit form of the interacting kinetic energy $T[n]$ and the exchange correlation functional $E_{xc}[n]$ are unknown.
-
+\\
+Calculating all energy components from the pure density was not very successful, but Kohn and Sham presented their work in 1965 that the kinetic energy should be calculated from an auxiliary set of orbitals that is used for representing the electron density. The use of orbitals makes it possible to use the same methods and algorithms knwon from wave function methods. With this the exchange-correlation functional is the only unknown functional, but it only is a small fraction of the total energy. Simple approximations to this functional still give reasonable results, as for example the Local Density Approximation (LDA). Furthermore, notable improvement can be made by using the first derivative of the density and even better by adding second derivatives and mixing in Hartree-Fock exchange (hybrid functionals, like B3LYP and HSE06).
+\\
+A huge problem of DFT is, that it can not be systematically improved like wave function based methods and the weakness of being not able to reproduce important features like van der Waals interactions. One can add dispersion corrections nowadays, that account for van-der-Waals interactions, and are important for the adsorbate-surface interaction and the adsorbate-adsorbate interaction.
+\\
+\\
+A test system with non-interacting electrons that reflects the systems electron density, is set and calculated.
 
 
 \section{Periodic Boundary Conditions}
-plane wave basis, no atom centered basis functions, periodic boundary conditions, electron density has to be the same in each repeating unit, Miller Indices for nomenclature of surface sites/faces (3 and 4 numbers) (hkl, hk-(h+k)l), how to understand these numbers, hexagonal cells, lattice types, differences between these types, Bravais lattice, Brillouin zone, $\vec{k}$-points, irreducible $\vec{k}$-points necessary for describing the system, direct and reciproce room, how to convert between these two with the lattice vectors
+(see e.g. Jensen 3.9)\\
+\textit{{\color{blue} plane wave basis, no atom centered basis functions, periodic boundary conditions, electron density has to be the same in each repeating unit, Miller Indices for nomenclature of surface sites/faces (3 and 4 numbers) (hkl, hk-(h+k)l), how to understand these numbers, hexagonal cells, lattice types, differences between these types, Bravais lattice, Brillouin zone, $\vec{k}$-points, irreducible $\vec{k}$-points necessary for describing the system, direct and reciproce room, how to convert between these two with the lattice vectors}}
 \\
-Surface simulation, 2-D system reproduced as 3-D structure since vasp is bulk code there have to be 3 dimensions, so one has to define a vacuum gap between two slabs along the z-axis (perpendicular to the surface) to prevent unit cells from influencing each other and therefore lead to unphysical behaviour. Some programs (here used crystal and cp2k(?)) deliver opportunity to calculate only 2D system, repeating the slab only in x/y, a/b, respectively.
+Periodic systems can be described by a unit cell, that is used to generate the infinite system by repeating it. This can be done in 1-D (polymers), 2-D (surface systems) or 3-D (bulk crystals). Also, surfaces can be described with a three dimensional repetition of the unit cell, the only difference is, that one has to define a vacuum gap between two slabs (unit or super cell model of a surface) in one direction (e.g. z). This gap has to be large enough to prevent unit cells from influencing each other and therefore lead to unphysical behaviour between the surface atoms and the lowest atoms of the neighboring slab. Since it is not possible in VASP to mimic a 2-D system, in the main part of this work this vacuum gap 3-D model was applied.Some programs (here used crystal and cp2k(mention it?)) deliver opportunity to calculate only 2D system, repeating the slab only in x/y, a/b, respectively.
 \\
-The systems are modelled as periodic solid, this can be described by a unit cell, that is translated along every spatial direction.
+The 3-D unit cell can be described by three vectors, $\vec{a}_1$, $\vec{a}_2$ and $\vec{a}_3$ and can be translated along these vectors to gain the infinite system. They span the space with defined length and angles, with seven different models existing, \textit{e.g.} hexagonal crystal family).
+The unit cell with the atoms occupying different positions is called Bravais lattice, where 14 different form exist, \textit{e.g.} hexagonal D$_\textrm{6h}$.
 The lattice can be described by the lattice vector $\vec{B}$. $\vec{a}_i$ are basis vectors of the lattice and $n_i$ integers:
 \begin{equation}
  \vec{B}=n_1\vec{a}_1+n_2\vec{a}_2+n_3\vec{a}_3
@@ -298,7 +303,7 @@ In this work we also want to go beyond GGA (here the PBE functional), because it
 Another ansatz is using Local M\o{}ller Plesset Peturbation Theory of 2$^{\textrm{nd}}$ order (LMP2) as implemented in crystal/cryscor. These calculations are way more computationally demanding but offer better results on a higher level of theory.
 
 \section{Computational Details and Used Programs}
-Vasp4.x, 5.2 and version x (newer), crystal, cryscor, cp2k+i-pi, Turbomole
+Vasp4.x, 5.2 and version x (newer), crystal, cryscor%, cp2k+i-pi, Turbomole
 \\
 For all the vasp calculations for the (0001) surface the parameters from prior work in our workgroup was used, like vacuum gap and convergence criteria, because these were converged carefully by Dr. Jonas Wirth. Convergence was achieved when energies between 2 SCF steps was smaller then $10^{-5}\,$eV.
 \\
@@ -605,7 +610,7 @@ diffusion (Df-OH) or H diffusion (Df-H).}}
   \label{tab:reaction-rates}
 \end{table*}
 \\
-As mentioned before a huge well known problem of GGA is that barriers are underestimated. {\color{red} Optimizing structure with HSE06 is nearly impossible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (see also work of Dr. J. Wirth). {\textit (at least for crystal calculations... so don't bring it her?)}}
+As mentioned before a huge well known problem of GGA is that barriers are underestimated. {\color{red} Optimizing structure with HSE06 is nearly impossible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (see also work of Dr. J. Wirth). {\textit (at least for crystal calculations... so don't bring it here?)}}
 \\
 Proton diffusion reactions are way more variable giving reaction rates at $300\,$K ranging from $10^{-13}$ to $10^{-3}$s$^{-1}$. The barriers and therefore also rate constants for H-diffusion cover a wider range depending on the distance between OH and H and of course more importantly on the fact between which type of O$\mu_{2/3}$ the proton is diffusing.
 \\
