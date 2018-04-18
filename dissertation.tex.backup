@@ -196,13 +196,15 @@ Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth cru
 %Tabellenverzeichnis?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theory und Methodology}
-In this chapter the basics of the applied theoretical methods shall be explained. {\color{red} MAKE SURE THAT ALL VARIABLES ARE CONSISTENT!}
+In this chapter the basics of the applied theoretical methods shall be explained. Starting from the basics of Density Functional Theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab-initio} Molecular Dynamics. Then going to frequency calculations and intensities over Transition State Theory to more developed methods like hybrid functionals and Perturbation Theory.
+\\{\color{red} MAKE SURE THAT ALL VARIABLES ARE CONSISTENT!}
 \section{Density Functional Theory}
 The idea of density functional theory (DFT) is based on the Hohenberg Kohn teorems, that connect the ground state electronic energy to the electron density $n(\vec{r})$, there exists a one to one correspondence. If $\Psi(\vec{r}^N)$ is a N-electron wavefunction, then the  electron density can be given as
 \begin{equation}
- n(\vec{r})=N\int ... \int \Psi^\ast(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N)\Psi(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N) d \vec{r}_2...d \vec{r}_N 
+ n(\vec{r})=N_\textrm{norm}\int ... \int \Psi^\ast(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N)\Psi(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N) d \vec{r}_2...d \vec{r}_N
 \end{equation}
-with Hohenberg-Kohn Theorem I the total energy $E[n]$ can be determined as:
+with the normalization factor $N_\textrm{norm}$.
+With Hohenberg-Kohn Theorem I the total energy $E[n]$ can be determined as:
 \begin{equation}
  E[n]=T[n] + V_{ext}[n] + V_{ee}[n]=\int n(\vec{r})v_{ext}(\vec{r})d\vec{r} + T[n]+E_H[n]+E_{xc}[n]
 \end{equation}
@@ -220,28 +222,51 @@ A test system with non-interacting electrons that reflects the systems electron 
 
 
 \section{Periodic Boundary Conditions}
-(see e.g. Jensen 3.9)\\
-\textit{{\color{blue} plane wave basis, no atom centered basis functions, periodic boundary conditions, electron density has to be the same in each repeating unit, Miller Indices for nomenclature of surface sites/faces (3 and 4 numbers) (hkl, hk-(h+k)l), how to understand these numbers, hexagonal cells, lattice types, differences between these types, Bravais lattice, Brillouin zone, $\vec{k}$-points, irreducible $\vec{k}$-points necessary for describing the system, direct and reciproce room, how to convert between these two with the lattice vectors}}
+\textit{{\color{blue} plane wave basis,
+no atom centered basis functions,
+periodic boundary conditions,
+electron density has to be the same in each repeating unit,
+% Miller Indices for nomenclature of surface sites/faces (3 and 4 numbers) (hkl, hk-(h+k)l),
+% how to understand these numbers, hexagonal cells, lattice types, differences between these types,
+% Bravais lattice,
+% Brillouin zone,
+$\vec{k}$-points,
+Bloch theorem.
+irreducible $\vec{k}$-points necessary for describing the system,
+direct and reciproce room,
+how to convert between these two with the lattice vectors}}
 \\
-Periodic systems can be described by a unit cell, that is used to generate the infinite system by repeating it. This can be done in 1-D (polymers), 2-D (surface systems) or 3-D (bulk crystals). Also, surfaces can be described with a three dimensional repetition of the unit cell, the only difference is, that one has to define a vacuum gap between two slabs (unit or super cell model of a surface) in one direction (e.g. z). This gap has to be large enough to prevent unit cells from influencing each other and therefore lead to unphysical behaviour between the surface atoms and the lowest atoms of the neighboring slab. Since it is not possible in VASP to mimic a 2-D system, in the main part of this work this vacuum gap 3-D model was applied.Some programs (here used crystal and cp2k(mention it?)) deliver opportunity to calculate only 2D system, repeating the slab only in x/y, a/b, respectively.
+Periodic systems can be described by a single unit cell and respective cell vectors, that are used to generate the infinite system by repeating the cell. This can be either done in 1-D (polymers), 2-D (surface systems) or 3-D (bulk crystals). Also, surfaces can be described as a slab model with a three dimensional repetition of the unit cell, the only difference is, that one has to define a vacuum gap between two slabs (unit or super cell model of a surface) in one direction perpendicular to the surface (e.g. z). This gap has to be large enough to prevent unit cells from influencing each other in this direction and therefore lead to unphysical behaviour between the surface atoms and the lowest atoms of the neighboring upper slab. Since it is (yet) not possible in VASP to mimic a 2-D system, in the main part of this work this vacuum gap 3-D model just mentioned was applied. Some programs, however, (here CRYSTAL was used) %and cp2k(mention it?))
+deliver opportunity to calculate only 2D system, repeating the slab only in x/y, a/b, respectively.
 \\
-The 3-D unit cell, that is translated along every spatial direction, can be described by three vectors, $\vec{a}_1$, $\vec{a}_2$ and $\vec{a}_3$. They span the space with defined length and angles, with seven different models existing, \textit{e.g.} hexagonal.
+The 3-D unit cell can be described by three vectors, $\vec{a}_1$, $\vec{a}_2$ and $\vec{a}_3$ and can be translated along these vectors to gain the infinite system. They span the space with defined length and angles, with seven different models existing.
+%, \textit{e.g.} hexagonal crystal family).
+The unit cell with the atoms occupying different positions is called Bravais lattice, where 14 different form exist, \textit{e.g.} hexagonal D$_\textrm{6h}$.
 The lattice can be described by the lattice vector $\vec{B}$. $\vec{a}_i$ are basis vectors of the lattice and $n_i$ integers:
 \begin{equation}
  \vec{B}=n_1\vec{a}_1+n_2\vec{a}_2+n_3\vec{a}_3
 \end{equation}
-Analogue to that, also a reciproce space exists ($\vec{k}$-space) with a set of vectors $\vec{G}$:
+Analogue to that, also a reciproce space exists (the so called $\vec{k}$-space) that is defined by the reciproce lattice vector $\vec{G}$ and a set of vectors $\vec{b}_i$ and $h$, $k$, $l$ being integers:
 \begin{equation}
  \vec{G}=h\vec{b}_1+k\vec{b}_2+l\vec{b}_3
 \end{equation}
-that span the lattice space. For the reciproce space we have:
+that span the lattice space. The dimension of the $\vev{b}_i$ is m$^{-1}$. For the reciproce space we have:
 \begin{equation}
- e^{i\vec{G}\vec{B}}=1.
+ e^{i\vec{G}\,\vec{B}}=1.
 \end{equation}
-The unit cell withing the reciprocal space is called Wigner-Seitz cell and is also referred to as first Brillouin zone, whose center is the $\Gamma$-point ($h=k=l=0$). Between the vectors of the direct and the reciprocal space there are fixed relations and the are perpendicular to each other:
+Between the vectors of the direct and the reciprocal space there are fixed relations, the vectors $\vec{b}_i$  can be derived from $\vec{a}_i$, \textit{e.g.} by writing 
+\begin{equation}
+\vec{b}_1=2\pi\frac{\vec{a}_2 \times \vec{a}_3}{\vec{a}_1\cdot(\vec{a}_2 \times \vec{a}_3)} 
+\end{equation}
+and so forth, analogously, and the are perpendicular to each other:
 \begin{equation}
  \vec{a}_i\cdot\vec{b}_j=2\pi\delta_{ij}.
-\end{equation}
+\end{equation} 
+The unit cell within the reciprocal space is called Wigner-Seitz cell and is also referred to as first Brillouin zone, whose center is the $\Gamma$-point ($h=k=l=0$).
+The integers $h$, $k$, and $l$ are also called Miller indices, that can be used to describe the crystallographic planes (position of the surface in the coordinate system). They are determined by finding the point of intersection of the surface plane with the axes of the coordinate system, reduce, then take the reciprocal values and multiply with the least common multiple to gain three integers.
+\\
+Within the hexagonal (and rhombohedral) lattice system, also the Miller-Bravais notation with four indices can be used [$h,k,i,l$]. Here, the relation between $h$, $k$ and $i$ is: $i=-(h+k)$, for example, the (110) surface would be referred to as (11-(1+1)0)=(11\=20), since the minus is expressed by the overbar.
+\\
 
 To describe periodic systems with quantum mechanical methods, one has to introduce periodic boundary conditions. These assume that the effective potential $v_{eff}$ has to be the same in all cells that are given by $\vec{B}$:
 \begin{equation}
