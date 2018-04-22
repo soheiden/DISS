@@ -199,7 +199,7 @@ Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth cru
 In this chapter the basics of the applied theoretical methods shall be explained. Starting from the basics of Density Functional Theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab-initio} Molecular Dynamics. Then going to frequency calculations and intensities over Transition State Theory to more developed methods like hybrid functionals and Perturbation Theory.
 \\{\color{red} MAKE SURE THAT ALL VARIABLES ARE CONSISTENT!}
 \section{Density Functional Theory}
-The idea of density functional theory (DFT) is based on the Hohenberg Kohn teorems, that connect the ground state electronic energy to the electron density $n(\vec{r})$, there exists a one to one correspondence. If $\Psi(\vec{r}^N)$ is a N-electron wavefunction, then the  electron density can be given as
+The idea of density functional theory (DFT) is based on the Hohenberg Kohn theorems, that connect the ground state electronic energy to the electron density $n(\vec{r})$, there exists a one to one correspondence. If $\Psi(\vec{r}^N)$ is a N-electron wavefunction, then the  electron density can be given as
 \begin{equation}
  n(\vec{r})=N_\textrm{norm}\int ... \int \Psi^\ast(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N)\Psi(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N) d \vec{r}_2...d \vec{r}_N
 \end{equation}
@@ -213,18 +213,16 @@ A big advantage over wave function based methods is that only a three dimensiona
 Problematic in this ansatz is, that the explicit form of the interacting kinetic energy $T[n]$ and the exchange correlation functional $E_{xc}[n]$ are unknown. To make clear the difference between a funcion and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas in a functional (F[f]) gives a number from a function which depends on variables.
 \\
 \\
-Calculating all energy components from the pure density was not very successful, but Kohn and Sham presented their work in 1965 that the kinetic energy should be calculated from an auxiliary set of orbitals that is used for representing the electron density. The use of orbitals makes it possible to use the same methods and algorithms knwon from wave function methods. With this the exchange-correlation functional is the only unknown functional, but it only is a small fraction of the total energy. Simple approximations to this functional still give reasonable results, as for example the Local Density Approximation (LDA). Furthermore, notable improvement can be made by using the first derivative of the density and even better by adding second derivatives and mixing in Hartree-Fock exchange (hybrid functionals, like B3LYP and HSE06).
+Calculating all energy components from the pure density was not very successful, but Kohn and Sham presented their work in 1965 that the kinetic energy should be calculated from non-interacting auxiliary particles in a set of orbitals that is used for representing the electron density. {\color{blue} A test system with non-interacting electrons that reflects the systems electron density, is set and calculated.} The use of orbitals makes it possible to use the same methods and algorithms knwon from wave function methods. With this the exchange-correlation functional is the only unknown functional, but it only is a small fraction of the total energy. Simple approximations to this functional still give reasonable results, as for example the Local Density Approximation (LDA). Furthermore, notable improvement can be made by using the first derivative of the density and even better by adding second derivatives and mixing in Hartree-Fock exchange (hybrid functionals, like B3LYP and HSE06).
 \\
-A huge problem of DFT is, that it can not be systematically improved like wave function based methods and the weakness of being not able to reproduce important features like van der Waals interactions. One can add dispersion corrections nowadays, that account for van-der-Waals interactions, and are important for the adsorbate-surface interaction and the adsorbate-adsorbate interaction.
+A huge problem of DFT is, that it can not be systematically improved like wave function based methods and the weakness of not being able to reproduce important features like van der Waals interactions. To overcome this problem one can add dispersion corrections nowadays, that account for van-der-Waals interactions, and are important, especially for the adsorbate-surface interaction and the adsorbate-adsorbate interaction.
 \\
-\\
-A test system with non-interacting electrons that reflects the systems electron density, is set and calculated.
-
 
 \section{Periodic Boundary Conditions}
 \textit{{\color{blue} plane wave basis,
 no atom centered basis functions,
 periodic boundary conditions,
+only perfect surface, no defects and if there are defects they are also repeated periodically, although there are methods available, that calculate only one defect and all other unit cells don't have a defect. Not done here, since the perfect surface is not understood enough.
 electron density has to be the same in each repeating unit,
 % Miller Indices for nomenclature of surface sites/faces (3 and 4 numbers) (hkl, hk-(h+k)l),
 % how to understand these numbers, hexagonal cells, lattice types, differences between these types,
@@ -236,8 +234,8 @@ irreducible $\vec{k}$-points necessary for describing the system,
 direct and reciproce room,
 how to convert between these two with the lattice vectors}}
 \\
-Periodic systems can be described by a single unit cell and respective cell vectors, that are used to generate the infinite system by repeating the cell. This can be either done in 1-D (polymers), 2-D (surface systems) or 3-D (bulk crystals). Also, surfaces can be described as a slab model with a three dimensional repetition of the unit cell, the only difference is, that one has to define a vacuum gap between two slabs (unit or super cell model of a surface) in one direction perpendicular to the surface (e.g. z). This gap has to be large enough to prevent unit cells from influencing each other in this direction and therefore lead to unphysical behaviour between the surface atoms and the lowest atoms of the neighboring upper slab. Since it is (yet) not possible in VASP to mimic a 2-D system, in the main part of this work this vacuum gap 3-D model just mentioned was applied. Some programs, however, (here CRYSTAL was used) %and cp2k(mention it?))
-deliver opportunity to calculate only 2D system, repeating the slab only in x/y, a/b, respectively.
+Surfaces can be simulated either by calculating clusters that were cut from the surface and represent an "important part" of the system or one can represent the whole system by chosing a periodic cell. These poeriodic systems can be described by a single unit cell and respective cell vectors, that are used to generate the infinite system by repeating the cell in each direction. This can be either done in 1-D (polymers), 2-D (surface systems) or 3-D (bulk crystals). Also, surfaces can be described as a slab model with a three dimensional repetition of the unit cell, the only difference is, that one has to define a vacuum gap between two slabs (unit or super cell model of a surface) in one direction perpendicular to the surface (\textit{e.g.} here z). This gap has to be large enough to prevent unit cells from influencing each other in this direction and therefore lead to unphysical behaviour between the surface atoms and the lowest atoms of the neighboring upper slab. Since it is (yet) not possible in VASP to mimic a 2-D system, in the main part of this work this vacuum gap 3-D model just mentioned was applied. Some programs, however, (here CRYSTAL was used) %and cp2k(mention it?))
+deliver the opportunity to calculate only 2-D systems, repeating the slab only in x/y, a/b, respectively.
 \\
 The 3-D unit cell can be described by three vectors, $\vec{a}_1$, $\vec{a}_2$ and $\vec{a}_3$ and can be translated along these vectors to gain the infinite system. They span the space with defined length and angles, with seven different models existing.
 %, \textit{e.g.} hexagonal crystal family).
@@ -247,10 +245,10 @@ The lattice can be described by the lattice vector $\vec{B}$. $\vec{a}_i$ are ba
  \vec{B}=n_1\vec{a}_1+n_2\vec{a}_2+n_3\vec{a}_3
 \end{equation}
 Analogue to that, also a reciproce space exists (the so called $\vec{k}$-space) that is defined by the reciproce lattice vector $\vec{G}$ and a set of vectors $\vec{b}_i$ and $h$, $k$, $l$ being integers:
-\begin{equation}
+\begin{equation}\label{eq:rec_latt_vec}
  \vec{G}=h\vec{b}_1+k\vec{b}_2+l\vec{b}_3
 \end{equation}
-that span the lattice space. The dimension of the $\vec{b}_i$ is m$^{-1}$. For the reciproce space we have:
+that span the lattice space. The dimension of the $\vec{b}_i$ is m$^{-1}$. {\color{blue} For sampling one uses a $\vec{k}$-point grid instead of a continuous model, where only important points within the reciproce cell have to be considered which lowers the computational costs.} For the reciproce space we have:
 \begin{equation}
  e^{i\vec{G}\,\vec{B}}=1.
 \end{equation}
@@ -263,7 +261,7 @@ and so forth, analogously, and the are perpendicular to each other:
  \vec{a}_i\cdot\vec{b}_j=2\pi\delta_{ij}.
 \end{equation} 
 The unit cell within the reciprocal space is called Wigner-Seitz cell and is also referred to as first Brillouin zone, whose center is the $\Gamma$-point ($h=k=l=0$).
-The integers $h$, $k$, and $l$ are also called Miller indices, that can be used to describe the crystallographic planes (position of the surface in the coordinate system). They are determined by finding the point of intersection of the surface plane with the axes of the coordinate system, reduce, then take the reciprocal values and multiply with the least common multiple to gain three integers.
+The integers $h$, $k$, and $l$ from Equation \ref{eq:rec_latt_vec} are also called Miller indices, that can be used to describe the crystallographic planes (position of the surface in the coordinate system). They are determined by finding the point of intersection of the surface plane with the axes of the coordinate system, reduce, then take the reciprocal values and multiply with the least common multiple to gain three integers.
 \\
 Within the hexagonal (and rhombohedral) lattice system, also the Miller-Bravais notation with four indices can be used [$h,k,i,l$]. Here, the relation between $h$, $k$ and $i$ is: $i=-(h+k)$, for example, the (110) surface would be referred to as (11-(1+1)0)=(11\=20), since the minus is expressed by the overbar.
 \\
@@ -313,7 +311,7 @@ Calculation of power spectra via velocity-velocity autocorrelation function from
 \end{equation}
 
 \section{Finding Transition States}
-One of the most prominent theories describing the transition state and the rate constants is Eyring theory of transition states {\color{red} figure of reaction path?}. The most important approximations that are made are the following: all particles that reached the transition state will react towards the product. at the transition state geometry, the motion along the reaction coordinate can be separated from all other degrees of freedom and can be seen as a translation.
+One of the most prominent and widely used theories describing the transition state and the rate constants is Eyring theory of transition states {\color{red} figure of reaction path?}. The most important approximations that are made are the following: all particles that reached the transition state will react towards the product. at the transition state geometry, the motion along the reaction coordinate can be separated from all other degrees of freedom and can be seen as a translation.
 The equation for the rate constant is described by
 \begin{equation}\label{eyring}
 k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
@@ -322,21 +320,21 @@ with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature
 To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of associated images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First a regular NEB, then afterwards climbing image was done which gives better convergence. In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode, that vibrates alongside the reaction path.
 
 \section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
-In this work we also want to go beyond GGA (here the PBE functional), because it is known to underestimate reaction rates. Since we are interested in reaction kinetics it therefore is desirable to use more sophisticated methods to improve the rates. The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential.
+In this work we also want to go beyond GGA (Generalized Gradient Approximation, here the PBE functional), because it is known from literature {\color{red} cite} to underestimate reaction rates. Since we are interested in reaction kinetics it therefore is desirable to use more sophisticated methods to improve the rates. The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential.
 \\
 Another ansatz is using Local M\o{}ller Plesset Peturbation Theory of 2$^{\textrm{nd}}$ order (LMP2) as implemented in crystal/cryscor. These calculations are way more computationally demanding but offer better results on a higher level of theory.
 
 \section{Computational Details and Used Programs}
 Vasp4.x, 5.2 and version x (newer), crystal, cryscor%, cp2k+i-pi, Turbomole
 \\
-For all the vasp calculations for the (0001) surface the parameters from prior work in our workgroup was used, like vacuum gap and convergence criteria, because these were converged carefully by Dr. Jonas Wirth. Convergence was achieved when energies between 2 SCF steps was smaller then $10^{-5}\,$eV.
+For all the vasp calculations for the (0001) surface the parameters from prior work in our workgroup was used, like vacuum gap and convergence criteria, because these were converged carefully by Dr. Jonas Wirth. Convergence was achieved when energies between two SCF steps was smaller then $10^{-5}\,$eV.
 \\
-For (11\=20) surface parameters were adopted and used as well. Also here the convergence criterion for the energy of 2 SCF cycles was $10^{-5}\,$eV.
+For (11\=20) surface parameters were adopted and used as well. Also here the convergence criterion for the energy of two SCF cycles was $10^{-5}\,$eV.
 
 For the other programs that were not used before for the calculation of alumina in our group the geometries from the vasp output were used as starting points and the usual convergence criteria of the programs were applied with some exception when convergence was hard to achieve.
 
 \section{Experimental Techniques}
-In this work several experimental techniques were used from our collaborating group at the FHI, that is why the basics of those methods are explained shortly.
+In this work several experimental techniques were used from our collaborating group at the FHI in Berlin, that is why the basics of those methods shall be explained shortly.
 \subsection{Vibrational Sum Frequency Generation}
 energy scheme, uv and IR/visible Laser beam are overlapped spatially and in time, polarization is important, s and p polarized, selection rules: IR and Raman active, specificity for surface only in systems that are not inversion symmetric, good for studying surface systems, no bulk signals (both solid phase and gas phase) due to selection rules
 
