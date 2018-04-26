@@ -173,7 +173,7 @@ Aluminum is used in rocket fuels as a reduction agent so that during launch alum
 Also in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the third most common element in the crust with $6.3\%$ ({\color{red} \begin{verbatim} http://www.uniterra.de/rutherford/tab_hauf.htm\end{verbatim}}
 {\textit{Riedel\cite{Riedel}: Alumina is the most abundant metal in the crust and the third most element therein. Component of  feldspar, Glimmer and clay minerals (with silicates), more seldomly as corundum and "Schmirgel". Some of them are precious stones ruby, saphir}\\
 Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth crust and with that the far most abundant metal}
-) and it also can be seen as a model systems for more complex alumosilicates. Oxide rocks are omnipresent in the crust of the earth and henceforth in most geochemical processes since the times the earth's atmosphere became oxidizing with rise of photosynthetic life forms/(bacteria?) a few million years ago. Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew.
+) and it also can be seen as a model systems for more complex alumosilicates. Oxide rocks are omnipresent in the crust of the earth and henceforth in most geochemical processes since the times the earth's atmosphere became oxidizing with rise of photosynthetic life forms/(bacteria?) 2.3 billion years ago. Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -244,7 +244,7 @@ The lattice can be described by the lattice vector $\vec{B}$. $\vec{a}_i$ are ba
 \begin{equation}
  \vec{B}=n_1\vec{a}_1+n_2\vec{a}_2+n_3\vec{a}_3
 \end{equation}
-Analogue to that, also a reciproce space exists (the so called $\vec{k}$-space) that is defined by the reciproce lattice vector $\vec{G}$ and a set of vectors $\vec{b}_i$ and $h$, $k$, $l$ being integers:
+Analogue to that, also a reciproce space exists (the so called $\vec{k}$-space) that is the Fourier transform of the direct lattice and is defined by the reciprocal lattice vector $\vec{G}$ and a set of vectors $\vec{b}_i$ and $h$, $k$, $l$ being integers:
 \begin{equation}\label{eq:rec_latt_vec}
  \vec{G}=h\vec{b}_1+k\vec{b}_2+l\vec{b}_3
 \end{equation}
@@ -258,12 +258,16 @@ Between the vectors of the direct and the reciprocal space there are fixed relat
 \end{equation}
 and so forth, analogously, and the are perpendicular to each other:
 \begin{equation}
- \vec{a}_i\cdot\vec{b}_j=2\pi\delta_{ij}.
+ \vec{a}_i\cdot\vec{b}_j=2\pi\delta_{ij},
 \end{equation} 
-The unit cell within the reciprocal space is called Wigner-Seitz cell and is also referred to as first Brillouin zone, whose center is the $\Gamma$-point ($h=k=l=0$).
+with $\delta_{ij}$ being the Kronecker delta.
+\\
+The unit cell within the reciprocal space, what is called Wigner-Seitz cell in the real space, is also referred to as first Brillouin zone, whose center is the $\Gamma$-point ($h=k=l=0$). It is a uniquely defined primitive cell in reciprocal space that contains all critical points of interest.
 The integers $h$, $k$, and $l$ from Equation \ref{eq:rec_latt_vec} are also called Miller indices, that can be used to describe the crystallographic planes (position of the surface in the coordinate system). They are determined by finding the point of intersection of the surface plane with the axes of the coordinate system, reduce, then take the reciprocal values and multiply with the least common multiple to gain three integers.
 \\
-Within the hexagonal (and rhombohedral) lattice system, also the Miller-Bravais notation with four indices can be used [$h,k,i,l$]. Here, the relation between $h$, $k$ and $i$ is: $i=-(h+k)$, for example, the (110) surface would be referred to as (11-(1+1)0)=(11\=20), since the minus is expressed by the overbar.
+Within the hexagonal (and rhombohedral) lattice system, also the Miller-Bravais notation with four indices can be used [$h,k,i,l$]. Here, $i$ is redundant and the relation between $h$, $k$ and $i$ is: $i=-(h+k)$, for example, the (110) surface would be referred to as (11-(1+1)0)=(11\=20), since the minus is expressed by the overbar. The advantage of this notation is, that one can identify symmetry-equivalent easily.
+\\
+To express a direction vector in the basis of the direct lattice vectors, the notation [uvw] is used. In general this vector is not perpendicular to the plane (uvw), only for cubic lattice this is the case.
 \\
 
 To describe periodic systems with quantum mechanical methods, one has to introduce periodic boundary conditions. These assume that the effective potential $v_{eff}$ has to be the same in all cells that are given by $\vec{B}$:
