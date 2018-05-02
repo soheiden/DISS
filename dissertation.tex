@@ -47,6 +47,7 @@
 \renewcommand*{\dictumwidth}{0.618\textwidth}
 \renewcommand*{\partpagestyle}{empty}
 \setlength{\parskip}{0pt}
+\newcommand\todo[1]{\textcolor{red}{TODO:\textit{{#1}}}}
 
 %Eigene Mathebefehle
 \def\mathbi#1{\textbf{\em #1}}
@@ -376,11 +377,16 @@ Other methods as tunneling based methods do not work on isolating materials like
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 \section{Surface Model}
-The structure of $\upalpha$-alumina is well known for several years and was studied in many publications {\color{red} cite here some}. It crystallizes in the hexagonal cell, that means $\uline{a}=\uline{b}\neq \uline{c}$, with an angle of $60$\textdegree~ between $\uline{a}$ and $\uline{b}$.
+\todo{Fix Inconsistent figure references, don't always attach ", see figure X"}
+\todo{Shorter sentences, see this diff}
 \\
-To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. Since the (11\=20) surface is not the crystal cut of the top of the shown crystal in figure \ref{abb:crystal_11-20}(a), the cell vectors $\uline{a}$ and $\uline{b}$ are not equal as in the hexagonal cell, but $\uline{a}=10.36$\AA, $\uline{b}=14.16$\AA~ and $\uline{c}=20.5$\AA, with the angle between $\uline{a}$ and $\uline{b}$ of $\theta=84.56$\textdegree.
+The structure of $\upalpha$-alumina has been well known for several years and was studied in many publications \todo{cite some here}. It crystallizes in the hexagonal cell, that means $\uline{a}=\uline{b}\neq \uline{c}$, with an angle of $60$\textdegree~ between $\uline{a}$ and $\uline{b}$.
+\todo{a and b are what?}
 \\
-The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), see Fig.~\ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal are given in Table \ref{tab:layer-dist}. The supercell that is mostly used in this work has 10 layers, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations more layers were considered (up to 25 layers), see figure \ref{abb:cell_sizes}, here also for each slab size the lowest 5 layers were kept fixed, respectively (see chapter \ref{phonons}). The spacing between the 5 top layers is displayed in Table \ref{tab:layer-dist}:
+To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid \todo{unphysical?} interaction between the slabs in z-direction. Since the (11\=20) surface is not the crystal cut of the top of the shown crystal in figure \ref{abb:crystal_11-20}(a), the cell vectors $\uline{a}$ and $\uline{b}$ are not equal as in the hexagonal cell, but $\uline{a}=10.36$\AA, $\uline{b}=14.16$\AA~ and $\uline{c}=20.5$\AA, with the angle between $\uline{a}$ and $\uline{b}$ of $\theta=84.56$\textdegree.
+\todo{First sentence: surface was cut. Second sentence: surface is not the cut?}
+\\
+The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), see Fig.~\ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal are given in Table \ref{tab:layer-dist}. The supercell that is mostly used in this work has 10 layers, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the phonon calculations \todo{Is phonon calculation a defined term?} up to 25 layers were considered, see figure \ref{abb:cell_sizes}. For each slab size the lowest 5 layers respectively were kept fixed, see chapter \ref{phonons}. The spacing between the 5 top layers is displayed in Table \ref{tab:layer-dist}:
 \begin{table}[!ht]
   \centering
  \caption{Distances between the top 5 layers for different slab sizes and the unrelaxed bulk structure. All values are given in \AA.} 
@@ -405,39 +411,39 @@ The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
     \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
-             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the geometry optimized unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers, see main text.}
+             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the geometry optimized unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers.}
             \label{abb:crystal_11-20}
 \end{figure}
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.80\textwidth]{figures/11-20/cell_sizes.pdf}
-             \caption{Side view for the different cell sizes from left to right 10, 15, 20 and 25 layers. Surface atoms are shown in the color code as used before.}
+             \caption{Side view for the different cell sizes for 10, 15, 20 and 25 layers. Surface atoms are shown in the color code used before.}
             \label{abb:cell_sizes}
 \end{figure}
-$\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It was shown that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface, see Fig.~\ref{abb:11-20-kpointsampling}.
+$\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It was shown \todo{We show? Where?} that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface, see Fig.~\ref{abb:11-20-kpointsampling}.
 \begin{figure}[!h]
 \centering
  \includegraphics[width=0.4\textwidth]{figures/11-20/irreducibles-E.eps}
-   \caption{Sampling of the $\vec{k}$-points, shown is the energy of the super cell with respect to the number of irreducible $\vec{k}$-points. The even values correspond to the $2\times 2 \times 1$ (2 irreducibles) and $4\times 4\times 1$ (8 irr.), whereas the odd, that contain the $\Gamma$-point, are described by $1\times 1\times 1$ (1 irr.), $3\times 3\times 1$ (5 irr.) and $5\times 5\times 1$ (13 irr.).}
+   \caption{Sampling of the $\vec{k}$-points, shown is the energy of the super cell with respect to the number of irreducible $\vec{k}$-points. The even values correspond to the $2\times 2 \times 1$ (2 irreducibles) and $4\times 4\times 1$ (8 irr.), whereas the odd, which contain the $\Gamma$-point, are described by $1\times 1\times 1$ (1 irr.), $3\times 3\times 1$ (5 irr.) and $5\times 5\times 1$ (13 irr.).}
             \label{abb:11-20-kpointsampling}
 \end{figure}
 \\
-Starting from this supercell approach there are 16 CUS Al-atoms (cordinatively unsaturated sites), these have less bonds than the aluminum atoms in the bulk structure since the surface layers has to be  depleted. These atoms are very interesting for adorbate molecules/atoms, because these atoms are electron rich and can be addressed for adsorption. If these 16 atoms are covered with adsorbates, here water, we get the system with 1 mono layer (ML). But one has to keep in mind the difference between these 16 surface atoms and the number of potential adsorbates: one monolayer is not built by 16 adsorbates since not all 16 CUS positions can be covered, but only 12, as is shown later (bridging water adsorption).
+Starting from this supercell approach \todo{which approach? just the cell?} there are 16 CUS Al-atoms (cordinatively unsaturated sites). These have fewer bonds than the aluminum atoms in the bulk structure since the surface layer has to be  depleted. These atoms are very interesting for adorbate molecules/atoms, because these atoms are electron rich and can be addressed for adsorption. If these 16 atoms are covered with adsorbates (here \todo{where? in this work?} water) we get a system with 1 mono layer (ML). But one has to keep in mind the difference between these 16 surface atoms and the number of potential adsorbates: one monolayer is not built by 16 adsorbates since not all 16 CUS positions can be covered, but only 12, as is shown later (bridging water adsorption).
 \\
-As is shown with different colors in figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, but the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa, the twofold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the threefold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
+As is shown \todo{as is shown twice} with different colors in figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, 2-fold and 3-fold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, whereas the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa. The twofold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the threefold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
 
 \section{Structure Search}\label{structure_search11-20}
-{\color{red} acid base character of the adsorption, undercoordination of the alumina sites, bidentate adsorption, different types of Al and O cause large variety of possible adsorption sites}
-First a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types, for adsorption energy and Gibb's free energy results see Table \ref{tab:ads_1water}. There is also one metastable molecular species that seems more stable than the found molecular minimum, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
+\todo{acid base character of the adsorption, undercoordination of the alumina sites, bidentate adsorption, different types of Al and O cause large variety of possible adsorption sites}
+First \todo{First sentence should introcude: we found X.} a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. \todo{avoid passive formulations?} It was put on different positions on the surface and let relax. We found 1 molecular minimum and several dissociated species including both CUS and oxygen types. See Table \ref{tab:ads_1water} for adsorption energy and Gibb's free energy results of these species. There is also one metastable molecular species that appears to be more stable than the found molecular minimum \todo{how?}, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
 The adsorption energy is defined by equation \ref{eq:Eads} as the energy of the adsorbed system compared to the energies of the clean surface and the isolated water molecule:
 \begin{equation}\label{eq:Eads}
  E_\textrm{ads}=E_\text{ads. species}-(E_\text{free water molecule}+E_\text{surface}).
 \end{equation}
 
-The nomenclature for the adsorption sites that is used in the following gives at first the type of Al site where the OH-residue (OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH-site$\parallel$H-site). The notation with the $\prime$ that will occur later denotes greater distances between the residues.
+The nomenclature for the adsorption sites that is used in the following gives at first the type of Al site where the OH-residue (OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH-site$\parallel$H-site). The notation with $\prime$ that will occur later denotes greater distances between the residues. \todo{give an example. What does inter mean in that respect?}
 \begin{table}[!ht]
   \centering
- \caption{{\textit change text! Adsorption energies as calculated from equation \ref{eq:Eads}
+ \caption{{\textit \todo{change text!} Adsorption energies as calculated from equation \ref{eq:Eads}
  for molecular and (singly) dissociated water on $\upalpha$-\ce{Al2O3}(11\=20)
 according to periodic PBE+D2 calculations. Also the corresponding 
 adsorption free energies $G_\textrm{ads}$ at $130$, $300$ and $400\,$K defined 
@@ -474,17 +480,18 @@ energies are given in eV.}
 \subfigure[CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb3.pdf}}
  \quad
 \subfigure[inter-CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb3.pdf}}
- \caption{{\textit change text! Adsorption geometries for molecular (a) and (six) dissociated water 
+ \caption{{\textit \todo{change text!} Adsorption geometries for molecular (a) and (six) dissociated water 
 molecules ((b)-(g)) are shown, as obtained by periodic PBE+D2. The most favorable 
 molecularly and dissociatively adsorbed configurations are shown. This means that 
 we show nearest neighbor structures only (see text). The color code is the same 
 as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2$ yellow and O-$
-\mu_3$ red; Hydrogen is displayed in white, subsurface layers are in pale colors.}}
+\mu_3$ red; Hydrogen is displayed in white, subsurface layers are in pale colors. \todo{consider highlighting the new/different atoms}}}
         \label{abb:ads-geoms}
  \end{figure}
-The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, also in comparison with the more stable surface cuts (0001) and (1\=102) that were investigated before in our group by Dr. Jonas Wirth\cite{C6CP01397J,WirthJPCC2012}. Dissociated species, where the proton is located at a twofold coordinated surface oxygen is far more stable than the corresponding systems where the threefold coordinated is occupied, since the higher negative charge and the higher basicity of such a twofolded oxygen atom in comparison with the more saturated threefold coordinated O-$\mu_3$ oxygen atom. Also the adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site, because the former corresponds to a site where in the bulk system another oxygen atom would be situated, which is not the case for the CUSb position.
 \\
-Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see Table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H. In the table one can see, that the inter-CUSb||O-$\mu_3^{\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^\prime$. This is due to the fact, that the periodic conditions lead to the decrease of the distance between OH groups again, so that between 3 neighboring OH groups in the O-$\mu_3^\prime$ system the distances are $0.68$ and $0.77\,$nm, whereas in the O-$\mu_3^{\prime\prime}$ system the distances are $0.93$ and $0.62\,$nm, where the latter one is closer by, so there is more stabilization. For examples of further diffusion reactions, see chapter \ref{reactions}.
+The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, also \todo{even?} in comparison with the more stable surface cuts (0001) and (1\=102) that were previously investigated in our group by Dr. Jonas Wirth\todo{\cite{C6CP01397J,WirthJPCC2012}}. Dissociated species, where the proton is located at a twofold coordinated surface oxygen are far more stable than the corresponding systems where the threefold coordinated is occupied. This is due to the higher negative charge and the higher basicity of such a twofolded oxygen atom in comparison with the more saturated threefold coordinated O-$\mu_3$ oxygen atom. Also the adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site, because the former corresponds to a site where in the bulk system another oxygen atom would be situated, which is not the case for the CUSb position.
+\\
+Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see Table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H. In the table one can see that the inter-CUSb||O-$\mu_3^{\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^\prime$. This is due to the fact that the periodic conditions lead a the decrease of the distance between OH groups again\todo{again?}, so that the distances between 3 neighboring OH groups in the O-$\mu_3^\prime$ system are $0.68$ and $0.77\,$nm, compared to $0.93$ and $0.62\,$nm in the O-$\mu_3^{\prime\prime}$ system, where the latter one is closer, so there is more stabilization \todo{split this sentence.}. For examples of further diffusion reactions, see chapter \ref{reactions}.
 \begin{table}[!ht]
   \centering
  \caption{Comparison of next neighbor dissociated species and species where OH and H are further apart. 
@@ -501,7 +508,7 @@ Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water
   \label{tab:ads_1waterfurther}
 \end{table}
 \\
-Systems with more layers were also studied and the adsorption energy results are shown in Table \ref{tab:eads_layers}. Basically the results don't change much with increasing slab size. The molecular species is still less stable than most of the dissociated species, inter-CUSa$\parallel$O-$\mu_2$ is the most stable structure through all the sampled systems, inter-CUSb$\parallel$O-$\mu_2$ and CUSb$\parallel$O-$\mu_2$ change their stability depending on the number of layers but still are some orders of magnitude less probable than inter-CUSa$\parallel$O-$\mu_2$. Dissociated systems occupying the threefold coordinated surface oxygen atom are in the same stability order, relatively to each other. For higher number of layers, the inter-CUSb gets more favourable than CUSb, both for O-$\mu_2$ and O-$\mu_3$. This might be due to less interaction between neighboring oxygen atoms with the inter-CUSb adsorbed OH group.
+Systems with more layers were \todo{avoid passive?} also studied and the adsorption energy results are shown in Table \ref{tab:eads_layers}. Basically the results do not change much with increasing slab size. The molecular species still is less stable than most of the dissociated species \todo{most? mention the ones thate are different?}. inter-CUSa$\parallel$O-$\mu_2$ is the most stable structure through all the sampled systems, inter-CUSb$\parallel$O-$\mu_2$ and CUSb$\parallel$O-$\mu_2$ change their stability depending on the number of layers but still are some orders of magnitude less probable than inter-CUSa$\parallel$O-$\mu_2$. Dissociated systems occupying the threefold coordinated surface oxygen atom are in the same stability order\todo{remove:}, relatively to each other. For higher number of layers, the inter-CUSb gets more favourable than CUSb, both for O-$\mu_2$ and O-$\mu_3$. This might be due to less interaction between neighboring oxygen atoms with the inter-CUSb adsorbed OH group.
   \begin{table}[!ht]
   \centering
   \caption{Adsorption energies calculated from equation \ref{eq:Eads} for molecular and dissociated species for different vertical slab sizes. All values are in eV.}
@@ -517,15 +524,16 @@ inter-CUSb$\parallel$O-$\mu_3$          &-1.89 &-1.59 &-1.65 &-2.09
 \label{tab:eads_layers}
 \end{tabular}
  \end{table}
-This brings the point into attention that the system is already converged for the 10-layer slab referring to adsorption energies (and also vibrational OH/OD frequencies as can be seen later in section \ref{nma}).
 \\
-Also systems with a higher water coverage were considered, some cases for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get vibrational spectra, see also chapter \ref{phonons}. {\color{red} Figures of geometries here or later next to the spectrum?}
+This brings the point into attention that the system is already converged for the 10-layer slab referring to adsorption energies (and also vibrational OH/OD frequencies as can be seen later in section \ref{nma}). \todo{what is "this"?. Now that you brought htis to attention, do something with it?}
+\\
+Also systems with a higher water coverage were considered\todo{avoid passive}, some cases for 2 water molecules, 4 inter-CUSa$\parallel$O-$\mu_2$ and a fully covered supercell, for these systems also normal mode analyses were done to get vibrational spectra, see also chapter \ref{phonons}.\todo{too many alsos} \todo{Figures of geometries here or later next to the spectrum?}
 
 The stability of those species with higher water coverage is defined as
 \begin{equation}
  E_\textrm{ads}=E_\text{ads. species}-(E_\text{free water molecule}\times n+E_\text{surface}),
 \end{equation}
- with $n$ being the number of water molecules adsorbed on the surface. In Table \ref{tab:higher_water}, the adsorption energies are given.
+ with $n$ being the number of water molecules adsorbed on the surface. In Table \ref{tab:higher_water}, the adsorption energies for the species mentioned above are given.
 \begin{table}[!ht]
   \centering
  \caption{Adsorption energies in eV for higher water coverages. For comparison in the third column the added energies for singly adsorbed water are shown.
@@ -547,11 +555,11 @@ The stability of those species with higher water coverage is defined as
 \end{table}
 Comparing these results for the higher coverages to results with only one adsorbate, just by adding the adsorption energy one can see the following (see also column 3 in Table \ref{tab:higher_water}):
 For all systems the added energy of the singly adsorbed species is more stable than the doubly adsorbed water systems. Instead of stabilizing the whole system, they are destabilized by the adsorption neighborhood, even in structures that contain hydrogen bonds.
-{\color{red} do neighbors stabilize molecular adsorption?? In Phonon paper, Eads(Cb+Cb2)=-4.57eV, sum of the two individually is -4.06eV, so there is in fact a stabilizing effect!, For inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$ there is no effect and for inter-CUSa$\parallel$O-$\mu_2$inter-CUSa$\parallel$O-$\mu_2$, there is clear destabilization!
+\todo{do neighbors stabilize molecular adsorption?? In Phonon paper, Eads(Cb+Cb2)=-4.57eV, sum of the two individually is -4.06eV, so there is in fact a stabilizing effect!, For inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$ there is no effect and for inter-CUSa$\parallel$O-$\mu_2$inter-CUSa$\parallel$O-$\mu_2$, there is clear destabilization!
 \\ What is the respective coverage? 0.xyML}
 \\
-As a short excursus, also a ``defect site'', the O-II terminated surface, as it is called by Kurita \cite{kuri10} was calculated. As for the O-I termination, 10 layers were considered and from these the lowest five layers were kept fixed to bulk values. Both the clean surface and the fully covered ($1\,$ML) surface were optimized and geometry optimizations were done, in order to have a comparison to the experiment. The structure of the clean surface, of course, differs by the ``missing'' oxygen O-$\mu_2$ atom in the topmost layer, but the fully covered system is more different: of 12 water molecules that can adsorb, 7 are adsorbed molecularly and 5 dissociatively. In comparison, the fully covered system for the O-I termination only shows one molecularly adsorbed molecule.
-{\color{red} Figures of structure here and spectra in chapter lattice vibrations!}
+As a short excursus, also a ``defect site'', the O-II terminated surface, as it is called by Kurita \cite{kuri10} was calculated. As for the O-I termination, 10 layers were considered and from these the lowest five layers were kept fixed to bulk values. Both the clean surface and the fully covered ($1\,$ML) surface were optimized and geometry optimizations were done\todo{rephrase. avoid "were done"}, in order to have a comparison to the experiment. The structure of the clean surface, of course, differs by the ``missing'' oxygen O-$\mu_2$ atom in the topmost layer, but the fully covered system is more different: of 12 water molecules that can adsorb, 7 are adsorbed molecularly and 5 dissociatively \todo{chose either active or passive for adsorb}. In comparison, the fully covered system for the O-I termination only shows one molecularly adsorbed molecule.
+\todo{Figures of structure here and spectra in chapter lattice vibrations!}
 
 \section{Reactions and Microkinetic Model}\label{reactions}
 Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system, so we utilize the NEB method including Climbing Image to search for transition states between the minima. We examined 3 different types of reactions: dissociation from the molecular minimum, as well as OH- and H-diffusion. The dissociation reactions are named D, diffusion reaction with Df-OH and Df-H, respectively, in Table \ref{tab:reaction-rates} and figures \ref{mep} and \ref{mep2}. In reference {\color{red} 11-20paper} only some reactions were introduced, additional reactions paths are given here.
