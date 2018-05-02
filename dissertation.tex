@@ -270,14 +270,30 @@ Within the hexagonal (and rhombohedral) lattice system, also the Miller-Bravais 
 To express a direction vector in the basis of the direct lattice vectors, the notation [uvw] is used. In general this vector is not perpendicular to the plane (uvw), only for cubic lattice this is the case.
 \\
 
-To describe periodic systems with quantum mechanical methods, one has to introduce periodic boundary conditions. These assume that the effective potential $v_{eff}$ has to be the same in all cells that are given by $\vec{B}$:
+To describe a periodic system with quantum mechanical methods, one has to introduce periodic boundary conditions. This includes that the periodicity of the nuclei is reflected by the perdiodicity of the effective potential $v_{eff}$, which has to be the same in all cells that are given by $\vec{B}$:
 \begin{equation}
  v_{eff}(\vec{r})= v_{eff}(\vec{r}+\vec{B}).
 \end{equation}
-
-
+According to the Bloch theorem the wave function value at equivalent positions in different cells are related to each other wiht a phase factor with the lattice vector $\vec{t}$:
+\begin{equation}
+ \phi(\vec{r} + \vec{t})=e^{i\vec{k}\cdot\vec{t}}\phi(\vec{r})
+\end{equation}
+In this equation the crytstalline orbital $\phi$ for the $n^\textrm{th}$ band can be understood as having one wave-like and one cell periodic part $\varphi$, also known as Bloch orbital:
+\begin{equation}
+ \phi_{n,k}(\vec{r})=e^{i\vec{k}\cdot\vec{r}}\varphi_n(\vec{r}).
+\end{equation}
+Bloch orbitals can be expanded as a set of plane wave functions ($\chi^\textrm{PW}$). Solutions are now dependend on the reciprocal space vector $\vec{k}$ leading to a Roothaan-Hall expression:
+\begin{equation}
+ \vec{F}^k\vec{C}^k=\vec{S}^k\vec{C}^k\vec{$\varepsilon$}^k
+\end{equation}
+The solutions give a band (range of energies) and are a continuous function. For the total energy / unit cell one has to integrate over the $\vec{k}$ space. For non-metallic systems the integration can be done numerically using only a few points\cite{monkhorst}.
+In analogy to molecular HOMO orbital, the energy of the highest filled band is called Fermi energy. The band gap, equivalent to HOMO-LUMO gap, is between the highest filled and the lowest empty band. In metallic systems, there is no bandgap, whereas in insulating systems the band gap is large {\color{red} value?}.
+\\
+As was raised before basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set.
 \section{Atom Centered Basis and Peculiarities}
-Problem of plane waves for necessity of atom centered bases; Whenver there are atom centered basid sets the orbitals can overlap and due to this electrons are considered multiple times. This is called Basis Set Superposition Error (BSSE). One can apply Counterpoise corrections to get rid of this source of error. This is done here by calculating ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms. Then one applies a substractive scheme to cancel out the effect of the orbital overlap. On the other hand one can use a huge basis set, that doesn't have this problem, which comes with a higher computational demand.
+\textit{Problem of plane waves for necessity of atom centered bases}
+\\
+Whenver there are atom centered basid sets the orbitals can overlap and due to this electrons are considered multiple times. This is called Basis Set Superposition Error (BSSE). One can apply Counterpoise corrections to get rid of this source of error. This is done here by calculating ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms. Then one applies a substractive scheme to cancel out the effect of the orbital overlap. On the other hand one can use a huge basis set, that doesn't have this problem, which comes with a higher computational demand.
 
 
 \section{{\textit Ab-initio} Molecular Dynamics}
