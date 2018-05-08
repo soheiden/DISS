@@ -54,6 +54,7 @@
 \renewcommand{\vec}[1]{\mathbi{#1}}
 \renewcommand{\i}{{\mathrm{i}}}
 \addtokomafont{disposition}{\boldmath}
+\def\doubleunderline#1{\underline{\underline{#1}}}
 
 %Überschriften
 \addtokomafont{part}{\huge}
@@ -197,7 +198,7 @@ Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth cru
 %Tabellenverzeichnis?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theory und Methodology}
-In this chapter the basics of the applied theoretical methods shall be explained. Starting from the basics of Density Functional Theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab-initio} Molecular Dynamics. Then going to frequency calculations and intensities over Transition State Theory to more developed methods like hybrid functionals and Perturbation Theory.
+In this chapter the basics of the applied theoretical methods shall be explained. Starting from the basics of Density Functional Theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab initio} Molecular Dynamics. Then going to frequency calculations and intensities over Transition State Theory to more developed methods like hybrid functionals and Perturbation Theory.
 \\{\color{red} MAKE SURE THAT ALL VARIABLES ARE CONSISTENT!}
 \section{Density Functional Theory}
 The idea of density functional theory (DFT) is based on the Hohenberg Kohn theorems, that connect the ground state electronic energy to the electron density $n(\vec{r})$, there exists a one to one correspondence. If $\Psi(\vec{r}^N)$ is a N-electron wavefunction, then the  electron density can be given as
@@ -231,7 +232,7 @@ only perfect surface, no defects and if there are defects they are also repeated
 % Brillouin zone,
 % $\vec{k}$-points,
 % Bloch theorem.
-irreducible $\vec{k}$-points necessary for describing the system,
+irreducible $\vec{k}$-points necessary for describing the system $\rightarrow$ reduction due to symmetry
 % direct and reciproce room,
 % how to convert between these two with the lattice vectors
 }}
@@ -299,13 +300,38 @@ Whenver there are atom centered basid sets the orbitals can overlap and due to t
 In contrast to PW calculations due to the locality of the basis, the true dimensionality is obeyed. Probably, the biggest advantage of atom centerd bases is that exact exchange and hybrid methods are standard methods.
 Transfering atom centered bases to periodic systems is not trivial, especially for bases including many diffuse Gaussians.
 
-\section{{\textit Ab-initio} Molecular Dynamics}
-Microcanonical and Canonical ensemble, also called NVT and NVE. Difference between the two, N number of (?), V volume of the cell, T temperature and E energy; are kept constant. theory behind, calcuation of time propagation with Verlet algorithm, time steps chosen so that we don't miss the fastest processes, forces acting on atoms, Nos\'{e} Hoover thermostat.
+\section{\textit{Ab Initio} Molecular Dynamics}
+\todo{Microcanonical and Canonical ensemble, also called NVT and NVE. Difference between the two. Nos\'{e} Hoover thermostat.}
 \\
-Solve Newton's equations of motion, in principle $F=m\cdot a$ for force acting on each atom, classical ansatz.
+
+Apart from solving stationary problems, \textit{Ab initio} Molecular Dynamics (AIMD) can deliver results for time dependent processes\cite{jensen,marx_hutter_AIMD}. This is necessary for simulating transport/diffusion processes as well as spectral properties. For this, Newton's equation of motion is solved:
 \begin{equation}
  -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 \end{equation}
+cwith the potential energy $V$ that is a function of all nuclear coordinates $\vec{R}$, the vector $\vec{R}_A$ that contains all coordinates of atom $A$, the atomic mass $M_A$ and the time $t$. This equation gives in principle $F=M_A\cdot a$, the forces acting on each atom in a classical ansatz. This is a good approximation for nuclei are usually sufficiently massive to be treated classically. Strictly speaking, this is not sufficient for hydrogen, since it is so lightweight, that quantum mechanical tunneling processes can not be excluded. For treating quantum effects like zero point energy and tunneling one would have to solve the nuclear Schrödinger equation.
+\\
+As starting conditions, positions and momenta of the atoms have to be given. Between two time steps of the propagation there is a time span $\Delta t$. The time propagation can be done with the Verlet alogrithm\cite{verlet} numerically, delivering the trajectory $\vec{R}(t)$:
+\begin{equation}\label{eq:t+dt}
+ \vec{R}_A(t+\Delta t) = \vec{R}_A(t) + \vec{v}_A(t)\cdot \Delta t + \frac{1}{2}\vec{a}_A(t)\cdot \Delta t^2 + ...
+ \end{equation}
+ \begin{equation}\label{eq:t-dt}
+ \vec{R}_A(t-\Delta t) = \vec{R}_A(t) - \vec{v}_A(t)\cdot \Delta t + \frac{1}{2}\vec{a}_A(t)\cdot \Delta t^2 \pm ...
+\end{equation}
+the previous and next time steps are approximated by a Taylor expansion with the velocity $\vec{v}_A(t)$ of atom $A$ (the derivative of the coordinates with respect to time $t$, $\frac{\partial \vec{R}_A}{\partial t}$), the acceleration $\vec{a}_A(t)=\frac{\partial^2 \vec{R}_A}{\partial t^2}$.
+With equations \ref{eq:t+dt} and \ref{eq:t-dt} one can predict the positions at a later time step from the current and the previous positions and the acceleration:
+\begin{equation}
+ \vec{R}_A(t+\Delta t)=(2\vec{R}_A(t) - \vec{R}_A(t-\Delta t)) + \vec{a}_A(t)(\Delta t)^2 + \ldots
+\end{equation}
+with the acceleration, that must be evaluated at each time step from the potential (gradient of the forces):
+\begin{equation}
+ \vec{a}_A(t)=-\frac{1}{M_A}\frac{dV}{d\vec{R}_A}.
+\end{equation}
+This allows for the time propagation that gives the trajectory.
+\\
+The time step $\Delta t$ is an important parameter, it has to be small enough to describe the fastest processes of interest. Therefore it is typically around $10^{-15}$s, fpr examle a molecular vibration of $3000\,$cm$^{-1}$ corresponds to $\approx 10^{14}$s$^{-1}$. On the other hand, a sufficiently long time has to be propagated to measure all chemically relevant processes, usually $10^{-9}$s. The smaller the time step the more accurate the simulation gets, but with decreased time steps, one has to propagate longer to gain the same duration, which increases the computational time drastically. Additionally, it may be necessary to compute several trajectories instead of just a single one, for reasonable averaging.
+\\
+The simulations are characterized by the following parameters: the total energy E, the temperature T, volume V, pressure p, the number of particles N and the chemical potential $\mu$. Not all of these are independent, either V or p can be constant. The corresponding ensemble is named after the fixed quantities, \textit{e.g.} NVT (=canonical) and NVE (=microcanonical).
+
 
 \section{Frequencies and Intensities}
 Normal Mode Analysis, diagonalization of the Hessian, eigenvalues are frequencies squared. While this is a good approximation for the high energy vibration, for example OD stretch vibrations, it becomes worse for lattice vibrations, which are way more delocalized.
@@ -314,9 +340,9 @@ A characteritic of stationary points on the potential energy surface is, that th
  H_{ij}=\left( \frac{\partial^2 V}{\partial Q_i \partial Q_j} \right)_{|Q_i=Q_j=0}=\left(\frac{1}{\sqrt{m_i m_j}} \frac{\partial^2 V}{\partial R_i \partial R_j} \right)
 \end{equation}
 Here, $Q_i$ are mass weighted coordinates $Q_i=\sqrt{m_i}R_i$, with the mass $m_i$ and the displacement from the equilibrium position $R_i$.
-Then the matrix problem for the Hessian ${\color{red} H}$ has to be solved:
+Then the matrix problem for the Hessian $\doubleunderline{H}$ has to be solved:
 \begin{equation}
- \stackrel{H}{=}\vec{A}_i=\lambda_i\vec{A}_i.
+ \doubleunderline{H} \vec{A}_i=\lambda_i\vec{A}_i.
 \end{equation}
 with the vectors of the normal modes $A_i$ and $\lambda_i$ being the squares of vibrational freqencies $\omega_i$: 
 \begin{equation}\label{eq:omegafromlambda}
@@ -721,7 +747,7 @@ Of course, the frequencies for a deuterated system are different from OH, but th
 \\
 {\color{red} Better put this in theory part? In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in UHV and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source. For further details see \cite{Heiden11-20_2018} and the supporting information.}
 \\
-To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and for some systems also power spectra from \textit{ab-initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
+To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and for some systems also power spectra from \textit{ab initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
 \\
 We focus mainly on the position of the peaks rather than the intensities, because in the first place it is of greater interest what kind of vibrations gives which peak than the intensity of this peak. It is also still challenging to get the frequencies right before heading to intensities.
 In the power spectra from MD calculations the intensities are implicitly received and for the normal mode analyses this work follows 2 different approaches, dipole corrections and Born effective charges.
@@ -825,7 +851,7 @@ For the phonons as a first test the same normal modes analyses were checked to g
 \subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
 Extract vel vel autocorrelation function from MD at $300\,$K (and also $400\,$K?) from most stable structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$), with Fourier transformation converted to VDOS spectrum. It also is possible to separate modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage? So for Giacomo's system it makes sense, but here it is unnecessary.
 
-{\color{red} totally different ansatz, no freq analysis, no harmonic approximation, but ab-initio MD trajectories at 300K, starting from optimized minimum structures. trajectory duration of 1-a few ps. calculating vac, fourier transform gives power spectra, no real IR, but still one can relate to intensities. results for trajectories.}
+{\color{red} totally different ansatz, no freq analysis, no harmonic approximation, but \textit{ab initio} MD trajectories at 300K, starting from optimized minimum structures. trajectory duration of 1-a few ps. calculating vac, fourier transform gives power spectra, no real IR, but still one can relate to intensities. results for trajectories.}
 \section{Desorption Process}
 Not only the reactions at the surface are of interest but also the process of adsorption and desorption were studied. The experimentalist's method to do so is TPD (thermal desorption spectroscopy). It is possible to measure the bond strength of the adsorbates, depending on the temperature they can be found in the corresponding spectrum. The sample was flashed to $400\,$K to get rid of impurities. The results showed two peaks, one beneath $400\,$K and one above. This peak beneath $400\,$K hould not be visible, since the sample was heated to that temperature and all adsorbates that are released beneath this temperature should not be there any more. The only plausible explanation to this is, that there are reactions, that fill this species up and so the desorption can still be from this species.
 \\
@@ -854,7 +880,7 @@ Applying the reaction rates of the corresponding reactions in a kinetic Monte Ca
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(0001)}
 The (0001) surface is the most stable surface site of alumina under UHV conditions, and was subject of several studies so far. Both experimental and theoretical studies discovered lots of characteristics and specialties of this crystal cut. In our workgroup previous work was done concerning the stability of low limit water coverage and their vibrational spectroscopic behaviour, reaction pathways between these stable minima, but also studying higher water coverages and hydroxylated surface systems. In this work, the focus lies more on two topics:
 \\
-(i) understanding the processes of a water molecule (D$_2$O) being shot at the surface with a molecular beam source with the help of \textit{ab-initio} Molecular Dynamics and
+(i) understanding the processes of a water molecule (D$_2$O) being shot at the surface with a molecular beam source with the help of \textit{ab initio} Molecular Dynamics and
 \\
 (ii) the improvement of reaction rates with different methods beyond GGA functionals (as PBE).
 \\
@@ -918,7 +944,7 @@ Intro, Hass, pinhole dosing vs. molecular beam source (= equilibrium situation v
 \\
 {\color{red} Should I put the data in the appendix?}
 %%%%%%%%%%OLD VERSION%%%%%%%%%%%%%%%%%
-% Hass et. al. discussed the idea whether water will adsorb molecularly first and then dissociate or if direct dissociation upon adsorption is possible. To tackle this question for the experimental technique of the molecular beam source, we apply both microcanonical and canonical \textit{ab-initio} MD to simulate water in the beam approaching the surface. Interestingly, these experiments also show a higher disociation probability compared to pinhole dosing, that leads to an ensemble in thermal equilibrium, whereas MBS leads to a non-equilibrium situation. We start in the low coverage limit by letting one single, rigid molecule approach the $2\times 2$ supercell with only a linear momentum towards the surface. We later on continue with different approaches to more realistic beams and to more realistic surface situations. In the beam regime we probe water clusters, namely pre-optimized %(H$_2$O)$_2$ and
+% Hass et. al. discussed the idea whether water will adsorb molecularly first and then dissociate or if direct dissociation upon adsorption is possible. To tackle this question for the experimental technique of the molecular beam source, we apply both microcanonical and canonical \textit{ab initio} MD to simulate water in the beam approaching the surface. Interestingly, these experiments also show a higher disociation probability compared to pinhole dosing, that leads to an ensemble in thermal equilibrium, whereas MBS leads to a non-equilibrium situation. We start in the low coverage limit by letting one single, rigid molecule approach the $2\times 2$ supercell with only a linear momentum towards the surface. We later on continue with different approaches to more realistic beams and to more realistic surface situations. In the beam regime we probe water clusters, namely pre-optimized %(H$_2$O)$_2$ and
 % (H$_2$O)$_4$ cluster, which is shot onto the surface. Another improvement to the beam lies in exciting the molecule either vibrationally and/or rotationally. These excitations were chosen from a normal mode analysis and the resulting stretch and bending modes.
 % \\
 % For improving the surface we first use a preequilibrated surface at $300\,$K, but also go to a surface situation in which already one water molecule is adsorbed. To pay attention to the equilibrium situation we considered a molecular preadsorbed water molecule,  the most stable 1-2 dissociated state as well as the 1-4 dissociated structure.
