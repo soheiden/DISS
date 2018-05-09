@@ -303,12 +303,12 @@ Transfering atom centered bases to periodic systems is not trivial, especially f
 \section{\textit{Ab Initio} Molecular Dynamics}
 \todo{Microcanonical and Canonical ensemble, also called NVT and NVE. Difference between the two. Nos\'{e} Hoover thermostat.}
 \\
-
 Apart from solving stationary problems, \textit{Ab initio} Molecular Dynamics (AIMD) can deliver results for time dependent processes\cite{jensen,marx_hutter_AIMD}. This is necessary for simulating transport/diffusion processes as well as spectral properties. For this, Newton's equation of motion is solved:
 \begin{equation}
  -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 \end{equation}
-cwith the potential energy $V$ that is a function of all nuclear coordinates $\vec{R}$, the vector $\vec{R}_A$ that contains all coordinates of atom $A$, the atomic mass $M_A$ and the time $t$. This equation gives in principle $F=M_A\cdot a$, the forces acting on each atom in a classical ansatz. This is a good approximation for nuclei are usually sufficiently massive to be treated classically. Strictly speaking, this is not sufficient for hydrogen, since it is so lightweight, that quantum mechanical tunneling processes can not be excluded. For treating quantum effects like zero point energy and tunneling one would have to solve the nuclear Schrödinger equation.
+with the potential energy $V$ that is a function of all nuclear coordinates $\vec{R}$, the vector $\vec{R}_A$ that contains all coordinates of atom $A$, the atomic mass $M_A$ and the time $t$. This equation gives in principle $F=M_A\cdot a$, the forces acting on each atom in a classical ansatz with the velocity $a$. This is a good approximation for nuclei are usually sufficiently massive to be treated classically. Strictly speaking, this is not sufficient for hydrogen, since it is so lightweight, that quantum mechanical tunneling processes can not be excluded. For treating quantum effects like zero point energy and tunneling one would have to solve the nuclear Schrödinger equation.\\
+In comparison to classical Molecular Dynamics, where predefined potentials or force fields based on either empirical data or electron structure methods are used, \textit{ab initio} MD calculates the potential and the respective (Hellmann-Feynman) forces ``on-the-fly'' at each time step. This has the advantage, that no further parameterization has to be done when changing atoms or molecular groups/surfaces etc. Also a change in electron structure along the trajectory can be compensated without the necessity of another potential/force field to describe interatomic interactions.
 \\
 As starting conditions, positions and momenta of the atoms have to be given. Between two time steps of the propagation there is a time span $\Delta t$. The time propagation can be done with the Verlet alogrithm\cite{verlet} numerically, delivering the trajectory $\vec{R}(t)$:
 \begin{equation}\label{eq:t+dt}
@@ -331,11 +331,15 @@ This allows for the time propagation that gives the trajectory.
 The time step $\Delta t$ is an important parameter, it has to be small enough to describe the fastest processes of interest. Therefore it is typically around $10^{-15}$s, fpr examle a molecular vibration of $3000\,$cm$^{-1}$ corresponds to $\approx 10^{14}$s$^{-1}$. On the other hand, a sufficiently long time has to be propagated to measure all chemically relevant processes, usually $10^{-9}$s. The smaller the time step the more accurate the simulation gets, but with decreased time steps, one has to propagate longer to gain the same duration, which increases the computational time drastically. Additionally, it may be necessary to compute several trajectories instead of just a single one, for reasonable averaging.
 \\
 The simulations are characterized by the following parameters: the total energy E, the temperature T, volume V, pressure p, the number of particles N and the chemical potential $\mu$. Not all of these are independent, either V or p can be constant. The corresponding ensemble is named after the fixed quantities, \textit{e.g.} NVT (=canonical) and NVE (=microcanonical).
-
+\\
+In a microcanonical ensemble (NVE) the system is isolated (it can not exchange particles or energy with the surroudings) and the total energy $E$ is fixed. Computationally, it can be implemented easily. In experiments usually not the energy but the temperature are controlled.
+In contrast to that in a canonical ensemble (NVT) the system is \todo{in thermal equilibrium / coupled} with a heat bath, also referred to as thermostat. $T$ (on average) is given by the temperature of the thermostat.
+For this thermostat, several models are available, in this work the Nos\'{e}-Hoover thermostat\cite{nose1984,nose1984_2,hoover1985} is used. The energy accounting of the heat bath is realized by a fictious particle, that is propagated like real particles of the system and acts like a reservoir of energy fot the heat bath. The total energy of the extended system is again a conserved quantity and therefore a control parameter.
 
 \section{Frequencies and Intensities}
-Normal Mode Analysis, diagonalization of the Hessian, eigenvalues are frequencies squared. While this is a good approximation for the high energy vibration, for example OD stretch vibrations, it becomes worse for lattice vibrations, which are way more delocalized.
-A characteritic of stationary points on the potential energy surface is, that the derivation with respect to all coordinates equals 0. For these points (minima and saddle points of first order) the Hessian matrix and their eigenvalues are of interest. The elements of this Hessian are the derivation of the potential with respect to coordinates:
+\todo{While this is a good approximation for the high energy vibration, for example OD stretch vibrations, it becomes worse for lattice vibrations, which are way more delocalized.}
+\\
+A characteritic of stationary points on the potential energy surface is, that the derivation with respect to all coordinates equals 0. For these points (minima and saddle points of first order) the Hessian matrix $\doubleunderline{H}$ and their eigenvalues are of interest. The elements of this Hessian are the derivation of the potential with respect to coordinates:
 \begin{equation}
  H_{ij}=\left( \frac{\partial^2 V}{\partial Q_i \partial Q_j} \right)_{|Q_i=Q_j=0}=\left(\frac{1}{\sqrt{m_i m_j}} \frac{\partial^2 V}{\partial R_i \partial R_j} \right)
 \end{equation}
@@ -350,14 +354,21 @@ with the vectors of the normal modes $A_i$ and $\lambda_i$ being the squares of 
 \end{equation}
 One has to distinguish two physically relevant cases: all eigenvalues are positive ($\lambda_i\geq 0 \forall i$) so the structure is a minimum on the PES. This could be the educt and product of a reaction. The second relevant case is if there is only one negative eigenvalue, that gives according to equation \ref{eq:omegafromlambda} one imaginary frequency, respectively. This is in a mathematical sense a saddlepoint of first order and can be interpreted as a transition state.
 \\
-dipole corrected NMA intensity can be calculated for IR spectra, not the same selection rules as for SFG but as a first approach should be feasible. Selection rules for SFG IR+Raman active, also the medium must not be version symmetric. {\color{red} put the selection rules into the experimental details section?}
-\\
-Tests with Born-effective charges: Intensities are also calculated via Born effective charges (BEC) where surface charges are determined and from that the intensities are obtained (dipole = charge*distance, $\mu^2\propto I$).
-\\
-Calculation of power spectra via velocity-velocity autocorrelation function from canonical MD trajectories. The vibrational density of states (VDOS) can be interpreted as the peaks of the spectrum. Through the motion of the atoms already some kind of quantum effects (not explicitly) are included.
+To calculate intensities there are several methods available with three being presented in this work:
+\begin{itemize}
+ \item[I)] The IR intensities for each normal mode are estimated from the derivative of the dipole moment with respect to the atomic positions, also known as dynamical dipole moment\cite{dyn-dip}. Transition dipole moments of vibrations are determined by $I\propto <i|\hat{\mu}|f>^2$. For this approach, only the dipole components perpendicular to the surface are taken into account. Only these can be measured in respective SFG spectra. These are not completely comparable to IR spectra but IR sensitivity is next to Raman activity one of the selection rules for SFG. Additionally the process is only visible for interfaces.
+ \todo{Put the selection rules into the experimental details section?}
+ 
+ \item[II)] Another way to get intensities is by calculating the Born effective charges, as it was done in the work of Grillo \textit{et al.}\cite{BEC}. With the charges the dipole and also the intensities are available through $\mu=\textrm{charge} \times \textrm{distance}$, and again, $I\propto \mu^2$. Both methods are based on normal mode analyses and therefore give IR intensities.
+ 
+ \item[III)] As a fundamentally different method, power spectra can be calculated from \textit{ab initio} MD trajectories\cite{VAC}. This is done by analyzing the movement of the atoms along the trajectories, giving the vibrational spectrum via fast Fourier transformation of the velocity-velocity autocorrelation function:
 \begin{equation}
- VDOS(\omega)=\sum_{i=1}^N\int_{-\infty}^{+\infty}<v_i(t)\cdot v_i(0)>e^{i\omega t}dt
+ VDOS(\omega)=\sum_{i=1}^N\int_{-\infty}^{+\infty}<v_i(t)\cdot v_i(0)>e^{i\omega t}dt ~.
 \end{equation}
+VDOS is the vibrational density of states, $v_i$ are the velocities at different times and $\omega$ is the frequency. The resulting spectra include implicitly anharmonic and quantum effects. No harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account. Still, further anharmonic effects like mode coupling, overlapping of neighboring peaks and line broadening\cite{hornicek2007,hudecova2012} are missing.
+The power spectrum contains peaks for each normal mode vector apart from selection rules for vibrational spectroscopy. Intensities correspond to the oscillator amplitudes.
+\end{itemize}
+
 
 \section{Finding Transition States}
 One of the most prominent and widely used theories describing the transition state and the rate constants is Eyring theory of transition states {\color{red} figure of reaction path?}. The most important approximations that are made are the following: all particles that reached the transition state will react towards the product. at the transition state geometry, the motion along the reaction coordinate can be separated from all other degrees of freedom and can be seen as a translation.
@@ -381,27 +392,6 @@ For all the vasp calculations for the (0001) surface the parameters from prior w
 For (11\=20) surface parameters were adopted and used as well. Also here the convergence criterion for the energy of two SCF cycles was $10^{-5}\,$eV.
 
 For the other programs that were not used before for the calculation of alumina in our group the geometries from the vasp output were used as starting points and the usual convergence criteria of the programs were applied with some exception when convergence was hard to achieve.
-
-\section{Experimental Techniques}
-In this work several experimental techniques were used from our collaborating group at the FHI in Berlin, that is why the basics of those methods shall be explained shortly.
-\subsection{Vibrational Sum Frequency Generation}
-energy scheme, uv and IR/visible Laser beam are overlapped spatially and in time, polarization is important, s and p polarized, selection rules: IR and Raman active, specificity for surface only in systems that are not inversion symmetric, good for studying surface systems, no bulk signals (both solid phase and gas phase) due to selection rules
-
-\subsection{Thermal Desorption Spectroscopy}
-Sample is heated with a defined temperature program, adsorbates are removed from surface according their binding energies and detected as a function of temperature. Sheds light on adsorption strength and probable reaction networks.
-
-\subsection{Molecular Beam Source vs. Pinhole Dosing}
-When doing the experiment the method of preparation seems crucial for the results, because these result in different surface situations. Our collaborators use the so called Molecular Beam Source but many other experimental groups use pinhole dosing. Here the idea behind these methods and the main differences shall be explained.
-\\
-pinhole dosing: water is brought with a high partial pressure onto the surface. Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water that can influence the measurement. this leads to an equlibrium situation.
-\\
-MBS: A medium, e.g. water is probed onto the surface at a very low pressure. Non-equilibrium situations are generated by the kinetic energy of the beam. 
-
-\subsection{Low-Energy Electron Diffraction}
-Spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV. Diffracted electrons are observed as a pattern on the flourescent screen. Structure can be derived from the geometry of this pattern. Lattice geometry can be seen. Problem is the high energy of the beam that can lead to damage in the sample.
-\\
-Other methods as tunneling based methods do not work on isolating materials like alumina, so that it is simply not possible to measure STM. Others? Rasterkraft? ATM?
-
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 \section{Surface Model}
@@ -1272,6 +1262,28 @@ Conversion of reciproke coordinates a,b,c coordinates to x,y,z coordinates via m
                \end{array} \right ) =(x_1, y_1, z_1)
 \end{equation*}
 with the matrix that is built up by the cell vectors.
+
+\section{Experimental Techniques}
+In this work several experimental techniques were used from our collaborating group at the FHI in Berlin, that is why the basics of those methods shall be explained shortly.
+\subsection{Vibrational Sum Frequency Generation}
+energy scheme, uv and IR/visible Laser beam are overlapped spatially and in time, polarization is important, s and p polarized, selection rules: IR and Raman active, specificity for surface only in systems that are not inversion symmetric, good for studying surface systems, no bulk signals (both solid phase and gas phase) due to selection rules
+
+\subsection{Thermal Desorption Spectroscopy}
+Sample is heated with a defined temperature program, adsorbates are removed from surface according their binding energies and detected as a function of temperature. Sheds light on adsorption strength and probable reaction networks.
+
+\subsection{Molecular Beam Source vs. Pinhole Dosing}
+When doing the experiment the method of preparation seems crucial for the results, because these result in different surface situations. Our collaborators use the so called Molecular Beam Source but many other experimental groups use pinhole dosing. Here the idea behind these methods and the main differences shall be explained.
+\\
+pinhole dosing: water is brought with a high partial pressure onto the surface. Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water that can influence the measurement. this leads to an equlibrium situation.
+\\
+MBS: A medium, e.g. water is probed onto the surface at a very low pressure. Non-equilibrium situations are generated by the kinetic energy of the beam. 
+
+\subsection{Low-Energy Electron Diffraction}
+Spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV. Diffracted electrons are observed as a pattern on the flourescent screen. Structure can be derived from the geometry of this pattern. Lattice geometry can be seen. Problem is the high energy of the beam that can lead to damage in the sample.
+\\
+Other methods as tunneling based methods do not work on isolating materials like alumina, so that it is simply not possible to measure STM. Others? Rasterkraft? ATM?
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
