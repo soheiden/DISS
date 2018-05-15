@@ -345,7 +345,7 @@ For this thermostat, several models are available, in this work the Nos\'{e}-Hoo
 \section{Frequencies and Intensities}
 \todo{While this is a good approximation for the high energy vibration, for example OD stretch vibrations, it becomes worse for lattice vibrations, which are way more delocalized.}
 \\
-A characteritic of stationary points on the potential energy surface is, that the derivation with respect to all coordinates equals 0. For these points (minima and saddle points of first order) the Hessian matrix $\doubleunderline{H}$ and their eigenvalues are of interest. The elements of this Hessian are the derivation of the potential with respect to coordinates:
+A characteritic of stationary points on the potential energy surface (PES) is, that the derivation with respect to all coordinates equals 0. For these points (minima and saddle points of first order) the eigenvalues and -vectors of the Hessian matrix $\doubleunderline{H}$ are of interest. The elements of this Hessian are the derivation of the potential with respect to coordinates:
 \begin{equation}
  H_{ij}=\left( \frac{\partial^2 V}{\partial Q_i \partial Q_j} \right)_{|Q_i=Q_j=0}=\left(\frac{1}{\sqrt{m_i m_j}} \frac{\partial^2 V}{\partial R_i \partial R_j} \right)
 \end{equation}
@@ -358,7 +358,7 @@ with the vectors of the normal modes $A_i$ and $\lambda_i$ being the squares of 
 \begin{equation}\label{eq:omegafromlambda}
  \omega_i=\sqrt{\lambda_i}.
 \end{equation}
-One has to distinguish two physically relevant cases: all eigenvalues are positive ($\lambda_i\geq 0 \forall i$) so the structure is a minimum on the PES. This could be the educt and product of a reaction. The second relevant case is if there is only one negative eigenvalue, that gives according to equation \ref{eq:omegafromlambda} one imaginary frequency, respectively. This is in a mathematical sense a saddlepoint of first order and can be interpreted as a transition state.
+All frequencies are delivered in the harmonic approximation. One has to distinguish two physically relevant cases: all eigenvalues are positive ($\lambda_i\geq 0 \forall i$) so the structure is a minimum on the PES. This could be the educt and product of a reaction. The second relevant case is if there is only one negative eigenvalue, that gives according to equation \ref{eq:omegafromlambda} one imaginary frequency, respectively. This is in a mathematical sense a saddlepoint of first order and can be interpreted as a transition state.
 \\
 To calculate intensities there are several methods available with three being presented in this work:
 \begin{itemize}
@@ -377,16 +377,26 @@ The power spectrum contains peaks for each normal mode vector apart from selecti
 
 
 \section{Finding Transition States}
-One of the most prominent and widely used theories describing the transition state and the rate constants is Eyring theory of transition states {\color{red} figure of reaction path?}. The most important approximations that are made are the following: all particles that reached the transition state will react towards the product. at the transition state geometry, the motion along the reaction coordinate can be separated from all other degrees of freedom and can be seen as a translation.
+As a result of the Born Oppenheimer approximation, that separates nuclear and electronic coordinates, reactions can be understood as nuclei moving on a PES. Finding the transition state between reactand and product requires finding the maximum of the minimum energy path (MEP). The MEP describes the path of minimal energy connecting minima of the PES along the reaction coordinate $\xi$ (see Figure \ref{abb:mep}). Mathematically, the transition state is a saddle point on the PES.
+\begin{figure}[!h]
+\centering
+ \includegraphics[width=0.4\textwidth]{figures/theory/MEP.pdf}
+   \caption{Schematic view of a minimum energy path (MEP). $\Delta$G$^\ddagger$ for the reaction is also plotted.}
+            \label{abb:mep}
+\end{figure}
+\\
+One of the most prominent and widely used theories describing the transition state and the rate constants is Eyring theory of transition states. The most important approximations that are made are the following: i) there is an activated complex, ii) all particles that reached this complex/transition state will react towards the product. iii) At the transition state geometry, the motion along the reaction coordinate is seen as a one dimensional process and can be separated from all other degrees of freedom and can be seen as a translation.
+\\
 The equation for the rate constant is described by
 \begin{equation}\label{eyring}
 k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
 \end{equation}
-with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a tunneling constant prefactor [tunneling corrections (seldomly applied in this work, not mention them here?)], give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
+with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a transmission coefficient (can be interpreted as a tunneling prefactor, for $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection) \todo{tunneling corrections (seldomly applied in this work, not mention them here?)}, give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
 To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of associated images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First a regular NEB, then afterwards climbing image was done which gives better convergence. In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode, that vibrates alongside the reaction path.
 
 
 \section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
+\subsection{Hybrid Functionals}
 In this work we also want to go beyond GGA (Generalized Gradient Approximation, here the PBE functional), because it is known from literature {\color{red} cite} to underestimate reaction rates. Since we are interested in reaction kinetics it therefore is desirable to use more sophisticated methods to improve the rates. The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential. For this the exchange correlation functional is split up into two parts:
 \begin{equation}
  E_{xc}[n(\vec{r}]=  E_{x}[n(\vec{r}] + E_{c}[n(\vec{r}].
@@ -401,8 +411,8 @@ with the parameter $a$, that gives the amount of exact Hartree-Fock exchange. As
 \end{equation}
 with $a=0.80$, $b=0.72$ and $c=0.81$.
 \\
-\\
-Another ansatz is using Local M\o{}ller Plesset Peturbation Theory of 2$^{\textrm{nd}}$ order (LMP2) as implemented in crystal/cryscor. These calculations are way more computationally demanding but offer better results on a higher level of theory. It offers more precise treatment of the dynamical electron correlation than DFT. The electronical Hamiltonian (here the subscript $e$ is omitted) has already been solved exactly or approximately. The solution to the given problem is similar to the already known one. The reference system $\hat{H}_0$ is perturbed by an external potential $\hat{V}$:
+\subsection{M\o{}ller Plesset Peturbation Theory}
+Another ansatz is using Local M\o{}ller Plesset Peturbation Theory\cite{mollerplesset} of 2$^{\textrm{nd}}$ order (LMP2) as implemented in crystal/cryscor. These calculations are way more computationally demanding but offer better results on a higher level of theory. It offers more precise treatment of the dynamical electron correlation than DFT. The electronical Hamiltonian (here the subscript $e$ is omitted) has already been solved exactly or approximately. The solution to the given problem is similar to the already known one. The reference system $\hat{H}_0$ is perturbed by an external potential $\hat{V}$:
 \begin{equation}
  \hat{H} = \hat{H}_0 + \lambda \hat{V}.
 \end{equation}
@@ -433,9 +443,10 @@ $E^{(0)}+E^{(1)}$ equals the Hartree-Fock energy $E_{HF}$. For the energy of the
 \end{equation}
 The MP2-corrected total energy is composed of the HF energy and the second order energy:
 \begin{equation}
- E_{MP2} = E_{HF} + E^{(2)}.
+ E_{MP2} = E^{(0)}+E^{(1)} + E^{(2)} = E_{HF} + E^{(2)}.
 \end{equation}
-
+The second order energy accounts for approximately $80-90\%$ of correlation which makes it a highly feasible method that includes electron correlation.
+However, a main limitation of MP2 is the wave function of the zeroth order is a good approximation to the real system and the perturbation is rather small. If the wave function describes the system poorly, the corrections have to be higher and eventually, convergence is slow. In this case perturbation theory might not be a good option to describe correlation.
 
 \section{Computational Details and Used Programs}
 Vasp4.x, 5.2 and version x (newer), crystal, cryscor%, cp2k+i-pi, Turbomole
@@ -473,7 +484,7 @@ The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O
 
 \begin{figure}[!h]
     \centering
-    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/al2o3-crystal.png}}
+    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/theory/al2o3-crystal.png}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
     \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
