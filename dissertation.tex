@@ -8,6 +8,8 @@
 %\usepackage{graphicx}
 \usepackage[figuresright]{rotating}	% lädt auch graphicx
 \usepackage{caption}
+ \DeclareCaptionLabelFormat{myformat}{#1~A#2}
+% \captionsetup{labelformat=myformat}
 \usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -133,6 +135,7 @@
 
 %Titelseite
 \title{WORKING TITLE:\\
+Water at $\upalpha$-Alumina
   Quanteneffekte, Wasser auf Metalloxidoberflächen\vspace{2\baselineskip}}
 \subtitle{\normalfont\sffamily Dissertation zur Erlangung des akademischen Grades\\
   {\frq}doctor rerum naturalium{\flq} (Dr. rer. nat.)\\
@@ -143,7 +146,7 @@
   Mathematisch-Naturwissenschaftlichen Fakultät\\
   der Universität Potsdam\\ \vspace{1.5\baselineskip}
   \includegraphics[width=0.1\textwidth]{figures/UP-Logo_Matjpg.jpg}\\ \vspace{\baselineskip}
-  Potsdam, xx 2018}
+  Potsdam, 2018}
 \date{}
 
 \uppertitleback{\normalfont
@@ -166,10 +169,10 @@ Drittgutachter:&Prof. Dr. xy \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \addchap{Preamble}
-The importance of surface science in our industrialized world is overwhelming, because most processes in industry are carried out using (heterogeneous) catalysts, because these do not have to be separated from the reactands and the product after the process, which is mostly a costly step in the production of chemicals. It is therefore desirable to understand heterogeneous catalytic processes by learning more about the processes that take place on the surface of materials. Metal oxide materials are frequently used in catalysts as well as catalyst support materials, so that understanding their properties in contact with chemicals, in this work water, is crucial.
+The importance of surface science in our industrialized world is overwhelming, because most processes in industry are carried out using (heterogeneous) catalysts\todo{add citations from lit.dat, but first search titles!}. These do not have to be separated from the reactands and the product after the process, which is mostly a costly step in the production of chemicals. It is therefore desirable to understand heterogeneous catalytic processes by learning more about the microscopic processes that take place on the surface of materials. Metal oxide materials are frequently used in catalysts as well as catalyst support materials, so that understanding their properties in contact with chemicals, in this work water, is crucial.
 \\
 
-Aluminum is used in rocket fuels as a reduction agent so that during launch alumina particles are ejected in the atmosphere during the start (see also lit.dat!). For a space shuttle the start can produce around $760,000\,$kg of alumina particles. It can be measured that approximately one third of these particles can be deposited in the stratosphere (in an altitude between $15$ and $50\,$km above the surface of the earth) and there it can react with the water and other molecules in the stratosphere where these particles are accumulated after the launch of a shuttle.
+Aluminum is used in rocket fuels as a reduction agent so that during launch alumina particles are ejected in the atmosphere during the start \todo{see also lit.dat!}. For a space shuttle the start can produce around $760,000\,$kg of alumina particles. It can be measured that approximately one third of these particles can be deposited in the stratosphere (in an altitude between $15$ and $50\,$km above the surface of the earth) and there it can react with the water and other molecules in the stratosphere where these particles are accumulated after the launch of a shuttle.
 \\
 
 Also in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the third most common element in the crust with $6.3\%$ ({\color{red} \begin{verbatim} http://www.uniterra.de/rutherford/tab_hauf.htm\end{verbatim}}
@@ -377,29 +380,45 @@ The power spectrum contains peaks for each normal mode vector apart from selecti
 
 
 \section{Finding Transition States}
-As a result of the Born Oppenheimer approximation, that separates nuclear and electronic coordinates, reactions can be understood as nuclei moving on a PES. Finding the transition state between reactand and product requires finding the maximum of the minimum energy path (MEP). The MEP describes the path of minimal energy connecting minima of the PES along the reaction coordinate $\xi$ (see Figure \ref{abb:mep}). Mathematically, the transition state is a saddle point on the PES.
+According to the Born Oppenheimer approximation nuclear and electronic degrees of freedom are separated. In this picture, stable systems are minima on the PES \todo{kommt das vorher schon mal vor?} and chemical reactions can be understood as nuclei, moving on the PES along the reaction coordinate $\xi$. On the N-dimensional surface, the energetically most favorable reaction path is chosen. This is the one with the least energy necessary (minimum energy path, MEP, see Figure \ref{abb:mep}). At the highest energy on this path it is called transition state. As mentioned before, it is a first-order saddle point, the energetically highest point along the reaction coordinate, but in all other coordinates a minimum.
+% As a result of the Born Oppenheimer approximation, that separates nuclear and electronic coordinates, reactions can be understood as nuclei moving on a PES. Finding the transition state between reactand and product requires finding the maximum of the minimum energy path (MEP). The MEP describes the path of minimal energy connecting minima of the PES along the reaction coordinate $\xi$ (see Figure \ref{abb:mep}). Mathematically, the transition state is a saddle point on the PES.
 \begin{figure}[!h]
 \centering
  \includegraphics[width=0.4\textwidth]{figures/theory/MEP.pdf}
-   \caption{Schematic view of a minimum energy path (MEP). $\Delta$G$^\ddagger$ for the reaction is also plotted.}
+   \caption{Schematic view of a minimum energy path (MEP) for a thermal reaction. $\Delta$G$^\ddagger$ for the reaction is also plotted.}
             \label{abb:mep}
 \end{figure}
 \\
-One of the most prominent and widely used theories describing the transition state and the rate constants is Eyring theory of transition states. The most important approximations that are made are the following: i) there is an activated complex, ii) all particles that reached this complex/transition state will react towards the product. iii) At the transition state geometry, the motion along the reaction coordinate is seen as a one dimensional process and can be separated from all other degrees of freedom and can be seen as a translation.
+% One of the most prominent and widely used theories describing the transition state and the rate constants is Eyring theory of transition states. The most important approximations that are made are the following: i) there is an activated complex, ii) all particles that reached this complex/transition state will react towards the product. iii) At the transition state geometry, the motion along the reaction coordinate is seen as a one dimensional process and can be separated from all other degrees of freedom and can be seen as a translation.
+% \\
+% The equation for the rate constant is described by
+% \begin{equation}\label{eyring}
+% k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
+% \end{equation}
+% with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a transmission coefficient (can be interpreted as a tunneling prefactor, for $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection) \todo{tunneling corrections (seldomly applied in this work, not mention them here?)}, give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
+% To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of associated images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First a regular NEB, then on top of this climbing image was done which gives better convergence. In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode, that vibrates along the reaction path.
+Transition State Theory is a semi-classical theory: dynamics along the reaction coordinate $\xi$ are treated classically, but perpendicular directions allow for quantization of vibrational and rotational energy.
+In thermodynamical equilibrium, all possible quantum states along the reaction coordinate are occupied  with respect to their Boltzmann weight $e^{\Delta E/(k_BT)}$.
 \\
-The equation for the rate constant is described by
-\begin{equation}\label{eyring}
-k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
+Assuming the reaction
+\begin{equation}
+A+ B \rightleftarrows C^\ddagger \rightarrow D
 \end{equation}
-with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a transmission coefficient (can be interpreted as a tunneling prefactor, for $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection) \todo{tunneling corrections (seldomly applied in this work, not mention them here?)}, give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
-To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of associated images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First a regular NEB, then afterwards climbing image was done which gives better convergence. In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode, that vibrates alongside the reaction path.
+where reactants $A$ and $B$ are in thermodynamical equilibrium with the transition state $C^\ddag ger$ and this reacts to the product $D$.
+The rate can then be determined with Eyring theory:
+\begin{equation}
+k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)}
+\end{equation}
+with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger = \Delta G_{TS} - \Delta G_{educt}$, give the reaction rate constant as a function of temperature and free energy barrier height. Note, that this equation is only valid for cases, where all reactands that reach the TS react to the product site, \textit{i.e.} no re-crossing is employed, so the rate is in the classical picture the upper limit. For quantum effects, the rate can be increased due to tunneling, where reactants can overcome the barrier although they do not posses the sufficient amount of energy for the barrier. For this, the Eyring equation can be expanded with the transmission coefficient $\kappa$, that can be interpreted as a tunneling prefactor, for $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection or re-crossing to the educt side) \todo{tunneling corrections (seldomly applied in this work, not mention them here?)}
 
+For the barrier height one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
+To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of associated images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First a regular NEB, then in top of this climbing image was done which gives better convergence. In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode, that vibrates along the reaction path.
 
 \section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
 \subsection{Hybrid Functionals}
 In this work we also want to go beyond GGA (Generalized Gradient Approximation, here the PBE functional), because it is known from literature {\color{red} cite} to underestimate reaction rates. Since we are interested in reaction kinetics it therefore is desirable to use more sophisticated methods to improve the rates. The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential. For this the exchange correlation functional is split up into two parts:
 \begin{equation}
- E_{xc}[n(\vec{r}]=  E_{x}[n(\vec{r}] + E_{c}[n(\vec{r}].
+ E_{xc}[n(\vec{r})]=  E_{x}[n(\vec{r})] + E_{c}[n(\vec{r})].
 \end{equation}
 The exchange part can be specified with a DFT part and HF with exact exchange:
 \begin{equation}
@@ -1261,21 +1280,20 @@ We found out, that BSSE takes a big part, but corrections are not easily applied
 We also reoptimized the transition state for the Df-H-4-2 reaction.
 
 
-
-{\color{red} Not sure if this will come into the diss? No real results obtained..?}
-\subsection{PIMD}
-Instead of examining reactions with a defined reaction pathway as with NEB, we apply the path integral MD to propagate the 1-4 dissociated state in the hope to watch the reaction and to extract from that a time for the reaction {\color{red} (? it is not really a rate)}. But unluckily, no reaction occurred in the given propagation time, so that one only can see the delocalization of the proton. At a given temperature of $300\,$K the proton only moves a little, far away from any reactive trajectory.
-\\
- A huge problem was the unit cell: when all atoms or only a few atoms were allowed to move during the trajectory, the whole cell drifted away, as if the periodic boundary conditions would not apply. When fixing all the atoms except for the proton that diffuses it was fine.
- \\
- {\color{red} cell optimizations were tried, but didn't work as planned; fixing only the rim lead to other atom's movement, maybe one can free the OH group and the Al atom on which the H sits?}
- \\
- We used also PBE but without dispersion corrections and for the trajectories at $300\,$K we applied the Nos\'{e} Hoover thermostat.
- 
-\subsection{QM/QM Embedding Scheme}
-In order to recalculate adsorption energies and reaction rate constants with a higher level method we tried to apply the mechanical embedding scheme developed in the Sauer group from HU Berlin. One uses a substractive scheme to correct energies, after calculating the complete system with the low level method (here PBE), the interesting part, namely the cluster, with both the low level method and the high level method (B3LYP, MP2 or CCSD). The high-level:low-level corrected energy is then calculated by the following equation: \textit{equation}
-\\
-First of all, a reasonable cluster has to be chosen, which is difficult since the 1-4$^\prime$ needs a big cluster to be considered. We chose then the Al$_8$O$_{12}$-cluster used in unpublished work from the same group. This cluster was used for tests but when it came to embedding, the Turbomole package failed to compute the embedded system, because hexagonal cells were not yet implemented into the code.
+% \todo{Not sure if this will come into the diss? No real results obtained..?}
+% \subsection{PIMD}
+% Instead of examining reactions with a defined reaction pathway as with NEB, we apply the path integral MD to propagate the 1-4 dissociated state in the hope to watch the reaction and to extract from that a time for the reaction {\color{red} (? it is not really a rate)}. But unluckily, no reaction occurred in the given propagation time, so that one only can see the delocalization of the proton. At a given temperature of $300\,$K the proton only moves a little, far away from any reactive trajectory.
+% \\
+%  A huge problem was the unit cell: when all atoms or only a few atoms were allowed to move during the trajectory, the whole cell drifted away, as if the periodic boundary conditions would not apply. When fixing all the atoms except for the proton that diffuses it was fine.
+%  \\
+%  {\color{red} cell optimizations were tried, but didn't work as planned; fixing only the rim lead to other atom's movement, maybe one can free the OH group and the Al atom on which the H sits?}
+%  \\
+%  We used also PBE but without dispersion corrections and for the trajectories at $300\,$K we applied the Nos\'{e} Hoover thermostat.
+%  
+% \subsection{QM/QM Embedding Scheme}
+% In order to recalculate adsorption energies and reaction rate constants with a higher level method we tried to apply the mechanical embedding scheme developed in the Sauer group from HU Berlin. One uses a substractive scheme to correct energies, after calculating the complete system with the low level method (here PBE), the interesting part, namely the cluster, with both the low level method and the high level method (B3LYP, MP2 or CCSD). The high-level:low-level corrected energy is then calculated by the following equation: \textit{equation}
+% \\
+% First of all, a reasonable cluster has to be chosen, which is difficult since the 1-4$^\prime$ needs a big cluster to be considered. We chose then the Al$_8$O$_{12}$-cluster used in unpublished work from the same group. This cluster was used for tests but when it came to embedding, the Turbomole package failed to compute the embedded system, because hexagonal cells were not yet implemented into the code.
 
 
 \addchap{Summary}
@@ -1313,8 +1331,10 @@ Christiane Wunderlich who was my school teacher in chemistry, without whom I wou
 %\clearpage
 %\renewcommand*{\chapterheadstartvskip}{\vspace*{-\baselineskip}}
 \addchap{Appendix}
+% \DeclareCaptionLabelFormat{myformat}{#1~A#2}
+\captionsetup{labelformat=myformat}
 %\endgroup
-reaction pathways: dissociationCb-iCa2 and Cb-iCb2 were tested but both were two step processes. Show reaction paths here? I think not..
+reaction pathways: dissociation Cb-iCa2 and Cb-iCb2 were tested but both were two step processes. Show reaction paths here? I think not..
 \\
 Conversion of reciproke coordinates a,b,c coordinates to x,y,z coordinates via matrix product:
 \begin{equation*}
@@ -1327,24 +1347,31 @@ Conversion of reciproke coordinates a,b,c coordinates to x,y,z coordinates via m
 with the matrix that is built up by the cell vectors.
 
 \section{Experimental Techniques}
-In this work several experimental techniques were used from our collaborating group at the FHI in Berlin, that is why the basics of those methods shall be explained shortly.
+In this work several experimental techniques were used from our collaborating group at the FHI in Berlin, that is why the basics of those methods shall be explained briefly.
 \subsection{Vibrational Sum Frequency Generation}
-energy scheme, uv and IR/visible Laser beam are overlapped spatially and in time, polarization is important, s and p polarized, selection rules: IR and Raman active, specificity for surface only in systems that are not inversion symmetric, good for studying surface systems, no bulk signals (both solid phase and gas phase) due to selection rules
-
+This method is a surface specific vibrational spectroscopy. An UV/Vis and an IR Laser beam are overlapped spatially and in time to produce the so called sum frequency signal, see Figure \ref{abb:sfg_scheme}. There also the energy scheme is given: The system is excited with a pulse to a vibrationally excited state and with a UV/Vis pulse to a virtual state. The resulting SFG signal is a sum of both frequencies.
+\begin{figure}[!h]
+\centering
+ \includegraphics[width=0.4\textwidth]{figures/theory/sfg-scheme.pdf}
+   \caption{Scheme of the SFG Process, left side the spatially overlapping Laser beams are shown, on the right side the orbital representation with the excitation to a virtual orbital is given.}
+            \label{abb:sfg_scheme}
+\end{figure}
+For this, the polarization of the beam is important, it can be either s or p polarized. The selection rules result in the surface specifity: The SFG only occurs if the vibration is IR and Raman active and additionally only in systems with inversion symmetry. This makes this method predestinated for analysis of surfaces, because neither the bulk nor the gas phase are inversion symmetric, however the interface (=surface) is, so that the only come from this region. It is usually abbreviated SFG (sum frequency generation) but also named VSF (vibrational sum frequency).
+ 
 \subsection{Thermal Desorption Spectroscopy}
-Sample is heated with a defined temperature program, adsorbates are removed from surface according their binding energies and detected as a function of temperature. Sheds light on adsorption strength and probable reaction networks.
+In thermal desorption spectroscopy (TDS, also temperature programmed desorption, TPD) the prepared sample is heated with a defined temperature program. Thus, adsorbates are removed from surface according their binding energies and detected as a function of temperature with any detection method required. The analysis sheds light on adsorption strength and probable reaction networks.
 
 \subsection{Molecular Beam Source vs. Pinhole Dosing}
-When doing the experiment the method of preparation seems crucial for the results, because these result in different surface situations. Our collaborators use the so called Molecular Beam Source but many other experimental groups use pinhole dosing. Here the idea behind these methods and the main differences shall be explained.
+When doing the experiment the method of preparation seems crucial for the results, because these result in different surface situations. Our collaborators use the so called Molecular Beam Source but also widely used is pinhole dosing. Here the idea behind these methods and the main differences shall be explained.
 \\
-pinhole dosing: water is brought with a high partial pressure onto the surface. Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water that can influence the measurement. this leads to an equlibrium situation.
+Pinhole Dosing (PD): Water is brought with a high partial pressure onto the surface. Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water left that can influence the measurement. This leads to an equilibrium situation.
 \\
-MBS: A medium, e.g. water is probed onto the surface at a very low pressure. Non-equilibrium situations are generated by the kinetic energy of the beam. 
+Molecular Beam Source (MBS): A medium, e.g. water is probed onto the surface at a very low pressure. Non-equilibrium situations are generated by the kinetic energy of the beam. 
 
 \subsection{Low-Energy Electron Diffraction}
-Spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV. Diffracted electrons are observed as a pattern on the flourescent screen. Structure can be derived from the geometry of this pattern. Lattice geometry can be seen. Problem is the high energy of the beam that can lead to damage in the sample.
+Spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV. Diffracted electrons are observed as a pattern on a flourescent screen. The structure can be derived from the geometry of this pattern and the lattice geometry can be seen. Problem is the high energy of the beam that can lead to damage in the sample.
 \\
-Other methods as tunneling based methods do not work on isolating materials like alumina, so that it is simply not possible to measure STM. Others? Rasterkraft? ATM?
+\todo{Other methods as tunneling based methods do not work on isolating materials like alumina, so that it is simply not possible to measure STM. Others? Rasterkraft? ATM?}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
