@@ -49,7 +49,7 @@
 \renewcommand*{\dictumwidth}{0.618\textwidth}
 \renewcommand*{\partpagestyle}{empty}
 \setlength{\parskip}{0pt}
-\newcommand\todo[1]{\textcolor{red}{TODO:\textit{{#1}}}}
+\newcommand\todo[1]{\textcolor{red}{TODO: \textit{{#1}}}}
 
 %Eigene Mathebefehle
 \def\mathbi#1{\textbf{\em #1}}
@@ -480,19 +480,32 @@ For crystal and cryscor that were not used before for the calculation of alumina
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 \section{Surface Model}
 \todo{Fix Inconsistent figure references, don't always attach ", see figure X"}
-\todo{Shorter sentences, see this diff}
 \\
-The structure of $\upalpha$-alumina has been well known for several years and was studied in many publications \todo{cite some here}. It crystallizes in the hexagonal cell, that means $\uline{a}=\uline{b}\neq \uline{c}$, with an angle of $60$\textdegree~ between the cell vectors $\uline{a}$ and $\uline{b}$.
+The structure of $\upalpha$-alumina has been well known for decades and was studied extensively (\textit{e.g.} \cite{Passerini1930,wyckoff1931}). It crystallizes in the hexagonal cell, that means $\uline{a}=\uline{b}\neq \uline{c}$, with an angle of $60$\textdegree{} between the cell vectors $\uline{a}$ and $\uline{b}$.
 \\
-To obtain the clean surface slab model a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. Since the (11\=20) surface is not the crystal plane of the top of the shown crystal in Figure \ref{abb:crystal_11-20}(a). Figure \ref{abb:crystal_11-20}(b) shows the top view and the cell vectors $\uline{a}$ and $\uline{b}$. They are not equal to those in the hexagonal cell, but $\uline{a}=10.36$\AA, $\uline{b}=14.16$\AA~ and $\uline{c}=20.5$\AA, with the angle $\theta=84.56$\textdegree between $\uline{a}$ and $\uline{b}$. The nomenclature of the surface is also shown and is explained later in more detail.
+To obtain the clean surface slab model of the (11\=20) surface a $2\times 2$ supercell was cut from the bulk. The corresponding cell vectors were adopted from the bulk structure and a vacuum gap in z-direction (perpendicular to the surface) was introduced to avoid unphysical interaction between the slabs in z-direction. In Figure \ref{abb:crystal_11-20}(a) apart from the (11\=20) surface the (0001) surface that is also studied in this work can be seen. Figure \ref{abb:crystal_11-20}(b) shows the top view and the cell vectors $\uline{a}$ and $\uline{b}$ of (11\=20). They are not equal to those in the hexagonal cell, but $\uline{a}=10.36$\AA, $\uline{b}=14.16$\AA~ and $\uline{c}=20.5$\AA. The angle $\theta$ between $\uline{a}$ and $\uline{b}$ is $84.56$\textdegree{} unlike the $60$\textdegree{} since the (11\=20) surface is tilted with respect to the top crystal plane. The nomenclature and color code of the surface Al and O atoms is also shown: The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, whereas the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa. The twofold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the threefold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
+\begin{figure}[!h]
+    \centering
+    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/theory/al2o3-crystal.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
+             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic view compared to the (0001) surface, (b) a top view of the geometry optimized $2\times 2$ super cell with the nomenclature of the surface atoms. The two types of surface Al atoms (grey CUSa and black CUSb) as well as the twofold and threefold coordinated oxygen atoms (orange O-$\mu_2$ and red O-$\mu_3$). Subsurface atoms are indicated by pale colors. (c) gives the side view of the unit cell showing the distinctive atomic layers with the same color code.}
+            \label{abb:crystal_11-20}
+\end{figure}
 \\
-The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), see Figure \ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal are given in Table \ref{tab:layer-dist}. The supercell that is mostly used in this work has 10 layers, where the lowest 5 were fixed to the bulk value to mimic the surface situation. For the calculation of the lattice vibrations up to 25 layers were considered (Figure \ref{abb:cell_sizes}). For each slab size the respective lowest 5 layers were kept fixed, see chapter \ref{phonons}. The spacing between the 5 top layers is displayed in Table \ref{tab:layer-dist}:
+The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O), see Figure \ref{abb:crystal_11-20}(c)). The spacing between these layers in the relaxed structure and in the bulk crystal is slightly changed as given in Table \ref{tab:layer-dist}. A major issue of the optimization apart from layer spacing is that the interatomic distances of Al species change: the inter-CUSa\textendash inter-CUSa distance increased from $2.682$ to $2.994$\AA{}, the inter-CUSa\textendash CUSb distance increased from $2.833$ to $2.876$\AA{} whereas the CUSb\textendash CUSb distance decreased from $2.682$ to $2.499$\AA{}.
+\\
+The supercell that is mostly used in this work has 10 atomic layers, with the lowest 5 fixed to the bulk value to mimic the surface situation. For the calculation of the lattice vibrations up to 25 layers were considered (Figure \ref{abb:cell_sizes}). For each slab size the respective lowest 5 layers were kept fixed, see chapter \ref{phonons}. The spacing between the 5 top layers for each slab size is displayed in Table \ref{tab:layer-dist}.
 \begin{table}[!ht]
   \centering
- \caption{Distances between the top 5 layers for different optimized slab sizes and the unrelaxed bulk structure. All values are given in \AA.} 
+ \caption{Distances between the top 5 layers (see also numbering in Figure \ref{abb:crystal_11-20}(c)) for different optimized slab sizes and the unrelaxed bulk structure (right column). All values are given in \AA.} 
 \vspace*{.2cm}
 \begin{tabular}{c|cccc|c}
- &\multicolumn{4}{c}{atomic layer} &\\
+ &\multicolumn{4}{c}{total number of atomic layers} &\\
     distance    & 10   & 15   & 20   & 25   &bulk \\\hline
  d$_{12}$	&0.232 &0.234 &0.247 &0.245 &0.193 \\
  d$_{23}$	&0.642 &0.649 &0.638 &0.639 &0.741 \\
@@ -504,36 +517,23 @@ The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O
 
 \begin{figure}[!h]
     \centering
-    \subfigure[crystal]{\includegraphics[width=0.30\textwidth]{figures/theory/al2o3-crystal.png}}
-             \quad
-             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[(11\=20), top view]{\includegraphics[width=0.30\textwidth]{figures/11-20/supercell_opt.png}}
-             \quad
-             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[(11\=20), side view]{\includegraphics[width=0.30\textwidth]{figures/11-20/uc_opt.png}}
-             \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic compared to the (0001) surface, (b) a top view of the geometry optimized unit cell with the nomenclature of the surface atoms and (c) as a side view showing the different atomic layers.}
-            \label{abb:crystal_11-20}
-\end{figure}
-\begin{figure}[!h]
-    \centering
     \includegraphics[width=0.80\textwidth]{figures/11-20/cell_sizes.pdf}
-             \caption{Side view for the different cell sizes for 10, 15, 20 and 25 layers. Surface atoms are shown in the color code used before.}
+             \caption{Side view for the different cell sizes for 10, 15, 20 and 25 layers in z-direction. Surface atoms are shown in the color code clarified before.}
             \label{abb:cell_sizes}
 \end{figure}
 $\vec{k}$-point tests were done for 5 different grid sizes from $1\times 1\times 1$ to $5\times 5\times 1$. In contrast to the even grid sizes, the odd ones contain the $\Gamma$-point and therefore are favorable. It can be deduced from Figure \ref{abb:11-20-kpointsampling} that the $3\times 3\times 1$ grid is already converged with respect to the energy of the clean surface.
 \begin{figure}[!h]
 \centering
  \includegraphics[width=0.4\textwidth]{figures/11-20/irreducibles-E.eps}
-   \caption{Sampling of the $\vec{k}$-points, shown is the energy of the super cell with respect to the number of irreducible $\vec{k}$-points. The even values correspond to the $2\times 2 \times 1$ (2 irreducibles) and $4\times 4\times 1$ (8 irr.), whereas the odd, which contain the $\Gamma$-point, are described by $1\times 1\times 1$ (1 irr.), $3\times 3\times 1$ (5 irr.) and $5\times 5\times 1$ (13 irr.).}
+   \caption{Sampling of the $\vec{k}$-points, shown is the energy of the optimized super cell with respect to the number of irreducible $\vec{k}$-points. The even values correspond to the $2\times 2 \times 1$ (2 irreducibles) and $4\times 4\times 1$ (8 irr.), whereas the odd, which contain the $\Gamma$-point, are described by $1\times 1\times 1$ (1 irr.), $3\times 3\times 1$ (5 irr.) and $5\times 5\times 1$ (13 irr.).}
             \label{abb:11-20-kpointsampling}
 \end{figure}
 \\
-Starting from the $2\times 2$ supercell approach of the clean surface there are 16 CUS Al-atoms (cordinatively unsaturated sites). These have fewer bonds than the aluminum atoms in the bulk structure since the surface layer has to be  depleted. These atoms are very interesting for adorbate molecules/atoms, because these atoms are electron rich and can be addressed for adsorption. If these 16 atoms are covered with adsorbates (in this work water is used) we get a system with 1 mono layer (ML). But one has to keep in mind the difference between these 16 surface atoms and the number of potential adsorbates: one monolayer is not built by 16 adsorbates since not all 16 CUS positions can be covered, but only 12, as is shown later (bridging water adsorption).
-\\
-It can be seen with different colors in Figure \ref{abb:crystal_11-20} (b) and (c), the system consists of different types of CUS Al atoms with different coordination neighborhood and 2 different types of oxygen atoms, twofold and threefold coordinated. The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, whereas the oxygen atoms in fact differ by the number of neighbors. In this work, the black spheres denote the CUSb atoms, the grey ones depict the CUSa. The twofold coordinated oxygen atoms (O-$\mu_2$) are shown in yellow and the threefold coordinated (O-$\mu_3$) in red. Atoms of the underlying layers are illustrated in pale colors, light grey for alumina and pale red for oxygen.
+Starting from the $2\times 2$ supercell approach of the clean surface there are 16 CUS Al-atoms (Coordinatively Unsaturated Sites). These have fewer bonds than the aluminum atoms in the bulk structure since the surface layer is  depleted. These atoms are very interesting for adsorbate molecules/atoms, because these surface atoms are electron rich and can be addressed for adsorption. Theoretically, these 16 atoms could be covered with adsorbates (in this work water) to gain 1 mono layer (ML). As will be shown shortly, water can not adsorb on all 16 Al CUS simultaneously to get 1ML. Of these 16 CUS atoms eight are CUSa and eight CUSb. On top of CUSb, a water molecule/OH residue can adsorb, but on top of a CUSa the adsorbate roams to an bridging inter-CUSa position between two CUSa. Due to this the number of potential adsorbates is decreased to 12.
 
 \section{Structure Search}\label{structure_search11-20}
-To study water adsorption, first a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. The procedure was the following: put molecular water at different positions on the surface and let it relax. By doing this one molecular minimum and several dissociated species including both CUS and oxygen types were found. This multitude of different surface atoms gives rise to a large variety of possible adsorption sites. Adsorption energies and Gibb's free energy of the resulting species can be seen in Table \ref{tab:ads_1water}. The nomenclature for the adsorption sites that is used in the following gives at first the type of Al site where the OH-residue (OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH-site$\parallel$H-site). The term "inter" that is used in the following characterizes a position between two CUS atoms and leads to a bidentate adsorption pattern. The notation with $^\prime$ that will occur later denotes greater distances between the residues. There is also one metastable molecular species that appears to be more stable than the found molecular minimum considering adsorption energy, but since there is one imaginary mode displaying the movement of the proton towards the dissociated species this cannot be classified as a stable minimum.
+To study water adsorption, first a low coverage regime was investigated: 1 water molecule per $2\times 2$ supercell, which equals a coverage of 1/12. The procedure was the following: put molecular water at different positions on the surface and let it relax. By doing this one molecular minimum and several dissociated species including both CUS and oxygen types were found. This multitude of different surface atoms gives rise to a large variety of possible adsorption geometries. Adsorption energies and Gibb's free energy of the resulting next neighbor species can be seen in Table \ref{tab:ads_1water}. The nomenclature for the adsorption sites that is used in the following gives at first the type of Al site where the OH-residue (/OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH-site$\parallel$H-site). The term "inter" that is used in the following characterizes a position between two CUS atoms and leads to a bidentate adsorption pattern. The additional notation with $^\prime$ denotes greater distances between the residues. There is also one metastable molecular species that appears to be more stable than the found molecular minimum considering adsorption energy, but it cannot be classified as a stable minimum since there is one imaginary mode displaying the movement of the proton towards the dissociated species.
+\\
 The adsorption energy is defined by Equation \ref{eq:Eads} as the energy of the adsorbed system compared to the energies of the clean surface and the isolated water molecule:
 \begin{equation}\label{eq:Eads}
  E_\textrm{ads}=E_\text{ads. species}-(E_\text{free water molecule}+E_\text{surface}).
@@ -541,12 +541,7 @@ The adsorption energy is defined by Equation \ref{eq:Eads} as the energy of the 
 
 \begin{table}[!ht]
   \centering
- \caption{{\textit \todo{change text!} Adsorption energies as calculated from equation \ref{eq:Eads}
- for molecular and (singly) dissociated water on $\upalpha$-\ce{Al2O3}(11\=20)
-according to periodic PBE+D2 calculations. Also the corresponding 
-adsorption free energies $G_\textrm{ads}$ at $130$, $300$ and $400\,$K defined 
-analogously are also given. The three most stable configurations are in bold. All 
-energies are given in eV.} 
+ \caption{For molecular and (singly) dissociated water on $\upalpha$-Al$_2$O$_3$(11\=20) adsorption energies E$_\textrm{ads}$ and Gibb's free energy $G_\textrm{ads}$ for different temperatures are given in eV. E$_\textrm{ads}$ was calculated from Equation \ref{eq:Eads} and G$_\textrm{ads}$ is defined analogously. These results were obtained with PBE+D2. The three most stable configurations are marked with bold letters.
 \vspace*{.2cm} 
   }
   \begin{tabular}{cl|cccc}
@@ -578,20 +573,16 @@ energies are given in eV.}
 \subfigure[CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb3.pdf}}
  \quad
 \subfigure[inter-CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb3.pdf}}
- \caption{{\textit \todo{change text!} Adsorption geometries for molecular (a) and (six) dissociated water 
-molecules ((b)-(g)) are shown, as obtained by periodic PBE+D2. The most favorable 
-molecularly and dissociatively adsorbed configurations are shown. This means that 
-we show nearest neighbor structures only (see text). The color code is the same 
-as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2$ yellow and O-$
-\mu_3$ red; Hydrogen is displayed in white, subsurface layers are in pale colors.}}
+ \caption{Top view of the adsorption geometries for molecular CUSb (a) and the next neighbor dissociated water 
+((b)-(g)). The color code is the same as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2$ yellow and O-$\mu_3$ red; Hydrogen is illustrated in white; subsurface layers are shown in pale colors.}
         \label{abb:ads-geoms}
  \end{figure}
 
-The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, even in comparison to the more stable surface cuts (0001) and (1\=102) that were previously investigated in our group by Dr. Jonas Wirth\cite{Wirth2016,WirthJPCC2012}. Dissociated species, where the proton is located at a twofold coordinated surface oxygen are far more stable than the corresponding systems where the threefold coordinated is occupied. This is due to the higher negative charge and the higher basicity of such a twofolded oxygen atom in comparison with the more saturated threefold coordinated O-$\mu_3$ oxygen atom. In fact, the adsorption can be seen as a Lewis acid / base reaction\todo{cite literature!} with the Lewis acid character of the undercoordinated aluminum and the base character of the oxygen from the water molecule.
+The molecular minimum is substantially less stable than the dissociated species. On the contrary, the dissociated water is very stable, even in comparison to the more stable surface cuts (0001) and (1\=102) that were previously investigated in our group by Dr. Jonas Wirth\cite{Wirth2016,WirthJPCC2012}. Dissociated species, where the proton is located at a twofold coordinated surface oxygen are far more stable than the corresponding systems where the threefold coordinated is occupied. This is due to the higher negative charge and the higher basicity of such a twofolded oxygen atom in comparison with the more saturated threefold coordinated O-$\mu_3$ oxygen atom. In fact, the adsorption can be seen as a Lewis acid / base reaction\cite{Stair1981} with the Lewis acid character of the undercoordinated aluminum and the base character of the oxygen from the water molecule.
 \\
-The adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site, because the former corresponds to a site where in the bulk system another oxygen atom would be situated, which is not the case for the CUSb position.
+The adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site, because the former corresponds to a site where in the bulk system another oxygen atom would be situated, which is not the case for the CUSb position. Additionally, the CUSb position is electronically and sterically more hindered because of the two threefold coordinated oxygen atoms in the surroundings.
 \\
-Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and Figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see Table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H. One can see that the inter-CUSb||O-$\mu_3^{\prime\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^{\prime\prime}$. This is due to the fact that the periodic conditions leads to the decrease of the distance between OH groups. The distances between the neighboring OH groups in the O-$\mu_3^{\prime\prime}$ system are $0.68$ and $0.77\,$nm, compared to $0.93$ and $0.62\,$nm in the O-$\mu_3^{\prime\prime\prime}$ system, where the latter one is closer, so there is more stabilization. For examples of the corresponding  diffusion reactions, see chapter \ref{reactions}.
+Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and Figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see Table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H. It is apparent from this table that the inter-CUSb||O-$\mu_3^{\prime\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^{\prime\prime}$. This is due to the fact that the periodic conditions actually lead to a decrease of the distance between OH groups in the former system. The distances between the neighboring OH groups in the O-$\mu_3^{\prime\prime}$ system are $6.19$ and $8.82\,$\AA{}, compared to $6.64$ and $8.96\,$\AA{} in the O-$\mu_3^{\prime\prime\prime}$ system (the numbers refer to the two possible distance in the periodic system). The latter one is in fact only sightly further away\todo{something is awkward here... why is this more stable?}, so there is more stabilization. For examples of the corresponding  diffusion reactions, see chapter \ref{reactions}.
 \begin{table}[!ht]
   \centering
  \caption{Comparison of next neighbor dissociated species and species where OH and H are further apart. 
@@ -763,7 +754,7 @@ As mentioned before a huge well known problem of GGA is that barriers are undere
 \\
 Proton diffusion reactions are way more variable giving reaction rates at $300\,$K ranging from $10^{-13}$ to $10^{-3}$s$^{-1}$. The barriers and therefore also rate constants for H-diffusion cover a wider range depending on the distance between OH and H and of course more importantly on the fact between which type of O$\mu_{2/3}$ the proton is diffusing.
 \\
-Also reactions leading to a not next-neighbored situation, increasing the distance between OH and H are also not favorable since geometries with the residues further apart are energetically less stable.
+Also reactions leading to a not next neighbored situation, increasing the distance between OH and H are also not favorable since geometries with the residues further apart are energetically less stable.
 \begin{figure*} [!ht]
 \centering
 \subfigure[D-a: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.7\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
@@ -962,7 +953,7 @@ In this work, the focus lies more on two topics:
 First, the surface and the most stable adsorption patterns are introduced (section \ref{sec_0001surf}), followed by the results for the molecular beam scattering (section \ref{sec_0001AIMD}) and last the improvements for the reaction rates (see section \ref{sec_rates}).
 	
 \section{Surface Model and Static Calculations}\label{sec_0001surf}
-The most stable surface cut is a stochiometric, Al terminated one, and in contrast to the (11\=20) surface there is only one type of Al-CUS atom, which is a reactive Lewis-acid site. Also, all oxygen atoms are threefold coordinated, that leads to a topography that is not as complex as for the higher indexed surfaces. We applied here a $2\times 2$ supercell with vectors that were optimized from the bulk structure vectors (previous work of J. Wirth\cite{WirthJPCC2012}). The surface slab consists of 9 atomic layers, that is three repeating units in z direction of the type Al-O$_3$-Al..., with the top 5 layers being allowed to relax during optimization and AIMD and the lowest 4 layers being fixed to bulk values, see Figure \ref{abb:surf_0001}. The unit cell vectors in there are equal to $\uline{a}=\uline{b}=9.66\,$\AA  ~and a $60$\textdegree ~angle between them. The $\uline{c}$-vector of the slab model is $31.4\,$\AA~ long, hence the vacuum gap between two slabs in this direction is $26.4\,$\AA.
+The most stable surface cut is a stochiometric, Al terminated one, and in contrast to the (11\=20) surface there is only one type of Al-CUS atom, which is a reactive Lewis-acid site. Also, all oxygen atoms are threefold coordinated, that leads to a topography that is not as complex as for the higher indexed surfaces. We applied here a $2\times 2$ supercell with vectors that were optimized from the bulk structure vectors (previous work of J. Wirth\cite{WirthJPCC2012}). The surface slab consists of 9 atomic layers, that is three repeating units in z direction of the type Al-O$_3$-Al..., with the top 5 layers being allowed to relax during optimization and AIMD and the lowest 4 layers being fixed to bulk values, see Figure \ref{abb:surf_0001}. The unit cell vectors in there are equal to $\uline{a}=\uline{b}=9.66\,$\AA  ~and a $60$\textdegree{} angle between them. The $\uline{c}$-vector of the slab model is $31.4\,$\AA~ long, hence the vacuum gap between two slabs in this direction is $26.4\,$\AA.
 \\
 The stability, vibrations and reactivity of one water  molecule per $2\times 2$ supercell were already studied by Dr. Jonas Wirth. As it was published in \cite{WirthJPCC2012}, there is one molecular minimum on top of a CUS atom and 3 dissociated states (see Figure \ref{abb:0001_ads}): the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the Hydrogen atom being one position further and the 1-4$^\prime$ that is the configuration with the greatest distance that is possible for this slab size. From these, the 1-2 dissociated species is the most stable one and the 1-4$^\prime$ is the least stable one. For the stability of the molecular and the 1-4 dissociated species, the situation is more controversial in the literature. In our periodic DFT studies with VASP, it lies between the previously mentioned ones, depending on the exact method employed, for PBE+D2 the molecular adsorbed species is more stable than 1-4, for PW91+D2 the 1-4 dissociated is more stable, whereas PW91 without dispersion corrections gives the same adsorption energy for both species (the values for the adsorption energy are calculated analogously to the (11\=20) surface cut, see eq.~\ref{eq:Eads}).
 Calculations with an atom centered basis instead of plane waves with the crystal code show, that for most basis sets the molecular species is more stable and for others, they are both equal in adsorption energy.
@@ -1266,7 +1257,7 @@ In the cases of vibrational preexcitation, the symmetric stretch leads to reflec
 Quantitatively, the results may depend strongly on the excitation energy, that was not of concern here, one can say, that preexcitation has an effect on the dynamics of the water adsorption and dissociation, respectively, that were not possible with the rigid water molecule.
 \\
 \\
-Although a large number of trajectories were done with the contingent at the HLRN facility a reliable statistics could not be achieved. It was only computationally feasible to do trajectories with $1-4\,$ps duration. Also not all degrees of freedom could be probed, \textit{e.g.} the angle of the beam with respect to the surface other than 90\textdegree~ and initial orientations were only probed in 90\textdegree ~steps. Apart from that, no quantum effects were considered.
+Although a large number of trajectories were done with the contingent at the HLRN facility a reliable statistics could not be achieved. It was only computationally feasible to do trajectories with $1-4\,$ps duration. Also not all degrees of freedom could be probed, \textit{e.g.} the angle of the beam with respect to the surface other than 90\textdegree{} and initial orientations were only probed in 90\textdegree{} steps. Apart from that, no quantum effects were considered.
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1280,11 +1271,11 @@ For a model reaction we try to improve the reaction rate of a specific chosen re
 \end{figure}
 The rates were before calculated with PBE+D2 and the implementation of Nudged Elastic Band in VASP. An approach were singlepoint calculations were done for the minima and the transition state was also done. For this process also a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway.
 \\
-Now we want to expand these methods to the following 3/4/don't know? First we want to calculate the adsorption energies and the barrier within a atom centered orbital method with the hybrid functional B3LYP and also go beyond density functional theory and go to perturbation theory (LMP2).
-\\
-Apart from that, we study this reaction with the help of Path Integral Molecular Dynamics, where the system is represented as a couple of beads that are connected and henceforth act as a more delocalized particle which can contribute to quantum effects, proton tunneling.
-\\
-As a last approach, we want to apply other higher level methods in an embedded approach. We cut a cluster from the surface situation and embed this cluster in a field of point charges. By doing this we can calculate the cluster with a better method, let's say B3LYP, CCSD or MP2 and then apply a substractional scheme to get to corrected adsorption energies that can then be used to improve the rates with Eyring's equation for transtition states.
+Now we want to expand these methods to the followin: We want to calculate the adsorption energies and the barrier within a atom centered orbital method with the hybrid functional B3LYP and also go beyond density functional theory and go to perturbation theory (LMP2).
+%\\
+%Apart from that, we study this reaction with the help of Path Integral Molecular Dynamics, where the system is represented as a couple of beads that are connected and henceforth act as a more delocalized particle which can contribute to quantum effects, proton tunneling.
+%\\
+%As a last approach, we want to apply other higher level methods in an embedded approach. We cut a cluster from the surface situation and embed this cluster in a field of point charges. By doing this we can calculate the cluster with a better method, let's say B3LYP, CCSD or MP2 and then apply a substractional scheme to get to corrected adsorption energies that can then be used to improve the rates with Eyring's equation for transtition states.
 
 \subsection{MP2 and B3LYP}\label{crystal_calc}
 Going beyond pure density functionals and also beyond DFT has been too costly for a long time, simply not applicable for surface adsorbat system that large and electron rich. In the crystal/cryscor code one uses atom centered bases instead of plane waves and so large scale systems can also be computed. We first optimized our parameters with HF calculations and then did calculations with PBE similar to prior plane wave based calculations.
@@ -1370,7 +1361,7 @@ This method is a surface specific vibrational spectroscopy. An UV/Vis and an IR 
    \caption{Scheme of the SFG Process, left side the spatially overlapping Laser beams are shown, on the right side the orbital representation with the excitation to a virtual orbital is given.}
             \label{abb:sfg_scheme}
 \end{figure}
-For this, the polarization of the beam is important, it can be either s or p polarized. The selection rules result in the surface specifity: The SFG only occurs if the vibration is IR and Raman active and additionally only in systems with inversion symmetry. This makes this method predestinated for analysis of surfaces, because neither the bulk nor the gas phase are inversion symmetric, however the interface (=surface) is, so that the only come from this region. It is usually abbreviated SFG (sum frequency generation) but also named VSF (vibrational sum frequency).
+For this, the polarization of the beam is important, it can be either s or p polarized. The selection rules result in the surface specifity: The SFG only occurs if the vibration is IR and Raman active and additionally only in systems with inversion symmetry. This makes this method predestinated for analysis of surfaces, because neither the bulk nor the gas phase are inversion symmetric, however the interface (=surface, at least three atomic layers) is, so that the only signals come from this region. It is usually abbreviated SFG (sum frequency generation) but also named VSF (vibrational sum frequency).
  
 \subsection{Thermal Desorption Spectroscopy}
 In thermal desorption spectroscopy (TDS, also temperature programmed desorption, TPD) the prepared sample is heated with a defined temperature program. Thus, adsorbates are removed from surface according their binding energies and detected as a function of temperature with any detection method required. The analysis sheds light on adsorption strength and probable reaction networks.
@@ -1380,7 +1371,9 @@ When doing the experiment the method of preparation seems crucial for the result
 \\
 Pinhole Dosing (PD): Water is brought with a high partial pressure onto the surface. Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water left that can influence the measurement. This leads to an equilibrium situation.
 \\
-Molecular Beam Source (MBS): A medium, e.g. water is probed onto the surface at a very low pressure. Non-equilibrium situations are generated by the kinetic energy of the beam. 
+Molecular Beam Source (MBS): A medium, e.g. water is probed onto the surface at a very low pressure. Non-equilibrium situations are generated by the kinetic energy of the beam.
+\\
+\todo{The difference between pinhole doser and MBS is that the former cannot heat the gas source to higher temperature but MBS can heat it to more than 800 K and this high energy is able to increase the dissociation of the gas source for example water or CH$_4$. MBS is used instead of pinhole doser to enhance the dissociated population on the sample surface.}
 
 \subsection{Low-Energy Electron Diffraction}
 Spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV. Diffracted electrons are observed as a pattern on a flourescent screen. The structure can be derived from the geometry of this pattern and the lattice geometry can be seen. Problem is the high energy of the beam that can lead to damage in the sample.
