@@ -1,0 +1,43 @@
+#general
+display projection orthographic
+color Display Background white
+color change rgb blue 1.00 0.70 0.70
+color change rgb green 0.90 0.90 0.90
+color Name O blue
+color Name A green
+color Element Al silver
+axes location off
+
+#load molecule
+mol new NAME.xyz
+mol delrep 0 top
+
+#make representations
+mol selection {index 0 to 75}
+mol color Name
+mol representation vdw 0.6 40
+mol material Opaque
+mol addrep top
+mol selection {all not index 0 to 75}
+mol color element
+mol representation vdw 0.3 30
+mol material Opaque
+mol addrep top
+mol representation DynamicBonds 1.6 0.2 30.0
+mol material Opaque
+mol addrep top
+
+#view
+display resize 1680 1050
+display height 3.5
+rotate x by ROT_X
+rotate y by ROT_Y
+rotate z by ROT_Z
+
+#render image
+set name NAME.pov3
+render POV3 $name povray +W%w +H%h -I%s -O%s.tga +D +X +A +FT
+
+#convert to a file format you prefer
+convert plot.pov.tga -trim blabla.jpg
+

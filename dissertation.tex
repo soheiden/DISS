@@ -405,7 +405,7 @@ A+ B \rightleftarrows C^\ddagger \rightarrow D
 \end{equation}
 where reactants $A$ and $B$ are in thermodynamical equilibrium with the transition state $C^\ddagger$ and this reacts to the product $D$.
 The rate can then be determined with Eyring theory:
-\begin{equation}
+\begin{equation}\label{eq:eyring}
 k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)}
 \end{equation}
 with the reaction rate constant $k(T)$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger = \Delta G_{TS} - \Delta G_{educt}$, give the reaction rate constant as a function of temperature and free energy barrier height. Note, that this equation is only valid for cases, where all reactands that reach the TS react to the product site, \textit{i.e.} no re-crossing is employed, so the rate is in the classical picture the upper limit. For quantum effects, the rate can be increased due to tunneling, where reactants can overcome the barrier although they do not posses the sufficient amount of energy for the barrier. For this, the Eyring equation can be expanded with the transmission coefficient $\kappa$, that can be interpreted as a tunneling prefactor, for $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection or re-crossing to the educt side.
@@ -636,7 +636,7 @@ Furthermore, systems with a higher water coverage were considered to model enhan
 \subfigure[4inter-CUSa||O-$\mu_2$]{\includegraphics[width=0.4\textwidth]{figures/11-20/4iCa2.png}}
  \quad\quad
  \subfigure[1ML]{\includegraphics[width=0.4\textwidth]{figures/11-20/O-I-fully.png}}
- \caption{Optimized structures of the (a) 4 inter-CUSa$\parallel$O$\mu_2$ and (b) fully covered (1ML) system. The latter one shows one molecular species and several hydrogen bonded OH groups.}
+ \caption{Optimized structures of the (a) 4 inter-CUSa$\parallel$O-$\mu_2$ and (b) fully covered (1ML) system. The latter one shows one molecular species and several hydrogen bonded OH groups.}
         \label{abb:4+fully}
  \end{figure}
 
@@ -696,7 +696,7 @@ For the other dissociation reaction D-b from CUSb to CUSb$\parallel$O-$\mu_3$, t
   \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{D-b}
       \label{dissb}
 \end{equation}
-A further dissociation D-c from the metastable inter-CUSa species also shows no barrier (Figure \ref{mep}(c)), assumingly because the educt is no stable minimum and because the product is much more stable:
+A further dissociation D-c from the metastable inter-CUSa species also shows no barrier (without Figure), assumingly because the educt is no stable minimum and because the product is much more stable:
 \begin{equation}
   \text{H$_2$O(inter-CUSa)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{D-c}
       \label{dissc}
@@ -709,7 +709,7 @@ The OD diffusion reaction Df-OH-a moves from CUSb$\parallel$O-$\mu_2$ to the int
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_2$)} \tag{Df-OH-a}
      \label{diffOHa}
 \end{equation}
-In this special reaction, the OH residue diffuses from an on top CUS position into a gap between two CUSb atoms (inter-CUSb position), so that there is not much repulsion with neighboring surface oxygen atoms and other CUS atoms nearby during the diffusion, see Figure \ref{mep}(d). Also the distance that has to be overcome is very small. The barrier height equals $0.35\,$eV and the corresponding rate constant $k_{\text{300K}}=1.88\times 10^6$s$^{-1}$.
+In this special reaction, the OH residue diffuses from an on top CUS position into a gap between two CUSb atoms (inter-CUSb position), so that there is not much repulsion with neighboring surface oxygen atoms and other CUS atoms nearby during the diffusion, see Figure \ref{mep}(c). Also the distance that has to be overcome is very small. The barrier height equals $0.35\,$eV and the corresponding rate constant $k_{\text{300K}}=1.88\times 10^6$s$^{-1}$.
 In contrast to that the real CUS-to-CUS reaction Df-OH-b that is much slower. It is a diffusion from CUSb to inter-CUSa with the hydrogen residue staying at an O-$\mu_2$ position (see Figure \ref{mep}(d)). This barrier is with $1.07\,$eV relatively high and leads to $k_{\text{300K}}=2.41\times 10^{-6}$s$^{-1}$.
 \begin{equation}
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{Df-OH-b}
@@ -724,54 +724,49 @@ As seen before, the hydrogen is preferably found on the twofold coordinated oxyg
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{Df-H-a}
      \label{diffHa}
 \end{equation}
-The reaction shows a barrier height of $0.95\,$eV, but the NEB transition state has no imaginary frequency so that no rate can be derived, although the NEB path clearly shows a smooth barrier profile.
+The reaction shows a proton transfer reaction with a barrier height of $0.95\,$eV, but the NEB transition state has no imaginary frequency so that no rate can be derived, although the NEB path clearly shows a smooth barrier profile, compare Figure \ref{mep2}(a).
 \\
-An analogue reaction starting from the most stable inter-CUSa$\parallel$O-$\mu_2$ to the threefold coordinated oxygen is reaction Df-H-b:
+A further reaction starting from the most stable inter-CUSa$\parallel$O-$\mu_2$ to the threefold coordinated oxygen can be seen in Figure \ref{mep2}(b) and is called reaction Df-H-b:
 \begin{equation}
  \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_3^\prime$)} \tag{Df-H-b}
      \label{diffHb}
 \end{equation}
-the barrier of the free energy is $1.50\,$eV, rate constant at $300\,$K of $4.90\times 10^{-13}$s$^{-1}$. This process is so unlikely because a less favored O-$\mu_3$ position is occcupied and this position is also less stabilized by reason of the greater distance of OH$_{\text{surf}}$ and OH$_{\text{ads}}$ groups. This reaction increases the distance to a position further away than next neighbor.
-As mentioned before, the nomenclature for these structures uses different amounts of primes ($\prime$) to display the distance.
-A similar reaction for the OH sitting on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2^\prime$ position, diffusing further away to O-$\mu_3^{\prime\prime}$, which is less in stability:
+The barrier of the free energy is $1.50\,$eV, with a rate constant at $300\,$K of $4.90\times 10^{-13}$s$^{-1}$. This process is so unlikely because a less favored O-$\mu_3$ position is occcupied and this position is also less stabilized by reason of the greater distance of OH$_{\text{surf}}$ and OH$_{\text{ads}}$ groups. This reaction increases the distance to a position further away than next neighbor.
+As mentioned before, the nomenclature for these structures uses primes ($\prime$) to display the distance.
+\\
+A similar reaction can be seen in Figure \ref{mep2}(c) for the OH being situated on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2^{(\prime)}$ position, diffusing further away to O-$\mu_3^{\prime\prime}$, which is less in stability:
 \begin{equation}
  \text{OH(inter-CUSb)} + \text{H(O-$\mu_2^{(\prime)}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \tag{Df-H-c}
      \label{diffHc}
 \end{equation}
-The free energy barrier is relatively high with $1.30\,$eV leading to a rate constant $k_\textrm{300K}=9.96\times 10^{-1}$s$^{-1}$. The $^\prime$ in the equation above is set in parantheses because it is the nearest possible O-$\mu_2$ position, but not the nearest possible distance from the OH$_\textrm{ads}$.
+The free energy barrier is relatively high with $1.30\,$eV giving a rate constant $k_\textrm{300K}=9.96\times 10^{-1}$s$^{-1}$. The $^\prime$ in the equation above is set in parantheses because it is the nearest possible O-$\mu_2$ position, but not the nearest possible distance from the OH$_\textrm{ads}$.
 
-Going one step further from reaction Df-H-d, the last reaction leads to the position where OH and H have the greatest possible distance with the applied periodic bounding conditions:
+Going one step further from reaction Df-H-c, the following reaction leads to the position where OH and H have the greatest possible distance with the applied periodic bounding conditions:
 \begin{equation}
  \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime\prime}$)} \tag{Df-H-d}
      \label{diffHd}
 \end{equation}
-With an energy barrier of $0.94\,$eV the rate at $300\,$K is $1.1\times 10^{-3}$s$^{-1}$.
+With an energy barrier of $0.94\,$eV the rate at $300\,$K is $1.1\times 10^{-3}$s$^{-1}$, see also Figure \ref{mep}(d).
 \\
-Possible path from inter-CUSb$\parallel$O-$\mu_3$ to O-$\mu_2^\prime$ to O-$\mu_3^{\prime\prime}$ and to the furthest possible O-$\mu_3^{\prime\prime\prime}$. The first reaction was calculated but did not converge for unknown reasons. The two next steps of this hydrogen migration path were studied (Df-H-c and Df-H-d). The rate of the first step is unknown but it is assumed to be fast, because as the product a very stable O-$\mu_2$ configuration is involved. The second reaction (Df-H-c) has a medium rate with $10^{-1}$s$^{-1}$. The last step of this path is the slowest with $10^{-3}$s$^{-1}$. The corresponding adsorption energy profile is different from that: $-1.89$, $-2.09$, $-1.16$ and $-1.22$eV.
+These H diffusion paths can be assembled to a longer diffusion path leading from inter-CUSb$\parallel$O-$\mu_3$ to O-$\mu_2^\prime$ to O-$\mu_3^{\prime\prime}$ and to the furthest possible O-$\mu_3^{\prime\prime\prime}$. The first reaction was calculated but did not converge for unknown reasons. The two next steps of this hydrogen migration path were studied (Df-H-c and Df-H-d). The rate of the first step is unknown but it is assumed to be fast, because as the product a very stable O-$\mu_2$ configuration is involved. The second reaction (Df-H-c) has a medium rate with $10^{-1}$s$^{-1}$. The last step of this path is the slowest with $10^{-3}$s$^{-1}$. The corresponding adsorption energy profile is different from that: $-1.89$, $-2.09$, $-1.16$ and $-1.22$eV. One can conclude that hydrogen migration but not likely because the O-$\mu_2$ acts as a trap for H that hinders further reactions.
 \\
 \begin{table*}[ht]
   \centering
-  \caption{{\color{red} CHANGE THIS TABLE COMPLETELY!!}{\textit Reaction rates for selected reaction paths examined. $\Delta 
-E=E(\textrm{product}) - E(\textrm{educt})$, $\Delta E^{\ddagger}=E^\ddagger - 
-E(\textrm{educt})$, respectively for the free energy, $G$, obtained from PBE+D2 
-calculations. $k$ is the rate constant from eq.~(\ref{eyring}). Thermodynamic 
-quantities and rates are given for $T=300\,$ K. ``n.f.'' indicates ``not found''. 
-The reactions are either water dissociation (D), OH 
-diffusion (Df-OH) or H diffusion (Df-H).}}
+  \caption{Energy and free energy differences are given:  $\Delta E=E(\textrm{product}) - E(\textrm{educt})$, $\Delta E^{\ddagger}=E^\ddagger - E(\textrm{educt})$, respective for $G$. The same is given for the transition state - educt. Thermodynamic properties are given at $T=300\,$K. $k$ is the rate constant from eq.~(\ref{eq:eyring}). The three types of reactions are dissociation (D), OH diffusion (Df-OH) and H diffusion (Df-H). ``n.f.'' indicates ``not found''}
   \begin{tabular}{cl|cc|cc|c}
   \multicolumn{2}{c|}{\small{Reaction Type}}             & \small{$\Delta E$(eV)}& \small{$\Delta G_\text{300 K}$(eV)} & \small{$\Delta E^{\ddagger}$(eV)} & \small{$\Delta G_\text{300 K}^{\ddagger}$(eV)} & \small{$k_\text{300 K}$(s$^{-1}$)}  \\
     \hline
 \multirow{3}{*}{\small{\ce{H2O} dissociation}} &
    \small{D-a}  & \small{-0.50} & \small{-0.52} & \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\
  & \small{D-b} & \small{0.59} & \small{0.53} & \small{n.f.} & \small{n.f.} & \small{n.f.} \\
- & \small{D-c} & & & \small{n.f.} & \small{n.f.} & \small{n.f.}  \\
+ & \small{D-c} &\textit{\small{-1.15}} &\textit{\small{-1.27}} & \small{n.f.} & \small{n.f.} & \small{n.f.}  \\
     \hline
  \multirow{2}{*}{\small{OH diffusion}} &
    \small{Df-OH-a} & \small{0.19} & \small{0.22} & \small{0.35} & \small{0.39} & \small{1.88 $\times  10^6$}\\
  & \small{Df-OH-b}  & \small{-0.21} & \small{-0.13} & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\
     \hline
 \multirow{4}{*}{\small{H diffusion}} &
-  \small{Df-H-a} & & & &no TST & \\
+  \small{Df-H-a} &\textit{\small{0.76}} &\textit{\small{0.58}} & \small{n.f.}&\small{n.f.} & \small{n.f.}\\
 & \small{Df-H-b}  & \small{1.08} & \small{1.04} & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\
 & \small{Df-H-c} & \small{0.93} & \small{0.89} & \small{1.36} & \small{1.30} & \small{9.96$\times 10^{-10}$}\\
 & \small{Df-H-d} & \small{-0.06} & \small{-0.07} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\
@@ -779,11 +774,9 @@ diffusion (Df-OH) or H diffusion (Df-H).}}
   \label{tab:reaction-rates}
 \end{table*}
 \\
-As mentioned before a huge well known problem of GGA is that barriers are underestimated\cite{Zhao05}. Optimizing structure with HSE06 is nearly impossible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (\todo{see also work of Dr. J. Wirth WHERE?}). \todo{at least for crystal calculations... so don't bring it here?}
+Proton diffusion reactions are way more variable than OH diffusions or dissociation reactions, providing reaction rates at $300\,$K ranging from $10^{-13}$ to $10^{-3}$s$^{-1}$. The barriers and therefore also rate constants for H-diffusion cover a wider range depending on the distance between OH and H and of course more importantly on the fact between which types of O-$\mu_{2/3}$ the proton is diffusing.
 \\
-Proton diffusion reactions are way more variable giving reaction rates at $300\,$K ranging from $10^{-13}$ to $10^{-3}$s$^{-1}$. The barriers and therefore also rate constants for H-diffusion cover a wider range depending on the distance between OH and H and of course more importantly on the fact between which type of O$\mu_{2/3}$ the proton is diffusing.
-\\
-Also reactions leading to a not next neighbored situation, increasing the distance between OH and H are also not favorable since geometries with the residues further apart are energetically less stable.
+Also reactions leading to another situation than next neighbored, increasing the distance between OH and H are less favorable since geometries with the residues further apart are energetically less stable (compare Table \ref{tab:ads_1waterfurther}).
 \begin{figure*} [!ht]
 \centering
 \subfigure[D-a: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.7\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
@@ -798,19 +791,21 @@ Also reactions leading to a not next neighbored situation, increasing the distan
 \end{figure*}
 \begin{figure*} [!ht]
 \centering
+\subfigure[Df-H-a: CUSb||O-$\mu_2\rightarrow$CUSb||O-$\mu_3$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_Cb2-Cb3.pdf}}
+\quad
 \subfigure[Df-H-b: inter-CUSa||O-$\mu_2\rightarrow$inter-CUSa||O-$\mu_3^\prime$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCa2-iCa3p.pdf}}
  \quad
  \subfigure[Df-H-c: inter-CUSb||O-$\mu_2^\prime\rightarrow$inter-CUSb||O-$\mu_3^{\prime\prime}$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCb2p-iCb3pp.pdf}}
  \quad
 \subfigure[Df-H-d: inter-CUSb||O-$\mu_3^{\prime\prime}$ $\rightarrow$inter-CUSb||O-$\mu_3^{\prime\prime\prime}$]{\includegraphics[width=.7\textwidth]{figures/11-20/Diff-H_iCb3pp-iCb3ppp.png}}
-\caption{Minimum energy paths with transition states, and both educt and product states for Df-H-b - Df-H-d reactions. The color code is as explained above.}
+\caption{Minimum energy paths with transition states, and both educt and product states for Df-H-a - Df-H-d reactions. The color code is as explained above.}
        \label{mep2}
 \end{figure*}
 
 Rates for backreactions can also be calculated and the results are shown in Table \ref{tab:backreactions}.
 \begin{table*}[ht]
   \centering
-  \caption{Reaction rate constants for the backreactions in comparison with forward reactions (left). These rates can be calculated via detailed balance $\stackrel{\leftarrow}{k}  = \stackrel{\rightarrow}{k} \ e^{-\Delta G/k_B T}$. All values are given in s$^{-1}$ and at a temperature of $300\,$K.}
+  \caption{Reaction rate constants for the backreactions (right) in comparison with forward reactions (left). These rates can be calculated via detailed balance $\stackrel{\leftarrow}{k}  = \stackrel{\rightarrow}{k} \ e^{-\Delta G/k_B T}$. All values are given in s$^{-1}$ at a temperature of $300\,$K.}
   \begin{tabular}{cl|cc|cc|c}
 \small{Reaction Type} & \small{$k_\text{300 K}$(s$^{-1}$)} &  \small{$k_\text{300 K}$(s$^{-1}$)} \\
  &forward reaction &back reaction \\\hline
@@ -819,16 +814,18 @@ Rates for backreactions can also be calculated and the results are shown in Tabl
  \small{D-c}   & \small{n.f.} & \small{n.f.}  \\\hline
  \small{Df-OH-a} & \small{1.88 $\times  10^6$}&\small{9.86$\times 10^9$} \\
  \small{Df-OH-b}  & \small{2.41$\times 10^{-6}$}& \small{1.69$\times 10^{-8}$}\\\hline
- \small{Df-H-a} & \textit{no TST} &\textit{no TST} \\
+ \small{Df-H-a} & \small{n.f.} &\small{n.f.} \\
  \small{Df-H-b}  & \small{4.90$\times 10^{-13}$} &\small{1.49$\times 10^5$} \\
  \small{Df-H-c} & \small{9.96$\times 10^{-10}$}& \small{9.95$\times 10^5$}\\
  \small{Df-H-d} & \small{1.05$\times 10^{-3}$} &\small{7.12$\times 10^{-5}$} \\
   \end{tabular}
   \label{tab:backreactions}
 \end{table*}
+\\
+As mentioned before an immense well known problem of GGA is that barriers are underestimated\cite{Zhao05}. Optimizing structures with HSE06 is nearly impossible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (unpublished work by Dr. J. Wirth, U Potsdam). %\todo{at least for crystal calculations... so don't bring it here?}
 \clearpage
 \section{Vibrational Frequencies / Spectroscopic Properties}
-A great source of knowledge about chemical systems is vibrational spectroscopy, so we were interested in frequencies of the systems, since the frequencies of these vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system adsorbed with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are better with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg}.
+A great source of knowledge about chemical systems is vibrational spectroscopy, so we were interested in vibrational frequencies of the systems, since the frequencies of vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system adsorbed with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are clearer with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
@@ -837,23 +834,24 @@ A great source of knowledge about chemical systems is vibrational spectroscopy, 
  \end{figure}
 Of course, the frequencies for a deuterated system are different from OH, but the different isotopes can be calculated easily within vasp, just by changing the mass.
 \\
-{\color{red} Better put this in theory part or appendix? In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in UHV and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source. For further details see \cite{Heiden11-20_2018} and the supporting information.}
+In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in UHV and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source. For further details see \cite{Heiden11-20_2018} and the supporting information therein.
 \\
-To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and for some systems also power spectra from \textit{ab initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
 \\
-We focus mainly on the position of the peaks rather than the intensities, because in the first place it is of greater interest what kind of vibrations gives which peak than the intensity of this peak. It is also still challenging to get the frequencies right before heading to intensities.
-In the power spectra from MD calculations the intensities are implicitly received and for the normal mode analyses this work follows 2 different approaches, dipole corrections and Born effective charges.
+To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and power spectra from \textit{ab initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
+\\
+The focus lies mainly on the position of the peaks rather than the intensities, because in the first place it is of greater importance what kind of vibrations gives which peak than the intensity of the peak itself. Also, it is still challenging to determine the frequencies before heading to intensities.
+In the power spectra from MD calculations the intensities are implicitly received and for the normal mode analyses this work follows 2 different approaches: dipole corrections and Born effective charges.
 \\
 In subsection \ref{nma}, also modes for higher coverage systems are also examined.
 \\
-But not only the OH/OD frequencies are of interest, but also the lattice vibrations, and are covered in both subsections.
+But not only the OD frequencies are of interest, but also the lattice vibrations, and are covered in both subsections.
 
 \subsection{Normal Mode Analysis}\label{nma}
 \subsubsection{OD Vibrations}
-The normal modes are within the harmonic approximation and depend on the mass and the spring constant of the bond. This ansatz is quite good for high frequency modes like OD stretch vibrations. We assumed that the OD stretching modes for the 3 most stable structures would contribute to the spectrum the most (see Table \ref{tab:freq_layers}).
+The normal modes are calculated within the harmonic approximation and depend on the mass and the spring constant of the bond. This ansatz is quite good for high frequency modes like OD stretch vibrations. We assumed that the OD stretching modes for the three most stable structures would contribute to the spectrum the most. These results are presented in Table \ref{tab:freq_layers}.
 \begin{table*}[th]
   \centering
- \caption{Comparison of the different slab sizes (normal modes): OD stretching modes for each of the most stable minima. In parantheses, the angle of the OD bonding vector to the surface normal ($\theta$ in \textdegree) is given. The left value reflects the adsorbed OD group and the right wavenumber the surface OD group, respectively.}
+ \caption{Wavenumbers of normal modes for the different slab sizes: OD stretching modes for each of the most stable minima. All values are given in cm$^{-1}$; in parantheses, the angle of the OD bonding vector to the surface normal ($\theta$ in \textdegree) is provided. In each column, the left value reflects the adsorbed OD group and the right wavenumber the surface OD group, respectively.}
 \vspace*{.2cm} 
  \begin{tabular}{l|cccc}
   Layers&inter-CUSa$\parallel$O-$\mu_2$ &CUSb$\parallel$O-$\mu_2$  &inter-CUSb$\parallel$O-$\mu_2$ \\\hline
@@ -865,16 +863,20 @@ The normal modes are within the harmonic approximation and depend on the mass an
   \end{tabular} 
   \label{tab:freq_layers}
 \end{table*}
-Of course, all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although as it was mentioned in section \ref{structure_search11-20} that the slab was already converged with 10 layers concerning OD stretch frequencies. Following this approach we expect 6 modes, for each of the three an OD$_{surf}$ and an OD$_{ads}$. In all cases the relationship between the two individual modes for each considered structure is portrayed by $\tilde{\nu}$(OD$_{ads}$)>$\tilde{\nu}$(OD$_{surf}$). This can be explained with the different reduced mass for both vibrations: The OD$_{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can act more as a quasi-free OD group \cite{kirsch2014}. All these vibrations are clearly localized on one of the OD groups, which suggests that the normal modes ansatz is reasonable.
+\\\\
+ Following this approach we expect six modes, for each of the three an OD$_{surf}$ and an OD$_{ads}$. In all cases the relationship between the two individual modes for each considered structure is portrayed by $\tilde{\nu}$(OD$_{ads}$)>$\tilde{\nu}$(OD$_{surf}$). This can be explained with the different reduced mass for both vibrations: The OD$_{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can act more as a quasi-free OD group \cite{Wirth2014}. All these vibrations are clearly localized on one of the OD groups, which suggests that the normal modes ansatz is reasonable.
+\\
+Of course, normal modes of all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although as it was mentioned in section \ref{structure_search11-20} that the slab was already converged with 10 layers concerning OD stretch frequencies.
+\\
 \\
 To consider the probability of observing these species, we calculated their respective Boltzmann weights $P_i$:
 \begin{equation}\label{boltzmann-weight}
  P_i=e^{-G_i/(k_BT)}.
 \end{equation}
-With this analysis it is possible to show the relative population for different temperatures, see Table \ref{tab:boltzmann-pop}. In the whole temperature range relevant for the experiments, it is shown that the population of the species inter-CUSa$\parallel$O-$\mu_2$ clearly dominates and that the population of inter-CUSb$\parallel$O-$\mu_2$ is very low, compared to the others.
+With this analysis it is possible to show the relative population for different temperatures, given in Table \ref{tab:boltzmann-pop}. In the temperature range relevant for the experiments, it is shown that the population of the species inter-CUSa$\parallel$O-$\mu_2$ clearly dominates and furthermore that the population of inter-CUSb$\parallel$O-$\mu_2$ is very low, compared to the others.
 \begin{table*}[th]
   \centering
- \caption{Boltzmann population relative to the most stable inter-CUSa$\parallel$O$\mu_2$, calculated according to eq.~\ref{boltzmann-weight}.}
+ \caption{Boltzmann population $P$ relative to the most stable inter-CUSa$\parallel$O-$\mu_2$, calculated according to Equation \ref{boltzmann-weight} for $130$, $300$ and $400\,$K. Values are given for the 10-layer system.}
 \vspace*{.2cm} 
  \begin{tabular}{l|ccc}
   & P$_{130K}$ & P$_{300K}$ & P$_{400K}$\\\hline
@@ -885,13 +887,12 @@ With this analysis it is possible to show the relative population for different 
   \label{tab:boltzmann-pop}
 \end{table*}
 \\
-With the results for the frequencies of the three most stable structures (here the inter-CUSb$\parallel$O-$\mu_2$ results are shown for completeness), one can see, that for all slab sizes, there are 4 relevant modes. One of them is noticeable lower in energy that is due to hydrogen bonding. Also the angle of the bonding vector with respect to the surface normal is very high (i.e. the bond is more in plain, values shown Tab.~\ref{tab:freq_layers}, schematic representation in Tab.~\ref{tab:rel_modes}) so that the expected intensity in experiment is remarkably lower and may be not visible in experiment because of the angle dependence of the intensity in VSF. 
+With the results for the frequencies of the three most stable structures (from Table \ref{tab:freq_layers}), one can see, that for all slab sizes, there are 4 relevant modes to be expected. One of them is noticeable lower in energy that is due to hydrogen bonding. Also the angle of the bonding vector with respect to the surface normal is very high (i.e. the bond is more in plain, values shown Tab.~\ref{tab:freq_layers}, schematic representation in Tab.~\ref{tab:rel_modes}) so that the expected intensity in experiment is remarkably lower and may be not visible in experiment because of the angle dependence of the intensity in VSF. 
 \\
-With this in mind, we are able to predict 3 peaks, which fits well to the experimental results (see Figure \ref{abb:exp-sfg}). Comparing these results in absolute numbers is not very convincing as before in the literature, but relative numbers are in good agreement (see results for experiment and all different sized layer slabs in Table \ref{tab:rel_modes}).
+With this in mind, we are able to predict 3 peaks, which fits well to the experimental results of Yanhua Yue from FHI Berlin (see Figure \ref{abb:exp-sfg}). Comparing these results in absolute numbers is not very convincing as before in the literature, but relative numbers are in good agreement (see results for experiment and all different sized layer slabs in Table \ref{tab:rel_modes}).
 \begin{table*}[!h]
 \begin{center}
 \caption{Frequency differences $\Delta \tilde{\nu}$ are given in [cm$^{-1}$]. $\Delta \tilde{\nu}_1$ depicts the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$. In the right half a sketch of the angle $\theta$ between the OD bond and the surface normal is shown.}
-%{Vibrational frequencies and VSF resonances as observed at $300$ and $400\,$K, all in cm$^{-1}$. Also listed are frequency differences $\Delta {\tilde{\nu}}$, relative to the lowest frequency. An assignment of the modes is given. The O-D tilting angles $\theta$ are listed once more for clarity.}
 \begin{tabular}{cccc}
 layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$&\multirow{6}{1pt}{\includegraphics[width=2cm]{figures/11-20/ODangle.png}}\\\hline
 10  &37 &91 & \\
@@ -899,19 +900,15 @@ layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$&\multirow{6}{1pt}{\inc
 20  &35 &89 & \\
 25  &32 &71 & \\\hline
 exp.&50 &77 & \\
-% \begin{tabular}{cl|c|cc|cc}
-% \multicolumn{2}{c|}{assignment}   & $\theta / ^{\circ}$ & $\tilde{\nu} _\mathrm{cal}$  & $\Delta{\tilde{\nu}}_{\mathrm{cal}}$ & $\tilde{\nu}_\mathrm{exp}$ & $ \Delta{\tilde{\nu}}_{\mathrm{exp}}$ \\\hline
-% \multirow{2}{*}{inter-CUSa||O-$\mu_2$} & D(O-$\mu_2$) & 36 &  2694 &    & 2762 &  \\
-% & OD(inter-CUSa)  & 44 & 2731 & 37 & 2812 & 50  \\\hline
-% CUSb||O-$\mu_2$ & OD(CUSb)       & 26 & 2785 & 91 & 2839 & 77 \\
   \end{tabular}
 \label{tab:rel_modes}
 \end{center}
 \end{table*}
 \\
+\\
 Two problems of this approach are, that we neglect anharmonicities, that are especially important for hydrogen bonded vibrations and also the absence of neighbor effects, that can be solved by computing higher coverage systems.
 \\
-The influence of higher coverage was examined for some test systems already presented in section \ref{structure_search11-20}. The coverage differs from 2D$_2$O molecules per super cell to 4 and 12 water molecules (equals 1ML). Here the frequencies of the OD stretching modes are affected due to the neighbor effects, for some structures more and for other less (e.g. the system with 2inter-CUSa$\parallel$O-$\mu_2$).
+The influence of higher coverage was examined for some test systems already presented in section \ref{structure_search11-20}. The coverage differs from 2D$_2$O molecules per super cell to 4 and 12 water molecules which equals 1ML. Here the frequencies of the OD stretching modes are affected due to the neighbor adsorbates, for some structures more and for other less (e.g. the system with 2 inter-CUSa$\parallel$O-$\mu_2$).
 \todo{compare modes of low coverage limit to spetra with higher coverage, ask Lu for more data of higher coverage.}
 \\
 The simulation of intensities was done both with dipole corrections and Born effective charges and is shown here as a comparison. \todo{show only high frequency part, comparing BEC and dipole, for the most stable configurations. These are only IR intensities in both cases, that can not be set equal to SFG intensities but can be a first hint.}

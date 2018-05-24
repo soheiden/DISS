@@ -1,0 +1,81 @@
+#general
+display projection orthographic
+color Display Background white
+color change rgb blue 1.00 0.70 0.70
+color change rgb green 0.90 0.90 0.90
+color change rgb gray 0.45 0.45 0.45
+color Element O red
+color Element Al black
+color Name O orange
+color Name A gray
+color Type O pink
+axes location off
+
+#load molecule
+mol new NAME.xyz
+mol delrep 0 top
+
+#make representations
+#CUSa
+mol selection {index 5 6 13 14 21 22 29 30}
+mol color Name
+mol representation vdw 0.6 75
+mol material Opaque
+mol addrep top
+#CUSb
+mol selection {index 3 7 11 15 19 23 27 31}
+mol color Element
+mol representation vdw 0.6 75
+mol material Opaque
+mol addrep top
+#O-mu2
+mol selection {index 37 49 61 73}
+mol color Name
+mol representation vdw 0.6 75
+mol material Opaque
+mol addrep top
+#O-mu3
+mol selection {index 38 43 50 55 62 67 74 79}
+mol color Element
+mol representation vdw 0.6 75
+mol material Opaque
+mol addrep top
+#die anderen:
+mol selection {index 0 1 2 4 8 9 10 12 16 17 18 20 24 25 26 28 32 33 34 35 36 39 40 41 42 44 45 46 47 48 51 52 53 54 56 57 58 59 60 63 64 65 66 68 69 70 71 72 75 76 77 78}
+mol color Type
+mol representation vdw 0.6 75
+mol material Opaque
+mol addrep top
+mol selection {index 5 6 13 14 21 22 29 30 3 7 11 15 19 23 27 31 37 49 61 73 38 43 50 55 62 67 74 79}
+mol addrep top
+mol representation DynamicBonds 1.6 0.2 30.0
+mol material Opaque
+mol addrep top
+#H2Oads
+mol selection {index 80 81 82}
+mol color Element
+mol representation cpk 1.4 0.7 0.7 75
+mol addrep top
+mol material Opaque
+
+#view
+display resize 1680 1050
+display height 3.5
+rotate x by ROT_X
+rotate y by ROT_Y
+rotate z by ROT_Z (-38)
+
+#render image
+set name NAME.pov3
+render POV3 $name povray +W%w +H%h -I%s -O%s.tga +D +X +A +FT
+
+#convert to a file format you prefer
+convert plot.pov.tga -trim blabla.jpg
+
+
+#Ausschneiden mit inkscape:
+1) Rechteck erzeugen und an die gewünschte Stelle verschieben (ohne Rand und Farbe)
+2) beide Objekte (Rechteck+Bild) markieren, ctrl+shift drücken
+3) Object -> Clip -> set drücken
+4) Bild einfügen als neu und speichern
+
