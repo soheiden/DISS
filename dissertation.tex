@@ -993,11 +993,11 @@ While this trend is true for the clean surface and the lattice region of the cov
 \end{figure}
 In the full spectrum, one can see three different regimes: the lattice region $<900\,$cm$^{-1}$, the OD region around $1700\,$cm$^{-1}$ for hydrogen bonded stretch and above $2600\,$cm$^{-1}$ for free vibrations.
 The exact wavenumbers differ slightly for the OD regions but in general are in good agreement.
-
-\todo{compare clean surface for different sizes, iCa2, Cb2 and iCb2 for all slab sizes. intensities for lattice vibrations from BEC (only 10 layer system) and dip..}
+\\
+\todo{compare higher coverages (2 and 4D$_2$O and 1ML), O-II termianted surface (clean and 1ML system) and symmetric slab!}
 
 \subsection{Born Effective Charges}
-These results were obtained for the three most stable adsorbed systems with 10 layers. For getting the spectrum an angle of the IR beam of 45\textdegree~ was assumed. Because both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequency are equal and only the intensities differ. In Figure \ref{abb:bec} the spectra can be seen.
+These results were obtained for the three most stable adsorbed systems with 10 layers. For getting the spectrum an angle of the IR beam of 45\textdegree~was assumed. Because both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities differ. In Figure \ref{abb:bec} the spectra for the three most stable structures can be seen, (a) depicts the whole range and (b) the OD range only.
 \begin{figure}[!h]
     \centering
     \subfigure[BEC, D$_2$O]{\includegraphics[width=0.30\textwidth]{figures/11-20/bec_specs_dip_D2O_sticks.eps}}
@@ -1008,14 +1008,38 @@ These results were obtained for the three most stable adsorbed systems with 10 l
      \end{figure}
 The peak around $1700\,$cm$^{-1}$ comes solely from the hydrogen bonded CUSb$\parallel$O-$\mu_2$ OD group. The other non hydrogen bonded peaks come above $2500\,$cm$^{-1}$ and the lattice region can be seen below $1000\,$cm$^{-1}$.
 \\
-In comparison to the results from the dipole corrections, for inter-CUSa$\parallel$O-$\mu_2$ the intensities in the OD range are nearly the same, although the more intense peak is changed. In the lattice region the agreement is not as excellent. For the OD region of CUSb$\parallel$O-$\mu_2$, the agreement is worse, BEC predicts the H-bonded peak at $1711\,$cm$^{-1}$ to be the most intense whereas the dipole corrected intensities give this in the lattice region. The intensities in the lattice region are also different. Concerning the inter-CUSb$\parallel$O-$\mu_2$ the OD region shows good agreement, also the more intense peak is the same. Again in the lattice region, the difference is larger. This might be due to the fact, that low energy modes are less precisely represented by normal modes.
+In comparison to the results from the dipole corrections, for inter-CUSa$\parallel$O-$\mu_2$ the intensities in the OD range are nearly the same, although the more intense peak is changed. In the lattice region the agreement is not as excellent. For the OD region of CUSb$\parallel$O-$\mu_2$, the agreement is worse, BEC predicts the H-bonded peak at $1711\,$cm$^{-1}$ to be the most intense whereas the dipole corrected intensities give this in the lattice region which is also very distinctive. Concerning the inter-CUSb$\parallel$O-$\mu_2$ the OD region shows good agreement, also the more intense peak is the same. Again in the lattice region, the difference is larger. This might be due to the fact, that low energy modes are less precisely represented by normal modes. \todo{was ist das denn für ein Grund, beide basieren ja auch normal modes}
      
 \subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
-The velocity-velocity autocorrelation function that is evaluated from \textit{ab initio} MD calculations and Fourier transformed is a totally different ansatz to  calculating a spectrum. No frequency analysis has to be done, \textit{i. e.} no harmonic approximation is applied. Instead the movement of the nuclei at the temperature is taken into account. At $300\,$K for the clean surface (30 layers) and the three most stable adsorbed structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$, 10 layers each) the respective MD were calculated, starting from the minimum structure. \todo{number of steps, time covered?}
+The velocity-velocity autocorrelation function that is evaluated from \textit{ab initio} MD calculations and Fourier transformed is a totally different ansatz to  calculating a spectrum. No frequency analysis has to be done, \textit{i. e.} no harmonic approximation is applied. Instead the movement of the nuclei at the temperature is taken into account. At $300\,$K for the clean surface (30 layers) and the three most stable adsorbed structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$, 10 layers each) the respective MD were calculated, starting from the minimum structure.
 \\
-\todo{no real IR, but still one can relate to intensities. results for trajectories.
+For the clean surface, the 30-layer model was applied, with a duration of $5\,$ps.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/11-20/comp_cleansurf_all.eps}%spec_surf_30layer-300K.eps}
+             \caption{Power spectrum of the clean surface of the 30-layer slab, calculated from velocity-velocity autocorrelation functions from canonical (NVT) AIMD trajectories at $300\,$K (5000 steps, $5\,$ps). In comparison to the power spectrum, the stick spectra of the dipole corrected normal modes are shown.} \label{abb:velvelclean}
+\end{figure}
+As for the normal modes results, the peaks are below $900\,$cm$^{-1}$, see Figure \ref{abb:velvelclean}. The shown intensities can not be perfectly reasonable compared to the IR intensities obtained from BEC or dipole corrected normal modes, but still as a first impression it is a useful approximation. The most intense peak in the power spectrum can be observed at significantly lower energy than for any normal mode based result. Also more peaks are present in the whole range from $0$ to around $900\,$cm$^{-1}$.
 \\
-It also is possible to separate modes from water layers from bulk phonons. Not really important if you don't use hydroxylated surface with a higher water coverage? So for Giacomo's system it makes sense, but here it is unnecessary.}
+The results for the adsorbed species were obtained by AIMD calculations of the 10 layer system at a temperature of $300\,$K. The system inter-CUSa$\parallel$O-$\mu_2$ was propagated for $3.68\,$ps. The respective spectrum is shown in Figure \ref{abb:velvel_ads_spec}(a) and shows one intense peak in the OD region at $2720\,$cm$^{-1}$. Compared to the normal modes where we observe two peaks, one for the surface and one for the adsorbed OD group. It is possible that both groups overlap and lead to the broad peak. In the lattice region, as it could be observed for the clean surface as well, the intense peaks are at lower wavenumbers and there is no strong agreement.
+\begin{figure}[!h]
+    \centering
+    \subfigure[D$_2$O, inter-CUSa$\parallel$O-$\mu_2$, 300K]{\includegraphics[width=0.30\textwidth]{figures/11-20/spec_d2o_iCa2-300K_comp.eps}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[D$_2$O, CUSb$\parallel$O-$\mu_2$, 300K]{\includegraphics[width=0.30\textwidth]{figures/11-20/spec_d2o_Cb2-300K_comp.eps}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[D$_2$O, inter-CUSb$\parallel$O-$\mu_2$, 300K]{\includegraphics[width=0.30\textwidth]{figures/11-20/spec_d2o_iCb2-300K_comp.eps}}
+             \caption{Power spectra are shown in red, obtained from NVT AIMD trajectories at 300K for the geometries (starting points were geometry optimized structures at $0\,$K) of the most stable structures via vel-vel ACF. Duration of the trajectories is given inside the figures and is approximately $3.7\,$ps. In black the spectrum with intensities from dipole corrected normal modes are shown for comparison.}
+            \label{abb:velvel_ads_spec}
+\end{figure}
+\\
+The spectrum of the CUSb$\parallel$O-$\mu_2$ system can be seen in Figure \ref{abb:velvel_ads_spec}(b). It was propagated for $3.67\,$ps. The OD range shows one clear peak at around $2757\,$cm$^{-1}$, that can be compared to the non-hydrogen bonded peak in the normal modes. In contrast to that the hydrogen bonded peak that can be found in the normal modes at $1711\,$cm$^{-1}$ is given in the power spectrum as a multitude of small peaks in the region between $1300$ and $2100\,$cm$^{-1}$. The lattice region the intense peaks are distributed wider and also the most intense peak of the lattice region is at a higher energy than the normal modes suggest.
+\\
+For the inter-CUSb$\parallel$O-$\mu_2$ species with a trajectory duration of about $3.68\,$ps, the OD region is in very good agreement with the normal mode results (see Figure \ref{abb:velvel_ads_spec}(c)). There is one broad peak that covers both peaks from the normal modes. Also in the lattice region there is good compliance, the most intense peaks are only separated by $20\,$cm$^{-1}$ which is the best result for the computed systems.
+\\
+\todo{It also is possible to separate modes from water layers from bulk phonons, like Giacomo does. Though, this is not really important if you don't use hydroxylated surface with a higher water coverage. So for Giacomo's system it makes sense, but here it is unnecessary.}
 
 % \section{Desorption Process}
 % \todo{not sure if this is worth a whole chapter..}
