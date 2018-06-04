@@ -926,8 +926,7 @@ The simulation of intensities was done both with dipole corrections and Born eff
 \label{tab:freq_lowcov_comp}
 \end{table}
 The results are in reasonable agreement for inter-CUSa||O-$ \mu_2$ and inter-CUSb||O-$ \mu_2$, but are deviate largely for the hydrogen bonded CUSb||O-$ \mu_2$ system.
-\\
-\todo{Corresponding ``intensities'' from AIMD calcualtions are presented in section \ref{vvacf}.}
+Corresponding ``intensities'' from AIMD calcualtions are presented in section \ref{vvacf}.
 \\
 Frequencies for the low coverage limit were also calculated using the crystal code. This enables calculations with atomic centered bases and makes it possible to treat a real 2-D system without the need to calculate the repetition of the slab in z-direction, see also section \ref{crystal_calc}. With this code it is also possible to calculate hybrid functionals easily, here B3LYP. For both PBE and B3LYP, geometries of the most stable states were reoptimized starting from VASP optimized geometries and consecutive normal modes were calculated (both with the basis set pob\_TZVP). Also anharmonicities for OH/OD bonds were calculated, these results are shown in comparison with VASP results in Table \ref{tab:freqs11-20crystal}. First, PBE results from both programs do not differ largely. Anharmonicities decrease the wavenumbers and lead to worse agreement to experiment (2839, 2812 and 2762$\,$cm$^{-1}$) and to VASP calculations. Data from B3LYP calculations show great agreement with experiment, although here, anharmonic corrections make the agreement worse, too. This effect can be caused by error cancellation. One has to mention, that here influence of the basis set is strong and larger basis sets were not feasible due to high computational costs.
  \begin{table}[!h]
@@ -947,23 +946,35 @@ Frequencies for the low coverage limit were also calculated using the crystal co
   \end{table}
 
 \subsubsection{Intensities and Lattice Vibrations of Further Systems}\label{phonons}
-For the phonons as a first test the same 10-layer slab normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description of the deeper lying phonon vibrations we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into at least three layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to $6\times 5=30$ layers (with 5 being the number of atomic layers in the unit cell in z direction, compare Figure \ref{abb:cell_sizes}), both for the clean surface and for the adsorbate covered surface. These more-layered optimized geometries do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20} and hence are not shown \todo{here, maybe Appendix?}. Respective adsorption energies can be found in Table \ref{tab:eads_layers}. These results are also shown with intensities calculated from dipole corrected normal mode analyses. For the low energy modes, one has to have in mind, that normal modes may not be a perfect description of these deeply delocalized vibrations.
+For the phonons the same 10-layer slab normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description of the deeper lying phonon vibrations we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into at least three layers of the bulk. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to $6\times 5=30$ layers (with 5 being the number of atomic layers in the unit cell in z direction, compare Figure \ref{abb:cell_sizes}), both for the clean surface and for the adsorbate covered surface. These more-layered optimized geometries do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20} and hence are not shown \todo{here, maybe Appendix?}. Respective adsorption energies can be found in Table \ref{tab:eads_layers}. For the low energy modes, one has to have in mind, that normal modes may not be a perfect description of these deeply delocalized vibrations.
 \\
-The results for the clean surface with intensities from dipole corrections are shown in Figure \ref{abb:clean_comp_layer}. For different sized slabs, the results differ largely. Especially the 10 layer system is shifted strongly compared to the other slab sizes. The most intense peak is shifted to higher wavenumbers with increasing slab size. All spectra shown were normalized to the most intense peak.
+The results for the clean surface with intensities from dipole corrections are shown in Figure \ref{abb:clean_comp_layer}. For different sized slabs, the results differ largely. Especially the 10 layer system is shifted strongly compared to the other slab sizes. From Table \ref{tab:comp_norm-modes_clean} can be seen that the most intense peak is shifted to higher wavenumbers with increasing slab size. All spectra shown were normalized to the most intense peak.
 \begin{figure}
  \centering
  \includegraphics[width=0.4\textwidth]{figures/11-20/comp_freq_surf.eps}
  \caption{Comparison of the spectra for different slab sizes from 10 to 25 layers for the clean surface obtained with normal mode analyses and intensities from dipole corrections.}
  \label{abb:clean_comp_layer}
 \end{figure}
+\begin{table}[!h]
+  \centering
+ \caption{Comparison of the results of the different slab sizes of the NMA: most intense peak from dipole corrections of the lattice vibrations for the clean surface.}
+\vspace*{.2cm} 
+  \begin{tabular}{l|ccccc}
+  
+Layers& 10&15&20&25&30 \\\hline
+$\tilde{\nu}$ [cm$^{-1}$] &700 &796& 823&837 & 842\\
+  \end{tabular}
+  \label{tab:comp_norm-modes_clean}
+\end{table}
 \\
+% These results are also shown with intensities calculated from dipole corrected normal mode analyses in Figures \ref{abb:iCa2_size_comp}, \ref{abb:Cb2_size_comp} and \ref{abb:iCb2_size_comp}.
 While this trend is true for the clean surface and the lattice region of the covered systems, it does not hold for the OD vibrations regime. As it was already mentioned the OD frequencies seem to be converged for the 10-layer slab and both position and intensity show no eminent difference, see Figures \ref{abb:iCa2_size_comp}, \ref{abb:Cb2_size_comp} and \ref{abb:iCb2_size_comp}.
 \begin{figure}[!h]
     \centering
-    \subfigure[complete spectrum]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_freq_iCa2.eps}}
+    \subfigure[complete spectrum]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_iCa2.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[OD stretch regime]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_freq_iCa2_ODpart.eps}}
+    \subfigure[OD stretch regime]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_iCa2_ODpart.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
              \caption{Comparison of inter-CUSa||O-$\mu_2$ frequencies for different slab sizes in z direction, obtained by normal mode analyses with intensities from dipole corrections.}
@@ -971,10 +982,10 @@ While this trend is true for the clean surface and the lattice region of the cov
 \end{figure}
 \begin{figure}[!h]
     \centering
-    \subfigure[complete spectrum]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_freq_Cb2.eps}}
+    \subfigure[complete spectrum]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_Cb2.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[OD stretch regime]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_freq_Cb2_ODpart.eps}}
+    \subfigure[OD stretch regime]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_Cb2_ODpart.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
              \caption{Comparison of CUSb||O-$\mu_2$ frequencies for different slab sizes, obtained by normal mode analyses with intensities from dipole corrections.}
@@ -982,19 +993,83 @@ While this trend is true for the clean surface and the lattice region of the cov
 \end{figure}
 \begin{figure}[!h]
     \centering
-    \subfigure[complete spectrum]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_freq_iCb2.eps}}
+    \subfigure[complete spectrum]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_iCb2.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[OD stretch regime]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_freq_iCb2_ODpart.eps}}
+    \subfigure[OD stretch regime]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_iCb2_ODpart.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
              \caption{Comparison of inter-CUSb||O-$\mu_2$ frequencies for different slab sizes in z direction, obtained by normal mode analyses with intensities from dipole corrections.}
             \label{abb:iCb2_size_comp}
 \end{figure}
-In the full spectrum, one can see three different regimes: the lattice region $<900\,$cm$^{-1}$, the OD region around $1700\,$cm$^{-1}$ for hydrogen bonded stretch and above $2600\,$cm$^{-1}$ for free vibrations.
-The exact wavenumbers differ slightly for the OD regions but in general are in good agreement.
+% In the full spectrum, one can see three different regimes: the lattice region $<900\,$cm$^{-1}$, the OD region around $1700\,$cm$^{-1}$ for hydrogen bonded stretch and above $2600\,$cm$^{-1}$ for free vibrations.
+The exact wavenumbers differ slightly for the OD regions but in general are in good agreement, except for the hydrogen bonded peak in the CUSb$\parallel$O-$\mu_2$, confer Figure \ref{tab:freq_layers}. However, the lattice region below $1000\,$cm$^{-1}$ is systematically affected, as in the clean surface system.
 \\
-\todo{compare higher coverages (2 and 4D$_2$O and 1ML), O-II termianted surface (clean and 1ML system) and symmetric slab!}
+The higher coverage systems (see Figures \ref{abb:2water}-\ref{abb:4+fully}) were also examined. The total spectrum and the OD range are shown in Figure \ref{abb:2water} \todo{show this alone or only stick to the comparison in Fig. \ref{abb:2water_comp}?}
+\begin{figure}[!h]
+    \centering
+    \subfigure[spectrum full range]{\includegraphics[width=0.45\textwidth]{figures/11-20/specs_dip_2D2O.eps}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/specs_dip_2D2O_OD.eps}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+             \caption{Spectra from normal mode analyses and dipole intensities for two water molecules per super cell (10 layers). (a) shows the full spectral range and (b) only the OD range above $1700\,$cm$^{-1}$. The short notations stand for Cb=CUSb, Cb2=CUSb$\parallel$O-$\mu_2$ and iCa2=inter-CUSa$\parallel$O-$\mu_2$.}
+            \label{abb:2water}
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \subfigure[CUSb+CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_Cb+Cb2.eps}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[inter-CUSa$\parallel$O-$\mu_2$+inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_iCa2+iCa2.eps}}
+             \quad
+    \subfigure[inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_iCa2+Cb2.eps}}
+            \quad
+\subfigure[CUSb+CUSb$\parallel$O-$\mu_2$: OD]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_Cb+Cb2_OD.eps}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[inter-CUSa$\parallel$O-$\mu_2$+inter-CUSa$\parallel$O-$\mu_2$: OD]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_iCa2+iCa2_OD.eps}}
+             \quad
+    \subfigure[inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$: OD]{\includegraphics[width=0.30\textwidth]{figures/11-20/comp_iCa2+Cb2_OD.eps}}
+            \caption{Comparison between 2D$_2$O system with the corresponding systems with one water molecule, upper line (a,b,c) complete spectrum, lower line (d,e,f) OD range.}
+            \label{abb:2water_comp}
+\end{figure}
+In Figure \ref{abb:2water_comp} a comparison between the systems with two D$_2$O molecules and the corresponding systems with only one adsorbate is given. For all three systems the agreement is very good. If the water molecules interact strongly with each other, the peaks would be shifted heavily. The system inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$ seem to be only weakly affected, inter-CUSa$\parallel$O-$\mu_2$+inter-CUSa$\parallel$O-$\mu_2$ is shifted slightly more. The system CUSb+CUSb$\parallel$O-$\mu_2$ however, is shifted  significantly, displaying a strong interaction between the molecularly adsorbed and the dissociated groups. This is interesting since in the adsorption energy the three systems acted differently, the inter-CUSa$\parallel$O-$\mu_2$+inter-CUSa$\parallel$O-$\mu_2$ increased its stability, whereas the system inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$ did not change and CUSb+CUSb$\parallel$O-$\mu_2$ even was more stabilized. With this in mind, it makes sense that the system, in which the adsorption energy is merely affected also shows hardly any difference to the single adsorption in the spectrum. On the other hand, the system where the molecular water is stabilized by its dissociated neighbor, the spectrum is shifted stronly. The inter-CUSa$\parallel$O-$\mu_2$+inter-CUSa$\parallel$O-$\mu_2$ is more balanced, because the geometry does not change largely and only the adsorption energy is (negatively) affected.
+\\
+Looking at the spectrum of the system with four adsorbed water molecules (1/3 coverage) we get Figure \ref{abb:4water}.
+\begin{figure}[!h]
+    \centering
+    \subfigure[spectrum full range]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_4iCa2_D2O_2_comp.eps}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+    \subfigure[OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_4iCa2_D2O_2_ODrange_comp.eps}}
+             \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+             \caption{Spectra from normal mode analyses and dipole intensities for four water molecules per super cell (10 layers). (a) shows the full spectral range and (b) only the OD range above $2680\,$cm$^{-1}$. The short notations stand for iCa2=inter-CUSa$\parallel$O-$\mu_2$.}
+            \label{abb:4water}
+\end{figure}
+All of these water molecules are adsorbed in inter-CUSa$\parallel$O-$\mu_2$, see Fig.~\ref{abb:4+fully}(a). We see as expected the stretch vibrations of the adsorbed residue at higher wavenumbers. There are three modes for asymmetric and one for symmetric stretch vibrations around $2740\,$cm$^{-1}$. At lower wavenumbers (between $2691$ and $2693\,$cm$^{-1}$) there are localized OD$_\textrm{surf}$ vibrations. Below that there are delocalized combined vibrations of lattice and OD. In comparison to the singly adsorbed system the systems are in astonishing agreement, both in the OD range and the lattice region.
+\\
+In contrast to the latter systems, for the 1ML system it is not easy to compare to the singly adsorbed species, since it consists of a wild mixture of 12 adsorbed OD residues (on CUSb, inter-CUSa and inter-CUSb), as well as 12 surface OD groups on O-$\mu_2$ and also the less favorable threefold coordinated O-$\mu_3$. Due to this magnitude of different species, the spectrum possess many peaks in the OD region, see Figure \ref{abb:fullyhydrox_spec}. Hydrogen bonding and interaction between groups shift many of the peaks. From $\approx2000$ to $2740\,$cm$^{-1}$ various OD stretch vibrations occur. In the region between $872$ and $1117\,$cm$^{-1}$ there are bending like vibrations of mostly O-$\mu_2$D groups, and below that delocalized OD and lattice vibrations can be found.
+ \begin{figure} [!h]
+ \centering
+ \subfigure[lattice range]{\includegraphics[width=0.3\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_lattice.eps}}
+              \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+  \subfigure[1ML, low OD range]{\includegraphics[width=0.3\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_OD-low.eps}}
+              \quad
+             %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
+  \subfigure[1ML, high OD range]{\includegraphics[width=0.3\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_OD.eps}}%1ML.png}}
+ \caption{Comparison of the spectra of the fully with D$_2$O covered surface. Shown is a comparison between the different slab sizes for (a) the lattice region, (b) the low energy OD range with butterfly like vibrations and (c) the high energy OD range\todo{it looks like there are 3 distinguishable region? can this be explained?}.} 
+        \label{abb:fullyhydrox_spec}
+ \end{figure}
+ As before, the agreement in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen bonded region around $1116\,$cm$^{-1}$ is convincing (Figure \ref{abb:fullyhydrox_spec}(b))and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface.
+ \\
+ \todo{first results of symmetric cell! then go to the other surface termination.}
+ \\
+ Apart from the most stable surface termination (called O-I in \cite{kuri10}), calculations of the second most stable surface termination (O-II) were done. Frequencies were analyzed of the clean surface and the fully covered system. \todo{continue here!}
+
 
 \subsection{Born Effective Charges}
 These results were obtained for the three most stable adsorbed systems with 10 layers. For getting the spectrum an angle of the IR beam of 45\textdegree~was assumed. Because both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities differ. In Figure \ref{abb:bec} the spectra for the three most stable structures can be seen, (a) depicts the whole range and (b) the OD range only.
@@ -1008,7 +1083,7 @@ These results were obtained for the three most stable adsorbed systems with 10 l
      \end{figure}
 The peak around $1700\,$cm$^{-1}$ comes solely from the hydrogen bonded CUSb$\parallel$O-$\mu_2$ OD group. The other non hydrogen bonded peaks come above $2500\,$cm$^{-1}$ and the lattice region can be seen below $1000\,$cm$^{-1}$.
 \\
-In comparison to the results from the dipole corrections, for inter-CUSa$\parallel$O-$\mu_2$ the intensities in the OD range are nearly the same, although the more intense peak is changed. In the lattice region the agreement is not as excellent. For the OD region of CUSb$\parallel$O-$\mu_2$, the agreement is worse, BEC predicts the H-bonded peak at $1711\,$cm$^{-1}$ to be the most intense whereas the dipole corrected intensities give this in the lattice region which is also very distinctive. Concerning the inter-CUSb$\parallel$O-$\mu_2$ the OD region shows good agreement, also the more intense peak is the same. Again in the lattice region, the difference is larger. This might be due to the fact, that low energy modes are less precisely represented by normal modes. \todo{was ist das denn für ein Grund, beide basieren ja auch normal modes}
+In comparison to the results from the dipole corrections, for inter-CUSa$\parallel$O-$\mu_2$ the intensities in the OD range are nearly the same, although the more intense peak is changed. In the lattice region the agreement is not as excellent. For the OD region of CUSb$\parallel$O-$\mu_2$, the agreement is worse, BEC predicts the H-bonded peak at $1711\,$cm$^{-1}$ to be the most intense whereas the dipole corrected intensities give this in the lattice region which is also very distinctive. Concerning the inter-CUSb$\parallel$O-$\mu_2$ the OD region shows good agreement, also the more intense peak is the same. Again in the lattice region, the difference is larger. This might be due to the fact, that low energy modes are less precisely represented by normal modes and both methods give low quality results.
      
 \subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
 The velocity-velocity autocorrelation function that is evaluated from \textit{ab initio} MD calculations and Fourier transformed is a totally different ansatz to  calculating a spectrum. No frequency analysis has to be done, \textit{i. e.} no harmonic approximation is applied. Instead the movement of the nuclei at the temperature is taken into account. At $300\,$K for the clean surface (30 layers) and the three most stable adsorbed structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$, 10 layers each) the respective MD were calculated, starting from the minimum structure.

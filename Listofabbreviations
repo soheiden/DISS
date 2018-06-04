@@ -15,6 +15,7 @@ ML mono layer
 MP2 M\o{}ller Plesset perturbation theory of second order
 NEB nudged Elastic Band
 NEB-CI Nudged Elastic Band with Climbing Image
+NMA Normal Mode Analysis
 NVE Number of particles/Volume/Energy kept constant
 NVT number of particles/Volume/Temperature held constant
 PAW projector augmented wave
