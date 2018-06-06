@@ -666,7 +666,7 @@ There are also the results for the higher coverages in comparison to results in 
 The neighborhood effect shows three different outcomes: it can have a stabilizing effect, where the dissociated water stabilizes the molecularly adsorbed water in CUSb(mol)+CUSb||O-$\mu_2$ (Figure \ref{abb:2water}(a)). It can also have the contrary effect, as can be seen in the  2inter-CUSa||O-$\mu_2$, which becomes less stable (Figure \ref{abb:2water}(c)). On the other hand, there is the inter-CUSa||O-$\mu_2$+CUSb||O-$\mu_2$ which is merely affected by the neighbor water residues (Figure \ref{abb:2water}(b)).
 \\
 \\
-As a short excursus, also a ``defect site'', the O-II terminated surface, as it is called in the nomenclature of Kurita\cite{kuri10}, was calculated. As for the O-I termination, 10 layers were considered and from these the lowest five layers were kept fixed to bulk values. Both the clean surface and the fully covered ($1\,$ML) surface were optimized (see Figure \ref{abb:O-II-geom}) and frequency calculations were conducted, to obtain a spectrum. The structure of the clean surface, of course, differs by the ``missing'' oxygen O-$\mu_2$ atom in the topmost layer, and the fully covered system is even more different: of 12 water molecules that can adsorb, 7 adsorb molecularly and 5 dissociatively. In comparison, the fully covered system for the O-I termination only shows one molecularly adsorbed molecule.
+As a short excursus, also a ``defect site'', the O-II terminated surface, as it is called in the nomenclature of Kurita\cite{kuri10}, was calculated. This is the second most stable surface termination under most chemical potential conditions, mostly in Al-rich environment. In this termination, the topmost oxygen layer of the O-I termination is missing. As for the O-I termination, 10 layers were considered and from these the lowest five layers were kept fixed to bulk values. Both the clean surface and the fully covered ($1\,$ML) surface were optimized (see Figure \ref{abb:O-II-geom}) and frequency calculations were conducted, to obtain a spectrum. The structure of the clean surface, of course, differs by the ``missing'' oxygen O-$\mu_2$ atom in the topmost layer, and the fully covered system is even more different: of 12 water molecules that can adsorb, 7 adsorb molecularly and 5 dissociatively. In comparison, the fully covered system for the O-I termination only shows one molecularly adsorbed molecule.
  \begin{figure}[!ht]
  \centering
 \subfigure[clean O-II surface]{\includegraphics[width=0.4\textwidth]{figures/11-20/O-II-clean.png}}
@@ -1066,26 +1066,38 @@ In contrast to the latter systems, for the 1ML system it is not easy to compare 
  \end{figure}
  As before, the agreement in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen bonded region around $1116\,$cm$^{-1}$ is convincing (Figure \ref{abb:fullyhydrox_spec}(b))and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface.
  \\
-In addition to the different sized slabs, a symmetric model of the surface with 15 layers was built. On both the top and the botton, D$_2$O adsorbed dissociatively in inter-CUSa$\parallel$O-$\mu_2$. A figure of the structure can be found in Figure \ref{abb:symm-slab}.
+ \\
+In addition to the different sized slabs, a symmetric model of the surface with 15 layers was built. On both the top and the bottom, D$_2$O adsorbed dissociatively in inter-CUSa$\parallel$O-$\mu_2$. A figure of the structure can be found in Figure \ref{abb:symm-slab}.
  \begin{figure} [!h]
  \centering
  \includegraphics[width=0.3\textwidth]{figures/11-20/side_symmcell_iCa2.png}
-  \caption{PBE+D2 optimized geometry of the 15-layer symmetric slab. The adsorbed species is the most stable inter-CUSa$\parallel$O-$\mu_2$. Color code as above.} 
+  \caption{PBE+D2 optimized geometry of the 15-layer symmetric slab. The adsorbed species is the most stable inter-CUSa$\parallel$O-$\mu_2$. Color code as explained above.} 
         \label{abb:symm-slab}
  \end{figure}
- In this model all atoms were allowed to relax. Henceforth the normal mode analysis gives three imaginary frequencies, that represent frustrated translation in x, y and z direction. The spectrum was calculated at the basis of dipole corrected calculations and can be seen in Figure \ref{abb:symm-iCa2_spec}.
+ In this model all atoms were allowed to relax. Henceforth the normal mode analysis gives three imaginary frequencies, that represent frustrated translation in a, b and c direction. The spectrum was calculated at the basis of dipole corrected normal modes and can be seen in Figure \ref{abb:symm-iCa2_spec}.
  \begin{figure}[!h]
     \centering
-     \subfigure[D$_2$O, symmetric cell]{\includegraphics[width=0.30\textwidth]{figures/11-20/spectrum_D2O_symm_iCa2.eps}}
+     \subfigure[D$_2$O, symmetric cell]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_D2O_symm_iCa2.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-    \subfigure[OD stretch regime]{\includegraphics[width=0.30\textwidth]{figures/11-20/spectrum_D2O_symm_iCa2_OD-stretch.eps}}
-             \caption{Stick spectrum of the 15 layer symmetric adsorption model. (a) shows the total range of the dipole corrected spectrum and (b) gives the OD range, showing two doublets.}
+    \subfigure[OD stretch regime]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_D2O_symm_iCa2_OD-stretch.eps}}
+             \caption{Stick spectrum of the 15 layer symmetric adsorption model. (a) shows the total range of the dipole corrected spectrum and (b) gives a closer look at the OD range, featuring two doublets.}
             \label{abb:symm-iCa2_spec}
      \end{figure}
-The high energy part (Figure \ref{abb:symm-iCa2_spec}(b)) shows that each of the two peaks comes as a doublet due to the imperfect degeneracy of ``both sides'' of the slab, which has numerical reasons. These doublet lie at $2690$ and $2725\,$cm$^{-1}$, which is slightly different from the 15 layer result with only one adsorbat (the asymmetric slab). For this system the peaks come up at $2695$ and $2728\,$cm$^{-1}$. In the lattice region, these shifts are stronger, but nevertheless small in general. The most intense peak is shifted from $801$ to $816$ (symmetric slab) but this shift is rather small.
-      \\
- Apart from the most stable surface termination (called O-I in \cite{kuri10}), calculations of the second most stable surface termination (O-II) were done. Frequencies were analyzed of the clean surface and the fully covered system. \todo{continue here!}
+The high energy part (see Figure \ref{abb:symm-iCa2_spec}(b)) shows that each of the two peaks comes as a doublet due to the imperfect degeneracy of ``both sides'' of the slab, which has numerical reasons. These doublet lie at $2690$ and $2725\,$cm$^{-1}$, which is slightly lower than the asymmetric model (only one adsorbate on the top) results for all applied slab sizes. For example, for the 15 layer system the peaks come up at $2695$ and $2728\,$cm$^{-1}$. In the lattice region, these shifts are stronger, but nevertheless small in general. The most intense peak is shifted from $801$ to $816$ (15 layer symmetric slab) but this shift is rather small. The overall agreement is very good so that it can be concluded, that although the computational costs are increased the symmetrically adsorption ansatz does not give any new insights to the system.
+\\\\
+ Apart from the most stable surface termination (called O-I in \cite{kuri10}), calculations of the second most stable surface termination (O-II) were done. Frequencies were analyzed of the clean surface and the fully covered system. This was done for the 10 and 25 layer systems.
+ \begin{figure}[!h]
+ \centering
+ \subfigure[clean surface]{\includegraphics[width=0.3\textwidth]{figures/11-20/spectrum_O-I-II_comparison.eps}}
+ \quad
+ \subfigure[fully covered surface]{\includegraphics[width=0.3\textwidth]{figures/11-20/spectrum_O-I-II_fully_comparison.eps}}
+ \quad
+  \subfigure[fully covered surface, OD range]{\includegraphics[width=0.3\textwidth]{figures/11-20/spectrum_O-I-II_fully_OD_comparison.eps}}
+ \caption{Comparison of the 10-layer slab spectra calculated with normal mode analysis and intensities from the dipole corrections. The clean surface (a), O-I termination (most stable under the whole range of chemical potential) and O-II termination (see Kurita\cite{kuri10}, also relatively stable over a wide chemical potential range). The comparison of the fully covered O-I and O-II terminations is shown in (b) with a detailed view of the OD range in (c).}
+ \label{abb:comp_O-I-O-II}
+\end{figure}
+ \todo{continue here when the calculations are ready! Compare O-I and O-II for 10 and 25 layer slabs, both for clean surface and fully covered.}
 
 
 \subsection{Born Effective Charges}

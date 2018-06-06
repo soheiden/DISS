@@ -3,16 +3,11 @@ add figures
 	PIMD(?)
 	cluster(?)
 
-
 11-20 evaluation
 		comparison with crystal (stability and vibrations)
 	phonons (dipole, BEC, VDOS)
-	desorption/tds (didn't work so well, kMC, scheme with rate constants)
 
 0001 evaluation
 	crystal, comparison with vasp results (stability of minima, rates)
-	cluster calculations (didn't work)
-	PIMD (didn't work)
 
 look for citations
-
