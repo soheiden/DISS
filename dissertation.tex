@@ -1179,7 +1179,7 @@ In this work, the focus lies more on two topics:
 \\
 (ii) The improvement of reaction rates with different methods beyond GGA functionals (as PBE).
 \\
-First, the surface and the most stable adsorption patterns are introduced (section \ref{sec_0001surf}), followed by the results for the molecular beam scattering (section \ref{sec_0001AIMD}) and the improvements for the reaction rates (see section \ref{sec_rates}).
+First, the surface and the most stable adsorption patterns are introduced (section \ref{sec_0001surf}), followed by the results for the molecular beam scattering (section \ref{sec_0001AIMD}) and the improvements for the reaction rates (see section \ref{crystal_calc}).
 	
 \section{Surface Model and Static Calculations}\label{sec_0001surf}
 The most stable surface cut is a stochiometric, Al terminated one, and in contrast to the (11\=20) surface there is only one type of Al-CUS atom, which is a reactive Lewis-acid site. Also, all oxygen atoms are threefold coordinated, that leads to a topography that is not as complex as for the higher indexed surfaces. We apply here a $2\times 2$ supercell with vectors that were optimized from the bulk structure vectors (previous work of J. Wirth\cite{WirthJPCC2012}). The surface slab consists of nine atomic layers, that equals three repeating units in z direction of the type Al-O$_3$-Al..., with the top five layers being allowed to relax during optimization and AIMD and the lowest four layers being fixed to bulk values, see Figure \ref{abb:surf_0001}.
@@ -1478,7 +1478,8 @@ Mostly independent of the settings, the molecules interact strongly with each ot
 \subsubsection{Rotationally and Vibrationally Preexcited Water}\label{preex}
 Here, qualitative results are given for  a D$_2$O molecule that is at the start of the trajectory not rigid as before but excited rotationally and/or vibrationally. It is shot with a kinetic energy of $0.7\,$eV at the clean surface in a NVE ensemble for a trajectory duration of $2\,$ps at the impact point [$0.35,0.5$] with the initial orientation [$0,0,0$]. With these applied conditions in the rigid case (microcanonical at $0\,$K without rotational or vibrational excitation), the molecule dissociates to the 1-2 structure, the same for the thermal surface at $T=300\,$K.
 \\
-The vibrational excitations were chosen as follows: For the single water molecule in the periodic boundary conditions a normal mode analys was done. The eigenvectors of the dynamical matrix for the symmetric stretch, asymmetric stretch and the bending mode were used in a zeroth order approach (after proper scaling) as an input for the MD trajectories in addition to the initial momentum towards the surface. For the rotational preexcitations along the three axes, D atoms were given initial momenta to induce a rotational motion corresponding to rotational energies of $\sim 0.2\,$eV.
+The vibrational excitations were chosen as follows: For the single water molecule in the periodic boundary conditions a normal mode analys was done. The eigenvectors of the dynamical matrix for the symmetric stretch, asymmetric stretch and the bending mode were used: The eigenvectors of the dynamical matrix equal normal mode displacements. They were scaled by a factor of 0.1 and used these positions as initial positions
+for the dynamics. This corresponds to an atom displacement along normal modes out of the equilibrium position, \textit{i. e.}, a vibrational excitation. It was used as an input for the MD trajectories in addition to the initial momentum towards the surface. For the rotational preexcitations along the three axes, D atoms were given initial momenta to induce a rotational motion corresponding to rotational energies of $\sim 0.2\,$eV.
 \\
 The results for the rotation around the $\gamma$-axis (cp. Figure \ref{abb:initial_parameters}) shows molecular adsorption whereas rotations around the other two axes give 1-2 dissociation as in the initial microcanonical trajectories without rotational excitation.
 In the cases of vibrational preexcitation, the symmetric stretch leads to reflection, the asymmetric stretch gives 1-4$^\prime$ dissociation after initial 1-2 dissociation (as was already mentioned in Figure \ref{abb:ex_traj}) and with the bending mode being excited, the water dissociates to 1-2. Also, a small collection of combinations of vibrations with rotations were calculated, that lead to either molecular adsorption (rotation around $\alpha$ and bending mode), or 1-2 dissociation (rotation around $\gamma$ and asymmetric stretch; and rotation around $\beta$ and symmetric stretch).
@@ -1490,8 +1491,8 @@ Although a large number of trajectories were done with the contingent at the HLR
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Improvement of Reaction Rates}\label{sec_rates}
-For a model reaction we try to improve the reaction rate of a specific chosen reaction with different new methods. This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction, that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state (see Figure \ref{abb:df-h-4-2}).
+\section{Improvement of Reaction Rates}\label{crystal_calc}
+For a model reaction we try to improve the reaction rate of a specific chosen reaction with a new method. This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction\cite{WirthJPCC2012}, that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state (see Figure \ref{abb:df-h-4-2}).
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/0001/NEB-path/df-h-4-2.pdf}
@@ -1521,14 +1522,101 @@ Now we want to expand these methods to the following: We want to calculate the a
 %\\
 %As a last approach, we want to apply other higher level methods in an embedded approach. We cut a cluster from the surface situation and embed this cluster in a field of point charges. By doing this we can calculate the cluster with a better method, let's say B3LYP, CCSD or MP2 and then apply a substractional scheme to get to corrected adsorption energies that can then be used to improve the rates with Eyring's equation for transtition states.
 
-\subsection{MP2 and B3LYP}\label{crystal_calc}
-Going beyond pure density functionals and also beyond DFT has been too costly for a long time, simply not applicable for surface adsorbat system that large and electron rich. In the crystal/cryscor code one uses atom centered bases instead of plane waves and so large scale systems can also be computed. We first optimized our parameters with HF calculations and then did calculations with PBE similar to prior plane wave based calculations.
-\\
-We found out, that BSSE takes a big part, but corrections are not easily applied because the ghosted calculations needed for that do not converge for all the structures with a bigger OH-H distance. Instead we have to use bigger basis sets containing diffuse functions in order to handle the BSSE. Such a self designed basis set by our cooperation partner Dr. Denis Usvyat (HU Berlin, group of Martin Sch\"utz) was used here. With this basis set we did the PBE calculations again (?) and the B3LYP as well as the MP2 calculations. First we compared the differences in adsorption energies. We furthermore compared the vibrational frequencies from B3LYP with the ones from VASP/PBE to see a methodological effect.
-\\
-We also reoptimized the transition state for the Df-H-4-2 reaction.
+% \subsection{MP2 and B3LYP}
+% Going beyond pure density functionals and also beyond DFT has been too costly for a long time, simply not applicable for surface adsorbat system that large and electron rich. In the crystal\cite{crystal14}/cryscor\cite{cryscor} code one uses atom centered bases instead of plane waves and so large scale systems can also be computed. We first optimized our parameters with HF calculations and then did calculations with PBE similar to prior plane wave based calculations.
+% \\
+% We found out, that BSSE takes a big part, but corrections are not easily applied because the ghosted calculations needed for that do not converge for all the structures with a bigger OH-H distance. Instead we have to use bigger basis sets containing diffuse functions in order to handle the BSSE. Such a self designed basis set by our cooperation partner Dr. Denis Usvyat (HU Berlin, group of Martin Sch\"utz) was used here. With this basis set we did the PBE calculations again (?) and the B3LYP as well as the MP2 calculations. First we compared the differences in adsorption energies. We furthermore compared the vibrational frequencies from B3LYP with the ones from VASP/PBE to see a methodological effect.
+% \\
+% We also reoptimized the transition state for the Df-H-4-2 reaction.
 
+\subsubsection{Adsorption Energies}
+Going beyond pure density functionals and also beyond DFT has been too costly for a long time, simply not applicable for surface adsorbat system that large and electron rich. In the Crystal14\cite{crystal14}/cryscor\cite{cryscor} code one uses atom centered bases instead of plane waves and so large scale systems can also be computed. With this it is possible to calculate periodic HF, PBE, B3LYP and even MP2.\\
+In Table \ref{tab:vasp-results} the adsorption energy results of previous VASP calculations with different methods (PBE and PW91) and dispersion corrections are shown. The adsorption energy is calculated according to Equation \ref{eq:Eads}.
+\begin{table}[!h]
+  \centering
+   \caption{Adsorption energies of the three adsorption states of the 0001 surface site with VASP, i.e. periodic DFT calculations with a plane wave basis. Values are given in eV. The 1-4$^\prime$ system was not calculated with PW91\cite{WirthJPCC2012}. {\color{red} mention 1-4' results?}}
+  \begin{tabular}{c|cccc}
+  method & mol & 1-2 diss & 1-4 diss&1-4$^\prime$ diss\\\hline
+  PW91   &-1.25 &-1.59 &-1.25 &-\\
+  PW91+D2&-1.40 &-1.81 &-1.45 &-\\
+  PBE+D3 &-1.29&-1.63 &-1.30 &-1.25 \\
+  \end{tabular}
+  \label{tab:vasp-results}
+ \end{table}
+\\
+The adsorption energy is in favor of the 1-2 dissociated species for all methods, and dependent on dispersion corrections, the molecular and 1-4 dissociated are equal (PW91, PBE+D3) or 1-4 diss is slightly more stable (PW91+D2).
+\\
+In the Crystal code, several basis sets for each atom are available, it is necessary to test some basis sets and compare the results to former VASP calculations. The basis sets that were tested are summarized in Table \ref{tab:basissets}.
+ \begin{table}[!h]
+  \centering
+   \caption{Basis set overview for Al, O and H in the Crystal14 calculations.}
+  \begin{tabular}{c|lll}
+  basis set & Al & O & H \\\hline
+   1&Al$\_$s8511p511d11$\_$Heifets$\_$2013 & O$\_$8411(d11)$\_$Heifets\_2013&H$\_$pob$\_$TZVP$\_$2012 \\
+   2&Al$\_$pob$\_$TZVP$\_$2012 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
+   3&Al$\_$m-6-311G(d)$\_$Heyd$\_$2005 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
+   4&Al$\_$85-11G$^\ast\_$catti$\_$1994 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
+   5&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
+   6&Al$\_$85-11G$^\ast\_$catti$\_$1994 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
+   7&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
+  \end{tabular}
+  \label{tab:basissets}
+ \end{table}
+ \\
+This was first done for PBE, the same functional that was used for the VASP calculations. The geometries of H$_2$O, the clean surface and the three adsorbed species (mol, 1-2 and 1-4) were geometry optimized. The corresponding adsorption energies can be found in Table \ref{tab:tab:basisset-results-PBE+D3}
+  \begin{table}[!h]
+  \centering
+   \caption{Adsorption energies from Equation \ref{eq:eyring} of the three adsorption states of the 0001 surface site (PBE+D3, geometry optimizations were done with the respective basis set from Table \ref{tab:basissets}). All values are given in eV.}
+  \begin{tabular}{c|ccc}
+  basis set & mol & 1-2 diss & 1-4 diss \\\hline
+  1 &-1.57 &-1.77 &-1.38 \\
+  2 &-1.47 &-1.69 &-1.35 \\
+  3 &-1.72 &-1.96 &-1.59 \\
+  4 &-1.87 &-2.11 &-1.75 \\
+  5 &-1.58 &-1.73 &-1.40 \\
+  6 &-1.53 &-1.78 &-1.43 \\
+  7 &-1.74 &-1.96 &-1.58 \\  
+  \end{tabular}
+  \label{tab:basisset-results-PBE+D3}
+ \end{table}
+ \\
+ In contrast to the VASP calculations all basis sets that were tested predict the stability order 1-2 $>$ mol $>$ 1-4, whereas VASP depending on the dispersion corrections gives 1-2 $>$ 1-4 $\geqq$ mol.
+ \\
+ In addition, for basis set 1, adsorption energies were calculated with the VASP optimized structure (\textit{i. e.} single point calculation with Crystal) to compare to VASP results. Those results are given in Table \ref{tab:pbe-vasp-geom}.
+   \begin{table}[!h]
+  \centering
+   \caption{Adsorption energies of the four adsorption states of the 0001 surface site (PBE+D3 with basis set 1 (see Table \ref{tab:basissets})). Values are given in eV. VASP values are reoptimized from J. Wirth's work with PBE+D3.}
+  \begin{tabular}{cccc}%c}
+   &mol & 1-2 diss & 1-4 diss\\\hline %&1-4$^\prime$ diss \\\hline
+crystal (opt) & -1.57 & 1.77 &-1.38 \\%&-1.32 \\
+   crystal (no opt)&-1.67 &-1.87 &-1.52\\%&-1.50 \\
+  VASP &-1.29 &-1.63 &-1.30 \\%&-1.25 \\
+  \end{tabular}
+  \label{tab:pbe-vasp-geom}
+ \end{table}
+ \\
+\todo{
+calculations with B3LYP+D3\\
+$\square$ compare to VASP and PBE+D3
+\\
+BSSE $\rightarrow$ ghosted calculations\\
+didn't converge for 1-4, not possible to do this. otherwise:\\
+bigger basis: Triple Zeta  with high angular momentum\\
+$\square$ compare PBE+D3, B3LYP+D3\\
+HF $\rightarrow$ MP2 calculations\\
+$\square$ results for minima
+}
+\subsubsection{Frequency Analysis}
+\todo{compare (0001) to VASP and experiment\\
+compare (11\=20) to VASP and experiment}
 
+\subsubsection{Reaction Rate}
+\todo{Df-H-4-2 at (0001) surface. give VASP results. GGA understimates barriers\\
+$\square$ recalculations of TS, did not converge properly but  one point looked promising, frequency analysis showed one imaginary frequency\\
+$\square~ \Delta G^\ddagger$ from frequency analysis\\
+$\square$ calculate rates with reoptimized TS\\
+$\square$ calculate rates with VASP geometry TS
+}
 % \todo{Not sure if this will come into the diss? No real results obtained..?}
 % \subsection{PIMD}
 % Instead of examining reactions with a defined reaction pathway as with NEB, we apply the path integral MD to propagate the 1-4 dissociated state in the hope to watch the reaction and to extract from that a time for the reaction {\color{red} (? it is not really a rate)}. But unluckily, no reaction occurred in the given propagation time, so that one only can see the delocalization of the proton. At a given temperature of $300\,$K the proton only moves a little, far away from any reactive trajectory.
