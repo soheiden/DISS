@@ -1,6 +1,7 @@
 BSSE basis set superposition error
 B3LYP Becke 3 parameters Lee Yang Parr
 CCSD coupled cluster singles and doubles
+CP Counterpoise Corrections
 CUS Coordinatively Unsaturated Site
 DFT density functional theory
 D2/D3 dispersion corrections (van-der-Waals interactions)

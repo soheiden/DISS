@@ -305,9 +305,9 @@ In analogy to molecular HOMO orbital, the energy of the highest filled band is c
 As was raised before basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set.
 
 \section{Plane Wave Basis, Atom Centered Basis and Peculiarities}
-In comparison plane waves (PW) and atom centered orbitals (ACO) have different advantages and disadvantages\cite{Tosoni2007}. For solid state systems both the energy and the gradient converge faster with plane waves. Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynmann forces have to be evaluated. The quality of the basis is simply dependent on the cutoff energy E$_\textrm{kin}$, the higher this energy is, the better is the basis. On the negative side, when norm-conserving pseudopotentials are applied more memory is needed. Pseudopotentials are used, when core electrons are not treated explicitly but their presence is considered for indirect. To treat this, the PAW (projector augmented-wave method) is applied which  gives explicit treatment of the core electrons so that the accuracy is greatly increased. The system is intrinsically defined in 3D, no matter if the system is a 1D (polymer), 2D (surface) or 3D system (bulk). It is computationally demanding to calculated excat (Fock) exchange, which makes the use of hybrid functionals so costly, although the precision of the results is considerably enhanced.
+In comparison plane waves\todo{cite} (PW) and atom centered orbitals (ACO) have different advantages and disadvantages\cite{Tosoni2007}. For solid state systems both the energy and the gradient converge faster with plane waves. Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynmann forces have to be evaluated. The quality of the basis is simply dependent on the cutoff energy E$_\textrm{kin}$, the higher this energy is, the better is the basis. On the negative side, when norm-conserving pseudopotentials are applied more memory is needed. Pseudopotentials are used, when core electrons are not treated explicitly but their presence is considered for indirect. To treat this, the PAW\todo{cite} (projector augmented-wave method) is applied which  gives explicit treatment of the core electrons so that the accuracy is greatly increased. The system is intrinsically defined in 3D, no matter if the system is a 1D (polymer), 2D (surface) or 3D system (bulk). It is computationally demanding to calculated excat (Fock) exchange, which makes the use of hybrid functionals so costly, although the precision of the results is considerably enhanced.
 \\
-Whenever there are atom centered basid sets the orbitals can overlap and due to this electrons are considered multiple times. This is called Basis Set Superposition Error (BSSE) and only appears in atom centered cases. One can apply Counterpoise corrections to get rid of this source of error. This is done here by calculating ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms. Then one applies a substractive scheme to cancel out the effect of the orbital overlap. On the other hand one can use a huge basis set, that doesn't have this problem, which comes with a higher computational demand.
+Whenever there are atom centered basid sets the orbitals can overlap and due to this electrons are considered multiple times. This is called Basis Set Superposition Error (BSSE)\todo{cite} and only appears in atom centered cases. One can apply counterpoise corrections\todo{cite} to get rid of this source of error. This is done here by calculating ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms. Then one applies a substractive scheme to cancel out the effect of the orbital overlap. On the other hand one can use a huge basis set, that doesn't have this problem, which comes with a higher computational demand.
 In contrast to PW calculations due to the locality of the basis, the true dimensionality is obeyed. Probably, the biggest advantage of atom centerd bases is that exact exchange and hybrid methods are standard methods.
 Transfering atom centered bases to periodic systems is not trivial, especially for bases including many diffuse Gaussians.
 
@@ -1595,14 +1595,108 @@ crystal (opt) & -1.57 & 1.77 &-1.38 \\%&-1.32 \\
   \label{tab:pbe-vasp-geom}
  \end{table}
  \\
-\todo{
-calculations with B3LYP+D3\\
-$\square$ compare to VASP and PBE+D3
+ Going beyond PBE (GGA functional), the hybrid functional B3LYP with D3 dispersion corrections was applied. Geometry optimizations were done and adsorption energies were examined, see Table \ref{tab:basisset-results-B3LYP+D3}.
+ \begin{table}[!h]
+  \centering
+   \caption{Adsorption energies of the three adsorption states of the 0001 surface site (B3LYP+D3; geometry optimization). Values are given in eV. Basis sets 5 and 6 give similar results as VASP.}
+  \begin{tabular}{c|ccc}
+  basis set & mol & 1-2 diss & 1-4 diss \\\hline
+  1 &-1.56 &-1.88 &-1.45 \\
+  2 &-1.57 &-1.92 &-1.53 \\
+  3 &-1.78 &-2.15 &-1.68 \\
+  4 &-1.90 &-2.25 &-1.83 \\
+  5 &\textbf{-1.57} &-1.95 &\textbf{-1.57} \\
+  6 &\textbf{-1.62} &-2.01 &\textbf{-1.62} \\
+  7 &-1.80 &-2.14 &-1.69 \\  
+  \end{tabular}
+  \label{tab:basisset-results-B3LYP+D3}
+ \end{table}
 \\
-BSSE $\rightarrow$ ghosted calculations\\
-didn't converge for 1-4, not possible to do this. otherwise:\\
-bigger basis: Triple Zeta  with high angular momentum\\
-$\square$ compare PBE+D3, B3LYP+D3\\
+Most basis sets also give the same ordering as PBE+D3, but basis 5 and 6 qualitatively give the same results as VASP (mol = 1-4 diss, like PW91 and PBE+D3) and also basis set 2 is very close to this.
+\\
+\\
+One basic problem, that does not occur in the plane wave based periodic calculations is the so called basis set superposition errror (BSSE). This error is due to overlapping basis functions from the different atom centers, leading to an overstabilization of the system. To overcome this, one can apply Counterpoise corrections (CP) or alternatively use a larger basis. For CP the parts of the system are treated individually and also with so called ghost basis and ghost atoms. This means a calculation for the water with a ``ghost surface'', where the water molecule is treated normally and the surface consists of atom orbitals but with no charge, so that the electrons of water can occupy them. On the other hand a similar calculation with the surface and a ``ghost water molecule'' (or OH and H residues) has to be done. Since the structure of the dissociated species, especially for the 1-4 dissociated water with a greater OH-H distance, does not have to be stable without the surface or with a ghosted surface, it is unclear whether these calculations will converge.
+\\
+To apply this scheme, four further calculations are required:
+\begin{itemize}
+ \item[a)] the water in the adsorbed geometry plus the surface made from ghost atoms
+ \item[b)] the surface in the adsorbed geometry plus the ghost water molecule
+ \item[c)] the water in the adsorbed geometry but without surface
+ \item[d)] the surface in the adsorbed geometry but without the water.
+\end{itemize}
+
+Then the BSSE-corrected energy can be calculated as:
+\begin{equation}\label{eq:BSSEcorr}
+ E_{\textrm{water-surface}}-E(a)-E(b)+E(c)+E(d)-E_{\textrm{relaxed water molecule}}-E_{\textrm{relaxed surface}} ~.
+\end{equation}
+\\
+The BSSE itself would then be:
+\begin{equation}
+ E(a)+E(b)-E(c)-E(d) ~.
+\end{equation}
+\\
+The adsorbate-surface interaction energy (stabilizing) is:
+\begin{equation}
+ E_{\textrm{water-surface}}-E(a)-E(b) ~,
+\end{equation}
+and the relaxation energy (anti stabilizing) is:
+\begin{equation}\label{eq:relaxE}
+ E(c)+E(d)-E_{\textrm{relaxed water molecule}}-E_{\textrm{relaxed surface}} ~.
+\end{equation}
+\\
+When one applies this to the adsorbed systems with basis set 5, the following results can be obtained, see Table \ref{tab:bsse-results}.
+\begin{table}[!h]
+  \centering
+   \caption{BSSE-corrected energy, BSSE, adsorbate-surface interaction energy and relaxation energy according to Equations (\ref{eq:BSSEcorr})-(\ref{eq:relaxE}) for mol, 1-2 diss and 1-4 diss with PBE+D3 using basis set 5. Values are given in eV.}
+  \begin{tabular}{c|ccc}
+			& mol  & 1-2 diss & 1-4 diss \\\hline
+  BSSE-corr		&-1.4276409 &-4.4848569 & -\\
+  BSSE			&-0.14208315&2.7554316 & -\\
+  Ad-surf interact. E.	&-1.4689164 &-9.4423711 & -\\
+  Relax. energy		&0.04127551 &12.197803 & -\\
+  \end{tabular}
+  \label{tab:bsse-results}
+ \end{table}
+ \\
+As assumed before, the 1-4 structure did not converge, because of missing stability in the ghosted calculations. The OH and H residues that are in that case far apart are not stabilized from the ghosted surface (without the real surface). In fact, also the 1-2 dissociated structure without the surface is an unphysical systems and therefore it is questionable whether these results are reliable.
+\\
+\\
+At least for molecular water one can evaluate the BSSE. For this basis set and geometry it is around 10$\%$ of the interaction
+energy. It is not much but it is of the order of the difference between the mol
+and 1-4 diss. On the other hand it is likely that in 1-4 diss the BSSE is of
+similar magnitude and the difference between the two adsorption geometries will
+remain.
+\\
+From the results also follows that the relaxation energy is rather small, at
+least for the case of molecular adsorption (it is not sure whether the 1-2 results can be trusted). 
+\\
+Since we could not calculate the BSSE and respective relaxation and interaction energies for the 1-4 dissociated system, we go on using an extended basis instead, to get (hopefully) the same effect as with CP corrections.
+\\
+\\
+Instead of applying counterpoise corrections, it is possible to use a larger basis set, here, a triple zeta basis set with high angular momentum. As before, geometry optimizations were done and the adsorption energies were evaluated, as can be seen in Table \ref{tab:combined_results}.
+ \begin{table}[!h]
+  \centering
+   \caption{Adsorption energies for the high angular momentum basis set for the method given in the first column. All values are given in eV.}
+  \begin{tabular}{l|ccc}
+   &mol & 1-2 diss & 1-4 diss \\\hline
+HF$^\ast$ &-1.14 & -1.67 & -1.19\\
+PBE+D3 & -1.41 & -1.68 & -1.32 \\
+B3LYP+D3 & -1.43 & -1.81 & -1.40 \\
+MP2$^\ast$ {\tiny HF-SCS-MP2} (dual) & -1.24 & -1.57 & -1.12 \\
+MP2$^\ast$ {\tiny HF-SCS-MP2}s (no dual) & -1.23 & -1.67 & -1.22\\
+  \end{tabular}
+  \begin{tablenotes}
+ \footnotesize
+\item[] $^\ast$ Results will be shown and explained in the next paragraph.
+\end{tablenotes}
+  \label{tab:combined_results}
+ \end{table}
+\\
+PBE+D3 with the new basis set gives the same ordering as all other basis sets that were applied. The results are very close to the ones with basis set 2 from Table \ref{tab:basisset-results-PBE+D3}. 
+For B3LYP+D3, the same order of stability is achieved, although there is only a small difference of $0.3\,$eV between mol and 1-4. Here, the results are close to basis sets 1 and 2. 
+\\
+
+\todo{
 HF $\rightarrow$ MP2 calculations\\
 $\square$ results for minima
 }
@@ -1926,8 +2020,8 @@ Also one type of (D$_2$O)$_2$ was tested (see Figure \ref{abb:D2O2clusters}). Th
 
 \begin{enumerate}[itemsep=0.25\baselineskip]
 %  \item \bibentry{Wirth12}.
-  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}Water Dissociative Adsorption on $\upalpha$-Al$_2$O$_3$(11\=20) Is Controlled by Surface Site Undercoordination, Density, and Topology{\flqq}, \textit{Journal of Physical Chemistry C} \textbf{2018}, \textit{122} (12), 6573-6584.
-  \item Heiden, S.; Wirth, J.; Campen, R. K.; Saalfrank, P.: {\frqq}Water Molecular Beam Scattering at $\upalpha$-Al$_2$O$_3$(0001): An \textit{Ab Initio} Molecular Dynamics Study{\flqq}, \textit{Journal of Physical Chemistry C} \textbf{2018}, \textit{vol,} pp.
+  \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}Water Dissociative Adsorption on $\upalpha$-Al$_2$O$_3$(11\=20) Is Controlled by Surface Site Undercoordination, Density, and Topology{\flqq}, \textit{The Journal of Physical Chemistry C} \textbf{2018}, \textit{122} (12), 6573-6584.
+  \item Heiden, S.; Wirth, J.; Campen, R. K.; Saalfrank, P.: {\frqq}Water Molecular Beam Scattering at $\upalpha$-Al$_2$O$_3$(0001): An \textit{Ab Initio} Molecular Dynamics Study{\flqq}, \textit{The Journal of Physical Chemistry C} \textbf{2018}, \textit{vol,} pp.
 
 \end{enumerate}
 
