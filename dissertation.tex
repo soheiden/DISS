@@ -150,13 +150,13 @@ Water at $\upalpha$-Alumina
 \date{}
 
 \uppertitleback{\normalfont
-This work has been done between January 2015 and xx 2018 in the workgroup of Prof. Dr. Peter Saalfrank at the Institute of Chemistry at the University of Potsdam.
+This work has been done between January 2015 and \todo{xx} 2018 in the workgroup of Prof. Dr. Peter Saalfrank at the Institute of Chemistry at the University of Potsdam.
 }
-\lowertitleback{Potsdam, xx 2018\\
+\lowertitleback{Potsdam, \todo{xx} 2018\\
 \begin{tabular}{ll}
 Erstgutachter: &Prof. Dr. Peter Saalfrank (Uni Potsdam) \\
 Zweitgutachter:&Prof. Dr. Beate Paulus (FU Berlin)\\
-Drittgutachter:&Prof. Dr. xy \\
+Drittgutachter:&Prof. Dr. \todo{xy} \\
 \end{tabular}
  }
 
@@ -1499,7 +1499,7 @@ For a model reaction we try to improve the reaction rate of a specific chosen re
 \caption{Reaction path of the Df-H-4-2 proton diffusion reaction in the PBE-D2 level of theory, left is the educt (1-4), in the middle the minimum energy path with the transition state geometry as an inlay and on the right the product (1-2) of the reaction. \textit{Data with friendly permission by Jonas Wirth}.}
        \label{abb:df-h-4-2}
 \end{figure}
-The transition state was calculated with PBE+D2 with the implementation of Nudged Elastic Band in VASP. Rates were calculated via Eyring (Equation \ref{eq:eyring}). An approach were singlepoint calculations at the HSE level of theory (hybrid functional) on top of PBE optimized geometries were done for the minima and the transition state was also done. Additionally, for this process a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway. These results are summarized in Table \ref{tab:4-2results_jonas}.
+The transition state was calculated with PBE+D2 with the implementation of Nudged Elastic Band in VASP. Rates were calculated via Eyring (Equation \ref{eq:eyring}). An approach were single point calculations at the HSE level of theory (hybrid functional) on top of PBE optimized geometries were done for the minima and the transition state was also done. Additionally, for this process a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway. These results are summarized in Table \ref{tab:4-2results_jonas}.
 \begin{table}[!h]
   \centering
   \caption{PW91, PBE+D2 after geometry optimization and transition state via NEB, HSE single point calculations on top of PBE optimized geometries. Both were calculated from Eyring equation \ref{eq:eyring}. The exact tunneling was calculated from a 1-D potential and the calculation of the Schrödinger equation in this potential. These calculations were done by Dr. J. Wirth and partially unpublished.}
@@ -1683,7 +1683,7 @@ HF$^\ast$ &-1.14 & -1.67 & -1.19\\
 PBE+D3 & -1.41 & -1.68 & -1.32 \\
 B3LYP+D3 & -1.43 & -1.81 & -1.40 \\
 MP2$^\ast$ {\tiny HF-SCS-MP2} (dual) & -1.24 & -1.57 & -1.12 \\
-MP2$^\ast$ {\tiny HF-SCS-MP2}s (no dual) & -1.23 & -1.67 & -1.22\\
+MP2$^\ast$ {\tiny HF-SCS-MP2} (no dual) & -1.23 & -1.67 & -1.22\\
   \end{tabular}
   \begin{tablenotes}
  \footnotesize
@@ -1695,12 +1695,78 @@ MP2$^\ast$ {\tiny HF-SCS-MP2}s (no dual) & -1.23 & -1.67 & -1.22\\
 PBE+D3 with the new basis set gives the same ordering as all other basis sets that were applied. The results are very close to the ones with basis set 2 from Table \ref{tab:basisset-results-PBE+D3}. 
 For B3LYP+D3, the same order of stability is achieved, although there is only a small difference of $0.3\,$eV between mol and 1-4. Here, the results are close to basis sets 1 and 2. 
 \\
-
-\todo{
-HF $\rightarrow$ MP2 calculations\\
-$\square$ results for minima
-}
+To go beyond density functional theory, first HF and on top of these MP2 calculations were done. The HF calculations were carried out as singlep oint calculations with the optimized geometries from B3LYP calculations with the big basis set. The resulting adsorption energies can be found in Table \ref{tab:Eads_HF}.
+\begin{table}[!h]
+  \centering
+   \caption{Adsorption energies for HF with the high angular momentum basis set (single point calculations on top of B3LYP/high angular momentum basis set). All values are given in eV.}
+  \begin{tabular}{ccc}
+ mol & 1-2 diss & 1-4 diss \\\hline
+ -1.14 & -1.67 & -1.19 \\
+  \end{tabular}
+  \label{tab:Eads_HF}
+ \end{table}
+ \\
+ With these calculations done, first a localization of the orbitals was done. Optional, at this point a dual basis expansion can be done, to increase the basis even further (this was done for Al and O), so that a basis set of the size of approximately augmented triple zeta can be achieved. For this one step of a HF calculation was done. These two results are compared in Table \ref{tab:MP2_minima}. It is visible that there is indeed a difference in stability with and without the dual basis set. Especially the 1-2 diss gets stabilized but also the 1-4 dissociated structure gains stability, compared to the molecular minimum, that is predicted to be equal by both methods.
+\begin{table}[!h]
+  \centering
+   \caption{MP2 adsorption energies of the three adsorption states of the (0001) surface site. Values are given in eV for the high angular momentum basis set. The upper part with the dual basis set and the lower without the corresponding dual basis set expansion. \todo{what are the other lines? is it only HF-SCS-MP2 that is important?}}
+  \begin{tabular}{l|ccc}
+   &mol & 1-2 diss & 1-4 diss \\\hline
+HF+singles           &-1.049 &-1.601 &-1.096 \\
+MP2+LJ               &-0.261 &-0.006 &-0.081 \\
+SCS-MP2+LJ           &-0.190 &0.032 &-0.028 \\
+HF+MP2               &-1.310 &-1.607 &-1.177 \\
+HF-SCS-MP2           &-1.239 &-1.569 &-1.124 \\\hline\hline
+HF+singles           &-1.123 &-1.656 &-1.169 \\
+MP2+LJ               &-0.216 &-0.035 &-0.093 \\
+SCS-MP2+LJ           &-0.153 &-0.011 &-0.053 \\
+HF+MP2               &-1.339 &-1.691 &-1.263 \\
+HF-SCS-MP2           &-1.276 &-1.667 &-1.223 \\
+  \end{tabular}
+  \label{tab:MP2_minima}
+ \end{table}
+ \\
+The results of MP2 (both with and without dual basis set expansion) are compared to DFT results with PBE+D3 and B3LYP+D3 in Table \ref{tab:combined_results}. Here the overall trend for DFT that mol is more stable than 1-4 diss is confirmed by the dual basis set expanded MP2 calculation, but without this expansion, MP2 gives both geometries an almost degenerate energy. As in all previous calculations, 1-2 diss is shown to be the most stable  adsorbed species.
+ 
 \subsubsection{Frequency Analysis}
+Apart from calculating adsorption energies, also normal modes with crystal were calculated with the functional B3LYP+D3 and PBE+D3, both with basis set 2 from Table \ref{tab:basissets}. In addition to that, anharmonic corrections for both O-D bonds per system have been done.
+\\
+In Table \ref{tab:freqs_0001_crystal} the results for PBE and B3LYP for the (0001) surface are summarized.
+\begin{table}[!h]
+  \centering
+  \caption{OD stretch vibration results with pob-TZVP/basis set 2 at {\textbf (0001)} surface. Frequencies were calculated at the PBE and B3LYP level of theory with D3 corrections. The presented VASP results were done by J. Wirth with a plane wave and PBE with D3 corrections. ({\color{red}except for mol? Here Jonas only did D2 calculations. Show D2 results for the others instead?}).}
+  \begin{tabular}{ccc|cc|c}
+   & PBE & & B3LYP & &VASP result\\
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$]& $\tilde{\nu}$ [cm$^{-1}$]\\\hline
+  mol: OD$_{\textrm{1}}$    &2657 &2562 &2747 &2650 & 2664\\
+  mol: OD$_{\textrm{2}}$    &2539 &2490 &2627 &2584 & 2550\\
+  1-2: OD$_{\textrm{surf}}$ &2596 &2521 &2697 &2623 & 2632\\
+  1-2: OD$_{\textrm{ads}}$  &2808 &5727 &2883 &2805 & 2814\\
+  1-4: OD$_{\textrm{surf}}$ &2621 &2531 &2715 &2631 & 2659\\
+  1-4: OD$_{\textrm{ads}}$  &2795 &2788 &2873 &2788 & 2797\\
+    \end{tabular}
+  \label{tab:freqs_0001_crystal}
+  \end{table}
+In comparison with former VASP calculations, the PBE results with crystal do not deviate much. In contrast to that, B3LYP results are systematically higher in energy. For both functionals anharmonic corrections decrease the wavenumbers of the OD vibrations, so that the B3LYP+anharmonic corrections are again at the same level as uncorrected PBE with crystal and the results with VASP. In comparison with experimental SFG spectra\cite{Wirth2014}, the overall agreement with VASP results was not convincing. The measured wavenumbers are: $2729$, $2764$, $2790$ $2900$ and $2910\,$cm$^{-1}$. Instead differences between the peaks with respect to the highest energy peak were calculated which then showed very good agreement. Applying the same for the crystal results, even better results can be reached with B3LYP. \todo{Table with those differences}
+\\
+Analogous to these calculations for the (0001) surface, the (11\=20) surface was optimized with PBE+D3 and B3LYP+D3, respectively and the corresponding vibrational frequencies were evaluated. Corresponding results are shown in Table \ref{tab:freqs_11-20_crystal}.
+ \begin{table}[!h]
+  \centering
+  \caption{Stretch wavenumbers for both of the OD groups at the {\textbf (11\=20)} surface for the 3 most stable species. Frequencies were calculated at the B3LYP and PBE level of theory. The used basis set was pob\_TZVP/basis set 2. The VASP results were obtained with a plane wave basis and PBE+D2 corrections. The abbreviations stand for: iCa2 inter-CUSa$\parallel$O-$\mu_2$, Cb2 CUSb$\parallel$O-$\mu_2$ and iCb2 inter-CUSb$\parallel$O-$\mu_2$.}
+  \begin{tabular}{ccc|cc|c}
+   & PBE& & B3LYP & &VASP result\\
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\hline
+  iCa2: OD$_{\textrm{surf}}$ &2682 &2599 &2773 &2695 & 2694\\
+  iCa2: OD$_{\textrm{ads}}$  &2728 &2644 &2811 &2729 & 2731\\
+  Cb2: OD$_{\textrm{surf}}$  &1658 &1310 &2019 &1722 & 1711\\
+  Cb2: OD$_{\textrm{ads}}$   &2769 &2687 &2843 &2765 & 2785\\
+  iCb2: OD$_{\textrm{surf}}$ &2657 &2595 &2778 &2694 & 2689\\
+  iCb2: OD$_{\textrm{ads}}$  &2688 &2569 &2777 &2689 & 2692\\
+  \end{tabular}
+  \label{tab:freqs_11-20_crystal}
+  \end{table}
+Similar to the results for the (0001) surface cut, the PBE+D2/D3 results for both VASP and crystal are in good agreement and B3LYP+D3 are higher in energy. Anharmonic corrections deliver lower energy modes, so that B3LYP+anharmonic corrections is again in the same range as the PBE results.
+\\
 \todo{compare (0001) to VASP and experiment\\
 compare (11\=20) to VASP and experiment}
 
@@ -2056,7 +2122,7 @@ Also one type of (D$_2$O)$_2$ was tested (see Figure \ref{abb:D2O2clusters}). Th
 Hiermit versichere ich, dass die vorliegende Arbeit an keiner anderen Hochschule eingereicht sowie selbständig und ausschließlich mit den angegebenen Mitteln angefertigt worden ist.\\
 
 \begin{flushleft}
-  Potsdam, xx 2018
+  Potsdam, \todo{xx} 2018
 \end{flushleft}
 
 \end{document}
