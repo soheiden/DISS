@@ -1516,7 +1516,7 @@ The transition state was calculated with PBE+D2 with the implementation of Nudge
   \label{tab:4-2results_jonas}
 \end{table}
 \\
-Now we want to expand these methods to the following: We want to calculate the adsorption energies and the barrier within a atom centered orbital method with the hybrid functional B3LYP and also go beyond density functional theory and go to perturbation theory (LMP2).
+It is now a goal to expand these methods to the following: By first calculating the adsorption energies and the barrier within a atom centered orbital method with the hybrid functional B3LYP and also going beyond density functional theory and going to perturbation theory (LMP2). After this, the transition state shall be reoptimized with B3LYP and the respective rate shall be calculated for this geometry both with density functional theory (PBE and B3LYP) and MP2.
 %\\
 %Apart from that, we study this reaction with the help of Path Integral Molecular Dynamics, where the system is represented as a couple of beads that are connected and henceforth act as a more delocalized particle which can contribute to quantum effects, proton tunneling.
 %\\
@@ -1748,11 +1748,11 @@ In Table \ref{tab:freqs_0001_crystal} the results for PBE and B3LYP for the (000
   \label{tab:freqs_0001_crystal}
   \end{table}
 In comparison with former VASP calculations, the PBE results with crystal do not deviate much. In contrast to that, B3LYP results are systematically higher in energy. For both functionals anharmonic corrections decrease the wavenumbers of the OD vibrations, so that the B3LYP+anharmonic corrections are again at the same level as uncorrected PBE with crystal and the results with VASP. In comparison with experimental SFG spectra\cite{Wirth2014}, the overall agreement with VASP results was not convincing. The measured wavenumbers are: $2729$, $2764$, $2790$ $2900$ and $2910\,$cm$^{-1}$. Instead differences between the peaks with respect to the highest energy peak were calculated which then showed very good agreement. Applying the same for the crystal results, even better results can be reached with B3LYP. \todo{Table with those differences}
-\\
+\\ \\
 Analogous to these calculations for the (0001) surface, the (11\=20) surface was optimized with PBE+D3 and B3LYP+D3, respectively and the corresponding vibrational frequencies were evaluated. Corresponding results are shown in Table \ref{tab:freqs_11-20_crystal}.
  \begin{table}[!h]
   \centering
-  \caption{Stretch wavenumbers for both of the OD groups at the {\textbf (11\=20)} surface for the 3 most stable species. Frequencies were calculated at the B3LYP and PBE level of theory. The used basis set was pob\_TZVP/basis set 2. The VASP results were obtained with a plane wave basis and PBE+D2 corrections. The abbreviations stand for: iCa2 inter-CUSa$\parallel$O-$\mu_2$, Cb2 CUSb$\parallel$O-$\mu_2$ and iCb2 inter-CUSb$\parallel$O-$\mu_2$.}
+  \caption{Stretch wavenumbers for both of the OD groups at the {\textbf (11\=20)} surface for the 3 most stable species. Frequencies were calculated at the B3LYP and PBE level of theory. The used basis set was basis set 2. The VASP results were obtained with a plane wave basis and PBE+D2 corrections. The abbreviations stand for: iCa2 inter-CUSa$\parallel$O-$\mu_2$, Cb2 CUSb$\parallel$O-$\mu_2$ and iCb2 inter-CUSb$\parallel$O-$\mu_2$.}
   \begin{tabular}{ccc|cc|c}
    & PBE& & B3LYP & &VASP result\\
   stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\hline
@@ -1765,12 +1765,16 @@ Analogous to these calculations for the (0001) surface, the (11\=20) surface was
   \end{tabular}
   \label{tab:freqs_11-20_crystal}
   \end{table}
-Similar to the results for the (0001) surface cut, the PBE+D2/D3 results for both VASP and crystal are in good agreement and B3LYP+D3 are higher in energy. Anharmonic corrections deliver lower energy modes, so that B3LYP+anharmonic corrections is again in the same range as the PBE results.
-\\
-\todo{compare (0001) to VASP and experiment\\
-compare (11\=20) to VASP and experiment}
+Similar to the results for the (0001) surface cut, the PBE+D2/D3 results for both VASP and crystal are in good agreement and B3LYP+D3 are higher in energy. Anharmonic corrections deliver lower energy modes, so that B3LYP+anharmonic corrections is again in the same range as the PBE results. In the experiments \cite{Heiden11-20} three peaks are visible, that could be assigned to both OD groups of inter-CUSa$\parallel$O-$\mu_2$ and the OD$_\textrm{ads}$ group of CUSb$\parallel$O-$\mu_2$. The corresponding wavenumbers are $2762$, $2812$ and $2839\,$cm$^{-1}$. Compared to VASP results and crystal PBE+D3, these experimental wavenumbers are shifted by around $50$-$80\,$cm$^{-1}$. With anharmonic corrections, the agreement is even worse. Only the B3LYP+D3 results agree very well with deviations of one to eleven wavenumbers, which is an astonishingly well compliance. As it was shown before, anharmonic corrections shift the results to lower wavenumbers and decrease the overall agreement.
+
 
 \subsubsection{Reaction Rate}
+For a selected hydrogen diffusion reaction at the (0001) surface, a transition state with a corresponding rate were recalculated with B3LYP+D3 and basis set 5, since GGA (\textit{e. g.} the functional PBE) are known to underestimate barriers\cite{Zhao05}. This Df-H-4-2 reaction is shown in Figure \ref{abb:df-h-4-2} and was first described in \cite{Wirth2012}.
+\\
+A transition state optimization was done, but this failed. However, one point of the optimization showed a small energy change in the micro Hartree region, atom displacements were tiny and the gradient was not too large either, so that this structure was examined further. A normal mode analysis showed one single imaginary frequency, as expected for a transition state of first order. Now from this geometry, PBE and MP2 energies were calculated, to calculate a rate with the Eyring equation (\ref{eq:eyring}). These results for B3LYP, PBE and MP2 are shown in Table \todo{Table dE, dG and k(300K) for crystal reoptimized geometry}.
+\\
+Since this obtained transition state geometry was not converged properly, also calculations with PBE, B3LYP and MP2 at the VASP optimized transition state geometry were done and corresponding  outcomes are presented in Table \todo{Table with dE, dG and k(300K) for vasp optimized geometry}.
+\\
 \todo{Df-H-4-2 at (0001) surface. give VASP results. GGA understimates barriers\\
 $\square$ recalculations of TS, did not converge properly but  one point looked promising, frequency analysis showed one imaginary frequency\\
 $\square~ \Delta G^\ddagger$ from frequency analysis\\
