@@ -823,30 +823,31 @@ Rates for backreactions can also be calculated and the results are shown in Tabl
 As mentioned before an immense well known problem of GGA is that barriers are underestimated\cite{Zhao05}. Optimizing structures with HSE06 is nearly impossible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (unpublished work by Dr. J. Wirth, U Potsdam). %\todo{at least for crystal calculations... so don't bring it here?}
 \clearpage
 \section{Vibrational Frequencies}
-A great source of knowledge about chemical systems is vibrational spectroscopy, so we were interested in vibrational frequencies of the systems, since the frequencies of vibrations give us hints about the chemical environment as hydrogen bonds and other atoms nearby that bond to each other. These vibrational frequencies were calculated for the surface system adsorbed with OH and also with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are clearer with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
+A great source of knowledge about chemical systems is vibrational spectroscopy, so vibrational frequencies of the systems re of interest, since the frequencies of vibrations give hints about the chemical environment as hydrogen bonds and other atoms nearby that bind to each other. These vibrational frequencies were calculated for the surface system adsorbed with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are clearer with their applied Laser system. The experimental SFG spectra (Sum Frequency Generation) for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
  \caption{Experimental SFG results for (11\=20) surface with 0.14ML (mono layer, left spectrum) and 0.05ML water coverage (right) including fit. The experiment was conducted by Yanhua Yue, FHI Berlin. Coverage only influences intensity of the peaks but not the peak position itself. The different coverages are achieved via different preparing temperatures of the sample.}
         \label{abb:exp-sfg}
  \end{figure}
-Of course, the frequencies for a deuterated system are different from OH, but the different isotopes can be calculated easily within vasp, just by changing the mass.
+% Of course, the frequencies for a deuterated system are different from OH, but the different isotopes can be calculated easily within vasp, just by changing the mass.
 \\
 In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in UHV and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source. For further details see \cite{Heiden11-20_2018} and the supporting information therein.
 \\
 \\
-To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and power spectra from \textit{ab initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}).
+To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and power spectra from \textit{ab initio} MD via velocity-velocity autocorrelation function (section \ref{vvacf}). \todo{mention these results? not enough propagation time... but at least good agreement with normal mode results.}
 \\
 The focus lies mainly on the position of the peaks rather than the intensities, because in the first place it is of greater importance what kind of vibrations gives which peak than the intensity of the peak itself. Also, it is still challenging to determine the frequencies before heading to intensities.
-In the power spectra from MD calculations the intensities are implicitly received and for the normal mode analyses this work follows 2 different approaches: dipole corrections and Born effective charges.
+In the power spectra from MD calculations the intensities are implicitly received and for the normal mode analyses this work follows two different approaches: dipole corrections and Born effective charges.
 \\
-In subsection \ref{nma}, also modes for higher coverage systems are also examined.
+In subsection \ref{nma}, OD stretch vibrations are presented but also modes for higher coverage systems and lattice vibrations are examined.
 \\
-But not only the OD frequencies are of interest, but also the lattice vibrations, and are covered in both subsections.
+% But not only the OD frequencies are of interest, but also the lattice vibrations, and are covered in both subsections.
+Subsection \ref{bec} gives the spectra including intensities determined via Born effective charges and in subsection \ref{vvacf} the results for spectra from the velocity-velocity autocorrelation function are shown.
 
 \subsection{Normal Mode Analysis}\label{nma}
 \subsubsection{OD Vibrations}
-The normal modes are calculated within the harmonic approximation and depend on the mass and the spring constant of the bond. This ansatz is quite good for high frequency modes like OD stretch vibrations. We assumed that the OD stretching modes for the three most stable structures would contribute to the spectrum the most. These results are presented in Table \ref{tab:freq_layers}.
+The normal modes are calculated within the harmonic approximation and depend on the mass and the spring constant of the bond. This ansatz is quite good for high frequency modes like OD stretch vibrations. We assumed that the OD stretching modes for the three most stable structures would contribute to the spectrum the most. These wavenumbers are presented in Table \ref{tab:freq_layers} for different slab sizes, as given in Figure \ref{abb:cell_sizes}. Also the angle of the OD bond with respect to the surface is given, since vibrations that are in plane cannot be measured with SFG spectroscopy.
 \begin{table*}[th]
   \centering
  \caption{Wavenumbers of normal modes for the different slab sizes: OD stretching modes for each of the most stable minima. All values are given in cm$^{-1}$; in parantheses, the angle of the OD bonding vector to the surface normal ($\theta$ in \textdegree) is provided. In each column, the left value reflects the adsorbed OD group and the right wavenumber the surface OD group, respectively.  In the right part a sketch of the angle $\theta$ between the OD bond and the surface normal is shown.}
@@ -862,9 +863,9 @@ The normal modes are calculated within the harmonic approximation and depend on 
   \label{tab:freq_layers}
 \end{table*}
 \\\\
- Following this approach we expect six modes, for each of the three an OD$_{surf}$ and an OD$_{ads}$. In all cases the relationship between the two individual modes for each considered structure is portrayed by $\tilde{\nu}$(OD$_{ads}$)>$\tilde{\nu}$(OD$_{surf}$). This can be explained with the different reduced mass for both vibrations: The OD$_{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can act more as a quasi-free OD group \cite{Wirth2014}. All these vibrations are clearly localized on one of the OD groups, which suggests that the normal modes ansatz is reasonable.
+ Following this approach we expect six modes, for each of the three an OD$_\textrm{surf}$ and an OD$_\textrm{ads}$. In all cases the relationship between the two individual modes for each considered structure is portrayed by $\tilde{\nu}$(OD$_\textrm{ads}$)>$\tilde{\nu}$(OD$_\textrm{surf}$). This can be explained with the different reduced mass for both vibrations: The OD$_\textrm{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can act more as a quasi-free OD group \cite{Wirth2014}. All these vibrations are clearly localized on one of the OD groups, which suggests that the normal modes ansatz is reasonable.
 \\
-Of course, normal modes of all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although as it was mentioned in section \ref{structure_search11-20} that the slab was already converged with 10 layers concerning OD stretch frequencies.
+Of course, normal modes of all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although as it was mentioned in section \ref{structure_search11-20} the slab was already converged with 10 layers concerning OD stretch frequencies.
 \\
 \\
 To consider the probability of observing these species, we calculated their respective Boltzmann weights $P_i$:
@@ -885,9 +886,9 @@ With this analysis it is possible to show the relative population for different 
   \label{tab:boltzmann-pop}
 \end{table*}
 \\
-From the results for the frequencies of the three most stable structures (from Table \ref{tab:freq_layers}), one can see, that for all slab sizes, there are 4 relevant modes to be expected. One of them is noticeable lower in energy that is due to hydrogen bonding (OD surface vibration of CUSb$\parallel$O-$\mu_2$). Also the angle of the bonding vector with respect to the surface normal is very high (i.e. the bond is more in plain, values and schematic representation shown in Tab.~\ref{tab:freq_layers}) so that the expected intensity in experiment is remarkably lower and may be not visible in experiment because of the angle dependence of the intensity in VSF. 
+From the results for the frequencies of the three most stable structures (from Table \ref{tab:freq_layers}), one can see, that for all slab sizes, there are four relevant modes to be expected. One of them is noticeable lower in energy that is due to hydrogen bonding (OD$_\textrm{surf}$ vibration of CUSb$\parallel$O-$\mu_2$). Also the angle of the bonding vector with respect to the surface normal is very high (i.e. the bond is more in plain, values and schematic representation shown in Tab.~\ref{tab:freq_layers}) so that the expected intensity in experiment is remarkably lower and may be not visible in experiment because of the angle dependence of the intensity in VSF. 
 \\
-With this in mind, we are able to predict 3 peaks, which fits well to the experimental results of Yanhua Yue from FHI Berlin (see Figure \ref{abb:exp-sfg}). Comparing these results in absolute numbers is not very convincing as before in the literature, but relative numbers are in good agreement (see results for experiment and all different sized layer slabs in Table \ref{tab:rel_modes}).
+With this in mind, we are able to predict three peaks, which fits well to the experimental results of Yanhua Yue from FHI Berlin (see Figure \ref{abb:exp-sfg}). Comparing these results in absolute numbers is not very convincing as before in the literature, but relative numbers are in good agreement (see results for experiment and all different sized layer slabs in Table \ref{tab:rel_modes}).
 \begin{table*}[!h]
 \begin{center}
 \caption{Wave number differences $\Delta \tilde{\nu}$ are given in [cm$^{-1}$]. $\Delta \tilde{\nu}_1$ depicts the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$.}
@@ -1100,7 +1101,7 @@ The high energy part (see Figure \ref{abb:symm-iCa2_spec}(b)) shows that each of
  \todo{continue here when the calculations are ready! Compare O-I and O-II for 10 and 25 layer slabs, both for clean surface and fully covered.}
 
 
-\subsection{Born Effective Charges}
+\subsection{Born Effective Charges}\label{bec}
 These results were obtained for the three most stable adsorbed systems with 10 layers. For getting the spectrum an angle of the IR beam of 45\textdegree~was assumed. Because both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities differ. In Figure \ref{abb:bec} the spectra for the three most stable structures can be seen, (a) depicts the whole range and (b) the OD range only.
 \begin{figure}[!h]
     \centering
@@ -1506,7 +1507,7 @@ The transition state was calculated with PBE+D2 with the implementation of Nudge
 \hspace*{-1cm}
  \begin{tabular}{l|c}
  \toprule
- Method&k [s$^{-1}$ \\
+ Method&k [s$^{-1}$] \\
     \midrule
  PW91 & $1.97\times 10^8$\\
  PBE & $9.15\times 10^7$\\
@@ -1734,10 +1735,10 @@ Apart from calculating adsorption energies, also normal modes with crystal were 
 In Table \ref{tab:freqs_0001_crystal} the results for PBE and B3LYP for the (0001) surface are summarized.
 \begin{table}[!h]
   \centering
-  \caption{OD stretch vibration results with pob-TZVP/basis set 2 at {\textbf (0001)} surface. Frequencies were calculated at the PBE and B3LYP level of theory with D3 corrections. The presented VASP results were done by J. Wirth with a plane wave and PBE with D3 corrections. ({\color{red}except for mol? Here Jonas only did D2 calculations. Show D2 results for the others instead?}).}
+  \caption{OD stretch vibration results with basis set 2 at {\textbf (0001)} surface. Wavenumbers $\tilde{\nu}$ were calculated at the PBE and B3LYP level of theory with D3 corrections and also wavenumbers including anharmonic corrections $\tilde{\nu}_\textrm{anh}$. The presented VASP results were done by J. Wirth with a plane wave and PBE with D3 corrections. ({\color{red}except for mol? Here Jonas only did D2 calculations. Show D2 results for the others instead?}).}
   \begin{tabular}{ccc|cc|c}
    & PBE & & B3LYP & &VASP result\\
-  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$]& $\tilde{\nu}$ [cm$^{-1}$]\\\hline
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]& $\tilde{\nu}$ [cm$^{-1}$]\\\hline
   mol: OD$_{\textrm{1}}$    &2657 &2562 &2747 &2650 & 2664\\
   mol: OD$_{\textrm{2}}$    &2539 &2490 &2627 &2584 & 2550\\
   1-2: OD$_{\textrm{surf}}$ &2596 &2521 &2697 &2623 & 2632\\
@@ -1752,10 +1753,10 @@ In comparison with former VASP calculations, the PBE results with crystal do not
 Analogous to these calculations for the (0001) surface, the (11\=20) surface was optimized with PBE+D3 and B3LYP+D3, respectively and the corresponding vibrational frequencies were evaluated. Corresponding results are shown in Table \ref{tab:freqs_11-20_crystal}.
  \begin{table}[!h]
   \centering
-  \caption{Stretch wavenumbers for both of the OD groups at the {\textbf (11\=20)} surface for the 3 most stable species. Frequencies were calculated at the B3LYP and PBE level of theory. The used basis set was basis set 2. The VASP results were obtained with a plane wave basis and PBE+D2 corrections. The abbreviations stand for: iCa2 inter-CUSa$\parallel$O-$\mu_2$, Cb2 CUSb$\parallel$O-$\mu_2$ and iCb2 inter-CUSb$\parallel$O-$\mu_2$.}
+  \caption{Stretch wavenumbers $\tilde{\nu}$ for both of the OD groups at the {\textbf (11\=20)} surface for the 3 most stable species. Frequencies were calculated at the B3LYP and PBE level of theory, wavenumbers including anharmonic corrections $\tilde{\nu}_\textrm{anh}$ are also given. The used basis set was basis set 2. The VASP results were obtained with a plane wave basis and PBE+D2 corrections. The abbreviations stand for: iCa2 inter-CUSa$\parallel$O-$\mu_2$, Cb2 CUSb$\parallel$O-$\mu_2$ and iCb2 inter-CUSb$\parallel$O-$\mu_2$.}
   \begin{tabular}{ccc|cc|c}
    & PBE& & B3LYP & &VASP result\\
-  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anharm}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\hline
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\hline
   iCa2: OD$_{\textrm{surf}}$ &2682 &2599 &2773 &2695 & 2694\\
   iCa2: OD$_{\textrm{ads}}$  &2728 &2644 &2811 &2729 & 2731\\
   Cb2: OD$_{\textrm{surf}}$  &1658 &1310 &2019 &1722 & 1711\\
@@ -1769,14 +1770,13 @@ Similar to the results for the (0001) surface cut, the PBE+D2/D3 results for bot
 
 
 \subsubsection{Reaction Rate}
-For a selected hydrogen diffusion reaction at the (0001) surface, a transition state with a corresponding rate were recalculated with B3LYP+D3 and basis set 5, since GGA (\textit{e. g.} the functional PBE) are known to underestimate barriers\cite{Zhao05}. This Df-H-4-2 reaction is shown in Figure \ref{abb:df-h-4-2} and was first described in \cite{Wirth2012}.
+For the reaction Df-H-4-2 introduced earlier shown in Figure \ref{abb:df-h-4-2}, a transition state with a corresponding rate were recalculated with B3LYP+D3 and basis set 5, since GGA (\textit{e. g.} the functional PBE) are known to underestimate barriers\cite{Zhao05}, so goying beyond GGA is vital. Previous results with PBE and PW91 as well as hybrid functional results (single point calculations on top of PBE geometries) are shown in Table \ref{tab:4-2results_jonas}.
 \\
-A transition state optimization was done, but this failed. However, one point of the optimization showed a small energy change in the micro Hartree region, atom displacements were tiny and the gradient was not too large either, so that this structure was examined further. A normal mode analysis showed one single imaginary frequency, as expected for a transition state of first order. Now from this geometry, PBE and MP2 energies were calculated, to calculate a rate with the Eyring equation (\ref{eq:eyring}). These results for B3LYP, PBE and MP2 are shown in Table \todo{Table dE, dG and k(300K) for crystal reoptimized geometry}.
+A transition state optimization was done, but this failed to converge. However, one point of the optimization showed only a small energy change in the micro Hartree region, atom displacements were tiny and the gradient was not too large either, so that this structure was examined further. A normal mode analysis showed one single imaginary frequency, as expected for a transition state of first order. Now from this geometry, PBE and MP2 energies were calculated, to calculate a rate with the Eyring equation (\ref{eq:eyring}). These results for B3LYP, PBE and MP2 are shown in Table \todo{Table dE, dG and k(300K) for crystal reoptimized geometry}.
 \\
 Since this obtained transition state geometry was not converged properly, also calculations with PBE, B3LYP and MP2 at the VASP optimized transition state geometry were done and corresponding  outcomes are presented in Table \todo{Table with dE, dG and k(300K) for vasp optimized geometry}.
 \\
-\todo{Df-H-4-2 at (0001) surface. give VASP results. GGA understimates barriers\\
-$\square$ recalculations of TS, did not converge properly but  one point looked promising, frequency analysis showed one imaginary frequency\\
+\todo{
 $\square~ \Delta G^\ddagger$ from frequency analysis\\
 $\square$ calculate rates with reoptimized TS\\
 $\square$ calculate rates with VASP geometry TS
@@ -1799,10 +1799,10 @@ $\square$ calculate rates with VASP geometry TS
 
 \addchap{Summary}
 
-We made great progress in understanding the (11\=20) surface of $\upalpha$-Al$_2$O$_3$ in contact with water in the low coverage regime. 
-\\
-The dissociation process of water on (0001) surface was studied.
-\\
+In this work great progress was made in understanding the (11\=20) surface of $\upalpha$-Al$_2$O$_3$ in contact with water in the low coverage regime. This surface cut is the third most stable one under UHV conditions and has not been studied to a great extent yet. After optimization of the clean, defect free surface, the stability of different adsorbed species could be classified. One molecular minimum and several dissociated species could be detected, and starting from these reaction rates between minima were evaluated. In addition to reactivity, harmonic vibrational frequencies were determined for comparison with the experimental findings of the experimental group from Fritz-Haber Institute in Berlin. Especially the vibrational frequencies could be assigned with very good agreement to experimental SFG spectra. \todo{Also, lattice vibrations were studied in close collaboration with the experimental partners. As a novelty, they perform SFG spectra at very low frequencies to get deep into the lattice vibration region. Concerning this, a bigger slab model with greater expansion perpendicular to the surface was applied. The overall agreement with lower energy modes is typically worse than for high energy OD(/OH) vibrations.}
+\\\\
+The dissociation process of water on (0001) surface was studied. This is the most stable surface cut under UHV conditions and was studied by many groups both theoretically and experimentally. In previous work the dissociation was studied by AIMD of molecularly adsorbed water, referring more to an equilibrium situation. The experimental method to obtaining this is pinhole dosing. In contrast to this earlier work, the dissociation process of heavy water when being shot from a molecular beam source was reproduced by periodoc \textit{ab initio} molecular dynamics simulations. This experimental method results in a non-equilibrium situation. This calculations with different surface and beam models let us understand better the results of the non-equilibrium situation. This gives, in contrast to a more equilibrium situation with pinhole dosing, an increase in the dissociation probability, which could be reproduced and also understood mechanistical by those calculations.
+\\\\
 Several methods were tested to improve reaction rates.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1811,13 +1811,13 @@ Several methods were tested to improve reaction rates.
 \clearpage
 \addchap*{Acknowledgment}
 \endgroup
-I want to thank my doctoral father Prof. Dr. Saalfrank, for giving me the scientific opportunity to research on surface systems and all the valuable discussions and advices. Also I am deeply grateful to my supervisor Dr. Jonas Wirth who gave me support during my time starting as a Bachelor's student, during my Master's thesis and also through the beginning of my PhD, PD Dr. Tillmann Klamroth for discussions about programming and theoretical questions that arose during the work, Dr. Rados\l{}aw W\l{}odarczyk for his endless knowledge with vasp and programming in general, Giacomo Melani (soon to be Dr.) for his advice and his help, and also the discussions about our teaching duties in mathematics and the whole workgroup for all the valuable discussions and the help. Also for the great atmosphere, that was some times productive and some times also just relaxing and felt very comfortable, here especially Clemens Rietze, Robert Scholz, Gereon Floss, and Steven Lindner.
+I want to thank my doctoral father Prof. Dr. Saalfrank, for giving me the scientific opportunity to research on surface systems and all the valuable discussions and advices. Also I am deeply grateful to my supervisor Dr. Jonas Wirth who gave me support during my time starting as a Bachelor's student, during my Master's thesis and also through the beginning of my PhD. Thanks to PD Dr. Tillmann Klamroth for discussions about programming and millions of theoretical questions that arose during the work, Dr. Rados\l{}aw W\l{}odarczyk for his endless knowledge with VASP and programming in general, Giacomo Melani (soon to be Dr.) for his advice and his help, and also the discussions about our teaching duties in mathematics and the whole workgroup for all the valuable discussions and the help. Also for the great atmosphere, that was some times productive and some times also just relaxing and felt very comfortable, here especially Clemens Rietze, Robert Scholz, Gereon Floss, and Steven Lindner.
 Also I want to thank my second supervisor Beate Paulus for discussion and help beyond research topics.
-Great acknowlegdment to my experimental cooperation partners from FHI, Yanhua Yue, Dr. Harald Kirsch and Dr. Kramer R. Campen for the great work and publications we did together.
+Great acknowlegdment to my experimental cooperation partners from FHI, Yanhua Yue, Dr. Harald Kirsch and Dr. R. Kramer Campen for the great work and publications we did together.
 Thanks to Dr. Denis Usvyat for all his patience and knowledge and valuable discussions about crystal/cryscor and his help.
 \todo{Maristella Alessio from Sauer group (HU Berlin) for help with Turbomole and setting the mechanical embedding calculations, that unluckily did not work for the applied cluster.
 Ji Chen and Wei Fang from Michaelides group from UCL London for their help with cp2k and i-Pi, necessary for the PIMD calculations.}\\
-Last I want to thank Dr. Jean Christophe Tremblay who brought me to theoretical chemistry by bringing my attention to this field of science.
+I want to thank Dr. Jean Christophe Tremblay who brought me to theoretical chemistry by bringing my attention to this field of science.
 Christiane Wunderlich who was my school teacher in chemistry, without whom I would not have studied chemistry.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1835,7 +1835,7 @@ Christiane Wunderlich who was my school teacher in chemistry, without whom I wou
 % \DeclareCaptionLabelFormat{myformat}{#1~A#2}
 \captionsetup{labelformat=myformat}
 %\endgroup
-reaction pathways: dissociation Cb-iCa2 and Cb-iCb2 were tested but both were two step processes. Show reaction paths here? I think not..
+\todo{reaction pathways: dissociation Cb-iCa2 and Cb-iCb2 were tested but both were two step processes. Show reaction paths here? I think not..}
 \\
 Conversion of reciproke coordinates a,b,c coordinates to x,y,z coordinates via matrix product:
 \begin{equation*}
