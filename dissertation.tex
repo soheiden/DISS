@@ -183,7 +183,8 @@ and the third most element therein\cite{Riedel,dtv-Atlas}.
 %Component of  feldspar, Glimmer and clay minerals (with silicates), more seldomly as corundum and "Schmirgel". Some of them are precious stones ruby, saphir
 % Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth crust and with that the far most abundant metal)}
 \\
-It can also be seen as a model systems for more complex alumosilicates. Oxide rocks are omnipresent in the crust of the earth and henceforth in most geochemical processes since the times the earth's atmosphere became oxidizing with rise of photosynthetic life forms/(bacteria?) 2.3 billion years ago \todo{seems to be not true: https://nai.nasa.gov/articles/2011/12/2/earths-early-atmosphere-an-update/ and \\ https://www.nature.com/articles/nature10655) \cite{Trail2011}. Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew giving rise to oxidic metal compounds.}
+It can also be seen as a model systems for more complex alumosilicates. Oxide rocks are omnipresent in the crust of the earth and henceforth in most geochemical processes since the times the earth's atmosphere was oxidizing in the early stages of the planetary evoluation\cite{Trail2011} which became even extensive with the rise of photosynthetic life forms\cite{Frei2009,Buick2008,Olson2006}.
+%became oxidizing with rise of photosynthetic life forms/(bacteria?) 2.3 billion years ago (seems to be not true: https://nai.nasa.gov/articles/2011/12/2/earths-early-atmosphere-an-update/ and \\ https://www.nature.com/articles/nature10655) \cite{Trail2011}. Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew giving rise to oxidic metal compounds.)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -504,15 +505,16 @@ The unit cell consists of 5 atomic layers in z direction (O-O$_2$-Al$_4$-O$_2$-O
 The supercell that is mostly used in this work has 10 atomic layers, with the lowest 5 fixed to the bulk value to mimic the surface situation. For the calculation of the lattice vibrations up to 25 layers were considered (Figure \ref{abb:cell_sizes}). For each slab size the respective lowest 5 layers were kept fixed, see chapter \ref{phonons}. The spacing between the 5 top layers for each slab size is displayed in Table \ref{tab:layer-dist}.
 \begin{table}[!ht]
   \centering
- \caption{Distances between the top 5 layers (see also numbering in Figure \ref{abb:crystal_11-20}(c)) for different optimized slab sizes and the unrelaxed bulk structure (right column). All values are given in \AA.} 
+ \caption{Distances between the top 5 layers (see also numbering in Figure \ref{abb:crystal_11-20}(c)) for different optimized slab sizes and the unrelaxed bulk structure (right column). All values are given in \AA. \todo{Trennstrich macht Ärger..}} 
 \vspace*{.2cm}
 \begin{tabular}{c|cccc|c}
+\toprule
  &\multicolumn{4}{c}{total number of atomic layers} &\\
-    distance    & 10   & 15   & 20   & 25   &bulk \\\hline
+    distance    & 10   & 15   & 20   & 25   &bulk \\\midrule
  d$_{12}$	&0.232 &0.234 &0.247 &0.245 &0.193 \\
  d$_{23}$	&0.642 &0.649 &0.638 &0.639 &0.741 \\
  d$_{34}$	&0.656 &0.655 &0.671 &0.672 &0.741 \\
- d$_{45}$	&0.198 &0.205 &0.209 &0.213 &0.191 \\
+ d$_{45}$	&0.198 &0.205 &0.209 &0.213 &0.191 \\\bottomrule
   \end{tabular}
   \label{tab:layer-dist}
 \end{table}
@@ -547,16 +549,15 @@ The adsorption energy is defined by Equation \ref{eq:Eads} as the energy of the 
 \vspace*{.2cm} 
   }
   \begin{tabular}{cl|cccc}
-   \multicolumn{2}{c|}{Adsorbed Species}  & $E_\text{ads}$ & $G_\text{ads, 130 K}$  &  $G_\text{ads, 300 K}$  & $G_\text{ads, 400 K}$ \\
-\hline
-\multirow{1}{*}{molecular} & CUSb          &   -1.78  &-1.60 & -1.51  & -1.46 \\
-  \hline
+  \toprule
+   \multicolumn{2}{c|}{Adsorbed Species}  & $E_\text{ads}$ & $G_\text{ads, 130 K}$  &  $G_\text{ads, 300 K}$  & $G_\text{ads, 400 K}$ \\\midrule
+\multirow{1}{*}{molecular} & CUSb          &   -1.78  &-1.60 & -1.51  & -1.46 \\\hline
  \multirow{6}{*}{dissociated} & \textbf{inter-CUSa||O-$\mu_2$} & \textbf{-2.50} &-2.27 & -2.16 & -2.09 \\
   & inter-CUSa||O-$\mu_3$ & -1.67 &-1.44 &-1.33 & -1.27 \\
   & \textbf{CUSb||O-$\mu_2$} & \textbf{-2.28} & -2.12& -2.03 &-1.97  \\
  & CUSb||O-$\mu_3$ & -1.19 &-1.05 &-0.98 & -0.95 \\%Cb3_other
  & \textbf{inter-CUSb||O-$\mu_2$} & \textbf{-2.09} &-1.88 &-1.80 & -1.76 \\
- & inter-CUSb||O-$\mu_3$ & -1.89 &-1.71 & -1.63 & -1.58 \\
+ & inter-CUSb||O-$\mu_3$ & -1.89 &-1.71 & -1.63 & -1.58 \\\bottomrule
   \end{tabular}
   \label{tab:ads_1water}
 \end{table}
@@ -591,33 +592,35 @@ Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water
 \vspace*{.2cm} 
   }
   \begin{tabular}{cc}
-  Adsorbed Species  & $E_\text{ads}$  \\
+  \toprule
+  Adsorbed Species  & $E_\text{ads}$  \\\midrule
    inter-CUSa||O-$\mu_3$ & -1.67 \\
    inter-CUSa||O-$\mu_3^\prime$ & -1.42 \\\hline
    inter-CUSb||O-$\mu_3$ & -1.89\\
    inter-CUSb||O-$\mu_3^{\prime\prime}$ & -1.16\\
-   inter-CUSb||O-$\mu_3^{\prime\prime\prime}$ & -1.22\\
+   inter-CUSb||O-$\mu_3^{\prime\prime\prime}$ & -1.22\\\bottomrule
   \end{tabular}
   \label{tab:ads_1waterfurther}
 \end{table}
 \\
 Apart from that, systems with additional atomic layers were studied to gain knowledge towards more realistic systems. The corresponding adsorption energies are shown in Table \ref{tab:eads_layers}. Basically, the findings do not differ largely with increasing slab size. The molecular species still is less stable than the O-$\mu_2$ dissociated species and is more stable than the O-$\mu_3$ dissociated ones (except for inter-CUSb$\parallel$O-$\mu_3$ dissociated system). inter-CUSa$\parallel$O-$\mu_2$ is the most stable structure through all sampled systems sizes, inter-CUSb$\parallel$O-$\mu_2$ and CUSb$\parallel$O-$\mu_2$ change their stability (it approaches to nearly the same value for 25 layers) depending on the number of layers but still are some orders of magnitude less probable than inter-CUSa$\parallel$O-$\mu_2$. Dissociated systems occupying the threefold coordinated surface oxygen atom remain in the same stability order.
 %For higher quantity of layers, the inter-CUSb gets more favourable than CUSb, both for O-$\mu_2$ and O-$\mu_3$. This might be due to less interaction between neighboring oxygen atoms with the inter-CUSb adsorbed OH group.
-  \begin{table}[!ht]
+\begin{table}[!ht]
   \centering
   \caption{Adsorption energies calculated from equation \ref{eq:Eads} for molecular and dissociated species for different vertical slab sizes. All values are given in eV. The most stable systems (inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$ are highlighted in bold letters.}
  \begin{tabular}{l|cccc}
- System                     & 10 layers& 15 layers& 20 layers&  25 layers \\\hline
+ \toprule
+ System                     & 10 layers& 15 layers& 20 layers&  25 layers \\\midrule
 CUSb                                    &-1.78 &-1.80     &-1.81     &-1.83      \\\hline
-\textbf{inter-CUSa$\parallel$O-$\mu_2$}    &\textbf{-2.50} &\textbf{-2.4}6 &\textbf{-2.54} &\textbf{-2.56}  \\
+\textbf{inter-CUSa$\parallel$O-$\mu_2$}    &\textbf{-2.50} &\textbf{-2.46} &\textbf{-2.54} &\textbf{-2.56}  \\
 inter-CUSa$\parallel$O-$\mu_3$          &-1.67 &-1.67 &-1.78 &-1.80 \\
 \textbf{CUSb$\parallel$O-$\mu_2$}          &\textbf{-2.28} &\textbf{-2.35} &\textbf{-2.36} &\textbf{-2.35} \\
 CUSb$\parallel$O-$\mu_3$                &-1.19 &-1.71 &-     &-      \\
 \textbf{inter-CUSb$\parallel$O-$\mu_2$}    &\textbf{-2.09} &\textbf{-2.43} &\textbf{-2.48} &\textbf{-2.36}  \\
-inter-CUSb$\parallel$O-$\mu_3$          &-1.89 &-1.59 &-1.65 &-2.09 
-\label{tab:eads_layers}
+inter-CUSb$\parallel$O-$\mu_3$          &-1.89 &-1.59 &-1.65 &-2.09 \\\bottomrule
 \end{tabular}
- \end{table}
+\label{tab:eads_layers}
+\end{table}
 \\
 Table \ref{tab:eads_layers} shows that the most stable systems are already converged for the 10-layer slab with regard to adsorption energies (and also vibrational OH/OD frequencies as will be seen in section \ref{nma}).
 \\
@@ -653,18 +656,18 @@ In Table \ref{tab:higher_water}, the adsorption energies for the high coverage s
 \vspace*{.2cm} 
   }
   \begin{tabular}{lcc}
-  Adsorbed Species  & $E_\text{ads}$ &isolated species \\
+  \toprule
+  Adsorbed Species  & $E_\text{ads}$ &isolated species \\\midrule
    CUSb(mol)+CUSb||O-$\mu_2$ & -4.57 & -4.06\\
    inter-CUSa||O-$\mu_2$+CUSb||O-$\mu_2$ & -4.77 & -4.78\\
    2inter-CUSa||O-$\mu_2$& -4.84 &-5.0 \\\hline
    4inter-CUSa||O-$\mu_2$ & -9.55 & -10.0\\\hline
-   12H$_2$O & -23.39& $a$\tnote{a} \\
+   12H$_2$O & -23.39& $a$\tnote{a} \\   \bottomrule
   \end{tabular}
   \label{tab:higher_water}
   \begin{tablenotes}\footnotesize 
     \item[a] $a$ One can not distinguish exactly, but there are 4 inter-CUSa-OD groups, 8 CUSb-OD groups, 8 O-$\mu_3$ and 4 O-$\mu_2$ OD groups, hence one can not calculate a sum of the isolated species.
   \end{tablenotes}
-
 \end{table}
 There are also the results for the higher coverages in comparison to results in the low overage limit by adding them up (see also column 3 in Table \ref{tab:higher_water}).
 The neighborhood effect shows three different outcomes: it can have a stabilizing effect, where the dissociated water stabilizes the molecularly adsorbed water in CUSb(mol)+CUSb||O-$\mu_2$ (Figure \ref{abb:2water}(a)). It can also have the contrary effect, as can be seen in the  2inter-CUSa||O-$\mu_2$, which becomes less stable (Figure \ref{abb:2water}(c)). On the other hand, there is the inter-CUSa||O-$\mu_2$+CUSb||O-$\mu_2$ which is merely affected by the neighbor water residues (Figure \ref{abb:2water}(b)).
@@ -755,22 +758,20 @@ These H diffusion paths can be assembled to a longer diffusion path leading from
   \centering
   \caption{Energy and free energy differences are given:  $\Delta E=E(\textrm{product}) - E(\textrm{educt})$, $\Delta E^{\ddagger}=E^\ddagger - E(\textrm{educt})$, respective for $G$. The same is given for the transition state - educt. Thermodynamic properties are given at $T=300\,$K. $k$ is the rate constant from eq.~(\ref{eq:eyring}). The three types of reactions are dissociation (D), OH diffusion (Df-OH) and H diffusion (Df-H). ``n.f.'' indicates ``not found''}
   \begin{tabular}{cl|cc|cc|c}
-  \multicolumn{2}{c|}{\small{Reaction Type}}             & \small{$\Delta E$(eV)}& \small{$\Delta G_\text{300 K}$(eV)} & \small{$\Delta E^{\ddagger}$(eV)} & \small{$\Delta G_\text{300 K}^{\ddagger}$(eV)} & \small{$k_\text{300 K}$(s$^{-1}$)}  \\
-    \hline
+ \toprule
+  \multicolumn{2}{c|}{\small{Reaction Type}}             & \small{$\Delta E$(eV)}& \small{$\Delta G_\text{300 K}$(eV)} & \small{$\Delta E^{\ddagger}$(eV)} & \small{$\Delta G_\text{300 K}^{\ddagger}$(eV)} & \small{$k_\text{300 K}$(s$^{-1}$)}  \\\midrule
 \multirow{3}{*}{\small{\ce{H2O} dissociation}} &
    \small{D-a}  & \small{-0.50} & \small{-0.52} & \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\
  & \small{D-b} & \small{0.59} & \small{0.53} & \small{n.f.} & \small{n.f.} & \small{n.f.} \\
- & \small{D-c} &\textit{\small{-1.15}} &\textit{\small{-1.27}} & \small{n.f.} & \small{n.f.} & \small{n.f.}  \\
-    \hline
+ & \small{D-c} &\textit{\small{-1.15}} &\textit{\small{-1.27}} & \small{n.f.} & \small{n.f.} & \small{n.f.}  \\\midrule
  \multirow{2}{*}{\small{OH diffusion}} &
    \small{Df-OH-a} & \small{0.19} & \small{0.22} & \small{0.35} & \small{0.39} & \small{1.88 $\times  10^6$}\\
- & \small{Df-OH-b}  & \small{-0.21} & \small{-0.13} & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\
-    \hline
+ & \small{Df-OH-b}  & \small{-0.21} & \small{-0.13} & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\\midrule
 \multirow{4}{*}{\small{H diffusion}} &
   \small{Df-H-a} &\textit{\small{0.76}} &\textit{\small{0.58}} & \small{n.f.}&\small{n.f.} & \small{n.f.}\\
 & \small{Df-H-b}  & \small{1.08} & \small{1.04} & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\
 & \small{Df-H-c} & \small{0.93} & \small{0.89} & \small{1.36} & \small{1.30} & \small{9.96$\times 10^{-10}$}\\
-& \small{Df-H-d} & \small{-0.06} & \small{-0.07} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\
+& \small{Df-H-d} & \small{-0.06} & \small{-0.07} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\\bottomrule
   \end{tabular}
   \label{tab:reaction-rates}
 \end{table*}
@@ -808,17 +809,18 @@ Rates for backreactions can also be calculated and the results are shown in Tabl
   \centering
   \caption{Reaction rate constants for the backreactions (right) in comparison with forward reactions (left). These rates can be calculated via detailed balance $\stackrel{\leftarrow}{k}  = \stackrel{\rightarrow}{k} \ e^{-\Delta G/k_B T}$. All values are given in s$^{-1}$ at a temperature of $300\,$K.}
   \begin{tabular}{cl|cc|cc|c}
+  \toprule
 \small{Reaction Type} & \small{$k_\text{300 K}$(s$^{-1}$)} &  \small{$k_\text{300 K}$(s$^{-1}$)} \\
- &forward reaction &back reaction \\\hline
+ &forward reaction &back reaction \\\midrule
  \small{D-a}   & \small{5.76$\times 10^{12}$} &\small{1.17$\times 10^4$}\\
  \small{D-b}   & \small{n.f.} & \small{n.f.} \\
- \small{D-c}   & \small{n.f.} & \small{n.f.}  \\\hline
+ \small{D-c}   & \small{n.f.} & \small{n.f.}  \\\midrule
  \small{Df-OH-a} & \small{1.88 $\times  10^6$}&\small{9.86$\times 10^9$} \\
- \small{Df-OH-b}  & \small{2.41$\times 10^{-6}$}& \small{1.69$\times 10^{-8}$}\\\hline
+ \small{Df-OH-b}  & \small{2.41$\times 10^{-6}$}& \small{1.69$\times 10^{-8}$}\\\midrule
  \small{Df-H-a} & \small{n.f.} &\small{n.f.} \\
  \small{Df-H-b}  & \small{4.90$\times 10^{-13}$} &\small{1.49$\times 10^5$} \\
  \small{Df-H-c} & \small{9.96$\times 10^{-10}$}& \small{9.95$\times 10^5$}\\
- \small{Df-H-d} & \small{1.05$\times 10^{-3}$} &\small{7.12$\times 10^{-5}$} \\
+ \small{Df-H-d} & \small{1.05$\times 10^{-3}$} &\small{7.12$\times 10^{-5}$} \\\bottomrule
   \end{tabular}
   \label{tab:backreactions}
 \end{table*}
@@ -858,12 +860,13 @@ The normal modes are calculated within the harmonic approximation and depend on 
  \caption{Wavenumbers of normal modes for the different slab sizes: OD stretching modes for each of the most stable minima. All values are given in cm$^{-1}$; in parantheses, the angle of the OD bonding vector to the surface normal ($\theta$ in \textdegree) is provided. In each column, the left value reflects the adsorbed OD group and the right wavenumber the surface OD group, respectively.  In the right part a sketch of the angle $\theta$ between the OD bond and the surface normal is shown.}
 \vspace*{.2cm} 
  \begin{tabular}{l|ccccc}
-  Layers&inter-CUSa$\parallel$O-$\mu_2$ &CUSb$\parallel$O-$\mu_2$  &inter-CUSb$\parallel$O-$\mu_2$&\multirow{6}{1pt}{\includegraphics[width=2cm]{figures/11-20/ODangle.png}} \\\hline
+ \toprule
+  Layers&inter-CUSa$\parallel$O-$\mu_2$ &CUSb$\parallel$O-$\mu_2$  &inter-CUSb$\parallel$O-$\mu_2$&\multirow{6}{1pt}{\includegraphics[width=2cm]{figures/11-20/ODangle.png}} \\\midrule
   10 &2731 (44), 2694 (36) &2785 (26), 1711 (61) &2692 (41), 2689 (54)& \\
   15 &2728 (44), 2695 (36) &2783 (24), 1812 (60) &2711 (34), 2656 (60)& \\
   20 &2729 (44), 2694 (35) &2783 (24), 1838 (60) &2715 (34), 2665 (58)& \\
-  25 &2728 (44), 2696 (35) &2767 (59), 1750 (62) &2764 (29), 2724 (41)& \\\hline
-  exp. & \multicolumn{3}{c}{2839, 2812, 2762}& \\
+  25 &2728 (44), 2696 (35) &2767 (59), 1750 (62) &2764 (29), 2724 (41)& \\\midrule
+  exp. & \multicolumn{3}{c}{2839, 2812, 2762}& \\\bottomrule
   \end{tabular} 
   \label{tab:freq_layers}
 \end{table*}
@@ -883,10 +886,11 @@ With this analysis it is possible to show the relative population for different 
  \caption{Boltzmann population $P$ relative to the most stable inter-CUSa$\parallel$O-$\mu_2$, calculated according to Equation \ref{boltzmann-weight} for $130$, $300$ and $400\,$K. Values are given for the 10-layer system.}
 \vspace*{.2cm} 
  \begin{tabular}{l|ccc}
-  & P$_{130K}$ & P$_{300K}$ & P$_{400K}$\\\hline
+ \toprule
+  & P$_{130K}$ & P$_{300K}$ & P$_{400K}$\\\midrule
   inter-CUSa$\parallel$O-$\mu_2$ &1 &1 &1 \\
   CUSb$\parallel$O-$\mu_2$ & 1.4$\times 10^{-6}$& 6.1$\times 10^{-3}$& 3.2$\times 10^{-2}$\\
-  inter-CUSb$\parallel$O-$\mu_2$ & 1.0$\times 10^{-15}$ & 1.2$\times 10^{-6}$ & 6.6$\times 10^{-5}$\\
+  inter-CUSb$\parallel$O-$\mu_2$ & 1.0$\times 10^{-15}$ & 1.2$\times 10^{-6}$ & 6.6$\times 10^{-5}$\\\bottomrule
   \end{tabular} 
   \label{tab:boltzmann-pop}
 \end{table*}
@@ -898,12 +902,13 @@ With this in mind, we are able to predict three peaks, which fits well to the ex
 \begin{center}
 \caption{Wave number differences $\Delta \tilde{\nu}$ are given in [cm$^{-1}$]. $\Delta \tilde{\nu}_1$ depicts the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$.}
 \begin{tabular}{ccc}
-layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$\\\hline
+\toprule
+layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$\\\midrule
 10  &37 &91 \\
 15  &33 &88 \\
 20  &35 &89 \\
-25  &32 &71 \\\hline
-exp.&50 &77 \\
+25  &32 &71 \\\midrule
+exp.&50 &77 \\\bottomrule
   \end{tabular}
 \label{tab:rel_modes}
 \end{center}
@@ -919,7 +924,7 @@ The influence of higher coverage was examined for some systems already presented
 \subsubsection{Dipole Intensities and Lattice Vibrations of Further Systems}\label{phonons}
 \todo{experimental results are still missing, compare modes of low coverage limit to spectra with higher coverage, ask Lu for more data of higher coverage.}
 \\
-For the phonons the same 10-layer slab normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description of the deeper lying phonon vibrations we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into at least three layers of the bulk \todo{really only 3? did she mean 3x unit cell? why should I compute 20 layers if only three are important?}. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to $6\times 5=30$ layers (with 5 being the number of atomic layers in the unit cell in z direction, compare Figure \ref{abb:cell_sizes}), both for the clean surface and for the adsorbate covered surface. These more-layered optimized geometries do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20}, Figure \ref{abb:ads-geoms} and hence are not shown. % \todo{here, maybe Appendix? Not necessary}.
+For the phonons the same 10-layer slab normal modes analyses were checked to get a first impression into how the spectra can look like. But for a better description of the deeper lying phonon vibrations we need to consider more layers of the bulk in order to get more reliable results. From an experimental point of view it is suggested that SFG spectra can give insight into at least three atomic layers of the bulk. To make sure these are described well, the system size was expanded. Therefore we did calculations for the most stable adsorption geometries for more layered systems, going up to $6\times 5=30$ atomic layers (with 5 being the number of atomic layers in the unit cell in z direction, compare Figure \ref{abb:cell_sizes}), both for the clean surface and for the adsorbate covered surface. These more-layered optimized geometries do not differ strongly from the 10 layer ones that were presented in section \ref{structure_search11-20}, Figure \ref{abb:ads-geoms} and hence are not shown. % \todo{here, maybe Appendix? Not necessary}.
 Respective adsorption energies can be found in Table \ref{tab:eads_layers}. For the low energy modes, one has to keep in mind, that normal modes may not be a perfect description of these deeply delocalized vibrations.
 \\
 In this section intensities are elaborated from dipole corrections. The results for the clean surface are shown in Figure \ref{abb:clean_comp_layer}. For different sized slabs, the results differ largely. Especially the 10 layer system is shifted strongly to lower energy compared to the other slab sizes. In Table \ref{tab:comp_norm-modes_clean} can be seen that the most intense peak is shifted to higher wavenumbers with increasing slab size. All spectra shown in this section were normalized to the most intense peak.
@@ -934,9 +939,9 @@ In this section intensities are elaborated from dipole corrections. The results 
  \caption{Comparison of the results of the different slab sizes of the NMA: most intense peak from dipole corrections of the lattice vibrations for the clean surface.}
 \vspace*{.2cm} 
   \begin{tabular}{l|ccccc}
-  
-Layers& 10&15&20&25&30 \\\hline
-$\tilde{\nu}$ [cm$^{-1}$] &700 &796& 823&837 & 842\\
+  \toprule
+Layers& 10&15&20&25&30 \\\midrule
+$\tilde{\nu}$ [cm$^{-1}$] &700 &796& 823&837 & 842\\\bottomrule
   \end{tabular}
   \label{tab:comp_norm-modes_clean}
 \end{table}
@@ -1074,14 +1079,15 @@ The simulation of intensities was done both with dipole corrections and Born eff
 \centering
 \caption{Comparison of the IR intensities for the 10-layer system obtained from dipole corrected calculations and from the Born effective charges based approach. It was normalized to the highest intensity peak.}
 \begin{tabular}{cc|cc}
+\toprule
 &&\multicolumn{2}{c}{Intensity [a.u.]}\\
-&$\tilde{\nu}$ [cm$^{-1}$]& dip. & BEC \\\hline
-\multirow{2}{4cm}{inter-CUSa||O-$ \mu_2$}&2731 &0.034 &0.023 \\
+&$\tilde{\nu}$ [cm$^{-1}$]& dip. & BEC \\\midrule
+\multirow{2}{3cm}{inter-CUSa||O-$ \mu_2$}&2731 &0.034 &0.023 \\
  &2694&0.022 &0.029 \\\hline
-\multirow{2}{4cm}{CUSb||O-$ \mu_2$} & 2785&0.262 &0.038 \\
+\multirow{2}{3cm}{CUSb||O-$ \mu_2$} & 2785&0.262 &0.038 \\
  & 1711& 0.155&1.0 \\\hline
-\multirow{2}{4cm}{inter-CUSb||O-$ \mu_2$}& 2692& 0.007&0.013 \\
- & 2689& 0.060& 0.072\\
+\multirow{2}{3cm}{inter-CUSb||O-$ \mu_2$}& 2692& 0.007&0.013 \\
+ & 2689& 0.060& 0.072\\\bottomrule
 \end{tabular}
 \label{tab:freq_lowcov_comp}
 \end{table}
@@ -1123,9 +1129,7 @@ For the inter-CUSb$\parallel$O-$\mu_2$ species with a trajectory duration of abo
 % With this method, it also is possible to separate modes from water layers from bulk phonons. Apparently though, this only becomes important if a (hydroxylated) surface with a higher water coverage more than 1ML is studied.
 
 % \section{Desorption Process}
-% \todo{not sure if this is worth a whole chapter..}
-% \\
-% Not only the reactions at the surface are of interest but also the process of adsorption from the gas phase and desorption were studied. The experimentalist's method to do so is TPD (temperature programmed desorption, see Appendix). It is possible to measure the bond strength of the adsorbates, depending on the temperature they can be found to desorb. \todo{The sample was flashed to $400\,$K to get rid of impurities. The results showed two peaks, one beneath $400\,$K and one above SIND DIESE DATEN NOCH AKTUELL?} This peak beneath $400\,$K should not be visible, since the sample was heated to that temperature and all adsorbates that are released beneath this temperature should not be there any more. The only plausible explanation to this is, that there are reactions, that fill this species up and so the desorption can still be from this species.
+% Not only the reactions at the surface are of interest but also the process of adsorption from the gas phase and desorption were studied. The experimentalist's method to do so is TPD (temperature programmed desorption, see Appendix). It is possible to measure the bond strength of the adsorbates, depending on the temperature they can be found to desorb. The sample was flashed to $400\,$K to get rid of impurities. The results showed two peaks, one beneath $400\,$K and one above SIND DIESE DATEN NOCH AKTUELL?? This peak beneath $400\,$K should not be visible, since the sample was heated to that temperature and all adsorbates that are released beneath this temperature should not be there any more. The only plausible explanation to this is, that there are reactions, that fill this species up and so the desorption can still be from this species.
 % \\
 % To interpret these results, one has to think of a possible reaction scheme from the most stable adsorption sites via the molecular state leading to the gas phase molecule.
 % \\
@@ -1186,19 +1190,20 @@ From these, the 1-2 dissociated species is the most stable one and the 1-4$^\pri
 Calculations with an atom centered basis instead of plane waves with the crystal code show, that for most basis sets the molecular species is more stable and for others, they are both equal in adsorption energy, see Section \ref{crystal_calc}.
 \\
 Of course, there are reactions linking these minima, dissociation, OH- and H-diffusion were studied, as well as rotation of an OH group and molecular water diffusion from CUS to CUS. The latter two do not play a crucial role in this work, especially the CUS to CUS diffusion of molecular water is very improbable due to the slow reaction rate. Adsorption energies and reaction rates that are of importance for this work are shown in Table \ref{tab:0001_eads+rates}, these PBE results were unpublished and obtained by J. Wirth.
- \begin{table}[!h]
+\begin{table}[!h]
   \centering
-   \caption{Adsorption energies for the stable minima (left part) and reaction rate constants $k$ in s$^{-1}$ at $300\,$K with corresponding barrier heigths $\Delta E^\ddagger$/$\Delta G^\ddagger_\textrm{300K}$ in eV for the processes connecting these minima (right part). Here the upper two line show the reactions in the direction given in the name and the lower two line give the back reaction's rates constants and barriers. All values were calculated with PBE including D2 dispersion corrections and are unpublished work of Dr. J. Wirth.}
+   \caption{Adsorption energies for the stable minima (left part) and reaction rate constants $k$ in s$^{-1}$ at $300\,$K with corresponding barrier heigths $\Delta E^\ddagger$/$\Delta G^\ddagger_\textrm{300K}$ in eV for the processes connecting these minima (right part). Here the upper two line show the reactions in the direction given in the name and the lower two line give the back reaction's rates constants and barriers. All values were calculated with PBE including D2 dispersion corrections and are unpublished work of Dr. J. Wirth. \todo{vielleicht doch lieber 2 Tabellen daraus machen? Ist etwas unübersichtlich...}}
   \begin{tabular}{cccc|ccccc}
-   \multicolumn{4}{c}{E$_\textrm{ads}$ [eV]}&\multicolumn{5}{c}{k$_\textrm{300K}$ [s$^{-1}$]}\\
+  \toprule
+   \multicolumn{4}{c}{E$_\textrm{ads}$ [eV]}&\multicolumn{5}{c}{k$_\textrm{300K}$ [s$^{-1}$]}\\\midrule
   mol &1-2 &1-4 &1-4$^\prime$  &diss-1-2            & diss-1-4            & diff-2-4         & diff-2-4$^\prime$ & diff-4-4$^\prime$\\
   -1.31 & -1.69 & -1.30 & -1.21&8.0$\times 10^{10}$  & 2.8$\times 10^{10}$ & 2.7$\times 10^1$  & 3.8$\times 10^1$  & 7.1$\times 10^5$ \\
    & & & &0.13/0.11 & 0.19/0.14& 0.82/0.68&0.81/0.67 &  0.61/0.41\\\hline
    & & &                       &2.3$\times 10^4$    & 2.7$\times 10^{10}$ & 9.1$\times 10^7$ & 3.1$\times 10^9$ & 1.7$\times 10^7$ \\
-   & & & & 0.50/0.50 & 0.19/0.14 & 0.44/0.29 & 0.33/0.20 & 0.51/0.33\\
+   & & & & 0.50/0.50 & 0.19/0.14 & 0.44/0.29 & 0.33/0.20 & 0.51/0.33\\\bottomrule
     \end{tabular}
   \label{tab:0001_eads+rates}
-  \end{table}
+\end{table}
 \\
 The adsorption process from the surface itself was studied, by starting from the molecular minimum, gradually doing optimizations with greater O-surface distance and letting everything relax except for the c coordinate of the water-oxygen atom. This calculations gives an energy profile for the adsorption/desorption but no barrier could be found (see Figure \ref{abb:0001_desorption}), so the underlying adsorption process is thought to be barrierless.
   \begin{figure}[!ht]
@@ -1269,7 +1274,8 @@ Further details on the improvements of this simplest model are made in subsectio
  \centering
   \caption{Orientations of the water molecule, given in \textdegree. Shown are both top view and side view at impact point 0.5,0.5. (look from the right-hand side to the top view)}
  \begin{tabular}{cp{4cm}p{4cm}}
- orientation ($\alpha,~\beta,~\gamma$)& top view & side view \\\hline
+ \toprule
+ orientation ($\alpha,~\beta,~\gamma$)& top view & side view \\\midrule
  (0, 0, 0)  & \includegraphics[width=2cm,angle=90]{figures/0001/Ausrichtungsbilder/0_0_0-toptest.png}
 &\includegraphics[width=2.5cm]{figures/0001/Ausrichtungsbilder/0_0_0-sidetest.png}\\
 (0, 0, 90)   & \includegraphics[width=2cm,angle=90]{figures/0001/Ausrichtungsbilder/0_0_90-toptest.png}
@@ -1285,7 +1291,7 @@ Further details on the improvements of this simplest model are made in subsectio
 (90, 90, 0) &\includegraphics[width=2cm,angle=90]{figures/0001/Ausrichtungsbilder/90_90_0-toptest.png} 
 & \includegraphics[width=2.5cm]{figures/0001/Ausrichtungsbilder/90_90_0-sidetest.png}\\
 (90, 90, 90) & \includegraphics[width=2cm,angle=90]{figures/0001/Ausrichtungsbilder/90_90_90-toptest.png} 
-& \includegraphics[width=2.5cm]{figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png}\\
+& \includegraphics[width=2.5cm]{figures/0001/Ausrichtungsbilder/90_90_90-sidetest.png}\\\bottomrule
 \end{tabular}
  \label{tab:orientations}
 \end{table}
@@ -1353,12 +1359,12 @@ As a next step, for all $6\times 8=48$ combinations of parameters, but with the 
  \caption{Statistical results for NVE (both upper lines) and NVT trajectory at $300\,$K (lower line). The models differ only by the thermalized surface, for all trajectories a single D$_2$O was sent on a clean surface with a kinetic energy of E$_\textrm{kin}=0.7\,$eV. The initial parameters were the 48 and selected 42 from Section \ref{sec:mic_clean}, respectively, as explained in the text.}
 \vspace*{.2cm}
   \begin{tabular}{lc|cccc}
- \hline
+ \toprule
   ensemble & no. of trajectories & $P_\textrm{refl}$ & $P_\textrm{mol}$ & $P_\textrm{diss}$ (1-2) & $P_\textrm{diss}$(1-4) 
- \\\hline
+ \\\midrule
  NVE$^1$         & 48 & 0.19 & 0.58 & 0.23 & 0.00 \\
  NVE$^{1,3}$     & 42 & 0.19 & 0.55 & 0.26 & 0.00 \\
- NVT$^2$ &$42\times 2$& 0.12 & 0.54 & 0.24 & 0.11 \\\hline
+ NVT$^2$ &$42\times 2$& 0.12 & 0.54 & 0.24 & 0.11 \\\bottomrule
   \end{tabular}
 \begin{tablenotes}
  \footnotesize
@@ -1481,7 +1487,7 @@ The transition state was calculated with PBE+D2 with the implementation of Nudge
  PW91 & $1.97\times 10^8$\\
  PBE & $9.15\times 10^7$\\
  HSE & $3.15\times 10^7$\\
- ``exact'' tunneling (1D) & $6.49\times 10^8$\\\hline
+ ``exact'' tunneling (1D) & $6.49\times 10^8$\\\bottomrule
   \end{tabular}
   \label{tab:4-2results_jonas}
 \end{table}
@@ -1506,10 +1512,11 @@ In Table \ref{tab:vasp-results} the adsorption energy results of previous VASP c
   \centering
    \caption{Adsorption energies of the three adsorption states of the 0001 surface site with VASP, i.e. periodic DFT calculations with a plane wave basis. Values are given in eV. The 1-4$^\prime$ system was not calculated with PW91\cite{WirthJPCC2012}. {\color{red} mention 1-4' results?}}
   \begin{tabular}{c|cccc}
-  method & mol & 1-2 diss & 1-4 diss&1-4$^\prime$ diss\\\hline
+  \toprule
+  method & mol & 1-2 diss & 1-4 diss&1-4$^\prime$ diss\\\midrule
   PW91   &-1.25 &-1.59 &-1.25 &-\\
   PW91+D2&-1.40 &-1.81 &-1.45 &-\\
-  PBE+D3 &-1.29&-1.63 &-1.30 &-1.25 \\
+  PBE+D3 &-1.29&-1.63 &-1.30 &-1.25 \\\bottomrule
   \end{tabular}
   \label{tab:vasp-results}
  \end{table}
@@ -1517,70 +1524,75 @@ In Table \ref{tab:vasp-results} the adsorption energy results of previous VASP c
 The adsorption energy is in favor of the 1-2 dissociated species for all methods, and dependent on dispersion corrections, the molecular and 1-4 dissociated are equal (PW91, PBE+D3) or 1-4 diss is slightly more stable (PW91+D2).
 \\
 In the Crystal code, several basis sets for each atom are available, it is necessary to test some basis sets and compare the results to former VASP calculations. The basis sets that were tested are summarized in Table \ref{tab:basissets}.
- \begin{table}[!h]
+\begin{table}[!h]
   \centering
    \caption{Basis set overview for Al, O and H in the Crystal14 calculations.}
   \begin{tabular}{c|lll}
-  basis set & Al & O & H \\\hline
+  \toprule
+  basis set & Al & O & H \\\midrule
    1&Al$\_$s8511p511d11$\_$Heifets$\_$2013 & O$\_$8411(d11)$\_$Heifets\_2013&H$\_$pob$\_$TZVP$\_$2012 \\
    2&Al$\_$pob$\_$TZVP$\_$2012 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
    3&Al$\_$m-6-311G(d)$\_$Heyd$\_$2005 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
    4&Al$\_$85-11G$^\ast\_$catti$\_$1994 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
    5&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
    6&Al$\_$85-11G$^\ast\_$catti$\_$1994 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
-   7&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
+   7&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\\bottomrule
   \end{tabular}
   \label{tab:basissets}
- \end{table}
+\end{table}
  \\
 This was first done for PBE, the same functional that was used for the VASP calculations. The geometries of H$_2$O, the clean surface and the three adsorbed species (mol, 1-2 and 1-4) were geometry optimized. The corresponding adsorption energies can be found in Table \ref{tab:tab:basisset-results-PBE+D3}
-  \begin{table}[!h]
+\begin{table}[!h]
   \centering
    \caption{Adsorption energies from Equation \ref{eq:eyring} of the three adsorption states of the 0001 surface site (PBE+D3, geometry optimizations were done with the respective basis set from Table \ref{tab:basissets}). All values are given in eV.}
   \begin{tabular}{c|ccc}
-  basis set & mol & 1-2 diss & 1-4 diss \\\hline
+  \toprule
+  basis set & mol & 1-2 diss & 1-4 diss \\\midrule
   1 &-1.57 &-1.77 &-1.38 \\
   2 &-1.47 &-1.69 &-1.35 \\
   3 &-1.72 &-1.96 &-1.59 \\
   4 &-1.87 &-2.11 &-1.75 \\
   5 &-1.58 &-1.73 &-1.40 \\
   6 &-1.53 &-1.78 &-1.43 \\
-  7 &-1.74 &-1.96 &-1.58 \\  
+  7 &-1.74 &-1.96 &-1.58 \\\bottomrule  
   \end{tabular}
   \label{tab:basisset-results-PBE+D3}
- \end{table}
+\end{table}
  \\
  In contrast to the VASP calculations all basis sets that were tested predict the stability order 1-2 $>$ mol $>$ 1-4, whereas VASP depending on the dispersion corrections gives 1-2 $>$ 1-4 $\geqq$ mol.
  \\
  In addition, for basis set 1, adsorption energies were calculated with the VASP optimized structure (\textit{i. e.} single point calculation with Crystal) to compare to VASP results. Those results are given in Table \ref{tab:pbe-vasp-geom}.
-   \begin{table}[!h]
+\begin{table}[!h]
   \centering
    \caption{Adsorption energies of the four adsorption states of the 0001 surface site (PBE+D3 with basis set 1 (see Table \ref{tab:basissets})). Values are given in eV. VASP values are reoptimized from J. Wirth's work with PBE+D3.}
   \begin{tabular}{cccc}%c}
-   &mol & 1-2 diss & 1-4 diss\\\hline %&1-4$^\prime$ diss \\\hline
+  \toprule
+   &mol & 1-2 diss & 1-4 diss\\\midrule %&1-4$^\prime$ diss \\\hline
 crystal (opt) & -1.57 & 1.77 &-1.38 \\%&-1.32 \\
    crystal (no opt)&-1.67 &-1.87 &-1.52\\%&-1.50 \\
   VASP &-1.29 &-1.63 &-1.30 \\%&-1.25 \\
+  \bottomrule
   \end{tabular}
   \label{tab:pbe-vasp-geom}
- \end{table}
+\end{table}
  \\
  Going beyond PBE (GGA functional), the hybrid functional B3LYP with D3 dispersion corrections was applied. Geometry optimizations were done and adsorption energies were examined, see Table \ref{tab:basisset-results-B3LYP+D3}.
  \begin{table}[!h]
   \centering
    \caption{Adsorption energies of the three adsorption states of the 0001 surface site (B3LYP+D3; geometry optimization). Values are given in eV. Basis sets 5 and 6 give similar results as VASP.}
   \begin{tabular}{c|ccc}
-  basis set & mol & 1-2 diss & 1-4 diss \\\hline
+  \toprule
+  basis set & mol & 1-2 diss & 1-4 diss \\\midrule
   1 &-1.56 &-1.88 &-1.45 \\
   2 &-1.57 &-1.92 &-1.53 \\
   3 &-1.78 &-2.15 &-1.68 \\
   4 &-1.90 &-2.25 &-1.83 \\
   5 &\textbf{-1.57} &-1.95 &\textbf{-1.57} \\
   6 &\textbf{-1.62} &-2.01 &\textbf{-1.62} \\
-  7 &-1.80 &-2.14 &-1.69 \\  
+  7 &-1.80 &-2.14 &-1.69 \\\bottomrule
   \end{tabular}
   \label{tab:basisset-results-B3LYP+D3}
- \end{table}
+\end{table}
 \\
 Most basis sets also give the same ordering as PBE+D3, but basis 5 and 6 qualitatively give the same results as VASP (mol = 1-4 diss, like PW91 and PBE+D3) and also basis set 2 is very close to this.
 \\
@@ -1619,11 +1631,12 @@ When one applies this to the adsorbed systems with basis set 5, the following re
   \centering
    \caption{BSSE-corrected energy, BSSE, adsorbate-surface interaction energy and relaxation energy according to Equations (\ref{eq:BSSEcorr})-(\ref{eq:relaxE}) for mol, 1-2 diss and 1-4 diss with PBE+D3 using basis set 5. Values are given in eV.}
   \begin{tabular}{c|ccc}
-			& mol  & 1-2 diss & 1-4 diss \\\hline
+  \toprule
+			& mol  & 1-2 diss & 1-4 diss \\\midrule
   BSSE-corr		&-1.4276409 &-4.4848569 & -\\
   BSSE			&-0.14208315&2.7554316 & -\\
   Ad-surf interact. E.	&-1.4689164 &-9.4423711 & -\\
-  Relax. energy		&0.04127551 &12.197803 & -\\
+  Relax. energy		&0.04127551 &12.197803 & -\\\bottomrule
   \end{tabular}
   \label{tab:bsse-results}
  \end{table}
@@ -1644,23 +1657,24 @@ Since we could not calculate the BSSE and respective relaxation and interaction 
 \\
 \\
 Instead of applying counterpoise corrections, it is possible to use a larger basis set, here, a triple zeta basis set with high angular momentum. As before, geometry optimizations were done and the adsorption energies were evaluated, as can be seen in Table \ref{tab:combined_results}.
- \begin{table}[!h]
+\begin{table}[!h]
   \centering
-   \caption{Adsorption energies for the high angular momentum basis set for the method given in the first column. All values are given in eV.}
+   \caption{Adsorption energies for the high angular momentum basis set for the method given in the first column. All values are given in eV. \todo{MP2 results have to be rewritten, MP2=HF+singles+MP2+LJ!}}
   \begin{tabular}{l|ccc}
-   &mol & 1-2 diss & 1-4 diss \\\hline
+  \toprule
+   &mol & 1-2 diss & 1-4 diss \\\midrule
 HF$^\ast$ &-1.14 & -1.67 & -1.19\\
 PBE+D3 & -1.41 & -1.68 & -1.32 \\
 B3LYP+D3 & -1.43 & -1.81 & -1.40 \\
 MP2$^\ast$ {\tiny HF-SCS-MP2} (dual) & -1.24 & -1.57 & -1.12 \\
-MP2$^\ast$ {\tiny HF-SCS-MP2} (no dual) & -1.23 & -1.67 & -1.22\\
+MP2$^\ast$ {\tiny HF-SCS-MP2} (no dual) & -1.23 & -1.67 & -1.22\\\bottomrule
   \end{tabular}
   \begin{tablenotes}
  \footnotesize
 \item[] $^\ast$ Results will be shown and explained in the next paragraph.
-\end{tablenotes}
+  \end{tablenotes}
   \label{tab:combined_results}
- \end{table}
+\end{table}
 \\
 PBE+D3 with the new basis set gives the same ordering as all other basis sets that were applied. The results are very close to the ones with basis set 2 from Table \ref{tab:basisset-results-PBE+D3}. 
 For B3LYP+D3, the same order of stability is achieved, although there is only a small difference of $0.3\,$eV between mol and 1-4. Here, the results are close to basis sets 1 and 2. 
@@ -1670,18 +1684,20 @@ To go beyond density functional theory, first HF and on top of these MP2 calcula
   \centering
    \caption{Adsorption energies for HF with the high angular momentum basis set (single point calculations on top of B3LYP/high angular momentum basis set). All values are given in eV.}
   \begin{tabular}{ccc}
- mol & 1-2 diss & 1-4 diss \\\hline
- -1.14 & -1.67 & -1.19 \\
+  \toprule
+ mol & 1-2 diss & 1-4 diss \\\midrule
+ -1.14 & -1.67 & -1.19 \\\bottomrule
   \end{tabular}
   \label{tab:Eads_HF}
- \end{table}
+\end{table}
  \\
  With these calculations done, first a localization of the orbitals was done. Optional, at this point a dual basis expansion can be done, to increase the basis even further (this was done for Al and O), so that a basis set of the size of approximately augmented triple zeta can be achieved. For this one step of a HF calculation was done. These two results are compared in Table \ref{tab:MP2_minima}. It is visible that there is indeed a difference in stability with and without the dual basis set. Especially the 1-2 diss gets stabilized but also the 1-4 dissociated structure gains stability, compared to the molecular minimum, that is predicted to be equal by both methods.
 \begin{table}[!h]
   \centering
-   \caption{MP2 adsorption energies of the three adsorption states of the (0001) surface site. Values are given in eV for the high angular momentum basis set. The upper part with the dual basis set and the lower without the corresponding dual basis set expansion. \todo{what are the other lines? is it only HF-SCS-MP2 that is important? Ask Denis!}}
+   \caption{MP2 adsorption energies of the three adsorption states of the (0001) surface site. Values are given in eV for the high angular momentum basis set. The upper part with the dual basis set and the lower without the corresponding dual basis set expansion. \todo{MP2=HF+singles+MP2+LJ, change Table accordingly}}
   \begin{tabular}{l|ccc}
-   &mol & 1-2 diss & 1-4 diss \\\hline
+  \toprule
+   &mol & 1-2 diss & 1-4 diss \\\midrule
 HF+singles           &-1.049 &-1.601 &-1.096 \\
 MP2+LJ               &-0.261 &-0.006 &-0.081 \\
 SCS-MP2+LJ           &-0.190 &0.032 &-0.028 \\
@@ -1691,7 +1707,7 @@ HF+singles           &-1.123 &-1.656 &-1.169 \\
 MP2+LJ               &-0.216 &-0.035 &-0.093 \\
 SCS-MP2+LJ           &-0.153 &-0.011 &-0.053 \\
 HF+MP2               &-1.339 &-1.691 &-1.263 \\
-HF-SCS-MP2           &-1.276 &-1.667 &-1.223 \\
+HF-SCS-MP2           &-1.276 &-1.667 &-1.223 \\\bottomrule
   \end{tabular}
   \label{tab:MP2_minima}
  \end{table}
@@ -1704,52 +1720,80 @@ Apart from calculating adsorption energies, also normal modes with crystal were 
 In Table \ref{tab:freqs_0001_crystal} the results for PBE and B3LYP for the (0001) surface are summarized.
 \begin{table}[!h]
   \centering
-  \caption{OD stretch vibration results with basis set 2 at {\textbf (0001)} surface. Wavenumbers $\tilde{\nu}$ were calculated at the PBE and B3LYP level of theory with D3 corrections and also wavenumbers including anharmonic corrections $\tilde{\nu}_\textrm{anh}$. The presented VASP results were done by J. Wirth with a plane wave and PBE with D3 corrections. (\todo{except for mol? Here Jonas only did D2 calculations. Show D2 results for the others instead?}).}
+  \caption{OD stretch vibration results with basis set 2 at {\textbf (0001)} surface. Wavenumbers $\tilde{\nu}$ were calculated at the PBE and B3LYP level of theory with D3 corrections and also wavenumbers including anharmonic corrections $\tilde{\nu}_\textrm{anh}$. The presented VASP results were done by J. Wirth with a plane wave and PBE+D2.}
   \begin{tabular}{ccc|cc|c}
+  \toprule
    & PBE & & B3LYP & &VASP result\\
-  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]& $\tilde{\nu}$ [cm$^{-1}$]\\\hline
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]& $\tilde{\nu}$ [cm$^{-1}$]\\\midrule
   mol: OD$_{\textrm{1}}$    &2657 &2562 &2747 &2650 & 2664\\
   mol: OD$_{\textrm{2}}$    &2539 &2490 &2627 &2584 & 2550\\
-  1-2: OD$_{\textrm{surf}}$ &2596 &2521 &2697 &2623 & 2632\\
-  1-2: OD$_{\textrm{ads}}$  &2808 &5727 &2883 &2805 & 2814\\
-  1-4: OD$_{\textrm{surf}}$ &2621 &2531 &2715 &2631 & 2659\\
-  1-4: OD$_{\textrm{ads}}$  &2795 &2788 &2873 &2788 & 2797\\
+  1-2: OD$_{\textrm{surf}}$ &2596 &2521 &2697 &2623 & 2629\\%VASP PBE+D3 2632
+  1-2: OD$_{\textrm{ads}}$  &2808 &2727 &2883 &2805 & 2810\\%D3 2814
+  1-4: OD$_{\textrm{surf}}$ &2621 &2531 &2715 &2631 & 2647\\%D3 2659
+  1-4: OD$_{\textrm{ads}}$  &2795 &2788 &2873 &2788 & 2795\\%D3 2797
+  \bottomrule
     \end{tabular}
   \label{tab:freqs_0001_crystal}
-  \end{table}
-In comparison with former VASP calculations, the PBE results with crystal do not deviate much. In contrast to that, B3LYP results are systematically higher in energy. For both functionals anharmonic corrections decrease the wavenumbers of the OD vibrations, so that the B3LYP+anharmonic corrections are again at the same level as uncorrected PBE with crystal and the results with VASP. In comparison with experimental SFG spectra\cite{Wirth2014}, the overall agreement with VASP results was not convincing. The measured wavenumbers are: $2729$, $2764$, $2790$ $2900$ and $2910\,$cm$^{-1}$. Instead differences between the peaks with respect to the highest energy peak were calculated which then showed very good agreement. Applying the same for the crystal results, even better results can be reached with B3LYP. \todo{Table with those differences}
-\\ \\
+\end{table}
+In comparison with former VASP calculations, the PBE results with crystal do not deviate much. In contrast to that, B3LYP results are systematically higher in energy. For both functionals anharmonic corrections decrease the wavenumbers of the OD vibrations, so that the B3LYP+anharmonic corrections are again at the same level as uncorrected PBE with crystal and the results with VASP. In comparison with experimental SFG spectra\cite{Wirth2014}, the overall agreement with VASP results was not convincing. The measured wavenumbers are: $2729$, $2764$, $2790$ $2900$ and $2910\,$cm$^{-1}$. Instead differences between the peaks with respect to the highest energy peak were calculated which then showed very good agreement, see Table \ref{tab:freqs_0001_crystal-relative}. Applying the same for the crystal results, even better results can be reached with B3LYP.
+\begin{table}[!h]
+  \centering
+  \caption{Vibrational frequency differences of the results presented in Table \ref{tab:freqs_0001_crystal} with respect to the highes energy mode, OD$_\textrm{ads}$ of 1-2 diss. All values are wavenumbers $\tilde{\nu}$ given in cm$^{-1}$.}
+  \begin{tabular}{c|cc|cc|c|c}
+  \toprule
+   resonances& PBE & PBE+anh. & B3LYP & B3LYP+anh. &VASP&Exp.\\\midrule
+  1-2ads$-$1-2surf&212 &206 &186 &182 &181 &191 \\
+  1-2ads$-$1-4surf&187 &196 &168 &174 &163 &146 \\
+  1-2ads$-$1-4ads &13 &-61 &10 &17 &15 &10 \\\bottomrule
+    \end{tabular}
+  \label{tab:freqs_0001_crystal-relative}
+\end{table}
+\\\\
 Analogous to these calculations for the (0001) surface, the (11\=20) surface was optimized with PBE+D3 and B3LYP+D3, respectively and the corresponding vibrational frequencies were evaluated. Corresponding results are shown in Table \ref{tab:freqs_11-20_crystal}.
- \begin{table}[!h]
+\begin{table}[!h]
   \centering
   \caption{Stretch wavenumbers $\tilde{\nu}$ for both of the OD groups at the {\textbf (11\=20)} surface for the 3 most stable species. Frequencies were calculated at the B3LYP+D3 and PBE+D3 level of theory with basis set 2, wavenumbers including anharmonic corrections $\tilde{\nu}_\textrm{anh}$ are also given. The VASP results were obtained with a plane wave basis and PBE+D2 corrections. The abbreviations stand for: iCa2 inter-CUSa$\parallel$O-$\mu_2$, Cb2 CUSb$\parallel$O-$\mu_2$ and iCb2 inter-CUSb$\parallel$O-$\mu_2$.}
   \begin{tabular}{ccc|cc|c}
+  \toprule
    & PBE& & B3LYP & &VASP result\\
-  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\hline
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\midrule
   iCa2: OD$_{\textrm{surf}}$ &2682 &2599 &2773 &2695 & 2694\\
   iCa2: OD$_{\textrm{ads}}$  &2728 &2644 &2811 &2729 & 2731\\
   Cb2: OD$_{\textrm{surf}}$  &1658 &1310 &2019 &1722 & 1711\\
   Cb2: OD$_{\textrm{ads}}$   &2769 &2687 &2843 &2765 & 2785\\
   iCb2: OD$_{\textrm{surf}}$ &2657 &2595 &2778 &2694 & 2689\\
-  iCb2: OD$_{\textrm{ads}}$  &2688 &2569 &2777 &2689 & 2692\\
+  iCb2: OD$_{\textrm{ads}}$  &2688 &2569 &2777 &2689 & 2692\\\bottomrule
   \end{tabular}
   \label{tab:freqs_11-20_crystal}
-  \end{table}
+\end{table}
 Similar to the results for the (0001) surface cut, the PBE+D2/D3 results for both VASP and crystal are in good agreement and B3LYP+D3 are higher in energy. Anharmonic corrections deliver lower energy modes, so that B3LYP+anharmonic corrections is again in the same range as the PBE results. In the experiments \cite{Heiden11-20_2018} three peaks are visible, that could be assigned to both OD groups of inter-CUSa$\parallel$O-$\mu_2$ and the OD$_\textrm{ads}$ group of CUSb$\parallel$O-$\mu_2$. The corresponding wavenumbers are $2762$, $2812$ and $2839\,$cm$^{-1}$. Compared to VASP results and crystal PBE+D3, these experimental wavenumbers are shifted by around $50$-$80\,$cm$^{-1}$. With anharmonic corrections, the agreement is even worse. Only the B3LYP+D3 results agree very well with deviations of one to eleven wavenumbers, which is an astonishingly well compliance. This effect could be caused by error cancellation. One has to mention, that here influence of the basis set is strong and larger basis sets were not feasible due to high computational costs. As it was shown before, anharmonic corrections shift the results to lower wavenumbers and decrease the overall agreement.
 
 \subsubsection{Reaction Rate}
 For the reaction Df-H-4-2 introduced earlier shown in Figure \ref{abb:df-h-4-2}, a transition state with a corresponding rate were recalculated with B3LYP+D3 and basis set 5, since GGA (\textit{e. g.} the functional PBE) are known to underestimate barriers\cite{Zhao05}, so goying beyond GGA is vital. Previous results with PBE and PW91 as well as hybrid functional results (single point calculations on top of PBE geometries) are shown in Table \ref{tab:4-2results_jonas}.
 \\
-A transition state optimization was done, but this failed to converge. However, one point of the optimization showed only a small energy change in the micro Hartree region, atom displacements were tiny and the gradient was not too large either, so that this structure was examined further. A normal mode analysis showed one single imaginary frequency, as expected for a transition state of first order. Now from this geometry, PBE and MP2 energies were calculated, to calculate a rate with the Eyring equation (\ref{eq:eyring}). These results for B3LYP, PBE and MP2 are shown in Table \todo{Table dE, dG and k(300K) for crystal reoptimized geometry}.
+A transition state optimization was done, but this failed to converge. However, one point of the optimization showed only a small energy change in the micro Hartree region, atom displacements were tiny and the gradient was not too large either, so that this structure was examined further. A normal mode analysis showed one single imaginary frequency, as expected for a transition state of first order. Now from this geometry, PBE and MP2 energies were calculated, to calculate a rate with the Eyring equation (\ref{eq:eyring}). These results for B3LYP, PBE and MP2 are shown in Table \ref{tab:k_crystal-reopt+noopt} \todo{Table dE, dG and k(300K) for crystal reoptimized geometry}.
+\begin{table}[!h]
+  \centering
+  \caption{$\Delta E$, $\Delta G(300\,$K) in eV and $k_\textrm{300K}$ in s$^{-1}$ for the reoptimized reaction Df-H-4-2 with B3LYP+D3 with crystal.}
+  \begin{tabular}{c|ccc}
+  \toprule
+   &B3LYP (reopt)&B3LYP(no opt)&VASP\\\midrule
+   $\Delta E$ & & &0.44\\
+   $\Delta G$ & & &0.29\\
+   $k$ & & &$9.1\times 10^7$\\\bottomrule
+  \end{tabular}
+  \label{tab:k_crystal-reopt+noopt}
+\end{table}
 \\
-Since this obtained transition state geometry was not converged properly, also calculations with PBE, B3LYP and MP2 at the VASP optimized transition state geometry were done and corresponding  outcomes are presented in Table \todo{Table with dE, dG and k(300K) for vasp optimized geometry}.
+Since this obtained transition state geometry was not converged properly, also calculations with PBE, B3LYP and MP2 at the VASP optimized transition state geometry were done and corresponding  outcomes are presented in Table \ref{tab:k_crystal-reopt+noopt} \todo{Table with dE, dG and k(300K) for vasp optimized geometry}.
 \\
 \todo{
 $\square~ \Delta G^\ddagger$ from frequency analysis\\
 $\square$ calculate rates with reoptimized TS\\
 $\square$ calculate rates with VASP geometry TS
 }
-% \todo{Not sure if this will come into the diss? No real results obtained..?}
+
+
 % \subsection{PIMD}
 % Instead of examining reactions with a defined reaction pathway as with NEB, we apply the path integral MD to propagate the 1-4 dissociated state in the hope to watch the reaction and to extract from that a time for the reaction {\color{red} (? it is not really a rate)}. But unluckily, no reaction occurred in the given propagation time, so that one only can see the delocalization of the proton. At a given temperature of $300\,$K the proton only moves a little, far away from any reactive trajectory.
 % \\
@@ -1901,13 +1945,13 @@ Reaction probabilities for the microcanonical (NVE, $T=0$) trajectories
  eight rotational orientations in each case.}
 %
  \begin{tabular}{l|ccc}
-\hline
- $E_\textrm{kin}$ [eV]&$P_\textrm{mol}$ & $P_\textrm{diss}$(1-2) & $P_\textrm{refl}$ \\\hline
+\toprule
+ $E_\textrm{kin}$ [eV]&$P_\textrm{mol}$ & $P_\textrm{diss}$(1-2) & $P_\textrm{refl}$ \\\midrule
  0.5 & 0.56& 0.17 + 0.08& 0.19\\
  0.6 & 0.58& 0.17 + 0.06& 0.19\\
  0.7 & 0.58& 0.17 + 0.06& 0.19\\
  0.8 & 0.54& 0.15 + 0.12& 0.19\\
- 0.9 & 0.50& 0.19 + 0.04& 0.27\\\hline
+ 0.9 & 0.50& 0.19 + 0.04& 0.27\\\bottomrule
 \end{tabular}
  \label{tab:mic_ekin}
 \end{table}
@@ -1942,14 +1986,14 @@ In the main text (Sec.III.D.1), a refined surface model was considered
   in the lower right  1$\times$1 subcell of the  2$\times$2 unit cell, ``same CUS''), 
   or  at an impact site close to a neighbouring CUS position (in the lower left  1$\times$1 subcell of the  2$\times$2 unit cell, ``neighbour CUS'').}
  \begin{tabular}{l|c|cccccc}
-\hline
-& preads. &$P_\textrm{mol}$ & $P_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{phys}$ & $P_\textrm{refl}$ \\\hline
+\toprule
+& preads. &$P_\textrm{mol}$ & $P_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{phys}$ & $P_\textrm{refl}$ \\\midrule
 \multirow{3}{*}{same CUS}& mol$^1$ &0.57 &0.00+0.04 &0.04+0.00  &0.32 &0.04 \\
 & 1-2$^2$ &0.77 &0.08+0.00 &0.00 &0.00 &0.15 \\
 & 1-4$^3$ &0.42 &0.00 &0.00 &0.33 &0.25 \\\hline
 \multirow{3}{*}{neighbour CUS}& mol$^4$ &0.36 &0.18+0.05 &0.23 &0.18 & 0.00  \\
 & 1-2$^5$ &0.57 &0.29 & 0.00  &0.00 &0.14 \\
-& 1-4$^6$ &0.71 &0.14 &0.00 & 0.00 & 0.14 \\\hline
+& 1-4$^6$ &0.71 &0.14 &0.00 & 0.00 & 0.14 \\\bottomrule
 %\multicolumn{2}{c}{total} & 0.55 & 0.09 + 0.01 & 0.07 + 0 & 0.19 & 0.09\\
 \end{tabular}
 \begin{tablenotes}
@@ -1979,14 +2023,14 @@ Analogous
  The same as Tab.\ref{tab:enh_micro}, for the 
  canonical (NVT) case ($T=300$ K). Here, only three impact points were considered for the ``same CUS'': [0.33,0.33], [0.35,0.45] and [0.5,0.35]  and four for the ``neighbouring CUS'': [0.33,0.83], [0.35,0.95] and [0.5,0.85], see Figure \ref{fig:impact}. If not mentioned otherwise, all eight rotational orientations were considered in each case.}
  \begin{tabular}{l|c|ccccc}
-\hline
-& preads. &$P_\textrm{mol}$ & $P_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{phys}$ & $P_\textrm{refl}$ \\\hline
+\toprule
+& preads. &$P_\textrm{mol}$ & $P_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{phys}$ & $P_\textrm{refl}$ \\\midrule
 \multirow{3}{*}{same CUS}& mol &0.08+0.17 & 0.00+0.04 & 0.00 &  0.63 & 0.08 \\
 & 1-2 &0.00+0.83 & 0.00 & 0.00 &  0.13 & 0.04 \\
-& 1-4$^1$ &0.05+0.40 & 0.00+0.05 & 0.00 & 0.40 & 0.10 \\\hline
+& 1-4$^1$ &0.05+0.40 & 0.00+0.05 & 0.00 & 0.40 & 0.10 \\\midrule
 \multirow{3}{*}{neighbour CUS}& mol &0.63 & 0.17+0.17 & 0.04  & 0.00 & 0.00 \\
 & 1-2 & 0.71 & 0.21 & 0.08& 0.00 & 0.00\\
-& 1-4 & 0.92 & 0.08 & 0.00 & 0.00 & 0.00\\\hline
+& 1-4 & 0.92 & 0.08 & 0.00 & 0.00 & 0.00\\\bottomrule
 %\multicolumn{2}{c}{total} &0.40+0.23 & 0.08+0.04 & 0.02 & 0.00 & 0.19 & 0.04\\
 \end{tabular}
 \begin{tablenotes}
@@ -2012,12 +2056,12 @@ Table
  on a cold, naked  surface, see section III.D.2 in the main text.
  In total we did ten trajectories with a kinetic energy of $0.9\,$eV of the incoming water molecule for four different impact points and three different orientations (for one impact point only a single orientation was considered).
 %
- \begin{table}[hbt]
+\begin{table}[hbt]
  \centering
   \caption{Reaction probabilities for microcanonical (NVE, $T=0$) trajectories of a (D$_2$O)$_4$ cluster approaching 
  a clean surface with $E_\textrm{kin}=0.9$ eV.}
  \begin{tabular}{cccccc}
-\hline
+\toprule
 $P_\textrm{mol}$ & $P_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{diss}$ (1-4$^\prime$) & $P_\textrm{phys}$ & $P_\textrm{refl}$ \\\hline
 0.25&0.05+0.10 &0.03+0.18 &0.00+0.05 &0.18 &0.18\\
 \hline
@@ -2031,16 +2075,16 @@ Finally, results for microcanonical trajectories of a (single) D$_2$O molecule,
  a clean surface with an initial kinetic energy of 0.7 eV can be found in Table \ref{tab:vib-rot_exc}.
  Averaged was over all ten trajectories (three rotations,  three vibrations (symmetric, asymmetric and bending), and four rotations coupled with vibrations) for only one set of parameters ([0.35,0.5],[0,0,0]). The initial translational energy of
  D$_2$O was $0.7\,$eV.
- \begin{table}[!h]
+\begin{table}[!h]
  \centering
   \caption{Reaction probabilities for microcanonical (NVE, $T=0$) 
  trajectories of vibrationally and/or rotationally excited D$_2$O approaching a clean surface 
  with $E_\textrm{kin}=0.7$ eV.}
  \begin{tabular}{cccccc}
-\hline
-$P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{diss}$ (1-4$^\prime$) & $P_\textrm{phys}$ & $P_\textrm{refl}$ \\\hline
+\toprule
+$P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{diss}$ (1-4$^\prime$) & $P_\textrm{phys}$ & $P_\textrm{refl}$ \\\midrule
 0.20&0.30+0.20 & 0.00 &0.00+0.10 &0.00 &0.20\\
-\hline
+\bottomrule
 \end{tabular}
  \label{tab:vib-rot_exc}
 \end{table}
@@ -2065,10 +2109,9 @@ Also one type of (D$_2$O)$_2$ was tested (see Figure \ref{abb:D2O2clusters}). Th
  trajectories of the 2D$_2$O cluster with a clean surface 
  hitting with a kinetic energy $E_\textrm{kin}=0.7$ eV.}
  \begin{tabular}{cccc}
-\hline
-$P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{refl}$ \\\hline
-0.4&0.15+0.05 & 0.05&0.35\\
-\hline
+\toprule
+$P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{refl}$ \\\midrule
+0.4&0.15+0.05 & 0.05&0.35\\\bottomrule
 \end{tabular}
  \label{tab:2D2O-prob}
 \end{table}
