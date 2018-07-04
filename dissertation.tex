@@ -208,7 +208,7 @@ It can also be seen as a model systems for more complex alumosilicates. Oxide ro
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theory und Methodology}
 In this chapter the basics of the applied theoretical methods shall be explained. Starting from the ideas of Density Functional Theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab initio} Molecular Dynamics. Proceeding with frequency calculations and intensities over Transition State Theory to more developed methods like hybrid functionals and Perturbation Theory. Most parts of this chapter are based on \cite{jensen}.
-\\{\color{red} MAKE SURE THAT ALL VARIABLES ARE CONSISTENT!}
+\\ \todo{MAKE SURE THAT ALL VARIABLES ARE CONSISTENT!}
 \section{Density Functional Theory}
 For all molecular and periodic systems, theoretical descriptions are based on the calculation of the electronic structure. For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legit due to the largely different masses of electrons and the nucleus. With this, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic total wave function $\Psi_e(\vec{r})$ and total energy $E_e$ is
 \begin{equation}\label{eq:tise}
@@ -255,13 +255,12 @@ This equation gives the D2-corrections. For the more advanced D3 method, $E_{dis
 Here, $\phi_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$.
 
 \section{Periodic Boundary Conditions}
-\todo{trim this section a little?}
 Surface systems can be simulated by either calculating clusters that were cut from the surface and represent an "important part" of the system or can be represented as the whole system with a periodic ansatz. These periodic systems can be described by a single unit cell and respective cell vectors, that are used to generate the infinite system by repeating the cell in each direction. This can be either done in 1D (polymers), 2D (surface systems) or 3D (bulk crystals). Also, surfaces can be described within the 3D model as a slab by three dimensional repetition of the unit cell. The only difference is that one has to define a vacuum gap between two slabs (unit or supercell model of a surface) in one direction perpendicular to the surface (\textit{e.g.} here z,c). This gap has to be large enough to prevent unit cells from influencing each other in this direction and therefore lead to unphysical behaviour between the surface atoms and the lowest atoms of the neighboring slab above. Since it is (yet) not possible in VASP to mimic a 2D system, in the main part of this work this vacuum gap 3D model just mentioned was applied. Some programs, however, (here CRYSTAL was used) %and cp2k(mention it?))
 deliver the opportunity to calculate 2D systems, repeating the slab periodically only in x/y, a/b, respectively.
 \\
 A disadvantage of this approach is, that a perfect surface is simulated, with absolutely no defect sites. If one was to model a defect, it is repeated periodically and leads to a defined defect site density in a regular pattern. There are embedding models available (\textit{e. g.} \cite{Sauer2004}) dealing with this issue: the defect is only treated in one unit cell and for the others, the regular unit cell is applied. But before handling defects one has to understand the clean defect free surface properly.
 \\
-The 3D unit cell can be described by the three basis vectors of the lattice, $\vec{a}_1$, $\vec{a}_2$ and $\vec{a}_3$ and can be translated along these vectors to gain the infinite system. They span the space with defined length and angles. %\todo{, with seven different models existing.}
+The 3D unit cell can be described by the three basis vectors of the lattice, $\vec{a}_1$, $\vec{a}_2$ and $\vec{a}_3$ and can be translated along these vectors to gain the infinite system. They span the space with defined length and angles. %, with seven different models existing.
 %, \textit{e.g.} hexagonal crystal family).
 The unit cell with the atoms occupying different positions is called Bravais lattice, where 14 different form exist, \textit{e.g.} hexagonal D$_\textrm{6h}$.
 The lattice can be described by the lattice vector $\vec{B}$ with the lattice vectors $\vec{a}_i$ and the integers $n_i$:
@@ -296,15 +295,14 @@ To describe a periodic system with quantum mechanical methods, one has to introd
 \begin{equation}
  v_{eff}(\vec{r})= v_{eff}(\vec{r}+\vec{B}).
 \end{equation}
-According to the Bloch theorem the wave function \todo{$\phi(\vec{r})?$} value at equivalent positions in different cells are related to each other with a phase factor in the lattice vector $\vec{t}$ \todo{sind t und B das gleiche?}:
+According to the Bloch theorem the wave function $\phi(\vec{r})$ value at equivalent positions in different cells are related to each other with a phase factor containing the reciprocal space vector $\vec{k}$ and the lattice vector $\vec{B}$:
 \begin{equation}
- \phi(\vec{r} + \vec{t})=e^{i\vec{k}\cdot\vec{t}}\phi(\vec{r})
+ \phi(\vec{r} + \vec{B})=e^{i\vec{k}\cdot\vec{B}}\phi(\vec{r})
 \end{equation}
 In this equation the crystalline orbital $\phi$ for the $n^\textrm{th}$ band can be understood as having one wave-like and one cell periodic part $\varphi$, also known as Bloch orbital:
 \begin{equation}
  \phi_{n,k}(\vec{r})=e^{i\vec{k}\cdot\vec{r}}\varphi_n(\vec{r}).
 \end{equation}
-\todo{jetzt $e^{ikr}$, vorhin $e^{ikt}$?}
 Bloch orbitals can be expanded as a set of plane wave functions ($\chi^\textrm{PW}$). Solutions are now dependent on the reciprocal space vector $\vec{k}$ leading to a Roothaan-Hall expression:
 \begin{equation}
  \vec{F}^k\vec{C}^k=\vec{S}^k\vec{C}^k\vec{$\varepsilon$}^k
@@ -373,9 +371,12 @@ All frequencies are delivered in the harmonic approximation. It can be distingui
 \\\\
 To calculate intensities there are several methods available with three being presented in this work:
 \begin{itemize}
- \item[I)] The IR intensities for each normal mode are estimated from the derivative of the dipole moment with respect to the atomic positions, also known as dynamical dipole moment\cite{dyn-dip}. \todo{how does this work in detail? asked Radek for help.} Transition dipole moments of vibrations are determined by $I\propto <i|\hat{\mu}|f>^2$. For this approach, only the dipole components perpendicular to the surface are taken into account. Only these can be measured in respective SFG spectra. These are not completely comparable to IR spectra but IR sensitivity is next to Raman activity one of the selection rules for SFG. Additionally the process is only visible for interfaces (selection rules are shown in Appendix \todo{are they?}).
+ \item[I)] The IR intensities for each normal mode are estimated from the derivative of the dipole moment with respect to the atomic positions, also known as dynamical dipole moment\cite{dyn-dip}.
+The dynamical dipole moment is evaluated by the dipole moment operator $\hat{\mu}$ between two states $i$ and $f$. $\hat{\mu}$ is a three component vector. The initial state $i$ is the vibrational ground state and final state $f$ is a vibrationally excited state. The eigenvector of the vibration is used here. It is called dynamical, because it does not describe a static dipole moment but a response of the system. With some symmetry and group theory considerations, one can decide for each vibration, whether it is IR active or not.
+%I und f sind initial und final Zustände Mu ist einfach Dipolmomentoperator Dipolmoment hat 3 Komponenten also für gegebene i,f ist das ein Vektor Soweit ich mir gut erinnere, er heißt dynamischer weil er zwischen 2 Zuständen ist Also beschreibt keine statische Werte sondern eine Antwort eines Systems Also zum Beispiel für IR Absorption du nimmst den Grundzustand als "i" Und welche angeregte Zustande möchtest du als mögliche nehmen? Einfachste Antwort: erste angeregte Vibrationszustände. Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
+The respective intensities are determined by $I\propto <i|\hat{\mu}|f>^2$. For this approach, only the dipole components perpendicular to the surface are taken into account. Only these can be measured in respective SFG spectra. These are not completely comparable to IR spectra but IR sensitivity is next to Raman activity one of the selection rules for SFG. Additionally the process is only visible for interfaces. Selection rules include IR and Raman activity as well as a system wihtout inversion symmetry, which is usually the case for interfaces and surfaces.
   
- \item[II)] Another way to get intensities is by calculating Born effective charges, as it was done in the work of Grillo \textit{et al.}\cite{BEC}. \todo{how are these charges calculated? ask Jan!} With the charges the dipole and also the intensities are available through $\mu=\textrm{charge} \times \textrm{distance}$, and again, $I\propto \mu^2$. Both methods are based on normal mode analyses and therefore give IR intensities.
+ \item[II)] Another way to get intensities is by calculating Born effective charges, as it was done in the work of Grillo \textit{et al.}\cite{BEC}. \todo{how are these charges calculated? wait for Jan's relply!} With the charges the dipole and also the intensities are available through $\mu=\textrm{charge} \times \textrm{distance}$, and again, $I\propto \mu^2$. Both methods are based on normal mode analyses and therefore give IR intensities.
  \end{itemize}
  While normal modes are a good approximation for high energy vibrations, for example OD stretch vibrations, it becomes worse for lattice vibrations, which are typically more delocalized.
 \begin{itemize}
@@ -383,13 +384,12 @@ To calculate intensities there are several methods available with three being pr
 \begin{equation}
  VDOS(\omega)=\sum_{i=1}^N\int_{0}^{+\infty}<v_i(t)\cdot v_i(0)>e^{i\omega t}dt ~.
 \end{equation}
-% \todo{was ist N? Ist das Integral wirklich von $-\infty-\infty$ oder sind die Grenzen eingeschränkt? Ist $<x(0)*x(t)>$ ein Mittelwert? Was ist mit der Summe? Im Paper steht folgende Gleichung:
+% ?was ist N? Ist das Integral wirklich von $-\infty-\infty$ oder sind die Grenzen eingeschränkt? Ist $<x(0)*x(t)>$ ein Mittelwert? Was ist mit der Summe? Im Paper steht folgende Gleichung:
 % \begin{equation}
 %  P(\omega)=m\int <\dot{r}(\tau)\dot{r}(t+\tau)>_\tau e^{-i\omega t}dt
 % \end{equation}
-% with $<\dot{r}(\tau)\dot{r}(t+\tau)>$ being the autocorrelation of the velocities, derivatives of the position $r$ with repect to the time $t$, and the $\int \star e^{-i\omega t}dt$ for the Fourier transform, which is scaled by the reduced mass $m$. This leads tot he conclusion, that the intensity in a power spectrum $P$ is inversely proportional to the reduced mass (why inversely?).}
-VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N$ atoms, Fourier transform of the velocity-velocity autocorrelation function $<v_i(t)\cdot v_i(0)>$. $v_i$ are the velocities at different times $0$ and a later time $t$. The integration range is from $0$ to $\infty$ (in praxis this is just a huge number) due to symmetry considerations. The resulting spectra include implicitly anharmonic and quantum effects: No harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account. Still, further anharmonic effects like mode coupling, overlapping of neighboring peaks and line broadening are missing\cite{hornicek2007,hudecova2012} \todo{Peter sagt dass das Quatsch ist??}.
-The power spectrum contains peaks for each normal mode vector apart from selection rules for vibrational spectroscopy. The obtained intensities correspond to the oscillator amplitudes.
+% with $<\dot{r}(\tau)\dot{r}(t+\tau)>$ being the autocorrelation of the velocities, derivatives of the position $r$ with repect to the time $t$, and the $\int \star e^{-i\omega t}dt$ for the Fourier transform, which is scaled by the reduced mass $m$. This leads tot he conclusion, that the intensity in a power spectrum $P$ is inversely proportional to the reduced mass (why inversely?).
+VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N$ atoms, Fourier transform of the velocity-velocity autocorrelation function $<v_i(t)\cdot v_i(0)>$. $v_i$ are the velocities at different times $0$ and a later time $t$. The integration range is from $0$ to $\infty$ (in practice this is just a huge number) due to symmetry considerations. The resulting spectra include implicitly anharmonic and quantum effects: No harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account. Also, further anharmonic effects like mode coupling, overlapping of neighboring peaks and line broadening are included\cite{hornicek2007,hudecova2012}. The power spectrum contains peaks for each normal mode vector apart from selection rules for vibrational spectroscopy. The obtained intensities correspond to the oscillator amplitudes.
 \end{itemize}
 
 
@@ -409,7 +409,7 @@ According to the Born Oppenheimer approximation\cite{bornoppenheimer} nuclear an
 % \begin{equation}\label{eyring}
 % k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)},
 % \end{equation}
-% with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a transmission coefficient (can be interpreted as a tunneling prefactor, for $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection) \todo{tunneling corrections (seldomly applied in this work, not mention them here?)}, give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
+% with the reaction rate constant $k$, Boltzmann's constant $K_B$, the temperature $T$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger$ and the transmission coefficient $\kappa$, that is a transmission coefficient (can be interpreted as a tunneling prefactor, for $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection) tunneling corrections (seldomly applied in this work, not mention them here?), give the reaction rate constant as a function of temperature and barrier height. For the latter one needs to find the energies of the transition state and the educt. The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
 % To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image, Reaction path is approximated as a series of associated images, which are connected via spring forces. These spring forces prevent the images from optimizing into the local minimum next to the transition state. First a regular NEB, then on top of this climbing image was done which gives better convergence. In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode, that vibrates along the reaction path.
 Transition State Theory is a semi-classical theory: dynamics along the reaction coordinate $\xi$ are treated classically, but perpendicular directions allow for quantization of vibrational and rotational energy.
 In thermodynamical equilibrium, all possible quantum states along the reaction coordinate are occupied  with respect to their Boltzmann weight $e^{\Delta E/(k_BT)}$.
@@ -438,7 +438,7 @@ The exchange part can be specified with a DFT part and HF with exact exchange:
 \begin{equation}
  E_x = aE_x^{HF} + (1-a)E_x^{DFT}.
 \end{equation}
-with the parameter $a$, that gives the amount of exact Hartree-Fock exchange. As an example, the functional B3LYP consists of $20\%$ exact exchange \todo{citation}.
+with the parameter $a$, that gives the amount of exact Hartree-Fock exchange. As an example, the functional B3LYP consists of $20\%$ exact exchange\cite{Becke1993}.
 \begin{equation}
  E_{xc}^{B3LYP}= aE_{xc}^{LDA} + (1-a)E_x^{HF} + bE_x^{B88} + cE_c^{LYP} + (1-c)E_c^{LDA}
 \end{equation}
@@ -515,11 +515,11 @@ The unit cell consists of five atomic layers in z direction (O-O$_2$-Al$_4$-O$_2
 The supercell model that is mostly used in this work has ten atomic layers, with the lowest five fixed to the bulk value to mimic the surface situation. For the calculations of the lattice vibrations up to 25 layers were considered (Figure \ref{abb:cell_sizes}). For each slab size the respective lowest five layers were kept fixed, see chapter \ref{phonons}. The spacing between the five top layers for each slab size is displayed in Table \ref{tab:layer-dist}.
 \begin{table}[!ht]
   \centering
- \caption{Distances between the top five layers (see also numbering in Figure \ref{abb:crystal_11-20}(c)) for different optimized slab sizes and the unrelaxed bulk structure (right column). All values are given in \AA. \todo{Trennstrich macht Ärger..}} 
+ \caption{Distances between the top five layers (see also numbering in Figure \ref{abb:crystal_11-20}(c)) for different optimized slab sizes and the unrelaxed bulk structure (right column). All values are given in \AA.} 
 \vspace*{.2cm}
 \begin{tabular}{c|cccc|c}
 \toprule
- &\multicolumn{4}{c}{total number of atomic layers} &\\
+ & &\multicolumn{2}{c}{atomic layers}&&\\
     distance    & 10   & 15   & 20   & 25   &bulk \\\midrule
  d$_{12}$	&0.232 &0.234 &0.247 &0.245 &0.193 \\
  d$_{23}$	&0.642 &0.649 &0.638 &0.639 &0.741 \\
@@ -595,7 +595,7 @@ The molecular minimum is substantially less stable than most of the dissociated 
 \\
 The adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site, because the former corresponds to a site where in the bulk system another oxygen atom would be situated, which is not the case for the CUSb position. Additionally, the CUSb position is electronically and sterically more hindered because of the two threefold coordinated oxygen atoms in the surroundings.
 \\
-Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and Figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see Table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H and vice versa. It is apparent from this table that the inter-CUSb||O-$\mu_3^{\prime\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^{\prime\prime}$. This is due to the fact that the periodic conditions actually lead to a decrease of the distance between OH groups in the former system. The distances between the neighboring OH groups in the O-$\mu_3^{\prime\prime}$ system are $6.19$ and $8.82\,$\AA{}, compared to $6.64$ and $8.96\,$\AA{} in the O-$\mu_3^{\prime\prime\prime}$ system (the numbers refer to the two possible distance in the periodic system, direct and over the border of the unit cell). The latter one is in fact only slightly further away, the average distance is $0.739$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ and $0.780$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$. Although the distance is larger, there seems to be more stabilization\todo{mysterious..}. For examples of the corresponding  diffusion reactions, see chapter \ref{reactions}.
+Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and Figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH residue are further apart (see Table \ref{tab:ads_1waterfurther}), because the OH residue has a stabilizing effect on the H and vice versa. It is apparent from this table that the inter-CUSb||O-$\mu_3^{\prime\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^{\prime\prime}$. This is due to the fact that the periodic conditions actually lead to a decrease of the distance between OH groups in the former system. The distances between the neighboring OH groups in the O-$\mu_3^{\prime\prime}$ system are $6.19$ and $8.82\,$\AA{}, compared to $6.64$ and $8.96\,$\AA{} in the O-$\mu_3^{\prime\prime\prime}$ system (the numbers refer to the two possible distance in the periodic system, direct and over the border of the unit cell). The latter one is in fact only slightly further away, the average distance is $0.739$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ and $0.780$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$. Although the distance is larger, there seems to be more stabilization \todo{mysterious..}. For examples of the corresponding  diffusion reactions, see chapter \ref{reactions}.
 \begin{table}[!ht]
   \centering
  \caption{Comparison of adsorption energies for next neighbor dissociated species and dissociated species where OH and H are further apart. Results for the adsorption energy E$_\textrm{ads}$ are given in eV.
@@ -846,7 +846,7 @@ Vibrational spectroscopy is of interest because it is a great source of knowledg
  \end{figure}
 % Of course, the frequencies for a deuterated system are different from OH, but the different isotopes can be calculated easily within vasp, just by changing the mass.
 \\
-In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in ultra high vacuum (UHV)\todo{number?} and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source (MBS). For further details see \cite{Heiden11-20_2018} and the supporting information therein.
+In experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber. It was then sputtered in Ar, and annealed to high temperatures in ultra high vacuum (UHV, $2.5\times 10^{-10}\,$mbar) and afterwards three times in oxygen at different temperatures. After this treatment, D$_2$O was brought onto the surface with a molecular beam source (MBS). For further details see \cite{Heiden11-20_2018} and the supporting information therein.
 \\
 \\
 To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and power spectra from AIMD via velocity-velocity autocorrelation function (section \ref{vvacf}), however the latter results are not fully converged yet and have to be propagated tens to hundred ps instead of $1$-$2\,$ps, so only preliminary results will be shown to illustrate the power of this method.
@@ -1065,10 +1065,21 @@ In contrast to the latter systems, for the 1ML system it is not easy to compare 
  \caption{Comparison of the 10-layer slab spectra calculated with normal mode analysis and intensities from the dipole corrections. The clean surface (a), O-I termination (most stable under the whole range of chemical potential) and O-II termination (see Kurita\cite{kuri10}, also relatively stable over a wide chemical potential range). The comparison of the fully covered O-I and O-II terminations is shown in (b) with a detailed view of the OD range in (c).}
  \label{abb:comp_O-I-O-II}
 \end{figure}
-In Figure \ref{abb:comp_O-I-O-II} the intensities from dipole corrections for the clean (a) and the fully covered surface termination O-II ((b), (c)) in comparison to the more stable O-I termination are given. For the clean surface, the spectra deviate by shifted peaks around $50\,$cm$^{-1}$ and different intensity distributions. In contrast to that, the differences for the fully covered surfaces are more pronounced due to the different structures including especially more molecularly adsorbed water for the O-II termination.
+In Figure \ref{abb:comp_O-I-O-II} the intensities from dipole corrections for the clean (a) and the fully covered surface termination O-II ((b), (c)) in comparison to the more stable O-I termination are given for the 10 layer slab. For the clean surface, the spectra deviate by shifted peaks around $50\,$cm$^{-1}$ and different intensity distributions. In contrast to that, the differences for the fully covered surfaces are more pronounced due to the different structures including especially more molecularly adsorbed water for the O-II termination.
 \\
- \todo{continue here when the calculations are ready! Compare O-I and O-II for 10 and 25 layer slabs, both for clean surface and fully covered.}
-
+Also for a larger slab with 25 layers, this comparison was done, see Figure \ref{abb:comp_O-I-O-II_25}
+ \begin{figure}[!h]
+ \centering
+ \subfigure[clean surface]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_O-I_O-II-25.eps}}
+%  \quad
+%  \subfigure[fully covered surface]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_O-I-II_fully_comparison.eps}}
+%  \quad
+%   \subfigure[fully covered surface, OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_O-I-II_fully_OD_comparison.eps}}
+ \caption{Comparing the O-I and O-II terminated clean surface of the 25 layer system shows very similar results for both systems are obtained. The most intense peak is shifted by around $20\,$cm$^{-1}$}%Comparison of the 10-layer slab spectra calculated with normal mode analysis and intensities from the dipole corrections. The clean surface (a), O-I termination (most stable under the whole range of chemical potential) and O-II termination (see Kurita\cite{kuri10}, also relatively stable over a wide chemical potential range). The comparison of the fully covered O-I and O-II terminations is shown in (b) with a detailed view of the OD range in (c).}
+ \label{abb:comp_O-I-O-II_25}
+\end{figure}
+They are very similar and the most intense peak is only shifted by $20\,$cm$^{-1}$. For the O-I termination the intensities are weaker than for the O-II terminated surface for most vibrations, but overall the differences are not so pronounced. In the larger slab model there are many more bulk atoms than surface atoms that can contribute to vibrations. Due to this the differences between O-I and O-II termination get less significant for the larger system.
+\\ \todo{continue here when the calculations are ready! Compare O-I and O-II for 10 and 25 layer slabs, for fully covered.}
 
 \subsection{Born Effective Charges}\label{bec}
 As a second method of obtaining intensities, Born effective charges were evaluated. These results were obtained for the three most stable adsorbed systems with 10 layers. For getting the spectrum an angle of the IR beam of 45\textdegree~was assumed. Because both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities can differ. In Figure \ref{abb:bec} the spectra for the three most stable structures can be seen, (a) depicts the whole range and (b) the OD range only.
@@ -1837,9 +1848,8 @@ Several higher level methods were tested to improve reaction rates.\todo{to be c
 I want to thank my doctoral father Prof. Dr. Saalfrank, for giving me the scientific opportunity to research on surface systems and all the valuable discussions and advices. Also I am deeply grateful to my supervisor Dr. Jonas Wirth who gave me support during my time starting as a Bachelor's student, during my Master's thesis and also through the beginning of my PhD. Thanks to PD Dr. Tillmann Klamroth for discussions about programming and millions of theoretical questions that arose during the work, Dr. Rados\l{}aw W\l{}odarczyk for his endless knowledge with VASP and programming in general, Giacomo Melani (soon to be Dr.) for his advice and his help, and also the discussions about our teaching duties in mathematics and the whole workgroup for all the valuable discussions and the help. Also for the great atmosphere, that was some times productive and some times also just relaxing and felt very comfortable, here especially Clemens Rietze, Robert Scholz, Gereon Floss, and Steven Lindner.
 Also I want to thank my second supervisor Beate Paulus for discussion and help beyond research topics.
 Great acknowlegdment to my experimental cooperation partners from FHI, Yanhua Yue, Dr. Harald Kirsch and Dr. R. Kramer Campen for the great work and publications we did together.
-Thanks to Dr. Denis Usvyat for all his patience and knowledge and valuable discussions about crystal/cryscor and his help.
-\todo{Maristella Alessio from Sauer group (HU Berlin) for help with Turbomole and setting the mechanical embedding calculations, that unluckily did not work for the applied cluster.
-Ji Chen and Wei Fang from Michaelides group from UCL London for their help with cp2k and i-Pi, necessary for the PIMD calculations.}\\
+Thanks to Dr. Denis Usvyat for all his patience and knowledge and valuable discussions about crystal/cryscor and his help.\\
+%Maristella Alessio from Sauer group (HU Berlin) for help with Turbomole and setting the mechanical embedding calculations, that unluckily did not work for the applied cluster. Ji Chen and Wei Fang from Michaelides group from UCL London for their help with cp2k and i-Pi, necessary for the PIMD calculations.\\
 I want to thank Dr. Jean Christophe Tremblay who brought me to theoretical chemistry by bringing my attention to this field of science.
 Christiane Wunderlich who was my school teacher in chemistry, without whom I would not have studied chemistry.
 
@@ -1876,7 +1886,7 @@ This method is a surface specific vibrational spectroscopy. An UV/Vis and an IR 
 \begin{figure}[!h]
 \centering
  \includegraphics[width=0.4\textwidth]{figures/theory/sfg-scheme.pdf}
-   \caption{Scheme of the SFG Process \todo{blue error tip has wrong color}, left side the spatially overlapping Laser beams are shown, on the right side the orbital representation with the excitation to a virtual orbital is given.}
+   \caption{Scheme of the SFG Process, left side the spatially overlapping Laser beams are shown, on the right side the orbital representation with the excitation to a virtual orbital is given.}
             \label{abb:sfg_scheme}
 \end{figure}
 For this, the polarization of the beam is important, it can be either s or p polarized. The selection rules result in the surface specifity: The SFG only occurs if the vibration is IR and Raman active and additionally only in systems with inversion symmetry. This makes this method predestinated for analysis of surfaces, because neither the bulk nor the gas phase are inversion symmetric, however the interface (=surface, at least three atomic layers) is, so that the only signals come from this region. It is usually abbreviated SFG (sum frequency generation) but also named VSF(G) (vibrational sum frequency (generation)).
