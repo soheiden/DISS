@@ -208,7 +208,7 @@ It can also be seen as a model systems for more complex alumosilicates. Oxide ro
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theory und Methodology}
 In this chapter the basics of the applied theoretical methods shall be explained. Starting from the ideas of Density Functional Theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab initio} Molecular Dynamics. Proceeding with frequency calculations and intensities over Transition State Theory to more developed methods like hybrid functionals and Perturbation Theory. Most parts of this chapter are based on \cite{jensen}.
-\\ \todo{MAKE SURE THAT ALL VARIABLES ARE CONSISTENT!}
+
 \section{Density Functional Theory}
 For all molecular and periodic systems, theoretical descriptions are based on the calculation of the electronic structure. For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legit due to the largely different masses of electrons and the nucleus. With this, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic total wave function $\Psi_e(\vec{r})$ and total energy $E_e$ is
 \begin{equation}\label{eq:tise}
@@ -376,7 +376,13 @@ The dynamical dipole moment is evaluated by the dipole moment operator $\hat{\mu
 %I und f sind initial und final Zustände Mu ist einfach Dipolmomentoperator Dipolmoment hat 3 Komponenten also für gegebene i,f ist das ein Vektor Soweit ich mir gut erinnere, er heißt dynamischer weil er zwischen 2 Zuständen ist Also beschreibt keine statische Werte sondern eine Antwort eines Systems Also zum Beispiel für IR Absorption du nimmst den Grundzustand als "i" Und welche angeregte Zustande möchtest du als mögliche nehmen? Einfachste Antwort: erste angeregte Vibrationszustände. Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
 The respective intensities are determined by $I\propto <i|\hat{\mu}|f>^2$. For this approach, only the dipole components perpendicular to the surface are taken into account. Only these can be measured in respective SFG spectra. These are not completely comparable to IR spectra but IR sensitivity is next to Raman activity one of the selection rules for SFG. Additionally the process is only visible for interfaces. Selection rules include IR and Raman activity as well as a system wihtout inversion symmetry, which is usually the case for interfaces and surfaces.
   
- \item[II)] Another way to get intensities is by calculating Born effective charges, as it was done in the work of Grillo \textit{et al.}\cite{BEC}. \todo{how are these charges calculated? wait for Jan's relply!} With the charges the dipole and also the intensities are available through $\mu=\textrm{charge} \times \textrm{distance}$, and again, $I\propto \mu^2$. Both methods are based on normal mode analyses and therefore give IR intensities.
+ \item[II)] Another way to get intensities is by calculating Born effective charges\cite{Born1954}, as it was done in the work of Grillo \textit{et al.}\cite{BEC}.
+ These charges are calculated as the second derivative of the energy with respect to an applied electric field and to the amplitude of a vibrational distortion. This is available through DFPT\cite{Baroni1987,Giannozzi1991} (density functional perturbation theory), which is a linear response theory. One can calculate the intensity $I(\omega)$\cite{Bruesch1986,Baroni2001}:
+ \begin{equation}
+  I(\omega) = \sum_{\alpha=1}^3|\sum_{l=1}^M\sum_{\beta=1}^3 Z_{\alpha\beta}^\star(l)e_\beta(l)|^2.
+ \end{equation}
+Here, $\alpha$ and $\beta$ are cartesian polarizations, $e_\beta(l)$ is the normalized vibrational eigenvector of the $\omega$-th mode, $l$ deciphers the different atoms of the system with the total number $M$ and $Z_{\alpha\beta}^\star$is the Born effective charge tensor of the $l$-th atom.\\
+ From that, with the charges the dipole and also the intensities are available through $\mu=\textrm{charge} \times \textrm{distance}$, and again, $I\propto \mu^2$. Both methods are based on normal mode analyses and therefore give IR intensities.
  \end{itemize}
  While normal modes are a good approximation for high energy vibrations, for example OD stretch vibrations, it becomes worse for lattice vibrations, which are typically more delocalized.
 \begin{itemize}
@@ -1725,20 +1731,22 @@ To go beyond density functional theory, first HF and on top of these MP2 calcula
  With these calculations done, first a localization of the orbitals was done. Optional, at this point a dual basis expansion can be done, to increase the basis even further (this was done for Al and O), so that a basis set of the size of approximately augmented triple zeta can be achieved. For this one step of a HF calculation was done. These two results are compared in Table \ref{tab:MP2_minima}. It is visible that there is indeed a difference in stability with and without the dual basis set. Especially the 1-2 diss gets stabilized but also the 1-4 dissociated structure gains stability, compared to the molecular minimum, that is predicted to be equal by both methods.
 \begin{table}[!h]
   \centering
-   \caption{MP2 adsorption energies of the three adsorption states of the (0001) surface site. Values are given in eV for the high angular momentum basis set. The upper part with the dual basis set and the lower without the corresponding dual basis set expansion. \todo{MP2=HF+singles+MP2+LJ, change Table accordingly}}
+   \caption{MP2 adsorption energies of the three adsorption states of the (0001) surface site. Values are given in eV for the high angular momentum basis set. The upper part with the dual basis set and the lower without the corresponding dual basis set expansion.}
   \begin{tabular}{l|ccc}
   \toprule
-   &mol & 1-2 diss & 1-4 diss \\\midrule
-HF+singles           &-1.049 &-1.601 &-1.096 \\
-MP2+LJ               &-0.261 &-0.006 &-0.081 \\
-SCS-MP2+LJ           &-0.190 &0.032 &-0.028 \\
-HF+MP2               &-1.310 &-1.607 &-1.177 \\
-HF-SCS-MP2           &-1.239 &-1.569 &-1.124 \\\hline\hline
-HF+singles           &-1.123 &-1.656 &-1.169 \\
-MP2+LJ               &-0.216 &-0.035 &-0.093 \\
-SCS-MP2+LJ           &-0.153 &-0.011 &-0.053 \\
-HF+MP2               &-1.339 &-1.691 &-1.263 \\
-HF-SCS-MP2           &-1.276 &-1.667 &-1.223 \\\bottomrule
+   &mol & 1-2 diss & 1-4 diss \\\midrule %MP2=HF+singles+MP2+LJ
+  with dual basis & -1.31 & -1.61 & -1.17\\\midrule
+  without dual basis & -1.34 & -1.69 & -1.26 \\\bottomrule
+% HF+singles           &-1.049 &-1.601 &-1.096 \\
+% MP2+LJ               &-0.261 &-0.006 &-0.081 \\
+% SCS-MP2+LJ           &-0.190 &0.032 &-0.028 \\
+% HF+MP2               &-1.310 &-1.607 &-1.177 \\
+% HF-SCS-MP2           &-1.239 &-1.569 &-1.124 \\\hline\hline
+% HF+singles           &-1.123 &-1.656 &-1.169 \\
+% MP2+LJ               &-0.216 &-0.035 &-0.093 \\
+% SCS-MP2+LJ           &-0.153 &-0.011 &-0.053 \\
+% HF+MP2               &-1.339 &-1.691 &-1.263 \\
+% HF-SCS-MP2           &-1.276 &-1.667 &-1.223 \\\bottomrule
   \end{tabular}
   \label{tab:MP2_minima}
  \end{table}
