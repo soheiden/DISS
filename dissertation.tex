@@ -1,12 +1,12 @@
 \documentclass[11pt,DIV=13,BCOR=5mm,a4paper,headinclude]{scrbook}
 %\usepackage[ngerman]{babel}
 \usepackage[english]{babel}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{upgreek}
 %\usepackage{graphicx}
-\usepackage[figuresright]{rotating}	% lädt auch graphicx
+\usepackage[figuresright]{rotating}	% lÃ¤dt auch graphicx
 \usepackage{caption}
  \DeclareCaptionLabelFormat{myformat}{#1~A#2}
 % \captionsetup{labelformat=myformat}
@@ -58,7 +58,7 @@
 \addtokomafont{disposition}{\boldmath}
 \def\doubleunderline#1{\underline{\underline{#1}}}
 
-%Überschriften
+%Ãœberschriften
 \addtokomafont{part}{\huge}
 \addtokomafont{chapter}{\LARGE}
 \addtokomafont{section}{\Large}
@@ -72,7 +72,7 @@
 %\addtokomafont{caption}{\small\sffamily}
 \KOMAoption{captions}{outerbeside}
 
-%Fußnoten
+%FuÃŸnoten
 \usepackage[bottom,hang]{footmisc}
 \setlength{\skip\footins}{\baselineskip}
 \setlength{\footnotesep}{0.75\baselineskip}
@@ -125,9 +125,9 @@
 % \hyphenation{Nor-mal-mo-den-a-na-ly-se}
 % \hyphenation{Zeit-ska-la}
 % \hyphenation{Ge-ne-ra-lized}
-% \hyphenation{Grund-zu-stands-po-ten-tial-flä-che}
+% \hyphenation{Grund-zu-stands-po-ten-tial-flÃ¤-che}
 % \hyphenation{Stick-stoff-a-to-me}
-% \hyphenation{Sub-strat-ober-flä-che}
+% \hyphenation{Sub-strat-ober-flÃ¤-che}
 % \hyphenation{Be-deckungs-grad}
 % \hyphenation{Be-deckungs-gra-de}
 
@@ -147,8 +147,8 @@ Water at $\upalpha$-Alumina:\\
 \author{\sffamily\large vorgelegt von\\
   \sffamily\Large\bfseries Sophia L. Heiden}
 \publishers{\sffamily\large an der\\
-  Mathematisch-Naturwissenschaftlichen Fakultät\\
-  der Universität Potsdam\\ \vspace{1.5\baselineskip}
+  Mathematisch-Naturwissenschaftlichen FakultÃ¤t\\
+  der UniversitÃ¤t Potsdam\\ \vspace{1.5\baselineskip}
   \includegraphics[width=0.1\textwidth]{figures/UP-Logo_Matjpg.jpg}\\ \vspace{\baselineskip}
   Potsdam, 2018}
 \date{}
@@ -164,7 +164,7 @@ Drittgutachter:&Prof. Dr. \todo{xy} \\
 \end{tabular}
  }
 
-%\dedication{Für meinen Vater.}
+%\dedication{FÃ¼r meinen Vater.}
 
 \maketitle
 
@@ -205,7 +205,7 @@ It can additionally be seen as a model systems for more complex alumosilicates. 
 %\renewcommand*{\chapterpagestyle}{plain}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Abkürzungsverzeichnis?
+%AbkÃ¼rzungsverzeichnis?
 %Abbildungsverzeichnis?
 %Tabellenverzeichnis?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -213,7 +213,7 @@ It can additionally be seen as a model systems for more complex alumosilicates. 
 In this chapter the basics of the applied theoretical methods shall be explained. It is starting from the ideas of density functional theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics. The we will proceed with frequency calculations and intensities over transition state theory to more developed methods like hybrid functionals and perturbation theory. Most parts of this chapter are based on \cite{jensen}.
 
 \section{Density Functional Theory}
-For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure. For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legit due to the largely different masses of electrons and the nucleus. With this, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic total wave function $\Psi_e(\vec{r})$ and total energy $E_e$ is
+For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure. For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legit due to the largely different masses of electrons and the nucleus. With this, the electronic SchrÃ¶dinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic total wave function $\Psi_e(\vec{r})$ and total energy $E_e$ is
 \begin{equation}\label{eq:tise}
  \hat{H}_e\Psi_e(\vec{r})=E_e\Psi_e(\vec{r}).
 \end{equation}
@@ -329,7 +329,7 @@ Apart from solving stationary problems, \textit{ab initio} molecular dynamics (A
  -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 \end{equation}
 where $V$ is the potential energy that is a function of all nuclear coordinates $\vec{R}$, $\vec{R}_A$ is the vector that contains all coordinates of atom $A$, $M_A$ is the atomic mass  and the time $t$.
-This equation gives in principle $F=M_A\cdot a$, the force $F$ acting on each atom in a classical ansatz with the velocity $a$. This is a good approximation for nuclei are usually sufficiently massive to be treated classically\footnote{Strictly speaking, this is not appropriate for hydrogen, since it is so lightweight that quantum mechanical tunneling processes can not be excluded. For treating quantum effects such as zero point energy and tunneling one would have to solve the nuclear Schrödinger equation.}.
+This equation gives in principle $F=M_A\cdot a$, the force $F$ acting on each atom in a classical ansatz with the velocity $a$. This is a good approximation for nuclei are usually sufficiently massive to be treated classically\footnote{Strictly speaking, this is not appropriate for hydrogen, since it is so lightweight that quantum mechanical tunneling processes can not be excluded. For treating quantum effects such as zero point energy and tunneling one would have to solve the nuclear SchrÃ¶dinger equation.}.
 \\
 In contrast to classical molecular dynamics, where predefined potentials or force fields based on either empirical data or further electron structure methods are used, \textit{ab initio} MD calculates the potential and the respective (Hellmann-Feynman) forces ``on-the-fly'' at each time step. This has the advantage that no further parameterization is necessary when changing atoms or molecular groups/surfaces etc. Also a change in electronic structure along the trajectory can be compensated without the necessity of another potential/force field to describe interatomic interactions, which is especially vital for dissociation processes like those considered in this work.
 \\
@@ -379,7 +379,7 @@ There are several methods available to calculate intensities of vibrational mode
 \begin{itemize}
  \item[I)] The IR intensities for each normal mode are estimated from the derivative of the dipole moment with respect to the atomic positions, also known as dynamical dipole moment\cite{dyn-dip}.
 The dynamical dipole moment is evaluated by the dipole moment operator $\hat{\mu}$ between two states $i$ and $f$, where $\hat{\mu}$ is a three component vector. The initial state $i$ is the vibrational ground state and final state $f$ is a vibrationally excited state. The eigenvectors of the vibrations are used here as $i$ and $f$. It is called dynamical because it does not describe a static dipole moment but a response of the system. With some symmetry and group theory considerations, one can decide for each vibration whether it is IR active or not.
-%I und f sind initial und final Zustände Mu ist einfach Dipolmomentoperator Dipolmoment hat 3 Komponenten also für gegebene i,f ist das ein Vektor Soweit ich mir gut erinnere, er heißt dynamischer weil er zwischen 2 Zuständen ist Also beschreibt keine statische Werte sondern eine Antwort eines Systems Also zum Beispiel für IR Absorption du nimmst den Grundzustand als "i" Und welche angeregte Zustande möchtest du als mögliche nehmen? Einfachste Antwort: erste angeregte Vibrationszustände. Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
+%I und f sind initial und final ZustÃ¤nde Mu ist einfach Dipolmomentoperator Dipolmoment hat 3 Komponenten also fÃ¼r gegebene i,f ist das ein Vektor Soweit ich mir gut erinnere, er heiÃŸt dynamischer weil er zwischen 2 ZustÃ¤nden ist Also beschreibt keine statische Werte sondern eine Antwort eines Systems Also zum Beispiel fÃ¼r IR Absorption du nimmst den Grundzustand als "i" Und welche angeregte Zustande mÃ¶chtest du als mÃ¶gliche nehmen? Einfachste Antwort: erste angeregte VibrationszustÃ¤nde. FÃ¼r jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (FÃ¼r Vibrationen) Also wir nehmen <0|mu|v1> fÃ¼r die erste Vibration <0|mu|v2> fÃ¼r die zweite <0|mu|v3> fÃ¼r dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie kÃ¶nnen IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie mÃ¶glich es ist Also wir wissen das symmetric stretch ist fÃ¼r WassermolekÃ¼l erlaubt aber nicht wie groÃŸ das Ãœbergangsdipolmoment ist Um genau zu wissen, mÃ¼ssen wir das rechnen Wir kÃ¶nnen das statisch oder dynamisch rechnen Die statische Rechnung basiert auf VibrationeigenzustÃ¤nde die man von der Hessematrix kriegt
 The respective intensities are determined by $I\propto <i|\hat{\mu}|f>^2$. For this approach, only the dipole components perpendicular to the surface are taken into account. Only these can be measured in respective SFG spectra. These are not completely comparable to IR spectra. Selection rules for SFG include IR and Raman activity as well as a system without inversion symmetry, which is usually the case for interfaces and surfaces.
   
  \item[II)] Another way to obtain intensities is by calculating Born effective charges\cite{Born1954}, as done in the work of Grillo \textit{et al.}\cite{BEC}.
@@ -396,7 +396,7 @@ Here, $\alpha$ and $\beta$ are cartesian polarizations, $e_\beta(l)$ is the norm
 \begin{equation}
  VDOS(\omega)=\sum_{i=1}^N\int_{0}^{+\infty}<v_i(t)\cdot v_i(0)>e^{i\omega t}dt ~.
 \end{equation}
-% ?was ist N? Ist das Integral wirklich von $-\infty-\infty$ oder sind die Grenzen eingeschränkt? Ist $<x(0)*x(t)>$ ein Mittelwert? Was ist mit der Summe? Im Paper steht folgende Gleichung:
+% ?was ist N? Ist das Integral wirklich von $-\infty-\infty$ oder sind die Grenzen eingeschrÃ¤nkt? Ist $<x(0)*x(t)>$ ein Mittelwert? Was ist mit der Summe? Im Paper steht folgende Gleichung:
 % \begin{equation}
 %  P(\omega)=m\int <\dot{r}(\tau)\dot{r}(t+\tau)>_\tau e^{-i\omega t}dt
 % \end{equation}
@@ -464,7 +464,7 @@ Another ansatz is using Local M\o{}ller Plesset Perturbation Theory\cite{mollerp
  \hat{H} = \hat{H}_0 + \lambda \hat{V}
 \end{equation}
 $\hat{H}_0$ is the unperturbed Hamiltonian and $\lambda$ is a parameter that determines the extent of the perturbation. In general $V$ is considered as ``small'', compared to $\hat{H}_0$.
-The perturbed Schrödinger equation is given by:
+The perturbed SchrÃ¶dinger equation is given by:
 \begin{equation}
  \hat{H}\Psi = E\Psi.
 \end{equation}
@@ -501,7 +501,7 @@ The majority of simulations/computations in this work were carried out using the
 \\
 For all the VASP calculations for the (0001) surface the parameters from prior work in the Saalfrank workgroup was used, because these were converged carefully by Dr. Jonas Wirth\cite{WirthJPCC2012,Wirth2014,Wirth2015,Wirth2016}. Total energy convergence was achieved when energies between two SCF steps were smaller then $10^{-5}\,$eV and structures were assumed minima if the change in forces between two structures was below $0.01\,$eV/\AA{}. The energy cutoff was set to $400\,$eV. A vacuum gap of $26.4\,$\AA{} was used.
 \\
-These parameters were adopted for the (11\=20) surface. Here, the vacuum gap ranged from $17$ for the 10 layer slab to $11\,$\AA{} for the 25 layer slab, depending on the slab size in c-direction. %the vacuum region is in the range of 17 Å for the 10 layer slab, 15 for the 15 layer slab, 13 for the 20 layer slab and 11 for the 25 layer slab
+These parameters were adopted for the (11\=20) surface. Here, the vacuum gap ranged from $17$ for the 10 layer slab to $11\,$\AA{} for the 25 layer slab, depending on the slab size in c-direction. %the vacuum region is in the range of 17 Ã… for the 10 layer slab, 15 for the 15 layer slab, 13 for the 20 layer slab and 11 for the 25 layer slab
 \\\\
 The atom centered basis calculations with the programs CRYSTAL\cite{crystal14} (version 14) and the LMP2 calculations with cryscor\cite{cryscor} were not used before for the calculation of alumina in our group before. The geometries from the VASP output were used as starting points and the usual convergence criteria of the programs were applied (with some exception when convergence was hard to achieve).
 
@@ -852,7 +852,7 @@ Rates for backreactions can also be calculated and the results are shown in Tabl
   \label{tab:backreactions}
 \end{table*}
 \\
-As mentioned before an immense well known problem of GGA is that barriers are underestimated\cite{Zhao05}. Optimizing structures with HSE06 is infeasible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (unpublished work by Dr. J. Wirth, Universtität Potsdam). %at least for crystal calculations... so don't bring it here?
+As mentioned before an immense well known problem of GGA is that barriers are underestimated\cite{Zhao05}. Optimizing structures with HSE06 is infeasible due to high cost and doing single point calculations on PBE optimized transition state is not very accurate and doesn't deliver better results (unpublished work by Dr. J. Wirth, UniverstitÃ¤t Potsdam). %at least for crystal calculations... so don't bring it here?
 \clearpage
 \section{Vibrational Frequencies}
 Vibrational spectroscopy is of interest because it is a great source of knowledge about chemical systems. The frequencies of vibrations give hints about the chemical environment as hydrogen bonds and other atoms nearby that bind to each other. These vibrational frequencies were calculated for the surface system adsorbed with OD. Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are clearer with their applied Laser system, so that all results presented in this particular section are given for D$_2$O. The experimental Sum Frequency Generation (SFG) spectra for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
@@ -1529,10 +1529,10 @@ For a model reaction we try to improve the reaction rate of a specific chosen re
 \caption{Reaction path of the Df-H-4-2 proton diffusion reaction in the PBE-D2 level of theory, left is the educt (1-4), in the middle the minimum energy path with the transition state geometry as an inlay and on the right the product (1-2) of the reaction. \textit{Data with friendly permission by Jonas Wirth}.}
        \label{abb:df-h-4-2}
 \end{figure}
-The transition state was calculated with PBE+D2 with the implementation of nudged elastic band in VASP. Rates were calculated via Eyring (Equation (\ref{eq:eyring})). A further previous approach were single point calculations at the HSE level of theory (hybrid functional) on top of PBE optimized geometries were done for the minima and the transition state is presented. Additionally, for this process a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway. These results are summarized in Table \ref{tab:4-2results_jonas}.
+The transition state was calculated with PBE+D2 with the implementation of nudged elastic band in VASP. Rates were calculated via Eyring (Equation (\ref{eq:eyring})). A further previous approach were single point calculations at the HSE level of theory (hybrid functional) on top of PBE optimized geometries were done for the minima and the transition state is presented. Additionally, for this process a 1-D potential energy surface was calculated and then the SchrÃ¶dinger equation was solved to obtain the wave function and see the localization/delocalization of the reaction pathway. These results are summarized in Table \ref{tab:4-2results_jonas}.
 \begin{table}[!h]
   \centering
-  \caption{PW91, PBE+D2 after geometry optimization and transition state via NEB, HSE single point calculations on top of PBE optimized geometries. Both were calculated from Eyring equation (\ref{eq:eyring}). The exact tunneling was calculated from a 1-D potential and the calculation of the Schrödinger equation in this potential. These calculations were done by Dr. J. Wirth and are 6partially unpublished.}
+  \caption{PW91, PBE+D2 after geometry optimization and transition state via NEB, HSE single point calculations on top of PBE optimized geometries. Both were calculated from Eyring equation (\ref{eq:eyring}). The exact tunneling was calculated from a 1-D potential and the calculation of the SchrÃ¶dinger equation in this potential. These calculations were done by Dr. J. Wirth and are 6partially unpublished.}
 \hspace*{-1cm}
  \begin{tabular}{l|c}
  \toprule
@@ -1796,7 +1796,7 @@ $\square$ calculate rates with VASP geometry TS
  
 \subsubsection{Frequency Analysis}
 Apart from calculating adsorption energies, also normal modes with CRYSTAL were calculated with the functional B3LYP+D3 and PBE+D3, both with basis set 2 from Table \ref{tab:basissets}. In addition to that, anharmonic corrections for both O-D bonds per system have been done. \todo{mention how this is done? Appendix?\\
-For these corrections no frequency calculations are necessary. Instead, the O-D distances around the equilibrium position are varied from $-0.2$ to $+0.3$\AA{}. A potential energy is calculated for each value of O-D distance, seven points in total.  To these points a polynomial curve of $6^\textrm{th}$ degree is fitted. A corresponding nuclear Schrödinger equations is solved numerically and the anharmonicity constant is evaluated from the fit.}
+For these corrections no frequency calculations are necessary. Instead, the O-D distances around the equilibrium position are varied from $-0.2$ to $+0.3$\AA{}. A potential energy is calculated for each value of O-D distance, seven points in total.  To these points a polynomial curve of $6^\textrm{th}$ degree is fitted. A corresponding nuclear SchrÃ¶dinger equations is solved numerically and the anharmonicity constant is evaluated from the fit.}
 \\
 In Table \ref{tab:freqs_0001_crystal} the results for PBE and B3LYP for the (0001) surface are summarized.
 \begin{table}[!h]
@@ -2165,12 +2165,12 @@ $P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm
 \clearpage
 
 \begin{center}
-  {\Large\sffamily\bfseries Erklärung}
+  {\Large\sffamily\bfseries ErklÃ¤rung}
 \end{center}
 
 \vspace{\baselineskip}
 
-Hiermit versichere ich, dass die vorliegende Arbeit an keiner anderen Hochschule eingereicht sowie selbständig und ausschließlich mit den angegebenen Mitteln angefertigt worden ist.\\
+Hiermit versichere ich, dass die vorliegende Arbeit an keiner anderen Hochschule eingereicht sowie selbstÃ¤ndig und ausschlieÃŸlich mit den angegebenen Mitteln angefertigt worden ist.\\
 
 \begin{flushleft}
   Potsdam, \todo{xx} 2018
