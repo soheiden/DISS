@@ -32,6 +32,8 @@
 \usepackage{bibentry}
 \usepackage{placeins}
 \usepackage{cite}
+% \usepackage[superscript,biblabel]{cite}
+
 %\nobibliography*
 
 \clubpenalty = 10000
@@ -154,7 +156,7 @@ Water at $\upalpha$-Alumina:\\
 \date{}
 
 \uppertitleback{\normalfont
-This work has been done between January 2015 and \todo{xx} 2018 in the workgroup of Prof. Dr. Peter Saalfrank at the Institute of Chemistry at the University of Potsdam.
+This work has been done between January 2015 and \todo{xx} 2018 in the group of Prof. Dr. Peter Saalfrank at the Institute of Chemistry at the University of Potsdam.
 }
 \lowertitleback{Potsdam, \todo{xx} 2018\\
 \begin{tabular}{ll}
@@ -164,7 +166,7 @@ Drittgutachter:&Prof. Dr. \todo{xy} \\
 \end{tabular}
  }
 
-%\dedication{Für meinen Vater.}
+%\dedication{F�r meinen Vater.}
 
 \maketitle
 
@@ -174,17 +176,17 @@ Drittgutachter:&Prof. Dr. \todo{xy} \\
 
 \addchap{Preamble}
 The importance of surface science in our industrialized world is overwhelming.
-Most processes in chemical industry are carried out with the help of (heterogeneous) catalysts\cite{Ago2005,Cargnello2012,Knozinger1978} by speeding them up using a different reaction path.
+Most processes in chemical industry are carried out with the help of (heterogeneous) catalysts\cite{Ago2005,Cargnello2012,Knozinger1978} by speeding up reactions using a different reaction path.
 The advantage of heterogeneous over homogeneous catalysts is that these do not have to be separated from the reactands and the product after the process, which is often a costly step in the production of chemicals.
 It is therefore desirable to understand heterogeneous catalytic processes by learning more about the microscopic processes that take place on the surface of materials especially by computational methods because it can deliver basic understanding.
-Metal oxide materials are commonly used catalysts as well as catalyst support materials, hence understanding their properties in contact with chemicals is crucial.
-In this work, we consider water, which could be reactand, solute or impurity in aforementioned processes.
+Metal oxide materials are commonly applied catalysts as well as catalyst support materials, hence understanding their properties in contact with chemicals is crucial.
+In this work, we consider water, which could be reactand, solute or impurity in aforementioned processes due to its ubiquity.
 \\
 
 Aluminum is contained in rocket fuels as a reduction agent, so as a result alumina (Al$_2$O$_3$) particles are ejected into the atmosphere during the launch of a spacecraft\cite{Elam1998}.
 The start of one space shuttle can produce around $276,000\,$kg of alumina particles\cite{Potter1978}.
 Measurements show that approximately one third of these particles can be deposited in the stratosphere\cite{Cofer1978} (in an altitude between $15$ and $50\,$km above the surface of the earth).
-There these particles are accumulated and can react with water and other molecules\cite{Jones1995,Jackman1996}.
+These particles are accumulated there and can react with water and other molecules\cite{Jones1995,Jackman1996}.
 \\
 
 Furthermore, in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the most abundant metal in the crust with  $8.1\%$ \todo{by mass or volume?}
@@ -194,7 +196,7 @@ and the third most element therein\cite{dtv-Atlas,Riedel}.
 %Some of them are precious stones ruby, saphir
 % Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth crust and with that the far most abundant metal)}
 \\
-It can additionally be seen as a model systems for more complex alumosilicates.
+It can additionally be seen as a model system for more complex alumosilicates.
 Oxide rocks are omnipresent in the crust of the earth and henceforth are present in most geochemical processes since the times the earth's atmosphere was oxidizing in the early stages of the planetary evolution\cite{Trail2011} which became even more extensive with the rise of photosynthetic life forms\cite{Frei2009,Buick2008,Olson2006} around 2.2 billion years ago\cite{Kirschvink2008}.
 %became oxidizing with rise of photosynthetic life forms/(bacteria?) 2.3 billion years ago (seems to be not true: https://nai.nasa.gov/articles/2011/12/2/earths-early-atmosphere-an-update/ and \\ https://www.nature.com/articles/nature10655) \cite{Trail2011}.
 %Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew giving rise to oxidic metal compounds.)
@@ -223,13 +225,13 @@ Oxide rocks are omnipresent in the crust of the earth and henceforth are present
 \chapter{Theory und Methodology}
 In this chapter the basics of the applied theoretical methods shall be explained.
 It is starting from the ideas of density functional theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
-The we will proceed with frequency calculations and intensities over transition state theory to more developed methods like hybrid functionals and perturbation theory.
+Then we will proceed with frequency calculations and intensities over transition state theory to more developed methods like hybrid functionals and perturbation theory.
 Most parts of this chapter are based on \cite{jensen}.
 
 \section{Density Functional Theory}
 For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure.
 For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legit due to the largely different masses of electrons and the nucleus.
-With this, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic total wave function $\Psi_e(\vec{r})$ and total energy $E_e$ is
+With this, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic total wave function $\Psi_e(\vec{r})$ and total electronic energy $E_e$ is
 \begin{equation}\label{eq:tise}
  \hat{H}_e\Psi_e(\vec{r})=E_e\Psi_e(\vec{r}).
 \end{equation}
@@ -256,14 +258,14 @@ The total energy $E[n]$ can be determined as
  E[n]=T[n] + V_{ext}[n] + V_{ee}[n]=\int n(\vec{r})v_{ext}(\vec{r})d\vec{r} + T[n]+E_H[n]+E_{xc}[n]
 \end{equation}
 with the kinetic energy $T[n]$, the potential energy $V[n]$ for the external potential $ext$ and electron electron interaction $ee$, the external potential $v_{ext}(\vec{r})$, the Hartree energy $E_H[n]$, corresponding to the classical Coulomb interaction and the exchange correlation energy $E_{xc}[n]$ for the non-classical exchange correlation interactions.
-A major advantage of DFT over wave function based methods is that only a three dimensional system has to be considered for three spatial coordinates $n(x,y,z)$, instead of a $3N_e$-dimensional system, %weglassen? (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional)}
+A major advantage of DFT over wave function based methods is the size: only a three dimensional system has to be considered for three spatial coordinates $n(x,y,z)$, instead of a $3N_e$-dimensional system, %weglassen? (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional)}
 with $N_e$ being the number of electrons.
 The size of a system calculated with wave function methods increases exponentially with the number of electrons, while for density calculations we always have three spatial coordinates, independent from the number of electrons.
-Problematic in this ansatz is that the explicit form of the interacting kinetic energy $T[n]$ and the exchange correlation functional\footnote{to clarify the difference between a function and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas a functional (F[f]) gives a number from a function which depends on variables.} $E_{xc}[n]$ are unknown.
+Problematic in this approach is that the explicit form of the interacting kinetic energy $T[n]$ and the exchange correlation functional\footnote{to clarify the difference between a function and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas a functional (F[f]) gives a number from a function which depends on variables.} $E_{xc}[n]$ are unknown.
 \\
 Calculating all energy components from the pure density was not very successful so that instead wave function based methods were applied.
 Kohn and Sham showed in their work\cite{Kohn-Sham1965} in 1965 that the kinetic energy can be calculated from non-interacting auxiliary particles in a set of orbitals that is used for representing the electron density.
-A test system with non-interacting electrons that reflects the real systems electron density, is defined and calculated.
+A test system with non-interacting electrons that reflects the real system's electron density is defined and calculated.
 The use of orbitals makes it possible to use the same methods and algorithms previously known from wave function methods.
 With this, the exchange-correlation functional remains the only unknown functional, but it is only a small fraction of the total energy.
 Simple approximations to this functional still give reasonable results, such as the local density approximation (LDA).
@@ -272,13 +274,13 @@ Furthermore, notable improvements can be made by considering the density and its
 \begin{equation}
  E_{xc}=E_{xc}[n(\vec{r}),\nabla n(\vec{r})]
 \end{equation}
-\todo{write a little about this? pros and cons of GGA?} and even better by adding second derivatives and mixing in Hartree-Fock exchange (hybrid functionals, like B3LYP and HSE06).
+\todo{write a little about this? pros and cons of GGA\cite{Cohen2008}?} and even better by adding second derivatives and mixing in (exact) Hartree-Fock exchange (hybrid functionals, like B3LYP and HSE06).
 \\
 A major issue of DFT is that it can not be systematically improved like wave function based methods.
 Another weakness is the disability of reproducing important features like van der Waals interactions.
 To overcome the latter problem it is nowadays possible to add dispersion corrections to account for van der Waals interactions.
 These are important, especially for the adsorbate-surface interaction and the adsorbate-adsorbate interaction.
-The D3 correction describes pair interactions between atoms $A$ and $B$ in the form
+The D2 correction describes pair interactions between atoms $A$ and $B$ in the form
 \begin{equation}\label{eq:d2}
  E_{disp}^{(2)} =\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e} s_6 \frac{C_6^{AB}}{R_{AB}^6}f_{damp}(R_{AB}),
 \end{equation}
@@ -291,7 +293,7 @@ For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the
 Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\phi_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$.
 
 \section{Periodic Boundary Conditions}
-Surface systems can either be simulated by calculating clusters that were cut from the surface and represent an "important part" of the system or can be represented as the whole system with a periodic approach.
+Surface systems can either be simulated by calculating clusters that were cut from the surface and represent an "important part" of the system or can be treated as the whole system with a periodic approach.
 These periodic systems can be described by a single unit cell and respective cell vectors, which are used to generate the infinite system by repeating the cell in each direction.
 This can be either done in 1D (polymers), 2D (surface systems) or 3D (bulk crystals).
 Surfaces can also be described within the 3D model as a slab by three dimensional repetition of the unit cell.
@@ -302,7 +304,7 @@ Some programs, however, (such as CRYSTAL) %and cp2k(mention it?))
 deliver the opportunity to calculate 2D systems, repeating the slab periodically only in x/y, a/b, respectively.
 The corresponding results are presented in Section \ref{crystal_calc}.
 \\
-A disadvantage of this approach is that a perfect surface with absolutely no defect sites is simulated.
+A disadvantage of this approach is that a ``perfect'' surface with absolutely no defect sites is simulated.
 If one was to model a defect, it were repeated periodically and would lead to a defined defect site density in a regular pattern.
 There are embedding models available (\textit{e.
 g.} \cite{Sauer2004}) dealing with this issue: the defect is only treated in one unit cell and for the others, the regular unit cell is applied.
@@ -344,7 +346,7 @@ It is a uniquely defined primitive cell in reciprocal space that contains all cr
 The integers $h$, $k$, and $l$ from Equation (\ref{eq:rec_latt_vec}) are also called Miller indices that can be used to describe the crystallographic planes (position of the surface in the coordinate system).
 They are determined by finding the point of intersection of the surface plane with the axes of the coordinate system, reducing, then taking the reciprocal values and multiplying with the least common multiple to obtain three integers.
 \\
-Within the hexagonal (and rhombohedral) lattice system, also the Miller-Bravais notation with four indices [$h,k,i,l$] can also here be used.
+Within the hexagonal (and rhombohedral) lattice system, also the Miller-Bravais notation with four indices [$h,k,i,l$] can be used.
 Here, $i$ is redundant and can be defined by $h$ and $k$: $i=-(h+k)$.
 For example, the (110) surface would be referred to as (11-(1+1)0)=(11\=20).
 Note that the minus is expressed by the overbar.
@@ -770,7 +772,7 @@ For this a water molecule was put at different positions on the surface and let 
 By doing this one molecular minimum and several dissociated species including both CUS and oxygen types were found.
 This multitude of different surface atoms gives rise to a large variety of possible adsorption geometries for the next neighboring situation that even can be expanded when considering adsorbate structures with greater distance between the residues.
 Adsorption energies and Gibb's free energy of the resulting next neighbor species can be seen in Table \ref{tab:ads_1water}.
-The nomenclature for the adsorption sites that is used in the following gives at first the type of Al site where the OH-residue (/OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH-site$\parallel$H-site).
+The nomenclature for the adsorption sites that is used in the following gives at first the type of Al site where the OH-residue (/OH$^-$) is adsorbed and at second place the oxygen type where the H(/H$^+$) is adsorbed (OH site$\parallel$H site).
 The term "inter" characterizes a position between two CUS atoms which leads to a bidentate adsorption pattern.
 The additional notation with $^\prime$ denotes greater distances between the residues.
 There is also one metastable molecular species that appears to be more stable than the found molecular minimum considering adsorption energy, but it cannot be classified as a stable minimum since there is one imaginary mode displaying the movement of the proton towards the dissociated species.
