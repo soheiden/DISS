@@ -686,6 +686,15 @@ The atom centered basis calculations with the programs CRYSTAL\cite{crystal14} (
 The geometries from the VASP output were used as starting points and the usual convergence criteria of the programs were applied (with some exception when convergence was hard to achieve).
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
+Until now only a few experimental studies were done for the (11\=20)-surface: X-ray reflectivity measurements by J. Catalano\cite{catalano}, who found that the surface is oxygen terminated and has two differently coordinated kinds of surface Al atom dimers.
+LEED measurements by Becker \textit{et al.}\cite{Becker2002} showed a well defined $1\times 1$ diffraction pattern and found evidence that the surface is unreactive at room temperature with hydrogen.
+In the work of Waychunas and coworkers\cite{sung} VSF spectra (vibrationally resonant sum frequency) were measured under ambient conditions (room temperature and air).
+They found two different types of oxygen atoms on the surface, twofold and threefold coordinated ones.
+It is assumed, that the threefold coordinated will only be protonated under highly acidic conditions. They also have evidence for molecularly adsorbed water on the surface.
+However, both experimental studies\cite{catalano,sung} assume a high coverage situation, whereas this theoretical study is focused on the low-coverage regime.
+\\
+With theoretical methods, only the clean surface was studied by two different groups: Oshiyama \textit{et al.}\cite{kuri10} and Marmier\cite{marmier}.
+
 \section{Surface Model}
 The structure of $\upalpha$-alumina has been well known for decades and was studied extensively (\textit{e.g.} \cite{Passerini1930,wyckoff1931}).
 It crystallizes in the hexagonal cell with $\uline{a}=\uline{b}\neq \uline{c}$, with an angle of $60$\textdegree{} between the cell vectors $\uline{a}$ and $\uline{b}$.
@@ -1442,12 +1451,12 @@ From $2400$-$2450\,$cm$^{-1}$ in plane vibrations of non hydrogen bonded species
 Shown is a comparison between the different slab sizes for (a) the lattice region, (b) the low energy OD range with butterfly like vibrations and (c) the high energy OD range.
 The regions that are not shown do not contain peaks.} 
         \label{abb:fullyhydrox_spec}
- \end{figure}
- As before, the agreement between different sized slab models in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen bonded region around $1116\,$cm$^{-1}$ is convincing (Figure \ref{abb:fullyhydrox_spec}(b)) and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface and the low coverage systems.
+\end{figure}
+As before, the agreement between different sized slab models in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen bonded region around $1116\,$cm$^{-1}$ is convincing (Figure \ref{abb:fullyhydrox_spec}(b)) and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface and the low coverage systems.
 \\\\
- Apart from the most stable surface termination (called O-I in \cite{kuri10}), calculations of the second most stable surface termination (O-II), where the uppermost O layer is ``missing'', were done.
+Apart from the most stable surface termination (called O-I in \cite{kuri10}), calculations of the second most stable surface termination (O-II), where the uppermost O layer is ``missing'', were done.
 Frequencies were analyzed of the clean surface and the fully covered system, for both the 10 and 25 layer systems.
- \begin{figure}[!h]
+\begin{figure}[!h]
  \centering
  \subfigure[clean surface]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_O-I-II_comparison.eps}}
  \quad
@@ -1464,7 +1473,7 @@ For the clean surface, the spectra deviate by shifted peaks around $50\,$cm$^{-1
 In contrast, the differences for the fully covered surfaces are more pronounced due to the different structures including especially more molecularly adsorbed water for the O-II termination.
 \\
 Also for a larger slab with 25 layers, this comparison was done, see Figure \ref{abb:comp_O-I-O-II_25}
- \begin{figure}[!h]
+\begin{figure}[!h]
  \centering
  \subfigure[clean surface]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_O-I_O-II-25.eps}}
 %  \quad
@@ -1730,6 +1739,7 @@ d(O-Al) denotes the distance between the oxygen atom of the water and the Al CUS
 \section{AIMD for MBS Process}\label{sec_0001AIMD}
 Molecular beam experiments have recently shown that water is able to adsorb both molecularly and dissociatively on an $\alpha$-Al$_{\text{2}}$O$_{\text{3}}$(0001) surface\cite{Wirth2014}.
 The results show an enhanced dissociation probability compared to ``pinhole dosing'', which may be referred to as adsorption under thermal equilibrium conditions.
+For further details on both experimental methods, see Appendix \ref{mbs_vs_pd}.
 However, precise mechanistics of the ongoing reactions  and their relative probabilities are not known.
 In this work \textit{ab initio} molecular dynamics calculations were conducted to unravel this process.
 These results were published in \cite{Heiden0001_2018}.
@@ -1937,8 +1947,8 @@ g.} for the initial orientation [0,90,90] only indirect dissociation is observed
 
  
 \subsection{Thermalized Surface}\label{therm_surf}
-\todo{recall that in contrast to nve, nvt is nondeterministic. This means a given set of parameters must be simulated multiple times in order to draw statistical conclusions} 
 After gaining an impression of the system with the microcanonical MD at the clean surface, as a next step the thermalized surface at $300\,$K is studied.
+One has to keep in mind, that in contrast to NVE, NVT (canonical) is nondeterministic.This means a given set of parameters has to be simulated multiple times in order to draw statistically relevant conlusions.
 The naked surface was preequilibrated at $300\,$K for $1\,$ps and the obtained geometry with respective velocities was used as an input to the following calculations.
 Here, only a kinetic energy of $0.7\,$eV was considered, since this energy is the closest to previous experiments by Campen and more importantly the energy dependence was shown to be insignificant in NVE trajectories, assuming this is still valid at $300\,$K.
 The water molecule was then shot onto the equilibrated surface.
@@ -2703,7 +2713,8 @@ The resulting SFG signal is a sum of both frequencies.
 \end{figure}
 For this, the polarization of the beam is important, it can be either s or p polarized.
 The selection rules result in the surface specifity: The SFG only occurs if the vibration is IR and Raman active and additionally only in systems with inversion symmetry.
-This makes this method predestinated for analysis of surfaces, because neither the bulk nor the gas phase are inversion symmetric, however the interface (=surface, at least three atomic layers) is, so that the only signals come from this region.
+This makes this method predestinated for analysis of surfaces, because neither the bulk nor the gas phase are inversion symmetric.
+However, the interface (=surface, at least the depth of three atomic layers) is, so that the only signals come from this region.
 It is usually abbreviated SFG (sum frequency generation) but also named VSF(G) (vibrational sum frequency (generation)).
  
 \subsection{Thermal Desorption Spectroscopy}
@@ -2711,27 +2722,29 @@ In thermal desorption spectroscopy (TDS, also temperature programmed desorption,
 Thus, adsorbates are removed from surface according their binding energies and detected as a function of temperature with any detection method required.
 The analysis sheds light on adsorption strength and probable reaction networks.
 
-\subsection{Molecular Beam Source vs. Pinhole Dosing}
-\todo{mention this in the main text?}
-When doing the experiment the method of preparation seems crucial for the results, because these result in different surface situations.
+\subsection{Molecular Beam Source vs. Pinhole Dosing}\label{mbs_vs_pd}
+When doing the experiment the method of preparation seems crucial for the results, because they produce different surface situations.
 Our collaborators use the so called Molecular Beam Source but also widely used is pinhole dosing.
-Here the idea behind these methods and the main differences shall be explained.
-\\
+Here the basics and the main differences shall be explained:
+
+
 Pinhole Dosing (PD): Water is brought with a high partial pressure onto the surface.
-Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water left that can influence the measurement.
 This leads to an equilibrium situation.
-\\
+Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water left that can influence the measurement.
+
+
 Molecular Beam Source (MBS): A medium, e.g. water is probed onto the surface at a very low pressure.
 Non-equilibrium situations are generated by the kinetic energy of the beam.
 \\
-The difference between pinhole doser and MBS is that the former cannot heat the gas source to higher temperature but MBS can heat it to more than $800\,$K and this high energy is able to increase the dissociation of the gas source for example water or CH$_4$.
+The difference between pinhole doser and MBS is that the former cannot heat the gas source to higher temperature but MBS can heat it to more than $800\,$K.
+This high energy is capable of increasing the dissociation of the gas source for example water or CH$_4$.
 MBS is used instead of pinhole doser to enhance the dissociated population on the sample surface.
 
 \subsection{Low-Energy Electron Diffraction}
-Spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV.
+Low-Energy Electron Diffraction, abbreviated with LEED is a spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV.
 Electrons are observed as a diffraction pattern on a flourescent screen.
-The structure can be derived from the geometry of this pattern and the lattice geometry can be seen.
-Problem is the high energy of the beam that can lead to damage in the sample.
+The structure can be derived from the geometry of this pattern and the lattice geometry can be determined.
+A problem is the high energy of the beam that can lead to damage in the sample.
 %\\\todo{Other methods as tunneling based methods do not work on isolating materials like alumina, so that it is simply not possible to measure STM. Others? Rasterkraft? ATM?}
 \def\thefigure{B.\arabic{figure}}
 \def\thetable{B.\arabic{table}}
@@ -2739,7 +2752,7 @@ Problem is the high energy of the beam that can lead to damage in the sample.
 \section{Symmetric Slab Frequency}\label{symmetric_slab}
 In addition to the different sized slabs, a symmetric model of the surface with 15 layers was built.
 On both the top and the bottom, D$_2$O adsorbed dissociatively in inter-CUSa$\parallel$O-$\mu_2$.
-A figure of the structure can be found in Figure \ref{abb:symm-slab}.
+An optimized structure can be found in Figure \ref{abb:symm-slab}.
  \begin{figure} [!h]
  \centering
  \includegraphics[width=0.3\textwidth]{figures/11-20/side_symmcell_iCa2.png}
@@ -2748,7 +2761,7 @@ The adsorbed species is the most stable inter-CUSa$\parallel$O-$\mu_2$.
 Color code as explained above.} 
         \label{abb:symm-slab}
  \end{figure}
- In this model all atoms were allowed to relax.
+In this model all atoms were allowed to relax.
 Henceforth, the normal mode analysis gives three imaginary frequencies (with very small energy, yet negative) that represent frustrated translation in a, b and c direction.
 The spectrum was calculated at the basis of dipole corrected normal modes and can be seen in Figure \ref{abb:symm-iCa2_spec}.
  \begin{figure}[!h]
@@ -2763,15 +2776,15 @@ The spectrum was calculated at the basis of dipole corrected normal modes and ca
      \end{figure}
 The high energy part (see Figure \ref{abb:symm-iCa2_spec}(b)) shows that each of the two peaks comes as a doublet due to the imperfect degeneracy of ``both sides'' of the slab, which has numerical reasons.
 These doublets lie at $2690$ and $2725\,$cm$^{-1}$, which is slightly lower than the asymmetric model (only one adsorbate on the top) results for all applied slab sizes.
-For example, for the 15 layer system the peaks come up at $2695$ and $2728\,$cm$^{-1}$.
+For example, for the 15 layer asymmetric system the peaks come up at $2695$ and $2728\,$cm$^{-1}$.
 In the lattice region, these shifts are stronger, but nevertheless small in general.
 The most intense peak is shifted from $801$ to $816$ (15 layer symmetric slab) but this shift is rather small.
-The overall agreement is very good so that it can be concluded that although the computational costs are increased the symmetrically adsorption ansatz does not give any new insights to the system.
+The overall agreement is very good so that it can be concluded that although the computational costs are increased the symmetric system does not give any new insights to the system.
 \\
 \def\thefigure{C.\arabic{figure}}
 \def\thetable{C.\arabic{table}}
 \section{Distance Test for Water Molecule}\label{sec:disttest}
-As explained in the main text, Subsection \ref{beammodel}, the distance of the water molecule and the surface was set to $4\,$\AA{}.
+As explained in the main text, Subsection \ref{beammodel}, the initial distance of the water molecule and the surface was set to $4\,$\AA{}.
 Further test calculations were done to prove that this distance is sufficient.
 In Figure \ref{abb:MBS-dist} it could be shown that there is only a difference in the impact time, caused by the longer distance to the surface but no difference in the outcomes of the trajectories, since all other parameters stay the same.
  \begin{figure}[!h]
@@ -2804,7 +2817,7 @@ The probabilities for the microcanonical (NVE) results for a clean surface with 
 \begin{table}[!h]
  \centering
   \caption{Results for the NVE, $T=0\,$K trajectories of a single D$_2$O molecule approaching the clean surface.
-Average was calculated over all 48 combinations of eight rotational orientations and six lateral impact points for each initial kinetic energy.}
+Average was calculated over all 48 combinations of eight rotational orientations and six lateral impact points for each initial kinetic energy. The two numbers in the $P_\textrm{diss}$(1-2) column refer to direct and indirect dissociation.}
 %
  \begin{tabular}{l|ccc}
 \toprule
@@ -2822,7 +2835,7 @@ Average was calculated over all 48 combinations of eight rotational orientations
 An improvement to the clean surface model is the so called precovered surface, with one D$_2$O per $2\times 2$ supercell.
 This preadsorbed water was either adsorbed molecularly or dissociatively (1-2 or 1-4).
 To this prepared surface a single D$_2$O molecule was brought with an initial kinetic energy of $0.7\,$eV with $T=0\,$K  (NVE ensemble).
-The impact site was either in the same $1\times 1$ subcell or in a neighboring part of the subcell.
+The impact site was either in the same $1\times 1$ subcell or in a neighboring subcell.
 The obtained probabilities in Table \ref{tab:enh_micro} were averaged over 89 trajectories.
 More details can be found in the table caption and footnotes.
 \\
@@ -2830,6 +2843,7 @@ More details can be found in the table caption and footnotes.
  \centering
   \caption{NVE reaction probabilities for D$_2$O approaching the preadsorbed surface with an initial kinetic energy of $0.7\,$eV.
 The term "same CUS" refers to a D$_2$O hitting the $1\times 1$ subcell where the water is preadsorbed and "neighbor CUS" refers to a situation, where the incoming molecule hits another subcell.
+Detail of the impact points can be found in Figure \ref{fig:impact}.
 The preadsorbed water was considered to be either adsorbed molecularly ("preads. mol"), 1-2 dissociated ("preads. 1-2") or 1-4 dissociated ("preads 1-4").}
  \begin{tabular}{l|c|cccccc}
 \toprule
@@ -2857,12 +2871,12 @@ The preadsorbed water was considered to be either adsorbed molecularly ("preads.
 In addition to the NVE trajectories at $T=0\,$K, analog NVT calculations were done for a thermalized and preadsorbed surface.
 The surface including the preadsorbed species was equilibrated for $1\,$ps at $T=300\,$K starting from the minimum structure of the adsorbed species.
 To this surface, water with a kinetic energy of $0.7\,$eV was shot in 140 trajectories.
-More details are given in the table footnotes.
+Probabilities are given in Table \ref{tab:enh_can} and more details in the footnotes therein.
 \begin{table}[hbt]
  \centering
   \caption{
   Probabilities for the NVT (canonical) case at $300\,$K.
-Three impact points were considered for the "same CUS": [0.33,0.33], [0.35,0.45] and [0.5,0.35]  and four for the ``neighbouring CUS'': [0.33,0.83], [0.35,0.95] and [0.5,0.85].
+Three impact points were considered for the "same CUS": [0.33,0.33], [0.35,0.45] and [0.5,0.35]  and three for the ``neighbouring CUS'': [0.33,0.83], [0.35,0.95] and [0.5,0.85].
 These are shown for clarification in Figure \ref{fig:impact}.
 If not mentioned otherwise, all eight rotational orientations were considered.}
  \begin{tabular}{l|c|ccccc}
@@ -2885,13 +2899,14 @@ If not mentioned otherwise, all eight rotational orientations were considered.}
 \begin{figure}[!h]
  \centering
  \includegraphics[width=0.4\textwidth]{figures/0001/points_same_other.png}
- \caption{Distinctive lateral impact points for the trajectories from Table \ref{tab:enh_can} at the ``same'' and the ``neighboring'' CUS.}
+ \caption{Distinctive lateral impact points for the trajectories from Table \ref{tab:enh_can} at the ``same'' (1, 2, 3) and the ``neighboring'' CUS (4, 5, 6).}
  \label{fig:impact}
  \end{figure}
 
 %
 \subsection{Refined Beam Models: Clustering and Preexcitation}
 Apart from a refined surface model, the beam model was enhanced, too.
+This was done by either clustering (D$_2$O$_4$) or by exciting the water molecule vibrationally and/or rotationally.
 In Table \ref{tab:4D2O-cluster} probabilities for a (D$_2$O)$_4$ cluster are shown.
 This cluster was shot at the surface with an initial kinetic energy of $0.9\,$eV towards a cold ($T=0\,$K), clean surface in an NVE (microcanonical) MD ansatz.
 In total, ten trajectories for four different impact points and three different orientations were done (for one impact point, only one orientation was considered).
@@ -2938,7 +2953,7 @@ Apart from that, no further dissociation and diffusion reactions were observed.
 \centering
 \subfigure[(D$_2$O)$_2$]{\includegraphics[width=0.33\textwidth]{figures/0001/2H2O.pdf}}
          \quad
-\subfigure[sketch of (D$_2$O)$_2$ cluster]{\includegraphics[angle=90,width=0.3\textwidth]{figures/0001/2H2Oexample.png}}
+\subfigure[example trajectory, last time step]{\includegraphics[angle=90,width=0.33\textwidth]{figures/0001/2H2Oexample.png}}
           \quad
           %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line
 \caption{(a) Structure of the optimized (D$_2$O)$_2$ cluster.
