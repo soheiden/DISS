@@ -33,6 +33,10 @@
 \usepackage{placeins}
 \usepackage{cite}
 % \usepackage[superscript,biblabel]{cite}
+% Hurenkinder und Schusterjungen verhindern
+\clubpenalty10000
+\widowpenalty10000
+\displaywidowpenalty=10000
 
 %\nobibliography*
 
@@ -178,9 +182,9 @@ Drittgutachter:&Prof. Dr. \todo{xy} \\
 The importance of surface science in our industrialized world is overwhelming.
 Most processes in chemical industry are carried out with the help of (heterogeneous) catalysts\cite{Ago2005,Cargnello2012,Knozinger1978} by speeding up reactions by lowering the reaction barrier.
 The advantage of heterogeneous over homogeneous catalysts is that these do not need to be separated from the reactands and the product after the process, which is often a costly step in the production of chemicals.
-It is therefore desirable to understand heterogeneous catalytic processes by learning more about the microscopic processes which take place on the surface of materials especially by computational methods because it can deliver basic understanding.
+It is therefore desirable to understand heterogeneous catalytic processes by learning more about the microscopic phenomena which take place on the surface of materials especially by computational methods because it can deliver basic understanding.
 Metal oxide materials are commonly used as catalysts as well as catalyst support materials, hence understanding their properties in contact with chemicals is crucial.
-In this work, we consider water, which could be reactand, solute or impurity in aforementioned processes due to its ubiquity.
+In this work, we consider water, which can act as a reactand, solvent or also impurity in aforementioned processes due to its ubiquity.
 \\
 
 Aluminum is contained in rocket fuels as a reduction agent, so as a result alumina (Al$_2$O$_3$) particles are ejected into the atmosphere during the launch of a spacecraft\cite{Elam1998}.
@@ -189,7 +193,7 @@ Measurements show that approximately one third of these particles can be deposit
 These particles are accumulated there and can react with water and other molecules\cite{Jones1995,Jackman1996}.
 \\
 
-Furthermore, in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the most abundant metal in the crust with  $8.1\%$ \todo{by mass or volume?}
+Furthermore, in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the most abundant metal in the crust with  $8.1\%$ %\textit{by mass or volume?}
 %with $6.3\%$ ({\color{red} \begin{verbatim} http://www.uniterra.de/rutherford/tab_hauf.htm\end{verbatim}}
 and the third most element therein\cite{dtv-Atlas,Riedel}.
 %Component of  feldspar, Glimmer and clay minerals (with silicates), more seldomly as corundum and "Schmirgel".
@@ -197,7 +201,7 @@ and the third most element therein\cite{dtv-Atlas,Riedel}.
 % Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth crust and with that the far most abundant metal)}
 \\
 It can additionally be seen as a model system for more complex alumosilicates.
-Oxide rocks are omnipresent in the crust of the earth and henceforth are present in most geochemical processes since the times the earth's atmosphere was oxidizing in the early stages of the planetary evolution\cite{Trail2011} which became even more extensive with the rise of photosynthetic life forms\cite{Frei2009,Buick2008,Olson2006} around 2.2 billion years ago\cite{Kirschvink2008}.
+Mineral oxides are omnipresent in the crust of the earth and henceforth are present in most geochemical processes since the times the earth's atmosphere was oxidizing in the early stages of the planetary evolution\cite{Trail2011} which became even more extensive with the rise of photosynthetic life forms\cite{Frei2009,Buick2008,Olson2006} around 2.2 billion years ago\cite{Kirschvink2008}.
 %became oxidizing with rise of photosynthetic life forms/(bacteria?) 2.3 billion years ago (seems to be not true: https://nai.nasa.gov/articles/2011/12/2/earths-early-atmosphere-an-update/ and \\ https://www.nature.com/articles/nature10655) \cite{Trail2011}.
 %Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew giving rise to oxidic metal compounds.)
 \\
@@ -223,23 +227,23 @@ Oxide rocks are omnipresent in the crust of the earth and henceforth are present
 %Tabellenverzeichnis?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theory und Methodology}
-In this chapter the basics of the applied theoretical methods shall be explained.
+In this chapter the basics of the theoretical methods applied in this work shall be explained.
 It is starting from the ideas of density functional theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
 Then we will proceed with frequency calculations and intensities over transition state theory to more developed methods like hybrid functionals and perturbation theory.
 Most parts of this chapter are based on \cite{jensen}.
 
 \section{Density Functional Theory}
 For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure.
-For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legit due to the largely different masses of electrons and the nucleus.
-With this, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic total wave function $\Psi_e(\vec{r})$ and total electronic energy $E_e$ is
+For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legit due to the largely different masses of electrons and nuclei.
+With this approximation, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic total wave function $\Psi_e(\vec{r})$ and total electronic energy $E_e$ is
 \begin{equation}\label{eq:tise}
  \hat{H}_e\Psi_e(\vec{r})=E_e\Psi_e(\vec{r}).
 \end{equation}
 The wave function $\Psi_e(\vec{r})$ is a function of the coordinate vector $\vec{r}$ and is 3$N_e$ dimensional, with the number of electrons $N_e$.
-For larger systems, the solution of Equation (\ref{eq:tise}) gets computationally demanding.
+For large systems (more than electrons), the solution of Equation (\ref{eq:tise}) gets computationally demanding.
 \\\\
-An alternative to the wave function based theory is density functional theory (DFT).
-It is based on the Hohenberg Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r})$: There exists a one to one correspondence.
+An alternative to the wave function-based theory is density functional theory (DFT).
+It is based on the Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r})$: there exists a one to one correspondence.
 If $\Psi(\vec{r}^N)$ is a N-electron wavefunction, then the  electron density can be expressed as
 \begin{equation}\label{eq:electron-density}
  n(\vec{r})=N_\textrm{norm}\int ...
@@ -247,7 +251,7 @@ If $\Psi(\vec{r}^N)$ is a N-electron wavefunction, then the  electron density ca
 \end{equation}
 %integral starts with $d\vec{r}_2$? yes, one electron is fixed and the probabilities of the other electrons are evaluated}
 with the normalization factor $N_\textrm{norm}$.
-The second Hohenberg Kohn theorem, also called the variational principle of DFT, proves that a test density $n^\prime(\vec{r})$ will give a higher or the same energy as the exact density:
+The second Hohenberg-Kohn theorem, also called ``the variational principle of DFT'', proves that a test density $n^\prime(\vec{r})$ will give a higher or the same energy as the exact density:
 \begin{equation}
  E_0^{exact}\leq E_0^{HK}[n^\prime(\vec{r})].
 \end{equation}
@@ -257,30 +261,45 @@ The total energy $E[n]$ can be determined as
 \begin{equation}
  E[n]=T[n] + V_{ext}[n] + V_{ee}[n]=\int n(\vec{r})v_{ext}(\vec{r})d\vec{r} + T[n]+E_H[n]+E_{xc}[n]
 \end{equation}
-with the kinetic energy $T[n]$, the potential energy $V[n]$ for the external potential $ext$ and electron electron interaction $ee$, the external potential $v_{ext}(\vec{r})$, the Hartree energy $E_H[n]$, corresponding to the classical Coulomb interaction and the exchange correlation energy $E_{xc}[n]$ for the non-classical exchange correlation interactions.
-A major advantage of DFT over wave function based methods is the size: only a three dimensional system has to be considered for three spatial coordinates $n(x,y,z)$, instead of a $3N_e$-dimensional system, %weglassen? (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional)}
+with the kinetic energy $T[n]$, the potential energy $V[n]$ for the external potential $V_{ext}$ and electron electron interaction $V_{ee}$.
+It can also by expressed by the external potential $v_{ext}(\vec{r})$, the Hartree energy $E_H[n]$, corresponding to the classical Coulomb interaction and the exchange correlation energy $E_{xc}[n]$ for the non-classical exchange correlation interactions.
+A major advantage of DFT over wave function-based methods is the size: only a three dimensional system has to be considered for three spatial coordinates $n(x,y,z)$, instead of a $3N_e$-dimensional system, %weglassen? (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional)}
 with $N_e$ being the number of electrons.
 The size of a system calculated with wave function methods increases exponentially with the number of electrons, while for density calculations we always have three spatial coordinates, independent from the number of electrons.
-Problematic in this approach is that the explicit form of the interacting kinetic energy $T[n]$ and the exchange correlation functional\footnote{to clarify the difference between a function and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas a functional (F[f]) gives a number from a function which depends on variables.} $E_{xc}[n]$ are unknown.
+Problematic in this approach is that the exact form of the interacting kinetic energy $T[n]$ and the exchange correlation functional\footnote{to clarify the difference between a function and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas a functional (F[f]) gives a number from a function which depends on variables.} $E_{xc}[n]$ is unknown.
 \\
-Calculating all energy components from the pure density was not very successful so that instead wave function based methods were applied.
-Kohn and Sham showed in their work\cite{Kohn-Sham1965} in 1965 that the kinetic energy can be calculated from non-interacting auxiliary particles in a set of orbitals that is used for representing the electron density.
-A test system with non-interacting electrons reflects the real system's electron density is defined and calculated.
+Initially, calculating all energy components from the pure density was not very successful so that instead wave function-based methods were applied.
+In 1965 Kohn and Sham showed in their work\cite{Kohn-Sham1965} that the kinetic energy can be calculated from non-interacting auxiliary particles in a set of orbitals that is used for representing the electron density.
+A test system with non-interacting electrons reflecting the real system's electron density is defined and calculated.
 The use of orbitals makes it possible to use the same methods and algorithms previously known from wave function methods.
 With this, the exchange-correlation functional remains the only unknown functional, but it is only a small fraction of the total energy.
-Simple approximations to this functional still give reasonable results, such as the local density approximation (LDA).
-Here mostly the homogeneous electron gas is used as a model, distributing the electron density homogeneosly.
-The assumption is that for most systems the local density does not change strongly, so the total density can be approximated as being homogeneous.
-Furthermore, notable improvements can be made by considering the density and its first derivative (generalized gradient approximation, GGA):
+% Simple approximations to this functional still give reasonable results, such as the local density approximation (LDA).
+% Here mostly the homogeneous electron gas is used as a model, distributing the electron density homogeneosly.
+% The assumption is that for most systems the local density does not change strongly, so the total density can be approximated as being homogeneous.
+% Furthermore, notable improvements can be made by considering the density and its first derivative (generalized gradient approximation, GGA):
+% \begin{equation}
+%  E_{xc}=E_{xc}[n(\vec{r}),\nabla n(\vec{r})]
+% \end{equation}
+% \textit{write a little about this? pros and cons of GGA\cite{Cohen2008}?} and even better by adding second derivatives and mixing in (exact) Hartree-Fock exchange (hybrid functionals, like B3LYP and HSE06).
+Several levels of theory with increasing accuracy were developed to approximate this.
+Local density approximation (LDA) is the simplest of those approaches using the density of the homogeneous electron gas.
+Although this is a very basic approximation it delivers still reasonable results.
+Better results can be achieved when the density and the first derivative (gradients) are considered: the generalized gradient approximation (GGA).
 \begin{equation}
- E_{xc}=E_{xc}[n(\vec{r}),\nabla n(\vec{r})]
+  E_{xc}=E_{xc}[n(\vec{r}),\nabla n(\vec{r})]
 \end{equation}
-\todo{write a little about this? pros and cons of GGA\cite{Cohen2008}?} and even better by adding second derivatives and mixing in (exact) Hartree-Fock exchange (hybrid functionals, like B3LYP and HSE06).
+Even more accurate results can be gained by mixing into the functional some amount of exact Hartree Fock exchange, these are called hybrid functionals.
+At least for molecular systems these are the most widely applied functionals, for example B3LYP and HSE06.
 \\
-A major issue of DFT is that it can not be systematically improved like wave function based methods.
-Another weakness is the disability of reproducing important features like van der Waals interactions.
+A major issue of DFT is that it can not be systematically improved like wave function-based methods.
+It is a single determinant method and it is not fully variational althoug the ``variational principle of DFT'' does exist.
+Also there is no direct calculation of observables possible: the expectation values can not be calcualted via the density.
+\\
+Another weakness is the disability of reproducing intermolecular interactions like van der Waals interactions.
 To overcome the latter problem it is nowadays possible to add dispersion corrections to account for van der Waals interactions.
 These are important, especially for the adsorbate-surface interaction and the adsorbate-adsorbate interaction.
+In the work of Grimme\cite{grimme06} and coworkers corrections were developed and implemented to overcome this issue; these range from D over D2 to D3 corrections.
+In this work, D2 and D3 corrections were used.
 The D2 correction describes pair interactions between atoms $A$ and $B$ in the form
 \begin{equation}\label{eq:d2}
  E_{disp}^{(2)} =\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e} s_6 \frac{C_6^{AB}}{R_{AB}^6}f_{damp}(R_{AB}),
@@ -294,22 +313,22 @@ For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the
 Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\phi_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$.
 
 \section{Periodic Boundary Conditions}
-Surface systems can either be simulated by calculating clusters that were cut from the surface and represent an "important part" of the system or can be treated as the whole system with a periodic approach.
+Solid-state systems such as surfaces can either be simulated by calculating cluster models that were ``cut'' from the surface and represent an "important part" of the system or can be treated as the whole system with a periodic approach.
 These periodic systems can be described by a single unit cell and respective cell vectors, which are used to generate the infinite system by repeating the cell in each direction.
-This can be either done in 1D (polymers), 2D (surface systems) or 3D (bulk crystals).
+This can be either done in 1D (polymers), 2D (surface) or 3D (bulk crystals).
 Surfaces can also be described within the 3D model as a slab by three dimensional repetition of the unit cell.
 The third dimension is treated by defining a vacuum gap between two slabs (unit or supercell model of a surface) in one direction perpendicular to the surface (\textit{e.g.} here z, c).
 This gap has to be large enough to prevent unit cells from influencing each other in this direction and therefore lead to unphysical behaviour between the surface atoms and the lowest atoms of the neighboring slab above.
-Since it is not (yet) possible in VASP to mimic a 2D system, in the main part of this work this vacuum gap 3D model was applied.
-Some programs, however, (such as CRYSTAL) %and cp2k(mention it?))
+In standard bulk and surface system software like VASP\cite{kresse1993,kresse2,kresse3,kresse4,kresse99} it is not (yet) possible to mimic a 2D system, so that in the main part of this work this vacuum gap 3D model was applied.
+Some programs, however, (such as CRYSTAL\cite{crystal14}) %and cp2k(mention it?))
 deliver the opportunity to calculate 2D systems, repeating the slab periodically only in x/y, a/b, respectively.
 The corresponding results are presented in Section \ref{crystal_calc}.
 \\
-A disadvantage of this approach towards a realistic system is that a ``perfect'' surface with absolutely no defect sites is simulated.
-If one was to model a defect, it were repeated periodically and would lead to a defined defect site density in a regular pattern.
+A disadvantage of the periodic approach towards a realistic system is that a ``perfect'' surface with absolutely no defect sites is simulated.
+If one wants to model a defect, it is repeated periodically and would lead to a defined defect site density in a regular pattern.
 There are embedding models available (\textit{e.
 g.} \cite{Sauer2004}) dealing with this issue: the defect is only treated in one unit cell and for the others, the regular unit cell is applied.
-However, before handling defects one has to understand the clean defect free surface properly.
+However, before handling defects one has to understand the clean ``defect-free`` surface properly.
 \\
 The 3D unit cell can be described by the three basis vectors of the lattice, $\vec{a}_1$, $\vec{a}_2$ and $\vec{a}_3$ and can be translated along these vectors to gain the infinite system.
 They span the space with defined length and angles.
@@ -320,7 +339,7 @@ The lattice can be described by the lattice vector $\vec{B}$ with the lattice ve
 \begin{equation}\label{eq:direct-lattice}
  \vec{B}=n_1\vec{a}_1+n_2\vec{a}_2+n_3\vec{a}_3
 \end{equation}
-Similarly, a reciproce space exists (the so called $\vec{k}$-space) that can be described by the Fourier transform of the direct lattice and is defined analogously to Equation (\ref{eq:direct-lattice}) by the reciprocal lattice vector $\vec{G}$ and a set of vectors $\vec{b}_i$ and $h$, $k$, $l$ being integers:
+Similarly, a reciprocal space exists (the so called $\vec{k}$-space) that can be described by the Fourier transform of the direct lattice and is defined analogously to Equation (\ref{eq:direct-lattice}) by the reciprocal lattice vector $\vec{G}$ and a set of vectors $\vec{b}_i$ and $h$, $k$, $l$ being integers:
 \begin{equation}\label{eq:rec_latt_vec}
  \vec{G}=h\vec{b}_1+k\vec{b}_2+l\vec{b}_3
 \end{equation}
@@ -357,11 +376,12 @@ In general this vector is not perpendicular to the plane (uvw), only for cubic l
 \\
 
 To describe a periodic system with quantum mechanical methods, one has to introduce periodic boundary conditions.
-This includes that the periodicity of the nuclei is reflected by the periodicity of the effective potential $v_{eff}$, which has to be the same in all cells that are given by $\vec{B}$:
-\begin{equation}
- v_{eff}(\vec{r})= v_{eff}(\vec{r}+\vec{B}).
-\end{equation}
-According to the Bloch theorem the wave function $\phi(\vec{r})$ value at equivalent positions in different cells are related to each other with a phase factor containing the reciprocal space vector $\vec{k}$ and the lattice vector $\vec{B}$:
+This includes that the periodicity of the nuclei is reflected by the periodicity of the wave function.
+% , which has to be the same in all cells whose symmetry is given by $\vec{B}$:
+% \begin{equation}
+%  v_{eff}(\vec{r})= v_{eff}(\vec{r}+\vec{B}).
+% \end{equation}
+According to the Bloch theorem\cite{Bloch1928} the wave function $\phi(\vec{r})$ values at equivalent positions in different cells are related to each other with a phase factor containing the reciprocal space vector $\vec{k}$ and the lattice vector $\vec{B}$:
 \begin{equation}
  \phi(\vec{r} + \vec{B})=e^{i\vec{k}\cdot\vec{B}}\phi(\vec{r})
 \end{equation}
@@ -370,6 +390,8 @@ In this equation the crystalline orbital $\phi$ for the $n^\textrm{th}$ band can
  \phi_{n,k}(\vec{r})=e^{i\vec{k}\cdot\vec{r}}\varphi_n(\vec{r}).
 \end{equation}
 Bloch orbitals can be expanded as a set of plane wave functions ($\chi^\textrm{PW}$).
+In principle the number of plane waves required in a calculation could be infinite.
+But they are weighted due to their kinetic energy, so that one can give an energy cutoff E$_\textrm{cutoff}$ and only plane waves below this cutoff are conisdered.
 Solutions are now dependent on the reciprocal space vector $\vec{k}$ leading to a Roothaan-Hall expression:
 \begin{equation}
  \vec{F}^k\vec{C}^k=\vec{S}^k\vec{C}^k\vec{$\varepsilon$}^k
@@ -389,13 +411,13 @@ In comparison plane waves (PW) and atom centered orbitals (ACO) have different a
 For solid state systems both the energy and the gradient converge faster with plane waves.
 Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynmann forces have to be evaluated.
 The quality of the basis is simply dependent on the cutoff energy E$_\textrm{cutoff}$, the higher this energy is, the better is the basis.
-On the negative side, when norm-conserving pseudopotentials are applied more memory is needed.
 Treating all electrons is computationally expensive, so usually pseudopotentials are used, where core electrons are not treated explicitly but their presence is considered indirectly.
-To treat this, the PAW\cite{paw1,Kresse1999} (projector augmented-wave method) is applied which delivers explicit treatment of the core electrons so that the accuracy is greatly increased.
+On the negative side, when norm-conserving pseudopotentials are applied more memory is needed.
+To treat this, the PAW (projector augmented-wave method)\cite{paw1,Kresse1999} is applied which delivers explicit treatment of the core electrons so that the accuracy is greatly increased.
 The system is intrinsically defined in 3D, no matter if the system is a 1D (polymer), 2D (surface) or 3D system (bulk).
 It is computationally demanding to calculate exact (Fock) exchange, which makes the use of hybrid functionals so costly, although the precision of the results is considerably enhanced.
 \\\\
-Whenever there are atom centered basis sets the orbitals of different atoms can overlap, causing electrons to be considered multiple times, which stabilizes the system artificially.
+Whenever there are atom-centered basis sets the orbitals of different atoms can overlap, causing electrons to be considered multiple times, which stabilizes the system artificially.
 This subject is called basis set superposition error (BSSE) and only appears if atom centered bases are utilized.
 One can apply counterpoise corrections (CP)\cite{Boys1970} to avoid of this source of error.
 This is done here by performing ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms.
@@ -410,7 +432,8 @@ Apart from solving stationary problems, \textit{ab initio} molecular dynamics (A
 This is necessary for simulating transport/diffusion processes as well as spectral properties.
 For this, the classical Newtonian equation of motion is solved:
 \begin{equation}
- -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
+ -\nabla_A V(\vec{R})=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
+%  -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 \end{equation}
 where $V$ is the potential energy that is a function of all nuclear coordinates $\vec{R}$, $\vec{R}_A$ is the vector containing all coordinates of atom $A$, $M_A$ is the atomic mass  and the time $t$.
 This equation gives in principle $F=M_A\cdot a$, the force $F$ acting on each atom in a classical ansatz with the velocity $a$.
@@ -422,7 +445,7 @@ This has the advantage that no further parameterization is necessary when changi
 \\
 As starting conditions, positions and momenta of the atoms have to be given.
 Between two time steps of the propagation there is a time span $\Delta t$.
-The time propagation is done numerically with the Verlet alogrithm\cite{verlet}, delivering the trajectory $\vec{R}(t)$:
+The time propagation can be done numerically with the Verlet algorithm\cite{verlet}, delivering the trajectory $\vec{R}(t)$:
 \begin{equation}\label{eq:t+dt}
  \vec{R}_A(t+\Delta t) = \vec{R}_A(t) + \vec{v}_A(t)\cdot \Delta t + \frac{1}{2}\vec{a}_A(t)\cdot \Delta t^2 + ...
  \end{equation}
@@ -443,10 +466,10 @@ This allows for the time propagation that gives the so called trajectory.
 The time step $\Delta t$ is an important parameter: It has to be small enough to describe the fastest processes of interest, but not too small to achieve reasonable propagation times with respect to the computation time.
 It is typically around $10^{-15}$s, for example a molecular vibration of $3000\,$cm$^{-1}$ corresponds to $\approx 10^{14}$s$^{-1}$.
 On the other hand, a sufficiently long time of the trajectory has to be propagated to measure all chemically relevant processes, usually $10^{-9}$s.
-The smaller the time step the more accurate the simulation gets the higher the accuracy of the simulation, but with decreased time steps, one has to propagate longer to gain the same simulation time, more steps need to be simulated, which increases the computational time drastically.
+The smaller the time step the more accurate the simulation gets, but with shorter time steps, one has to propagate longer to gain the same simulation time: more steps need to be simulated, which increases the computational time drastically.
 Additionally, it may be necessary to compute several trajectories instead of just a single one for reasonable averaging.
 \\
-The simulations are characterized by the following parameters: the total energy E, the temperature T, volume V, pressure p, the number of particles N and the chemical potential $\mu$.
+The simulations are characterized by the following thermodynamic parameters: total energy E, temperature T, volume V, pressure p, number of particles N and the chemical potential $\mu$.
 Not all of these are independent, as for example either V or p can be constant.
 The corresponding ensemble is named after the fixed quantities, \textit{e.
 g.} NVT (=canonical) and NVE (=microcanonical).
@@ -465,11 +488,11 @@ Here, he ensemble is not deterministic.
 Multiple simulations have to be performed in order to gain reliable statistics.
 
 \section{Frequencies and Intensities}
-Vibrational spectroscopy is an important tool to understand the surface situation.
+In surface science vibrational spectroscopy is an important tool to characterize molecular adsorbates.
 For this, frequencies and their intensities must be calculated at stationary points.
-A characteristic of these points on the potential energy surface (PES) is that the derivation with respect to all coordinates equals zero.
+A characteristic of these points on the potential energy surface (PES) is that the derivative with respect to all coordinates equals zero.
 For these points (minima and saddle points of first order) the eigenvalues and -vectors of the Hessian matrix $\doubleunderline{H}$ are of interest.
-The elements of this Hessian are the derivation of the potential $V$ with respect to coordinates $i$ and $j$:
+The elements of this Hessian are the derivative of the potential $V$ with respect to coordinates $i$ and $j$:
 \begin{equation}
  H_{ij}=\left( \frac{\partial^2 V}{\partial Q_i \partial Q_j} \right)_{|Q_i=Q_j=0}=\left(\frac{1}{\sqrt{m_i m_j}} \frac{\partial^2 V}{\partial R_i \partial R_j} \right)
 \end{equation}
@@ -501,7 +524,7 @@ With some symmetry and group theory considerations, one can decide for each vibr
 %Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
 The respective intensities are determined by $I\propto <i|\hat{\mu}|f>^2$.
 For this approach, only the dipole components perpendicular to the surface are taken into account.
-Only these can be measured in respective SFG spectra.
+Only these can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy, see also Appendix \ref{exp_techniques}).
 These are not completely comparable to IR spectra.
 Selection rules for SFG include IR and Raman activity as well as a system without inversion symmetry, which is usually the case for interfaces and surfaces.
   
@@ -528,11 +551,11 @@ This is done by analyzing the velocity of the atoms along the trajectories, givi
 %  P(\omega)=m\int <\dot{r}(\tau)\dot{r}(t+\tau)>_\tau e^{-i\omega t}dt
 % \end{equation}
 % with $<\dot{r}(\tau)\dot{r}(t+\tau)>$ being the autocorrelation of the velocities, derivatives of the position $r$ with repect to the time $t$, and the $\int \star e^{-i\omega t}dt$ for the Fourier transform, which is scaled by the reduced mass $m$.
-This leads to the conclusion that the intensity in a power spectrum $P$ is inversely proportional to the reduced mass (why inversely?).
+% This leads to the conclusion that the intensity in a power spectrum $P$ is inversely proportional to the reduced mass (why inversely?).
 VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N$ atoms, Fourier transform of the velocity-velocity autocorrelation function $<v_i(t)\cdot v_i(0)>$.
 $v_i$ are the velocities at different times $0$ and a later time $t$.
-The integration range is from $0$ to $\infty$ (in practice this is just a huge number, which is legit) due to symmetry considerations.
-The resulting spectra implicitly include anharmonic and quantum effects: No harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account.
+The integration range is per definition from $-\infty$ to $\infty$ but because of symmetry reasons it can be displayed by the range from $0$ to $\infty$. (However, in practice this is just a huge number).
+The resulting spectra implicitly include anharmonic effects: no harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account.
 Also, further anharmonic effects like mode coupling, overlapping of neighboring peaks and line broadening are included\cite{hornicek2007,hudecova2012}.
 The power spectrum contains peaks for each normal mode vector apart from selection rules for vibrational spectroscopy.
 The obtained intensities correspond to the oscillator amplitudes.
@@ -716,7 +739,7 @@ In Figure \ref{abb:crystal_11-20}(a) the (11\=20) surface and the (0001) surface
              \caption{The crystal cut of $\upalpha$-Al$_2$O$_3$, (a) schematic view compared to the (0001) surface, (b) a top view of the geometry optimized $2\times 2$ supercell with the nomenclature of the surface atoms.
 The two types of surface Al atoms (grey CUSa and black CUSb) as well as the twofold and threefold coordinated oxygen atoms (orange O-$\mu_2$ and red O-$\mu_3$).
 Subsurface atoms are indicated by pale colors.
-(c) gives the side view of the unit cell showing the distinctive atomic layers, again with the same color code as in (b).}
+(c) gives the side view of the unit cell showing the distinct atomic layers, again with the same color code as in (b).}
             \label{abb:crystal_11-20}
 \end{figure}
 Figure \ref{abb:crystal_11-20}(b) shows the top view and the cell vectors $\uline{a}$ and $\uline{b}$ of (11\=20).
@@ -920,7 +943,7 @@ Structures can be found in Figures \ref{abb:2water} and \ref{abb:4+fully}.
  \quad\quad
  \subfigure[1ML]{\includegraphics[width=0.4\textwidth]{figures/11-20/O-I-fully.png}}
  \caption{Optimized structures of the (a) 4inter-CUSa$\parallel$O-$\mu_2$ and (b) fully covered (1ML) system.
-The latter one shows one molecular species and several hydrogen bonded OH groups.}
+The latter one shows one molecular species and several hydrogen-bonded OH groups.}
         \label{abb:4+fully}
  \end{figure}
 
@@ -1168,7 +1191,7 @@ Vibrational spectroscopy is of interest because it is a great source of knowledg
 The frequencies of vibrations give hints about the chemical environment as hydrogen bonds and other atoms nearby that bind to each other.
 These vibrational frequencies were calculated for the surface system adsorbed with OD.
 Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are clearer with their applied Laser system, so that all results presented in this particular section are given for D$_2$O.
-The experimental Sum Frequency Generation (SFG) spectra for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
+The experimental Sum Frequency Generation (SFG, a surface specific vibrational spectroscopy) spectra for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
@@ -1193,7 +1216,7 @@ Details for this are given in Appendix \ref{symmetric_slab}.
 To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and power spectra from AIMD via velocity-velocity autocorrelation function (section \ref{vvacf}).
 However, the latter results are not fully converged yet and have to be propagated tens to hundred ps instead of $1$-$2\,$ps, so only preliminary results will be shown to illustrate the power of this method.
 \\
-The focus lies mainly on the position of the peaks rather than the intensities, because in the first place it is of greater importance what kind of vibrations gives which peak than the intensity of the peak itself.
+The focus is mainly on the position of the peaks rather than the intensities, because in the first place it is of greater importance what kind of vibrations gives which peak than the intensity of the peak itself.
 Also, it is still challenging to determine the frequencies in good comparison with experimental findings before heading to intensities.
 \\
 In the power spectra from MD calculations the intensities are implicitly received and for the normal mode analyses this work follows two distinct approaches: dipole corrections and Born effective charges.
@@ -1206,7 +1229,7 @@ Subsection \ref{bec} gives the spectra including intensities determined via Born
 \subsubsection{OD Vibrations}
 The normal modes are calculated within the harmonic approximation and depend on the mass and the spring constant of the bond.
 This ansatz is quite good for high frequency modes like OD stretch vibrations.
-We assume that the OD stretching modes for the three most stable structures would contribute to the spectrum the most, since the more unstable adsorbed species are improbable to appear.
+We assume that the OD stretching modes for the three most stable structures would contribute to the spectrum the most, since the less stable adsorbed species are improbable to appear.
 These wavenumbers are presented in Table \ref{tab:freq_layers} for different slab sizes, as given in Figure \ref{abb:cell_sizes}.
 Also the angle of the OD bond with respect to the surface is given, since vibrations which are in plane cannot be measured with SFG spectroscopy and hence the intensity is a function of this angle.
 \begin{table*}[th]
@@ -1265,7 +1288,7 @@ Similar to existing literature\cite{Wirth2014}, comparing these results in absol
 \begin{table*}[!h]
 \begin{center}
 \caption{Wave number differences $\Delta \tilde{\nu}$ are given in [cm$^{-1}$].
-$\Delta \tilde{\nu}_1$ depicts the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$.}
+$\Delta \tilde{\nu}_1$ depicts the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$.\todo{reference to here for crystal frequencies?}}
 \begin{tabular}{ccc}
 \toprule
 layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$\\\midrule
@@ -1281,7 +1304,7 @@ exp.&50 &77 \\\bottomrule
 It becomes clear that for OD stretching bonds there is no trend visible: The 10 layer system already gives reasonable results and none of the employed larger slab models are an improvement.
 \\
 \\
-Two problems of this approach are that we neglect anharmonicities, which are especially important for hydrogen bonded vibrations, and neighbor effects.
+Two problems of this approach are that we neglect anharmonicities, which are especially important for hydrogen-bonded vibrations, and neighbor effects.
 The latter can be solved by computing higher coverage systems.
 \\
 
@@ -1305,11 +1328,11 @@ The results for the clean surface are shown in Figure \ref{abb:clean_comp_layer}
 For different sized slabs, the results differ largely.
 Especially the ten layer system is shifted strongly to lower energy compared to the other slab sizes.
 From Table \ref{tab:comp_norm-modes_clean} it can be concluded that the most intense peak is shifted to higher wavenumbers with increasing slab size.
-Although the vibrations are converged for the 10 layer system, the lattice vibrations are not sufficiently described by the system that leads to these wavenumber shifts.
+Although the OD vibrations are converged for the 10 layer system, the lattice vibrations are not sufficiently described by the system that leads to these wavenumber shifts.
 \begin{figure}
  \centering
  \includegraphics[width=0.4\textwidth]{figures/11-20/comp_freq_surf.eps}
- \caption{Comparison of the spectra for different slab sizes from 10 to 25 layers for the clean surface obtained with normal mode analyses and intensities from dipole corrections.}
+ \caption{Comparison of the spectra for different slab sizes from 10 to 30 layers for the clean surface obtained with normal mode analyses and intensities from dipole corrections.}
  \label{abb:clean_comp_layer}
 \end{figure}
 \begin{table}[!h]
@@ -1360,14 +1383,14 @@ As already mentioned, the OD frequencies seem to be converged for the 10 layer s
              \caption{Comparison of inter-CUSb||O-$\mu_2$ frequencies for different slab sizes in z direction, obtained by normal mode analyses with intensities from dipole corrections.}
             \label{abb:iCb2_size_comp}
 \end{figure}
-% In the full spectrum, one can see three different regimes: the lattice region $<900\,$cm$^{-1}$, the OD region around $1700\,$cm$^{-1}$ for hydrogen bonded stretch and above $2600\,$cm$^{-1}$ for free vibrations.
-The exact wavenumbers differ slightly for the OD regions but in general are in good agreement, except for the hydrogen bonded peak in the CUSb$\parallel$O-$\mu_2$, confer Figure \ref{tab:freq_layers}.
+% In the full spectrum, one can see three different regimes: the lattice region $<900\,$cm$^{-1}$, the OD region around $1700\,$cm$^{-1}$ for hydrogen-bonded stretch and above $2600\,$cm$^{-1}$ for free vibrations.
+The exact wavenumbers differ slightly for the OD regions but in general are in good agreement, except for the hydrogen-bonded peak in the CUSb$\parallel$O-$\mu_2$, confer Figure \ref{tab:freq_layers}.
 However, the lattice region below $1000\,$cm$^{-1}$ is systematically affected, as in the clean surface system.
 \todo{which one fits the experimental results best? wait for experimental results}
 \\
 The influence of higher coverage was examined for systems already presented in section \ref{structure_search11-20}.
 The coverage differs from 2D$_2$O molecules per supercell to four and twelve water molecules, which equals 1ML.
-Here the frequencies of the OD stretching modes are affected due to the neighbor adsorbates, for some structures more and for others less (e.g. the system with 2inter-CUSa$\parallel$O-$\mu_2$).
+Here the frequencies of the OD stretching modes are affected due to the neighbor adsorbates, for some structures more and for others less (e.g. the system with two inter-CUSa$\parallel$O-$\mu_2$).
 The higher coverage systems (for structures see Figures \ref{abb:2water}-\ref{abb:4+fully}) were examined.
 The total spectrum and the OD range of the 2D$_2$O systems are shown in Figure %\ref{abb:2waterspec}
 \ref{abb:2water_comp}, including a comparison between the systems with two D$_2$O molecules and the corresponding systems with only one adsorbate.
@@ -1437,8 +1460,8 @@ Hydrogen bonding and interaction between groups shift many of the peaks.
 Below $900\,$cm$^{-1}$ delocalized OD and lattice vibrations can be found (panel (a)).
 In the region between $872$ and $1117\,$cm$^{-1}$ (shown in (b) of Figure \ref{abb:fullyhydrox_spec}) there are bending like vibrations of mostly O-$\mu_2$D groups.
 From $\approx2000$ to $2740\,$cm$^{-1}$ various OD stretch vibrations occur.
-These are split into three distinct regions: From $\approx 2000$-$2220\,$cm$^{-1}$ in plane vibrations of strongly hydrogen bonded species can be found.
-From $2400$-$2450\,$cm$^{-1}$ in plane vibrations of non hydrogen bonded species occur and above $2550\,$cm$^{-1}$ out of plane OD stretching bonds appear.
+These are split into three distinct regions: From $\approx 2000$-$2220\,$cm$^{-1}$ in plane vibrations of strongly hydrogen-bonded species can be found.
+From $2400$-$2450\,$cm$^{-1}$ in plane vibrations of non hydrogen-bonded species occur and above $2550\,$cm$^{-1}$ out of plane OD stretching bonds appear.
  \begin{figure} [!h]
  \centering
  \subfigure[1ML, lattice range]{\includegraphics[width=0.3\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_lattice.eps}}
@@ -1453,7 +1476,7 @@ Shown is a comparison between the different slab sizes for (a) the lattice regio
 The omitted regions do not contain peaks.} 
         \label{abb:fullyhydrox_spec}
 \end{figure}
-As before, the agreement between different sized slab models in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen bonded region around $1116\,$cm$^{-1}$ is convincing (Figure \ref{abb:fullyhydrox_spec}(b)) and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface and the low coverage systems.
+As before, the agreement between different sized slab models in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen-bonded region around $1116\,$cm$^{-1}$ is convincing (Figure \ref{abb:fullyhydrox_spec}(b)) and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface and the low coverage systems.
 \\\\
 Apart from the most stable surface termination (called O-I in \cite{kuri10}), calculations of the second most stable surface termination (O-II), where the uppermost O layer is ``missing'', were done.
 Frequencies were analyzed of the clean surface and the fully covered system, for both the 10 and 25 layer systems.
@@ -1507,8 +1530,8 @@ In Figure \ref{abb:bec} the spectra for the three most stable structures can be 
              \caption{IR spectrum with intensities based on Born effective charges (BEC) evaluation for the three most stable species, (a) full spectrum, (b) OD range above $2600\,$cm$^{-1}$.}
             \label{abb:bec}
      \end{figure}
-The peak around $1700\,$cm$^{-1}$ originates solely from the hydrogen bonded CUSb$\parallel$O-$\mu_2$ OD group.
-The other non hydrogen bonded peaks arise above $2500\,$cm$^{-1}$ and the lattice region can be seen below $1000\,$cm$^{-1}$.
+The peak around $1700\,$cm$^{-1}$ originates solely from the hydrogen-bonded CUSb$\parallel$O-$\mu_2$ OD group.
+The other non hydrogen-bonded peaks arise above $2500\,$cm$^{-1}$ and the lattice region can be seen below $1000\,$cm$^{-1}$.
 \\
 In comparison to the results from the dipole corrections, the positions of the peaks are of course unaffected.
 For inter-CUSa$\parallel$O-$\mu_2$ the intensities in the OD range are nearly the same, although the more intense peaks are changed.
@@ -1537,8 +1560,8 @@ It was normalized to the highest intensity peak.}
 \end{tabular}
 \label{tab:freq_lowcov_comp}
 \end{table}
-The results are in reasonable agreement for inter-CUSa||O-$ \mu_2$ and inter-CUSb||O-$ \mu_2$, but are deviate largely for the hydrogen bonded CUSb||O-$ \mu_2$ system.
-The geometry of the hydrogen bonded OD group differs more than the non hydrogen bonded and for this reason the vibrational mode differs strongly.
+The results are in reasonable agreement for inter-CUSa||O-$ \mu_2$ and inter-CUSb||O-$ \mu_2$, but deviate largely for the hydrogen-bonded CUSb||O-$ \mu_2$ system.
+The geometry of the hydrogen-bonded OD group differs more than the non hydrogen-bonded and for this reason the vibrational mode differs strongly.
 Corresponding \textit{intensities} from AIMD calcualtions are presented in section \ref{vvacf}.
 
 \subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
@@ -1588,8 +1611,8 @@ In black the spectrum with intensities from dipole corrected normal modes is sho
 \\
 The spectrum of the CUSb$\parallel$O-$\mu_2$ system can be seen in Figure \ref{abb:velvel_ads_spec}(b).
 It was propagated for $3.67\,$ps.
-The OD range shows one clear peak at around $2757\,$cm$^{-1}$, which likely corresponds to the non-hydrogen bonded peak at $2785\,$cm$^{-1}$ in the normal modes.
-In contrast to that, the hydrogen bonded peak which can be found in the normal modes calculation at $1711\,$cm$^{-1}$ is given in the power spectrum as a multitude of small peaks smeared in the region between $1300$ and $2100\,$cm$^{-1}$, indicating delocalization between the O$_\textrm{ads}$ and O$_\textrm{surf}$.
+The OD range shows one clear peak at around $2757\,$cm$^{-1}$, which likely corresponds to the non-hydrogen-bonded peak at $2785\,$cm$^{-1}$ in the normal modes.
+In contrast to that, the hydrogen-bonded peak which can be found in the normal modes calculation at $1711\,$cm$^{-1}$ is given in the power spectrum as a multitude of small peaks smeared in the region between $1300$ and $2100\,$cm$^{-1}$, indicating delocalization between the O$_\textrm{ads}$ and O$_\textrm{surf}$.
 In the lattice region the intense peaks are distributed wider and also the most intense peak of the lattice region is at a higher energy than the normal modes suggest.
 It is unclear whether this description or the normal modes results are closer to the experiment, or if the difference is an artefact originating from the unconverged trajectories.
 \\
