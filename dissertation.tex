@@ -288,8 +288,16 @@ Better results can be achieved when the density and the first derivative (gradie
 \begin{equation}
   E_{xc}=E_{xc}[n(\vec{r}),\nabla n(\vec{r})]
 \end{equation}
+Here, one of the most prominent and widely used functionals is PBE, introduced by Perdew, Burke and Ernzerhof in 1996\cite{Perdew96a,erratum}.
+\todo{eventually give analytic form of PBE in appendix?
+For the PBE functional the enhancement factor $F_x^{PBE}(s(\vec{r}))$ is given by
+\begin{equation}
+ F_{x}^{PBE}(s(\vec{r}))=1+\kappa\left(1-\frac{1}{1+\frac{\mu s^2}{\kappa}} \right) 
+\end{equation}
+with the function of the gradient $s(\vec{r})$, the constants $\mu=0.21951$ and $\kappa=0.804$ which were fits to analytical results.}
+\\
 Even more accurate results can be gained by mixing into the functional some amount of exact Hartree Fock exchange, these are called hybrid functionals.
-At least for molecular systems these are the most widely applied functionals, for example B3LYP and HSE06.
+At least for molecular systems these are the most widely applied functionals, for example B3LYP\cite{B3LYP1,B3LYP2} and HSE06.
 \\
 A major issue of DFT is that it can not be systematically improved like wave function-based methods.
 It is a single determinant method and it is not fully variational althoug the ``variational principle of DFT'' does exist.
@@ -311,6 +319,91 @@ For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the
   E_{disp}^{(3)} =\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e}\sum\limits_{C>B>A}^{N_e} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\phi_a cos\phi_b cos\phi_b)}{(R_{AB}R_{BC}R_{AC})^3}.
 \end{equation}
 Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\phi_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$.
+
+
+\section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
+In this work we also want to go beyond GGA (Generalized Gradient Approximation, in this work the GGA functional PBE was used), because it is known from literature to underestimate reaction rates\cite{Zhao05}.
+Since we are interested in reaction kinetics it is desirable to use more sophisticated methods to improve the accuracy in computing the rates.
+\subsection{Hybrid Functionals}
+The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential.
+For this the exchange correlation functional is split up into two parts:
+\begin{equation}
+ E_{xc}[n(\vec{r})]=  E_{x}[n(\vec{r})] + E_{c}[n(\vec{r})].
+\end{equation}
+The exchange part can be specified with a HF part with exact exchange and a part coming from a (non-hybrid) DFT functional:
+\begin{equation}
+ E_x = aE_x^{HF} + (1-a)E_x^{DFT}.
+\end{equation}
+with the parameter $a$ giving the amount of exact Hartree-Fock exchange.
+As an example, the functional B3LYP consists of $20\%$ exact exchange\cite{Becke1993}.
+\begin{equation}
+ E_{xc}^{B3LYP}= aE_{xc}^{LDA} + (1-a)E_x^{HF} + bE_x^{B88} + cE_c^{LYP} + (1-c)E_c^{LDA}
+\end{equation}
+with $a=0.80$, $b=0.72$ and $c=0.81$.
+\\
+\subsection{M\o{}ller Plesset Peturbation Theory}
+In cases where even higher precision is needed, and exact exchange shall be calculated it is necessary to apply wave function methods.
+Although these calculations are significantly more computationally demanding they provide better results on a higher level of theory.
+From these, M\o{}ller Plesset peturbation theory of second order (MP2)\cite{mollerplesset} was implemented for periodic systems recently.
+MP2 offers more precise treatment of the dynamical electron correlation than DFT.
+\\
+The electronical Hamiltonian (in the following section the subscript $e$ is omitted) has already been solved exactly or approximately.
+The solution to the given problem is similar to the already known one.
+The reference system $\hat{H}_0$ is perturbed by an external potential $\hat{V}$:
+\begin{equation}
+ \hat{H} = \hat{H}_0 + \lambda \hat{V}
+\end{equation}
+$\hat{H}_0$ is the unperturbed Hamiltonian and $\lambda$ is a parameter that determines the extent of the perturbation.
+In general $V$ is considered as ``small'', compared to $\hat{H}_0$.
+The perturbed Schrödinger equation is given by:
+\begin{equation}
+ (\hat{H}_0 + \lambda \hat{V})\Psi = E\Psi.
+\end{equation}
+If $\lambda=0$, then $E=E^{(0)}$, $\hat{H} = \hat{H}_0$ and $\Psi=\Psi^{(0)}$.
+For higher values of $\lambda$, the energy and the wave function change and can be written by expanding the ground state wave function $\Psi_0$ at $\lambda=0$
+\begin{equation}
+ \Psi_0 = \Psi_0^{(0)} + \lambda \Psi_0^{(1)} + \lambda^2\Psi_0^{(2)} + ...,
+\end{equation}
+the eigenvalues $E_0$ can be determined analogously as:
+\begin{equation}
+ E_0 = E_0^{(0)} + \lambda E_0^{(1)} + \lambda^2E_0^{(2)} + ...
+\end{equation}
+The superscript $E_0^{(n)}$ equals the correction of n-th level.\\
+The unperturbed energy can be calculated with:
+\begin{equation}
+ E^{(0)} = <\Psi^{(0)}|\hat{H}^{(0)}|\Psi^{(0)}>=\sum\limits_{i=1}^N\varepsilon_i
+\end{equation}
+and the energy of $1^\textrm{st}$ order is:
+\begin{equation}
+ E^{(1)} = <\Psi^{(0)}|\hat{V}|\Psi^{(0)}>.
+\end{equation}
+$E^{(0)}+E^{(1)}$ equals the Hartree-Fock energy $E_{HF}$.
+For the energy of the second order, both occupied orbitals $i,j$ and unoccupied orbitals $k,l$ and their energy have to be considered:
+\begin{equation}
+ E^{(2)}=\sum\limits_{i}^{occ.}\sum\limits_{j>i}^{occ.}\sum\limits_{k}^{unocc.}\sum\limits_{l>k}^{unocc.} \frac{(<ij|kl> - <ij|lk>)^2}{\varepsilon_i + \varepsilon_j - \varepsilon_k - \varepsilon_l}
+\end{equation}
+The MP2-corrected total energy is composed of the HF energy and the second order energy:
+\begin{equation}
+ E_{MP2} = E^{(0)}+E^{(1)} + E^{(2)} = E_{HF} + E^{(2)}.
+\end{equation}
+The second order energy accounts for approximately $80-90\%$ of correlation which makes it a feasible method which includes electron correlation.
+However, a main limitation of MP2 is if the wave function of the zeroth order is a good approximation to the real system and the perturbation is rather small.
+If the wave function describes the system poorly, the corrections need to be higher and eventually, convergence is slow.
+In this case perturbation theory might not be a good option to describe correlation.
+\\
+\\
+A further development is the local M\o{}ller Plesset perturbation theory\cite{usvyat2015,usvyatbook,Maschio2007} of 2$^{\textrm{nd}}$ order (LMP2) as implemented in CRYSTAL/cryscor\cite{crystal14,cryscor}.
+Here a localized description is used for electron correlation since dynamical correlation is not a long-range effect but can be analyzed locally.
+In contrast to regular MP2 that scales with $\mathcal{O}(N^5)$, local MP2 allows for scaling of $\mathcal{O}(N)$ with the number of atoms per unit cell $N$.
+% While the occupied space is calculated with orthogonal localized orbitals this is not possible for the virtual space which is more diffuse and in order to be localized as well has to be computed with nonorthogonal orbitals.
+This is easy applicable for occupied orbitals but not so easy for virtual orbitals: here the orthogonality has to be quit to become local
+due to locality additional couplings occur (inter-pair coupling between individual amplitudes via the corresponding overlap matrix) which increases the comput
+ational costs.
+To overcome this issue the Laplace transform is used, so that an AO basis is used.
+The virtual orbitals are represented as highly localized projected atomic orbitals (PAOs)\cite{Pulay1983,Pulay1985}.
+These PAOS are paired to so called ``pair domains''.
+A drawback here is that for high accuracy the domains need to be rather large and do eventually not show smooth behaviour.
+This may lead to discontinuities in potential energy surfaces, non-physical artifacts in energy differences if the domains are not chosen carefully (equally in all considered geometries)\cite{usvyat2015}.
 
 \section{Periodic Boundary Conditions}
 Solid-state systems such as surfaces can either be simulated by calculating cluster models that were ``cut'' from the surface and represent an "important part" of the system or can be treated as the whole system with a periodic approach.
@@ -564,8 +657,8 @@ The obtained intensities correspond to the oscillator amplitudes.
 
 \section{Finding Transition States}\label{sec:tst}
 According to the Born-Oppenheimer approximation\cite{bornoppenheimer} nuclear and electronic degrees of freedom are separated.
-In this picture, stable systems are minima on the PES and chemical reactions can be understood as nuclei, moving on the PES along the reaction coordinate $\xi$.
-On the N-dimensional surface, the energetically most favorable reaction path is chosen.
+In this picture, stable systems are minima on the PES and chemical reactions can be understood as nuclei moving on the PES along the reaction coordinate $\xi$.
+On the 3N-dimensional PES (with N being the number of nuclei), the energetically most favorable reaction path is chosen.
 This is the one with the least energy necessary (minimum energy path, MEP, see Figure \ref{abb:mep}).
 The transition state (TS) is at the highest energy on this path.
 As mentioned before, it is a first-order saddle point, the energetically highest point along the MEP, but a minimum along all other coordinates.
@@ -604,11 +697,12 @@ Assuming the reaction
 A+ B \rightleftarrows C^\ddagger \rightarrow D
 \end{equation}
 where reactants $A$ and $B$ are in thermodynamical equilibrium with the transition state $C^\ddagger$ and from this the reaction goes to the product $D$.
-The rate constant can be determined with Eyring theory:
+The rate constant can be determined with Eyring theory\cite{eyring,eyring-polanyi}:
 \begin{equation}\label{eq:eyring}
 k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)}
 \end{equation}
-with the reaction rate constant $k(T)$, which is in fact not a constant but a function of temperature $T$, the transmission coefficient $\kappa$ which will be explained shortly, Boltzmann's constant $k_B$, the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger = \Delta G_\textrm{TS} - \Delta G_\textrm{educt}$, give the reaction rate constant as a function of temperature and free energy barrier height.
+with the reaction rate constant $k(T)$ (which is in fact not a constant but a function of temperature $T$), the transmission coefficient $\kappa$ which will be explained shortly, Boltzmann's constant $k_B$ and the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger = \Delta G_\textrm{TS} - \Delta G_\textrm{educt}$.
+The equation gives the reaction rate constant as a function of temperature and free energy barrier height.
 Note that this equation is only valid for cases where all reactands reaching the TS react to the product site.
 No re-crossing is employed, so the rate is the upper limit in the classical picture.
 For quantum effects, the rate can be increased due to tunneling, where reactants can overcome the barrier although they do not possess sufficient amount of energy for the barrier.
@@ -617,82 +711,13 @@ For $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection or r
 \\\\
 For the barrier height one needs to find the free energies of the transition state and the educt.
 The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
-To find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB), with Climbing Image.
-The Reaction path is approximated as a series of associated images, which are connected via spring forces.
+Among different methods to find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB)\cite{Henkelman00a}, with Climbing Image\cite{Henkelman00b}.
+This method approximates the reaction path is approximated as a series of associated images, which are connected via spring forces.
 These spring forces prevent the images from optimizing into the local minimum next to the transition state.
 First a regular NEB, then on top of this climbing image was done which gives better convergence.
 In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.
 Any point found by this scheme must be checked whether it is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode that vibrates along the reaction path.
 Otherwise there is no transition state.
-
-\section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
-In this work we also want to go beyond GGA (Generalized Gradient Approximation, here the PBE functional), because it is known from literature to underestimate reaction rates\cite{Zhao05}.
-Since we are interested in reaction kinetics it is desirable to use more sophisticated methods to improve the accuracy in computing the rates.
-\subsection{Hybrid Functionals}
-The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential.
-For this the exchange correlation functional is split up into two parts:
-\begin{equation}
- E_{xc}[n(\vec{r})]=  E_{x}[n(\vec{r})] + E_{c}[n(\vec{r})].
-\end{equation}
-The exchange part can be specified with a DFT part and HF with exact exchange:
-\begin{equation}
- E_x = aE_x^{HF} + (1-a)E_x^{DFT}.
-\end{equation}
-with the parameter $a$ giving the amount of exact Hartree-Fock exchange.
-As an example, the functional B3LYP consists of $20\%$ exact exchange\cite{Becke1993}.
-\begin{equation}
- E_{xc}^{B3LYP}= aE_{xc}^{LDA} + (1-a)E_x^{HF} + bE_x^{B88} + cE_c^{LYP} + (1-c)E_c^{LDA}
-\end{equation}
-with $a=0.80$, $b=0.72$ and $c=0.81$.
-\\
-\subsection{M\o{}ller Plesset Peturbation Theory}
-\todo{difference of MP2 to local MP2?}\\
-Another ansatz is using Local M\o{}ller Plesset Perturbation Theory\cite{mollerplesset,usvyat2015,usvyatbook} of 2$^{\textrm{nd}}$ order (LMP2) as implemented in CRYSTAL/cryscor\cite{crystal14,cryscor}.
-These calculations are significantly more computationally demanding but provide better results on a higher level of theory.
-LMP2 offers more precise treatment of the dynamical electron correlation than DFT.
-The electronical Hamiltonian (in the following section the subscript $e$ is omitted) has already been solved exactly or approximately.
-The solution to the given problem is similar to the already known one.
-The reference system $\hat{H}_0$ is perturbed by an external potential $\hat{V}$:
-\begin{equation}
- \hat{H} = \hat{H}_0 + \lambda \hat{V}
-\end{equation}
-$\hat{H}_0$ is the unperturbed Hamiltonian and $\lambda$ is a parameter that determines the extent of the perturbation.
-In general $V$ is considered as ``small'', compared to $\hat{H}_0$.
-The perturbed Schrödinger equation is given by:
-\begin{equation}
- \hat{H}\Psi = E\Psi.
-\end{equation}
-If $\lambda=0$, then $E=E^{(0)}$, $\hat{H} = \hat{H}_0$ and $\Psi=\Psi^{(0)}$.
-For higher values of $\lambda$, the energy and the wave function change and can be written by expanding the ground state wave function $\Psi_0$ at $\lambda=0$
-\begin{equation}
- \Psi_0 = \Psi_0^{(0)} + \lambda \Psi_0^{(1)} + \lambda^2\Psi_0^{(2)} + ...,
-\end{equation}
-the eigenvalues $E_0$ can be determined analogously as:
-\begin{equation}
- E_0 = E_0^{(0)} + \lambda E_0^{(1)} + \lambda^2E_0^{(2)} + ...
-\end{equation}
-The superscript $E_0^{(n)}$ equals the correction of n-th level.\\
-The unperturbed energy can be calculated with:
-\begin{equation}
- E^{(0)} = <\Psi^{(0)}|\hat{H}^{(0)}|\Psi^{(0)}>=\sum\limits_{i=1}^N\varepsilon_i
-\end{equation}
-and the energy of $1^\textrm{st}$ order is:
-\begin{equation}
- E^{(1)} = <\Psi^{(0)}|\hat{V}|\Psi^{(0)}>.
-\end{equation}
-$E^{(0)}+E^{(1)}$ equals the Hartree-Fock energy $E_{HF}$.
-For the energy of the second order, both occupied orbitals $i,j$ and unoccupied orbitals $k,l$ and their energy have to be considered:
-\begin{equation}
- E^{(2)}=\sum\limits_{i}^{occ.}\sum\limits_{j>i}^{occ.}\sum\limits_{k}^{unocc.}\sum\limits_{l>k}^{unocc.} \frac{(<ij|kl> - <ij|lk>)^2}{\varepsilon_i + \varepsilon_j - \varepsilon_k - \varepsilon_l}
-\end{equation}
-The MP2-corrected total energy is composed of the HF energy and the second order energy:
-\begin{equation}
- E_{MP2} = E^{(0)}+E^{(1)} + E^{(2)} = E_{HF} + E^{(2)}.
-\end{equation}
-The second order energy accounts for approximately $80-90\%$ of correlation which makes it a feasible method which includes electron correlation.
-However, a main limitation of (L)MP2 is if the wave function of the zeroth order is a good approximation to the real system and the perturbation is rather small.
-If the wave function describes the system poorly, the corrections need to be higher and eventually, convergence is slow.
-In this case perturbation theory might not be a good option to describe correlation.
 
 \section{Computational Details and Used Programs}
 The majority of simulations/computations in this work were carried out using the Vienna \textit{ab initio} simulation package (VASP version 4 and 5.2)\cite{kresse1993,kresse2,kresse3,kresse4,kresse99}
@@ -708,6 +733,8 @@ Here, the vacuum gap ranged from $17$ for the 10 layer slab to $11\,$\AA{} for t
 \\\\
 The atom centered basis calculations with the programs CRYSTAL\cite{crystal14} (version 14) and the LMP2 calculations with cryscor\cite{cryscor} were not used before for the calculation of alumina in our group before.
 The geometries from the VASP output were used as starting points and the usual convergence criteria of the programs were applied (with some exception when convergence was hard to achieve).
+\\\\
+Energy and MD plots shown in this work were done with gnuplot\cite{gnuplot}, surface structures and geometries were visualized with VMD\cite{vmd} and further illustrations were done with inkscape\cite{inkscape}.
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 Until now only a few experimental studies were done for the (11\=20)-surface: X-ray reflectivity measurements by J. Catalano\cite{catalano}, who found that the surface is oxygen terminated and has two differently coordinated kinds of surface Al atom dimers.
@@ -3018,7 +3045,6 @@ $P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm
 \subsubsection{This Work:}
 
 \begin{enumerate}[itemsep=0.25\baselineskip]
-%  \item \bibentry{Wirth12}.
   \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}Water Dissociative Adsorption on $\upalpha$-Al$_2$O$_3$(11\=20) Is Controlled by Surface Site Undercoordination, Density, and Topology{\flqq}, \textit{The Journal of Physical Chemistry C} \textbf{2018}, \textit{122} (12), 6573-6584.
   \item Heiden, S.; Wirth, J.; Campen, R. K.; Saalfrank, P.: {\frqq}Water Molecular Beam Scattering at $\upalpha$-Al$_2$O$_3$(0001): An \textit{Ab Initio} Molecular Dynamics Study{\flqq}, \textit{The Journal of Physical Chemistry C} \textbf{2018}, \textit{122} (27), 15494-15504.
 
