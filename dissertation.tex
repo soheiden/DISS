@@ -1236,7 +1236,7 @@ The experimental Sum Frequency Generation (SFG, a surface specific vibrational s
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
  \caption{Experimental SFG results for (11\=20) surface with 0.14ML (mono layer, left spectrum) and 0.05ML water coverage (right) including fit.
-The experiment was conducted by Yanhua Yue, FHI Berlin.
+The experiment was conducted by Yanhua Yue from the ``Interfacial Molecular Spectroscopy'' group at the Fritz Haber institute (FHI) in Berlin.
 Coverage only influences intensity of the peaks but not the peak position itself.
 The different coverages are achieved via different preparing temperatures of the sample.}
         \label{abb:exp-sfg}
@@ -1253,14 +1253,16 @@ Only minor differences could be obtained.
 Details for this are given in Appendix \ref{symmetric_slab}.
 \\
 \\
-To calculate the modes in this work mainly two methods were applied: Normal mode analyses (see section \ref{nma}) and power spectra from AIMD via velocity-velocity autocorrelation function (section \ref{vvacf}).
+To calculate the vibrational modes in this work mainly two methods were applied: Normal mode analyses and power spectra from AIMD via velocity-velocity autocorrelation function.
 However, the latter results are not fully converged yet and have to be propagated tens to hundred ps instead of $1$-$2\,$ps, so only preliminary results will be shown to illustrate the power of this method.
 \\
-The focus is mainly on the position of the peaks rather than the intensities, because in the first place it is of greater importance what kind of vibrations gives which peak than the intensity of the peak itself.
+The focus is mainly on the peak position rather than their intensities, because in the first place it is of greater importance what kind of vibrations gives which peak than the intensity of the peak itself.
 Also, it is still challenging to determine the frequencies in good comparison with experimental findings before heading to intensities.
 \\
-In the power spectra from MD calculations the intensities are implicitly received and for the normal mode analyses this work follows two distinct approaches: dipole corrections and Born effective charges.
+In the normal mode analyses this work follows two distinct approaches: dipole corrections and Born effective charges.
+However, in the power spectra from MD calculations the intensities are not directly retrieved but as said before, we are more interested in the peak position.
 \\\\
+\todo{change this subchapters according to new nomenclature?!}
 In subsection \ref{nma}, OD stretch vibrations are presented but also modes for higher coverage systems and lattice vibrations are examined.
 % But not only the OD frequencies are of interest, but also the lattice vibrations, and are covered in both subsections.
 Subsection \ref{bec} gives the spectra including intensities determined via Born effective charges and in subsection \ref{vvacf} the results for spectra from the velocity-velocity autocorrelation function are shown.
@@ -1270,8 +1272,8 @@ Subsection \ref{bec} gives the spectra including intensities determined via Born
 The normal modes are calculated within the harmonic approximation and depend on the mass and the spring constant of the bond.
 This ansatz is quite good for high frequency modes like OD stretch vibrations.
 We assume that the OD stretching modes for the three most stable structures would contribute to the spectrum the most, since the less stable adsorbed species are improbable to appear.
-These wavenumbers are presented in Table \ref{tab:freq_layers} for different slab sizes, as given in Figure \ref{abb:cell_sizes}.
-Also the angle of the OD bond with respect to the surface is given, since vibrations which are in plane cannot be measured with SFG spectroscopy and hence the intensity is a function of this angle.
+The corresponding wavenumbers are presented in Table \ref{tab:freq_layers} for different slab sizes, as given in Figure \ref{abb:cell_sizes}.
+Also the angle of the OD bond with respect to the surface is given, since vibrations which are in plane cannot be detected with SFG spectroscopy (sum frequency generation) and hence the intensity is a function of this angle.
 \begin{table*}[th]
   \centering
  \caption{Wavenumbers of normal modes for the different slab sizes: OD stretching modes for each of the most stable minima.
@@ -1291,17 +1293,18 @@ In each column, the left value reflects the adsorbed OD$_\textrm{ads}$ group and
   \label{tab:freq_layers}
 \end{table*}
 \\\\
- Following this approach we expect six modes: an OD$_\textrm{surf}$ and an OD$_\textrm{ads}$ for each of the three.
+ Following this approach we expect six modes to appear: an OD$_\textrm{surf}$ and an OD$_\textrm{ads}$ for each of the three.
 In all cases the relationship between the two individual modes for each considered structure is portrayed by $\tilde{\nu}$(OD$_\textrm{ads}$)>$\tilde{\nu}$(OD$_\textrm{surf}$).
 This can be explained with the different reduced mass for both vibrations: The OD$_\textrm{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can act more as a quasi-free OD group \cite{Wirth2014}.
 All these vibrations are clearly localized on one of the OD groups, which suggests that the normal modes ansatz is reasonable.
 Of course, normal modes of all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although the slab was already converged with 10 layers concerning OD stretch frequencies as mentioned in section \ref{structure_search11-20} and in Table \ref{tab:freq_layers}. 
 \\
 \\
-To consider the probability of observing these species, their respective Boltzmann weights $P_i$ were evaluated:
+To consider the probability of observing the three dissociated species, their respective Boltzmann weights $P_i$ were evaluated:
 \begin{equation}\label{boltzmann-weight}
- P_i=e^{-G_i/(k_BT)}.
+ P_i=e^{-G_i/(k_BT)}
 \end{equation}
+with the free energy $G_i$ that is obtained from the frequencies of the vibrations.
 With this analysis it is possible to show the relative population for different temperatures, given in Table \ref{tab:boltzmann-pop}.
 In the temperature range relevant for the experiments, it is shown that the population of the species inter-CUSa$\parallel$O-$\mu_2$ clearly dominates and furthermore that the population of inter-CUSb$\parallel$O-$\mu_2$ is very low compared to the others.
 \begin{table*}[th]
@@ -1341,7 +1344,7 @@ exp.&50 &77 \\\bottomrule
 \label{tab:rel_modes}
 \end{center}
 \end{table*}
-It becomes clear that for OD stretching bonds there is no trend visible: The 10 layer system already gives reasonable results and none of the employed larger slab models are an improvement.
+It becomes clear that for OD stretching bonds there is no visible trend: The 10 layer system already gives reasonable results and none of the employed larger slab models brings any improvement.
 \\
 \\
 Two problems of this approach are that we neglect anharmonicities, which are especially important for hydrogen-bonded vibrations, and neighbor effects.
@@ -1349,12 +1352,15 @@ The latter can be solved by computing higher coverage systems.
 \\
 
 
-\subsubsection{Dipole Intensities and Lattice Vibrations of Further Systems}\label{phonons}
+\subsubsection{Complete Spectrum: Intensities from Dipole Corrections}\label{phonons}
+The spectra for both the OD range and the lattice range are presented in this subsection.
+All spectra shown in this section were normalized to the most intense peak, with the intensities being determined by different methods.
+In some figures short notations for the adsorbed species are used: iCa2 for inter-CUSa$\parallel$O-$\mu_2$, Cb2 for CUSb$\parallel$O-$\mu_2$ and iCb2 for inter-CUSb$\parallel$O-$\mu_2$.
 \todo{experimental results are still missing, compare modes of low coverage limit to spectra with higher coverage, ask Lu for more data of higher coverage.}
 \\
 In this section intensities are elaborated from dipole corrections.
-All spectra shown in this section were normalized to the most intense peak.
-For the lattice vibrations the same normal modes of the 10 layer slab were checked to get a first impression into how the spectra can appear.
+In the spectra, the intensities are given by the square of the dipole moment $\mu^2$ to which it is proportional.
+For the lattice vibrations the same normal modes of the 10 layer slab were checked to get a first impression about the spectra.
 But for a better description of the deeper lying phonon vibrations we need to consider more layers of the bulk in order to get more reliable results.
 From an experimental point of view it is suggested that SFG spectra can give insight into at least three atomic layers of the bulk.
 To make sure these are described well, the system size was expanded, performing calculations for the most stable adsorption geometries for more layered systems, going up to $6\times 5=30$ atomic layers (with five being the number of atomic layers in the unit cell in z direction, compare Figure \ref{abb:cell_sizes}), for the clean surface and for 25 layers for the adsorbate covered surface.
@@ -1369,9 +1375,9 @@ For different sized slabs, the results differ largely.
 Especially the ten layer system is shifted strongly to lower energy compared to the other slab sizes.
 From Table \ref{tab:comp_norm-modes_clean} it can be concluded that the most intense peak is shifted to higher wavenumbers with increasing slab size.
 Although the OD vibrations are converged for the 10 layer system, the lattice vibrations are not sufficiently described by the system that leads to these wavenumber shifts.
-\begin{figure}
+\begin{figure}[!h]
  \centering
- \includegraphics[width=0.4\textwidth]{figures/11-20/comp_freq_surf.eps}
+ \includegraphics[width=0.8\textwidth]{figures/11-20/comp_freq_surf.eps}
  \caption{Comparison of the spectra for different slab sizes from 10 to 30 layers for the clean surface obtained with normal mode analyses and intensities from dipole corrections.}
  \label{abb:clean_comp_layer}
 \end{figure}
@@ -1461,7 +1467,8 @@ The total spectrum and the OD range of the 2D$_2$O systems are shown in Figure %
              \quad
 \subfigure[CUSb+CUSb$\parallel$O-$\mu_2$: OD]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_Cb+Cb2_OD.eps}}
 \caption{Peaks from normal mode analyses and dipole intensities for two water molecules per supercell (10 layers) in comparison with the corresponding systems with one water molecule.
-The left row shows the complete spectrum and the right row the OD range.}
+The left row shows the complete spectrum and the right row the OD range.
+The abbreviations given are iCa2 for inter-CUSa$\parallel$O-$\mu_2$, Cb2 for CUSb$\parallel$O-$\mu_2$ and iCb2 for inter-CUSb$\parallel$O-$\mu_2$}
             \label{abb:2water_comp}
 \end{figure}
 For all three systems the agreement is reasonably good.
@@ -1504,13 +1511,13 @@ These are split into three distinct regions: From $\approx 2000$-$2220\,$cm$^{-1
 From $2400$-$2450\,$cm$^{-1}$ in plane vibrations of non hydrogen-bonded species occur and above $2550\,$cm$^{-1}$ out of plane OD stretching bonds appear.
  \begin{figure} [!h]
  \centering
- \subfigure[1ML, lattice range]{\includegraphics[width=0.3\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_lattice.eps}}
+ \subfigure[1ML, lattice range]{\includegraphics[width=0.45\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_lattice.eps}}
               \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-  \subfigure[1ML, low OD range]{\includegraphics[width=0.3\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_OD-low.eps}}
+  \subfigure[1ML, low OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_OD-low.eps}}
               \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-  \subfigure[1ML, high OD range]{\includegraphics[width=0.3\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_OD.eps}}%1ML.png}}
+  \subfigure[1ML, high OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/fully_cov_D2O_slab-sizes-comp_OD.eps}}%1ML.png}}
  \caption{Comparison of the spectra of the fully with D$_2$O covered surface.
 Shown is a comparison between the different slab sizes for (a) the lattice region, (b) the low energy OD range with butterfly like vibrations and (c) the high energy OD range.
 The omitted regions do not contain peaks.} 
@@ -1556,9 +1563,9 @@ In the larger slab model there are many more bulk atoms than surface atoms which
 Due to this the differences between O-I and O-II termination get less significant for the larger system.
 \\ \todo{continue here when the calculations are ready! Compare O-I and O-II for 10 and 25 layer slabs, for fully covered.}
 
-\subsection{Born Effective Charges}\label{bec}
-As a second method of obtaining intensities, Born effective charges were evaluated.
-These results were obtained for the three most stable adsorbed systems with 10 layers.
+\subsection{Complete Spectrum: Intensities from Born Effective Charges}\label{bec}
+As a second method to obtain vibrational intensities, Born effective charges were evaluated.
+These results were calculated for the three most stable adsorbed systems with 10 layers.
 For getting the spectrum an angle of the IR beam of 45\textdegree~was assumed.
 Since both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities can differ.
 In Figure \ref{abb:bec} the spectra for the three most stable structures can be seen, (a) depicts the whole range and (b) the OD range only.
@@ -1604,7 +1611,7 @@ The results are in reasonable agreement for inter-CUSa||O-$ \mu_2$ and inter-CUS
 The geometry of the hydrogen-bonded OD group differs more than the non hydrogen-bonded and for this reason the vibrational mode differs strongly.
 Corresponding \textit{intensities} from AIMD calcualtions are presented in section \ref{vvacf}.
 
-\subsection{Velocity-Velocity Autocorrelation Function}\label{vvacf}
+\subsection{Complete Spectrum: Velocity-Velocity Autocorrelation Function}\label{vvacf}
 The velocity-velocity autocorrelation function is evaluated from AIMD calculations and Fourier transformed to get information from the time to the frequency domain.
 This is a radically different ansatz to calculating a spectrum.
 No frequency analysis has to be done, \textit{i. e.} no harmonic approximation is applied.
@@ -1613,7 +1620,7 @@ At $300\,$K for the clean surface (30 layers) and the three most stable adsorbed
 The presented spectra are merely preliminary results, since the propagation duration is substantially too short, so that one cannot rule out the possibility that the system is not converged properly.
 Usually, for a converged study, a preequilibration phase of several ps is assumed and afterwards the production run is up to 100 or even more ps, but these results still give a good first glimpse to what the spectrum could look like.
 \\
-The shown ``intensities'' correspond to oscillator amplitudes and can not be compared to the IR intensities perfectly reasonably obtained from BEC or dipole corrected normal modes.
+The shown ``intensities'' are more or less probabilities and correspond to oscillator amplitudes and can not be compared reasonably to the IR intensities obtained from BEC or dipole corrected normal modes.
 Nontheless it serves as a useful approximation for a first impression.
 \\
 For the clean surface, the 30 layer model was applied, with a propagation duration of $5\,$ps.
@@ -1621,19 +1628,21 @@ For the clean surface, the 30 layer model was applied, with a propagation durati
     \centering
     \includegraphics[width=0.9\textwidth]{figures/11-20/comp_cleansurf_all.eps}%spec_surf_30layer-300K.eps}
              \caption{Power spectrum of the clean surface of the 30 layer slab, calculated from velocity-velocity autocorrelation function of a canonical (NVT) AIMD trajectory at $300\,$K (5000 steps, $5\,$ps).
-In addition to the power spectrum, the stick spectra of the dipole corrected normal modes for different slab sizes are shown.} \label{abb:velvelclean}
+In addition to the power spectrum, the stick spectra of the dipole corrected normal modes for different slab sizes are shown.
+In the high energy range tiny wiggles occur because no window function was used to smoothen the spectrum.
+The quantity given on the y-axis is $\mu^2$ for the normal mode results and VDOS for the power spectrum.} \label{abb:velvelclean}
 \end{figure}
 As for the normal modes results, all peaks are below $900\,$cm$^{-1}$, see Figure \ref{abb:velvelclean}.
-The most intense peak in the power spectrum can be observed at significantly lower energy than for any normal mode based result.
+The most prominent peak in the power spectrum can be observed at significantly lower energy than for any normal mode based result.
 Also more peaks are present in the whole range from $0$ to around $900\,$cm$^{-1}$.
 Assumingly, the low energy modes are described better or at least in a different way, so that this strong discrepancy can be understood.
 \\\\
 The results for the adsorbed species were obtained by AIMD calculations of the 10 layer system at a temperature of $300\,$K.
 Again, the three most stable species were researched.
 The system inter-CUSa$\parallel$O-$\mu_2$ was propagated for $3.68\,$ps.
-The respective spectrum is shown in Figure \ref{abb:velvel_ads_spec}(a) and shows two intense peaks in the OD region at $2691$ and $2726\,$cm$^{-1}$.
+The respective spectrum is shown in Figure \ref{abb:velvel_ads_spec}(a) and shows two outstanding peaks in the OD region at $2691$ and $2726\,$cm$^{-1}$.
 These two fit very well to the peaks in the normal mode calculations at $2694$ and $2731\,$cm$^{-1}$.
-In the lattice region, as it could be observed for the clean surface as well, the intense peaks are at lower wavenumbers and there is no strong agreement (\textit{cp.} Figure \ref{abb:clean_comp_layer}).
+In the lattice region, as it could be observed for the clean surface as well, the eminent peaks are at lower wavenumbers and there is no strong agreement (\textit{cp.} Figure \ref{abb:clean_comp_layer}).
 \begin{figure}[!h]
     \centering
     \subfigure[inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=0.5\textwidth]{figures/11-20/spec_d2o_iCa2-300K_comp.eps}}
@@ -1643,9 +1652,9 @@ In the lattice region, as it could be observed for the clean surface as well, th
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
     \subfigure[inter-CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.5\textwidth]{figures/11-20/spec_d2o_iCb2-300K_comp.eps}}
-             \caption{Power spectra are shown in red, obtained from NVT AIMD trajectories at 300K for the geometries (starting points were geometry optimized structures at $0\,$K) of the most stable structures via velocity-velocity autocorrelation function.
+             \caption{Power spectra are shown in red, obtained from NVT AIMD trajectories at $300\,$K for the geometries (starting points were geometry optimized structures at $0\,$K) of the most stable structures via velocity-velocity autocorrelation function.
 Duration of the trajectories is given inside the figures and is approximately $3.7\,$ps.
-In black the spectrum with intensities from dipole corrected normal modes is shown for comparison.}
+In black the spectrum with intensities ($\mu^2$) from dipole corrected normal modes is shown for comparison.}
             \label{abb:velvel_ads_spec}
 \end{figure}
 \\
@@ -1653,13 +1662,13 @@ The spectrum of the CUSb$\parallel$O-$\mu_2$ system can be seen in Figure \ref{a
 It was propagated for $3.67\,$ps.
 The OD range shows one clear peak at around $2757\,$cm$^{-1}$, which likely corresponds to the non-hydrogen-bonded peak at $2785\,$cm$^{-1}$ in the normal modes.
 In contrast to that, the hydrogen-bonded peak which can be found in the normal modes calculation at $1711\,$cm$^{-1}$ is given in the power spectrum as a multitude of small peaks smeared in the region between $1300$ and $2100\,$cm$^{-1}$, indicating delocalization between the O$_\textrm{ads}$ and O$_\textrm{surf}$.
-In the lattice region the intense peaks are distributed wider and also the most intense peak of the lattice region is at a higher energy than the normal modes suggest.
+In the lattice region the prominent peaks are distributed wider and also the most prominent peak of the lattice region is at a higher energy than the normal modes suggest.
 It is unclear whether this description or the normal modes results are closer to the experiment, or if the difference is an artefact originating from the unconverged trajectories.
 \\
 For the inter-CUSb$\parallel$O-$\mu_2$ species with a trajectory duration of about $3.68\,$ps, the OD region is in very good agreement with the normal mode results (see Figure \ref{abb:velvel_ads_spec}(c)).
 Compared to the normal modes, where we observe two peaks, there is one broad peak around $2694\,$cm$^{-1}$ covering both peaks from the normal modes ($2689$ and $2692\,$cm$^{-1}$).
 It is possible that both groups overlap and lead to the broad peak.
-Also in the lattice region there is good compliance, the most intense peaks are only separated by $20\,$cm$^{-1}$ which is the best result for the computed systems.
+Also in the lattice region there is good compliance, the most prominent peaks are only separated by $20\,$cm$^{-1}$ which is the best result for the computed systems.
 \\
 \\
 Although these results are far from being converged, the agreement with normal mode results is very good and gives hope for even more accurate results with longer propagation duration which have not been done yet due to high computational costs.
@@ -3045,18 +3054,107 @@ $P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm
 \end{tabular}
  \label{tab:2D2O-prob}
 \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begingroup
+\def\thefigure{E.\arabic{figure}}
+\def\thetable{E.\arabic{table}}
+\section{Crystal Basis Set}
+The combined basis set, containing high angular momentum basis functions was not a standard basis set implemented in CRYSTAL but a individualized one. For this reason the input is given here:
+\\
+\tiny{\textit{Al atom:}\\
+13 15\\
+0 0 6 2. 1.\\
+       54866.4890         0.839000000E-03\\
+       8211.76650         0.652700000E-02\\
+       1866.17610         0.336660000E-01\\
+       531.129340         0.132902000\\
+       175.117970         0.401266000\\
+       64.0055000         0.531338000\\
+0 0 3 2. 1.\\
+       64.0055000         0.202305000\\
+       25.2925070         0.624790000\\
+       10.5349100         0.227439000\\
+0 0 1 2. 1.\\
+       3.20671100          1.00000000\\
+0 0 1 0. 1.\\
+       1.15255500          1.00000000\\
+0 0 1 0. 1.\\
+       0.70000000          1.00000000\\
+0 0 1 0. 1.\\
+       0.35000000          1.00000000\\
+0 0 1 0. 1.\\
+      0.176678000          1.00000000\\
+0 2 4 6. 1.\\
+       259.283620         0.944800000E-02\\
+       61.0768700         0.709740000E-01\\
+       19.3032370         0.295636000\\
+       7.01088200         0.728219000\\
+0 2 2 1. 1.\\
+       2.67386500         0.644467000\\
+       1.03659600         0.417413000\\
+0 2 1 0. 1.\\
+      0.700000000          1.00000000\\
+0 2 1 0. 1.\\
+      0.316819000          1.00000000\\
+0 2 1 0. 1.\\
+      0.150          1.00000000\\
+0  3  1  0.  1.\\
+       2.329027007      1.\\
+0  3  1  0.  1.\\
+       0.480048498      1.\\
+0  4  1  0.  1.\\
+       0.6      1.\\
+\textit{O atom:}\\
+8 7\\
+0 0 8 2.0 1.0\\
+ 26591.015149286   0.000338543\\
+ 4069.713048219    0.002548773\\
+ 943.177385588     0.012944513\\
+ 270.377217602     0.051837807\\
+ 88.721659363      0.164372032\\
+ 32.042734201      0.3855\\
+ 12.430169888      0.562307539\\
+ 4.976247393       0.350155411\\
+0 1 4 6.0 1.0\\
+ 62.977656261     -0.006945266     0.006338931\\
+ 14.905934605     -0.076543237     0.043166905\\
+ 4.611711867      -0.132826481     0.157278934\\
+ 1.603131709       0.379           0.347\\
+0 1 1 0.0 1.0\\
+ 0.568730447       1.0             1.0\\
+0 1 1 0.0 1.0\\
+ 0.184511607       1.0             1.0\\
+0 3 1 0.0 1.0\\
+ 1.387304921       1.0\\
+0 3 1 0.0 1.0\\
+ 0.450916551       1.0\\
+0 4 1 0.0 1.0\\
+ 1.428             1.0\\
+\textit{H atom:}\\
+1 6\\
+0 0 3 1.0 1.0\\
+ 34.061341000 0.00602519780\\
+ 5.1235746000 0.04502109400\\
+ 1.1646626000 0.20189726000\\
+0 0 1 0.0 1.0\\
+ 0.4157455100 1.00000000000\\
+0 0 1 0.0 1.0\\
+ 0.1795111000 1.00000000000\\
+0 2 1 0.0 1.0\\
+ 1.4070000000 1.00000000000\\
+0 2 1 0.0 1.0\\
+ 0.3880000000 1.00000000000\\
+0 3 1 0.0 1.0\\
+ 1.0570000000 1.00000000000\\}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\cleardoublepage}{}
 ~
 \clearpage
 ~
 \clearpage
 \addchap*{Publications}
-\endgroup
+% \endgroup
 
 \subsubsection{This Work:}
 
