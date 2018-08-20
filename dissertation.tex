@@ -2242,9 +2242,9 @@ Also, a small collection of combinations of vibrations with rotations were calcu
 Quantitatively, the results may depend strongly on the excitation energy which was not of concern here, one can say that preexcitation has an effect on the dynamics of the water adsorption and dissociation, respectively that were not possible with the rigid water molecule.
 \\
 \\
-Although a large number of trajectories were done with the contingent at the HLRN facility reliable statistics could not be achieved.
-It was only computationally feasible to do trajectories with $1$ to $4\,$ps duration.
-Also only a limited set of degrees of freedom could be probed, \textit{e.g.} the angle of the beam with respect to the surface was no other than 90\textdegree{}, initial orientations were only probed in 90\textdegree{} steps and impact points were only considered for special points at the surface.
+Although a large number of trajectories were computed with the contingent at the HLRN facility, reliable statistics could not be achieved.
+It was only computationally feasible to examine trajectories with $1$ to $4\,$ps duration.
+Due to the computational cost, only a limited set of degrees of freedom could be probed, \textit{e.g.} the angle of the beam with respect to the surface was no other than 90\textdegree{}, initial orientations were only probed in 90\textdegree{} steps and impact points were only considered for special points at the surface.
 Apart from that, no quantum effects were considered.
 Still, these results show very well the effect of enhanced dissociation probability, how clustering occurs, the influence of elevated temperature and rotations and vibrations\cite{Heiden0001_2018}.
 \clearpage
@@ -2308,9 +2308,9 @@ After this, the transition state shall be reoptimized with B3LYP and the respect
 % We also reoptimized the transition state for the Df-H-4-2 reaction.
 
 \subsubsection{Adsorption Energies}
-Going beyond pure density functionals and also beyond DFT has been too costly for a long time, simply not applicable for a surface adsorbat system that large and electron rich.
-In the CRYSTAL14\cite{crystal14} and cryscor\cite{cryscor} code atom centered bases are used instead of plane waves so that large scale systems can also be computed.
-With this methodology it is possible to calculate periodic structures with GGA - as well as with hybrid functionals and moreover, with wave function-based techniques like LMP2.\\
+Going beyond pure density functionals and also beyond DFT has been too costly for a long time, \todo{xys is} simply not applicable for a surface adsorbat\todo{adsorbate} system as large and electron rich.
+In the CRYSTAL14\cite{crystal14} and cryscor\cite{cryscor} code \todo{code as in source code? Preferably refer to their models?} atom centered bases are used instead of plane waves so that large scale systems can also be computed.
+With this methodology it is possible to calculate periodic structures with GGA as well as with hybrid functionals and, moreover, with wave function-based techniques like LMP2.\\
 In Table \ref{tab:vasp-results} the adsorption energy results of previous VASP calculations with different methods (PBE and PW91) and dispersion corrections are shown.
 The adsorption energy is calculated according to Equation (\ref{eq:Eads}).
 \begin{table}[!h]
@@ -2329,9 +2329,9 @@ Values are given in eV.}
   \label{tab:vasp-results}
  \end{table}
 \\
-The adsorption energy is in favor of the 1-2 dissociated species for all methods, and depending on the dispersion corrections used, the molecular and 1-4 dissociated species are equal (PW91, PBE+D3) or the latter is slightly more stable (PW91+D2).
+The adsorption energy is in favor of the 1-2 dissociated species for all methods and, depending on the dispersion corrections used, the molecular and 1-4 dissociated species are equal (PW91, PBE+D3) or the latter is slightly more stable (PW91+D2).
 \\
-When employing he CRYSTAL code, as several basis sets for each atom are available, it is necessary to utilize some basis sets and compare the results to former VASP calculations.
+When employing the CRYSTAL code\todo{what crystal code?}, as several basis sets for each atom are available, it is necessary to utilize some basis sets\todo{what is a basis set? why are there several?} and compare the results to former VASP calculations\todo{and that will then be the only truth?}.
 The basis sets which were tested are summarized in Table \ref{tab:basissets}.
 \begin{table}[!h]
   \centering
@@ -2374,7 +2374,7 @@ All values are given in eV.}
   \label{tab:basisset-results-PBE+D3}
 \end{table}
 \\
-In contrast to the VASP calculations all basis sets that were tested predict the stability order 1-2 $>$ mol $>$ 1-4, whereas VASP depending on the dispersion corrections gives 1-2 $>$ 1-4 $\geqq$ mol.
+In contrast to the VASP calculations\todo{where are the VASP calculations that show different results? does vasp use the same basis sets?}, all basis sets that were tested predict the stability order 1-2 $>$ mol $>$ 1-4, whereas VASP depending on the dispersion corrections gives 1-2 $>$ 1-4 $\geqq$ mol.
 \\
 In addition to adsorption energies from optimized geometries, for basis set 1 adsorption energies were calculated with the previous VASP optimized structure (\textit{i.e.} only single point calculation with CRYSTAL) to compare to VASP results.
 Those results are given in Table \ref{tab:pbe-vasp-geom}.
@@ -2426,7 +2426,7 @@ To overcome this, one can apply counterpoise corrections (CP) or alternatively u
 For CP the parts of the system are treated individually and also with so called ghost basis and ghost atoms.
 This means a calculation for the water with a ``ghost surface'', where the water molecule is treated normally and the surface consists of atom orbitals but with no charge, so that the electrons of water can occupy them.
 On the other hand a similar calculation with the surface and a ``ghost water molecule'' (or OH and H residues, respectively) has to be done.
-Since the structure of the dissociated species, especially for the 1-4 dissociated water with a greater OH-H distance, is not necessarily stable without the surface or with a ghosted surface, it is unclear whether these calculations will converge.
+Since the structure of the dissociated species (especially the 1-4 dissociated water with a greater OH-H distance) is not necessarily stable without the surface or with a ghosted surface, it is unclear whether these calculations will converge.
 \\
 To apply this scheme, four further calculations are required:
 \begin{itemize}
@@ -2472,7 +2472,7 @@ Values are given in eV.}
  \end{table}
  \\
 As one can see in Table \ref{tab:bsse-results}, the calculations for the 1-4 structure did not converge, because of missing stability in the ghosted calculations.
-The OH and H residues that are in this case far apart are not stabilized from the ghosted surface (without the real surface).
+The OH and H residues that are far apart in this case are not stabilized from the ghosted surface (i.e. without the real surface).
 In fact, also the 1-2 dissociated structure without the surface might be energetically unfavorable and therefore it is questionable whether these results are reliable.
 \\
 \\
@@ -2486,7 +2486,7 @@ From the results also follows that the relaxation energy is rather small, at lea
 \\\\
 Since it was not possible to calculate the BSSE and respective relaxation and interaction energies for the 1-4 dissociated system, it is necessary to go on using an extended basis instead, to get (hopefully) the same effect as with CP corrections.
 This larger basis set is a customized triple zeta basis set with high angular momentum.
-As before, geometry optimizations were done and the adsorption energies were evaluated, as can be seen in Table \ref{tab:combined_results}.
+As before, geometry optimizations were done and the adsorption energies were evaluated, as shown in Table \ref{tab:combined_results}.
 \begin{table}[!h]
   \centering
    \caption{Adsorption energies for the high angular momentum basis set for the method given in the first column.
@@ -2529,11 +2529,12 @@ The resulting adsorption energies can be found in Table \ref{tab:combined_result
 % \end{table}
 \\
 With these HF calculations done, first a localization of the orbitals was done.
-Optional at this point a dual basis expansion can be done, to increase the basis even further (this was done for Al and O), so that a basis set of the size of approximately augmented triple zeta can be achieved.
+Optionally, at this point a dual basis expansion can be done in order to increase the basis even further, so that a basis set of the size of approximately augmented triple zeta can be achieved.
+This was done for Al and O.
 For this one step of a HF calculation was done.
 These two results are compared in Table \ref{tab:combined_results}. %tab:MP2_minima}.
 One can see that there is indeed a difference in stability with and without the dual basis set.
-Especially the 1-2 diss gets stabilized but also the 1-4 dissociated structure gains stability, compared to the molecular minimum that is predicted to be equal by both methods.
+Especially the 1-2 diss gets stabilized but also the 1-4 dissociated \todo{consistently use diss or dissociated, or formally introduce shortened notation} structure gains stability, compared to the molecular minimum that is predicted to be equal by both methods.
 The results without the dual basis set expansion are more stable.
 This could be again due to different (de)stabilization of the adsorbed system, the clean surface and water, as in Table \ref{tab:pbe-vasp-geom} for the calculations with the CRYSTAL and VASP optimized calculations.
 % \begin{table}[!h]
@@ -2591,7 +2592,7 @@ These results are shown in Table \ref{tab:k_crystal-reopt+noopt}.
 Since this obtained transition state geometry was not converged properly, additionally calculations at the VASP optimized transition state geometry were done and corresponding  outcomes are presented in Table \ref{tab:k_crystal-reopt+noopt}.
 \\
 For both approaches, the corresponding rates are lower than for VASP. As it is known, GGA functionals like PBE used in VASP calculations underestimate the barriers\cite{Zhao05} and hence give too large reaction rates.
-For both calculations with CRYSTAL with basis sets ``2'' and ``5'', the (free) energy differences are higher and the rate constants are smaller, which is exactly what was to be expected.
+For both calculations with CRYSTAL with basis sets 2 and 5, the (free) energy differences are higher and the rate constants are smaller, which is exactly what was to be expected.
 These lower rates with the hybrid functional B3LYP are in the order of $10^2$-$10^3\,$s$^{-1}$ whereas the rate constant with VASP is in the order of $10^7\,$s$^{-1}$. 
 For both basis sets with the CRYSTAL reoptimized structure the rate is slightly higher ($10^3\,$s$^{-1}$) than for the calculation using the VASP optimized geometry ($10^2\,$s$^{-1}$).
 This shows the potential of this method toward the improvement of reaction rates and barriers of surface reactions.
@@ -2629,7 +2630,7 @@ The presented VASP results were done by Dr. J. Wirth with a plane wave and PBE+D
 \end{table}
 In comparison with former VASP calculations, the PBE results with CRYSTAL do not deviate much.
 In contrast to that, B3LYP results are systematically higher in energy.
-For both functionals anharmonic corrections decrease the wavenumbers of the OD vibrations, so that the B3LYP+anharmonic corrections are again at the same level as uncorrected PBE with CRYSTAL and the results with VASP.
+For both functionals anharmonic corrections decrease the wavenumbers of the OD vibrations, such that the B3LYP+anharmonic corrections are again at the same level as uncorrected PBE with CRYSTAL and the results with VASP.
 In comparison with experimental SFG spectra\cite{Wirth2014}, the overall agreement with VASP results was not convincing.
 The measured wavenumbers are: $2729$, $2764$, $2790$ $2900$ and $2910\,$cm$^{-1}$.
 These could be assigned to the respective OD vibrations of different (dissociatively) adsorbed species.
@@ -2698,7 +2699,7 @@ With anharmonic corrections, the agreement is even worse.
 Only the B3LYP+D3 results agree very well with deviations of one to eleven wavenumbers in the absolute numbers, which is an astonishingly well compliance.
 One has to mention that here influence of the basis set is strong and larger basis sets were not feasible due to high computational costs.
 As shown before, anharmonic corrections shift the results to lower wavenumbers and decrease the overall agreement.
-With the computational power available during this work, B3LYP+D3 seems by far the best choice to reproducing experimental vibrations.
+With the computational power available during this work, B3LYP+D3 seems by far the best choice for reproducing experimental vibrations.
 
 
 % \subsection{PIMD}
@@ -2731,11 +2732,11 @@ After optimization of the clean, defect free surface, the stability of different
 One molecular minimum and several dissociated species could be detected, and starting from these reaction rates between minima were evaluated.
 A dissociation reaction was shown to be very fast because the molecular minumum is relatively unstable, whereas diffusion reactions cover a wider range from fast to slow.
 In addition to reactivity, harmonic vibrational frequencies were determined for comparison with the findings of the experimental ``Interfacial Molecular Spectroscopy'' group  from Fritz-Haber institute in Berlin.
-Especially the vibrational frequencies of OD species could be assigned with very good agreement to vibrations from experimental SFG spectra.
+Especially the vibrational frequencies of OD species could be assigned to vibrations from experimental SFG spectra with very good agreement.
 Also, lattice vibrations were studied in close collaboration with the experimental partners.
 As a novelty, they perform SFG spectra at very low frequencies to get deep into the lattice vibration region.
-Concerning this, a bigger slab model with greater expansion perpendicular to the surface was applied, considering more layers in the bulk.
-Unfortunately, the measurements of the phonons still go on due to unforeseen difficulties in preparing the sample, so that no comparison to the experiment can be done.
+Correspondingly, a bigger slab model with greater expansion perpendicular to the surface was applied, considering more layers in the bulk.
+Unfortunately the experimental measurements of the phonons are still in progress to unforeseen difficulties in preparing the sample, so that no comparison to the experiment is possible in this work.
 However, the overall agreement with lower energy modes is typically worse than for high energy OD vibrations.
 \\\\
 The molecular beam scattering of water on (0001) surface was studied.
@@ -2744,14 +2745,14 @@ In previous work by Hass the dissociation was studied by AIMD of molecularly ads
 The experimental method to obtaining this is pinhole dosing.
 In contrast to this earlier work, the dissociation process of heavy water when being shot from a molecular beam source was reproduced in this work by periodoc \textit{ab initio} molecular dynamics simulations.
 This experimental method results in a non-equilibrium situation.
-The calculations with different surface and beam models let us understand better the results of the non-equilibrium situation.
+The calculations with different surface and beam models let us better understand the results of the non-equilibrium situation.
 In contrast to a more equilibrium situation with pinhole dosing, this gives an increase in the dissociation probability, which could be reproduced and also understood mechanistically by those calculations.
 \\\\
 Reaction rates computed with GGA functionals are known to be overestimated.
-Based on an example reaction at the (0001) surface, this work seeks to improve this rate by applying a hybrid functional method and also doing perturbation theory to calculate the stability, vibrational frequencies and a reaction rate constant.
-Especially the vibrational frequencies with the B3LYP hybrid functional that have been calculated for the (0001) and the (11\=20) surface are in superb agreement with experimental findings.
+Based on an example reaction at the (0001) surface, this work seeks to improve this rate by applying a hybrid functional method as well as using perturbation theory to calculate the stability, vibrational frequencies and a reaction rate constant.
+Especially the vibrational frequencies with the B3LYP hybrid functional that have been calculated for both the (0001) and the (11\=20) surface are in superb agreement with experimental findings.
 Concerning the barriers and the reaction rate constant, the expectations are fully met: we find higher barriers that result in slower reaction rates.
-It could be shown that both recalculation of the transition state and the use of an GGA optimized geometry lead to an increased rate constant when hybrid functionals are applied.
+It could be shown that both recalculation of the transition state and the use of a GGA optimized geometry lead to an increased rate constant when hybrid functionals are applied.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
