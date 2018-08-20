@@ -182,7 +182,7 @@ Drittgutachter:&Prof. Dr. \todo{xy} \\
 The importance of surface science in our industrialized world is overwhelming.
 Most processes in chemical industry are carried out with the help of (heterogeneous) catalysts\cite{Ago2005,Cargnello2012,Knozinger1978} by speeding up reactions by lowering the reaction barrier.
 The advantage of heterogeneous over homogeneous catalysts is that these do not need to be separated from the reactands and the product after the process, which is often a costly step in the production of chemicals.
-It is therefore desirable to understand heterogeneous catalytic processes by learning more about the microscopic phenomena which take place on the surface of materials especially by computational methods because it can deliver basic understanding.
+It is therefore desirable to understand heterogeneous catalytic processes by learning more about the microscopic phenomena which take place on the surface of materials especially by computational methods because it can deliver basic understanding on the atomic level.
 Metal oxide materials are commonly used as catalysts as well as catalyst support materials, hence understanding their properties in contact with chemicals is crucial.
 In this work, we consider water, which can act as a reactand, solvent or also impurity in aforementioned processes due to its ubiquity.
 \\
@@ -190,17 +190,16 @@ In this work, we consider water, which can act as a reactand, solvent or also im
 Aluminum is contained in rocket fuels as a reduction agent, so as a result alumina (Al$_2$O$_3$) particles are ejected into the atmosphere during the launch of a spacecraft\cite{Elam1998}.
 The start of one space shuttle can produce around $276,000\,$kg of alumina particles\cite{Potter1978}.
 Measurements show that approximately one third of these particles can be deposited in the stratosphere\cite{Cofer1978} (in an altitude between $15$ and $50\,$km above the surface of the earth).
-These particles are accumulated there and can react with water and other molecules\cite{Jones1995,Jackman1996}.
+These particles are accumulated there and can react with water and other molecules\cite{Jones1995,Jackman1996} and impact the ozone layer.
 \\
 
 Furthermore, in geochemical sciences Al$_2$O$_3$ is a subject of a variety of studies since aluminum is the most abundant metal in the crust with  $8.1\%$ %\textit{by mass or volume?}
 %with $6.3\%$ ({\color{red} \begin{verbatim} http://www.uniterra.de/rutherford/tab_hauf.htm\end{verbatim}}
-and the third most element therein\cite{dtv-Atlas,Riedel}.
+and the third most abundant element therein\cite{dtv-Atlas,Riedel}.
 %Component of  feldspar, Glimmer and clay minerals (with silicates), more seldomly as corundum and "Schmirgel".
 %Some of them are precious stones ruby, saphir
 % Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth crust and with that the far most abundant metal)}
-\\
-It can additionally be seen as a model system for more complex alumosilicates.
+Alumina can additionally be seen as a model system for more complex alumosilicates.
 Mineral oxides are omnipresent in the crust of the earth and henceforth are present in most geochemical processes since the times the earth's atmosphere was oxidizing in the early stages of the planetary evolution\cite{Trail2011} which became even more extensive with the rise of photosynthetic life forms\cite{Frei2009,Buick2008,Olson2006} around 2.2 billion years ago\cite{Kirschvink2008}.
 %became oxidizing with rise of photosynthetic life forms/(bacteria?) 2.3 billion years ago (seems to be not true: https://nai.nasa.gov/articles/2011/12/2/earths-early-atmosphere-an-update/ and \\ https://www.nature.com/articles/nature10655) \cite{Trail2011}.
 %Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew giving rise to oxidic metal compounds.)
@@ -230,7 +229,7 @@ Mineral oxides are omnipresent in the crust of the earth and henceforth are pres
 In this chapter the basics of the theoretical methods applied in this work shall be explained.
 It is starting from the ideas of density functional theory, going over periodic boundary conditions, the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
 Then we will proceed with frequency calculations and intensities over transition state theory to more developed methods like hybrid functionals and perturbation theory.
-Most parts of this chapter are based on \cite{jensen}.
+Most basic theory parts of this chapter are based on \cite{jensen}.
 
 \section{Density Functional Theory}
 For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure.
@@ -302,7 +301,7 @@ At least for molecular systems these are the most widely applied functionals, fo
 \\
 A major issue of DFT is that it can not be systematically improved like wave function-based methods.
 It is a single determinant method and it is not fully variational althoug the ``variational principle of DFT'' does exist.
-Also there is no direct calculation of observables possible: the expectation values can not be calcualted via the density.
+Also there is no direct calculation of observables possible: the expectation values can not be calculated via the density.
 \\
 Another weakness is the disability of reproducing intermolecular interactions like van der Waals interactions.
 To overcome the latter problem it is nowadays possible to add dispersion corrections to account for van der Waals interactions.
@@ -314,7 +313,7 @@ The D2 correction describes pair interactions between atoms $A$ and $B$ in the f
  E_{disp}^{(2)} =\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e} s_6 \frac{C_6^{AB}}{R_{AB}^6}f_{damp}(R_{AB}),
 \end{equation}
 with the number of atoms $N_e$, the scaling factor $s_6$ which is dependent on the functional, the averaged dispersion coefficient $C_6$, the interatomic distance $R_{AB}$ and a damping function $f_{damp}(R_{AB})$.
-This equation gives the D2-corrections $E_{disp}^{(2)}$, which is added to the total energy.
+This equation gives the D2-correction $E_{disp}^{(2)}$, which is added to the total energy.
 For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added.
 \begin{equation}
   E_{disp}^{(3)} =\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e}\sum\limits_{C>B>A}^{N_e} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\phi_a cos\phi_b cos\phi_b)}{(R_{AB}R_{BC}R_{AC})^3}.
@@ -500,12 +499,12 @@ In metallic systems, there is no bandgap, whereas in insulating systems the band
 \\
 
 \section{Plane Wave Basis, Atom Centered Basis and Peculiarities}
-It is necessary for calculation of Equations (\ref{eq:tise}) and (\ref{eq:electron-density}) to use a basis set for the electronic wave $\Psi$ function.
+It is necessary for calculation of Equations (\ref{eq:tise}) and (\ref{eq:electron-density}) to use a basis set for the electronic wave function $\Psi_e$.
 Basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set.
 In comparison plane waves (PW) and atom centered orbitals (ACO) have different advantages and disadvantages\cite{Tosoni2007}.
 For solid state systems both the energy and the gradient converge faster with plane waves.
 Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynmann forces have to be evaluated.
-The quality of the basis is simply dependent on the cutoff energy E$_\textrm{cutoff}$, the higher this energy is, the better is the basis.
+The quality of the basis is simply dependent on the cutoff energy E$_\textrm{cutoff}$, the higher this energy is the better is the basis.
 Treating all electrons is computationally expensive, so usually pseudopotentials are used, where core electrons are not treated explicitly but their presence is considered indirectly.
 On the negative side, when norm-conserving pseudopotentials are applied more memory is needed.
 To treat this, the PAW (projector augmented-wave method)\cite{paw1,Kresse1999} is applied which delivers explicit treatment of the core electrons so that the accuracy is greatly increased.
@@ -530,7 +529,7 @@ For this, the classical Newtonian equation of motion is solved:
  -\nabla_A V(\vec{R})=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 %  -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 \end{equation}
-where $V$ is the potential energy that is a function of all nuclear coordinates $\vec{R}$, $\vec{R}_A$ is the vector containing all coordinates of atom $A$, $M_A$ is the atomic mass  and the time $t$.
+where $V$ is the potential energy that is a function of all nuclear coordinates $\vec{R}$, $\vec{R}_A$ is the vector containing all coordinates of atom $A$, $M_A$ is the atomic mass of atom $A$ and the time $t$.
 This equation gives in principle $F=M_A\cdot a$, the force $F$ acting on each atom in a classical ansatz with the velocity $a$.
 This is a good approximation for nuclei are usually sufficiently massive to be treated classically\footnote{Strictly speaking, this is not appropriate for hydrogen, since it is so lightweight that quantum mechanical tunneling processes can not be precluded.
 For treating quantum effects such as zero point energy and tunneling it is necessary to solve the nuclear Schrödinger equation.}.
@@ -579,7 +578,7 @@ For this thermostat, several models are available.
 In this work the Nos\'{e}-Hoover thermostat\cite{nose1984,nose1984_2,hoover1985} is used.
 The energy accounting of the heat bath is realized by a fictious particle which is propagated like real particles of the system and acts like a reservoir of energy for the heat bath.
 The total energy of the extended system is again a conserved quantity and therefore a control parameter.
-Here, he ensemble is not deterministic.
+Here, the ensemble is not deterministic.
 Multiple simulations have to be performed in order to gain reliable statistics.
 
 \section{Frequencies and Intensities}
@@ -609,15 +608,15 @@ How to find these points is described in Section \ref{sec:tst}.
 \\\\
 There are several methods available to calculate intensities of vibrational modes, three of which are presented in this work: From dipole corrections (I), from Born effective charges (II) and via velocity-velocity autocorrelation function (III)
 \begin{itemize}
- \item[I)] The IR intensities for each normal mode are estimated from the derivative of the dipole moment with respect to the atomic positions, also known as dynamical dipole moment\cite{dyn-dip}.
-The dynamical dipole moment is evaluated by the dipole moment operator $\hat{\mu}$ between two states $i$ and $f$, where $\hat{\mu}$ is a three component vector.
+ \item[I)] The IR intensities for each normal mode are estimated from the derivative of the dipole moment with respect to the atomic positions, also known as dynamical dipole moment\cite{dyn-dip,Yang2012}.
+The dynamical dipole moment is evaluated by the dipole moment operator $\uline{\hat{\mu}}$ between two states $i$ and $f$, where $\uline{\hat{\mu}}$ is a three component vector.
 The initial state $i$ is the vibrational ground state and final state $f$ is a vibrationally excited state.
 The eigenvectors of the vibrations are used here as $i$ and $f$.
 It is called dynamical because it does not describe a static dipole moment but a response of the system.
 With some symmetry and group theory considerations, one can decide for each vibration whether it is IR active or not.
 %I und f sind initial und final Zustände Mu ist einfach Dipolmomentoperator Dipolmoment hat 3 Komponenten also für gegebene i,f ist das ein Vektor Soweit ich mir gut erinnere, er heißt dynamischer weil er zwischen 2 Zuständen ist Also beschreibt keine statische Werte sondern eine Antwort eines Systems Also zum Beispiel für IR Absorption du nimmst den Grundzustand als "i" Und welche angeregte Zustande möchtest du als mögliche nehmen? Einfachste Antwort: erste angeregte Vibrationszustände.
 %Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
-The respective intensities are determined by $I\propto <i|\hat{\mu}|f>^2$.
+The respective intensities are determined by $I\propto <i|\uline{\hat{\mu}}|f>^2$.
 For this approach, only the dipole components perpendicular to the surface are taken into account.
 Only these can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy, see also Appendix \ref{exp_techniques}).
 These are not completely comparable to IR spectra.
@@ -653,7 +652,7 @@ The integration range is per definition from $-\infty$ to $\infty$ but because o
 The resulting spectra implicitly include anharmonic effects: no harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account.
 Also, further anharmonic effects like mode coupling, overlapping of neighboring peaks and line broadening are included\cite{hornicek2007,hudecova2012}.
 The power spectrum contains peaks for each normal mode vector apart from selection rules for vibrational spectroscopy.
-The obtained intensities correspond to the oscillator amplitudes.
+The obtained ``intensities'' correspond to the oscillator amplitudes.
 \end{itemize}
 
 
@@ -692,7 +691,7 @@ The free energy $\Delta$G$^\ddagger= \Delta G_\textrm{TS}-\Delta G_\textrm{educt
 % First a regular NEB, then on top of this climbing image was done which gives better convergence.
 % In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode that vibrates along the reaction path.
 Transition state theory is a semi-classical theory: dynamics along the reaction coordinate $\xi$ are treated classically, but perpendicular directions allow for quantization of vibrational and rotational energy.
-In thermodynamical equilibrium, all possible quantum states along the reaction coordinate are occupied  with respect to their Boltzmann weight $e^{\Delta E/(k_BT)}$.
+In thermodynamical equilibrium, all possible quantum states along the reaction coordinate are occupied with respect to their Boltzmann weight $P=e^{-\Delta E/(k_BT)}$ depending on the energy $E$ and the temperature $T$.
 \\
 Assuming the reaction
 \begin{equation}
@@ -701,7 +700,7 @@ A+ B \rightleftarrows C^\ddagger \rightarrow D
 where reactants $A$ and $B$ are in thermodynamical equilibrium with the transition state $C^\ddagger$ and from this the reaction goes to the product $D$.
 The rate constant can be determined with Eyring theory\cite{eyring,eyring-polanyi}:
 \begin{equation}\label{eq:eyring}
-k(T)=\kappa\frac{k_BT}{h}e^{\Delta G^\ddagger(T)/(k_BT)}
+k(T)=\kappa\frac{k_BT}{h}e^{-\Delta G^\ddagger(T)/(k_BT)}
 \end{equation}
 with the reaction rate constant $k(T)$ (which is in fact not a constant but a function of temperature $T$), the transmission coefficient $\kappa$ which will be explained shortly, Boltzmann's constant $k_B$ and the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger = \Delta G_\textrm{TS} - \Delta G_\textrm{educt}$.
 The equation gives the reaction rate constant as a function of temperature and free energy barrier height.
@@ -758,8 +757,7 @@ In the work of Waychunas and coworkers\cite{sung} VSF spectra (vibrationally res
 They found two different types of oxygen atoms on the surface, twofold and threefold coordinated ones.
 It is assumed, that the threefold coordinated will only be protonated under highly acidic conditions. They also have evidence for molecularly adsorbed water on the surface.
 However, all experimental studies\cite{catalano,sung,Becker2002} assume a high coverage situation, whereas this theoretical study is focused on the low-coverage regime.
-\\
-With theoretical methods, only the clean surface was studied by two different groups: Oshiyama \textit{et al.}\cite{kuri10} and Marmier\cite{marmier}.
+With theoretical methods so far only the clean surface was studied by two different groups: Oshiyama \textit{et al.}\cite{kuri10} and Marmier\cite{marmier}.
 
 \section{Surface Model}
 To obtain the clean surface slab model of the (11\=20) surface a $2\times 2$ supercell was cut from the bulk.
@@ -809,6 +807,7 @@ All values are given in \AA.}
   \label{tab:layer-dist}
 \end{table}
 A major issue of the optimization apart from layer spacing is that the interatomic distances of surface Al species change: the CUSa\textendash CUSa distance increases from $2.682$ to $2.994$\AA{}, the CUSa\textendash CUSb distance increased from $2.833$ to $2.876$\AA{} whereas the CUSb\textendash CUSb distance decreased from $2.682$ to $2.499$\AA{}.
+The pairs of CUSa and CUSb can be interpreted as the Al dimers in the work of Catalano\cite{catalano}.
 \\
 The supercell model that is used to a great extent in this work has ten atomic layers, with the lowest five fixed to the bulk value to mimic the surface situation.
 For the calculations of the lattice vibrations up to 25 layers were considered (Figure \ref{abb:cell_sizes}).
@@ -913,7 +912,7 @@ Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water
 It is apparent from this table that the inter-CUSb||O-$\mu_3^{\prime\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^{\prime\prime}$.
 This is due to the fact that the periodic conditions actually lead to a decrease of the distance between OH groups in the former system.
 The distances between the neighboring OH groups in the O-$\mu_3^{\prime\prime}$ system are $6.19$ and $8.82\,$\AA{}, compared to $6.64$ and $8.96\,$\AA{} in the O-$\mu_3^{\prime\prime\prime}$ system (the numbers refer to the two possible distance in the periodic system, direct and over the border of the unit cell).
-The latter one is in fact only slightly further away, the average distance is $0.739$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ and $0.780$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$.
+The latter one is in fact only slightly further away, the average distance is $0.739\,$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ and $0.780\,$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$.
 Although the distance is larger, there seems to be more stabilization by the surrounding surface atoms.
 %mysterious...
 In Section \ref{reactions} dissociation and diffusion reactions will be given.
@@ -1040,7 +1039,7 @@ The top layer oxygen atom from the O-I terminated surface is missing and gives r
 Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system.
  We utilize the NEB method including climbing image to search for transition states between the minima of the 10 layer slab.
 We examined three different types of reactions: dissociation from the molecular minimum, as well as OH- and H-diffusion.
-These reaction paths and corresponding rates were calculated for hydrogen instead of deuterium that was used for vibrational frequencies since H$_2$O is more ubiquitous in nature.
+These reaction paths and corresponding rates were calculated for hydrogen instead of deuterium that was used for vibrational frequencies since H$_2$O is more ubiquitous in nature (see Section \ref{sec:vib11-20}).
 The dissociation reactions are named D, diffusion reaction Df-OH and Df-H, respectively, in Table \ref{tab:reaction-rates} and Figures \ref{mep} and \ref{mep2}.
 In addition, molecular water diffusion on the surface is supposable but due to the low stability, it will dissociate before diffusion can occur.
 In the publication that emerged from this work (Reference \cite{Heiden11-20_2018}) most of the reactions were introduced; additional reactions paths also considered here.
@@ -1055,7 +1054,7 @@ The reaction D-a leads from the molecular minimum at CUSb to the twofold coordin
  \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \tag{D-a}
       \label{dissa}
 \end{equation}
-The barrier is very low, about $0.002\,$eV as one can see from Table \ref{tab:reaction-rates} and Figure \ref{mep}(a), hence the reaction rate constant is very high, in the range of $k_{\text{300K}}=5.76\times 10^{12}\,$s$^{-1}$.
+The barrier is very low, about $0.002\,$eV as one can see from Table \ref{tab:reaction-rates} and Figure \ref{mep}(a), hence the reaction rate constant is very high, in the order of $k_{\text{300K}}=5.76\times 10^{12}\,$s$^{-1}$.
 This low barrier might be due to underestimation of barrier heights\cite{Zhao05} with the used functional PBE (compare section \ref{theorybeyond}).
 \\ 
 For the other dissociation reaction D-b from CUSb to CUSb$\parallel$O-$\mu_3$, there is no barrier found at all, the reaction pathway shows simply an upgoing path in energy without any barrier (see Figure \ref{mep}(b)), since the molecular minimum is by $0.15\,$eV more stable than the dissociated structure on CUSb$\parallel$O-$\mu_3$.
@@ -1226,7 +1225,7 @@ A further attempt doing HSE06 single point calculations on PBE-optimized transit
 With this, the PBE results may not be perfectly accurate, but these are still the best we can afford with the computational power at the moment.
 
 \clearpage
-\section{Vibrational Frequencies}
+\section{Vibrational Frequencies}\label{sec:vib11-20}
 Vibrational spectroscopy is of interest because it is a great source of knowledge about chemical systems.
 The frequencies of vibrations give hints about the chemical environment as hydrogen bonds and other atoms nearby that bind to each other.
 These vibrational frequencies were calculated for the surface system adsorbed with OD.
@@ -1246,6 +1245,7 @@ The different coverages are achieved via different preparing temperatures of the
 In the experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber.
 It was then sputtered in Ar, and annealed to high temperatures in ultra high vacuum (UHV, $2.5\times 10^{-10}\,$mbar) and afterwards sputtered three times in oxygen at different temperatures.
 After this treatment, D$_2$O was brought onto the surface with a molecular beam source (MBS).
+The SFG measurement was then conducted at $130\,$K.
 A short overview explaining the basics of experimental methods of interest for this work can be found in Appendix \ref{exp_techniques}.
 For further experimental details see \cite{Heiden11-20_2018} and the supporting information therein.
 Test calculations with a symmetric slab (where at the top and the bottom water is adsorbed) were done, proving that the asymmetric model including dipole corrections is sufficient to describe the system.
@@ -1272,7 +1272,7 @@ The normal modes are calculated within the harmonic approximation and depend on 
 This ansatz is quite good for high frequency modes like OD stretch vibrations.
 We assume that the OD stretching modes for the three most stable structures would contribute to the spectrum the most, since the less stable adsorbed species are improbable to appear.
 The corresponding wavenumbers are presented in Table \ref{tab:freq_layers} for different slab sizes, as given in Figure \ref{abb:cell_sizes}.
-Also the angle of the OD bond with respect to the surface is given, since vibrations which are in plane cannot be detected with SFG spectroscopy (sum frequency generation) and hence the intensity is a function of this angle.
+Also the angle of the OD bond with respect to the surface is given (see Table \ref{tab:freq_layers}), since vibrations which are in plane cannot be detected with SFG spectroscopy (sum frequency generation) and hence the intensity is a function of this angle.
 \begin{table*}[th]
   \centering
  \caption{Wavenumbers of normal modes for the different slab sizes: OD stretching modes for each of the most stable minima.
@@ -1359,7 +1359,7 @@ Unfortunately, experimental results for the spectral range of the lattice vibrat
 % \todo{experimental results are still missing, compare modes of low coverage limit to spectra with higher coverage, ask Lu for more data of higher coverage.}
 \\
 In this section intensities are elaborated from dipole corrections.
-In the spectra, the intensities are given by the square of the dipole moment $\mu^2$ to which it is proportional.
+In the spectra from the dipole corrections the intensities are given by the square of the dipole moment $\mu^2$ to which it is proportional.
 For the lattice vibrations the same normal modes of the 10 layer slab were checked to get a first impression about the spectra.
 But for a better description of the deeper lying phonon vibrations we need to consider more layers of the bulk in order to get more reliable results.
 From an experimental point of view it is suggested that SFG spectra can give insight into at least three atomic layers of the bulk.
@@ -1625,7 +1625,7 @@ Overall the agreement of the inter-CUSa$\parallel$O-$\mu_2$ spectra is very good
 For the other two species the agreement is not so excellent, especially in the lattice region, where the most intense peak BEC peak is blueshifted compared to the peak from dipole corrected intensities.
 It is about $30\,$cm$^{-1}$ for the most intense peak in the lattice region of CUSb$\parallel$O-$\mu_2$ and around $40\,$cm$^{-1}$ for the corresponding peaks in inter-CUSb$\parallel$O-$\mu_2$.
 \\
-Corresponding \textit{intensities} from AIMD calcualtions are presented in section \ref{vvacf}.
+Corresponding \textit{intensities} from AIMD calculations are presented in section \ref{vvacf}.
 \clearpage
 \subsection{Complete Spectrum: Velocity-Velocity Autocorrelation Function}\label{vvacf}
 The velocity-velocity autocorrelation function is evaluated from AIMD calculations and Fourier transformed to get information from the time to the frequency domain.
@@ -2572,28 +2572,34 @@ A transition state optimization was done, but this failed to converge.
 However, one point of the optimization showed only a small energy change in the micro Hartree region ($\approx 10^{-5}\,$eV), atom displacements were tiny and the gradient was not too large either, so that this structure was examined further.
 A normal mode analysis showed one single imaginary frequency, as expected for a transition state of first order.
 Now from this geometry, normal mode analyses were done and $\Delta G^\ddagger$ was computed to calculate a rate with the Eyring equation (\ref{eq:eyring}).
-These results are shown in Table \ref{tab:k_crystal-reopt+noopt} \todo{Table dE, dG and k(300K) for CRYSTAL reoptimized geometry}.
+These results are shown in Table \ref{tab:k_crystal-reopt+noopt}.
 \begin{table}[!h]
   \centering
-  \caption{$\Delta E^\ddagger$, $\Delta G^\ddagger(300\,$K) in eV and $k_\textrm{300K}$ in s$^{-1}$ for the reoptimized reaction Df-H-4-2 with B3LYP+D3 with CRYSTAL. VASP results are given for PBE+D3.}
-  \begin{tabular}{c|ccc}
+  \caption{$\Delta E^\ddagger$, $\Delta G^\ddagger(300\,$K) in eV and $k_\textrm{300K}$ in s$^{-1}$ for the reaction Df-H-4-2 with B3LYP+D3 with CRYSTAL for different basis sets. VASP results are given for PBE+D3.}
+  \begin{tabular}{c|cc|cc|c}%|cc
   \toprule
-   &B3LYP (reopt)&B3LYP(no opt)&VASP\\\midrule
-   $\Delta E^\ddagger$ & & &0.44\\
-   $\Delta G^\ddagger$ & & &0.29\\
-   $k$ & & &$9.1\times 10^7$\\\bottomrule
+   & \multicolumn{2}{c}{basis 2} &\multicolumn{2}{c}{basis 5}  &VASP\\ %& \multicolumn{2}{c}{\todo{large basis}}
+   & reopt & no opt & reopt & no opt & \\\midrule %& reopt & no opt
+   $\Delta E^\ddagger$ &0.65 &0.76 &0.65 & 0.76 &0.44\\%& &
+   $\Delta G^\ddagger$ &0.54 &0.62 &0.53 &0.62 &0.29\\%& &
+   $k_\textrm{300\,K}$ &$5.8\times 10^3$ &$2.2\times 10^2$ &$8.0\times 10^3$ &$2.4\times 10^2$ &$9.1\times 10^7$\\\bottomrule%& &
   \end{tabular}
   \label{tab:k_crystal-reopt+noopt}
 \end{table}
 \\
-Since this obtained transition state geometry was not converged properly, also calculations at the VASP optimized transition state geometry were done and corresponding  outcomes are presented in Table \ref{tab:k_crystal-reopt+noopt} \todo{Table with dE, dG and k(300K) for vasp optimized geometry}.
+Since this obtained transition state geometry was not converged properly, additionally calculations at the VASP optimized transition state geometry were done and corresponding  outcomes are presented in Table \ref{tab:k_crystal-reopt+noopt}.
 \\
+For both approaches, the corresponding rates are lower than for VASP. As it is known, GGA functionals like PBE used in VASP calculations underestimate the barriers\cite{Zhao05} and hence give too large reaction rates.
+For both calculations with CRYSTAL with basis sets ``2'' and ``5'', the (free) energy differences are higher and the rate constants are smaller, which is exactly what was to be expected.
+These lower rates with the hybrid functional B3LYP are in the order of $10^2$-$10^3\,$s$^{-1}$ whereas the rate constant with VASP is in the order of $10^7\,$s$^{-1}$. 
+For both basis sets with the CRYSTAL reoptimized structure the rate is slightly higher ($10^3\,$s$^{-1}$) than for the calculation using the VASP optimized geometry ($10^2\,$s$^{-1}$).
+This shows the potential of this method toward the improvement of reaction rates and barriers of surface reactions.
 
- 
+
 \subsubsection{Frequency Analysis}
 Apart from calculating adsorption energies, also normal modes with CRYSTAL were calculated with the functional B3LYP+D3 and PBE+D3, both with basis set 2 from Table \ref{tab:basissets}.
 Additionally, anharmonic corrections for both O-D bonds per system have been done.
-\todo{mention here how this is done? Or in Appendix?}
+% \todo{mention here how this is done? Or in Appendix?}
 For these corrections no frequency calculations are necessary.
 Instead, the O-D distances around the equilibrium position are varied from $-0.2$ to $+0.3$\AA{}.
 A potential energy is calculated for each value of O-D distance, seven points in total.
@@ -2722,13 +2728,14 @@ In this present work great progress was made in understanding the (11\=20) surfa
 This surface cut is the third most stable one under UHV conditions and has not been studied to a great extent yet.
 After optimization of the clean, defect free surface, the stability of different adsorbed species could be classified.
 One molecular minimum and several dissociated species could be detected, and starting from these reaction rates between minima were evaluated.
-In addition to reactivity, harmonic vibrational frequencies were determined for comparison with the findings of the experimental group from Fritz-Haber Institute in Berlin.
-Especially the vibrational frequencies could be assigned with very good agreement to vibrations from experimental SFG spectra.
+A dissociation reaction was shown to be very fast because the molecular minumum is relatively unstable, whereas diffusion reactions cover a wider range from fast to slow.
+In addition to reactivity, harmonic vibrational frequencies were determined for comparison with the findings of the experimental ``Interfacial Molecular Spectroscopy'' group  from Fritz-Haber institute in Berlin.
+Especially the vibrational frequencies of OD species could be assigned with very good agreement to vibrations from experimental SFG spectra.
 Also, lattice vibrations were studied in close collaboration with the experimental partners.
 As a novelty, they perform SFG spectra at very low frequencies to get deep into the lattice vibration region.
 Concerning this, a bigger slab model with greater expansion perpendicular to the surface was applied, considering more layers in the bulk.
-The overall agreement with lower energy modes is typically worse than for high energy OD vibrations.
-\todo{to be continued}
+Unfortunately, the measurements of the phonons still go on due to unforeseen difficulties in preparing the sample, so that no comparison to the experiment can be done.
+However, the overall agreement with lower energy modes is typically worse than for high energy OD vibrations.
 \\\\
 The molecular beam scattering of water on (0001) surface was studied.
 This is the most stable surface cut under UHV conditions and was studied by many groups both theoretically and experimentally.
@@ -2736,13 +2743,15 @@ In previous work by Hass the dissociation was studied by AIMD of molecularly ads
 The experimental method to obtaining this is pinhole dosing.
 In contrast to this earlier work, the dissociation process of heavy water when being shot from a molecular beam source was reproduced in this work by periodoc \textit{ab initio} molecular dynamics simulations.
 This experimental method results in a non-equilibrium situation.
-This calculations with different surface and beam models let us understand better the results of the non-equilibrium situation.
+The calculations with different surface and beam models let us understand better the results of the non-equilibrium situation.
 In contrast to a more equilibrium situation with pinhole dosing, this gives an increase in the dissociation probability, which could be reproduced and also understood mechanistically by those calculations.
 \\\\
 Reaction rates computed with GGA functionals are known to be overestimated.
 Based on an example reaction at the (0001) surface, this work seeks to improve this rate by applying a hybrid functional method and also doing perturbation theory to calculate the stability, vibrational frequencies and a reaction rate constant.
-Especially the vibrational frequencies with the B3LYP hybrid functional are in superb agreement with experimental findings.
-\todo{to be continued...}
+Especially the vibrational frequencies with the B3LYP hybrid functional that have been calculated for the (0001) and the (11\=20) surface are in superb agreement with experimental findings.
+Concerning the barriers and the reaction rate constant, the expectations are fully met: we find higher barriers that result in slower reaction rates.
+It could be shown that both recalculation of the transition state and the use of an GGA optimized geometry lead to an increased rate constant when hybrid functionals are applied.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begingroup
