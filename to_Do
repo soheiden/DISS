@@ -1,13 +1,2 @@
 add figures
-	crystal structures or comparison to vasp..
-	PIMD(?)
-	cluster(?)
-
-11-20 evaluation
-		comparison with crystal (stability and vibrations)
-	phonons (dipole, BEC, VDOS)
-
-0001 evaluation
-	crystal, comparison with vasp results (stability of minima, rates)
-
-look for citations
+	crystal structures or comparison to vasp..(?)
