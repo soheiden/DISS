@@ -271,38 +271,37 @@ Most basic theory parts of this chapter are based on \cite{jensen}.
 
 \section{Density Functional Theory}
 For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure.
-For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legit due to the largely different masses of electrons and nuclei.
+For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legitimate due to the largely different masses of electrons and nuclei.
 With this approximation, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic wave function $\Psi_e(\vec{r})$ and electronic energy $E_e$ is
 \begin{equation}\label{eq:tise}
- \hat{H}_e\Psi_e(\vec{r})=E_e\Psi_e(\vec{r}).
+ \hat{H}_e\Psi_e(\vec{r_i})=E_e\Psi_e(\vec{r_i}).
 \end{equation}
-The wave function $\Psi_e(\vec{r})$ is a function of the coordinate vector $\vec{r}$ and is 3$N_e$ dimensional, with the number of electrons $N_e$.
+The wave function $\Psi_e(\vec{r_i})$ is a function of the coordinate vector $\vec{r_i}$ and is 3$N_e$ dimensional, with the number of electrons $N_e$.
 For large systems, %(more than electrons),
-the solution of equation (\ref{eq:tise}) gets computationally demanding.
+the solution of Equation (\ref{eq:tise}) gets computationally demanding.
 \todo{Introduce Hartree Fock theory, one electron orbitals, Slater determinant}
-
+Wave function is approximated as Slater-Determinant. One particle wave function = orbital. Fock operator. exchange but no correlation.
 
 An alternative to the wave function-based theory is density functional theory (DFT).
-It is based on the Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r})$: there exists a one to one correspondence.
-If $\Psi(\vec{r}^N)$ is a N-electron wavefunction, then the  electron density can be expressed as
+It is based on the Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r_i})$: there exists a one to one correspondence.
+If $\Psi(\vec{r}_i)$ is a $N_e$-electron wavefunction, then the  electron density can be expressed as
 \begin{equation}\label{eq:electron-density}
  n(\vec{r})=N_\textrm{norm}\int ...
 \int \Psi^\ast(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N)\Psi(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N) d \vec{r}_2...d \vec{r}_N
 \end{equation}
 %integral starts with $d\vec{r}_2$? yes, one electron is fixed and the probabilities of the other electrons are evaluated}
 with the normalization factor $N_\textrm{norm}$.
-The second Hohenberg-Kohn theorem, also called ``the variational principle of DFT'', proves that a test density $n^\prime(\vec{r})$ will give a higher or the same energy as the exact density:
+The second Hohenberg-Kohn theorem, also called ``the variational principle of DFT'', proves that a test density $n^\prime(\vec{r}_i)$ will give a higher or the same energy as the exact density:
 \begin{equation}
- E_0^{exact}\leq E_0^{HK}[n^\prime(\vec{r})].
+ E_0^{exact}\leq E_0^{HK}[n^\prime(\vec{r}_i)].
 \end{equation}
-In this way, the energy can be determined iteratively with the self consistent field method (SCF) by taking a guess, solving the equation and then improving the guess accordingly.
 
 
 The total energy $E[n]$ can be determined as
 \begin{equation}
  E[n]=T[n] + V_{ext}[n] + V_{ee}[n]=\int n(\vec{r})v_{ext}(\vec{r})d\vec{r} + T[n]+E_H[n]+E_{xc}[n]
 \end{equation}
-with the kinetic energy $T[n]$, the potential energy $V[n]$ for the external potential $V_{ext}$ and electron electron interaction $V_{ee}$.
+with the kinetic energy $T[n]$, the potential energy $V_{ext}$ for the external potential and the electron electron interaction $V_{ee}$.
 It can also by expressed by the external potential $v_{ext}(\vec{r})$, the Hartree energy $E_H[n]$, corresponding to the classical Coulomb interaction and the exchange correlation energy $E_{xc}[n]$ for the non-classical exchange correlation interactions.
 A major advantage of DFT over wave function-based methods is the size: only a three dimensional system has to be considered for three spatial coordinates $n(x,y,z)$ (the spin coordinate was neglected), instead of a $3N_e$-dimensional system, %weglassen? (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional)}
 with $N_e$ being the number of electrons.
@@ -314,6 +313,7 @@ Initially, calculating all energy components from the pure density was not very 
 In 1965 Kohn and Sham showed in their work\cite{Kohn-Sham1965} that the kinetic energy can be calculated from non-interacting auxiliary particles in a set of orbitals that is used for representing the electron density.
 A test system with non-interacting electrons reflecting the real system's electron density is defined and calculated.
 The use of orbitals makes it possible to use the same methods and algorithms previously known from wave function methods.
+In this way, the energy can be determined iteratively with the self consistent field method (SCF) by taking a guess, solving the equation and then improving the guess accordingly.
 With this, the exchange-correlation functional remains the only unknown functional, but it is only a small fraction of the total energy.
 % Simple approximations to this functional still give reasonable results, such as the local density approximation (LDA).
 % Here mostly the homogeneous electron gas is used as a model, distributing the electron density homogeneosly.
@@ -341,7 +341,7 @@ PBE is implemented without any parameters fitted to experimental results and is 
 
 
 Even more accurate results can be gained by mixing into the functional some amount of exact Hartree Fock exchange, these are called hybrid functionals.
-At least for molecular systems these are the most widely applied functionals, for example B3LYP\cite{B3LYP1,B3LYP2} and HSE06.
+At least for molecular systems these are the most widely applied functionals, for example B3LYP\cite{B3LYP1,B3LYP2} and HSE06\cite{HSE06}.
 
 
 A major issue of DFT is that it can not be systematically improved like wave function-based methods.
@@ -356,15 +356,15 @@ In the work of Grimme\cite{grimme06} and coworkers corrections were developed an
 In this work, D2 and D3 corrections were used.
 The D2 correction describes pair interactions between atoms $A$ and $B$ in the form
 \begin{equation}\label{eq:d2}
- E_{disp}^{(2)} =\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e} s_6 \frac{C_6^{AB}}{R_{AB}^6}f_{damp}(R_{AB}),
+ E_{disp}^{(2)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_6 \frac{C_6^{AB}}{R_{AB}^6}f_{damp}(R_{AB}),
 \end{equation}
-with the number of atoms $N_e$, the scaling factor $s_6$ which is dependent on the functional, the averaged dispersion coefficient $C_6$, the interatomic distance $R_{AB}$ and a damping function $f_{damp}(R_{AB})$.
+with the number of atoms $N_A$, the scaling factor $s_6$ which is dependent on the functional, the averaged dispersion coefficient $C_6$, the interatomic distance $R_{AB}$ and a damping function $f_{damp}(R_{AB})$.
 This equation gives the D2-correction $E_{disp}^{(2)}$, which is added to the total energy.
-For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added.
+For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added.
 \begin{equation}
-  E_{disp}^{(3)} =\sum\limits_{A}^{N_e}\sum\limits_{B>A}^{N_e}\sum\limits_{C>B>A}^{N_e} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\phi_a cos\phi_b cos\phi_b)}{(R_{AB}R_{BC}R_{AC})^3}.
+  E_{disp}^{(3)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B>A}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\phi_a cos\phi_b cos\phi_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
 \end{equation}
-Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\phi_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$.
+Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\phi_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$ and $\bar{R}_{ABC}$ is the geometrically average distance of the three atoms.
 
 
 \section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
@@ -592,7 +592,7 @@ In contrast to classical molecular dynamics, where predefined potentials or forc
 This has the advantage that no further parameterization is necessary when changing atoms or molecular groups/surfaces etc. Also a change in electronic structure along the trajectory (time propagation of the nuclei) can be compensated without the necessity of another potential/force field to describe interatomic interactions, which is especially vital for dissociation processes like those considered in this work.
 
 
-As starting conditions, positions and momenta of the atoms have to be given.
+As starting conditions, positions $\vec{R}_A(t)$ and velocities $\vec{v}_A$ of the atoms have to be given.
 Between two time steps of the propagation there is a time span $\Delta t$.
 The time propagation can be executed numerically with the Verlet algorithm\cite{verlet}, delivering the trajectory $\vec{R}(t)$:
 \begin{equation}\label{eq:t+dt}
@@ -635,7 +635,7 @@ $T$ (on average) is given by the temperature of the thermostat.
 For this thermostat, several models are available.
 In this work the Nos\'{e}-Hoover thermostat\cite{nose1984,nose1984_2,hoover1985} is used.
 The heat bath is realized by a fictious particle which is propagated like real particles of the system and acts like a reservoir of energy for the heat bath.
-The total energy of the extended system is again a conserved quantity and therefore a control parameter.
+% The total energy of the extended system is again a conserved quantity and therefore a control parameter.
 Here, the trajectory is not deterministic.
 Multiple simulations have to be performed in order to gain reliable statistics.
 
@@ -668,15 +668,16 @@ How to find these points is described in Section \ref{sec:tst}.
 
 There are several methods available to calculate intensities of vibrational modes, three of which are presented in this work: From dipole corrections (I), from Born effective charges (II) and via velocity-velocity autocorrelation function (III).
 \begin{itemize}
- \item[I)] The IR intensities for each normal mode are estimated from the derivative of the dipole moment with respect to the atomic positions, also known as dynamical dipole moment\cite{dyn-dip,Yang2012}.
-The dynamical dipole moment is evaluated by the dipole moment operator $\vec{\hat{\mu}}$ between two states $i$ and $f$, where $\vec{\hat{\mu}}$ is a three component vector.
+ \item[I)] The IR intensities for each normal mode are estimated from the double harmonic approximation.
+  The derivative of the dipole moment with respect to the atomic positions is calculated, also known as dynamical dipole moment\cite{dyn-dip,Yang2012}.
+The dynamical dipole moment is evaluated by the dipole moment operator $\vec{\hat{\mu}}(\vec{R}_i)$ between two states $i$ and $f$, where $\vec{\hat{\mu}}(\vec{R}_i)$ is a three component vector.
 The initial state $i$ is the vibrational ground state and final state $f$ is a vibrationally excited state.
 The eigenvectors of the vibrations are used here as $i$ and $f$.
-It is called dynamical because it does not describe a static dipole moment but a response of the system.
+% It is called dynamical because it does not describe a static dipole moment but a response of the system.
 With some symmetry and group theory considerations, one can decide for each vibration whether it is IR active or not.
 %I und f sind initial und final Zustände Mu ist einfach Dipolmomentoperator Dipolmoment hat 3 Komponenten also für gegebene i,f ist das ein Vektor Soweit ich mir gut erinnere, er heißt dynamischer weil er zwischen 2 Zuständen ist Also beschreibt keine statische Werte sondern eine Antwort eines Systems Also zum Beispiel für IR Absorption du nimmst den Grundzustand als "i" Und welche angeregte Zustande möchtest du als mögliche nehmen? Einfachste Antwort: erste angeregte Vibrationszustände.
 %Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
-The respective intensities are determined by $I\propto <i|\vec{\hat{\mu}}|f>^2$.
+The respective intensities are determined by $I\propto |<i|\vec{\hat{\mu}}(\vec{R}_i)|f>|^2$.
 For this approach, only the dipole components perpendicular to the surface are taken into account.
 Only these can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy, see also Appendix \ref{exp_techniques}).
 These are not completely comparable to IR spectra.
@@ -686,11 +687,10 @@ Selection rules for SFG include IR and Raman activity as well as a system withou
 These charges are calculated as the second derivative of the energy with respect to an applied electric field and to the amplitude of a vibrational distortion.
 This is available through DFPT\cite{Baroni1987,Giannozzi1991} (density functional perturbation theory), which is a linear response theory.
 One can calculate the intensity $I(\omega)$\cite{Bruesch1986,Baroni2001}:
-\begin{equation}
-  I(\omega) = \sum_{\alpha=1}^3|\sum_{l=1}^M\sum_{\beta=1}^3 Z_{\alpha\beta}^\star(l)e_\beta(l)|^2.
+\begin{equation}\label{eq:bec}
+  I(\omega) = \sum_{\alpha=1}^3|\sum_{l=1}^{N_A}\sum_{\beta=1}^3 Z_{\alpha\beta}^\star(l)e_\beta(l)|^2.
 \end{equation}
-Here, $\alpha$ and $\beta$ are cartesian polarizations, $e_\beta(l)$ is the normalized vibrational eigenvector of the $\omega$-th mode, $l$ deciphers the different atoms of the system with the total number $M$ and $Z_{\alpha\beta}^\star$ is the Born effective charge tensor of the $l$-th atom.\\
-From that, with the charges the dipole and also the intensities are available through $\mu=\textrm{charge} \times \textrm{distance}$, and again, $I\propto \mu^2$.
+Here, $\alpha$ and $\beta$ are cartesian polarizations, $e_\beta(l)$ is the normalized vibrational eigenvector of the $\omega$-th mode, $l$ deciphers the different atoms of the system with the total number $N_A$ and $Z_{\alpha\beta}^\star$ is the Born effective charge tensor of the $l$-th atom.\\
 \end{itemize}
 Both methods are based on normal mode analyses and therefore give IR intensities.
 While normal modes are a good approximation for high energy vibrations, for example OD stretch vibrations, they become worse for lattice vibrations, which are typically more delocalized.
@@ -698,7 +698,7 @@ While normal modes are a good approximation for high energy vibrations, for exam
 \item[III)] As a fundamentally different method, power spectra can be calculated from \textit{ab initio} MD trajectories\cite{VAC}.
 This is conducted by analyzing the velocity of the atoms along the trajectories, giving the vibrational spectrum via fast Fourier transformation of the velocity-velocity autocorrelation function:
 \begin{equation}
- VDOS(\omega)=\sum_{i=1}^N\int_{0}^{+\infty}<\vec{v}_i(t)\cdot \vec{v}_i(0)>e^{i\omega t}dt ~.
+ VDOS(\omega)=\sum_{i=1}^{N_A}\int_{0}^{+\infty}<\vec{v}_i(t)\cdot \vec{v}_i(0)>e^{i\omega t}dt ~.
 \end{equation}
 % ?was ist N? Ist das Integral wirklich von $-\infty-\infty$ oder sind die Grenzen eingeschränkt? Ist $<x(0)*x(t)>$ ein Mittelwert? Was ist mit der Summe? Im Paper steht folgende Gleichung:
 % \begin{equation}
@@ -706,12 +706,12 @@ This is conducted by analyzing the velocity of the atoms along the trajectories,
 % \end{equation}
 % with $<\dot{r}(\tau)\dot{r}(t+\tau)>$ being the autocorrelation of the velocities, derivatives of the position $r$ with repect to the time $t$, and the $\int \star e^{-i\omega t}dt$ for the Fourier transform, which is scaled by the reduced mass $m$.
 % This leads to the conclusion that the intensity in a power spectrum $P$ is inversely proportional to the reduced mass (why inversely?).
-VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N$ atoms, Fourier transform of the velocity-velocity autocorrelation function $<\vec{v}_i(t)\cdot \vec{v}_i(0)>$.
+VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N_A$ atoms, Fourier transform of the velocity-velocity autocorrelation function $<\vec{v}_i(t)\cdot \vec{v}_i(0)>$.
 $v_i$ are the velocities at different times $0$ and a later time $t$.
-The integration range is per definition from $-\infty$ to $\infty$ but because of symmetry reasons it can be displayed by the range from $0$ to $\infty$. (However, in practice this is just a huge number).
+The integration range is per definition from $-\infty$ to $\infty$ but because of symmetry (axisymmetric) reasons it is sufficient to calculate only the range from $0$ to $\infty$. (However, in practice this is just a huge number).
 The resulting spectra implicitly include anharmonic effects: no harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account.
 Also, further anharmonic effects like mode coupling, overlapping of neighboring peaks and line broadening are included\cite{hornicek2007,hudecova2012}.
-The power spectrum contains peaks for each normal mode vector apart from selection rules for vibrational spectroscopy.
+The power spectrum contains peaks for each mode, apart from selection rules for vibrational spectroscopy.
 The obtained ``intensities'' correspond to the oscillator amplitudes.
 \end{itemize}
 
@@ -719,7 +719,7 @@ The obtained ``intensities'' correspond to the oscillator amplitudes.
 \section{Finding Transition States}\label{sec:tst}
 According to the Born-Oppenheimer approximation\cite{bornoppenheimer} nuclear and electronic degrees of freedom are separated.
 In this picture, stable systems are minima on the PES and chemical reactions can be understood as nuclei moving on the PES along the reaction coordinate $\xi$.
-On the 3N-dimensional PES (with N being the number of nuclei), the energetically most favorable reaction path is chosen.
+On the $3N_A$-dimensional PES (with $N_A$ being the number of nuclei), the energetically most favorable reaction path is chosen.
 This is the one with the least energy necessary (minimum energy path, MEP, see Figure \ref{abb:mep}).
 The transition state (TS) is at the highest energy on this path.
 As mentioned before, it is a first-order saddle point, the energetically highest point along the MEP, but a minimum along all other coordinates.
@@ -752,7 +752,7 @@ The free energy $\Delta$G$^\ddagger= \Delta G_\textrm{TS}-\Delta G_\textrm{educt
 % First a regular NEB, then on top of this climbing image was done which gives better convergence.
 % In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode that vibrates along the reaction path.
 Transition state theory is a semi-classical theory: dynamics along the reaction coordinate $\xi$ are treated classically, but perpendicular directions allow for quantization of vibrational and rotational energy.
-In thermodynamical equilibrium, all possible quantum states along the reaction coordinate are occupied with respect to their Boltzmann weight $P=e^{-\Delta E/(k_BT)}$ depending on the energy $E$ and the temperature $T$.
+In thermodynamical equilibrium, all possible quantum states along the reaction coordinate are occupied with respect to their relative Boltzmann weight $P=e^{-\Delta E/(k_BT)}$ depending on the energy $E$ (or free energy $G$) and the temperature $T$.
 
 
 Assuming the reaction
@@ -798,8 +798,8 @@ Here, the vacuum gap ranged from $17$ for the 10 layer slab to $11\,$\AA{} for t
 %the vacuum region is in the range of 17 Å for the 10 layer slab, 15 for the 15 layer slab, 13 for the 20 layer slab and 11 for the 25 layer slab
 \\\\
 
-The atom centered basis calculations with the programs CRYSTAL\cite{crystal14} (version 14) and the LMP2 calculations with cryscor\cite{cryscor} were not used before for the calculation of alumina in our group before.
-The geometries from the VASP output were used as starting points and the usual convergence criteria of the programs were applied (with some exception when convergence was hard to achieve).
+The atom centered basis calculations with the programs CRYSTAL\cite{crystal14} (version 14) and the LMP2 calculations with cryscor\cite{cryscor} were not applied in our group before so no convergence test had been made so far.
+The geometries and cell parameters from the VASP output were used as starting points and the usual convergence criteria of the programs were applied, convergence was achieved when energies between two steps were smaller than $2.7\times 10^{-6}\,$eV (with some exception when convergence was hard to achieve).
 \\\\
 
 Energy and MD plots shown in this work were prepared with gnuplot\cite{gnuplot}, surface structures and geometries were visualized with VMD\cite{vmd} and further illustrations were created with inkscape\cite{inkscape}.
@@ -932,12 +932,12 @@ The three most stable configurations are marked with bold letters.
   \toprule
    \multicolumn{2}{c|}{Adsorbed Species}  & $E_\text{ads}$ & $G_\text{ads, 130 K}$  &  $G_\text{ads, 300 K}$  & $G_\text{ads, 400 K}$ \\\midrule
 \multirow{1}{*}{molecular} & CUSb          &   -1.78  &-1.60 & -1.51  & -1.46 \\\hline
- \multirow{6}{*}{dissociated} & \textbf{inter-CUSa||O-$\mu_2$} & \textbf{-2.50} &-2.27 & -2.16 & -2.09 \\
-  & inter-CUSa||O-$\mu_3$ & -1.67 &-1.44 &-1.33 & -1.27 \\
-  & \textbf{CUSb||O-$\mu_2$} & \textbf{-2.28} & -2.12& -2.03 &-1.97  \\
- & CUSb||O-$\mu_3$ & -1.19 &-1.05 &-0.98 & -0.95 \\%Cb3_other
- & \textbf{inter-CUSb||O-$\mu_2$} & \textbf{-2.09} &-1.88 &-1.80 & -1.76 \\
- & inter-CUSb||O-$\mu_3$ & -1.89 &-1.71 & -1.63 & -1.58 \\\bottomrule
+ \multirow{6}{*}{dissociated} & \textbf{inter-CUSa$\parallel$O-$\mu_2$} & \textbf{-2.50} &-2.27 & -2.16 & -2.09 \\
+  & inter-CUSa$\parallel$O-$\mu_3$ & -1.67 &-1.44 &-1.33 & -1.27 \\
+  & \textbf{CUSb$\parallel$O-$\mu_2$} & \textbf{-2.28} & -2.12& -2.03 &-1.97  \\
+ & CUSb$\parallel$O-$\mu_3$ & -1.19 &-1.05 &-0.98 & -0.95 \\%Cb3_other
+ & \textbf{inter-CUSb$\parallel$O-$\mu_2$} & \textbf{-2.09} &-1.88 &-1.80 & -1.76 \\
+ & inter-CUSb$\parallel$O-$\mu_3$ & -1.89 &-1.71 & -1.63 & -1.58 \\\bottomrule
   \end{tabular}
   \label{tab:ads_1water}
 \end{table}
@@ -945,17 +945,17 @@ The three most stable configurations are marked with bold letters.
  \centering
 \subfigure[CUSb]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb.pdf}}
  \quad\quad
- \subfigure[inter-CUSa||O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCa2.pdf}}
+ \subfigure[inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCa2.pdf}}
   \quad
-\subfigure[CUSb||O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb2.pdf}}
+\subfigure[CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb2.pdf}}
  \quad
-\subfigure[inter-CUSb||O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb2.pdf}}
+\subfigure[inter-CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb2.pdf}}
 \quad
-\subfigure[inter-CUSa||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCa3.pdf}}
+\subfigure[inter-CUSa$\parallel$O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCa3.pdf}}
  \quad
-\subfigure[CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb3.pdf}}
+\subfigure[CUSb$\parallel$O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-Cb3.pdf}}
  \quad
-\subfigure[inter-CUSb||O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb3.pdf}}
+\subfigure[inter-CUSb$\parallel$O-$\mu_3$]{\includegraphics[width=0.2\textwidth]{figures/11-20/test-iCb3.pdf}}
  \caption{Top view of the adsorption geometries for molecular CUSb (a) and the next neighbor dissociated water 
 ((b)-(g)).
 The color code is the same as in Figure \ref{abb:crystal_11-20}(b) and (c), CUSa grey, CUSb black, O-$\mu_2$ orange and O-$\mu_3$ red; Hydrogen is illustrated in white; the oxygen from water is in red but as a smaller sphere to make it distinguishable from the surface O atoms; subsurface layers are shown in pale colors.}
@@ -974,7 +974,7 @@ Additionally, the CUSb position is electronically and sterically more hindered b
 
 
 Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and Figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH-residue are further apart (see Table \ref{tab:ads_1waterfurther}), given the OH-residue has a stabilizing effect on the H and vice versa.
-It is apparent from this table that the inter-CUSb||O-$\mu_3^{\prime\prime\prime}$-species is more stable than the species inter-CUSb||O-$\mu_3^{\prime\prime}$ (where the OH groups are closer to each other).
+It is apparent from this table that the inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$-species is more stable than the species inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ (where the OH groups are closer to each other).
 This is due to the fact that the periodic conditions actually lead to a decrease of the distance between OH groups in the former system.
 The distances between the neighboring OH groups in the O-$\mu_3^{\prime\prime}$ system are $6.76$ and $7.71\,$\AA{}, compared to $9.34$ and $6.16\,$\AA{} in the O-$\mu_3^{\prime\prime\prime}$ system (the numbers refer to the two possible distance in the periodic system, direct and over the border of the unit cell).
 The latter seems to be further away, but due to the periodic boundary conditions, one of the inter-adsorbate distances is smaller ($6.16$, compared to $6.76\,$\AA{}), which leads to the stabilization.
@@ -991,11 +991,11 @@ Results for the adsorption energy E$_\textrm{ads}$ are given in eV.
   \begin{tabular}{cc}
   \toprule
   Adsorbed Species  & $E_\text{ads}$  \\\midrule
-   inter-CUSa||O-$\mu_3$ & -1.67 \\
-   inter-CUSa||O-$\mu_3^\prime$ & -1.42 \\\hline
-   inter-CUSb||O-$\mu_3$ & -1.89\\
-   inter-CUSb||O-$\mu_3^{\prime\prime}$ & -1.16\\
-   inter-CUSb||O-$\mu_3^{\prime\prime\prime}$ & -1.22\\\bottomrule
+   inter-CUSa$\parallel$O-$\mu_3$ & -1.67 \\
+   inter-CUSa$\parallel$O-$\mu_3^\prime$ & -1.42 \\\hline
+   inter-CUSb$\parallel$O-$\mu_3$ & -1.89\\
+   inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ & -1.16\\
+   inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$ & -1.22\\\bottomrule
   \end{tabular}
   \label{tab:ads_1waterfurther}
 \end{table}
@@ -1036,16 +1036,16 @@ Structures can be found in Figures \ref{abb:2water} and \ref{abb:4+fully}.
  \centering
 \subfigure[CUSb+CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.302\textwidth]{figures/11-20/Cb-Cb2.png}}
  \quad\quad
- \subfigure[inter-CUSa||O-$\mu_2$+CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.304\textwidth]{figures/11-20/iCa2-Cb2.png}}
+ \subfigure[inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.304\textwidth]{figures/11-20/iCa2-Cb2.png}}
   \quad
-\subfigure[2inter-CUSa||O-$\mu_2$]{\includegraphics[width=0.302\textwidth]{figures/11-20/iCa2-iCa2.png}}
+\subfigure[2inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=0.302\textwidth]{figures/11-20/iCa2-iCa2.png}}
  \quad
- \caption{PBE+D2 optimized geometries of systems with two water adsorbates: (a) molecular CUSb and CUSb$\parallel$O-$\mu_2$, (b) the two most stable configurations inter-CUSa||O-$\mu_2$ and CUSb$\parallel$O-$\mu_2$ and (c) 2 inter-CUSa||O-$\mu_2$, which is the most stable adsorption pattern.}
+ \caption{PBE+D2 optimized geometries of systems with two water adsorbates: (a) molecular CUSb and CUSb$\parallel$O-$\mu_2$, (b) the two most stable configurations inter-CUSa$\parallel$O-$\mu_2$ and CUSb$\parallel$O-$\mu_2$ and (c) 2 inter-CUSa$\parallel$O-$\mu_2$, which is the most stable adsorption pattern.}
         \label{abb:2water}
  \end{figure}
  \begin{figure}[!ht]
  \centering
-\subfigure[4inter-CUSa||O-$\mu_2$]{\includegraphics[width=0.4\textwidth]{figures/11-20/4iCa2.png}}
+\subfigure[4inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=0.4\textwidth]{figures/11-20/4iCa2.png}}
  \quad\quad
  \subfigure[1ML]{\includegraphics[width=0.4\textwidth]{figures/11-20/O-I-fully.png}}
  \caption{Optimized structures of the (a) 4inter-CUSa$\parallel$O-$\mu_2$ and (b) fully covered (1ML) system.
@@ -1068,10 +1068,10 @@ For better comparison in the third column labeled ``isolated species'' the summe
   \begin{tabular}{lcc}
   \toprule
   Adsorbed Species  & $E_\text{ads}$ &isolated species \\\midrule
-   CUSb(mol)+CUSb||O-$\mu_2$ & -4.57 & -4.06\\
-   inter-CUSa||O-$\mu_2$+CUSb||O-$\mu_2$ & -4.77 & -4.78\\
-   2inter-CUSa||O-$\mu_2$& -4.84 &-5.0 \\\hline
-   4inter-CUSa||O-$\mu_2$ & -9.55 & -10.0\\\hline
+   CUSb(mol)+CUSb$\parallel$O-$\mu_2$ & -4.57 & -4.06\\
+   inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$ & -4.77 & -4.78\\
+   2inter-CUSa$\parallel$O-$\mu_2$& -4.84 &-5.0 \\\hline
+   4inter-CUSa$\parallel$O-$\mu_2$ & -9.55 & -10.0\\\hline
    12H$_2$O & -23.39& $^a$\tnote{a} \\   \bottomrule
   \end{tabular}
   \label{tab:higher_water}
@@ -1080,9 +1080,9 @@ For better comparison in the third column labeled ``isolated species'' the summe
   \end{tablenotes}
 \end{table}
 There are also the results for the higher coverages in comparison to results in the low coverage limit by adding them (see also column 3 in Table \ref{tab:higher_water}).
-The structures where chosen exemplary such that the neighborhood effect shows three different outcomes: it can have a stabilizing effect, where the dissociated water stabilizes the molecularly adsorbed water in CUSb(mol)+CUSb||O-$\mu_2$ (Figure \ref{abb:2water}(a)).
-It can also have the contrary effect, as can be seen in the  2inter-CUSa||O-$\mu_2$, which becomes less stable (Figure \ref{abb:2water}(c)).
-On the other hand, there is the inter-CUSa||O-$\mu_2$+CUSb||O-$\mu_2$ which is merely affected by the neighboring OD residues (Figure \ref{abb:2water}(b)).
+The structures where chosen exemplary such that the neighborhood effect shows three different outcomes: it can have a stabilizing effect, where the dissociated water stabilizes the molecularly adsorbed water in CUSb(mol)+CUSb$\parallel$O-$\mu_2$ (Figure \ref{abb:2water}(a)).
+It can also have the contrary effect, as can be seen in the  2inter-CUSa$\parallel$O-$\mu_2$, which becomes less stable (Figure \ref{abb:2water}(c)).
+On the other hand, there is the inter-CUSa$\parallel$O-$\mu_2$+CUSb$\parallel$O-$\mu_2$ which is merely affected by the neighboring OD residues (Figure \ref{abb:2water}(b)).
 \\
 \\
 
@@ -1256,26 +1256,26 @@ The barriers and therefore also rate constants for H-diffusion cover a wider ran
 It was shown that reactions leading to another situation than next neighbored, increasing the distance between OH and H are less favorable since geometries with the residues further apart are energetically less stable (compare Table \ref{tab:ads_1waterfurther}).
 \begin{figure*} [!ht]
 \centering
-\subfigure[D-a: CUSb $\rightarrow$CUSb||O-$\mu_2$]{\includegraphics[width=0.9\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
+\subfigure[D-a: CUSb $\rightarrow$CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.9\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
          \quad
-\subfigure[D-b: CUSb $\rightarrow$CUSb||O-$\mu_3$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diss_Cb-Cb3.pdf}}
+\subfigure[D-b: CUSb $\rightarrow$CUSb$\parallel$O-$\mu_3$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diss_Cb-Cb3.pdf}}
  \quad
-\subfigure[Df-OH-a: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSb||O-$\mu_2$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-OH_Cb2-iCb2.pdf}}
+\subfigure[Df-OH-a: CUSb$\parallel$O-$\mu_2$ $\rightarrow$inter-CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-OH_Cb2-iCb2.pdf}}
  \quad
-\subfigure[Df-OH-b: CUSb||O-$\mu_2$ $\rightarrow$inter-CUSa||O-$\mu_2$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-OH_Cb2-iCa2.pdf}}
+\subfigure[Df-OH-b: CUSb$\parallel$O-$\mu_2$ $\rightarrow$inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-OH_Cb2-iCa2.pdf}}
 \caption{Minimum energy paths with transition states (inlay; if available), and both educt (left) and product (right) states for D-a, D-b, D-c, Df-OH-a and Df-OH-b reactions, respectively.
 The color code is as explained above.}
        \label{mep}
 \end{figure*}
 \begin{figure*} [!ht]
 \centering
-\subfigure[Df-H-a: CUSb||O-$\mu_2\rightarrow$CUSb||O-$\mu_3$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-H_Cb2-Cb3.pdf}}
+\subfigure[Df-H-a: CUSb$\parallel$O-$\mu_2\rightarrow$CUSb$\parallel$O-$\mu_3$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-H_Cb2-Cb3.pdf}}
 \quad
-\subfigure[Df-H-b: inter-CUSa||O-$\mu_2\rightarrow$inter-CUSa||O-$\mu_3^\prime$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-H_iCa2-iCa3p.pdf}}
+\subfigure[Df-H-b: inter-CUSa$\parallel$O-$\mu_2\rightarrow$inter-CUSa$\parallel$O-$\mu_3^\prime$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-H_iCa2-iCa3p.pdf}}
  \quad
- \subfigure[Df-H-c: inter-CUSb||O-$\mu_2^\prime\rightarrow$inter-CUSb||O-$\mu_3^{\prime\prime}$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-H_iCb2p-iCb3pp.pdf}}
+ \subfigure[Df-H-c: inter-CUSb$\parallel$O-$\mu_2^\prime\rightarrow$inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-H_iCb2p-iCb3pp.pdf}}
  \quad
-\subfigure[Df-H-d: inter-CUSb||O-$\mu_3^{\prime\prime}$ $\rightarrow$inter-CUSb||O-$\mu_3^{\prime\prime\prime}$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-H_iCb3pp-iCb3ppp.png}}
+\subfigure[Df-H-d: inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ $\rightarrow$inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$]{\includegraphics[width=.9\textwidth]{figures/11-20/Diff-H_iCb3pp-iCb3ppp.png}}
 \caption{Minimum energy paths with transition states, and both educt and product states for Df-H-a - Df-H-d reactions.
 The color code is as explained above.}
        \label{mep2}
@@ -1452,16 +1452,17 @@ The latter can be solved by computing higher coverage systems.
 \subsubsection{Complete Spectrum: Intensities from Dipole Corrections}\label{phonons}
 
 The spectra for both the OD range and the lattice range are presented in this subsection.
-All spectra shown in this section were normalized to the most intense peak, with the intensities being determined by different methods.
-Note, that the intensities in the OD range decrease with growing slab size since the normalized to the most intense peak in the lattice region.
-For smaller slab sizes the ratio between OD and lattice is higher than for bigger slab sizes, so that the OD intensities in direct comparison seems smaller but has no physical meaning.
+All spectra shown in this section were normalized to the most intense peak, with the intensities being determined by dipole corrections.
+Note, that the intensities in the OD range decrease with growing slab size since they are normalized to the most intense peak in the lattice region.
+For smaller slab sizes the ratio between OD and lattice is higher than for bigger slab sizes, so that the OD intensities in direct comparison seems smaller.
+This however, has no physical meaning.
 In some figures short notations for the adsorbed species are used: iCa2 for inter-CUSa$\parallel$O-$\mu_2$, Cb2 for CUSb$\parallel$O-$\mu_2$ and iCb2 for inter-CUSb$\parallel$O-$\mu_2$.
 Unfortunately, experimental results for the spectral range of the lattice vibrations are not obtained by our experimental partners yet, so that no comparison to SFG modes can be made.
 % \todo{experimental results are still missing, compare modes of low coverage limit to spectra with higher coverage, ask Lu for more data of higher coverage.}
 
 
-In this section intensities are elaborated from dipole corrections.
-In the spectra from the dipole corrections (in z direction, $\Gamma$-point only) the intensities are given by the square of the dipole moment $\mu^2$ to which it is proportional.
+In the spectra from the dipole corrections ($\Gamma$-point only calculated normal mode analyses with dipole corrections in z direction) the intensities are given by the square of the dipole moment $\mu^2$ to which it is proportional.
+That is why in the spectra the y-axis is given as $\mu^2$.
 For the lattice vibrations the same normal modes of the ten layer slab were checked to get a first impression about the spectra.
 But for a better description of the deeper lying phonon vibrations we need to consider more layers of the bulk in order to get more reliable results.
 From an experimental point of view it is suggested that SFG spectra can give insight into at least three atomic layers of the bulk.
@@ -1477,8 +1478,19 @@ The results for the clean surface are shown in Figure \ref{abb:clean_comp_layer}
 For different sized slabs, the results differ largely.
 Especially the ten layer system is shifted strongly to lower energy compared to the other slab sizes.
 From Table \ref{tab:comp_norm-modes_clean} it can be concluded that the most intense peak is shifted to higher wavenumbers with increasing slab size.
-\todo{With more layers the systems approaches the bulk and the frequency gets more to the Debye frequency, which is the...}
 Although the OD vibrations are converged for the ten layer system, the lattice vibrations are not sufficiently described by the system that leads to these wavenumber shifts.
+
+
+For each slab size the peaks of the vibrational modes show the behaviour of the density of states in the Debye model\cite{kittel2002}:
+\begin{equation}
+ D(\omega)=V\omega^2/(2\pi^2v^3)
+\end{equation}
+with the unit cell volume $V$ and the speed of sound $v$.
+From the frequency one can evaluate the Debye temperature $\theta_D=\hbar c \omega_D/k_B$, which is linear to the Debye frequency $\omega_D$ which is the highest possible frequency for phonon modes.
+In Figure \ref{abb:clean_comp_layer} we can see a quadratic growth of the modes' intensity until the Debye temperature is reached.
+It gives the temperature at which all states are occupied.
+This is for $\upalpha$-alumina $\theta_D=1042\,$K which corresponds to a wavenumber of around $724\,$cm$^{-1}$\cite{Goto1989}.
+By considering more layers one gets closer to the bulk system, for which the Debye frequency is expected.
 \begin{figure}[!h]
  \centering
  \includegraphics[width=0.8\textwidth]{figures/11-20/comp_freq_surf.eps}
@@ -1500,7 +1512,7 @@ $\tilde{\nu}$ [cm$^{-1}$] &700 &796& 823&837 & 842\\\bottomrule
 
 % These results are also shown with intensities calculated from dipole corrected normal mode analyses in Figures \ref{abb:iCa2_size_comp}, \ref{abb:Cb2_size_comp} and \ref{abb:iCb2_size_comp}.
 While this trend is true for the clean surface and the lattice region of the covered systems, it does not hold for the OD vibrations regime.
-As already mentioned, the OD frequencies seem to be converged for the 10 layer slab and both position and intensity show no eminent difference, see Figures \ref{abb:iCa2_size_comp}, \ref{abb:Cb2_size_comp} and \ref{abb:iCb2_size_comp}.
+As already mentioned, the OD frequencies seem to be converged for the ten layer slab and both position and intensity show no eminent difference, see Figures \ref{abb:iCa2_size_comp}, \ref{abb:Cb2_size_comp} and \ref{abb:iCb2_size_comp}.
 \begin{figure}[!h]
     \centering
     \subfigure[complete spectrum]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_iCa2.eps}}
@@ -1509,7 +1521,7 @@ As already mentioned, the OD frequencies seem to be converged for the 10 layer s
     \subfigure[OD stretch regime]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_iCa2_ODpart.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-             \caption{Comparison of inter-CUSa||O-$\mu_2$ frequencies for different slab sizes in z direction, obtained by normal mode analyses with intensities from dipole corrections.}
+             \caption{Comparison of inter-CUSa$\parallel$O-$\mu_2$ frequencies for different slab sizes in z direction, obtained by normal mode analyses with intensities from dipole corrections.}
             \label{abb:iCa2_size_comp}
 \end{figure}
 \begin{figure}[!h]
@@ -1520,7 +1532,7 @@ As already mentioned, the OD frequencies seem to be converged for the 10 layer s
     \subfigure[OD stretch regime]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_Cb2_ODpart.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-             \caption{Comparison of CUSb||O-$\mu_2$ frequencies for different slab sizes, obtained by normal mode analyses with intensities from dipole corrections.}
+             \caption{Comparison of CUSb$\parallel$O-$\mu_2$ frequencies for different slab sizes, obtained by normal mode analyses with intensities from dipole corrections.}
             \label{abb:Cb2_size_comp}
 \end{figure}
 \begin{figure}[!h]
@@ -1531,12 +1543,13 @@ As already mentioned, the OD frequencies seem to be converged for the 10 layer s
     \subfigure[OD stretch regime]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_freq_iCb2_ODpart.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-             \caption{Comparison of inter-CUSb||O-$\mu_2$ frequencies for different slab sizes in z direction, obtained by normal mode analyses with intensities from dipole corrections.}
+             \caption{Comparison of inter-CUSb$\parallel$O-$\mu_2$ frequencies for different slab sizes in z direction, obtained by normal mode analyses with intensities from dipole corrections.}
             \label{abb:iCb2_size_comp}
 \end{figure}
 % In the full spectrum, one can see three different regimes: the lattice region $<900\,$cm$^{-1}$, the OD region around $1700\,$cm$^{-1}$ for hydrogen-bonded stretch and above $2600\,$cm$^{-1}$ for free vibrations.
 The exact wavenumbers differ slightly for the OD regions but in general are in good agreement, except for the hydrogen-bonded peak in the CUSb$\parallel$O-$\mu_2$, confer Figure \ref{tab:freq_layers}.
 However, the lattice region below $1000\,$cm$^{-1}$ is systematically affected, as in the clean surface system.
+Also in the lattice region the quadratic slope of the Debye model can be seen in a textbook like manner.
 % \todo{which one fits the experimental results best? wait for experimental results}
 
 
@@ -1597,7 +1610,7 @@ Looking at the spectrum of the system with four adsorbed water molecules (1/3 co
     \subfigure[OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_4iCa2_D2O_2_ODrange_comp.eps}}
              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
-             \caption{Peaks from normal mode analyses and dipole intensities for four water molecules per supercell (10 layers).
+             \caption{Peaks from normal mode analyses and dipole intensities for four water molecules per supercell (ten layers).
 (a) shows the full spectral range and (b) only the OD range above $2680\,$cm$^{-1}$.
 The short notations stands for iCa2=inter-CUSa$\parallel$O-$\mu_2$.}
             \label{abb:4water}
@@ -1608,6 +1621,9 @@ There are three modes for asymmetric (OD oscillators in contrary phases) and one
 At lower wavenumbers (between $2691$ and $2693\,$cm$^{-1}$) there are localized OD$_\textrm{surf}$ vibrations.
 Below that there are delocalized combined vibrations of lattice and OD.
 In comparison to the singly adsorbed system (red line) there is an astonishing agreement, both in the OD range and the lattice region.
+When looking at the intensities in Figure \ref{abb:4water}(b) one can see that the intensities of the singly adsorbed inter-CUSa$\parallel$O-$\mu_2$ are almost as high as for the system with four dissociatively adsorbed water molecules (and not approximately 1/4 of it).
+In contrast to that for the system with two inter-CUSa$\parallel$O-$\mu_2$ species the intensities of the repective mono adsorbed species is halved (see Figure \ref{abb:2water_comp}).
+This is probably an artefact of the normalization to the highest peak in the lattice region.
 
 
 In contrast to the latter systems, for the 1ML system it is not easy to compare to the singly adsorbed species, since it consists of a complex mixture of twelve adsorbed OD residues (on CUSb, inter-CUSa and inter-CUSb), as well as twelve surface OD groups on O-$\mu_2$ but also the less favorable threefold coordinated O-$\mu_3$.
@@ -1632,7 +1648,7 @@ Shown is a comparison between the different slab sizes for (a) the lattice regio
 The omitted regions do not contain peaks.} 
         \label{abb:fullyhydrox_spec}
 \end{figure}
-As before, the agreement between different sized slab models in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen-bonded region around $1116\,$cm$^{-1}$ is convincing (Figure \ref{abb:fullyhydrox_spec}(b)) and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface and the low coverage systems.
+As before, the agreement between different sized slab models in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen-bonded region around $1116\,$cm$^{-1}$ is convincing (Figure \ref{abb:fullyhydrox_spec}(b)) and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface and the low coverage systems, which fits the Debye model.
 \\\\
 
 Apart from the most stable surface termination (called O-I in \cite{kuri10}), calculations of the second most stable surface termination (O-II), where the uppermost O layer is ``missing'', were performed.
@@ -1663,7 +1679,9 @@ Also for a larger slab with 25 layers, this comparison was made, see Figure \ref
 %  \quad
 %   \subfigure[fully covered surface, OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/spectrum_O-I-II_fully_OD_comparison.eps}}
  \caption{Comparing the O-I and O-II terminated clean surface of the 25 layer system shows very similar results for both systems are obtained.
-The most intense peak is shifted by around $20\,$cm$^{-1}$}%Comparison of the 10 layer slab spectra calculated with normal mode analysis and intensities from the dipole corrections.
+The most intense peak is shifted by around $20\,$cm$^{-1}$
+The growth of the intensities is also quadratic like in the Debye model.}
+%Comparison of the 10 layer slab spectra calculated with normal mode analysis and intensities from the dipole corrections.
 %The clean surface (a), O-I termination (most stable under the whole range of chemical potential) and O-II termination (see Kurita\cite{kuri10}, also relatively stable over a wide chemical potential range).
 %The comparison of the fully covered O-I and O-II terminations is shown in (b) with a detailed view of the OD range in (c).}
  \label{abb:comp_O-I-O-II_25}
@@ -1676,8 +1694,9 @@ Due to this the differences between O-I and O-II termination get less significan
 
 \subsection{Complete Spectrum: Intensities from Born Effective Charges}\label{bec}
 As a second method to obtain vibrational intensities, Born effective charges were evaluated.
-These results were calculated for the three most stable adsorbed systems with 10 layers.
+These results were calculated for the three most stable adsorbed systems with ten layers.
 For getting the spectrum an angle of the IR beam of 45\textdegree~was assumed.
+This choice of this angle weighs the elements of the Born effective charge vector in Equation (\ref{eq:bec}) that are in the sum of the intensity.
 Since both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities can differ.
 In Figure \ref{abb:bec} the spectra for the three most stable structures can be seen, (a) depicts the whole range and (b) the OD range only.
 \begin{figure}[!h]
@@ -1705,22 +1724,22 @@ Errors can compensate or add up so that there is much uncertainty in those resul
 In Table \ref{tab:freq_lowcov_comp} a comparison between dipole and BEC intensity results of the OD stretch vibrations can be found.
 \begin{table}[!h]
 \centering
-\caption{Comparison of the IR intensities for the 10 layer system obtained from dipole corrected calculations and from the Born effective charges based approach.
-It was normalized to the most intensity peak.}
+\caption{Comparison of the IR intensities for the ten layer system obtained from dipole corrected calculations and from the Born effective charges based approach.
+It was normalized to the most intense peak to make a reasonable comparison.}
 \begin{tabular}{cc|cc}
 \toprule
 &&\multicolumn{2}{c}{Intensity [a.u.]}\\
 &$\tilde{\nu}$ [cm$^{-1}$]& dip. & BEC \\\midrule
-\multirow{2}{3cm}{inter-CUSa||O-$ \mu_2$}&2731 &0.034 &0.023 \\
+\multirow{2}{3cm}{inter-CUSa$\parallel$O-$ \mu_2$}&2731 &0.034 &0.023 \\
  &2694&0.022 &0.029 \\\hline
-\multirow{2}{3cm}{CUSb||O-$ \mu_2$} & 2785&0.262 &0.038 \\
+\multirow{2}{3cm}{CUSb$\parallel$O-$ \mu_2$} & 2785&0.262 &0.038 \\
  & 1711& 0.155&1.0 \\\hline
-\multirow{2}{3cm}{inter-CUSb||O-$ \mu_2$}& 2692& 0.007&0.013 \\
+\multirow{2}{3cm}{inter-CUSb$\parallel$O-$ \mu_2$}& 2692& 0.007&0.013 \\
  & 2689& 0.060& 0.072\\\bottomrule
 \end{tabular}
 \label{tab:freq_lowcov_comp}
 \end{table}
-The results are in reasonable agreement for inter-CUSa||O-$ \mu_2$ and inter-CUSb||O-$ \mu_2$, but deviate largely for the hydrogen-bonded CUSb||O-$ \mu_2$ system.
+The results are in reasonable agreement for inter-CUSa$\parallel$O-$ \mu_2$ and inter-CUSb$\parallel$O-$ \mu_2$, but deviate largely for the hydrogen-bonded CUSb$\parallel$O-$ \mu_2$ system.
 The geometry of the hydrogen-bonded OD group differs more than the non hydrogen-bonded and for this reason the vibrational mode differs strongly.
 
 
@@ -1749,7 +1768,7 @@ The velocity-velocity autocorrelation function is evaluated from AIMD calculatio
 This is a radically different ansatz to calculating a spectrum.
 No frequency analysis has to be provided, \textit{i.e.} no harmonic approximation is applied.
 Instead the classical movement of the nuclei at a specific temperature is taken into account.
-At $300\,$K for the clean surface (30 layers) and the three most stable adsorbed structures (inter-CUSa||O-$\mu_2$, CUSb||O-$\mu_2$ and inter-CUSb||O-$\mu_2$, 10 layers each) the respective AIMD were calculated, starting from the minimum structure with no velocities.
+At $300\,$K for the clean surface (30 layers) and the three most stable adsorbed structures (inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$, 10 layers each) the respective AIMD were calculated, starting from the minimum structure with no velocities.
 The presented spectra are merely preliminary results, since the propagation duration is substantially too short, so that one cannot rule out the possibility that the system is not converged properly.
 Usually, for a converged study, a preequilibration phase of several ps is assumed and afterwards the production run is up to 100 or even more ps, but these results still give a good first glimpse to what the spectrum could look like.
 
@@ -1771,6 +1790,7 @@ As for the normal modes results, all peaks are below $900\,$cm$^{-1}$, see Figur
 The most prominent peak in the power spectrum can be observed at significantly lower energy than for any normal mode based result.
 Also more peaks are present in the whole range from $0$ to around $900\,$cm$^{-1}$.
 Assumingly, the low energy modes are described better or at least in a different way, so that this strong discrepancy can be understood.
+The temperature of the simulation is considerably lower than the Debye temperature ($300\,$K which corresponds to approximately $280\,$cm$^{-1}$), so that the maximum wavenumber decreases in the Debye model.
 \\\\
 
 The results for the adsorbed species were obtained by AIMD calculations of the ten layer system at a temperature of $300\,$K.
@@ -2020,7 +2040,7 @@ After this, the transition state shall be reoptimized with B3LYP and the respect
 Going beyond pure density functionals and also beyond DFT has been too costly for a long time, it is simply not applicable for a surface adsorbate system as large and electron rich.
 In the CRYSTAL14\cite{crystal14} and cryscor\cite{cryscor} code atom centered bases are used instead of plane waves so that large scale systems can also be computed.
 With this methodology it is possible to calculate periodic structures with GGA as well as with hybrid functionals and, moreover, with wave function-based techniques like LMP2.\\
-We use a $4\times 4 \times 1$ $\vec{k}$-point grid and a \todo{convergence criteria}.
+We use a $4\times 4 \times 1$ $\vec{k}$-point grid and a convergence criterium for the total energy is $2.7\times 10^{-6}\,$eV.
 In Table \ref{tab:vasp-results} the adsorption energy results of previous VASP calculations with different methods (PBE and PW91) and dispersion corrections are shown.
 The adsorption energy is calculated according to Equation (\ref{eq:Eads}).
 \begin{table}[!h]
