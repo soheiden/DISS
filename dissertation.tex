@@ -120,22 +120,7 @@
 
 % %Worttrennung
 % \hyphenation{Dis-per-sion}
-% \hyphenation{Dis-per-sions-kor-rek-tu-ren}
-% \hyphenation{Dif-fu-sion}
-% \hyphenation{Kern-elek-tron}
-% \hyphenation{in-te-res-san-ten}
-% \hyphenation{dis-so-zi-iert}
-% \hyphenation{Quan-ten-effekt}
-% \hyphenation{Syn-the-se}
-% \hyphenation{Nor-mal-mo-den-a-na-ly-sen}
-% \hyphenation{Nor-mal-mo-den-a-na-ly-se}
-% \hyphenation{Zeit-ska-la}
-% \hyphenation{Ge-ne-ra-lized}
-% \hyphenation{Grund-zu-stands-po-ten-tial-flä-che}
-% \hyphenation{Stick-stoff-a-to-me}
-% \hyphenation{Sub-strat-ober-flä-che}
-% \hyphenation{Be-deckungs-grad}
-% \hyphenation{Be-deckungs-gra-de}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,7 +145,7 @@ Water at $\upalpha$-Alumina:\\
 \date{}
 
 \uppertitleback{\normalfont
-This work has been done between January 2015 and \todo{xx} 2018 in the group of Prof. Dr. Peter Saalfrank at the Institute of Chemistry at the University of Potsdam.
+This work has been done between January 2015 and \todo{October} 2018 in the group of Prof. Dr. Peter Saalfrank at the Institute of Chemistry at the University of Potsdam.
 }
 \lowertitleback{Potsdam, \todo{xx} 2018\\
 \begin{tabular}{ll}
@@ -265,11 +250,11 @@ In this work \textit{ab initio} molecular dynamics calculations were conducted t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theory und Methodology}
 In this chapter the basics of the theoretical methods applied in this work shall be explained.
-It starts from the ideas of density functional theory, going over periodic boundary conditions, to the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
+It starts from the ideas of Hartree-Fock and density functional theory, going over periodic boundary conditions, to the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
 Then we will proceed with frequency calculations and intensities over transition state theory to more developed methods like hybrid functionals and perturbation theory.
 Most basic theory parts of this chapter are based on \cite{jensen}.
 
-\section{Density Functional Theory}
+
 For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure.
 For this, it is reasonable to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legitimate due to the largely different masses of electrons and nuclei.
 With this approximation, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic wave function $\Psi_e(\vec{r})$ and electronic energy $E_e$ is
@@ -279,9 +264,86 @@ With this approximation, the electronic Schrödinger equation for the time indep
 The wave function $\Psi_e(\vec{r_i})$ is a function of the coordinate vector $\vec{r_i}$ and is 3$N_e$ dimensional, with the number of electrons $N_e$.
 For large systems, %(more than electrons),
 the solution of Equation (\ref{eq:tise}) gets computationally demanding.
-\todo{Introduce Hartree Fock theory, one electron orbitals, Slater determinant}
-Wave function is approximated as Slater-Determinant. One particle wave function = orbital. Fock operator. exchange but no correlation.
 
+\section{Hartree Fock Theory}
+In order to solve the Schr\"{o}dinger equation for more than one electron, approximations must be made\cite{szabo}.
+One of them is the approximation of independent particles.
+The motion of one electron is considered to be independent from all other electrons, whose interactions are averaged.
+In this context, often the term "short-sighted" electron is used.
+
+To describe an electron completely one has to consider the spin, with the spin functions $\alpha(\omega)$, $\beta(\omega)$ with the spin variable $\omega$.
+These two functions give spin up and spin down.
+For the spin functions we have the Pauli exclusion principle
+\begin{equation}
+\int_{-\infty}^{\infty}\alpha^\ast(\omega)\alpha(\omega)d\omega=<\alpha|\alpha>=<\beta|\beta>=1
+\end{equation}
+and $<\alpha|\beta>=<\beta|\alpha>=0$ in the bra-ket notation.
+The electrons are then described by one electron wavefunctions, that are called (spatial) orbitals $\psi(\vec{r}_i)$.
+A spatial orbital $\psi_i$ describes the spatial distribution of the electron, such that the probability of finding the electron in the volume element $d\vec{r}$ is given by $|\psi_i(\vec{r})|^2d\vec{r}$.
+Usually spatial orbitals are orthonormalized:
+\begin{equation}
+\int \psi_i^\ast(\vec{r})\psi_j(\vec{r})d\vec{r}=\delta_{ij}
+\end{equation}
+$\delta_{ij}$ is the Kronecker delta which is $1$ for $i=j$ and $0$ else.
+
+
+Spin orbitals $\chi(\vec{x})=\psi(\vec{r}_i,\omega)$ contain information about the position and the spin of the electron.
+The total wavefunction is then given as a product of orbitals.
+Since electrons are fermions with a spin of 1/2, it can be shown that the wavefunction must change its sign when interchanging any two electrons (antisymmetry principle).
+\begin{equation}
+\Psi(x_1,...,x_i,x_j,...x_{N_e})=-\Psi(x_1,...,x_j,x_i,...x_{N_e})
+\end{equation}
+In other words, two electrons can not have the same set of quantum numbers as is stated in the Pauli principle, which follows from the antisymmetry of the wavefunction.
+
+This condition can be easily fulfilled by a Slater determinant.
+\begin{equation}
+\Psi^{HF}_{0}({\vec{x_1}},\dots\vec{x_N}) = \frac{1}{\sqrt{N!}}\begin{vmatrix}{\chi_1}({\vec{x_1}})&{\chi_2}({\vec{x_1}})&\dots&{\chi_N}({\vec{x_1}})\\
+{\chi_1}({\vec{x_2}})&{\chi_2}({\vec{x_2}})&\dots&{\chi_N}({\vec{x_2}})\\
+ \vdots&\vdots&\ddots&\vdots \\
+{\chi_1}({\vec{x_N}})&{\chi_2}({\vec{x_N}})&\dots&{\chi_N}({\vec{x_N}})
+\end{vmatrix} 
+\end{equation}
+The choice of a determinant has two advantages: the change of two lines or rows changes the sign and if two lines or rows are the same, the value of the determinant is $0$. Both  are postulated by the Pauli principle.
+Within the Slater determinant approach, electrons with the same spin are correlated which is called exchange correlation.
+
+
+With the variational principle the energy of the system can be minimized:
+\begin{equation}
+E_0=<\Psi^{HF}_0|\hat{H}_e|\Psi^{HF}_0>
+\end{equation}
+The exact wavefunction gives the lowest energy, the better the applied wavefunction is, the lower gets the energy.
+Minimizing the energy with respect to the choice of the spin orbitals requires the Hartree-Fock equations:
+\begin{equation}\label{eq:hf}
+\hat{f}(i)\chi(\vec{x}_i)=\epsilon\chi(\vec{x}_i)
+\end{equation}
+with the orbital energy $\epsilon$ and the Fock operator $\hat{f}(i)$ that is an effective one-electron operator:
+\begin{equation}
+\hat{f}(i)=-\frac{1}{2}\nabla^2_i - \sum_{A=1}^{N_e}\frac{Z_A}{r_{iA}} + v^{HF}(i)
+\end{equation}
+The first term is the kinetic energy of the elctron, the second describes the Coulomb interaction between electron $i$ and nucleus $A$ with the charge $Z_A$ and the last term of this equation $v^{HF}(i)$ is an average potential that is experienced by electron $i$ due to the presence of all other electrons.
+This potential is a function of the spin orbitals of the other electrons so this equation must be solved iteratively with the SCF method (self-consistent field).
+An initial guess for the spin orbitals is made, with this the average field is calculated.
+Solving the eigenvalue equation (\ref{eq:hf}) gives a new set of spin orbitals.
+This procedure is repeated until convergence is achieved.
+
+
+The solution of the Hartree-Fock equations gives a set of orthonormal HF-spin orbitals with orbital energies $\epsilon$.
+The orbitals are occupied according to the Aufbau principle (the lowest $N_e$ orbitals), the remaining orbitals are unoccupied, also referred to as virtual. 
+
+In principle, Equation (\ref{eq:hf}) gives an infinite number of solutions.
+In practice however, a finite set of basis functions is introduced.
+The larger the basis, the lower the expectation value for the energy will be.
+
+With a basis (\textit{e.g.} the spatial orbitals $\psi_i$) any arbitrary function $f(\vec{r)}$ can be expaned as a sum:
+\begin{equation}
+f(\vec{r})=\sum_{i=1}^{N_e}a_i\psi_i(\vec{r})
+\end{equation}
+The $a_i$ are coefficients.
+In practice the sum is not complete, but limited to a number of $K$ orbitals.
+
+
+
+\section{Density Functional Theory}
 An alternative to the wave function-based theory is density functional theory (DFT).
 It is based on the Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r_i})$: there exists a one to one correspondence.
 If $\Psi(\vec{r}_i)$ is a $N_e$-electron wavefunction, then the  electron density can be expressed as
