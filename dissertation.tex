@@ -645,22 +645,25 @@ It is calculated with
 \end{equation}
 with the electron mass $m_e$.
 
-% 
-% Solutions are now dependent on the reciprocal space vector $\vec{k}$ leading to a Roothaan-Hall expression:
-% \begin{equation}
-%  \vec{F}^k\vec{C}^k=\vec{S}^k\vec{C}^k\vec{\varepsilon}^k
-% \end{equation}
-% The solutions give a band (range of energies) and are a continuous function.
-% The total energy per unit cell is obtained by integrating over the $\vec{k}$-space.
-% For non-metallic systems the integration can be evaluated numerically using only a few points\cite{monkhorst}.
-% In analogy to molecular HOMO orbital, the energy of the highest filled band is called Fermi energy.
-% The band gap, equivalent to HOMO-LUMO gap, is between the highest filled and the lowest empty band.
-% In metallic systems, there is no bandgap, whereas in insulating systems the band gap is large ($>4\,$eV\cite{holleman2007lehrbuch}).
+
+In analogy to the Hartree-Fock equations (Equation (\ref{eq:hf})), we can now introduce the Rootan-Hall expression in a matrix representation, depending on the reciprocal space vector $\vec{k}$:
+ \begin{equation}
+  \doubleunderline{F}^{\vec{k}}\vec{C}^{\vec{k}}=\doubleunderline{S}^{\vec{k}}\vec{C}^{\vec{k}}\vec{\varepsilon}^{\vec{k}}
+ \end{equation}
+ with the Fockmatrix $\doubleunderline{F}$, the overlap matrix $\doubleunderline{S}$, the vector containing the coefficients $\vec{C}$ and the orbital energies $\varepsilon$.
+%  The solutions give a band (range of energies) and are a continuous function.
+ The total energy per unit cell is obtained by integrating over the $\vec{k}$-space.
+ For non-metallic systems the integration can be evaluated numerically using only a few $\vec{k}$-points\cite{monkhorst}.
+%  In analogy to molecular HOMO orbital, the energy of the highest filled band is called Fermi energy.
+%  The band gap, equivalent to HOMO-LUMO gap, is between the highest filled and the lowest empty band.
+%  In metallic systems, there is no bandgap, whereas in insulating systems the band gap is large ($>4\,$eV\cite{holleman2007lehrbuch}).
 
 
 \section{Plane Wave Basis, Atom Centered Basis and Peculiarities}
 It is necessary for calculation of Equations (\ref{eq:KS}) to use a basis set for the orbitals, as shown in Equation (\ref{eq:basis}).
-Basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set.
+Basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set (atom centered basis functions).
+As a consequence of plane waves, the system is periodic in 3D and it is possible to improve the basis by setting the cutoff energy higher.
+For calculations that depend not only on the density however (like hybrid functionals, MP2), many basis functions are necessary.
 In comparison plane waves (PW) and atom centered orbitals (ACO) have different advantages and disadvantages\cite{Tosoni2007}.
 For solid state systems both the energy and the gradient converge better with plane waves (fewer steps).
 Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynmann forces have to be evaluated.
@@ -672,14 +675,16 @@ The system is intrinsically defined in 3D, no matter if the system is a 1D (poly
 It is computationally demanding to calculate exact (Fock) exchange, which makes the use of hybrid functionals so costly, although the precision of the results is considerably enhanced.
 \\
 
-Whenever there are atom-centered basis sets the orbitals of different atoms can overlap, so that electrons could occupy more bases, which leads to an artificial stabilization of the system.
+Whenever there are atom-centered basis sets the orbitals of different atoms can overlap.
 This subject is called basis set superposition error (BSSE) and only appears if atom centered bases are utilized.
+Lets assume a dissociation reaction: in the molecular case, the electrons can occupy orbitals of both residues (each atom has in total a higher basis set, the binding energy is stabilized), whereas in the dissociated case, this is not possible (the binding energy is not stabilized).
+Due to this difference, it is necessary to either calculated the BSSE or to use a large basis, ideally at the basis set limit.
 One can apply counterpoise corrections (CP)\cite{Boys1970} to avoid of this source of error.
 This is done here by performing ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms.
 Then one applies a substractive scheme to cancel out the effect of the orbital overlap.
 On the other hand one can use a huge basis set that does not have this problem, but comes with a higher computational demand.
 In contrast to PW calculations the true dimensionality is obeyed due to the locality of the basis.
-Probably, the most powerful advantage of atom centerd bases is that exact exchange and hybrid methods are available as standard methods because less basis functions are required.
+Probably, the most powerful advantage of atom centerd bases is that exact exchange and hybrid methods are available as standard methods because less basis functions are required, compared to plane waves.
 % Transferring atom centered bases to periodic systems is not trivial, especially for bases including many diffuse Gaussians, but there are programs available.
 
 \section{\textit{Ab Initio} Molecular Dynamics}
@@ -776,29 +781,55 @@ How to find these points is described in Section \ref{sec:tst}.
 
 There are several methods available to calculate intensities of vibrational modes, three of which are presented in this work: From dipole corrections (I), from Born effective charges (II) and via velocity-velocity autocorrelation function (III).
 \begin{itemize}
- \item[I)] The IR intensities for each normal mode are estimated from the double harmonic approximation.
-  The derivative of the dipole moment with respect to the atomic positions is calculated, also known as dynamical dipole moment\cite{dyn-dip,Yang2012}.
-The dynamical dipole moment is evaluated by the dipole moment operator $\vec{\hat{\mu}}(\vec{R}_i)$ between two states $i$ and $f$, where $\vec{\hat{\mu}}(\vec{R}_i)$ is a three component vector.
-The initial state $i$ is the vibrational ground state and final state $f$ is a vibrationally excited state.
-The eigenvectors of the vibrations are used here as $i$ and $f$.
-% It is called dynamical because it does not describe a static dipole moment but a response of the system.
-With some symmetry and group theory considerations, one can decide for each vibration whether it is IR active or not.
-%I und f sind initial und final Zustände Mu ist einfach Dipolmomentoperator Dipolmoment hat 3 Komponenten also für gegebene i,f ist das ein Vektor Soweit ich mir gut erinnere, er heißt dynamischer weil er zwischen 2 Zuständen ist Also beschreibt keine statische Werte sondern eine Antwort eines Systems Also zum Beispiel für IR Absorption du nimmst den Grundzustand als "i" Und welche angeregte Zustande möchtest du als mögliche nehmen? Einfachste Antwort: erste angeregte Vibrationszustände.
-%Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
-The respective intensities are determined by $I\propto |<i|\vec{\hat{\mu}}(\vec{R}_i)|f>|^2$.
-For this approach, only the dipole components perpendicular to the surface are taken into account.
-Only these can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy, see also Appendix \ref{exp_techniques}).
+ \item[I)] The normal modes are done in double harmonic approximation, \textit{i.e.} the potential is harmonic and the selection rule for vibrational transitions is $\Delta \nu=\pm1$.
+ The dipole moment $\vec{\mu}=\vec{\mu}_0 + \vec{\mu}^\prime \vec{R}$ (with  $\mu^\prime=\frac{d\vec{\mu}}{d\vec{R}}$), is evaluated numerically perpendicular to the surface (in $z$ direction).
+ The intensity $I$ is proportional to 
+ \begin{equation}
+ I\propto |\langle \phi_0|\vec{\mu}|\phi_1 \rangle|^2
+ \end{equation}
+ $\phi_i$ are eigenfunctions of the harmonic oscillator that are orthonormalized.
+ With this, we get
+ \begin{equation}
+  I\propto |\vec{\mu}_0\langle \phi_0|\phi_1 \rangle + \vec{\mu}^\prime\langle \phi_0|\vec{R}|\phi_1 \rangle|^2
+ \end{equation}
+ \begin{equation}
+  I\propto |0 + \vec{\mu}^\prime\times N|^2
+ \end{equation}
+ the first term is zero and the second is a constant factor $N$ that is the same for each mode times the change of dipole moment with respect to the coordinates.
+ This gives the relation $I\propto |\mu^\prime_z|^2$\cite{dyn-dip,Yang2012}.
+%  The IR intensities for each normal mode are estimated from the double harmonic approximation (potential is approximated harmonically and the selection rule is $\Delta \nu=\pm 1$).
+%   The derivative of the dipole moment with respect to the atomic positions is calculated, also known as dynamical dipole moment\cite{dyn-dip,Yang2012}.
+% The dynamical dipole moment is evaluated by the dipole moment operator $\vec{\hat{\mu}}(\vec{R}_i)$ between two states $i$ and $f$, where $\vec{\hat{\mu}}(\vec{R}_i)$ is a three component vector.
+% The initial state $i$ is the vibrational ground state and final state $f$ is a vibrationally excited state.
+% The eigenvectors of the vibrations are used here as $i$ and $f$.
+% % It is called dynamical because it does not describe a static dipole moment but a response of the system.
+% With some symmetry and group theory considerations, one can decide for each vibration whether it is IR active or not.
+% %I und f sind initial und final Zustände Mu ist einfach Dipolmomentoperator Dipolmoment hat 3 Komponenten also für gegebene i,f ist das ein Vektor Soweit ich mir gut erinnere, er heißt dynamischer weil er zwischen 2 Zuständen ist Also beschreibt keine statische Werte sondern eine Antwort eines Systems Also zum Beispiel für IR Absorption du nimmst den Grundzustand als "i" Und welche angeregte Zustande möchtest du als mögliche nehmen? Einfachste Antwort: erste angeregte Vibrationszustände.
+% %Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
+% The respective intensities are determined by $I\propto |<i|\vec{\hat{\mu}}(\vec{R}_i)|f>|^2$.
+
+Note that for this approach, only the dipole components perpendicular to the surface are taken into account.
+That is why in the graphs of the spectra in Section \ref{sec:vib11-20} the $\mu^2$ (this refers to $|\mu^\prime|^2$ with respect to the $z$ axis) is given at the y axis.
+Only modes with a high perpendicular compound can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy, see also Appendix \ref{exp_techniques}).
 These are not completely comparable to IR spectra.
 Selection rules for SFG include IR and Raman activity as well as a system without inversion symmetry, which is usually the case for interfaces and surfaces.
   
-\item[II)] Another way to obtain intensities is by calculating Born effective charges\cite{Born1954}, as published in the work of Grillo \textit{et al.}\cite{BEC}.
-These charges are calculated as the second derivative of the energy with respect to an applied electric field and to the amplitude of a vibrational distortion.
-This is available through DFPT\cite{Baroni1987,Giannozzi1991} (density functional perturbation theory), which is a linear response theory.
-One can calculate the intensity $I(\omega)$\cite{Bruesch1986,Baroni2001}:
+\item[II)] Another way to obtain intensities is by applying density functional perturbation theory (DFPT)\cite{Baroni1987,Giannozzi1991}, which is a linear response theory.
+Within this approach Born effective charges matrix is determined\cite{Born1954}.
+% These charges are calculated as the second derivative of the energy with respect to an applied electric field and to the amplitude of a vibrational distortion.
+These charges can be understood as a coefficient that is related to the change of the polarization due to displacing an atom.
+They can be expressed as the derivative of the polarization $P_\beta$ with respect to the coordinates $Z^\star_{\alpha\beta}=\frac{\partial{P_\beta}}{\partial{R_\alpha}}$.
+
+% Another way to obtain intensities is by calculating Born effective charges\cite{Born1954}, as published in the work of Grillo \textit{et al.}\cite{BEC}.
+% These charges are calculated as the second derivative of the energy with respect to an applied electric field and to the amplitude of a vibrational distortion.
+% This is available through DFPT\cite{Baroni1987,Giannozzi1991} (density functional perturbation theory), which is a linear response theory.
+One can calculate the intensity $I(\omega)$\cite{Bruesch1986,Baroni2001}, as published in the work of Grillo \textit{et al.}\cite{BEC}:
 \begin{equation}\label{eq:bec}
-  I(\omega) = \sum_{\alpha=1}^3|\sum_{l=1}^{N_A}\sum_{\beta=1}^3 Z_{\alpha\beta}^\star(l)e_\beta(l)|^2.
+  I(\omega) = \sum_{\alpha=1}^3|\sum_{i=1}^{N_A}\sum_{\beta=1}^3 Z_{\alpha\beta}^\star(i)e_\beta(i)|^2.
 \end{equation}
-Here, $\alpha$ and $\beta$ are cartesian polarizations, $e_\beta(l)$ is the normalized vibrational eigenvector of the $\omega$-th mode, $l$ deciphers the different atoms of the system with the total number $N_A$ and $Z_{\alpha\beta}^\star$ is the Born effective charge tensor of the $l$-th atom.\\
+Here, $\alpha$ and $\beta$ range over three cartesian directions ($x$, $y$, $z$), $e_\beta(i)$ is the $\beta$ component of the normalized vibrational eigenvector of the $\omega$-th mode, $i$ deciphers the different atoms of the system with the total number $N_A$ and $Z_{\alpha\beta}^\star(i)$ is the Born effective charge matrix of the $i$-th atom.
+For example $Z_{x\beta}^\star$ is the change in polarization in $x$ direction produced by the displacement in $\beta$ direction.
+\\
 \end{itemize}
 Both methods are based on normal mode analyses and therefore give IR intensities.
 While normal modes are a good approximation for high energy vibrations, for example OD stretch vibrations, they become worse for lattice vibrations, which are typically more delocalized.
@@ -1804,7 +1835,7 @@ Due to this the differences between O-I and O-II termination get less significan
 As a second method to obtain vibrational intensities, Born effective charges were evaluated.
 These results were calculated for the three most stable adsorbed systems with ten layers.
 For getting the spectrum an angle of the IR beam of 45\textdegree~was assumed.
-This choice of this angle weighs the elements of the Born effective charge vector in Equation (\ref{eq:bec}) that are in the sum of the intensity.
+This choice of this angle weighs the elements ($x$, $y$ and $z$) of the Born effective charge vector in Equation (\ref{eq:bec}) that are in the sum of the intensity.
 Since both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities can differ.
 In Figure \ref{abb:bec} the spectra for the three most stable structures can be seen, (a) depicts the whole range and (b) the OD range only.
 \begin{figure}[!h]
@@ -3079,7 +3110,7 @@ In contrast to a more equilibrium situation with pinhole dosing, this gives an i
 I want to thank my doctoral supervisor Prof. Dr. Saalfrank, for giving me the scientific opportunity to research on surface systems and all the valuable discussions and advices.
 Also I am deeply grateful to my supervisor Dr. Jonas Wirth who gave me support during my time starting as a Bachelor's student, during my Master's thesis and also through the beginning of my PhD.
 Thanks to PD Dr. Tillmann Klamroth for discussions about programming and millions of theoretical questions that arose during the work, Dr. Rados\l{}aw W\l{}odarczyk for his endless knowledge with VASP and programming in general, Giacomo Melani (soon to be Dr.) for his advice and his help, and also the discussions about our teaching duties in mathematics and the whole workgroup for all the valuable discussions and the help.
-For the great atmosphere that was some times productive and some times also just relaxing and felt very comfortable, here especially Clemens Rietze, Robert Scholz, Gereon Floss, and Steven Lindner contributed.
+For the great atmosphere that was some times productive and some times also just relaxing and felt very comfortable, here especially Clemens Rietze, Robert Scholz, Jan Götze, Gereon Floss, and Steven Lindner contributed.
 Also I want to thank my second supervisor Beate Paulus for discussion and help beyond research topics.
 Great acknowlegdment to my experimental cooperation partners from FHI, Yanhua Yue, Dr. Harald Kirsch and Dr. R. Kramer Campen for the great work and publications we did together.
 Thanks to Dr. Denis Usvyat for all his patience and knowledge and valuable discussions about CRYSTAL/cryscor who often answered my questions from his phone during his vacations.\\
