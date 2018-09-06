@@ -1,0 +1,106 @@
+\documentclass[11pt,DIV=13,a4paper,headinclude]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{upgreek}
+%\usepackage{graphicx}
+\usepackage[figuresright]{rotating}     % l344dt auch graphicx
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{scrpage2}
+\usepackage{textcomp}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{rotating}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{etoolbox}
+\usepackage{bibentry}
+\usepackage{placeins}
+\usepackage{cite}
+
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+%\linespread{1.25}
+\KOMAoptions{DIV=last}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\titlehead{\centering\normalfont\large\scshape Scientific Abstract}
+\title{\Large\vspace{-\baselineskip} Water at $\upalpha$-Alumina:\\
+  Energetics and Kinetics of Adsorbate Systems\vspace{0\baselineskip}}
+\author{\large\sffamily submitted by\\
+  \Large\textbf\sffamily\ Sophia L. Heiden\\
+  \large\sffamily (Universit\"{a}t Potsdam, Institut f\"{u}r Chemie)}
+\date{}
+
+\maketitle
+
+In the last decades, the field of surface science was of growing interest to understand and improve catalytic processes.
+Not only experimental progress was made, but also computational methods were developed and applied with good success to understand processes at the microscopic scale.
+This work is part of this progress with three different topics at the $\upalpha$-Al$_2$O$_3$ surface.
+In all topics the interaction of water with the surface is studied with the methods of periodic density functional theory including dispersion corrections, mainly with the density functional PBE.
+Close collaboration with the experimental ``Interfacial Molecular Spectroscopy'' group of Dr. Kramer Campen from the Fritz Haber institute in Berlin were maintained.
+\\
+
+
+The first project that makes up the biggest part of this work studied the (11\=20) surface which is the third most stable under ultra high vacuum (UHV) conditions and has not been studied to a large extent yet.
+The structure of the clean surface slab ($2\times 2$ supercell) was optimized and analyzed to predict most probable adsorption sites.
+The surface is relatively complex with two distinct alumina atom dimers and both twofold and threefold coordinated oxygen atoms, offering a variety of adsorption sites.
+
+The adsorption of water was studied in the low coverage limit, concerning the stability of the molecularly and dissociatively adsorbed water.
+In comparison to the molecular minimum, the dissociated structures are substantially more stable.
+
+From these stable minima, reactions were investigated with nudged elastic band (NEB) to determine reaction rate constants for dissociation, and diffusion reactions of H and OH residues to learn about the mobility of surface species.
+We could find, that dissociation is very fast, and that rates for diffusion reactions cover a wide range from very to very slow and thus improbable, depending on the reaction and the type of surface oxygen atom involved. 
+
+
+In addition to this, vibrational frequencies for all minima were evaluated, here for OD species to be able to compare to experimental results.
+For this SFG spectra (sum frequency generation, an interface specific vibrational spectroscopy method) were measured by Yanhua Yue from Kramer Campen's group and compared to theory with good agreement such that single modes could be assigned to their respective OD stretch vibration.
+Two of the most stable species contribute to the peaks, since they are likely to be occupied with respect to Boltzmann distribution.
+
+Furthermore we studied higher water coverages and the effects on the vibrational frequencies.
+For geometries were the neighboring residues have a considerable influence on the stability, the wavenumbers of the respective vibrations are shifted strongly.
+Especially the fully covered system has a multitude of peaks from different adsorbed OD and surface OD groups.
+
+
+Intensities were adopted from three different approaches from the literature: via dipole corrections, Born effective charges and as a fundamentally different ansatz from velocity-velocity autocorrelation function from \textit{ab initio} molecular dynamics simulations.
+These approaches deliver results that are in good agreement especially in the OD region.
+\\
+\\
+The second project is themed at the most stable surface cut under UHV conditions, the (0001) surface that has been studied earlier in our group extensively condidering water adsorption, vibrational frequencies and dissociation and diffusion reactivity.
+From the literature it is known, that GGA functionals like PBE, which is standard for such calculations, gives too low barrier heights for reactions and hence overestimates reaction rate constants.
+To overcome this issue, we reoptimize for an exemplary hydrogen diffusion reaction (called Df-H-4-2) educt and product geometry and the transition state with a hybrid functional (B3LYP+D3) and using these geometries evaluating the barrier height and reaction rate with B3LYP and also with local M\o{}ller-Plesset perturbation theory of second order (LMP2).
+These methods give indeed higher barriers and slower rate constants, although with a higher computational cost leading to a better understanding of the system.
+\\
+\\
+In a third project, molecular beam scattering at the (0001) surface was examined.
+In a molecular beam experiment, a water beam is shot in UHV at the surface, resulting in a non-equilibrium situation.
+Recent experiments showed, that with this method water dissociation is enhanced in comparison to other probing techniques like pinhole dosing.
+For this \textit{ab initio} molecular dynamics simulations were conducted to reproduce these experimental findings.
+We used different surface and beam models which allowed us to understand this increased dissociation probability mechanistically.
+\\
+\\
+This work projects could unravel open questions in the scientific community, the behaviour of water at the $\upalpha$-alumina(11\=20) surface with low and higher coverages, the vibrations and reactivity.
+Furthermore we were able to improve the reaction rates with the help of hybrid functionals and higher level methods such as LMP2.
+Additionally, in this work the microscopic processes during molecular beam scattering at the (0001) surface could be observed and explained mechanistically, helping to understand dynamical processes better.
+Although great progress was made, still more question arose during the work, which will be answered hopefully in future work.
+
+
+% \thispagestyle{empty}
+% \begin{enumerate}[itemsep=0.25\baselineskip]
+%   \item Heiden, S.; Yue, Y.; Kirsch, H.; Wirth, J.; Saalfrank, P.; Campen, R. K.: {\frqq}Water Dissociative Adsorption on $\upalpha$-Al$_2$O$_3$(11\=20) Is Controlled by Surface Site Undercoordination, Density, and Topology{\flqq}, \textit{The Journal of Physical Chemistry C} \textbf{2018}, \textit{122} (12), 6573-6584.
+%   \item Heiden, S.; Wirth, J.; Campen, R. K.; Saalfrank, P.: {\frqq}Water Molecular Beam Scattering at $\upalpha$-Al$_2$O$_3$(0001): An \textit{Ab Initio} Molecular Dynamics Study{\flqq}, \textit{The Journal of Physical Chemistry C} \textbf{2018}, \textit{122} (27), 15494-15504.
+% 
+% \end{enumerate}
+
+\end{document}

@@ -256,13 +256,13 @@ Most basic theory parts of this chapter are based on \cite{jensen} and \cite{Gro
 
 
 For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure.
-For this, the first step is to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer} (or adiabatic approximation), which is legitimate due to the largely different masses of electrons and nuclei.
+For this, the first step is to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legitimate due to the largely different masses of electrons and nuclei.
 With this approximation, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic wave function $\Psi_e(\{\vec{r}\})$ and electronic energy $E_e$ is
 \begin{equation}\label{eq:tise}
  \hat{H}_e\Psi_e(\{\vec{r}_i\})=E_e\Psi_e(\{\vec{r}_i\}).
 \end{equation}
-The wave function $\Psi_e(\vec{r}_i)$ is a function of the coordinate vector $\vec{r}$ and is 3$N_e$ dimensional, with the number of electrons $N_e$.
-The Hamiltonian in atomic units contains the kinetic energy of the electrons, the Coloumb interaction of the electrons and the electron-nucleus interaction:
+The wave function $\Psi_e(\{\vec{r}_i\})$ is a function of the coordinate vectors $\vec{r}_i$ ($i=1,...,N_e$), with the number of electrons $N_e$.
+The Hamiltonian in atomic units contains the kinetic energy of the electrons, the Coloumb interaction of the electrons and the electron-nuclei interaction:
 \begin{equation}
  \hat{H}_e= \frac{1}{2}\sum_i^{N_e}\vec{\nabla}_i^2 - \sum_A^{N_A}\sum_i^{N_e}\frac{Z_A}{r_{iA}} + \sum_{i<j}^{N_e}\frac{1}{r_{ij}}
 \end{equation}
@@ -274,7 +274,7 @@ For large systems, %(more than electrons),
 the solution of Equation (\ref{eq:tise}) gets computationally demanding.
 
 \section{Hartree-Fock Theory}
-In order to solve the Schr\"{o}dinger equation for more than one electron, approximations must be made\cite{szabo}.
+In order to solve the Schr\"{o}dinger equation for more than one electron, in most cases approximations must be made\cite{szabo}.
 One of them is the approximation of independent particles.
 The motion of one electron is considered to be independent from all other electrons, whose interactions are averaged.
 In this context, often the term "short-sighted" electron is used.
@@ -296,18 +296,18 @@ For the spin functions we have
 \int_{-\infty}^{\infty}\alpha^\ast(\omega)\alpha(\omega)d\omega=\langle\alpha|\alpha\rangle=\langle\beta|\beta\rangle=1
 \end{equation}
 and $\langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0$ in the bra-ket notation.
-Spin orbitals, \textit{e.g.} $\chi(\vec{x})=\psi(\vec{r}_i)\gamma(\omega)$ with $\gamma=\alpha, \beta$ contain information about the position and the spin of the electron.
-It is also possible to integrate out the spin for closed shell systems which was done in this work.
+Spin orbitals, \textit{e.g.} $\chi(\vec{x})=\psi(\vec{r})\gamma(\omega)$ with $\gamma=\alpha, \beta$ contain information about the position and the spin of the electron.
+It is also possible to integrate out the spin for closed shell systems, which was done in this work.
 
 
-The total wavefunction is then given as a product of orbitals.
-Since electrons are fermions with a spin of 1/2, it can be shown that the wavefunction must change its sign when interchanging any two electrons (antisymmetry principle).
+The simplest ansatz for the total wavefunction would be a product of spin orbitals.
+Since electrons are indistinguishable and fermions with a spin of 1/2, the wavefunction must change its sign when interchanging any two electrons (antisymmetry principle).
 \begin{equation}
 \Psi(\vec{x}_1,...,\vec{x}_i,\vec{x}_j,...\vec{x}_{N_e})=-\Psi(\vec{x}_1,...,\vec{x}_j,\vec{x}_i,...\vec{x}_{N_e})
 \end{equation}
 In other words, two electrons can not have the same set of quantum numbers as is stated in the Pauli principle, which follows from the antisymmetry of the wavefunction.
 
-This condition can be fulfilled in the Hartree-Fock theory (HF) by a Slater determinant.
+This condition can be fulfilled in the Hartree-Fock theory (HF) by a Slater determinant, \textit{i.e.} an antisymmetrized product of spin orbitals.
 \begin{equation}
 \Psi^{HF}_{0}({\vec{x_1}},\dots\vec{x_N}) = \frac{1}{\sqrt{N!}}\begin{vmatrix}{\chi_1}({\vec{x_1}})&{\chi_2}({\vec{x_1}})&\dots&{\chi_N}({\vec{x_1}})\\
 {\chi_1}({\vec{x_2}})&{\chi_2}({\vec{x_2}})&\dots&{\chi_N}({\vec{x_2}})\\
@@ -326,7 +326,7 @@ E_0=\langle\Psi^{HF}_0|\hat{H}_e|\Psi^{HF}_0\rangle
 The best wavefunction approximated by a single Slater determinant gives the lowest energy, \textit{i.e.} the better the applied wavefunction is, the lower gets the energy.
 Minimizing the energy with respect to the choice of the spin orbitals results in the (restricted) Hartree-Fock equations for a closed shell system, which applies under the constraint that $\langle \psi_i|\psi_j\rangle=\delta_{ij}$:
 \begin{equation}\label{eq:hf}
-\hat{f}(i)\psi(\vec{r}_i)=\varepsilon\psi(\vec{r}_i)
+\hat{f}(i)\psi_i(\vec{r})=\varepsilon\psi_i(\vec{r})
 \end{equation}
 with the orbital energy $\varepsilon$ and the Fock operator $\hat{f}(i)$ that is an effective one-electron operator:
 % \begin{equation}
@@ -360,30 +360,30 @@ In principle, Equation (\ref{eq:hf}) gives an infinite number of solutions.
 In practice however, a finite set of basis functions is introduced.
 The larger the basis, the lower the expectation value for the energy will be.
 
-With a basis ($\Phi$) any function can be expaned as a sum:
+With a basis ($\{\Phi_\mu\}$) any function can be expaned as a sum:
 \begin{equation}\label{eq:basis}
 % f(\vec{r})=\sum_{i=1}^{N_e}a_i\psi_i(\vec{r})
-\psi_i=\sum_N^Kc_{iN}\Phi_N
+\psi_i=\sum_\mu^Kc_{i\mu}\Phi_\mu
 \end{equation}
-The $c_i$ are coefficients.
+The $c_{i\mu}$ are coefficients.
 In practice the sum is not complete, but limited to a number of orbitals.
 
 With this we can write the Hartree-Fock equation analog to (\ref{eq:hf}):
 \begin{equation}
- \hat{f}(i) \sum_N^Kc_{iN}\Phi_N = \varepsilon_i \sum_N^Kc_{iN}\Phi_N
+ \hat{f}(i) \sum_\mu^Kc_{i\mu}\Phi_\mu = \varepsilon_i \sum_\mu^Kc_{i\mu}\Phi_\mu
 \end{equation}
 We can deduce the Roothaan-Hall equation, if we use the matrix notation, multiply specific basis functions from the left and integrate:
 \begin{equation}\label{eq:RH}
- \doubleunderline{F}\doubleunderline{C}=\doubleunderline{S}\doubleunderline{C}\varepsilon
+ \doubleunderline{F} \vec{C}_i=\doubleunderline{S} \vec{C}_i\varepsilon_i
 \end{equation}
-with the Fock matrix $F_{\alpha\beta}=\langle \Phi_\alpha|\doubleunderline{F}|\Phi_\beta\rangle$ and the overlap matrix $S_{\alpha\beta}=\langle \Phi_\alpha|\Phi_\beta\rangle$ and the orbital eigenvalues $\varepsilon_i$.
+with the Fock matrix $F_{\mu\nu}=\langle \Phi_\mu|\hat{f}|\Phi_\nu\rangle$ and the overlap matrix $S_{\mu\nu}=\langle \Phi_\mu|\Phi_\nu\rangle$ and the orbital eigenvalues $\varepsilon_i$.
 
 This equation can be solved iteratively with the self consistent field method (SCF) by taking a guess, solving the equation and then improving the guess accordingly.
 
 \section{Density Functional Theory}
 An alternative to the wave function-based theories is density functional theory (DFT).
 It is based on the Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r_i})$: there exists a one to one correspondence.
-If $\Psi(\vec{r}_i)$ is a $N_e$-electron wavefunction, then the  electron density can be expressed as
+If $\Psi(\{\vec{r}_i\})$ is a $N_e$-electron wavefunction, then the  electron density can be expressed as
 \begin{equation}\label{eq:electron-density}
  n(\vec{r})=N_\textrm{norm}\int ...
 \int \Psi^\ast(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N)\Psi(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N) d \vec{r}_2...d \vec{r}_N
@@ -415,7 +415,7 @@ A variational calculation similar to HF leads to the so-called Kohn-Sham equatio
 \begin{equation}\label{eq:KS}
  \left(-\vec{\nabla}^2 + v_{ext}(\vec{r}) + v_{H}(\vec{r}) + v_{xc}(\vec{r}) \right)\psi^{KS}_i(\vec{r}) = \varepsilon_i\psi^{KS}_i(\vec{r})
 \end{equation}
-with the kinetic energy, the external potential $v_{ext}(\vec{r})$, the Hartree potential $v_{H}(\vec{r})$, the exchange-correlation potential $v_{xc}(\vec{r})=\frac{\partial E_{xc}[n]}{\partial n(\vec{r})}$, the Kohn-Sham orbitals $\psi^{KS}_i(\vec{r})$ and the Kohn-Sham orbital energy $\varepsilon_i$.
+with the kinetic energy based on the orbitals, the external potential $v_{ext}(\vec{r})$, the Hartree potential $v_{H}(\vec{r})$, the exchange-correlation potential $v_{xc}(\vec{r})=\frac{\partial E_{xc}[n]}{\partial n(\vec{r})}$, the Kohn-Sham orbitals $\psi^{KS}_i(\vec{r})$ and the Kohn-Sham orbital energy $\varepsilon_i$.
 In this way, the energy can be determined self-consistently.
 With this, the exchange-correlation functional ($v_{xc}=\frac{\partial E_{xc}[n]}{\partial n[\vec{r}]}$) remains the only unknown functional, but it is typically only a small fraction of the total energy.
 
@@ -468,7 +468,7 @@ with the number of atoms $N_A$, the scaling factor $s_6$ which is dependent on t
 This equation gives the D2-correction $E_{disp}^{(2)}$, which is added to the total energy.
 For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added.
 \begin{equation}
-  E_{disp}^{(3)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B>A}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\phi_a cos\phi_b cos\phi_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
+  E_{disp}^{(3)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\phi_a cos\phi_b cos\phi_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
 \end{equation}
 Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\phi_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$ and $\bar{R}_{ABC}$ is the geometrically averaged distance of the three atoms.
 
@@ -533,16 +533,16 @@ The Schrödinger equation for the unperturbed system is:
 with the HF Slater determinant $\Psi^{(0)}$ and the HF orbital energies $\varepsilon_i$.\\
 The unperturbed energy can be calculated with:
 \begin{equation}
- E^{(0)} = \langle\Psi^{(0)}|\hat{H}^{(0)}|\Psi^{(0)}\rangle=\sum\limits_{i=1}^N\varepsilon_i
+ E^{(0)} = \langle\Psi^{(0)}|\hat{H}^{(0)}|\Psi^{(0)}\rangle=\sum\limits_{i=1}^{N_e}\varepsilon_i
 \end{equation}
 and the energy of $1^\textrm{st}$ order is:
 \begin{equation}
  E^{(1)} = \langle\Psi^{(0)}|\hat{V}|\Psi^{(0)}\rangle
 \end{equation}
 $E^{(0)}+E^{(1)}$ equals the Hartree-Fock energy $E_{HF}$.
-For the energy of the second order, both occupied orbitals $i,j$ and unoccupied orbitals $k,l$ and their energy $\varepsilon$ have to be considered\footnote{$\langle ij|kl\rangle=\int\int\psi^\ast_i\psi^\ast_j\psi_k\psi_l d^3\vec{r}d^3\vec{r}^\prime$}:
+For the energy of the second order, both occupied orbitals $i,j$ and unoccupied orbitals $k,l$ and their energy $\varepsilon$ have to be considered\footnote{$\langle ij|kl\rangle=\int\int\chi^\ast_i(1)\chi^\ast_j(2)\frac{1}{\vec{r}_{12}}\chi_k(1)\chi_l(2) d^3\vec{r}_1d^3\vec{r}_2^\prime$}:
 \begin{equation}
- E^{(2)}=\sum\limits_{i}^{occ.}\sum\limits_{j>i}^{occ.}\sum\limits_{k}^{unocc.}\sum\limits_{l>k}^{unocc.} \frac{(\langle ij|kl\rangle - \langle ij|lk\rangle)^2}{\varepsilon_i + \varepsilon_j - \varepsilon_k - \varepsilon_l}
+ E^{(2)}=\sum\limits_{i}^{occ.}\sum\limits_{j>i}^{occ.}\sum\limits_{k}^{unocc.}\sum\limits_{l>k}^{unocc.} \frac{|\langle ij|kl\rangle - \langle ij|lk\rangle|^2}{\varepsilon_i + \varepsilon_j - \varepsilon_k - \varepsilon_l}
 \end{equation}
 The MP2-corrected total energy is composed of the HF energy and the second order energy:
 \begin{equation}
@@ -664,16 +664,28 @@ It is calculated with
 \end{equation}
 with the electron mass $m_e$.
 
+The Bloch orbital $\varphi_{n}(\vec{r})$ is represented by a basis (compare Equation (\ref{eq:basis})):
+\begin{equation}
+ \varphi_n(\vec{r})=\sum_\mu^K C_{n\mu}\phi_n
+\end{equation}
+giving a $K\times K$ matrix for the number of basis functions $K$ and the vector $C_n$ of the size $K$.
+For this must apply
+\begin{equation}
+ \langle\varphi_{n,\vec{k}}|\hat{f}|\varphi_{n,\vec{k}^\prime}\rangle=0 ~~ \forall ~~\vec{k}^\prime\neq \vec{k}
+\end{equation}
 
-In analogy to the Roothaan-Hall equation (\ref{eq:RH}), we can now introduce the Roothaan-Hall expression in a matrix representation, depending on the reciprocal space vector $\vec{k}$:
- \begin{equation}
+From the periodicity claimed by the Bloch theorem we know that the Fockmatrix (or Kohn-Sham matrix) has to be block diagonal, hence it is sufficient to solve Equation (\ref{eq:RH-mat}) only at a few $\vec{k}$-points in the first Brillouin zone, especially for non-metallic systems\cite{monkhorst}.
+
+In analogy to the Roothaan-Hall equation (\ref{eq:RH}), we can now introduce the Roothaan-Hall expression, depending on the reciprocal space vector $\vec{k}$:
+ \begin{equation}\label{eq:RH-mat}
   \doubleunderline{F}^{\vec{k}}\vec{C}_n^{\vec{k}}=\doubleunderline{S}^{\vec{k}}\vec{C}_n^{\vec{k}}\varepsilon_n^{\vec{k}}
  \end{equation}
- with the Fockmatrix $\doubleunderline{F}$, the overlap matrix $\doubleunderline{S}$, the vector containing the coefficients $\vec{C}$ and the orbital energies $\varepsilon$.
-\todo{mehr dazu!}
- %  The solutions give a band (range of energies) and are a continuous function.
- The total energy per unit cell is obtained by integrating over the $\vec{k}$-space.
- For non-metallic systems the integration can be evaluated numerically using only a few $\vec{k}$-points\cite{monkhorst}.
+with the Fockmatrix $\doubleunderline{F}$, the overlap matrix $\doubleunderline{S}$, the vector containing the coefficients $\vec{C}$ and the crystal orbital energies $\varepsilon$.
+Equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in the first Brillouin zone.
+
+
+%  The solutions give a band (range of energies) and are a continuous function.
+%  The total energy per unit cell is obtained by integrating over the $\vec{k}$-space.
 %  In analogy to molecular HOMO orbital, the energy of the highest filled band is called Fermi energy.
 %  The band gap, equivalent to HOMO-LUMO gap, is between the highest filled and the lowest empty band.
 %  In metallic systems, there is no bandgap, whereas in insulating systems the band gap is large ($>4\,$eV\cite{holleman2007lehrbuch}).
@@ -682,7 +694,7 @@ In analogy to the Roothaan-Hall equation (\ref{eq:RH}), we can now introduce the
 \section{Plane Wave Basis, Atom Centered Basis and Peculiarities}
 It is necessary for calculation of Equations (\ref{eq:KS}) to use a basis set for the orbitals, as shown in Equation (\ref{eq:basis}).
 Basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set (atom centered basis functions).
-As a consequence of plane waves, the system is periodic in 3D and it is possible to improve the basis by setting the cutoff energy higher.
+As a consequence of plane waves, the system is periodic in 3D and it is possible to improve the basis systematically by setting the cutoff energy higher.
 Many basis functions are necessary which is very costly for calculations that depend not only on the density (like hybrid functionals, MP2).
 In comparison plane waves (PW) and atom centered orbitals (ACO) have different advantages and disadvantages\cite{Tosoni2007}.
 For solid state systems both the energy and the gradient converge better with plane waves (fewer steps).
@@ -698,7 +710,7 @@ It is computationally demanding to calculate exact (Fock) exchange, which makes 
 Whenever there are atom-centered basis sets the orbitals of different atoms can overlap.
 This can result in the so-called basis set superposition error (BSSE), which only appears if atom centered bases are utilized.
 Lets assume a dissociation reaction: in the molecular case, the electrons can occupy orbitals of both residues (each atom has in total a higher basis set, the binding energy is stabilized), whereas in the dissociated case, this is not possible (the energy of the isolated fragments is not stabilized).
-Due to this difference, it is necessary to either calculated the BSSE or to use a large basis, ideally at the basis set limit.
+Due to this difference, it is necessary to either correct the BSSE or to use a large basis, ideally at the basis set limit.
 One can apply counterpoise corrections (CP)\cite{Boys1970} to approximately compensate this error.
 This is done here by performing ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms.
 Then one applies a substractive scheme to cancel out the effect of the orbital overlap.
@@ -715,7 +727,7 @@ For this, the classical Newtonian equations of motion are solved:
  -\vec{\nabla}_A V(\{\vec{R}_i\})=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 %  -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 \end{equation}
-where $V$ is the potential energy that is a function of all nuclear coordinates $\{\vec{R}\}_i$, $\vec{R}_A$ is the vector containing all coordinates of atom $A$, $M_A$ is the atomic mass of atom $A$ and the time $t$.
+where $V$ is the potential energy that is a function of all nuclear coordinates $\{\vec{R}_i\}$, $\vec{R}_A$ is the vector containing all coordinates of atom $A$, $M_A$ is the atomic mass of atom $A$ and the time $t$.
 This equation gives in principle $\vec{F}=M_A\cdot \vec{a}$, the force $\vec{F}$ acting on each atom in a classical ansatz with the velocity $\vec{a}$.
 This is a good approximation for nuclei are usually sufficiently massive to be treated classically\footnote{Strictly speaking, this is not appropriate for hydrogen, since it is so lightweight that quantum mechanical tunneling processes can not be precluded.
 For treating quantum effects such as zero point energy and tunneling it is necessary to solve the nuclear Schrödinger equation.}.
@@ -815,7 +827,7 @@ There are several methods available to calculate intensities of vibrational mode
  \begin{equation}
   I\propto |0 + \vec{\mu}^\prime\times N|^2
  \end{equation}
- the first term is zero and the second is a factor $N=\sqrt{\frac{a}{b}}$\todo{nachgucken!} times the change of dipole moment with respect to the coordinates.
+ the first term is zero and the second is a factor $N=\sqrt{\frac{\hbar}{2m_\textrm{red}\omega}}$\cite{cohen-tannoudji} times the change of dipole moment with respect to the coordinates ($m_\textrm{red}$ is the reduced mass).
  This gives the relation $I\propto |\mu^\prime_z|^2$\cite{dyn-dip,Yang2012}.
 %  The IR intensities for each normal mode are estimated from the double harmonic approximation (potential is approximated harmonically and the selection rule is $\Delta \nu=\pm 1$).
 %   The derivative of the dipole moment with respect to the atomic positions is calculated, also known as dynamical dipole moment\cite{dyn-dip,Yang2012}.
@@ -3097,7 +3109,7 @@ In this work great progress was made in understanding the (11\=20) surface of $\
 This surface cut is the third most stable one under UHV conditions and has not been studied to a great extent yet.
 After optimization of the clean, defect free surface, the stability of different adsorbed species could be classified.
 One molecular minimum and several dissociated species could be detected, and starting from these reaction rates between minima were evaluated.
-A dissociation reaction was shown to be very fast because the molecular minumum is relatively unstable, whereas diffusion reactions cover a wider range from fast to slow.
+A dissociation reaction was shown to be very fast because the molecular minimum is relatively unstable, whereas diffusion reactions cover a wider range from fast to slow.
 In addition to reactivity, harmonic vibrational frequencies were determined for comparison with the findings of the experimental ``Interfacial Molecular Spectroscopy'' group  from Fritz-Haber institute in Berlin.
 Especially the vibrational frequencies of OD species could be assigned to vibrations from experimental SFG spectra with very good agreement.
 Also, lattice vibrations were studied in close collaboration with the experimental partners.
@@ -3134,8 +3146,8 @@ In contrast to a more equilibrium situation with pinhole dosing, this gives an i
 I want to thank my doctoral supervisor Prof. Dr. Saalfrank, for giving me the scientific opportunity to research on surface systems and all the valuable discussions and advices.
 Also I am deeply grateful to my supervisor Dr. Jonas Wirth who gave me support during my time starting as a Bachelor's student, during my Master's thesis and also through the beginning of my PhD.
 Thanks to PD Dr. Tillmann Klamroth for discussions about programming and millions of theoretical questions that arose during the work, Dr. Rados\l{}aw W\l{}odarczyk for his endless knowledge with VASP and programming in general, Giacomo Melani (soon to be Dr.) for his advice and his help, and also the discussions about our teaching duties in mathematics and the whole workgroup for all the valuable discussions and the help.
-For the great atmosphere that was some times productive and some times also just relaxing and felt very comfortable, here especially Clemens Rietze, Robert Scholz, Jan Götze, Gereon Floss, and Steven Lindner contributed.
-Also I want to thank my second supervisor Beate Paulus for discussion and help beyond research topics.
+For the great atmosphere that was some times productive and some times also just relaxing and felt very comfortable, here especially Clemens Rietze, Robert Scholz, Dr. Jan Götze, Dr. Gereon Floss, and Steven Lindner contributed.
+Also I want to thank my second supervisor Prof. Dr. Beate Paulus for discussion and help beyond research topics.
 Great acknowlegdment to my experimental cooperation partners from FHI, Yanhua Yue, Dr. Harald Kirsch and Dr. R. Kramer Campen for the great work and publications we did together.
 Thanks to Dr. Denis Usvyat for all his patience and knowledge and valuable discussions about CRYSTAL/cryscor who often answered my questions from his phone during his vacations.\\
 %Maristella Alessio from Sauer group (HU Berlin) for help with Turbomole and setting the mechanical embedding calculations that unluckily did not work for the applied cluster.
