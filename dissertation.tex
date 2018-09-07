@@ -196,7 +196,7 @@ In all technically and environmentally relevant applications the Al$_2$O$_3$ sys
 Hence a quantitative understanding of the alumina water interaction on the microscopic scale is crucial.
 In the environment, alumina appears as rocks, \textit{e.g.} corundum, or gems like ruby.
 In technical applications alumina is commonly used as an abrasive due to its hardness, as a whitening pigment and also ceramics are widely applied because of the insulating properties.
-Alumina is also applied as a catalyst (for example in the Claus process) and more often as a co-catalyst, for example in the ethylene epoxidation\cite{Oezbek2013} or in the hydrodesulfurization where it acts as a base for the active cobalt and molybdenum catalyst in a sulfur removing process:
+Alumina is also applied as a catalyst (for example in the Claus process) and more often as a co-catalyst, for example in the ethylene epoxidation\cite{Oezbek2013} or in the hydrodesulfurization\cite{Parijs1986} where it acts as a base for the active cobalt and molybdenum catalyst in a sulfur removing process:
 \begin{equation*}
  \textrm{C}_2\textrm{H}_5\textrm{SH} + \textrm{H}_2  \xrightarrow{cat.} \textrm{C}_2\textrm{H}_6 + \textrm{H}_2\textrm{S}
 \end{equation*}
@@ -252,7 +252,7 @@ In this work \textit{ab initio} molecular dynamics calculations were conducted t
 In this chapter the basics of the theoretical methods applied in this work shall be explained.
 It starts from the ideas of Hartree-Fock and density functional theory, going over periodic boundary conditions, to the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
 Then we will proceed with frequency calculations and intensities over transition state theory to more developed methods like hybrid functionals and perturbation theory.
-Most basic theory parts of this chapter are based on \cite{jensen} and \cite{Gross03}.
+Most basic theory parts of this chapter are based on \cite{jensen}, \cite{Gross03} and \cite{szabo}.
 
 
 For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure.
@@ -266,8 +266,8 @@ The Hamiltonian in atomic units contains the kinetic energy of the electrons, th
 \begin{equation}
  \hat{H}_e= \frac{1}{2}\sum_i^{N_e}\vec{\nabla}_i^2 - \sum_A^{N_A}\sum_i^{N_e}\frac{Z_A}{r_{iA}} + \sum_{i<j}^{N_e}\frac{1}{r_{ij}}
 \end{equation}
-The first term is the kinetic energy of the electrons, the second describes the Coulom interaction of electrons and nuclei (there are $N_A$ nuclei) and the third term gives the Coulomb repulsion between electrons.
-This equation is given in atomic units for sake of simplicity.
+The first term is the kinetic energy of the electrons, the second describes the Coulomb interaction of electrons and nuclei (there are $N_A$ nuclei) and the third term gives the Coulomb repulsion between electrons.
+This equation is written in atomic units for sake of simplicity.
 This sets some of the fundamental constants to 1, \textit{i.e.} $a_0=m_e=e=\hbar=4\pi\varepsilon_0=1$ ($a_0$ Bohr radius, $m_e$ electron mass, $\hbar=h/(2\pi)$ reduced Planck's constant and Coulombs constant $1/(4\pi\varepsilon_0)$).
 
 For large systems, %(more than electrons),
@@ -309,10 +309,10 @@ In other words, two electrons can not have the same set of quantum numbers as is
 
 This condition can be fulfilled in the Hartree-Fock theory (HF) by a Slater determinant, \textit{i.e.} an antisymmetrized product of spin orbitals.
 \begin{equation}
-\Psi^{HF}_{0}({\vec{x_1}},\dots\vec{x_N}) = \frac{1}{\sqrt{N!}}\begin{vmatrix}{\chi_1}({\vec{x_1}})&{\chi_2}({\vec{x_1}})&\dots&{\chi_N}({\vec{x_1}})\\
-{\chi_1}({\vec{x_2}})&{\chi_2}({\vec{x_2}})&\dots&{\chi_N}({\vec{x_2}})\\
+\Psi^{HF}_{0}({\vec{x}_1},\dots\vec{x}_N) = \frac{1}{\sqrt{N!}}\begin{vmatrix}{\chi_1}({\vec{x}_1})&{\chi_2}({\vec{x}_1})&\dots&{\chi_N}({\vec{x}_1})\\
+{\chi_1}({\vec{x}_2})&{\chi_2}({\vec{x}_2})&\dots&{\chi_N}({\vec{x}_2})\\
  \vdots&\vdots&\ddots&\vdots \\
-{\chi_1}({\vec{x_N}})&{\chi_2}({\vec{x_N}})&\dots&{\chi_N}({\vec{x_N}})
+{\chi_1}({\vec{x}_N})&{\chi_2}({\vec{x}_N})&\dots&{\chi_N}({\vec{x}_N})
 \end{vmatrix} 
 \end{equation}
 The choice of a determinant has two advantages: the change of two lines or rows changes the sign and if two lines or rows are the same, the value of the determinant is $0$. Both  are required by the Pauli principle.
@@ -366,7 +366,7 @@ With a basis ($\{\Phi_\mu\}$) any function can be expaned as a sum:
 \psi_i=\sum_\mu^Kc_{i\mu}\Phi_\mu
 \end{equation}
 The $c_{i\mu}$ are coefficients.
-In practice the sum is not complete, but limited to a number of orbitals.
+In practice the sum is not complete, but limited to a number of $K$ orbitals.
 
 With this we can write the Hartree-Fock equation analog to (\ref{eq:hf}):
 \begin{equation}
@@ -376,13 +376,13 @@ We can deduce the Roothaan-Hall equation, if we use the matrix notation, multipl
 \begin{equation}\label{eq:RH}
  \doubleunderline{F} \vec{C}_i=\doubleunderline{S} \vec{C}_i\varepsilon_i
 \end{equation}
-with the Fock matrix $F_{\mu\nu}=\langle \Phi_\mu|\hat{f}|\Phi_\nu\rangle$ and the overlap matrix $S_{\mu\nu}=\langle \Phi_\mu|\Phi_\nu\rangle$ and the orbital eigenvalues $\varepsilon_i$.
+with the Fock matrix $F_{\mu\nu}=\langle \Phi_\mu|\hat{f}(i)|\Phi_\nu\rangle$ and the overlap matrix $S_{\mu\nu}=\langle \Phi_\mu|\Phi_\nu\rangle$ and the orbital eigenvalues $\varepsilon_i$.
 
 This equation can be solved iteratively with the self consistent field method (SCF) by taking a guess, solving the equation and then improving the guess accordingly.
 
 \section{Density Functional Theory}
 An alternative to the wave function-based theories is density functional theory (DFT).
-It is based on the Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r_i})$: there exists a one to one correspondence.
+It is based on the Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r})$: there exists a one to one correspondence.
 If $\Psi(\{\vec{r}_i\})$ is a $N_e$-electron wavefunction, then the  electron density can be expressed as
 \begin{equation}\label{eq:electron-density}
  n(\vec{r})=N_\textrm{norm}\int ...
@@ -390,9 +390,9 @@ If $\Psi(\{\vec{r}_i\})$ is a $N_e$-electron wavefunction, then the  electron de
 \end{equation}
 %integral starts with $d\vec{r}_2$? yes, one electron is fixed and the probabilities of the other electrons are evaluated}
 with the normalization factor $N_\textrm{norm}$ that equals $N_e$ if the wavefunction is normalized.
-The second Hohenberg-Kohn theorem, also called ``the variational principle of DFT'', proves that a test density $n^\prime(\vec{r}_i)$ will give a higher or the same energy as the exact density:
+The second Hohenberg-Kohn theorem, also called ``the variational principle of DFT'', proves that a test density $n^\prime(\vec{r})$ will give a higher or the same energy as the exact density:
 \begin{equation}
- E_0^{exact}\leq E_0^{HK}[n^\prime(\vec{r}_i)].
+ E_0^{exact}\leq E_0^{HK}[n^\prime(\vec{r})].
 \end{equation}
 
 
@@ -468,9 +468,9 @@ with the number of atoms $N_A$, the scaling factor $s_6$ which is dependent on t
 This equation gives the D2-correction $E_{disp}^{(2)}$, which is added to the total energy.
 For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added.
 \begin{equation}
-  E_{disp}^{(3)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\phi_a cos\phi_b cos\phi_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
+  E_{disp}^{(3)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\gamma_a cos\gamma_b cos\gamma_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
 \end{equation}
-Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\phi_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$ and $\bar{R}_{ABC}$ is the geometrically averaged distance of the three atoms.
+Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\gamma_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$ and $\bar{R}_{ABC}$ is the geometrically averaged distance of the three atoms.
 
 
 \section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
@@ -525,7 +525,7 @@ the eigenvalues $E_0$ can be determined analogously as:
  E = E^{(0)} + \lambda E^{(1)} + \lambda^2E^{(2)} + ...
 \end{equation}
 Here we solely focus on $\Psi$ and $E$ belonging to the electronic ground state.
-The superscript $E_0^{(n)}$ equals the correction of n-th level.\\
+The superscript $E^{(n)}$ equals the correction of n-th level.\\
 The Schrödinger equation for the unperturbed system is:
 \begin{equation}
  \hat{H}^{(0)}\Psi^{(0)}=(\sum_{i=1}^{N_e} \varepsilon_i)\Psi^{(0)}
@@ -535,7 +535,7 @@ The unperturbed energy can be calculated with:
 \begin{equation}
  E^{(0)} = \langle\Psi^{(0)}|\hat{H}^{(0)}|\Psi^{(0)}\rangle=\sum\limits_{i=1}^{N_e}\varepsilon_i
 \end{equation}
-and the energy of $1^\textrm{st}$ order is:
+and the energy of first order is:
 \begin{equation}
  E^{(1)} = \langle\Psi^{(0)}|\hat{V}|\Psi^{(0)}\rangle
 \end{equation}
@@ -666,7 +666,7 @@ with the electron mass $m_e$.
 
 The Bloch orbital $\varphi_{n}(\vec{r})$ is represented by a basis (compare Equation (\ref{eq:basis})):
 \begin{equation}
- \varphi_n(\vec{r})=\sum_\mu^K C_{n\mu}\phi_n
+ \varphi_n(\vec{r})=\sum_\mu^K C_{n\mu}\Phi_n
 \end{equation}
 giving a $K\times K$ matrix for the number of basis functions $K$ and the vector $C_n$ of the size $K$.
 For this must apply
@@ -695,7 +695,7 @@ Equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in 
 It is necessary for calculation of Equations (\ref{eq:KS}) to use a basis set for the orbitals, as shown in Equation (\ref{eq:basis}).
 Basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set (atom centered basis functions).
 As a consequence of plane waves, the system is periodic in 3D and it is possible to improve the basis systematically by setting the cutoff energy higher.
-Many basis functions are necessary which is very costly for calculations that depend not only on the density (like hybrid functionals, MP2).
+Many basis functions are necessary which is very costly for calculations that depend not only on the density (like hybrid functionals or MP2).
 In comparison plane waves (PW) and atom centered orbitals (ACO) have different advantages and disadvantages\cite{Tosoni2007}.
 For solid state systems both the energy and the gradient converge better with plane waves (fewer steps).
 Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynmann forces have to be evaluated.
@@ -869,7 +869,7 @@ While normal modes are a good approximation for high energy vibrations, for exam
 \item[III)] As a fundamentally different method, power spectra can be calculated from \textit{ab initio} MD trajectories\cite{VAC}.
 This is conducted by analyzing the velocity of the atoms along the trajectories, giving the vibrational spectrum via fast Fourier transformation of the velocity-velocity autocorrelation function:
 \begin{equation}
- VDOS(\omega)=\sum_{i=1}^{N_A}\int_{0}^{+\infty}<\vec{v}_i(t)\cdot \vec{v}_i(0)>e^{i\omega t}dt ~.
+ VDOS(\omega)=\sum_{i=1}^{N_A}\int_{0}^{+\infty}\langle\vec{v}_i(t)\cdot \vec{v}_i(0)\rangle e^{i\omega t}dt ~.
 \end{equation}
 % ?was ist N? Ist das Integral wirklich von $-\infty-\infty$ oder sind die Grenzen eingeschränkt? Ist $<x(0)*x(t)>$ ein Mittelwert? Was ist mit der Summe? Im Paper steht folgende Gleichung:
 % \begin{equation}
@@ -877,7 +877,7 @@ This is conducted by analyzing the velocity of the atoms along the trajectories,
 % \end{equation}
 % with $<\dot{r}(\tau)\dot{r}(t+\tau)>$ being the autocorrelation of the velocities, derivatives of the position $r$ with repect to the time $t$, and the $\int \star e^{-i\omega t}dt$ for the Fourier transform, which is scaled by the reduced mass $m$.
 % This leads to the conclusion that the intensity in a power spectrum $P$ is inversely proportional to the reduced mass (why inversely?).
-VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N_A$ atoms, Fourier transform of the velocity-velocity autocorrelation function $<\vec{v}_i(t)\cdot \vec{v}_i(0)>$.
+VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N_A$ atoms, Fourier transform of the velocity-velocity autocorrelation function $\langle\vec{v}_i(t)\cdot \vec{v}_i(0)\rangle$.
 $v_i$ are the velocities at different times $0$ and a later time $t$.
 The integration range is per definition from $-\infty$ to $\infty$ but because of symmetry (axisymmetric) reasons it is sufficient to calculate only the range from $0$ to $\infty$. (However, in practice this is just a huge number).
 The resulting spectra implicitly include anharmonic effects: no harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account.
@@ -946,12 +946,12 @@ For $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection or r
 
 For the barrier height one needs to find the free energies of the transition state and the educt.
 The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
-Among different methods to find the transition state geometry and henceforth the energy we used Nudged Elastic Band calculations (NEB)\cite{Henkelman00a}, with Climbing Image\cite{Henkelman00b}.
+Among different methods to find the transition state geometry and henceforth the energy we used nudged elastic band calculations (NEB)\cite{Henkelman00a}, with climbing image\cite{Henkelman00b}.
 This method approximates the reaction path as a series of associated images, which are connected via spring forces.
 These spring forces prevent the images from optimizing into the local minimum next to the transition state.
 First a regular NEB, then on top of this climbing image was applied which gives better convergence.
 In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.
-Any point found by this scheme must be checked whether it is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode that vibrates along the reaction path.
+Any point found by this scheme must be checked whether it is a transition state via frequency analysis, since a TS of first order has to have one imaginary mode that vibrates along the reaction path.
 Otherwise there is no transition state.
 
 \section{Computational Details and Used Programs}
@@ -977,7 +977,7 @@ Energy and MD plots shown in this work were prepared with gnuplot\cite{gnuplot},
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 
-The (11\=20) surface of $\upalpha$-Al$_2$O$_3$ is not the most stable one under UHV conditions and was not studied so extensively so far.
+The (11\=20) surface of $\upalpha$-Al$_2$O$_3$ is the third stable one under UHV conditions and was not studied so extensively so far.
 Until now only a few experimental studies were performed for the (11\=20)-surface: X-ray reflectivity measurements by J. Catalano\cite{catalano}, who found that the surface is oxygen terminated and has two differently coordinated kinds of surface Al atom dimers.
 LEED measurements by Becker \textit{et al.}\cite{Becker2002} showed a well defined $1\times 1$ diffraction pattern and found evidence that the surface is unreactive at room temperature with hydrogen.
 The theoretical work of Marmier\cite{marmier} suggested that hydrogen is unreactive because the surface is fully hydroxylated at room temperature, even under UHV conditions.
@@ -986,7 +986,7 @@ They found two different types of oxygen atoms on the surface, twofold and three
 It is assumed that the threefold coordinated will only be protonated under highly acidic conditions.
 They also have evidence for molecularly adsorbed water on the surface.
 However, all experimental studies\cite{catalano,sung,Becker2002} assume a high coverage situation, whereas this theoretical study is focused on the low-coverage regime.
-With theoretical methods so far only the clean surface was studied by two different groups: Oshiyama \textit{et al.}\cite{kuri10} and Marmier\cite{marmier}.
+With theoretical methods so far only the clean surface was studied by two different groups: Kurita \textit{et al.}\cite{kuri10} and Marmier\cite{marmier}.
 
 \section{Surface Model}
 To obtain the clean surface slab model of the (11\=20) surface a $2\times 2$ supercell was cut from the bulk.
@@ -1060,7 +1060,8 @@ It can be deduced from Figure \ref{abb:11-20-kpointsampling} that the $3\times 3
 \centering
  \includegraphics[width=0.7\textwidth]{figures/11-20/irreducibles-E.eps}
    \caption{PBE+D2 sampling of the $\vec{k}$-points, shown is the energy of the optimized supercell with respect to the number of irreducible $\vec{k}$-points.
-The even values correspond to the $2\times 2 \times 1$ (2 irreducibles) and $4\times 4\times 1$ (8 irr.), whereas the odd, which contain the $\Gamma$-point, are described by $1\times 1\times 1$ (1 irr.), $3\times 3\times 1$ (5 irr.) and $5\times 5\times 1$ (13 irr.).}
+The even values correspond to the $2\times 2 \times 1$ (2 irreducibles) and $4\times 4\times 1$ (8 irr.), whereas the odd, which contain the $\Gamma$-point, are described by $1\times 1\times 1$ (1 irr.), $3\times 3\times 1$ (5 irr.) and $5\times 5\times 1$ (13 irr.).
+The sampling was done for the 10 layer slab.}
             \label{abb:11-20-kpointsampling}
 \end{figure}
 \\
@@ -1082,7 +1083,7 @@ Adsorption energies and Gibb's free energy of the resulting next neighbor specie
 The nomenclature for the adsorption sites which is used in the following gives at first the type of Al site where the OH-residue (we are not sure whether it is OH or OH$^-$) is adsorbed and at second place the oxygen type where the H(H$^+$) is adsorbed: OH site$\parallel$H site.
 The term "inter" characterizes a position between two CUS atoms which leads to a bidentate adsorption pattern.
 The additional notation with $^\prime$ denotes greater distances between the residues.
-Direct neighbors do not have a $\prime$, the next neighbor structure is displayed by a single $\prime$, one position further $\prime\prime$ and the most distant position is $^\prime\prime\prime$ due to the periodic boundary conditions.
+Direct neighbors do not have a $^\prime$, the next neighbor structure is displayed by a single $^\prime$, one position further $^{\prime\prime}$ and the most distant position is $^{\prime\prime\prime}$ due to the periodic boundary conditions.
 There is also one metastable molecular species that appears to be more stable than the found molecular minimum considering adsorption energy, but it cannot be classified as a stable minimum since there is one imaginary mode displaying the movement of the proton towards the dissociated species.
 
 
@@ -1093,7 +1094,7 @@ The adsorption energy is defined by Equation \ref{eq:Eads} as the energy of the 
 
 \begin{table}[!ht]
   \centering
- \caption{For molecular and (singly) dissociated water on $\upalpha$-Al$_2$O$_3$(11\=20) adsorption energies E$_\textrm{ads}$ and Gibb's free energies $G_\textrm{ads}$ for different temperatures are given in eV.
+ \caption{For molecular and (singly) dissociated water on $\upalpha$-Al$_2$O$_3$(11\=20) adsorption energies E$_\textrm{ads}$ and Gibb's free energies $G_\textrm{ads}$ for different temperatures for the ten layer slab are given in eV.
 E$_\textrm{ads}$ was calculated from Equation \ref{eq:Eads} and G$_\textrm{ads}$ is defined analogously.
 These results were obtained with PBE+D2.
 The three most stable configurations are marked with bold letters.
@@ -1155,8 +1156,8 @@ The latter seems to be further away, but due to the periodic boundary conditions
 In Section \ref{reactions} dissociation and diffusion reactions will be given.
 \begin{table}[!ht]
   \centering
- \caption{Comparison of adsorption energies for next neighbor dissociated species (without $^\prime$) and dissociated species where OH and H are further apart (with one, two or three $\prime$). 
-Results for the adsorption energy E$_\textrm{ads}$ are given in eV.
+ \caption{Comparison of adsorption energies for next neighbor dissociated species (without $^\prime$) and dissociated species where OH and H are further apart (with one, two or three $^\prime$). 
+Results for the adsorption energy E$_\textrm{ads}$ are given in eV (10 layer slab).
 \vspace*{.2cm} 
   }
   \begin{tabular}{cc}
@@ -1176,7 +1177,7 @@ Additionally, systems with additional atomic layers were studied.
 The corresponding adsorption energies are shown in Table \ref{tab:eads_layers}.
 Basically, the findings do not differ largely with increasing slab size.
 The molecular species still is less stable than the O-$\mu_2$ dissociated species and is more stable than the O-$\mu_3$ dissociated ones (except for inter-CUSb$\parallel$O-$\mu_3$ dissociated system).
-inter-CUSa$\parallel$O-$\mu_2$ is the most stable structure through all sampled systems sizes, inter-CUSb$\parallel$O-$\mu_2$ and CUSb$\parallel$O-$\mu_2$ change their stability (it approaches to nearly the same value for 25 layers) depending on the number of layers but still are some orders of magnitude less probable than inter-CUSa$\parallel$O-$\mu_2$.
+inter-CUSa$\parallel$O-$\mu_2$ is the most stable structure through all sampled system sizes, inter-CUSb$\parallel$O-$\mu_2$ and CUSb$\parallel$O-$\mu_2$ change their stability (it approaches to nearly the same value for 25 layers) depending on the number of layers but still are some orders of magnitude less probable than inter-CUSa$\parallel$O-$\mu_2$.
 Dissociated systems occupying the threefold coordinated surface oxygen atom remain in the same stability order.
 %For higher quantity of layers, the inter-CUSb gets more favourable than CUSb, both for O-$\mu_2$ and O-$\mu_3$.
 %This might be due to less interaction between neighboring oxygen atoms with the inter-CUSb adsorbed OH group.
@@ -1201,7 +1202,7 @@ inter-CUSb$\parallel$O-$\mu_3$          &-1.89 &-1.59 &-1.65 &-2.09 \\\bottomrul
 Table \ref{tab:eads_layers} shows that the most stable systems are already converged for the 10 layer slab with regard to adsorption energies (and also vibrational OD stretch frequencies as it will be seen in section \ref{nma}).
 
 
-Furthermore, systems with a higher water coverage were considered, which offer the possibility to consider interaction between the adsorbate molecules. Some exemplary cases for two water molecules ($16.6\%$ coverage), four inter-CUSa$\parallel$O-$\mu_2$ ($33.3\%$ coverage) and a fully covered supercell (twelve molecules, $100\%$ coverage); for these systems normal mode analyses were carried out to get vibrational spectra, see Section \ref{phonons}.
+Furthermore, systems with a higher water coverage were considered, which offer the possibility to consider interaction between the adsorbate molecules. Some exemplary cases for two water molecules ($16.6\%$ coverage), four inter-CUSa$\parallel$O-$\mu_2$ ($33.3\%$ coverage) and a fully covered supercell (twelve molecules, $100\%$ coverage); for these systems also normal mode analyses were carried out to get vibrational spectra, see Section \ref{phonons}.
 Structures can be found in Figures \ref{abb:2water} and \ref{abb:4+fully}.
 \begin{figure}[!ht]
  \centering
@@ -1280,7 +1281,7 @@ The top layer oxygen atom from the O-I terminated surface is missing and gives r
 \section{Reactions and Microkinetic Model}\label{reactions}
 
 Based on the minimum structures one has to identify reaction pathways to fully understand the reactivity of a system.
-We utilize the NEB method including climbing image to search for transition states between the minima of the 10 layer slab.
+We utilize the NEB method including climbing image to search for transition states between the minima of the ten layer slab.
 We examined three different types of reactions: dissociation from the molecular minimum, as well as OH- and H-diffusion.
 % These reaction paths and corresponding rates were calculated for hydrogen instead of deuterium that was used for vibrational frequencies since H$_2$O is more ubiquitous in nature (see Section \ref{sec:vib11-20}).
 The dissociation reactions are named D, diffusion reaction Df-OH and Df-H, respectively, in Table \ref{tab:reaction-rates} and Figures \ref{mep} and \ref{mep2}.
@@ -1299,7 +1300,7 @@ The reaction D-a leads from the molecular minimum at CUSb to the twofold coordin
  \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \tag{D-a}
       \label{dissa}
 \end{equation}
-The barrier is very low, about $0.002\,$eV as one can see from Table \ref{tab:reaction-rates} and Figure \ref{mep}(a), hence the reaction rate constant is very high, in the order of $k(\textrm{300\,K}=5.76\times 10^{12}\,$s$^{-1}$.
+The barrier is very low, about $0.002\,$eV as one can see from Table \ref{tab:reaction-rates} and Figure \ref{mep}(a), hence the reaction rate constant is very high, in the order of $k(\textrm{300\,K})=5.76\times 10^{12}$s$^{-1}$.
 This low barrier might be due to the underestimation of barrier heights\cite{Zhao05} with the used functional PBE (compare section \ref{theorybeyond}).
 
 
@@ -1375,7 +1376,7 @@ A similar reaction can be seen in Figure \ref{mep2}(c) for the OH being situated
 The free energy barrier is relatively high with $1.30\,$eV giving a rate constant $k(\textrm{300\,K})=9.96\times 10^{-1}$s$^{-1}$.
 The $^\prime$ in the equation above is set in parantheses because it is the nearest possible O-$\mu_2$ position, but not the nearest possible distance from the OH$_\textrm{ads}$.
 
-Going one step further from reaction Df-H-c, the following reaction leads to the position where OH and H have the greatest possible distance with the applied periodic bounding conditions:
+Going one step further from reaction Df-H-c, the following reaction leads to the position where OH and H have the greatest possible distance with the applied periodic boundary conditions:
 \begin{equation}
  \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime\prime}$)} \tag{Df-H-d}
      \label{diffHd}
@@ -2051,7 +2052,7 @@ The (0001) surface is the most stable surface site of alumina under UHV conditio
 Both experimental and theoretical studies discovered characteristics and specialties of this crystal cut.
 In experimental studies, a whole zoo of methods was applied to study the (0001) surface, there are IR\cite{Tsyganenko1996}, LEED\cite{Chang1971} and TEM\cite{Lee1985} studies that contribute to the structure of the clean and the surface in contact with water.
 Laser induced thermal desorption spectroscopy\cite{Elam1998,Nelson1998} that showed a variety of hydroxyl surface sites with different binding energies and they could show that H$_2$O adsorbs dissociatively on the surface.
-Theoretical studies were conducted by means of periodic \textit{ab initio} calculations by Oshiyama\cite{kuri10} who studied the stability of distinct surface cuts without water. Also the system in contact with H$_2$O was studied by Hass and coworkers\cite{hass98,hass00} for \textit{ab initio} molecular dynamics and found that dissociation of molecular water is favored.
+Theoretical studies were conducted by means of periodic \textit{ab initio} calculations by Kurita\cite{kuri10} who studied the stability of distinct surface cuts without water. Also the system in contact with H$_2$O was studied by Hass and coworkers\cite{hass98,hass00} for \textit{ab initio} molecular dynamics and found that dissociation of molecular water is favored.
 \\
 
 In our workgroup previous work concerned the stability of low water coverage limit and the vibrational spectroscopic behaviour, reaction pathways between stable minima, and furthermore we studied higher water coverages and hydroxylated surface systems\cite{WirthJPCC2012,Wirth2014,Wirth2015}.
@@ -2522,8 +2523,8 @@ Since this obtained transition state geometry was not converged properly, additi
 
 For both approaches, the corresponding rates are lower than for VASP. As it is known, GGA functionals like PBE used in VASP calculations underestimate the barriers\cite{Zhao05} and hence give too large reaction rates.
 For both calculations with CRYSTAL with basis sets 2 and 5, the (free) energy differences are higher and the rate constants are smaller, which is exactly what was to be expected.
-These lower rates with the hybrid functional B3LYP are in the order of $10^2$-$10^3\,$s$^{-1}$ whereas the rate constant with VASP is in the order of $10^7\,$s$^{-1}$. 
-For both basis sets with the CRYSTAL reoptimized structure the rate is slightly higher ($10^3\,$s$^{-1}$) than for the calculation using the VASP optimized geometry ($10^2\,$s$^{-1}$).
+These lower rates with the hybrid functional B3LYP are in the order of $10^2$-$10^3$s$^{-1}$ whereas the rate constant with VASP is in the order of $10^7$s$^{-1}$. 
+For both basis sets with the CRYSTAL reoptimized structure the rate is slightly higher ($10^3$s$^{-1}$) than for the calculation using the VASP optimized geometry ($10^2$s$^{-1}$).
 This shows the potential of this method towards the improvement of reaction rates and barriers of surface reactions.
 
 
