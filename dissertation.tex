@@ -151,7 +151,7 @@ This work has been done between January 2015 and \todo{October} 2018 in the grou
 \begin{tabular}{ll}
 Erstgutachter: &Prof. Dr. Peter Saalfrank (Uni Potsdam) \\
 Zweitgutachter:&Prof. Dr. Beate Paulus (FU Berlin)\\
-Drittgutachter:&Prof. Dr. \todo{xy} \\
+Drittgutachter:&PD Dr. Ralf Tonner (Uni Marburg) \\
 \end{tabular}
  }
 
@@ -2502,7 +2502,38 @@ This could be again due to different (de)stabilization of the adsorbed system, t
 The results of LMP2 (both with and without dual basis set expansion) are compared to DFT results with PBE+D3 and B3LYP+D3 in Table \ref{tab:combined_results}.
 Here the overall trend for DFT that mol is more stable than 1-4 diss is confirmed by the dual basis set expanded LMP2 calculation, but without this expansion, LMP2 gives both geometries an almost degenerate energy.
 As in all previous calculations, 1-2 dissociation is shown to be the most stable  adsorbed species.
+\\
  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%COMPARISON VASP/CRYSTAL(combined basis)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The geometries of VASP and crystal calculations do not differ strongly.
+Based on the example of the combined basis set, differences are shown.
+In pirinciple it can be seen from the data in Table \ref{tab:geom_comp_vasp-crystal}, that both bondlengths and angles with respect to the surface normal are slightly higher with PBE from VASP than with PBE with crystal nd B3LYP, although angles do not differ much.
+\begin{table}[!h]
+  \centering
+   \caption{Comparison of geometric properties OH bond lengths (BL) and OH angles ($\theta$) with respect to the surface normal (compare Table \ref{tab:freq_layers}).
+Bondlengths are given in \AA{} and angles in \textdegree.
+For the dissociated species, the first number gives the value for the adsorbed group and the second for the surface OH group.
+The first block gives results for VASP/PBE, the second for crystal/PBE and the last one for crystal/B3LYP, both with the high angular momentum basis set.}
+  \begin{tabular}{ll|ccc}
+  \toprule
+   &&mol & 1-2 diss & 1-4 diss \\\midrule
+\multirow{2}{*}{VASP, PBE} &BL &0.98, 0.99 &0.97, 0.98 &0.97, 0.98 \\
+&$\theta$ &87.94, 99.07 &51.70, 34.94 &51.206, 27.17 \\\midrule
+\multirow{2}{*}{crystal, PBE}&BL &0.98, 0.98 &0.96, 0.98 &0.96, 0.98 \\
+&$\theta$ &87.383, 97.86 &51.96, 34.21 &52.40, 26.54 \\\midrule
+\multirow{2}{*}{crystal, B3LYP}& BL &0.97, 0.97 &0.95, 0.97 &0.96, 0.97 \\
+&$\theta$ &85.04, 95.84 &49.81, 33.03 &49.94, 26.74 \\\bottomrule
+%    &&mol & 1-2 diss & 1-4 diss \\\midrule
+% \multirow{2}{*}{VASP, PBE} &BL &0.98253, 0.98767 &0.96618, 0.98140 &0.96713, 0.97963 \\
+% &$\theta$ &87.943, 99.068 &51.702, 34.937 &51.196, 27.169 \\\midrule
+% \multirow{2}{*}{crystal, PBE}&BL &0.97952, 0.98432 &0.96310, 0.97915 &0.96423, 0.97690 \\
+% &$\theta$ &87.383, 97.862 &51.962, 34.212 &52.405, 26.538 \\\midrule
+% \multirow{2}{*}{crystal, B3LYP}& BL &0.96997, 0.97430 &0.95451, 0.96871 &0.95545, 0.96757 \\
+% &$\theta$ &85.037, 95.835 &49.812, 33.033 &49.944, 26.743 \\\bottomrule
+  \end{tabular}
+  \label{tab:geom_comp_vasp-crystal}
+\end{table}
+B3LYP gives the shortest bondlengths and the smallest angles in the comparison but still the results are in very good agreement.
 
 \subsubsection{Reaction Rate}
 For the reaction Df-H-4-2 introduced earlier shown in Figure \ref{abb:df-h-4-2}, a transition state with a corresponding rate was recalculated with B3LYP+D3 and basis set 5, since GGA (\textit{e.g.} the functional PBE) is known to underestimate barriers\cite{Zhao05}, so going beyond GGA is vital.
