@@ -187,7 +187,7 @@ and the third most abundant element therein\cite{dtv-Atlas,Riedel}.
 % Dtv-Atlas\cite{dtv-Atlas}: third most abundant element, $8.1\%$ of the earth crust and with that the far most abundant metal)}
 Alumina can additionally be seen as a model system for more complex alumosilicates.
 Mineral oxides are omnipresent in the crust of the earth and henceforth are present in most geochemical processes.
-Since the times the earth's atmosphere was oxidizing in the early stages of the planetary evolution\cite{Trail2011}, which became even more extensive with the rise of photosynthetic life forms\cite{Frei2009,Buick2008,Olson2006} around 2.2 billion years ago\cite{Kirschvink2008} oxidic rocks became more common.
+Since the times the earth's atmosphere was oxidizing in the early stages of the planetary evolution\cite{Trail2011}, which became even more extensive with the rise of photosynthetic life forms\cite{Frei2009,Buick2008,Olson2006} around 2.2 billion years ago\cite{Kirschvink2008}, oxidic rocks became more common.
 %became oxidizing with rise of photosynthetic life forms/(bacteria?) 2.3 billion years ago (seems to be not true: https://nai.nasa.gov/articles/2011/12/2/earths-early-atmosphere-an-update/ and \\ https://www.nature.com/articles/nature10655) \cite{Trail2011}.
 %Before under reductive conditions sulfidic rocks were dominant but when photosynthesis became more common with the rise of more advanced life forms, the oxygen content of the atmosphere grew giving rise to oxidic metal compounds.)
 
@@ -196,7 +196,8 @@ In all technically and environmentally relevant applications the Al$_2$O$_3$ sys
 Hence a quantitative understanding of the alumina water interaction on the microscopic scale is crucial.
 In the environment, alumina appears as rocks, \textit{e.g.} corundum, or gems like ruby.
 In technical applications alumina is commonly used as an abrasive due to its hardness, as a whitening pigment and also ceramics are widely applied because of the insulating properties.
-Alumina is also applied as a catalyst (for example in the Claus process) and more often as a co-catalyst, for example in the ethylene epoxidation\cite{Oezbek2013} or in the hydrodesulfurization\cite{Parijs1986} where it acts as a base for the active cobalt and molybdenum catalyst in a sulfur removing process:
+Alumina is also applied as a catalyst (for example in the Claus process\cite{Pearson1977}) %Entschwefelung von Erdgas, H2S -> SO2 -> 1/8S8
+and more often as a co-catalyst, for example in the ethylene epoxidation\cite{Oezbek2013} or in the hydrodesulfurization\cite{Parijs1986} where it acts as a support material for the active cobalt and molybdenum catalyst in a sulfur removing process:
 \begin{equation*}
  \textrm{C}_2\textrm{H}_5\textrm{SH} + \textrm{H}_2  \xrightarrow{cat.} \textrm{C}_2\textrm{H}_6 + \textrm{H}_2\textrm{S}
 \end{equation*}
@@ -206,19 +207,19 @@ It crystallizes in the hexagonal cell with $\vec{a}=\vec{b}\neq \vec{c}$, with a
 \\
 
 This work divides into three different topics on two different $\upalpha$-alumina surface cuts:\\
-1) The (11\=20) surface has not been studied to a great extent so far.
+(i) The (11\=20) surface has not been studied to a great extent so far.
 Hence we first are interested in the structure of the clean surface, the adsorption of water in the low coverage limit and also with higher coverages.
 We search for stable molecular and dissociative minima and the reactions connecting these minima: dissociation and diffusion reactions to study the mobility and reactivity of adsorbed groups.
 In addition to that we want to calculate vibrational frequencies to compare with experimental research and help to understand and interpret their findings.
 
 
-2) Nowadays, a typical standard method to treat periodic surface systems is the GGA functional PBE.
+(ii) Nowadays, a typical standard method to treat periodic surface systems is the GGA functional PBE.
 This functional however is known to underestimate reaction barriers and hence overestimate the reaction rate constant.
 Improving on this issue is a great step towards the understanding of surface reactions like dissociation and diffusion.
 This we want to achieve by employing a hybrid functional and a wave function-based method (perturbation theory) for an exemplary hydrogen diffusion reaction at the (0001) surface.
 
 
-3) Molecular beam experiments have recently shown that water is able to adsorb both molecularly and dissociatively on an $\alpha$-Al$_{\text{2}}$O$_{\text{3}}$(0001) surface\cite{Wirth2014}.
+(iii) Molecular beam experiments have recently shown that water is able to adsorb both molecularly and dissociatively on an $\alpha$-Al$_{\text{2}}$O$_{\text{3}}$(0001) surface\cite{Wirth2014}.
 The results show an enhanced dissociation probability compared to ``pinhole dosing'', which may be referred to adsorption under thermal equilibrium conditions.
 However, precise mechanistics of the ongoing reactions  and their relative probabilities are not known.
 In this work \textit{ab initio} molecular dynamics calculations were conducted to unravel this process.
@@ -716,7 +717,7 @@ This is done here by performing ghosted calculations with the system as a whole,
 Then one applies a substractive scheme to cancel out the effect of the orbital overlap.
 On the other hand one can use a huge basis set that does not have this problem, but comes with a higher computational demand.
 In contrast to PW calculations the true dimensionality is obeyed due to the locality of the basis.
-Probably, the most powerful advantage of atom centerd bases is that exact exchange and hybrid methods are available as standard methods because less basis functions are required, compared to plane waves.
+Probably, the most powerful advantage of atom centerd bases is that exact exchange and hybrid methods are available as standard methods because fewer basis functions are required, compared to plane waves.
 % Transferring atom centered bases to periodic systems is not trivial, especially for bases including many diffuse Gaussians, but there are programs available.
 
 \section{\textit{Ab Initio} Molecular Dynamics}
@@ -959,7 +960,7 @@ The majority of simulations/computations in this work were carried out using the
 
 
 For all the VASP calculations for the (0001) surface the parameters from prior work in the Saalfrank workgroup were used, because these were converged carefully by Dr. Jonas Wirth\cite{WirthJPCC2012,Wirth2014,Wirth2015,Wirth2016}.
-Total energy convergence was achieved when energies between two SCF steps were smaller then $10^{-5}\,$eV and structures were assumed minima if the change in forces between two structures was below $0.01\,$eV/\AA{}.
+Total energy convergence was achieved when energies between two SCF steps were smaller than $10^{-5}\,$eV and structures were assumed minima if the change in forces between two structures was below $0.01\,$eV/\AA{}.
 The energy cutoff was set to $400\,$eV.
 A vacuum gap of $26.4\,$\AA{} was used.
 
@@ -977,7 +978,7 @@ Energy and MD plots shown in this work were prepared with gnuplot\cite{gnuplot},
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 
-The (11\=20) surface of $\upalpha$-Al$_2$O$_3$ is the third stable one under UHV conditions and was not studied so extensively so far.
+The (11\=20) surface of $\upalpha$-Al$_2$O$_3$ is the third stable one under UHV conditions and was not studied extensively so far.
 Until now only a few experimental studies were performed for the (11\=20)-surface: X-ray reflectivity measurements by J. Catalano\cite{catalano}, who found that the surface is oxygen terminated and has two differently coordinated kinds of surface Al atom dimers.
 LEED measurements by Becker \textit{et al.}\cite{Becker2002} showed a well defined $1\times 1$ diffraction pattern and found evidence that the surface is unreactive at room temperature with hydrogen.
 The theoretical work of Marmier\cite{marmier} suggested that hydrogen is unreactive because the surface is fully hydroxylated at room temperature, even under UHV conditions.
@@ -985,7 +986,7 @@ In the work of Waychunas and coworkers\cite{sung} VSF spectra (vibrationally res
 They found two different types of oxygen atoms on the surface, twofold and threefold coordinated ones.
 It is assumed that the threefold coordinated will only be protonated under highly acidic conditions.
 They also have evidence for molecularly adsorbed water on the surface.
-However, all experimental studies\cite{catalano,sung,Becker2002} assume a high coverage situation, whereas this theoretical study is focused on the low-coverage regime.
+However, all experimental studies\cite{catalano,sung,Becker2002} assume a high coverage situation, whereas this theoretical study is mostly focused on the low-coverage regime.
 With theoretical methods so far only the clean surface was studied by two different groups: Kurita \textit{et al.}\cite{kuri10} and Marmier\cite{marmier}.
 
 \section{Surface Model}
@@ -1008,7 +1009,7 @@ Subsurface atoms are indicated by pale colors.
             \label{abb:crystal_11-20}
 \end{figure}
 Figure \ref{abb:crystal_11-20}(b) shows the top view and the cell vectors $\vec{a}$ and $\vec{b}$ of (11\=20).
-They are not equal to those in the hexagonal cell for this particular surface cut, with $\vec{a}=10.36$\AA, $\vec{b}=14.16$\AA~ and $\vec{c}=20.5$\AA.
+They are not equal to those in the hexagonal cell for this particular surface cut, with $\vec{a}=10.36\,$\AA, $\vec{b}=14.16\,$\AA{} and $\vec{c}=20.5\,$\AA.
 The angle $\theta$ between $\vec{a}$ and $\vec{b}$ is $84.56$\textdegree{} unlike the $60$\textdegree{} since the (11\=20) surface is tilted with respect to the top crystal plane.
 The nomenclature and color code of the surface Al and O atoms is also shown: The Alumina atoms have the same number of oxygen neighbor atoms but differ slightly in the arrangement of their neighbors and the distance in the relaxed structure, whereas the oxygen atoms in fact differ by the number of neighbors.
 The uppermost Al atoms are unsaturated and referred to as coordinatively unsaturates sites (CUS).
@@ -1036,7 +1037,7 @@ All values are given in \AA.}
   \end{tabular}
   \label{tab:layer-dist}
 \end{table}
-A major issue of the optimization apart from layer spacing is that the interatomic distances of surface Al species change: the CUSa\textendash CUSa distance increases from $2.682$ to $2.994$\AA{}, the CUSa\textendash CUSb distance increased from $2.833$ to $2.876$\AA{} whereas the CUSb\textendash CUSb distance decreased from $2.682$ to $2.499$\AA{}.
+A major issue of the optimization apart from layer spacing is that the interatomic distances of surface Al species change: the CUSa\textendash CUSa distance increases from $2.682$ to $2.994\,$\AA{}, the CUSa\textendash CUSb distance increased from $2.833$ to $2.876\,$\AA{} whereas the CUSb\textendash CUSb distance decreased from $2.682$ to $2.499\,$\AA{}.
 The pairs of CUSa and CUSb can be interpreted as the Al dimers in the work of Catalano\cite{catalano}.
 
 
@@ -1083,7 +1084,7 @@ Adsorption energies and Gibb's free energy of the resulting next neighbor specie
 The nomenclature for the adsorption sites which is used in the following gives at first the type of Al site where the OH-residue (we are not sure whether it is OH or OH$^-$) is adsorbed and at second place the oxygen type where the H(H$^+$) is adsorbed: OH site$\parallel$H site.
 The term "inter" characterizes a position between two CUS atoms which leads to a bidentate adsorption pattern.
 The additional notation with $^\prime$ denotes greater distances between the residues.
-Direct neighbors do not have a $^\prime$, the next neighbor structure is displayed by a single $^\prime$, one position further $^{\prime\prime}$ and the most distant position is $^{\prime\prime\prime}$ due to the periodic boundary conditions.
+Direct neighbors do not have a $^\prime$, the next neighbor structure is displayed by a single $^\prime$, one position farther $^{\prime\prime}$ and the most distant position is $^{\prime\prime\prime}$ due to the periodic boundary conditions.
 There is also one metastable molecular species that appears to be more stable than the found molecular minimum considering adsorption energy, but it cannot be classified as a stable minimum since there is one imaginary mode displaying the movement of the proton towards the dissociated species.
 
 
@@ -1145,18 +1146,18 @@ The adsorption of OH at an inter-CUSa site is more favorable than at a CUSb site
 Additionally, the CUSb position is electronically and sterically more hindered because of the two threefold coordinated oxygen atoms in the surroundings.
 
 
-Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and Figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH-residue are further apart (see Table \ref{tab:ads_1waterfurther}), given the OH-residue has a stabilizing effect on the H and vice versa.
+Dissociated species in direct neighborhood as shown in Table \ref{tab:ads_1water} and Figure \ref{abb:ads-geoms} are more stable than those where the proton and the OH-residue are farther apart (see Table \ref{tab:ads_1waterfurther}), given the OH-residue has a stabilizing effect on the H and vice versa.
 It is apparent from this table that the inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$-species is more stable than the species inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ (where the OH groups are closer to each other).
 This is due to the fact that the periodic conditions actually lead to a decrease of the distance between OH groups in the former system.
 The distances between the neighboring OH groups in the O-$\mu_3^{\prime\prime}$ system are $6.76$ and $7.71\,$\AA{}, compared to $9.34$ and $6.16\,$\AA{} in the O-$\mu_3^{\prime\prime\prime}$ system (the numbers refer to the two possible distance in the periodic system, direct and over the border of the unit cell).
-The latter seems to be further away, but due to the periodic boundary conditions, one of the inter-adsorbate distances is smaller ($6.16$, compared to $6.76\,$\AA{}), which leads to the stabilization.
+The latter seems to be farther away, but due to the periodic boundary conditions, one of the inter-adsorbate distances is smaller ($6.16$, compared to $6.76\,$\AA{}), which leads to the stabilization.
 
 %one is in fact only slightly further away, the average distance is $0.739\,$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime}$ and $0.780\,$\AA{} for inter-CUSb$\parallel$O-$\mu_3^{\prime\prime\prime}$.
 % Although the distance is larger, there seems to be more stabilization by the surrounding surface atoms.
 In Section \ref{reactions} dissociation and diffusion reactions will be given.
 \begin{table}[!ht]
   \centering
- \caption{Comparison of adsorption energies for next neighbor dissociated species (without $^\prime$) and dissociated species where OH and H are further apart (with one, two or three $^\prime$). 
+ \caption{Comparison of adsorption energies for next neighbor dissociated species (without $^\prime$) and dissociated species where OH and H are farther apart (with one, two or three $^\prime$). 
 Results for the adsorption energy E$_\textrm{ads}$ are given in eV (10 layer slab).
 \vspace*{.2cm} 
   }
@@ -1364,11 +1365,11 @@ A further reaction, called Df-H-b, starting from the most stable inter-CUSa$\par
 \end{equation}
 The free energy barrier is $1.50\,$eV, giving a rate constant at $300\,$K of $4.90\times 10^{-13}$s$^{-1}$.
 This process is so unlikely because a less favored O-$\mu_3$ position is occcupied and this position is also less stabilized because of the greater distance between OH$_{\text{surf}}$ and OH$_{\text{ads}}$ groups.
-This reaction increases the distance to a position further away than next neighbor.
+This reaction increases the distance to a position farther away than next neighbor.
 As mentioned before, the nomenclature for these structures uses primes ($\prime$) to display the distance.
 
 
-A similar reaction can be seen in Figure \ref{mep2}(c) for the OH being situated on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2^{(\prime)}$ position, diffusing further away to O-$\mu_3^{\prime\prime}$, which is less stable:
+A similar reaction can be seen in Figure \ref{mep2}(c) for the OH being situated on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2^{(\prime)}$ position, diffusing farther away to O-$\mu_3^{\prime\prime}$, which is less stable:
 \begin{equation}
  \text{OH(inter-CUSb)} + \text{H(O-$\mu_2^{(\prime)}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \tag{Df-H-c}
      \label{diffHc}
@@ -1425,7 +1426,7 @@ Proton diffusion reactions are much more variable than OH diffusions or dissocia
 The barriers and therefore also rate constants for H-diffusion cover a wider range depending on two facts: the question whether O-$\mu_2$ or O-$\mu_3$ is occupied and the distance between the OH and H residues.
 
 
-It was shown that reactions leading to another situation than next neighbored, increasing the distance between OH and H are less favorable since geometries with the residues further apart are energetically less stable (compare Table \ref{tab:ads_1waterfurther}).
+It was shown that reactions leading to another situation than next neighbored, increasing the distance between OH and H are less favorable since geometries with the residues farther apart are energetically less stable (compare Table \ref{tab:ads_1waterfurther}).
 \begin{figure*} [!ht]
 \centering
 \subfigure[D-a: CUSb $\rightarrow$CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.9\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
@@ -1489,8 +1490,8 @@ Vibrational spectroscopy is a great source of knowledge about chemical systems.
 The frequencies of vibrations give hints about the chemical environment, \textit{e.g.} as hydrogen bonds and other atoms nearby that bind to each other.
 These vibrational frequencies were calculated for the surface system adsorbed with OD.
 Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are clearer with their applied Laser system, so that all results presented in this particular section are given for D$_2$O.
-The experimental Sum Frequency Generation (SFG, a surface specific vibrational spectroscopy) spectra for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
-\begin{figure}[!ht]
+The experimental sum frequency generation (SFG, a surface specific vibrational spectroscopy) spectra for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
+\begin{figure}[!h]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
  \caption{Experimental SFG results for (11\=20) surface with 0.14ML (mono layer, left spectrum) and 0.05ML water coverage (right) including fit (colored lines).
@@ -1502,14 +1503,14 @@ The different coverages are achieved via different preparing temperatures of the
 % Of course, the frequencies for a deuterated system are different from OH, but the different isotopes can be calculated easily within vasp, just by changing the mass.
 
 
-In the experiment the alumina single crystal was cleaned in ethanol and Milli-Q water and dried with N$_2$ before being installed in the ultra high vacuum chamber.
+In the experiment the alumina single crystal was cleaned in ethanol and Milli-Q water (ultrapure, deionized water) and dried with N$_2$ before being installed in the ultra high vacuum chamber.
 It was then sputtered in Ar, and annealed to high temperatures in ultra high vacuum (UHV, $2.5\times 10^{-10}\,$mbar) and afterwards sputtered three times in oxygen at different temperatures.
 After this treatment, D$_2$O was brought onto the surface with a molecular beam source (MBS).
 The SFG measurement was then conducted at $130\,$K.
 A short overview explaining the basics of experimental methods of interest for this work can be found in Appendix \ref{exp_techniques}.
 For further experimental details see \cite{Heiden11-20_2018} and the supporting information therein.
 Test with a symmetric slab (where at the top and the bottom water is adsorbed) were computed, confirming that the asymmetric model including dipole corrections is sufficient to describe the system.
-Only minor differences could be obtained.
+% Only minor differences could be obtained.
 Details for this are given in Appendix \ref{symmetric_slab}.
 \\
 \\
@@ -1535,9 +1536,9 @@ Subsection \ref{bec} gives the spectra including intensities determined via Born
 
 The normal modes are calculated within the harmonic approximation and depend on the mass and the spring constant of the bond.
 This ansatz is quite good for high frequency modes like OD stretch vibrations.
-We assume that the OD stretching modes for the three most stable structures would contribute to the spectrum the most, since the less stable adsorbed species are improbable to appear.
+We assume that the OD stretching modes for the three most stable structures would contribute to the spectrum the most, since the less stable adsorbed species are improbable to appear (see discussion about the Boltzmann weight later).
 The corresponding wavenumbers are presented in Table \ref{tab:freq_layers} for different slab sizes, as given in Figure \ref{abb:cell_sizes}.
-Also the angle of the OD bond with respect to the surface is given (see Table \ref{tab:freq_layers}), since vibrations which are in plane cannot be detected with SFG spectroscopy (sum frequency generation) and hence the intensity is a function of this angle.
+Also the angle of the OD bond with respect to the surface is given (see Table \ref{tab:freq_layers}), since vibrations which are in plane cannot be detected with SFG spectroscopy and hence the intensity is a function of this angle.
 \begin{table*}[th]
   \centering
  \caption{Wavenumbers of normal modes for the different slab sizes: OD stretching modes for each of the most stable minima.
@@ -1562,7 +1563,7 @@ In each column, the left value reflects the adsorbed OD$_\textrm{ads}$ group and
 In all cases the relationship between the two individual modes for each considered structure is portrayed by $\tilde{\nu}$(OD$_\textrm{ads}$)>$\tilde{\nu}$(OD$_\textrm{surf}$).
 This can be explained with the different reduced mass for both vibrations: The OD$_\textrm{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can act more as a quasi-free OD group \cite{Wirth2014}.
 All these vibrations are clearly localized on one of the OD groups which suggests that the normal modes ansatz is reasonable.
-Of course, normal modes of all molecular and next neighbor dissociated structures from 10 to the 25 slab layer model were calculated, although the slab was already converged with 10 layers concerning OD stretch frequencies as mentioned in section \ref{structure_search11-20} and in Table \ref{tab:freq_layers}. 
+Of course, normal modes of all molecular and next neighbor dissociated structures from 10 to the 25 layer slab model were calculated, although the slab was already converged with 10 layers concerning OD stretch frequencies as mentioned in section \ref{structure_search11-20} and in Table \ref{tab:freq_layers}. 
 \\
 \\
 
@@ -1629,7 +1630,8 @@ Note, that the intensities in the OD range decrease with growing slab size since
 For smaller slab sizes the ratio between OD and lattice is higher than for bigger slab sizes, so that the OD intensities in direct comparison seems smaller.
 This however, has no physical meaning.
 In some figures short notations for the adsorbed species are used: iCa2 for inter-CUSa$\parallel$O-$\mu_2$, Cb2 for CUSb$\parallel$O-$\mu_2$ and iCb2 for inter-CUSb$\parallel$O-$\mu_2$.
-Unfortunately, experimental results for the spectral range of the lattice vibrations are not obtained by our experimental partners yet, so that no comparison to SFG modes can be made.
+%Unfortunately, experimental results for the spectral range of the lattice vibrations are not obtained by our experimental partners yet, so that no comparison to SFG modes can be made.
+Unfortunately, not for all coverages experimental results for the spectral range of the lattice vibrations are obtained by our experimental partners yet, so that only the clean and the fully covered surface can be compared to SFG modes.
 % \todo{experimental results are still missing, compare modes of low coverage limit to spectra with higher coverage, ask Lu for more data of higher coverage.}
 
 
@@ -1670,6 +1672,20 @@ $\tilde{\nu}$ [cm$^{-1}$] &700 &796& 823&837 & 842\\\bottomrule
   \label{tab:comp_norm-modes_clean}
 \end{table}
 
+
+For the clean surface, the experimental data (see Figure \ref{abb:exp-sfg_clean}) reveal two broad peaks, one at $976$ and the other at $1021\,$cm$^{-1}$.
+With the 30 layer model, we obtain respective peaks at $800$ and $842\,$cm$^{-1}$, which is shifted to experimental results by $176$ and $180\,$cm$^{-1}$, respectively.
+As for the OD stretch vibrations, the absolute comparison is not good, but the difference between those peaks is well described: for the experiment $\Delta \tilde{\nu}=45\,$cm$^{-1}$ and for the 30 layer model $\Delta \tilde{\nu}=42\,$cm$^{-1}$.
+\begin{figure}[!ht]
+ \centering
+\includegraphics[width=0.9\textwidth]{figures/11-20/ssp_UHV_800K_fit_clean.jpg}
+ \caption{Data of experimental SFG spectroscopy by Yanhua Yue (FHI) for the clean (11\=20) surface including fit (colored lines).}
+        \label{abb:exp-sfg_clean}
+ \end{figure}
+
+
+
+
 With the thermodynamical model from solid state physics, the Debye model, the behaviour of the density of states (DOS) is the following\cite{kittel2002}:
 \begin{equation}
  D(\omega)=V\omega^2/(2\pi^2v^3)
@@ -1681,11 +1697,11 @@ Of course, the intensities are influenced by the dynamic dipole moment $\mu^\pri
 The Debye temperature gives the temperature at which all states are occupied.
 This is for $\upalpha$-alumina $\theta_D=1042\,$K which corresponds to a wavenumber of around $724\,$cm$^{-1}$\cite{Goto1989} which is quite good agreement for this basic approximation.
 By considering more layers one gets closer to the bulk system, for which the Debye frequency is expected.
-
+\\
 
 
 % These results are also shown with intensities calculated from dipole corrected normal mode analyses in Figures \ref{abb:iCa2_size_comp}, \ref{abb:Cb2_size_comp} and \ref{abb:iCb2_size_comp}.
-While this trend is true for the clean surface and the lattice region of the covered systems, it does not hold for the OD vibrations regime.
+While the trend of higher wavenumbers with increasing slab size is true for the clean surface and the lattice region of the covered systems, it does not hold for the OD vibrations regime.
 As already mentioned, the OD frequencies seem to be converged for the ten layer slab and both position and intensity show no eminent difference, see Figures \ref{abb:iCa2_size_comp}, \ref{abb:Cb2_size_comp} and \ref{abb:iCb2_size_comp}.
 \begin{figure}[!h]
     \centering
@@ -1825,6 +1841,19 @@ The omitted regions do not contain peaks.}
         \label{abb:fullyhydrox_spec}
 \end{figure}
 As before, the agreement between different sized slab models in the OD range (without hydrogen bonding) is very good (Figure \ref{abb:fullyhydrox_spec}(c)), in the hydrogen-bonded region around $1116\,$cm$^{-1}$ is reasonable (Figure \ref{abb:fullyhydrox_spec}(b)) and only in the lattice region (Figure \ref{abb:fullyhydrox_spec}(a)) is slightly different with the highest energy peak shifted to higher energy with increasing slab size, which is the same trend as for the clean surface and the low coverage systems, which fits the Debye model.
+\\
+Also for this system an experimental spectrum was measured (see Figure \ref{abb:exp-sfg_fully}).
+In the lattice region two peaks are obtained, one at $992$ and the other at $1061\,$cm$^{-1}$ giving a difference of $\Delta \tilde{\nu}=69\,$cm$^{-1}$.
+The calculation with 25 layers gives the corresponding peaks at $790$ and $851\,$cm$^{-1}$ %$841\,$cm$^{-1}$ (the most intense peak of the group) with a $\Delta \tilde{\nu}=51\,$cm$^{-1}$.
+with a $\Delta \tilde{\nu}=61\,$cm$^{-1}$.
+The wavenumbers are shifted by circa $200\,$cm$^{-1}$ compared to experiment but it is expected that low energy modes are in worse agreement than OD stretch modes.
+However, the agreement in relative numbers is undoubtedly good.
+\begin{figure}[!h]
+ \centering
+\includegraphics[width=0.9\textwidth]{figures/11-20/ssp_UHV_200K_fit_hydrox.jpg}
+ \caption{Data of experimental SFG spectroscopy by Yanhua Yue (FHI) for the (11\=20) surface with 1ML water coverage including fit (colored lines).}
+        \label{abb:exp-sfg_fully}
+ \end{figure}
 \\\\
 
 Apart from the most stable surface termination (called O-I in \cite{kuri10}), calculations of the second most stable surface termination (O-II), where the uppermost O layer is ``missing'', were performed to account for the ``unknown'' sublattice visible in LEED spectra.
@@ -1846,7 +1875,7 @@ For the clean surface, the spectra deviate by shifted peaks around $50\,$cm$^{-1
 In contrast, the differences for the fully covered surfaces are more pronounced due to the different structures including especially more molecularly adsorbed water for the O-II termination.
 
 
-Also for a larger slab with 25 layers, this comparison was made, see Figure \ref{abb:comp_O-I-O-II_25}
+Also for the clean surface with a larger slab (25 layers), this comparison was made, see Figure \ref{abb:comp_O-I-O-II_25}.
 \begin{figure}[!h]
  \centering
  \subfigure[clean surface]{\includegraphics[width=0.45\textwidth]{figures/11-20/comp_O-I_O-II-25.eps}}
@@ -1986,7 +2015,7 @@ In the lattice region, as it could be observed for the clean surface as well, th
     \subfigure[inter-CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.54\textwidth]{figures/11-20/spec_d2o_iCb2-300K_comp.eps}}
              \caption{Power spectra are shown in red, obtained from NVT AIMD trajectories at $300\,$K for the geometries (starting points were geometry optimized structures) of the most stable structures via velocity-velocity autocorrelation function.
 Duration of the trajectories is $3.68\,$ps for inter-CUSa$\parallel$O-$\mu_2$, $3.67\,$ps for CUSb$\parallel$O-$\mu_2$ and $3.68\,$ps for inter-CUSb$\parallel$O-$\mu_2$.
-In black the spectrum with intensities ($\propto\mu^2$) from dipole corrected normal modes is shown for comparison.}
+In black the spectrum with intensities ($\propto\mu^2$) from dipole corrected normal modes is shown (10 layer slab).}
             \label{abb:velvel_ads_spec}
 \end{figure}
 \\
@@ -2060,7 +2089,7 @@ In our workgroup previous work concerned the stability of low water coverage lim
 
 In this work, the focus is on two topics:
 \\
-(i) Improvement of reaction rates calculation with different methods beyond GGA functionals (as PBE).
+(i) Improvement of reaction rates calculation with different methods beyond GGA functionals, as PBE.
 \\
 (ii) Understanding the scattering processes of a water molecule (D$_2$O) being shot at the surface with a molecular beam source with the help of AIMD and
 \\\\
@@ -2084,9 +2113,9 @@ The top view (a) shows four Al CUS atoms (gray) that are surrounded by three thr
         \label{abb:surf_0001}
 \end{figure}
 The unit cell vectors are equal to $\vec{a}=\vec{b}=9.66\,$\AA  ~and there is a $60$\textdegree{} angle between them.
-The $\vec{c}$-vector of the slab model is perpendicular to the plane spanned by $\vec{a}$ and $\vec{b}$ and is $31.4\,$\AA~ long, hence the vacuum gap between two slabs in this direction is $26.4\,$\AA.
+The $\vec{c}$-vector of the slab model is perpendicular to the plane spanned by $\vec{a}$ and $\vec{b}$ and is $31.4\,$\AA{} long, hence the vacuum gap between two slabs in this direction is $26.4\,$\AA.
 The stability, vibrations and reactivity of one water  molecule per $2\times 2$ supercell were already studied by Dr. Jonas Wirth.
-As published in \cite{WirthJPCC2012}, there is one molecular minimum on top of a CUS atom and three dissociated states (see Figure \ref{abb:0001_ads}): the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the hydrogen atom being one position further away and the 1-4$^\prime$ that is the configuration with the greatest possible distance for this cell size.
+As published in \cite{WirthJPCC2012}, there is one molecular minimum on top of a CUS atom and three dissociated states (see Figure \ref{abb:0001_ads}): the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the hydrogen atom being one position farther away and the 1-4$^\prime$ that is the configuration with the greatest possible distance for this cell size.
 \begin{figure} [!ht]
 \centering
 \subfigure[mol]{\includegraphics[width=0.4\textwidth]{figures/0001/0001_mol_top.jpg}}
@@ -2506,23 +2535,23 @@ As in all previous calculations, 1-2 dissociation is shown to be the most stable
 \\
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%COMPARISON VASP/CRYSTAL(combined basis)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The geometries of VASP and crystal calculations do not differ strongly.
+The geometries of VASP and CRYSTAL calculations do not differ strongly.
 Based on the example of the combined basis set, differences are shown.
-In pirinciple it can be seen from the data in Table \ref{tab:geom_comp_vasp-crystal}, that both bondlengths and angles with respect to the surface normal are slightly higher with PBE from VASP than with PBE with crystal nd B3LYP, although angles do not differ much.
+In principle it can be seen from the data in Table \ref{tab:geom_comp_vasp-crystal}, that both bondlengths and angles with respect to the surface normal are slightly higher with PBE from VASP than with PBE and B3LYP from CRYSTAL, although angles do not differ much.
 \begin{table}[!h]
   \centering
    \caption{Comparison of geometric properties OH bond lengths (BL) and OH angles ($\theta$) with respect to the surface normal (compare Table \ref{tab:freq_layers}).
 Bondlengths are given in \AA{} and angles in \textdegree.
 For the dissociated species, the first number gives the value for the adsorbed group and the second for the surface OH group.
-The first block gives results for VASP/PBE, the second for crystal/PBE and the last one for crystal/B3LYP, both with the high angular momentum basis set.}
+The first block gives results for VASP/PBE+D3, the second for CRYSTAL/PBE+D3 and the last one for CRYSTAL/B3LYP+D3, both with the high angular momentum basis set.}
   \begin{tabular}{ll|ccc}
   \toprule
    &&mol & 1-2 diss & 1-4 diss \\\midrule
 \multirow{2}{*}{VASP, PBE} &BL &0.98, 0.99 &0.97, 0.98 &0.97, 0.98 \\
 &$\theta$ &87.94, 99.07 &51.70, 34.94 &51.206, 27.17 \\\midrule
-\multirow{2}{*}{crystal, PBE}&BL &0.98, 0.98 &0.96, 0.98 &0.96, 0.98 \\
+\multirow{2}{*}{CRYSTAL, PBE}&BL &0.98, 0.98 &0.96, 0.98 &0.96, 0.98 \\
 &$\theta$ &87.383, 97.86 &51.96, 34.21 &52.40, 26.54 \\\midrule
-\multirow{2}{*}{crystal, B3LYP}& BL &0.97, 0.97 &0.95, 0.97 &0.96, 0.97 \\
+\multirow{2}{*}{CRYSTAL, B3LYP}& BL &0.97, 0.97 &0.95, 0.97 &0.96, 0.97 \\
 &$\theta$ &85.04, 95.84 &49.81, 33.03 &49.94, 26.74 \\\bottomrule
 %    &&mol & 1-2 diss & 1-4 diss \\\midrule
 % \multirow{2}{*}{VASP, PBE} &BL &0.98253, 0.98767 &0.96618, 0.98140 &0.96713, 0.97963 \\
@@ -2576,7 +2605,7 @@ Apart from calculating adsorption energies, also normal modes with CRYSTAL were 
 Additionally, anharmonic corrections for both O-D bonds for the three stable minima (molecular adsorbed, 1-2 and 1-4 dissociated water) have been performed.
 % \todo{mention here how this is done? Or in Appendix?}
 For these corrections no frequency calculations are necessary.
-Instead, the O-D distances around the equilibrium position are varied from $-0.2$ to $+0.3$\AA{}.
+Instead, the O-D distances around the equilibrium position are varied from $-0.2$ to $+0.3\,$\AA{}.
 A potential energy is calculated for each value of O-D distance, seven points in total.
 To these points a polynomial curve of $6^\textrm{th}$ degree is fitted.
 A corresponding nuclear Schrödinger equation is solved numerically and the anharmonic constant is evaluated from the fit.
@@ -2741,7 +2770,7 @@ To tackle this question, AIMD calculations were conducted for a water molecule a
 %Also temperature effects of the thermalized trajectories (canonical MD) seem to have a positive influence on the dissociation.
 \subsection{Beam Model} \label{beammodel}
 For the understanding of a molecular beam source experiment, the introduction of a beam is an essential part of the model.
-As a first order approach to a beam, a single, cold water (D$_2$O) molecule (initial parameters are $d_{OD}=0.97$\AA~ and bond angle of $104.5$\textdegree) was sent in agreement with the experiment perpendicularly from a center of mass position from a distance of $4\,$\AA~ onto the surface.
+As a first order approach to a beam, a single, cold water (D$_2$O) molecule (initial parameters are $d_{OD}=0.97\,$\AA{} and bond angle of $104.5$\textdegree) was sent in agreement with the experiment perpendicularly from a center of mass position from a distance of $4\,$\AA{} onto the surface.
 Also higher distances were tested but no difference could be detected, see Appendix \ref{sec:disttest} for more information.
 Having internal degrees of freedom excluded, six are still left which can be seen in Figures \ref{abb:initial_parameters}, \ref{abb:impact_points} and Table \ref{tab:orientations}): two for the impact site [$a_0$,$b_0$] given relative to the supercell vectors $\vec{a}$ and $\vec{b}$, three Euler angles $\alpha$, $\beta$ and $\gamma$ for the rotational orientation of the molecule with respect to the surface and the kinetic energy E$_\textrm{kin}$ that gives the molecule a momentum towards the surface, solely as translational motion, no vibration or rotation included.
 These parameters were varied systematically to gain insight into the process.
@@ -2910,8 +2939,7 @@ In contrast to both sites, [$0.35,0.45$] which is located at a gap between the C
 This high dissociation probability can be explained by the fact that the molecule hits the surface already in a ``product-like'' geometry, so that the OD bond breakage is facilitated.
 
 
-The initial rotational orientation also has an effect (cf.
-Figure \ref{abb:barchart_mic}(c)), although not as drastic as the impact point dependence.
+The initial rotational orientation also has an effect (cf. Figure \ref{abb:barchart_mic}(c)), although not as drastic as the impact point dependence.
 This might be explained when looking at the trajectories in detail, where one can see that the water molecule rotates due to the attractive and repulsive interaction with the surface atoms.
 This leads to a reorientation of the water molecule right before adsorbing, so that the initial orientation is not remembered reliably by the system.
 The orientation of the molecule shortly before reaching the surface is more important.
@@ -3099,7 +3127,7 @@ Two examples of the final geometries can be found in Figure \ref{abb:tetramer_tr
 \subfigure[]{\includegraphics[angle=0,width=0.33\textwidth]{figures/0001/4d2o_05_035_000.png}} 
 \quad
 \subfigure[]{\includegraphics[width=0.33\textwidth]{figures/0001/4d2o_035_05_90900.png}}
-\caption{Side views of the last time step ($1.22\,$ps) for two initial coniditions: (a) E$_\textrm{kin}=0.9\,$eV, $[a_0,b_0]=[0.5,0.35]$, and $[\alpha,\beta,\gamma]=[0,0,0]$ and (b)  $E_\textrm{kin}=0.9$ eV, $[a_0,b_0]=[0.35,0.5]$, 
+\caption{Side views of the last time step ($1.22\,$ps) for two initial coniditions: (a) E$_\textrm{kin}=0.9\,$eV, $[a_0,b_0]=[0.5,0.35]$, and $[\alpha,\beta,\gamma]=[0,0,0]$ and (b)  $E_\textrm{kin}=0.9\,$eV, $[a_0,b_0]=[0.35,0.5]$, 
  and $[\alpha,\beta,\gamma]=[90,90,0]$.
 Hydrogen bonds are shown as red dashed lines.
 Physisorption, molecular adsorption and dissociation can be seen in both snapshots.}
@@ -3159,7 +3187,8 @@ Especially the vibrational frequencies of OD species could be assigned to vibrat
 Also, lattice vibrations were studied in close collaboration with the experimental partners.
 As a novelty, they perform SFG spectra at very low frequencies to get deep into the lattice vibration region.
 Correspondingly, a bigger slab model with greater expansion perpendicular to the surface was applied, considering more layers in the bulk.
-Unfortunately the experimental measurements of the phonons are still in progress to unforeseen difficulties in preparing the sample, so that no comparison to the experiment is possible in this work.
+Also with the lattice vibrations we could obtain reasonably good agreement in terms of distances between the peaks.
+% Unfortunately the experimental measurements of the phonons are still in progress to unforeseen difficulties in preparing the sample, so that no comparison to the experiment is possible in this work.
 However, the overall agreement with lower energy modes is typically worse than for high energy OD vibrations.
 \\\\
 
@@ -3323,10 +3352,10 @@ In Figure \ref{abb:MBS-dist} it could be shown that there is only a difference i
  \begin{figure}[!h]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/11-20/MD_all.eps}
-  \caption{Trajectories for D$_2$O approaching the surface for initial molecule-surface distances of 4, 5, 6 and 7\AA{} from left to right.
+  \caption{Trajectories for D$_2$O approaching the surface for initial molecule-surface distances of $4$, $5$, $6$ and $7\,$\AA{} from left to right.
 Black lines depict the O-Al distance whereas the blue lines show the O-D distance of the dissociating deuterium, respectively.
 The impact time is, of course, different.
-Parameters for these calculations were: impact point [0.35,0.5], orientation [0,0,0] and kinetic energy E$_\textrm{kin}=0.7,$eV.
+Parameters for these calculations were: impact point [0.35,0.5], orientation [0,0,0] and kinetic energy E$_\textrm{kin}=0.7\,$eV.
 All four trajectories give 1-2 dissociation.}
   \label{abb:MBS-dist}
  \end{figure}
@@ -3342,7 +3371,7 @@ In case of two numbers in one cell, the first one refers to direct dissociation,
 
 Due to the rounding procedure, the sum of the probabilities can be slightly different from 1.
 If no probabilities for an outcome are listed, the process did not occur.
-One has to have in mind that all results are obtained for only a limited amount of trajectories whose number is given, respectively.
+One has to have in mind that all results are obtained for only a limited number of trajectories whose number is given, respectively.
 
 
 \subsection{Microcanonical AIMD at a Clean Surface at $T=0$}
@@ -3449,7 +3478,7 @@ In total, ten trajectories for four different impact points and three different 
 
 \begin{table}[hbt]
  \centering
-  \caption{Reaction probabilities for a (D$_2$O)$_4$ cluster approaching a clean surface with $E_\textrm{kin}=0.9$ eV of microcanonical (NVE, $T=0$) trajectories.}
+  \caption{Reaction probabilities for a (D$_2$O)$_4$ cluster approaching a clean surface with $E_\textrm{kin}=0.9\,$eV of microcanonical (NVE, $T=0$) trajectories.}
  \begin{tabular}{cccccc}
 \toprule
 $P_\textrm{mol}$ & $P_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{diss}$ (1-4$^\prime$) & $P_\textrm{phys}$ & $P_\textrm{refl}$ \\\hline
@@ -3466,7 +3495,7 @@ Probabilities are given in Table \ref{tab:vib-rot_exc}
 \begin{table}[!h]
  \centering
   \caption{Reaction probabilities an excited D$_2$O.
-Microcanonical (NVE, cold surface) trajectories of vibrationally and/or rotationally excited D$_2$O approaching a clean surface were simulated with $E_\textrm{kin}=0.7$ eV.
+Microcanonical (NVE, cold surface) trajectories of vibrationally and/or rotationally excited D$_2$O approaching a clean surface were simulated with $E_\textrm{kin}=0.7\,$eV.
 If two entries exist, the first refers to direct dissociation and the second to indirect dissociation.}
  \begin{tabular}{cccccc}
 \toprule
@@ -3502,7 +3531,7 @@ Apart from that, no further dissociation and diffusion reactions were observed.
  \centering
   \caption{Reaction probabilities for microcanonical (NVE, $T=0$) 
  trajectories of the (D$_2$O)$_2$ cluster with a clean surface 
- hitting with an initial kinetic energy $E_\textrm{kin}=0.7$ eV.}
+ hitting with an initial kinetic energy $E_\textrm{kin}=0.7\,$eV.}
  \begin{tabular}{cccc}
 \toprule
 $P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm{refl}$ \\\midrule
