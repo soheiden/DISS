@@ -213,10 +213,10 @@ We search for stable molecular and dissociative minima and the reactions connect
 In addition to that we want to calculate vibrational frequencies to compare with experimental research and help to understand and interpret their findings.
 
 
-(ii) Nowadays, a typical standard method to treat periodic surface systems is the GGA functional PBE.
+(ii) Nowadays, a typical standard method to treat periodic surface systems is density functional theory with the GGA functional PBE.
 This functional however is known to underestimate reaction barriers and hence overestimate the reaction rate constant.
-Improving on this issue is a great step towards the understanding of surface reactions like dissociation and diffusion.
-This we want to achieve by employing a hybrid functional and a wave function-based method (perturbation theory) for an exemplary hydrogen diffusion reaction at the (0001) surface.
+Improving this issue is a great step towards the understanding of surface reactions like dissociation and diffusion.
+We want to achieve this by employing a hybrid functional and a wave function-based method (perturbation theory) for an exemplary hydrogen diffusion reaction at the (0001) surface.
 
 
 (iii) Molecular beam experiments have recently shown that water is able to adsorb both molecularly and dissociatively on an $\alpha$-Al$_{\text{2}}$O$_{\text{3}}$(0001) surface\cite{Wirth2014}.
@@ -251,8 +251,8 @@ In this work \textit{ab initio} molecular dynamics calculations were conducted t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Theory und Methodology}
 In this chapter the basics of the theoretical methods applied in this work shall be explained.
-It starts from the ideas of Hartree-Fock and density functional theory, going over periodic boundary conditions, to the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
-Then we will proceed with frequency calculations and intensities over transition state theory to more developed methods like hybrid functionals and perturbation theory.
+It starts from the ideas of Hartree-Fock and density functional theory, going to more developed methods like hybrid functionals and perturbation theory, over periodic boundary conditions, to the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
+Then we will proceed with frequency calculations and intensities to transition state theory.
 Most basic theory parts of this chapter are based on \cite{jensen}, \cite{Gross03} and \cite{szabo}.
 
 
@@ -269,7 +269,7 @@ The Hamiltonian in atomic units contains the kinetic energy of the electrons, th
 \end{equation}
 The first term is the kinetic energy of the electrons, the second describes the Coulomb interaction of electrons and nuclei (there are $N_A$ nuclei) and the third term gives the Coulomb repulsion between electrons.
 This equation is written in atomic units for sake of simplicity.
-This sets some of the fundamental constants to 1, \textit{i.e.} $a_0=m_e=e=\hbar=4\pi\varepsilon_0=1$ ($a_0$ Bohr radius, $m_e$ electron mass, $\hbar=h/(2\pi)$ reduced Planck's constant and Coulombs constant $1/(4\pi\varepsilon_0)$).
+This sets some of the fundamental constants to 1, \textit{i.e.} $a_0=m_e=e=\hbar=4\pi\varepsilon_0=1$ ($a_0$ Bohr radius, $m_e$ electron mass, $\hbar=h/(2\pi)$ reduced Planck's constant and Coulomb's constant $1/(4\pi\varepsilon_0)$).
 
 For large systems, %(more than electrons),
 the solution of Equation (\ref{eq:tise}) gets computationally demanding.
@@ -355,7 +355,7 @@ because the electron-electron interaction is considered twice.
 
 
 The solution of the Hartree-Fock equations gives a set of orthonormal HF-spin orbitals with orbital energies $\varepsilon_i$.
-The orbitals are occupied according to the Aufbau principle (the lowest $N_e/2$ orbitals), the remaining orbitals are unoccupied, also referred to as virtual. 
+The orbitals are occupied according to the aufbau principle (the lowest $N_e/2$ orbitals), the remaining orbitals are unoccupied, also referred to as virtual. 
 
 In principle, Equation (\ref{eq:hf}) gives an infinite number of solutions.
 In practice however, a finite set of basis functions is introduced.
@@ -377,7 +377,7 @@ We can deduce the Roothaan-Hall equation, if we use the matrix notation, multipl
 \begin{equation}\label{eq:RH}
  \doubleunderline{F} \vec{C}_i=\doubleunderline{S} \vec{C}_i\varepsilon_i
 \end{equation}
-with the Fock matrix $F_{\mu\nu}=\langle \Phi_\mu|\hat{f}(i)|\Phi_\nu\rangle$ and the overlap matrix $S_{\mu\nu}=\langle \Phi_\mu|\Phi_\nu\rangle$ and the orbital eigenvalues $\varepsilon_i$.
+with the Fock matrix $F_{\mu\nu}=\langle \Phi_\mu|\hat{f}(i)|\Phi_\nu\rangle$, the vector $\vec{C}_i$ containing the coefficients, the overlap matrix $S_{\mu\nu}=\langle \Phi_\mu|\Phi_\nu\rangle$ and the orbital eigenvalues $\varepsilon_i$.
 
 This equation can be solved iteratively with the self consistent field method (SCF) by taking a guess, solving the equation and then improving the guess accordingly.
 
@@ -405,7 +405,7 @@ with the kinetic energy $T[n]$, the potential energy $V_{ext}[n]$ for the extern
 It can also be expressed by the external potential $v_{ext}(\vec{r})$, the Hartree energy $E_H[n]$, corresponding to the classical Coulomb interaction and the exchange correlation energy $E_{xc}[n]$ for the non-classical exchange correlation interactions.
 A major advantage of DFT over wave function-based methods is the size: only a three dimensional system has to be considered for three spatial coordinates $n(x,y,z)$ (the spin coordinate was neglected), instead of a $3N_e$-dimensional system, %weglassen? (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional)}
 with $N_e$ being the number of electrons.
-The size of a system calculated with wave function methods increases exponentially with the number of electrons, while for density calculations we always have three spatial coordinates, independent from the number of electrons.
+The size of a system calculated with wave function methods increases exponentially with the number of electrons, while for density calculations we always have three spatial coordinates, regardless of the number of electrons.
 Problematic in this approach is that the exact form of the interacting kinetic energy $T[n]$ and the exchange correlation functional\footnote{to clarify the difference between a function and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas a functional (F[f]) gives a number from a function which depends on variables.} $E_{xc}[n]$ is unknown.
 
 
@@ -2537,7 +2537,7 @@ As in all previous calculations, 1-2 dissociation is shown to be the most stable
 %%%%%%%%%%%%%%%%%%%%%%%%%%%COMPARISON VASP/CRYSTAL(combined basis)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The geometries of VASP and CRYSTAL calculations do not differ strongly.
 Based on the example of the combined basis set, differences are shown.
-In principle it can be seen from the data in Table \ref{tab:geom_comp_vasp-crystal}, that both bondlengths and angles with respect to the surface normal are slightly higher with PBE from VASP than with PBE and B3LYP from CRYSTAL, although angles do not differ much.
+In principle it can be seen from the data in Table \ref{tab:geom_comp_vasp-crystal}, that both bond lengths and angles with respect to the surface normal are slightly higher with PBE from VASP than with PBE and B3LYP from CRYSTAL, although angles do not differ much.
 \begin{table}[!h]
   \centering
    \caption{Comparison of geometric properties OH bond lengths (BL) and OH angles ($\theta$) with respect to the surface normal (compare Table \ref{tab:freq_layers}).
@@ -2563,7 +2563,7 @@ The first block gives results for VASP/PBE+D3, the second for CRYSTAL/PBE+D3 and
   \end{tabular}
   \label{tab:geom_comp_vasp-crystal}
 \end{table}
-B3LYP gives the shortest bondlengths and the smallest angles in the comparison but still the results are in very good agreement.
+B3LYP gives the shortest bond lengths and the smallest angles in the comparison but still the results are in very good agreement.
 
 \subsubsection{Reaction Rate}
 For the reaction Df-H-4-2 introduced earlier shown in Figure \ref{abb:df-h-4-2}, a transition state with a corresponding rate was recalculated with B3LYP+D3 and basis set 5, since GGA (\textit{e.g.} the functional PBE) is known to underestimate barriers\cite{Zhao05}, so going beyond GGA is vital.
@@ -2577,15 +2577,21 @@ Now from this geometry, normal mode analyses were done and $\Delta G^\ddagger$ w
 These results are shown in Table \ref{tab:k_crystal-reopt+noopt} (reopt).
 \begin{table}[!h]
   \centering
-  \caption{$\Delta E^\ddagger$, $\Delta G^\ddagger(\textrm{300\,K}$) in eV and $k(\textrm{300\,K})$ in s$^{-1}$ for the reaction Df-H-4-2 with B3LYP+D3 with CRYSTAL for different basis sets. VASP results are given for PBE+D3.}
-  \begin{tabular}{c|cc|cc|c}%|cc
+  \caption{$\Delta E^\ddagger$, $\Delta G^\ddagger(300\,$K) in eV and $k$(300K) in s$^{-1}$ for the reaction Df-H-4-2 with B3LYP+D3 with CRYSTAL for different basis sets.
+  MP2 results for $\Delta G^\ddagger$ and $k$ are estimated by the difference of $\Delta E^\ddagger$ and $\Delta G^\ddagger$ from the B3LYP+D3 with the combined basis, the correspoding rate inherits the same approximation.
+  VASP results are given for PBE+D3.}
+  \begin{tabular}{c|cc|cc|cc|c|c}%|cc
   \toprule
-   & \multicolumn{2}{c}{basis 2} &\multicolumn{2}{c}{basis 5}  &VASP\\ %& \multicolumn{2}{c}{\todo{large basis}}
-   & reopt & no opt & reopt & no opt & \\\midrule %& reopt & no opt
-   $\Delta E^\ddagger$ &0.65 &0.76 &0.65 & 0.76 &0.44\\%& &
-   $\Delta G^\ddagger(\textrm{300\,K})$ &0.54 &0.62 &0.53 &0.62 &0.29\\%& &
-   $k(\textrm{300\,K})$ &$5.8\times 10^3$ &$2.2\times 10^2$ &$8.0\times 10^3$ &$2.4\times 10^2$ &$9.1\times 10^7$\\\bottomrule%& &
+   & \multicolumn{2}{c}{basis 2} &\multicolumn{2}{c}{basis 5} &\multicolumn{2}{c}{combined basis}&LMP2 &VASP\\ 
+   & reopt & no opt & reopt & no opt &reopt & no opt & reopt& \\\midrule
+   $\Delta E^\ddagger$ &0.65 &0.76 &0.65 & 0.76 &0.69 & 0.84 & 0.60&0.44\\
+   $\Delta G^\ddagger$ &0.54 &0.62 &0.53 &0.62 &0.58 & 0.70 &0.49$^\ast$ &0.29\\
+   $k$(300K) &$5.8\times 10^3$ &$2.2\times 10^2$ &$8.0\times 10^3$ &$2.4\times 10^2$ &$1.2\times 10^3$ &$1.0\times 10^1$ & $3.7\times 10^4$$^\ast$& $9.1\times 10^7$\\\bottomrule
   \end{tabular}
+  \begin{tablenotes}
+ \footnotesize
+\item[] $^\ast$ The contribution of the vibrations is estimated from B3LYP+D3 with the combined basis, the corresponding rate is also affected by this approximation.
+\end{tablenotes}
   \label{tab:k_crystal-reopt+noopt}
 \end{table}
 \\
@@ -2593,10 +2599,11 @@ These results are shown in Table \ref{tab:k_crystal-reopt+noopt} (reopt).
 Since this obtained transition state geometry was not converged properly, additionally calculations at the VASP optimized transition state geometry were executed and corresponding  outcomes are presented in Table \ref{tab:k_crystal-reopt+noopt} (no opt).
 
 
-For both approaches, the corresponding rates are lower than for VASP. As it is known, GGA functionals like PBE used in VASP calculations underestimate the barriers\cite{Zhao05} and hence give too large reaction rates.
-For both calculations with CRYSTAL with basis sets 2 and 5, the (free) energy differences are higher and the rate constants are smaller, which is exactly what was to be expected.
-These lower rates with the hybrid functional B3LYP are in the order of $10^2$-$10^3$s$^{-1}$ whereas the rate constant with VASP is in the order of $10^7$s$^{-1}$. 
-For both basis sets with the CRYSTAL reoptimized structure the rate is slightly higher ($10^3$s$^{-1}$) than for the calculation using the VASP optimized geometry ($10^2$s$^{-1}$).
+For both hybrid functional approach with different basis sets and the local MP2 calculation with only the largest basis, the corresponding rates are lower than for VASP.
+As it is known, GGA functionals like PBE used in VASP calculations underestimate the barriers\cite{Zhao05} and hence give too large reaction rates.
+For all the atom centered calculations with CRYSTAL, the (free) energy differences are higher and the rate constants are smaller, which is exactly what was to be expected.
+These lower rates with the hybrid functional B3LYP are in the order of $10^2$-$10^3$s$^{-1}$, with LMP2 it is slightly higher ($10^4$s$^{-1}$) whereas the rate constant with VASP is in the order of $10^7$s$^{-1}$. 
+For all three basis sets with CRYSTAL/B3LYP+D3 the reoptimized structure the rate is slightly higher ($10^3$s$^{-1}$) than for the calculation using the VASP optimized geometry ($10^2$s$^{-1}$).
 This shows the potential of this method towards the improvement of reaction rates and barriers of surface reactions.
 
 
