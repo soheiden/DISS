@@ -2273,17 +2273,21 @@ When employing the CRYSTAL program, as several basis sets for each atom are avai
 The basis sets which were tested are summarized in Table \ref{tab:basissets}.
 \begin{table}[!h]
   \centering
-   \caption{Basis set overview for Al, O and H in the CRYSTAL14 calculations. Citations can be found in the table footnotes.}
+   \caption{Basis set overview for Al, O and H in the CRYSTAL calculations.
+   The ordering is according to their size.
+   Citations can be found in the table footnotes.}
   \begin{tabular}{c|lll}
   \toprule
   basis set & Al & O & H \\\midrule
-   1&Al$\_$s8511p511d11$\_$Heifets$\_$2013 & O$\_$8411(d11)$\_$Heifets\_2013&H$\_$pob$\_$TZVP$\_$2012 \\
-   2&Al$\_$pob$\_$TZVP$\_$2012 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
-   3&Al$\_$m-6-311G(d)$\_$Heyd$\_$2005 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
-   4&Al$\_$85-11G$^\ast\_$catti$\_$1994 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
-   5&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
-   6&Al$\_$85-11G$^\ast\_$catti$\_$1994 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
-   7&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\\bottomrule
+   1&Al$\_$85-11G$^\ast\_$catti$\_$1994 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
+   2&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
+   3&Al$\_$85-11G$^\ast\_$catti$\_$1994 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
+   4&Al$\_$86-21G$^\ast\_$harrison$\_$1993 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
+   5&Al$\_$s8511p511d11$\_$Heifets$\_$2013 & O$\_$8411(d11)$\_$Heifets\_2013&H$\_$pob$\_$TZVP$\_$2012 \\
+   6&Al$\_$m-6-311G(d)$\_$Heyd$\_$2005 &O$\_$m-6-311G(d)$\_$Heyd$\_$2005 & H$\_$pob$\_$TZVP$\_$2012\\
+   7&Al$\_$pob$\_$TZVP$\_$2012 &O$\_$pob$\_$TZVP$\_$2012 & H$\_$pob$\_$TZVP$\_$2012\\
+   8& \multicolumn{3}{c}{customized, high angular momentum basis, see Appendix \ref{app_combined_basis}} \\\bottomrule
+%    9& & & \\\bottomrule
   \end{tabular}
   \begin{tablenotes}
  \footnotesize
@@ -2291,6 +2295,8 @@ The basis sets which were tested are summarized in Table \ref{tab:basissets}.
 \end{tablenotes}
   \label{tab:basissets}
 \end{table}
+The basis sets are numbered with increasing size, so that the largest number corresponds to the highest number of basis functions.
+
 This was first computed for PBE, the same functional applied for the VASP calculations.
 The geometries of H$_2$O, the clean surface and the three adsorbed species (mol, 1-2 and 1-4) were optimized.
 The corresponding adsorption energies can be found in Table \ref{tab:basisset-results-PBE+D3}.
@@ -2301,13 +2307,13 @@ All values are given in eV.}
   \begin{tabular}{c|ccc}
   \toprule
   basis set & mol & 1-2 diss & 1-4 diss \\\midrule
-  1 &-1.57 &-1.77 &-1.38 \\
-  2 &-1.47 &-1.69 &-1.35 \\
-  3 &-1.72 &-1.96 &-1.59 \\
-  4 &-1.87 &-2.11 &-1.75 \\
-  5 &-1.58 &-1.73 &-1.40 \\
-  6 &-1.53 &-1.78 &-1.43 \\
-  7 &-1.74 &-1.96 &-1.58 \\\bottomrule  
+  1 &-1.87 &-2.11 &-1.75 \\
+  2 &-1.74 &-1.96 &-1.58 \\
+  3 &-1.53 &-1.78 &-1.43 \\
+  4 &-1.58 &-1.73 &-1.40 \\
+  5 &-1.57 &-1.77 &-1.38 \\
+  6 &-1.72 &-1.96 &-1.59 \\
+  7 &-1.47 &-1.69 &-1.35 \\\bottomrule  
   \end{tabular}
   \label{tab:basisset-results-PBE+D3}
 \end{table}
@@ -2317,11 +2323,11 @@ In contrast to the VASP calculations employing the plane wave basis, all basis s
 The adsorption energies are systematically stabilized, which might be due to the BSSE, which will be considered later.
 
 
-In addition to adsorption energies from optimized geometries, for basis set 1 adsorption energies were calculated with the previous VASP optimized structure (\textit{i.e.} only single point calculation with CRYSTAL) to compare to VASP results.
+In addition to adsorption energies from optimized geometries, for basis set 5 adsorption energies were calculated with the previous VASP optimized structure (\textit{i.e.} only single point calculation with CRYSTAL) to compare to VASP results.
 Those results are given in Table \ref{tab:pbe-vasp-geom}.
 \begin{table}[!h]
   \centering
-   \caption{Adsorption energies of the four adsorption states of the 0001 surface site (PBE+D3 with basis set 1 (see Table \ref{tab:basissets})).
+   \caption{Adsorption energies of the four adsorption states of the 0001 surface site (PBE+D3 with basis set 5 (see Table \ref{tab:basissets})).
 Values are given in eV.
 VASP values are reoptimized from J. Wirth's work with PBE+D3.}
   \begin{tabular}{cccc}%c}
@@ -2345,23 +2351,23 @@ Geometry optimizations were performed and adsorption energies were examined, see
   \centering
    \caption{Adsorption energies of the three adsorption states of the (0001) surface (B3LYP+D3; geometry optimization).
 Values are given in eV.
-Basis sets 5 and 6 give similar trends as VASP/PBE and are highlighted with bold numbers.}
+Basis sets 4 and 3 give similar trends as VASP/PBE and are highlighted with bold numbers.}
   \begin{tabular}{c|ccc}
   \toprule
   basis set & mol & 1-2 diss & 1-4 diss \\\midrule
-  1 &-1.56 &-1.88 &-1.45 \\
-  2 &-1.57 &-1.92 &-1.53 \\
-  3 &-1.78 &-2.15 &-1.68 \\
-  4 &-1.90 &-2.25 &-1.83 \\
-  5 &\textbf{-1.57} &-1.95 &\textbf{-1.57} \\
-  6 &\textbf{-1.62} &-2.01 &\textbf{-1.62} \\
-  7 &-1.80 &-2.14 &-1.69 \\\bottomrule
+  1 &-1.90 &-2.25 &-1.83 \\
+  2 &-1.80 &-2.14 &-1.69 \\
+  3 &\textbf{-1.62} &-2.01 &\textbf{-1.62} \\
+  4 &\textbf{-1.57} &-1.95 &\textbf{-1.57} \\
+  5 &-1.56 &-1.88 &-1.45 \\
+  6 &-1.78 &-2.15 &-1.68 \\
+  7 &-1.57 &-1.92 &-1.53 \\\bottomrule
   \end{tabular}
   \label{tab:basisset-results-B3LYP+D3}
 \end{table}
 \\
-Most basis sets also give the same ordering as PBE+D3, but basis 5 and 6 qualitatively give the same trends as VASP (adsorption energy for mol and 1-4 diss equal, like PW91 and PBE+D3) and also basis set 2 is very close to this.
-Henceforth, basis sets 2 and 5 are used in further calculations.
+Most basis sets also give the same ordering as PBE+D3, but basis 3 and 4 qualitatively give the same trends as VASP (adsorption energy for mol and 1-4 diss equal, like PW91 and PBE+D3) and also basis set 7 is very close to this.
+Henceforth, basis sets 4 and 7 are used in further calculations; for the more computationally demanding transition state optimization the smaller basis 4 is used and for normal mode analyses, basis set 7 is used.
 \\
 \\
 
@@ -2402,10 +2408,10 @@ and the relaxation energy (which is anti stabilizing) is:
 \end{equation}
 
 
-When one applies this to the adsorbed systems with basis set 5, the following results can be obtained, see Table \ref{tab:bsse-results}.
+When one applies this to the adsorbed systems with basis set 4, the following results can be obtained, see Table \ref{tab:bsse-results}.
 \begin{table}[!h]
   \centering
-   \caption{BSSE-corrected energy, BSSE, adsorbate-surface interaction energy and relaxation energy according to Equations (\ref{eq:BSSEcorr})-(\ref{eq:relaxE}) for mol, 1-2 diss and 1-4 diss with PBE+D3 using basis set 5.
+   \caption{BSSE-corrected energy, BSSE, adsorbate-surface interaction energy and relaxation energy according to Equations (\ref{eq:BSSEcorr})-(\ref{eq:relaxE}) for mol, 1-2 diss and 1-4 diss with PBE+D3 using basis set 4.
 Values are given in eV.}
   \begin{tabular}{c|ccc}
   \toprule
@@ -2472,11 +2478,11 @@ LMP2$^\ast$ (dual) & -1.31 & -1.61 & -1.18 \\ %MP2=HF+singles+MP2+LJ!
 \\
 
 PBE+D3 with the new basis set gives the same ordering as all other basis sets that were applied.
-The results are very close to the ones with basis set 2 from Table \ref{tab:basisset-results-PBE+D3}.
+The results are very close to the ones with basis set 7 from Table \ref{tab:basisset-results-PBE+D3}.
 
 
 For B3LYP+D3, the same order of stability is achieved, although there is only a small difference of $0.3\,$eV between mol and 1-4.
-Here, the results from the large basis are close to basis sets 1 and 2.
+Here, the results from the large basis are close to those with basis sets 5 and 7.
 \\
 
 To go beyond density functional theory, first Hartree-Fock and on top of this LMP2 calculations were applied.
@@ -2536,7 +2542,7 @@ As in all previous calculations, 1-2 dissociation is shown to be the most stable
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%COMPARISON VASP/CRYSTAL(combined basis)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The geometries of VASP and CRYSTAL calculations do not differ strongly.
-Based on the example of the combined basis set, differences are shown.
+Based on the example of the high angular momentum basis set, differences are shown.
 In principle it can be seen from the data in Table \ref{tab:geom_comp_vasp-crystal}, that both bond lengths and angles with respect to the surface normal are slightly higher with PBE from VASP than with PBE and B3LYP from CRYSTAL, although angles do not differ much.
 \begin{table}[!h]
   \centering
@@ -2566,7 +2572,7 @@ The first block gives results for VASP/PBE+D3, the second for CRYSTAL/PBE+D3 and
 B3LYP gives the shortest bond lengths and the smallest angles in the comparison but still the results are in very good agreement.
 
 \subsubsection{Reaction Rate}
-For the reaction Df-H-4-2 introduced earlier shown in Figure \ref{abb:df-h-4-2}, a transition state with a corresponding rate was recalculated with B3LYP+D3 and basis set 5, since GGA (\textit{e.g.} the functional PBE) is known to underestimate barriers\cite{Zhao05}, so going beyond GGA is vital.
+For the reaction Df-H-4-2 introduced earlier shown in Figure \ref{abb:df-h-4-2}, a transition state with a corresponding rate was recalculated with B3LYP+D3 and basis set 4, since GGA (\textit{e.g.} the functional PBE) is known to underestimate barriers\cite{Zhao05}, so going beyond GGA is vital.
 Previous VASP results with PBE and PW91 as well as hybrid functional results (single point calculations on top of PBE geometries) are shown in Table \ref{tab:4-2results_jonas} and were discussed in the introduction of this section \ref{crystal_calc}.
 
 
@@ -2582,11 +2588,11 @@ These results are shown in Table \ref{tab:k_crystal-reopt+noopt} (reopt).
   VASP results are given for PBE+D3.}
   \begin{tabular}{c|cc|cc|cc|c|c}%|cc
   \toprule
-   & \multicolumn{2}{c}{basis 2} &\multicolumn{2}{c}{basis 5} &\multicolumn{2}{c}{combined basis}&LMP2 &VASP\\ 
+   & \multicolumn{2}{c}{basis 4} &\multicolumn{2}{c}{basis 7} &\multicolumn{2}{c}{combined basis}&LMP2 &VASP\\ 
    & reopt & no opt & reopt & no opt &reopt & no opt & reopt& \\\midrule
-   $\Delta E^\ddagger$ &0.65 &0.76 &0.65 & 0.76 &0.69 & 0.84 & 0.60&0.44\\
-   $\Delta G^\ddagger$ &0.54 &0.62 &0.53 &0.62 &0.58 & 0.70 &0.49$^\ast$ &0.29\\
-   $k$(300K) &$5.8\times 10^3$ &$2.2\times 10^2$ &$8.0\times 10^3$ &$2.4\times 10^2$ &$1.2\times 10^3$ &$1.0\times 10^1$ & $3.7\times 10^4$$^\ast$& $9.1\times 10^7$\\\bottomrule
+   $\Delta E^\ddagger$ &0.65 & 0.76 &0.65 &0.76 &0.69 & 0.84 & 0.60&0.44\\
+   $\Delta G^\ddagger$ &0.53 &0.62 &0.54 &0.62 &0.58 & 0.70 &0.49$^\ast$ &0.29\\
+   $k$(300K) &$8.0\times 10^3$ &$2.4\times 10^2$ &$5.8\times 10^3$ &$2.2\times 10^2$ &$1.2\times 10^3$ &$1.0\times 10^1$ & $3.7\times 10^4$$^\ast$& $9.1\times 10^7$\\\bottomrule
   \end{tabular}
   \begin{tablenotes}
  \footnotesize
@@ -2601,14 +2607,14 @@ Since this obtained transition state geometry was not converged properly, additi
 
 For both hybrid functional approach with different basis sets and the local MP2 calculation with only the largest basis, the corresponding rates are lower than for VASP.
 As it is known, GGA functionals like PBE used in VASP calculations underestimate the barriers\cite{Zhao05} and hence give too large reaction rates.
-For all the atom centered calculations with CRYSTAL, the (free) energy differences are higher and the rate constants are smaller, which is exactly what was to be expected.
+For all the atom centered calculations with CRYSTAL, the (free) energy barriers are higher and the rate constants are smaller, which is exactly what was to be expected.
 These lower rates with the hybrid functional B3LYP are in the order of $10^2$-$10^3$s$^{-1}$, with LMP2 it is slightly higher ($10^4$s$^{-1}$) whereas the rate constant with VASP is in the order of $10^7$s$^{-1}$. 
 For all three basis sets with CRYSTAL/B3LYP+D3 the reoptimized structure the rate is slightly higher ($10^3$s$^{-1}$) than for the calculation using the VASP optimized geometry ($10^2$s$^{-1}$).
 This shows the potential of this method towards the improvement of reaction rates and barriers of surface reactions.
 
 
 \subsubsection{Frequency Analysis}
-Apart from calculating adsorption energies, also normal modes with CRYSTAL were calculated with the functional B3LYP+D3 and PBE+D3, both with basis set 2 from Table \ref{tab:basissets}.
+Apart from calculating adsorption energies, also normal modes with CRYSTAL were calculated with the functional B3LYP+D3 and PBE+D3, both with basis set 7 from Table \ref{tab:basissets}.
 Additionally, anharmonic corrections for both O-D bonds for the three stable minima (molecular adsorbed, 1-2 and 1-4 dissociated water) have been performed.
 % \todo{mention here how this is done? Or in Appendix?}
 For these corrections no frequency calculations are necessary.
@@ -2621,19 +2627,19 @@ A corresponding nuclear Schrödinger equation is solved numerically and the anha
 In Table \ref{tab:freqs_0001_crystal} the results for PBE and B3LYP for the (0001) surface are summarized.
 \begin{table}[!h]
   \centering
-  \caption{OD stretch vibration results with basis set 2 at the \textbf{(0001)} surface.
+  \caption{OD stretch vibration results with basis set 7 at the \textbf{(0001)} surface.
 Wavenumbers $\tilde{\nu}$ were calculated at the PBE and B3LYP level of theory with D3 corrections and also wavenumbers including anharmonic corrections $\tilde{\nu}_\textrm{anh}$.
 The presented VASP results were received by Dr. J. Wirth with a plane wave and PBE+D2.}
-  \begin{tabular}{ccc|cc|c}
+  \begin{tabular}{ccc|cc|c|c}
   \toprule
-   & PBE & & B3LYP & &VASP PBE\\
-  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]& $\tilde{\nu}$ [cm$^{-1}$]\\\midrule
-  mol: OD$_{\textrm{1}}$    &2657 &2562 &2747 &2650 & 2664\\
-  mol: OD$_{\textrm{2}}$    &2539 &2490 &2627 &2584 & 2550\\
-  1-2: OD$_{\textrm{surf}}$ &2596 &2521 &2697 &2623 & 2629\\%VASP PBE+D3 2632
-  1-2: OD$_{\textrm{ads}}$  &2808 &2727 &2883 &2805 & 2810\\%D3 2814
-  1-4: OD$_{\textrm{surf}}$ &2621 &2531 &2715 &2631 & 2647\\%D3 2659
-  1-4: OD$_{\textrm{ads}}$  &2795 &2788 &2873 &2788 & 2795\\%D3 2797
+   & PBE & & B3LYP & &VASP PBE&Exp.\\
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]& $\tilde{\nu}$ [cm$^{-1}$]& $\tilde{\nu}$ [cm$^{-1}$]\\\midrule
+  mol: OD$_{\textrm{1}}$    &2657 &2562 &2747 &2650 & 2664&-\\
+  mol: OD$_{\textrm{2}}$    &2539 &2490 &2627 &2584 & 2550&-\\
+  1-2: OD$_{\textrm{surf}}$ &2596 &2521 &2697 &2623 & 2629&2729\\%VASP PBE+D3 2632
+  1-2: OD$_{\textrm{ads}}$  &2808 &2727 &2883 &2805 & 2810&2910\\%D3 2814
+  1-4: OD$_{\textrm{surf}}$ &2621 &2531 &2715 &2631 & 2647&2764\\%D3 2659
+  1-4: OD$_{\textrm{ads}}$  &2795 &2788 &2873 &2788 & 2795&2900\\%D3 2797
   \bottomrule
     \end{tabular}
   \label{tab:freqs_0001_crystal}
@@ -2667,19 +2673,19 @@ These results are shown in Table \ref{tab:freqs_11-20_crystal}.
 \begin{table}[!h]
   \centering
   \caption{Stretch wavenumbers $\tilde{\nu}$ for both of the OD groups at the \textbf{(11\=20)} surface for the three most stable species.
-Frequencies were calculated at the B3LYP+D3 and PBE+D3 level of theory with basis set 2, Wavenumbers including anharmonic corrections $\tilde{\nu}_\textrm{anh}$ are also given.
+Frequencies were calculated at the B3LYP+D3 and PBE+D3 level of theory with basis set 7, Wavenumbers including anharmonic corrections $\tilde{\nu}_\textrm{anh}$ are also given.
 VASP results were obtained with a plane wave basis and PBE+D2 corrections.
 The abbreviations stand for: iCa2 inter-CUSa$\parallel$O-$\mu_2$, Cb2 CUSb$\parallel$O-$\mu_2$ and iCb2 inter-CUSb$\parallel$O-$\mu_2$.}
-  \begin{tabular}{ccc|cc|c}
+  \begin{tabular}{ccc|cc|c|c}
   \toprule
-   & PBE& & B3LYP & &VASP result\\
-  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\midrule
-  iCa2: OD$_{\textrm{surf}}$ &2682 &2599 &2773 &2695 & 2694\\
-  iCa2: OD$_{\textrm{ads}}$  &2728 &2644 &2811 &2729 & 2731\\
-  Cb2: OD$_{\textrm{surf}}$  &1658 &1310 &2019 &1722 & 1711\\
-  Cb2: OD$_{\textrm{ads}}$   &2769 &2687 &2843 &2765 & 2785\\
-  iCb2: OD$_{\textrm{surf}}$ &2657 &2595 &2778 &2694 & 2689\\
-  iCb2: OD$_{\textrm{ads}}$  &2688 &2569 &2777 &2689 & 2692\\\bottomrule
+   & PBE& & B3LYP & &VASP result&Exp.\\
+  stretch & $\tilde{\nu}$ [cm$^{-1}$] &$\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$] &$\tilde{\nu}$ [cm$^{-1}$] & $\tilde{\nu}_\textrm{anh}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]&$\tilde{\nu}$ [cm$^{-1}$]\\\midrule
+  iCa2: OD$_{\textrm{surf}}$ &2682 &2599 &2773 &2695 & 2694&2762\\
+  iCa2: OD$_{\textrm{ads}}$  &2728 &2644 &2811 &2729 & 2731&2812\\
+  Cb2: OD$_{\textrm{surf}}$  &1658 &1310 &2019 &1722 & 1711&-\\
+  Cb2: OD$_{\textrm{ads}}$   &2769 &2687 &2843 &2765 & 2785&2839\\
+  iCb2: OD$_{\textrm{surf}}$ &2657 &2595 &2778 &2694 & 2689&-\\
+  iCb2: OD$_{\textrm{ads}}$  &2688 &2569 &2777 &2689 & 2692&-\\\bottomrule
   \end{tabular}
   \label{tab:freqs_11-20_crystal}
 \end{table}
@@ -3550,7 +3556,8 @@ $P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm
 \def\thefigure{E.\arabic{figure}}
 \def\thetable{E.\arabic{table}}
 \section{Crystal Basis Set}\label{app_combined_basis}
-The combined basis set, containing high angular momentum basis functions was not a standard basis set implemented in CRYSTAL but a individualized one. For this reason the input is given here:
+The combined basis set, containing high angular momentum basis functions was not a standard basis set implemented in CRYSTAL but a individualized one, made by Dr. Denis Usvyat, HU Berlin.
+For this reason the input is given here:
 \\
 \begin{spacing}{0.5}
 {\tiny \textit{Al atom:}\\
