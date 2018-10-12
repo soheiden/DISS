@@ -1975,19 +1975,21 @@ Instead the classical movement of the nuclei at a specific temperature is taken 
 Respective AIMD trajectories were calculated at $300\,$K for the clean surface (30 layers) and the three most stable adsorbed structures (inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$, 10 layers each), starting from the minimum structure with no velocities.
 The presented spectra are merely preliminary results, since the propagation duration is substantially too short, so that one cannot rule out the possibility that the system is not converged properly.
 Usually, for a converged study, a preequilibration phase of several ps is assumed and afterwards the production run is up to $100\,$ps or even more, but these results still give a good first glimpse to what the spectrum could look like.
+Here however, for the clean surface $3\,$ps of equilibration was considered and the spectrum was evaluated from $2\,$ps of trajectory.
+For the adsorbed species, the total propagation time was $3.6\,$ps and also the last $2\,$ps were examined for the power spectrum.
+Also in all cases a Hann window function was applied\cite{Ohto2015} to gain better smoothness, but which does not affect the peak positions.
 
 
-The shown ``intensities'' are more or less probabilities and correspond to oscillator amplitudes and can not be compared reasonably to the IR intensities obtained from BEC or dipole corrected normal modes.
+The shown ``intensities'' are probabilities and correspond to oscillator amplitudes and can not be compared reasonably to the IR intensities obtained from BEC or dipole corrected normal modes.
 Nonetheless it serves as a useful approximation for a first impression.
 
 
-For the clean surface, the 30 layer model was applied, with a propagation duration of $5\,$ps.
+For the clean surface, the 30 layer model was applied, with a propagation duration of $5\,$ps, but only the last $2\,$ps were considered for the autocorrelation function.
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/11-20/comp_cleansurf_all.eps}%spec_surf_30layer-300K.eps}
-             \caption{Power spectrum of the clean surface of the 30 layer slab, calculated from velocity-velocity autocorrelation function of a canonical (NVT) AIMD trajectory at $300\,$K (5000 steps, $5\,$ps).
+             \caption{Power spectrum of the clean surface of the 30 layer slab, calculated from velocity-velocity autocorrelation function for the last $2\,$ps of a canonical (NVT) AIMD trajectory at $300\,$K (in total 5000 steps, $5\,$ps).
 In addition to the power spectrum, the stick spectra of the dipole corrected normal modes for different slab sizes are shown.
-In the high energy range tiny wiggles occur because no window function was used to smoothen the spectrum.
 The quantity given on the y-axis is $\mu^2$ for the normal mode results and VDOS for the power spectrum.} \label{abb:velvelclean}
 \end{figure}
 As for the normal mode results, all peaks are below $900\,$cm$^{-1}$, see Figure \ref{abb:velvelclean}.
@@ -2014,7 +2016,7 @@ In the lattice region, as it could be observed for the clean surface as well, th
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
     \subfigure[inter-CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.54\textwidth]{figures/11-20/spec_d2o_iCb2-300K_comp.eps}}
              \caption{Power spectra are shown in red, obtained from NVT AIMD trajectories at $300\,$K for the geometries (starting points were geometry optimized structures) of the most stable structures via velocity-velocity autocorrelation function.
-Duration of the trajectories is $3.68\,$ps for inter-CUSa$\parallel$O-$\mu_2$, $3.67\,$ps for CUSb$\parallel$O-$\mu_2$ and $3.68\,$ps for inter-CUSb$\parallel$O-$\mu_2$.
+Duration of the trajectories is $3.68\,$ps for inter-CUSa$\parallel$O-$\mu_2$, $3.67\,$ps for CUSb$\parallel$O-$\mu_2$ and $3.68\,$ps for inter-CUSb$\parallel$O-$\mu_2$, but for the spectra shown, only the last $2\,$ps were studied for the VDOS.
 In black the spectrum with intensities ($\propto\mu^2$) from dipole corrected normal modes is shown (10 layer slab).}
             \label{abb:velvel_ads_spec}
 \end{figure}
