@@ -130,8 +130,8 @@
 
 %Titelseite
 \title{
-Water at $\upalpha$-Alumina:\\
-  Energetics and Kinetics of Adsorbate Systems\vspace{2\baselineskip}}
+Water at $\upalpha$-Alumina Surfaces:\\
+  Energetics, Dynamics and Kinetics\vspace{2\baselineskip}}
 \subtitle{\normalfont\sffamily Dissertation zur Erlangung des akademischen Grades\\
   {\frq}doctor rerum naturalium{\flq} (Dr. rer. nat.)\\
   in der Wissenschaftsdisziplin Theoretische Chemie}
@@ -163,16 +163,33 @@ Drittgutachter:&PD Dr. Ralf Tonner (Uni Marburg) \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%Inhaltsverzeichnis
+\renewcommand{\contentsname}{Contents}
+\clearpage
+%\pagestyle{empty}
+%\renewcommand*{\chapterpagestyle}{empty}
+\tableofcontents
+\clearpage
+%\pagestyle{useheadings}
+%\renewcommand*{\chapterpagestyle}{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Abkürzungsverzeichnis?
+%Abbildungsverzeichnis?
+%Tabellenverzeichnis?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \addchap{Preamble}
 The importance of surface science in our industrialized world is overwhelming.
 Most processes in chemical industry are carried out with the help of (heterogeneous) catalysts\cite{Ago2005,Cargnello2012,Knozinger1978} which speed up reactions by lowering the reaction barrier.
-The advantage of heterogeneous over homogeneous catalysts is that these do not need to be separated from the reactands and the product after the process, which is often a costly step in the production of chemicals.
-It is therefore desirable to understand heterogeneous catalytic processes by learning more about the microscopic phenomena, which take place on the surface of materials especially by computational methods because it can deliver basic understanding on the atomic level.
+The advantage of heterogeneous over homogeneous catalysts is that these do not need to be separated from the reactants and the product after the process, which is often a costly step in the production of chemicals.
+It is therefore desirable to understand heterogeneous catalytic processes by learning more about the microscopic phenomena, which take place on the surface of materials especially by computational methods because they can deliver basic understanding on the atomic level.
 Metal oxide materials are commonly used as catalysts as well as catalyst support materials.
 Hence, understanding their properties in contact with chemicals is crucial.
-In this work, we consider water, which can act as a reactand, solvent or also impurity in aforementioned processes due to its ubiquity.
+In this work, we consider water, which can act as a reactant, solvent or also impurity in aforementioned processes due to its ubiquity.
 
 
+\todo{lieber viele andere Gründe warum es interessant ist..}
 Aluminum is contained in some rocket fuels as a reduction agent, so as a result alumina (Al$_2$O$_3$) particles are ejected into the atmosphere during the launch of a spacecraft\cite{Elam1998}.
 The start of one space shuttle can produce around $276,000\,$kg of alumina particles\cite{Potter1978}.
 Measurements show that approximately one third of these particles can be deposited in the stratosphere\cite{Cofer1978} (in an altitude between $15$ and $50\,$km above the surface of the earth).
@@ -202,21 +219,24 @@ and more often as a co-catalyst, for example in the ethylene epoxidation\cite{Oe
  \textrm{C}_2\textrm{H}_5\textrm{SH} + \textrm{H}_2  \xrightarrow{cat.} \textrm{C}_2\textrm{H}_6 + \textrm{H}_2\textrm{S}
 \end{equation*}
 
+\todo{Different forms of alumina exist, $\upalpha$, $\beta$ and $\gamma$-Al$_2$O$_3$, but the focus in this work lies on $\upalpha$-alumina.
+Also for these different forms, different terminations can be observed.
+Their stability differs, (0001) (1\=102) and (11\=20)...}
 The structure of $\upalpha$-alumina has been well known for decades and was studied extensively (\textit{e.g.} \cite{Passerini1930,wyckoff1931}).
 It crystallizes in the hexagonal cell with $\vec{a}=\vec{b}\neq \vec{c}$, with an angle of $60$\textdegree{} between the cell vectors $\vec{a}$ and $\vec{b}$.
 \\
 
 This work divides into three different topics on two different $\upalpha$-alumina surface cuts:\\
 (i) The (11\=20) surface has not been studied to a great extent so far.
-Hence we first are interested in the structure of the clean surface, the adsorption of water in the low coverage limit and also with higher coverages.
+Hence we first are interested in the structure of the clean surface, the adsorption of water in the low coverage limit and also with higher coverages, calculated by density functional theory (DFT) with the  generalized gradient approximation (GGA) functional PBE (by Perdew, Burke and Ernzerhof).
 We search for stable molecular and dissociative minima and the reactions connecting these minima: dissociation and diffusion reactions to study the mobility and reactivity of adsorbed groups.
 In addition to that we want to calculate vibrational frequencies to compare with experimental research and help to understand and interpret their findings.
 
 
-(ii) Nowadays, a typical standard method to treat periodic surface systems is density functional theory with the GGA functional PBE.
-This functional however is known to underestimate reaction barriers and hence overestimate the reaction rate constant.
+(ii) Nowadays, a typical standard method to treat periodic surface systems is DFT with the GGA functional PBE.
+This functional however is known to underestimate reaction barriers and hence overestimate reaction rate constants.
 Improving this issue is a great step towards the understanding of surface reactions like dissociation and diffusion.
-We want to achieve this by employing a hybrid functional and a wave function-based method (perturbation theory) for an exemplary hydrogen diffusion reaction at the (0001) surface.
+We want to achieve this by employing a hybrid functional and a wave function-based method (local M\o{}ller-Plesset perturbation theory of second order) for an exemplary hydrogen diffusion reaction, in this case at the (0001) surface.
 
 
 (iii) Molecular beam experiments have recently shown that water is able to adsorb both molecularly and dissociatively on an $\alpha$-Al$_{\text{2}}$O$_{\text{3}}$(0001) surface\cite{Wirth2014}.
@@ -234,86 +254,73 @@ In this work \textit{ab initio} molecular dynamics calculations were conducted t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Inhaltsverzeichnis
-\renewcommand{\contentsname}{Contents}
-\clearpage
-%\pagestyle{empty}
-%\renewcommand*{\chapterpagestyle}{empty}
-\tableofcontents
-\clearpage
-%\pagestyle{useheadings}
-%\renewcommand*{\chapterpagestyle}{plain}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Abkürzungsverzeichnis?
-%Abbildungsverzeichnis?
-%Tabellenverzeichnis?
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Theory und Methodology}
+\chapter{Methodology}
 In this chapter the basics of the theoretical methods applied in this work shall be explained.
-It starts from the ideas of Hartree-Fock and density functional theory, going to more developed methods like hybrid functionals and perturbation theory, over periodic boundary conditions, to the specialties when dealing with atom centered bases to \textit{ab initio} molecular dynamics.
-Then we will proceed with frequency calculations and intensities to transition state theory.
-Most basic theory parts of this chapter are based on \cite{jensen}, \cite{Gross03} and \cite{szabo}.
+\todo{Reihenfolge entsprechend anpassen!} It starts from the ideas of Hartree-Fock and density functional theory, going to more sophisticated methods like hybrid functionals and perturbation theory, over periodic boundary conditions, to the specialties when dealing with atom centered bases and to \textit{ab initio} molecular dynamics.
+Then we will proceed with frequency calculations and intensities needed for the interpretation of vibrational spectra to transition state theory to compute reaction rates, and finally.
+Most basic theory parts of this chapter are based on References \cite{jensen}, \cite{Gross03} and \cite{szabo}.
 
-
-For all chemical relevant systems, theoretical descriptions are based on the calculation of the electronic structure.
-For this, the first step is to separate electronic and nucleic degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is legitimate due to the largely different masses of electrons and nuclei.
-With this approximation, the electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic wave function $\Psi_e(\{\vec{r}\})$ and electronic energy $E_e$ is
+\section{The Electronic Schr\"{o}dinger Equation}
+The theoretical description of chemical systems is often based on the calculation of their electronic structure.
+For this, the first step is to separate electronic and nuclear degrees of freedom as introduced by the Born-Oppenheimer approximation\cite{bornoppenheimer}, which is appropriate due to the largely different masses of electrons and nuclei.
+Within this approximation, an electronic Schrödinger equation is solved separately from a nuclear Schrödinger equation (or its classical counterpart).
+The electronic Schrödinger equation for the time independent case  with the electronic Hamiltonian $\hat{H}_e$, the electronic wave function $\Psi_e(\{\vec{r}_i\})$ and electronic energy $E_e$ is (we neglect spin for the moment)
 \begin{equation}\label{eq:tise}
  \hat{H}_e\Psi_e(\{\vec{r}_i\})=E_e\Psi_e(\{\vec{r}_i\}).
 \end{equation}
 The wave function $\Psi_e(\{\vec{r}_i\})$ is a function of the coordinate vectors $\vec{r}_i$ ($i=1,...,N_e$), with the number of electrons $N_e$.
-The Hamiltonian in atomic units contains the kinetic energy of the electrons, the Coloumb interaction of the electrons and the electron-nuclei interaction:
+$\Psi_e$ depends also parametrically on the nuclear coordinates, $\{\vec{R}_A\}$, which is not explicitly indicated here.
+The Hamiltonian in atomic units contains the kinetic energy of the electrons, the Coloumb interaction between the electrons and between electrons and nuclei:
 \begin{equation}
- \hat{H}_e= \frac{1}{2}\sum_i^{N_e}\vec{\nabla}_i^2 - \sum_A^{N_A}\sum_i^{N_e}\frac{Z_A}{r_{iA}} + \sum_{i<j}^{N_e}\frac{1}{r_{ij}}
+ \hat{H}_e= -\frac{1}{2}\sum_i^{N_e}\vec{\nabla}_i^2 - \sum_A^{N_A}\sum_i^{N_e}\frac{Z_A}{r_{iA}} + \sum_{i<j}^{N_e}\frac{1}{r_{ij}}
 \end{equation}
-The first term is the kinetic energy of the electrons, the second describes the Coulomb interaction of electrons and nuclei (there are $N_A$ nuclei) and the third term gives the Coulomb repulsion between electrons.
+The first term is the kinetic energy oerator of the electrons, the second describes the Coulomb interaction between electrons and nuclei (there are $N_A$ nuclei), and the third term gives the Coulomb repulsion between electrons.
+$r_{ij}$ is the distance between electrons $i$ and $j$, and $r_{iA}$ denotes the distance between electron $i$ and nucleus $A$.
 This equation is written in atomic units for sake of simplicity.
-This sets some of the fundamental constants to 1, \textit{i.e.} $a_0=m_e=e=\hbar=4\pi\varepsilon_0=1$ ($a_0$ Bohr radius, $m_e$ electron mass, $\hbar=h/(2\pi)$ reduced Planck's constant and Coulomb's constant $1/(4\pi\varepsilon_0)$).
+In atomic units we have $a_0=m_e=e=\hbar=4\pi\varepsilon_0=1$; $a_0$ is the Bohr radius, $m_e$ the electron mass, $\hbar=h/(2\pi)$ is the reduced Planck's constant and $\varepsilon_0$ is the dielectric constant (of vacuum).
 
 For large systems, %(more than electrons),
-the solution of Equation (\ref{eq:tise}) gets computationally demanding.
+the solution of Equation (\ref{eq:tise}) gets computationally demanding, which is why further approximations are needed.
+The approximations used here are based either on wavefunction theory (WFT) or density functional theory (DFT).
 
-\section{Hartree-Fock Theory}
-In order to solve the Schr\"{o}dinger equation for more than one electron, in most cases approximations must be made\cite{szabo}.
-One of them is the approximation of independent particles.
-The motion of one electron is considered to be independent from all other electrons, whose interactions are averaged.
-In this context, often the term "short-sighted" electron is used.
+\section{Wavefunction Theory}
+\subsection{Hartree-Fock Theory}
+HF theory is the simplest WFT to solve the electronic Schrödinger equation.
+It is based on the approximation of independent particles.
+The motion of one electron is considered to be independent from all other electrons; each electrons is only influenced by an averaged field by all other electrons.
 
 
 The electrons are described by one electron wavefunctions, that are called (spatial) orbitals $\psi_i(\vec{r})$.
 A spatial orbital $\psi_i$ describes the spatial distribution of the electron, such that the probability of finding the electron in the volume element $d\vec{r}$ is given by $|\psi_i(\vec{r})|^2d\vec{r}$.
-Usually spatial orbitals are orthonormalized:
+We assume the spatial orbitals to be orthonormalized:
 \begin{equation}
-\int \psi_i^\ast(\vec{r})\psi_j(\vec{r})d\vec{r}=\delta_{ij}
+\int \psi_i^\ast(\vec{r})\psi_j(\vec{r})d\vec{r}=\langle\psi_i|\psi_j\rangle=\delta_{ij}.
 \end{equation}
 $\delta_{ij}$ is the Kronecker delta which is $1$ for $i=j$ and $0$ else.
 
 
-To describe an electron completely one has to consider the spin, with the spin functions $\alpha(\omega)$, $\beta(\omega)$ with the spin variable $\omega$.
-These two functions give spin up and spin down.
+To describe an electron completely one has to consider the spin (``up'' and ``down''), with the spin functions $\alpha(\omega)$, $\beta(\omega)$ with the spin variable $\omega$.
 For the spin functions we have
 \begin{equation}
-\int_{-\infty}^{\infty}\alpha^\ast(\omega)\alpha(\omega)d\omega=\langle\alpha|\alpha\rangle=\langle\beta|\beta\rangle=1
+\int\alpha^\ast(\omega)\alpha(\omega)d\omega=\langle\alpha|\alpha\rangle=\langle\beta|\beta\rangle=1
 \end{equation}
-and $\langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0$ in the bra-ket notation.
-Spin orbitals, \textit{e.g.} $\chi(\vec{x})=\psi(\vec{r})\gamma(\omega)$ with $\gamma=\alpha, \beta$ contain information about the position and the spin of the electron.
-It is also possible to integrate out the spin for closed shell systems, which was done in this work.
+and $\langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0$ in the bra-ket notation\todo{this is now explained above?}.
+Spin orbitals, \textit{e.g.} $\chi(\vec{x})=\psi(\vec{r})\gamma(\omega)$ with $\gamma=\alpha, \beta$ and $\vec{x}=(\vec{r},\omega)$ contain information about the position and the spin of the electron.
+It is also possible to integrate out the spin, which was done in this work.
 
 
-The simplest ansatz for the total wavefunction would be a product of spin orbitals.
-Since electrons are indistinguishable and fermions with a spin of 1/2, the wavefunction must change its sign when interchanging any two electrons (antisymmetry principle).
+The simplest ansatz for the total, $N_e$-electron wavefunction would be a product of spin orbitals.
+Since electrons are indistinguishable and fermions with a spin of 1/2, the wavefunction must change its sign when interchanging any two electrons (antisymmetry principle):
 \begin{equation}
-\Psi(\vec{x}_1,...,\vec{x}_i,\vec{x}_j,...\vec{x}_{N_e})=-\Psi(\vec{x}_1,...,\vec{x}_j,\vec{x}_i,...\vec{x}_{N_e})
+\Psi(\vec{x}_1,...,\vec{x}_i,\vec{x}_j,...\vec{x}_{N_e})=-\Psi(\vec{x}_1,...,\vec{x}_j,\vec{x}_i,...\vec{x}_{N_e}).
 \end{equation}
-In other words, two electrons can not have the same set of quantum numbers as is stated in the Pauli principle, which follows from the antisymmetry of the wavefunction.
 
-This condition can be fulfilled in the Hartree-Fock theory (HF) by a Slater determinant, \textit{i.e.} an antisymmetrized product of spin orbitals.
+This condition is fulfilled in Hartree-Fock theory (HF) by using a single Slater determinant, \textit{i.e.} an antisymmetrized product of spin orbitals, as an ansatz for the ground state (``0''), $N_e$-electron wave function:
 \begin{equation}
-\Psi^{HF}_{0}({\vec{x}_1},\dots\vec{x}_N) = \frac{1}{\sqrt{N!}}\begin{vmatrix}{\chi_1}({\vec{x}_1})&{\chi_2}({\vec{x}_1})&\dots&{\chi_N}({\vec{x}_1})\\
+\Psi^{HF}_{0}({\vec{x}_1},\dots\vec{x}_N) = \frac{1}{\sqrt{N_e!}}\begin{vmatrix}{\chi_1}({\vec{x}_1})&{\chi_2}({\vec{x}_1})&\dots&{\chi_N}({\vec{x}_1})\\
 {\chi_1}({\vec{x}_2})&{\chi_2}({\vec{x}_2})&\dots&{\chi_N}({\vec{x}_2})\\
  \vdots&\vdots&\ddots&\vdots \\
-{\chi_1}({\vec{x}_N})&{\chi_2}({\vec{x}_N})&\dots&{\chi_N}({\vec{x}_N})
+{\chi_1}({\vec{x}_N})&{\chi_2}({\vec{x}_N})&\dots&{\chi_N}({\vec{x}_N}).
 \end{vmatrix} 
 \end{equation}
 The choice of a determinant has two advantages: the change of two lines or rows changes the sign and if two lines or rows are the same, the value of the determinant is $0$. Both  are required by the Pauli principle.
