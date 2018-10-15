@@ -223,7 +223,7 @@ and more often as a co-catalyst, for example in the ethylene epoxidation\cite{Oe
 Also for these different forms, different terminations can be observed.
 Their stability differs, (0001) (1\=102) and (11\=20)...}
 The structure of $\upalpha$-alumina has been well known for decades and was studied extensively (\textit{e.g.} \cite{Passerini1930,wyckoff1931}).
-It crystallizes in the hexagonal cell with $\vec{a}=\vec{b}\neq \vec{c}$, with an angle of $60$\textdegree{} between the cell vectors $\vec{a}$ and $\vec{b}$.
+It crystallizes in the hexagonal cell with $|\vec{a}|=|\vec{b}|\neq |\vec{c}|$, with an angle of $60$\textdegree{} between the cell vectors $\vec{a}$ and $\vec{b}$.
 \\
 
 This work divides into three different topics on two different $\upalpha$-alumina surface cuts:\\
@@ -236,7 +236,7 @@ In addition to that we want to calculate vibrational frequencies to compare with
 (ii) Nowadays, a typical standard method to treat periodic surface systems is DFT with the GGA functional PBE.
 This functional however is known to underestimate reaction barriers and hence overestimate reaction rate constants.
 Improving this issue is a great step towards the understanding of surface reactions like dissociation and diffusion.
-We want to achieve this by employing a hybrid functional and a wave function-based method (local M\o{}ller-Plesset perturbation theory of second order) for an exemplary hydrogen diffusion reaction, in this case at the (0001) surface.
+We want to achieve this by employing a hybrid functional and a wave function-based method (local M\o{}ller Plesset perturbation theory of second order) for an exemplary hydrogen diffusion reaction, in this case at the (0001) surface.
 
 
 (iii) Molecular beam experiments have recently shown that water is able to adsorb both molecularly and dissociatively on an $\alpha$-Al$_{\text{2}}$O$_{\text{3}}$(0001) surface\cite{Wirth2014}.
@@ -250,14 +250,17 @@ In this work \textit{ab initio} molecular dynamics calculations were conducted t
 % The goal of this project is to understand why dissociation is favored and understand more about the beam scattering processes.
 % To model these experimental method, we want to do \textit{ab initio} molecular dynamics simulations, where a water molecule is ``shot'' at the surface.
 
+
+For this we first want to introduce the methodology that the calculations are based on, then proceed with the three subprojects just outlined and at the end give a summary.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Methodology}
 In this chapter the basics of the theoretical methods applied in this work shall be explained.
-\todo{Reihenfolge entsprechend anpassen!} It starts from the ideas of Hartree-Fock and density functional theory, going to more sophisticated methods like hybrid functionals and perturbation theory, over periodic boundary conditions, to the specialties when dealing with atom centered bases and to \textit{ab initio} molecular dynamics.
-Then we will proceed with frequency calculations and intensities needed for the interpretation of vibrational spectra to transition state theory to compute reaction rates, and finally.
+It starts from the ideas of wavefunciton based theory, namely Hartree-Fock and M\o{}ller Plesset perturbation theory, and density functional theory, goig over periodic boundary conditions, to the advantages and disadvantages when dealing with plane waves and atom centered bases, and continues with \textit{ab initio} molecular dynamics.
+Then we will proceed with frequency calculations and intensities needed for the interpretation of vibrational spectra to transition state theory to compute reaction rates, and finally computational details of the applied software.
 Most basic theory parts of this chapter are based on References \cite{jensen}, \cite{Gross03} and \cite{szabo}.
 
 \section{The Electronic Schr\"{o}dinger Equation}
@@ -281,16 +284,16 @@ In atomic units we have $a_0=m_e=e=\hbar=4\pi\varepsilon_0=1$; $a_0$ is the Bohr
 
 For large systems, %(more than electrons),
 the solution of Equation (\ref{eq:tise}) gets computationally demanding, which is why further approximations are needed.
-The approximations used here are based either on wavefunction theory (WFT) or density functional theory (DFT).
+The approximations used here are based either on wave function theory (WFT) or density functional theory (DFT).
 
-\section{Wavefunction Theory}
+\section{Wave Function Theory}
 \subsection{Hartree-Fock Theory}
-HF theory is the simplest WFT to solve the electronic Schrödinger equation.
+Hartree-Fock theory (HF) is the simplest WFT to solve the electronic Schrödinger equation.
 It is based on the approximation of independent particles.
-The motion of one electron is considered to be independent from all other electrons; each electrons is only influenced by an averaged field by all other electrons.
+The motion of one electron is considered to be independent from all other electrons; each electron is only influenced by an averaged field by all other electrons.
 
 
-The electrons are described by one electron wavefunctions, that are called (spatial) orbitals $\psi_i(\vec{r})$.
+The electrons are described by one electron wave functions, that are called (spatial) orbitals $\psi_i(\vec{r})$.
 A spatial orbital $\psi_i$ describes the spatial distribution of the electron, such that the probability of finding the electron in the volume element $d\vec{r}$ is given by $|\psi_i(\vec{r})|^2d\vec{r}$.
 We assume the spatial orbitals to be orthonormalized:
 \begin{equation}
@@ -304,39 +307,41 @@ For the spin functions we have
 \begin{equation}
 \int\alpha^\ast(\omega)\alpha(\omega)d\omega=\langle\alpha|\alpha\rangle=\langle\beta|\beta\rangle=1
 \end{equation}
-and $\langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0$ in the bra-ket notation\todo{this is now explained above?}.
+and $\langle\alpha|\beta\rangle=\langle\beta|\alpha\rangle=0$ in the bra-ket notation.
 Spin orbitals, \textit{e.g.} $\chi(\vec{x})=\psi(\vec{r})\gamma(\omega)$ with $\gamma=\alpha, \beta$ and $\vec{x}=(\vec{r},\omega)$ contain information about the position and the spin of the electron.
 It is also possible to integrate out the spin, which was done in this work.
 
 
-The simplest ansatz for the total, $N_e$-electron wavefunction would be a product of spin orbitals.
-Since electrons are indistinguishable and fermions with a spin of 1/2, the wavefunction must change its sign when interchanging any two electrons (antisymmetry principle):
+The simplest ansatz for the total, $N_e$-electron wave function would be a product of spin orbitals.
+Since electrons are indistinguishable and fermions with a spin of 1/2, the wave function must change its sign when interchanging any two electrons (antisymmetry principle):
 \begin{equation}
 \Psi(\vec{x}_1,...,\vec{x}_i,\vec{x}_j,...\vec{x}_{N_e})=-\Psi(\vec{x}_1,...,\vec{x}_j,\vec{x}_i,...\vec{x}_{N_e}).
 \end{equation}
 
-This condition is fulfilled in Hartree-Fock theory (HF) by using a single Slater determinant, \textit{i.e.} an antisymmetrized product of spin orbitals, as an ansatz for the ground state (``0''), $N_e$-electron wave function:
+This condition is fulfilled in Hartree-Fock theory by using a single Slater determinant, \textit{i.e.} an antisymmetrized product of spin orbitals, as an ansatz for the ground state (``0''), $N_e$-electron wave function:
 \begin{equation}
 \Psi^{HF}_{0}({\vec{x}_1},\dots\vec{x}_N) = \frac{1}{\sqrt{N_e!}}\begin{vmatrix}{\chi_1}({\vec{x}_1})&{\chi_2}({\vec{x}_1})&\dots&{\chi_N}({\vec{x}_1})\\
 {\chi_1}({\vec{x}_2})&{\chi_2}({\vec{x}_2})&\dots&{\chi_N}({\vec{x}_2})\\
  \vdots&\vdots&\ddots&\vdots \\
-{\chi_1}({\vec{x}_N})&{\chi_2}({\vec{x}_N})&\dots&{\chi_N}({\vec{x}_N}).
-\end{vmatrix} 
+{\chi_1}({\vec{x}_N})&{\chi_2}({\vec{x}_N})&\dots&{\chi_N}({\vec{x}_N})
+\end{vmatrix} .
 \end{equation}
-The choice of a determinant has two advantages: the change of two lines or rows changes the sign and if two lines or rows are the same, the value of the determinant is $0$. Both  are required by the Pauli principle.
+%The choice of a determinant has two advantages: the change of two lines or rows changes the sign and if two lines or rows are the same, the value of the determinant is $0$. Both  are required by the Pauli principle.
 % When calculating the probability distribution of two electrons with the same spin within the Slater determinant approach, a cross term correcting the Coulomb interaction occurs which is called exchange correlation.
 
 
 With the variational principle the energy of the system can be minimized:
 \begin{equation}
-E_0=\langle\Psi^{HF}_0|\hat{H}_e|\Psi^{HF}_0\rangle
+E_0=\langle\Psi^{HF}_0|\hat{H}_e|\Psi^{HF}_0\rangle.
 \end{equation}
-The best wavefunction approximated by a single Slater determinant gives the lowest energy, \textit{i.e.} the better the applied wavefunction is, the lower gets the energy.
-Minimizing the energy with respect to the choice of the spin orbitals results in the (restricted) Hartree-Fock equations for a closed shell system, which applies under the constraint that $\langle \psi_i|\psi_j\rangle=\delta_{ij}$:
+The best wave function approximated by a single Slater determinant gives the lowest energy. %, \textit{i.e.} the better the applied wave function is, the lower gets the energy.
+Minimizing the energy with respect to the choice of the spin orbitals results in the Hartree-Fock equations.
+These are one-electron, non-linear Schrödinger equations for a single electron, called here electron $1$ (with spatial coordinate $\vec{r}_1)$.
+For a closed shell system, after spin has been integrated out, these read:
 \begin{equation}\label{eq:hf}
-\hat{f}(i)\psi_i(\vec{r})=\varepsilon\psi_i(\vec{r})
+\hat{f}(\vec{r}_1)\psi_i(\vec{r}_1)=\varepsilon_i\psi_i(\vec{r}_1)
 \end{equation}
-with the orbital energy $\varepsilon$ and the Fock operator $\hat{f}(i)$ that is an effective one-electron operator:
+with the orbital energy $\varepsilon_i$ and the Fock operator $\hat{f}(\vec{r}_1)$ that is an effective one-electron operator, given in this case as
 % \begin{equation}
 % \hat{f}(i)=-\frac{1}{2}\nabla^2_i - \sum_{A=1}^{N_e}\frac{Z_A}{r_{iA}} + v^{HF}(i)
 % \end{equation}
@@ -346,86 +351,163 @@ with the orbital energy $\varepsilon$ and the Fock operator $\hat{f}(i)$ that is
 % An initial guess for the spin orbitals is made, with this the average field is calculated.
 % Solving the eigenvalue equation (\ref{eq:hf}) gives a new set of spin orbitals.
 % This procedure is repeated until convergence is achieved.
-The Fock operator is defined as
 \begin{equation}
- \hat{f}(i) = \hat{h}(i) + \sum_{j=1}^{N_e/2}[2\hat{J}_j(i) - \hat{K}_j(i)]
+ \hat{f}(\vec{r}_1) = \hat{h}(\vec{r}_1) + \sum_{j=1}^{N_e/2}[2\hat{J}_j(\vec{r}_1) - \hat{K}_j(\vec{r}_1)]
 \end{equation}
-where $\hat{h}(i)$ is the one-electron Hamiltonian, $\hat{J}$ is the Coulomb operator and $\hat{K}$ is the exchange operator.
-$\hat{J}$ refers to the ``classical'' Coulomb interaction, in the next section introduced as $v_H$ and $\hat{K}$ represents exchange due to the antisymmetry of the wavefunction that reduces the Coulomb repulsion.
-The latter two are two-electron operators, depending on electrons $i$ and $j$.
-The sum is only to $N_e/2$ because all spatial orbitals are doubly occupied in closed shell systems considered here.
-Furthermore we have
-\begin{equation}
- \hat{H}_e\neq\sum_{i=1}^{N_e}\hat{f}(i)
-\end{equation}
-because the electron-electron interaction is considered twice.
+where $\hat{h}(\vec{r}_1)=-\frac{1}{2}\vec{\nabla}_1^2 - \sum_{A=1}^{N_A}\frac{Z_A}{r_{iA}}$ is the one-electron Hamiltonian, $\hat{J}(\vec{r}_1)$ is the Coulomb operator and $\hat{K}(\vec{r}_1)$ is the exchange operator.
+$\hat{J}$ refers to the ``classical'' Coulomb interaction and $\hat{K}$ represents exchange due to the antisymmetry of the wave function.
+The sum is only to $N_e/2$ because all spatial orbitals are doubly occupied in closed shell systems as considered here.
 
 
-The solution of the Hartree-Fock equations gives a set of orthonormal HF-spin orbitals with orbital energies $\varepsilon_i$.
-The orbitals are occupied according to the aufbau principle (the lowest $N_e/2$ orbitals), the remaining orbitals are unoccupied, also referred to as virtual. 
+The solution of the Hartree-Fock equations gives a set of orthonormal HF orbitals with orbital energies $\varepsilon_i$.
+The orbitals are occupied according to the aufbau principle (the lowest $N_e/2$ orbitals), further orbitals are unoccupied, also referred to as virtual. 
 
 In principle, Equation (\ref{eq:hf}) gives an infinite number of solutions.
-In practice however, a finite set of basis functions is introduced.
-The larger the basis, the lower the expectation value for the energy will be.
+In practice, however, a finite set of $K$ spatial basis functions is introduced, giving $K$ spatial molecular orbitals (or $2K$ spin orbitals).
+The larger the basis, the lower the expectation value for the energy can be according to the variational principle.
 
-With a basis ($\{\Phi_\mu\}$) any function can be expaned as a sum:
+Specifically if we introduce a basis $\{\Phi_\mu\}$, \textit{e.g.}, of atomic-orbital like functions, the molecular orbitals can be expaned as a sum:
 \begin{equation}\label{eq:basis}
-% f(\vec{r})=\sum_{i=1}^{N_e}a_i\psi_i(\vec{r})
-\psi_i=\sum_\mu^Kc_{i\mu}\Phi_\mu
+% f(\vec{r})=\sum_{i=1}^{N_e}a_i\psi_i(\vec{r})C_{\mu i}\Phi_\mu.
+\psi_i=\sum_\mu^KC_{\mu i}\Phi_\mu
 \end{equation}
-The $c_{i\mu}$ are coefficients.
-In practice the sum is not complete, but limited to a number of $K$ orbitals.
+The $C_{\mu i}$ are coefficients.
+%In practice the sum is not complete, but limited to a number of $K$ orbitals.
 
 With this we can write the Hartree-Fock equation analog to (\ref{eq:hf}):
 \begin{equation}
- \hat{f}(i) \sum_\mu^Kc_{i\mu}\Phi_\mu = \varepsilon_i \sum_\mu^Kc_{i\mu}\Phi_\mu
+ \hat{f}(\vec{r}_1) \sum_\mu^KC_{\mu i}\Phi_\mu = \varepsilon_i \sum_\mu^KC_{\mu i}\Phi_\mu.
 \end{equation}
 We can deduce the Roothaan-Hall equation, if we use the matrix notation, multiply specific basis functions from the left and integrate:
 \begin{equation}\label{eq:RH}
  \doubleunderline{F} \vec{C}_i=\doubleunderline{S} \vec{C}_i\varepsilon_i
 \end{equation}
-with the Fock matrix $F_{\mu\nu}=\langle \Phi_\mu|\hat{f}(i)|\Phi_\nu\rangle$, the vector $\vec{C}_i$ containing the coefficients, the overlap matrix $S_{\mu\nu}=\langle \Phi_\mu|\Phi_\nu\rangle$ and the orbital eigenvalues $\varepsilon_i$.
+with the Fock matrix $F_{\mu\nu}=\langle \Phi_\mu|\hat{f}(\vec{r}_1)|\Phi_\nu\rangle$ and the overlap matrix $S_{\mu\nu}=\langle \Phi_\mu|\Phi_\nu\rangle$ and the orbital eigenvalues $\varepsilon_i$.
+Further, $\vec{C}_i=(C_{1i}, C_{2i},...,C_{Ki})$ is the coefficient vector corresponding to molecular orbital $i$.
 
-This equation can be solved iteratively with the self consistent field method (SCF) by taking a guess, solving the equation and then improving the guess accordingly.
+This equation can be solved iteratively with the self consistent field method (SCF) by taking a guess, solving the equation and then improving the guess for the next iteration accordingly, until convergence in energy and/or wave function is reached.
+
+
+\subsection{M\o{}ller Plesset Peturbation Theory}
+Hartree-Fock theory contains no electron correlation.
+In order to include correlation in wave function theory, it is necessary to apply so-called post-HF wave function methods.
+Although these calculations are significantly more computationally demanding they provide better results on a higher level of theory.
+From these, M\o{}ller Plesset peturbation theory of second order (MP2)\cite{mollerplesset} is one of the simplest methods to do so.
+The method is also known for periodic systems\cite{Suhai1984}\todo{add citation to literature.bib}.
+The method nicely accounts for dynamical correlation and also for dispersion interactions (see below).
+
+
+We assume that the wave function $\Psi^{(0)}$ is the ground state HF Slater determinant and is known.
+This however, is no eigenfunction of the electronic Hamiltonian but of an operator made up as the sum of the one-electron Fock operators, which defines an unperturbed reference system in M\o{}ller Plesset perturbation theory.
+In general, in perturbation theory a reference Hamiltonian $\hat{H}_0$ is perturbed by $\hat{V}$:
+\begin{equation}
+ \hat{H} = \hat{H}_0 + \lambda \hat{V}.
+\end{equation}
+$\hat{H}_0$ is the unperturbed Hamiltonian, here the sum of Fock operators, $\hat{H}_0=\sum_{i=1}^{N_e}\hat{f}(i)$, $\lambda$ is a parameter and $\hat{V}=\hat{H}_e - \hat{H}_0$.
+In general, $\hat{V}$ is considered as ``small'', compared to $\hat{H}_0$.
+The perturbed Schrödinger equation is given by (we refer to a single solution, here only the ground state):
+\begin{equation}\label{eq:SEmp2}
+ (\hat{H}_0 + \lambda \hat{V})\Psi = E\Psi.
+\end{equation}
+If $\lambda=0$, then $E=E^{(0)}$, $\hat{H} = \hat{H}_0$ and $\Psi=\Psi^{(0)}$.
+Generally, the perturbed energy and the perturbed wave function can be written by Taylor expansion around $\lambda=0$
+\begin{equation}\label{eq:psimp2}
+ \Psi = \Psi^{(0)} + \lambda \Psi^{(1)} + \lambda^2\Psi^{(2)} + ...,
+\end{equation}
+\begin{equation}\label{eq:Emp2}
+ E = E^{(0)} + \lambda E^{(1)} + \lambda^2E^{(2)} + ...
+\end{equation}
+The superscript $E^{(n)}$ is the correction at the n-th order of perturbation theory.\\
+Using equations (\ref{eq:psimp2}) and (\ref{eq:Emp2}) in (\ref{eq:SEmp2}) and gathering terms belonging to the same power ($n$) of $\lambda^{(n)}$, one obtains in the zeroth order:
+\begin{equation}
+ \hat{H}^{(0)}\Psi^{(0)}=(\sum_{i=1}^{N_e} \varepsilon_i)\Psi^{(0)},
+\end{equation}
+with the HF Slater determinant $\Psi^{(0)}$ and the HF orbital energies $\varepsilon_i$.\\
+The unperturbed energy $E^{(0)}$ is therefore:
+\begin{equation}
+ E^{(0)} = \langle\Psi^{(0)}|\hat{H}^{(0)}|\Psi^{(0)}\rangle=\sum\limits_{i=1}^{N_e}\varepsilon_i.
+\end{equation}
+In the first order one obtains
+\begin{equation}
+ E^{(1)} = \langle\Psi^{(0)}|\hat{V}|\Psi^{(0)}\rangle.
+\end{equation}
+Therefore, the M\o{}ller Plesset energy in first order, $E^{(0)}+E^{(1)}$, equals the Hartree-Fock energy $E_{HF}$.
+For the energy correction in second order, both occupied orbitals $i,j$ and unoccupied orbitals $k,l$ and their energies $\varepsilon$ have to be considered\footnote{$\langle ij|kl\rangle=\int\int\chi^\ast_i(1)\chi^\ast_j(2)\frac{1}{\vec{r}_{12}}\chi_k(1)\chi_l(2) d\vec{x}_1d\vec{x}_2$}:
+\begin{equation}
+ E^{(2)}=\sum\limits_{i}^{occ.}\sum\limits_{j>i}^{occ.}\sum\limits_{k}^{unocc.}\sum\limits_{l>k}^{unocc.} \frac{|\langle ij|kl\rangle - \langle ij|lk\rangle|^2}{\varepsilon_i + \varepsilon_j - \varepsilon_k - \varepsilon_l}.
+\end{equation}
+The MP2-corrected total energy is composed of the HF energy and the second order energy:
+\begin{equation}
+ E_{MP2} = E^{(0)}+E^{(1)} + E^{(2)} = E_{HF} + E^{(2)}.
+\end{equation}
+The second order energy accounts for electron correlation.
+However, a main limitation of MP2 is that the wave function of the zeroth order needs to be a good approximation of the real system and the perturbation should be rather small.
+If the zeroth order wave function describes the system poorly, the corrections need to be higher and eventually, convergence can be slow or not be achieved at all.
+In this case perturbation theory might not be a good option to describe correlation.
+
+
+A further development is the local M\o{}ller Plesset perturbation theory\cite{usvyat2015,usvyatbook,Maschio2007} of 2$^{\textrm{nd}}$ order (LMP2) as implemented in cryscor\cite{cryscor}.
+In contrast to regular MP2 that scales with $\mathcal{O}(N^5)$, local MP2 allows for scaling of $\mathcal{O}(N)$ with the number of atoms per unit cell $N$ so that it is considerably faster and more efficient also for larger systems.
+This is gained by a description of the electron correlation by localized orbitals since dynamical correlation is not a long-range effect but can be analyzed locally.
+\todo{periodic systems? scaling of $N^5$ also for periodic systems? Limitations of LMP2 (Wannier)?}
+%% While the occupied space is calculated with orthogonal localized orbitals this is not possible for the virtual space which is more diffuse and in order to be localized as well has to be computed with nonorthogonal orbitals.
+% This is easy applicable for occupied orbitals but not so easy for virtual orbitals: here the orthogonality has to be quit to become local.
+% Due to locality additional couplings occur (inter-pair coupling between individual amplitudes via the corresponding overlap matrix) which increases the computational costs.
+% To overcome this issue the Laplace transform\cite{ALMLOF1991,Haeser1992} is used, so that an AO basis is used.
+% The virtual orbitals are represented as highly localized projected atomic orbitals (PAOs)\cite{Pulay1983,Pulay1985}.
+% These PAOS are paired to so called ``pair domains''.
+% A drawback here is that for high accuracy the domains need to be rather large and do eventually not show smooth behaviour.
+% This may lead to discontinuities in potential energy surfaces, non-physical artifacts in energy differences if the domains are not chosen carefully (equally in all considered geometries)\cite{usvyat2015}.
 
 \section{Density Functional Theory}
+\subsection{Basics}
 An alternative to the wave function-based theories is density functional theory (DFT).
-It is based on the Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the electron density $n(\vec{r})$: there exists a one to one correspondence.
-If $\Psi(\{\vec{r}_i\})$ is a $N_e$-electron wavefunction, then the  electron density can be expressed as
+It is based on the first Hohenberg-Kohn theorem\cite{Hohenberg-Kohn1964} that connects the ground state electronic energy $E_0$ to the one-electron density $n(\vec{r}_1)$: there exists a one to one correspondence.
+If $\Psi(\{\vec{r}_i\})$ is a $N_e$-electron wave function (spin neglected here for convenience), then the one-electron density can be expressed as
 \begin{equation}\label{eq:electron-density}
- n(\vec{r})=N_\textrm{norm}\int ...
-\int \Psi^\ast(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N)\Psi(\vec{r},\vec{r}_2,\vec{r}_3...,\vec{r}_N) d \vec{r}_2...d \vec{r}_N
+ n(\vec{r}_1)=N_e\int ...
+\int \Psi^\ast(\vec{r}_1,\vec{r}_2,\vec{r}_3...,\vec{r}_N)\Psi(\vec{r}_1,\vec{r}_2,\vec{r}_3...,\vec{r}_N) d \vec{r}_2...d \vec{r}_N
 \end{equation}
 %integral starts with $d\vec{r}_2$? yes, one electron is fixed and the probabilities of the other electrons are evaluated}
-with the normalization factor $N_\textrm{norm}$ that equals $N_e$ if the wavefunction is normalized.
-The second Hohenberg-Kohn theorem, also called ``the variational principle of DFT'', proves that a test density $n^\prime(\vec{r})$ will give a higher or the same energy as the exact density:
+if the wave function is normalized to 1.
+The second Hohenberg-Kohn theorem, also called ``the variational principle of DFT'', proves that a test density $n^\prime(\vec{r}_1)$ will give a higher or the same energy as the exact density:
 \begin{equation}
- E_0^{exact}\leq E_0^{HK}[n^\prime(\vec{r})].
+ E_0^{exact}\leq E_0^{HK}[n^\prime(\vec{r}_1)].
 \end{equation}
 
 
-The total energy $E[n]$ can be determined as
+The total energy $E[n]$ can be determined as a consequence of the first Hohenberg-Kohn theorem as
 \begin{equation}
- E[n]=T[n] + V_{ext}[n] + V_{ee}[n]=\int n(\vec{r})v_{ext}(\vec{r})d\vec{r} + T[n]+E_H[n]+E_{xc}[n]
+ E[n]=T[n] + V_{ext}[n] + V_{ee}[n]=\int n(\vec{r}_1)v_{ext}(\vec{r}_1)d\vec{r}_1 + T[n]+E_H[n]+E_{xc}[n]
 \end{equation}
-with the kinetic energy $T[n]$, the potential energy $V_{ext}[n]$ for the external potential and the electron electron interaction $V_{ee}[n]$.
-It can also be expressed by the external potential $v_{ext}(\vec{r})$, the Hartree energy $E_H[n]$, corresponding to the classical Coulomb interaction and the exchange correlation energy $E_{xc}[n]$ for the non-classical exchange correlation interactions.
-A major advantage of DFT over wave function-based methods is the size: only a three dimensional system has to be considered for three spatial coordinates $n(x,y,z)$ (the spin coordinate was neglected), instead of a $3N_e$-dimensional system, %weglassen? (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional)}
-with $N_e$ being the number of electrons.
-The size of a system calculated with wave function methods increases exponentially with the number of electrons, while for density calculations we always have three spatial coordinates, regardless of the number of electrons.
-Problematic in this approach is that the exact form of the interacting kinetic energy $T[n]$ and the exchange correlation functional\footnote{to clarify the difference between a function and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas a functional (F[f]) gives a number from a function which depends on variables.} $E_{xc}[n]$ is unknown.
+with the kinetic energy $T[n]$, the "external" potential energy $V_{ext}[n]$ (from interaction of electrons with nuclei and possible external fields) and the electron electron interaction $V_{ee}[n]$.
+It can also be expressed by the external potential $v_{ext}(\vec{r}_1)=-\sum_{A=1}^{N_A}\frac{Z_A}{r_{1A}}$ in the absence of external fields, the Hartree energy $E_H[n]=\int\frac{n(\vec{r}_1)n(\vec{r}_2)}{r_{12}}d\vec{r}_1d\vec{r}_2$, corresponding to the classical Coulomb interaction, and the exchange correlation energy $E_{xc}[n]$ for the non-classical exchange correlation interactions to be defined later.
 
 
-Initially, calculating all energy components from the pure density was not very successful because the exact form of $T[n]$ and $E_{xc}[n]$ is not known and approximations, especially the ones for $T[n]$, delivered poor results so that instead wave function-based methods were applied commonly.
+A major advantage of DFT over wave function-based methods is the size of the variational calculus: without spin, only a three dimensional quantity has to be optimized for three spatial coordinates $n(x_1,y_1,z_1)$ in DFT, instead of a $3N_e$-dimensional quantity, $\Psi_e(\vec{r}_1,...,\vec{r}_{N_e})$ in the case of WFT. %weglassen? (three spatial and 1 spin coordinate, if necessary, which makes it 4N-dimensional)}
+
+Problematic in this approach is that the exact form of the interacting kinetic energy $T[n]$ and the exchange correlation functional\footnote{To clarify the difference between a function and a functional: in a function (\textit{e.g.} f(x)), a number is produced by a set of variables, whereas a functional (F[f]) gives a number from a function which depends on variables.} $E_{xc}[n]$ is unknown, except for simple model cases.
+
+\subsection{Kohn-Sham Equations and Choice of Exchange-Correlation Functionals}
+Initial attempts to calculate all energy components from the pure density were not very successful because the exact form of $T[n]$ and $E_{xc}[n]$ is not known and approximations, especially the ones for $T[n]$, delivered poor results so that instead wave function-based methods were applied commonly.
 In 1965 Kohn and Sham showed in their work\cite{Kohn-Sham1965} that the kinetic energy can be calculated from non-interacting auxiliary particles in a set of orbitals that is used for representing the electron density, \textit{i.e.} a test system with non-interacting electrons reflecting the real system's electron density is defined.
-The use of orbitals makes it possible to avoid $T[n]$\cite{Gross03}. %use the same methods and algorithms previously known from wave function methods
+The use of orbitals makes it possible to avoid a direct calculation of $T[n]$\cite{Gross03}. %use the same methods and algorithms previously known from wave function methods
 A variational calculation similar to HF leads to the so-called Kohn-Sham equations:
 \begin{equation}\label{eq:KS}
- \left(-\vec{\nabla}^2 + v_{ext}(\vec{r}) + v_{H}(\vec{r}) + v_{xc}(\vec{r}) \right)\psi^{KS}_i(\vec{r}) = \varepsilon_i\psi^{KS}_i(\vec{r})
+ \left(-\frac{1}{2}\vec{\nabla}^2_1 + v_{ext}(\vec{r}_1) + v_{H}(\vec{r}_1) + v_{xc}(\vec{r}_1) \right)\psi^{KS}_i(\vec{r}_1) = \varepsilon_i^{KS}\psi^{KS}_i(\vec{r}_1).
 \end{equation}
-with the kinetic energy based on the orbitals, the external potential $v_{ext}(\vec{r})$, the Hartree potential $v_{H}(\vec{r})$, the exchange-correlation potential $v_{xc}(\vec{r})=\frac{\partial E_{xc}[n]}{\partial n(\vec{r})}$, the Kohn-Sham orbitals $\psi^{KS}_i(\vec{r})$ and the Kohn-Sham orbital energy $\varepsilon_i$.
+Here, the density is calculated as
+\begin{equation}
+n(\vec{r}_1)=\sum_{i=1}^{N_e/2}2|\psi_i^{KS}(\vec{r}_1)|^2
+\end{equation}
+ and the kinetic energy as
+ \begin{equation}
+ T[n]=\sum_{i=1}^{N_e/2}2\langle\psi_i^{KS}|-\frac{1}{2}\vec{\nabla}_1^2|\psi_i^{KS}\rangle
+ \end{equation}
+ from Kohn-Sham orbitals $\psi_i^{KS}$.
+Further, equation (\ref{eq:KS}) contains the external potential $v_{ext}(\vec{r}_1)$, the Hartree potential $v_{H}(\vec{r}_1)$, the exchange-correlation potential $v_{xc}(\vec{r}_1)=\frac{\delta E_{xc}[n]}{\delta n(\vec{r}_1)}$ (where $\frac{\delta A}{\delta n}$ defines a functional derivative), and the orbital energy $\varepsilon_i^{KS}$.
 In this way, the energy can be determined self-consistently.
-With this, the exchange-correlation functional ($v_{xc}=\frac{\partial E_{xc}[n]}{\partial n[\vec{r}]}$) remains the only unknown functional, but it is typically only a small fraction of the total energy.
+With this, the exchange-correlation functional ($E_{xc}[n]$) remains the only unknown functional.
 
 % Simple approximations to this functional still give reasonable results, such as the local density approximation (LDA).
 % Here mostly the homogeneous electron gas is used as a model, distributing the electron density homogeneosly.
@@ -435,12 +517,12 @@ With this, the exchange-correlation functional ($v_{xc}=\frac{\partial E_{xc}[n]
 %  E_{xc}=E_{xc}[n(\vec{r}),\nabla n(\vec{r})]
 % \end{equation}
 % \textit{write a little about this? pros and cons of GGA\cite{Cohen2008}?} and even better by adding second derivatives and mixing in (exact) Hartree-Fock exchange (hybrid functionals, like B3LYP and HSE06).
-Several levels of theory with increasing accuracy were developed to approximate this.
-Local density approximation (LDA) is the simplest of those approaches using the expression for $E_{xc}[n]$ from the homogeneous electron gas.
+Several levels of theory with increasing accuracy were developed to approximate $E_{xc}[n]$.
+Local density approximation (LDA) is the simplest of those approaches using known expressions for $E_{xc}[n]$ from the homogeneous electron gas model.
 Although this is a very basic approximation it delivers still reasonable results.
-Better results can be achieved when the density and the first derivative (gradients) are considered: the generalized gradient approximation (GGA).
+Better results can be achieved when the density and the first derivative (gradients) are considered, defining the generalized gradient approximation (GGA):
 \begin{equation}
-  E_{xc}=E_{xc}[n(\vec{r}),\vec{\nabla} n(\vec{r})]
+  E_{xc}=E_{xc}[n(\vec{r}_1),\vec{\nabla} n(\vec{r}_1)].
 \end{equation}
 Here, one of the most prominent and widely used functionals is PBE, introduced by Perdew, Burke and Ernzerhof in 1996\cite{Perdew96a,erratum}.
 % COMMENT{eventually give analytic form of PBE in appendix?
@@ -455,171 +537,101 @@ PBE is implemented without any parameters fitted to experimental results and is 
 Even more accurate results can be gained by mixing into the functional some amount of exact Hartree-Fock exchange, these are called hybrid functionals.
 At least for molecular systems these are the most widely applied functionals, for example B3LYP\cite{B3LYP1,B3LYP2} and HSE06\cite{HSE06}.
 
+\subsection{Hybrid Functionals}
+When using hybrid functionals, a fraction of "exact exchange" (HF-like exchange) is mixed into the functional.
+For this we split the exchange correlation functional up into two parts:
+\begin{equation}
+ E_{xc}[n(\vec{r}_1)]=  E_{x}[n(\vec{r}_1)] + E_{c}[n(\vec{r}_1)].
+\end{equation}
+The exchange part contains a HF-like exchange contribution, and a part coming from a (non-hybrid) DFT functional:
+\begin{equation}
+ E_x = aE_x^{HF} + (1-a)E_x^{DFT}.
+\end{equation}
+The parameter $a$ determines the amount of exact Hartree-Fock exchange.
+As an example, the functional B3LYP uses $20\%$ of exact exchange\cite{Becke1993}, $a=0.2$.
+The B3LYP functional also uses different contributions (LDA and GGA=LYP) to the correlation energy,
+\begin{equation}
+ E_{xc}^{B3LYP}= aE_{xc}^{LDA} + (1-a)E_x^{HF} + bE_x^{B88} + cE_c^{LYP} + (1-c)E_c^{LDA},
+\end{equation}
+with the other two parameters, $b=0.72$ and $c=0.81$ being empirical parameters, like $a$.
 
-A major issue of DFT is that it can not be systematically improved like wave function-based methods.
-Formally, only for the exact functional the variational principle exists.
-% It is a single determinant method and it is not fully variational althoug the ``variational principle of DFT'' does exist.
-Also only some expectation values can be calculated from the density directly, for example the dipole moment. %as the derivative of the energy with respect to the external electric field. 
-% there is no direct calculation of observables possible: not all the expectation values (usually observable=$\langle\Psi|\hat{O}|\Psi\rangle$) can not be calculated via the density.
 
+Hybrid functionals are very popular for many computational applications because they deliver very good results although they need more computation time than GGA functionals (such as PBE).
 
-Another weakness is the disability of reproducing intermolecular interactions like van der Waals interactions.
-To overcome the latter problem it is nowadays possible to add dispersion corrections to account for van der Waals interactions.
+\subsection{Dispersion Corrections}
+Another weakness of DFT is the disability of reproducing intermolecular interactions like van der Waals interactions.
+To overcome this problem it is possible to add dispersion corrections to account for van der Waals interactions.
 These are important, especially for the adsorbate-surface interaction and the adsorbate-adsorbate interaction.
-In the work of Grimme\cite{grimme06} and coworkers corrections were developed and implemented to overcome this issue; these range from D over D2 to D3 corrections.
+In the work of Grimme\cite{grimme06} and coworkers corrections for attractive dispersion interactions contributing to van der Waals interactions were developed and implemented to overcome this issue; these range from D over D2 to D3 corrections.
 In this work, D2 and D3 corrections were used.
+For the dispersion corrected energy, the dispersion energy has to be substracted from the DFT based energy:
+\begin{equation}
+E_{DFT+D2/3}=E_{KS-DFT} - E_{disp}^{(2)/(3)}
+\end{equation}
+
 The D2 correction describes pair interactions between atoms $A$ and $B$ in the form
 \begin{equation}\label{eq:d2}
  E_{disp}^{(2)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_6 \frac{C_6^{AB}}{R_{AB}^6}f_{damp}(R_{AB}),
 \end{equation}
 with the number of atoms $N_A$, the scaling factor $s_6$ which is dependent on the functional, the averaged dispersion coefficient $C^{AB}_6$, the interatomic distance $R_{AB}$ and a damping function $f_{damp}(R_{AB})$.
-This equation gives the D2-correction $E_{disp}^{(2)}$, which is added to the total energy.
-For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added.
+This equation gives the D2 correction $E_{disp}^{(2)}$, which is added to the total energy.
+For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added:
 \begin{equation}
-  E_{disp}^{(3)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3cos\gamma_a cos\gamma_b cos\gamma_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
+  E_{disp}^{(3)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3\,cos\gamma_a\, cos\gamma_b\, cos\gamma_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
 \end{equation}
 Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\gamma_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$ and $\bar{R}_{ABC}$ is the geometrically averaged distance of the three atoms.
 
 
-\section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
-In this work we also want to go beyond GGA (in this work the GGA functional PBE was used), because it is known from literature to underestimate reaction rates\cite{Zhao05}.
-Since we are interested in reaction kinetics it is desirable to use more sophisticated methods to improve the accuracy in computing the rates.
-\subsection{Hybrid Functionals}
-The first approach applied here is using hybrid functionals, where a fraction of exact exchange is mixed into the potential.
-For this the exchange correlation functional is split up into two parts:
-\begin{equation}
- E_{xc}[n(\vec{r})]=  E_{x}[n(\vec{r})] + E_{c}[n(\vec{r})].
-\end{equation}
-The exchange part can be specified with a HF part, \textit{i.e.} exact exchange, and a part coming from a (non-hybrid) DFT functional:
-\begin{equation}
- E_x = aE_x^{HF} + (1-a)E_x^{DFT}.
-\end{equation}
-with the parameter $a$ giving the amount of exact Hartree-Fock exchange.
-As an example, the functional B3LYP consists of $20\%$ exact exchange\cite{Becke1993}.
-\begin{equation}
- E_{xc}^{B3LYP}= aE_{xc}^{LDA} + (1-a)E_x^{HF} + bE_x^{B88} + cE_c^{LYP} + (1-c)E_c^{LDA}
-\end{equation}
-with $a=0.80$, $b=0.72$ and $c=0.81$ which are empirical parameters.
+%\section{From Density Functionals to Hybrids and Perturbation Theory}\label{theorybeyond}
+%In this work we also want to go beyond GGA (in this work the GGA functional PBE was used), because it is known from literature to underestimate reaction rates\cite{Zhao05}.
+%Since we are interested in reaction kinetics it is desirable to use more sophisticated methods to improve the accuracy in computing the rates.
 
-
-Hybrid functionals are very popular for many computational applications because they deliver very good results although they need more computation time than GGA functionals (such as PBE).
-
-\subsection{M\o{}ller Plesset Peturbation Theory}
-In cases where even higher precision is needed, and correlation (non-classical interaction not included in HF) shall be calculated with better precision than offered by correlation-functionals it is necessary to apply so-called post-HF wave function methods.
-Although these calculations are significantly more computationally demanding they provide better results on a higher level of theory.
-From these, M\o{}ller Plesset peturbation theory of second order (MP2)\cite{mollerplesset} was implemented for periodic systems recently.
-MP2 offers more precise treatment of the dynamical electron correlation than DFT.
-
-
-We assume that the wavefunction $\Psi^{(0)}$ is the ground state HF Slater determinant and is known.
-This however, is no eigenfunction of the Hamiltonian but to the sum of the one-electron Fock operators.
-The reference system $\hat{H}_0$ is perturbed by $\hat{V}$:
-\begin{equation}
- \hat{H} = \hat{H}_0 + \lambda \hat{V}
-\end{equation}
-$\hat{H}_0$ is the unperturbed Hamiltonian, here the sum of Fock operators and $\lambda$ is a parameter that determines the extent of the perturbation $\hat{V}=\hat{H}_e - \hat{H}_0$.
-In general $V$ is considered as ``small'', compared to $\hat{H}_0$.
-The perturbed Schrödinger equation is given by:
-\begin{equation}
- (\hat{H}_0 + \lambda \hat{V})\Psi = E\Psi.
-\end{equation}
-If $\lambda=0$, then $E=E^{(0)}$, $\hat{H} = \hat{H}_0$ and $\Psi=\Psi^{(0)}$.
-For higher values of $\lambda$, the perturbed energy and the perturbed wave function can be written by expansion at $\lambda=0$
-\begin{equation}
- \Psi = \Psi^{(0)} + \lambda \Psi^{(1)} + \lambda^2\Psi^{(2)} + ...,
-\end{equation}
-the eigenvalues $E_0$ can be determined analogously as:
-\begin{equation}
- E = E^{(0)} + \lambda E^{(1)} + \lambda^2E^{(2)} + ...
-\end{equation}
-Here we solely focus on $\Psi$ and $E$ belonging to the electronic ground state.
-The superscript $E^{(n)}$ equals the correction of n-th level.\\
-The Schrödinger equation for the unperturbed system is:
-\begin{equation}
- \hat{H}^{(0)}\Psi^{(0)}=(\sum_{i=1}^{N_e} \varepsilon_i)\Psi^{(0)}
-\end{equation}
-with the HF Slater determinant $\Psi^{(0)}$ and the HF orbital energies $\varepsilon_i$.\\
-The unperturbed energy can be calculated with:
-\begin{equation}
- E^{(0)} = \langle\Psi^{(0)}|\hat{H}^{(0)}|\Psi^{(0)}\rangle=\sum\limits_{i=1}^{N_e}\varepsilon_i
-\end{equation}
-and the energy of first order is:
-\begin{equation}
- E^{(1)} = \langle\Psi^{(0)}|\hat{V}|\Psi^{(0)}\rangle
-\end{equation}
-$E^{(0)}+E^{(1)}$ equals the Hartree-Fock energy $E_{HF}$.
-For the energy of the second order, both occupied orbitals $i,j$ and unoccupied orbitals $k,l$ and their energy $\varepsilon$ have to be considered\footnote{$\langle ij|kl\rangle=\int\int\chi^\ast_i(1)\chi^\ast_j(2)\frac{1}{\vec{r}_{12}}\chi_k(1)\chi_l(2) d^3\vec{r}_1d^3\vec{r}_2^\prime$}:
-\begin{equation}
- E^{(2)}=\sum\limits_{i}^{occ.}\sum\limits_{j>i}^{occ.}\sum\limits_{k}^{unocc.}\sum\limits_{l>k}^{unocc.} \frac{|\langle ij|kl\rangle - \langle ij|lk\rangle|^2}{\varepsilon_i + \varepsilon_j - \varepsilon_k - \varepsilon_l}
-\end{equation}
-The MP2-corrected total energy is composed of the HF energy and the second order energy:
-\begin{equation}
- E_{MP2} = E^{(0)}+E^{(1)} + E^{(2)} = E_{HF} + E^{(2)}.
-\end{equation}
-The second order energy accounts for approximately $80-90\%$ of correlation which makes it a feasible method which includes electron correlation.
-However, a main limitation of MP2 is that the wave function of the zeroth order needs to be a good approximation of the real system and the perturbation should be rather small.
-If the wave function describes the system poorly, the corrections need to be higher and eventually, convergence is slow.
-In this case perturbation theory might not be a good option to describe correlation.
-
-
-A further development is the local M\o{}ller Plesset perturbation theory\cite{usvyat2015,usvyatbook,Maschio2007} of 2$^{\textrm{nd}}$ order (LMP2) as implemented in cryscor\cite{cryscor}.
-In contrast to regular MP2 that scales with $\mathcal{O}(N^5)$, local MP2 allows for scaling of $\mathcal{O}(N)$ with the number of atoms per unit cell $N$ so that it is considerably faster and more efficient also for larger systems.
-This is gained by a description of the electron correlation by localized orbitals since dynamical correlation is not a long-range effect but can be analyzed locally.
-%% While the occupied space is calculated with orthogonal localized orbitals this is not possible for the virtual space which is more diffuse and in order to be localized as well has to be computed with nonorthogonal orbitals.
-% This is easy applicable for occupied orbitals but not so easy for virtual orbitals: here the orthogonality has to be quit to become local.
-% Due to locality additional couplings occur (inter-pair coupling between individual amplitudes via the corresponding overlap matrix) which increases the computational costs.
-% To overcome this issue the Laplace transform\cite{ALMLOF1991,Haeser1992} is used, so that an AO basis is used.
-% The virtual orbitals are represented as highly localized projected atomic orbitals (PAOs)\cite{Pulay1983,Pulay1985}.
-% These PAOS are paired to so called ``pair domains''.
-% A drawback here is that for high accuracy the domains need to be rather large and do eventually not show smooth behaviour.
-% This may lead to discontinuities in potential energy surfaces, non-physical artifacts in energy differences if the domains are not chosen carefully (equally in all considered geometries)\cite{usvyat2015}.
 
 \section{Periodic Boundary Conditions}
-Solid-state systems such as surfaces can either be simulated by calculating cluster models that were ``cut'' from the surface and represent an "important part" of the system or can be treated as the whole system with a periodic approach.
-These periodic systems can be described by a single unit cell and respective cell vectors, which are used to generate the infinite system by repeating the cell in each direction.
+Solid-state systems such as surfaces can either be simulated by calculating cluster models that were ``cut'' from the surface and represent an important part of the system or can be treated as the whole system with a periodic approach.
+These periodic systems can be described by a unit cell and respective cell vectors, which are used to generate the infinite system by repeating the cell in each direction.
 This can be either realized in 1D (polymers), 2D (surfaces) or 3D (bulk crystals).
 Surfaces can also be described within the 3D model as a slab by three dimensional repetition of the unit cell.
-The third dimension is treated by defining a vacuum gap between two slabs (unit or supercell model of a surface) in one direction perpendicular to the surface (\textit{e.g.} here z).
-This gap has to be large enough to prevent unit cells from influencing each other in this direction and therefore lead to unphysical behaviour between the surface atoms and the lowest atoms of the neighboring slab above.
+The third dimension is treated by defining a vacuum gap between two slabs (unit or supercell model of a surface) in one direction perpendicular to the surface (here z).
+This gap has to be large enough to prevent unit cells from influencing each other in this direction and therefore lead to unphysical behaviour between the surface atoms and atoms of the neighboring slabs above or below.
 In standard bulk and surface system software like VASP\cite{kresse1993,kresse2,kresse3,kresse4,kresse99} it is not (yet) possible to mimic a 2D system, so that in the main part of this work this vacuum gap 3D model was applied.
 Some programs, however, (such as CRYSTAL\cite{crystal14}) %and cp2k(mention it?))
 deliver the opportunity to calculate 2D systems, repeating the slab periodically only in x/y, respectively.
 The corresponding results are presented in Section \ref{crystal_calc}.
 
 
-A disadvantage of the periodic approach towards a realistic system is that a ``perfect'' surface with absolutely no defect sites is simulated.
-If one wants to model a defect, it is repeated periodically and would lead to a defined defect site density in a regular pattern.
-There are embedding models available (\textit{e.
-g.} \cite{Sauer2004}) dealing with this issue: the defect is only treated in one unit cell and for the others, the regular unit cell is applied.
-However, before handling defects one has to understand the clean ``defect-free`` surface properly.
+%A disadvantage of the periodic approach towards a realistic system is that usually a ``perfect'' surface with no defect sites is simulated.
+%If one wants to model a defect, it is repeated periodically and would lead to a defined defect site density in a regular pattern.
+%There are embedding models available (\textit{e.g.} \cite{Sauer2004}) dealing with this issue: the defect is only treated in one unit cell and for the others, the regular unit cell is applied.
+%However, before handling defects one has to understand the clean ``defect-free`` surface properly.
 
 
-The 3D unit cell can be described by the three basis vectors of the lattice, $\vec{a}$, $\vec{b}$ and $\vec{c}$ and can be translated along these vectors to gain the infinite system.
+A 3D unit cell can be described by the three basis vectors of the lattice, $\vec{a}$, $\vec{b}$ and $\vec{c}$ and can be translated along these vectors to gain the infinite system\cite{jensen}.
 They span the space with defined length and angles.
 %, with seven different models existing.
 %, \textit{e.g.} hexagonal crystal family).
 The Bravais lattice is built by positions that are repeated periodically by the translational vectors.
-In three dimensional systems 14 different form exist, \textit{e.g.} hexagonal hcp.
-The lattice can be described by the lattice vector $\vec{B}$ with the lattice vectors $\vec{a}$, $\vec{b}$, $\vec{c}$ and the integers $n_i$:
+In three dimensional systems 14 different forms exist, \textit{e.g.} hexagonal hcp.
+The lattice can be described by the lattice vector $\vec{B}$ with the base vectors $\vec{a}$, $\vec{b}$, $\vec{c}$ and integers $n_i$ ($i=1,2,3$):
 \begin{equation}\label{eq:direct-lattice}
  \vec{B}=n_1\vec{a}+n_2\vec{b}+n_3\vec{c}
 \end{equation}
-Similarly, a reciprocal space exists (the so called $\vec{k}$-space) that can be described by the Fourier transform of the direct lattice and is defined analogously to Equation (\ref{eq:direct-lattice}) by the reciprocal lattice vector $\vec{G}$ and a set of vectors $\bar{\vec{a}}$, $\bar{\vec{b}}$, $\bar{\vec{c}}$ and $h$, $k$, $l$ being integers:
+Similarly, a reciprocal space exists (the so called $\vec{k}$-space) which can be defined analogously to Equation (\ref{eq:direct-lattice}) by reciprocal lattice vectors $\vec{G}$ and a set of reciprocal base vectors $\bar{\vec{a}}$, $\bar{\vec{b}}$, $\bar{\vec{c}}$ and $h$, $k$, $l$ being integers:
 \begin{equation}\label{eq:rec_latt_vec}
- \vec{G}=h\bar{\vec{a}}+k\bar{\vec{b}}+l\bar{\vec{c}}
+ \vec{G}=h\bar{\vec{a}}+k\bar{\vec{b}}+l\bar{\vec{c}}.
 \end{equation}
-which spans the lattice space.
-The dimension of the these vectors is m$^{-1}$.
+The dimension of these vectors is m$^{-1}$.
 
-The definition of the reciprocal space is
+A relation between direct and reciprocal lattice vectors is
 \begin{equation}
- e^{i\vec{G}\,\vec{B}}=1
+ e^{i\vec{G}\,\vec{B}}=1.
 \end{equation}
-Between the vectors of the direct and the reciprocal space there are fixed relations: the vectors $\bar{\vec{a}},\bar{\vec{b}},\bar{\vec{c}}$  can be derived from $\vec{a},\vec{b},\vec{c}$, by writing
+Between the vectors of the direct and the reciprocal space there are fixed relations: the vectors $\bar{\vec{a}},\bar{\vec{b}},\bar{\vec{c}}$  can be derived from $\vec{a},\vec{b},\vec{c}$, by
 \begin{equation}
 \bar{\vec{a}}=2\pi\frac{\vec{b} \times \vec{c}}{\vec{a}\cdot(\vec{b} \times \vec{c})} 
 \end{equation}
-and so forth, analogously, and they are perpendicular to each other:
+and analogous for $\bar{\vec{b}}$ and $\bar{\vec{c}}$.
+Further, direct and reciprocal base vectors are perpendicular to each other:
 \begin{equation}
  \vec{i}\cdot\bar{\vec{j}}=2\pi\delta_{ij},
 \end{equation} 
@@ -632,24 +644,31 @@ In the reciproce lattice this is also referred to as first Brillouin zone, whose
 It is a uniquely defined primitive cell in reciprocal space that contains all critical points of interest.
 The integers $h$, $k$, and $l$ from Equation (\ref{eq:rec_latt_vec}) are also called Miller indices and can be used to describe the crystallographic planes (position of the surface in the coordinate system).
 They are determined by finding the point of intersection of the surface plane with the axes of the coordinate system, reducing, then taking the reciprocal values and multiplying with the least common multiple to obtain three integers.
-The vector made from these indices is analog to the surface normal in the reciprocal space.
-
-
-For periodic systems, the DFT integrals are not evaluated in reals space over the extended system but by integrals over a finite number of points in the first Brillouin zone in reciprocal space ($\vec{k}$-point grid).
-Due to symmetry considerations only a reduced number of $\vec{k}$-points need to be evaluated (irreducible $\vec{k}$-points).
+The vector made from these indices is analogous to the surface normal in the reciprocal space.
 
 
 Within the hexagonal (and rhombohedral) lattice system, also the Miller-Bravais notation with four indices [$h,k,i,l$] can be used.
 Here, $i$ is redundant and can be defined by $h$ and $k$: $i=-(h+k)$.
 For example, the (110) surface would be referred to as (11-(1+1)0)=(11\=20).
-Note that the minus is expressed by the overbar.
+Note that the minus sign is expressed by the overbar.
 The advantage of this notation is that one can identify symmetry-equivalent planes easily.
 To express a direction vector in the basis of the direct lattice vectors, the notation [uvw] is used.
-In general this vector is not perpendicular to the plane (uvw), only for cubic lattice this is the case.
+In general this vector is not perpendicular to the plane (uvw), only for cubic lattices this is the case.
 
 
 To describe a periodic system with quantum mechanical methods, one has to introduce periodic boundary conditions.
-This includes that the periodicity of the nuclei is reflected by the periodicity of the wave function.
+\todo{hier weiter schreiben!}
+\begin{equation}
+\phi(\vec{r})=e^{i\vec{k}\vec{r}}u_{\vec{k}}(\vec{r})
+\end{equation}
+\begin{equation}
+u_{\vec{k}}(\vec{r})=u_{\vec{k}}(\vec{r}+\vec{B})
+\end{equation}
+\begin{equation}
+\phi(\vec{r}+\vec{B})=e^{i\vec{k}(\vec{r}+\vec{B})}u_{\vec{k}}(\vec{r})=e^{i\vec{k}\vec{B}}\phi(\vec{r})
+\end{equation}
+
+The periodicity is reflected by the periodicity of the wave function.
 % , which has to be the same in all cells whose symmetry is given by $\vec{B}$:
 % \begin{equation}
 %  v_{eff}(\vec{r})= v_{eff}(\vec{r}+\vec{B}).
@@ -689,7 +708,7 @@ In analogy to the Roothaan-Hall equation (\ref{eq:RH}), we can now introduce the
   \doubleunderline{F}^{\vec{k}}\vec{C}_n^{\vec{k}}=\doubleunderline{S}^{\vec{k}}\vec{C}_n^{\vec{k}}\varepsilon_n^{\vec{k}}
  \end{equation}
 with the Fockmatrix $\doubleunderline{F}$, the overlap matrix $\doubleunderline{S}$, the vector containing the coefficients $\vec{C}$ and the crystal orbital energies $\varepsilon$.
-Equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in the first Brillouin zone.
+Equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in the first Brillouin zone, for $K$ bands.
 
 
 %  The solutions give a band (range of energies) and are a continuous function.
@@ -698,17 +717,17 @@ Equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in 
 %  The band gap, equivalent to HOMO-LUMO gap, is between the highest filled and the lowest empty band.
 %  In metallic systems, there is no bandgap, whereas in insulating systems the band gap is large ($>4\,$eV\cite{holleman2007lehrbuch}).
 
-
-\section{Plane Wave Basis, Atom Centered Basis and Peculiarities}
-It is necessary for calculation of Equations (\ref{eq:KS}) to use a basis set for the orbitals, as shown in Equation (\ref{eq:basis}).
+\todo{DFT, MP2 periodic case}
+\section{Plane Wave Bases, Atom Centered Bases and Peculiarities}
+It is necessary for calculation of \textit{e.g.} equation (\ref{eq:KS}) for DFT to use a basis set for the orbitals, as shown in equation (\ref{eq:basis}).
 Basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set (atom centered basis functions).
 As a consequence of plane waves, the system is periodic in 3D and it is possible to improve the basis systematically by setting the cutoff energy higher.
 Many basis functions are necessary which is very costly for calculations that depend not only on the density (like hybrid functionals or MP2).
-In comparison plane waves (PW) and atom centered orbitals (ACO) have different advantages and disadvantages\cite{Tosoni2007}.
+In comparison plane waves (PW) and atom centered orbitals have different advantages and disadvantages\cite{Tosoni2007}.
 For solid state systems both the energy and the gradient converge better with plane waves (fewer steps).
-Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynmann forces have to be evaluated.
+Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynman forces \todo{defines} have to be evaluated.
 The quality of the basis is simply dependent on the cutoff energy E$_\textrm{cutoff}$, the higher this energy is the better is the basis.
-Treating all electrons is computationally expensive, so usually pseudopotentials are used, where core electrons are not treated explicitly but their presence is considered indirectly.
+Treating all electrons requires very high cutoff energies  which are computationally unfeasible, so usually pseudopotentials are used, where core electrons are not treated explicitly but their presence is considered indirectly.
 On the negative side, when norm-conserving pseudopotentials are applied more memory is needed.
 To treat this, the PAW (projector augmented-wave method)\cite{paw1,Kresse1999} is applied which delivers explicit treatment of the core electrons so that the accuracy is greatly increased.
 The system is intrinsically defined in 3D, no matter if the system is a 1D (polymer), 2D (surface) or 3D system (bulk).
@@ -716,105 +735,117 @@ It is computationally demanding to calculate exact (Fock) exchange, which makes 
 \\
 
 Whenever there are atom-centered basis sets the orbitals of different atoms can overlap.
-This can result in the so-called basis set superposition error (BSSE), which only appears if atom centered bases are utilized.
-Lets assume a dissociation reaction: in the molecular case, the electrons can occupy orbitals of both residues (each atom has in total a higher basis set, the binding energy is stabilized), whereas in the dissociated case, this is not possible (the energy of the isolated fragments is not stabilized).
+This can result in the so-called basis set superposition error (BSSE)\todo{add cite{BSSE}}, which only appears if atom centered bases are utilized.
+Let's assume a dissociation reaction: in the molecular case, the electrons can occupy orbitals of both residues (each atom has in total a higher basis set, the binding energy is stabilized), whereas in the dissociated case, this is not possible (the energy of the isolated fragments is not stabilized).
 Due to this difference, it is necessary to either correct the BSSE or to use a large basis, ideally at the basis set limit.
 One can apply counterpoise corrections (CP)\cite{Boys1970} to approximately compensate this error.
-This is done here by performing ghosted calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms.
+This is done here by performing "ghosted" calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms.
 Then one applies a substractive scheme to cancel out the effect of the orbital overlap.
 On the other hand one can use a huge basis set that does not have this problem, but comes with a higher computational demand.
 In contrast to PW calculations the true dimensionality is obeyed due to the locality of the basis.
 Probably, the most powerful advantage of atom centerd bases is that exact exchange and hybrid methods are available as standard methods because fewer basis functions are required, compared to plane waves.
 % Transferring atom centered bases to periodic systems is not trivial, especially for bases including many diffuse Gaussians, but there are programs available.
 
+\todo{eher in das Kapitel über plane waves? For periodic systems, the DFT integrals are not evaluated in real space over the extended system but by integrals over a finite number of points in the first Brillouin zone in reciprocal space ($\vec{k}$-point grid).
+Due to symmetry considerations only a reduced number of $\vec{k}$-points need to be evaluated (irreducible $\vec{k}$-points).}
+
 \section{\textit{Ab Initio} Molecular Dynamics}
 Apart from solving stationary problems, \textit{ab initio} molecular dynamics (AIMD) can deliver dynamical results for time dependent processes\cite{jensen,marx_hutter_AIMD}.
-This is necessary for simulating transport/diffusion processes as well as spectral properties.
-For this, the classical Newtonian equations of motion are solved:
+This is useful for simulating transport/diffusion processes as well as spectral properties.
+In AIMD, the classical Newtonian equations of motion are solved
 \begin{equation}
  -\vec{\nabla}_A V(\{\vec{R}_i\})=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 %  -\frac{\partial V(\vec{R})}{\partial \vec{R}(t)}=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
 \end{equation}
-where $V$ is the potential energy that is a function of all nuclear coordinates $\{\vec{R}_i\}$, $\vec{R}_A$ is the vector containing all coordinates of atom $A$, $M_A$ is the atomic mass of atom $A$ and the time $t$.
-This equation gives in principle $\vec{F}=M_A\cdot \vec{a}$, the force $\vec{F}$ acting on each atom in a classical ansatz with the velocity $\vec{a}$.
-This is a good approximation for nuclei are usually sufficiently massive to be treated classically\footnote{Strictly speaking, this is not appropriate for hydrogen, since it is so lightweight that quantum mechanical tunneling processes can not be precluded.
-For treating quantum effects such as zero point energy and tunneling it is necessary to solve the nuclear Schrödinger equation.}.
+where $V$ is the potential energy that is a function of all nuclear coordinates $\{\vec{R}_i\}$, $\vec{R}_A$ is the vector containing all coordinates of atom $A$, $M_A$ is the nuclear mass of atom $A$ and $t$ is the time.
+%This equation gives in principle $\vec{F}=M_A\cdot \vec{a}$, the force $\vec{F}$ acting on each atom in a classical ansatz with the velocity $\vec{a}$.
+The classical approximation is often a good one for nuclei, if they are sufficiently massive\footnote{Strictly speaking, this is not appropriate for hydrogen, since it is so lightweight that quantum mechanical tunneling processes can not be precluded.
+For treating quantum effects such as zero point energy and tunneling it is necessary to solve the nuclear Schrödinger equation, or to use path integral molecular dynamics\todo{cite{PIMD}}.}.
 
 
-In contrast to classical molecular dynamics, where predefined potentials or force fields based on either empirical data or further electron structure methods are used, \textit{ab initio} MD calculates the potential and the respective (Hellmann-Feynman) forces ``on-the-fly'' at each time step.
-This has the advantage that no further parameterization is necessary when changing atoms or molecular groups/surfaces etc. Also a change in electronic structure along the trajectory (time propagation of the nuclei) can be compensated without the necessity of another potential/force field to describe interatomic interactions, which is especially vital for dissociation processes like those considered in this work.
+In contrast to classical molecular dynamics\footnote{As opposed to "\textit{ab initio}"}, where predefined potentials or force fields based on empirical data are used, in \textit{ab initio} MD the potential and the respective (Hellmann-Feynman) forces are calculated ``on-the-fly'' at each time step, with the help of the chosen \textit{ab initio} method (\textit{e.g.} DFT).
+This has the advantage that no further parameterization is necessary when changing atoms, molecules or surfaces.
+Also, the method is especially suited for reactions or dissociation processes like those considered in this work.
+In particular, the dissociative and molecular sticking of water molecules on an alumina surface will be studied below.
 
 
-As starting conditions, positions $\vec{R}_A(t)$ and velocities $\vec{v}_A$ of the atoms have to be given.
+As starting conditions, positions $\vec{R}_A(t)$ and velocities $\vec{v}_A$ of the nuclei have to be specified.
 Between two time steps of the propagation there is a time span $\Delta t$.
-The time propagation can be executed numerically with the Verlet algorithm\cite{verlet}, delivering the trajectory $\vec{R}(t)$:
+The time propagation can be executed numerically with the Verlet algorithm\cite{verlet}, delivering the trajectory $\vec{R}_A(t)$ for each atom $A$.
+In the algorithm, by using
 \begin{equation}\label{eq:t+dt}
  \vec{R}_A(t+\Delta t) = \vec{R}_A(t) + \vec{v}_A(t)\cdot \Delta t + \frac{1}{2}\vec{a}_A(t)\cdot \Delta t^2 + ...
  \end{equation}
  \begin{equation}\label{eq:t-dt}
  \vec{R}_A(t-\Delta t) = \vec{R}_A(t) - \vec{v}_A(t)\cdot \Delta t + \frac{1}{2}\vec{a}_A(t)\cdot \Delta t^2 \pm ...
 \end{equation}
-The previous and next time steps are approximated by a Taylor expansion with the velocity $\vec{v}_A(t)$ of atom $A$ (the derivative of the coordinates with respect to time $t$, $\frac{\partial \vec{R}_A}{\partial t}$), the acceleration $\vec{a}_A(t)=\frac{\partial^2 \vec{R}_A}{\partial t^2}$.
-With equations (\ref{eq:t+dt}) and (\ref{eq:t-dt}) one can predict the positions at a later time step from the current and the previous positions and the acceleration:
+the previous and next time steps are approximated by a Taylor expansion with the velocity $\vec{v}_A(t)$ of atom $A$ (the derivative of the coordinates with respect to time $t$, $\frac{\partial \vec{R}_A}{\partial t}$), the acceleration $\vec{a}_A(t)=\frac{\partial^2 \vec{R}_A}{\partial t^2}$.
+These two equations are usually Taylor expanded to third order.
+Adding equations (\ref{eq:t+dt}) and (\ref{eq:t-dt}) one can predict the positions at a later time step from the current and the previous positions and the acceleration:
 \begin{equation}
- \vec{R}_A(t+\Delta t)=(2\vec{R}_A(t) - \vec{R}_A(t-\Delta t)) + \vec{a}_A(t)(\Delta t)^2 + \ldots
+ \vec{R}_A(t+\Delta t)=(2\vec{R}_A(t) - \vec{R}_A(t-\Delta t)) + \vec{a}_A(t)(\Delta t)^2 + \ldots ~.
 \end{equation}
-with the acceleration that is evaluated at each time step from the potential (gradient of the forces):
+The acceleration is evaluated at each time step from the potential gradient as
 \begin{equation}
  \vec{a}_A(t)=-\frac{1}{M_A}\frac{\partial V}{\partial\vec{R}_A}.
 \end{equation}
-This allows for the time propagation that gives the so called trajectory.
+%This allows for the time propagation that gives the so called trajectory.
 
 
-The time step $\Delta t$ is an important parameter: It has to be small enough to describe the fastest processes of interest, but not too small to achieve reasonable propagation times with respect to the computation time.
+The time step $\Delta t$ is an important parameter: It has to be small enough to describe the fastest processes of interest, but not too small to achieve reasonable total computation times.
 It is typically around $10^{-15}$s.
-For example, a molecular vibration of $3000\,$cm$^{-1}$ corresponds to $\approx 10^{14}$s$^{-1}$.
-On the other hand, a sufficiently long time of the trajectory has to be propagated to measure all chemically relevant processes, usually $10^{-9}$s.
-The smaller the time step the more accurate the simulation gets, but with shorter time steps, one has to propagate longer to gain the same simulation time: more steps need to be simulated, which increases the computational time drastically.
+For comparison, a molecular vibration of $3000\,$cm$^{-1}$ corresponds to a vibrational frequency of $\approx 10^{14}$s$^{-1}$, \textit{i.e.} a vibrational period of $10^{-14}$s.
+On the other hand, a sufficiently long time of the trajectory has to be propagated to measure all chemically relevant processes.
+In this work we usually consider propagation times up to about $1$-$2\,$ps.
+%, usually $10^{-9}$s.
+%The smaller the time step the more accurate the simulation gets, but with shorter time steps, one has to propagate longer to gain the same simulation time: more steps need to be simulated, which increases the computational time drastically.
 Additionally, it may be necessary to compute several trajectories instead of just a single one for reasonable averaging.
 
 
-The simulations are characterized by the following thermodynamic parameters: total energy E, temperature $T$, volume V, pressure p, number of particles N and the chemical potential $\mu$.
-Not all of these are independent, as for example either V or p can be constant.
+The AIMD simulations are characterized by the following thermodynamic parameters: total energy E, temperature $T$, volume V, pressure p, number of particles N and the chemical potential $\mu$.
+%Not all of these are independent, as for example either V or p can be constant.
 The corresponding ensemble is named after the fixed quantities, \textit{e.g.} NVT (=canonical) and NVE (=microcanonical).
 
 
-In a microcanonical ensemble (NVE) the system is isolated (it can not exchange particles or energy with the surroudings) and the total energy $E$ is fixed.
-This type of MD is deterministic, \textit{i.e.} each set of initial parameters only has to be computed once.
+In a microcanonical ensemble (NVE) the system is isolated (it can not exchange particles or energy with the surroundings) and the total energy $E$ is fixed.
+This type of MD is deterministic, since no random processes are involved.
 Computationally this is easily implemented.
-In experiments however, usually the temperature rather than the engergy is controlled.
-Therefore, in a canonical ensemble (NVT) the system is coupled / in thermal equilibrium with a heat bath, also referred to as thermostat.
+In many experiments however, usually the temperature rather than the energy is fixed.
+Then, a canonical ensemble (NVT) is appropriate where the system is coupled in thermal equilibrium with a heat bath, also referred to as thermostat.
 $T$ (on average) is given by the temperature of the thermostat.
 For this thermostat, several models are available.
 In this work the Nos\'{e}-Hoover thermostat\cite{nose1984,nose1984_2,hoover1985} is used.
 The heat bath is realized by a fictious particle which is propagated like real particles of the system and acts like a reservoir of energy for the heat bath.
 % The total energy of the extended system is again a conserved quantity and therefore a control parameter.
-Here, the trajectory is not deterministic.
+Here, the trajectory is subject to random perturbations along the trajectory.
 Multiple simulations have to be performed in order to gain reliable statistics.
 
-\section{Frequencies and Intensities}
+\section{Vibrational Spectroscopy: Frequencies and Intensities}
 In surface science vibrational spectroscopy is an important tool to characterize molecular adsorbates.
-One theoretical approach to simulate such spectra is to calculate frequencies and their intensities at stationary points.
-A characteristic of these points on the potential energy surface (PES) is that the derivatives with respect to all coordinates equal zero.
-For these points (here minima and saddle points of first order) the eigenvalues and -vectors of the Hessian matrix $\doubleunderline{H}$ are of interest.
+One theoretical approach to simulate such spectra is to calculate frequencies and their intensities at minima of the potential energy surface (PES).
+A characteristic of minima and stationary points in general is that the derivatives with respect to all nuclear coordinates equal zero.
+For stationary points the eigenvalues and -vectors of the Hessian matrix $\doubleunderline{H}$ are of interest.
 The elements of this Hessian are the derivative of the potential $V$ with respect to coordinates $i$ and $j$:
 \begin{equation}
- H_{ij}=\left( \frac{\partial^2 V}{\partial Q_i \partial Q_j} \right)_{|Q_i=Q_j=0}=\left(\frac{1}{\sqrt{m_i m_j}} \frac{\partial^2 V}{\partial R_i \partial R_j} \right)
+ H_{ij}=\left( \frac{\partial^2 V}{\partial Q_i \partial Q_j} \right)|_{Q_i=Q_j=0}=\left(\frac{1}{\sqrt{m_i m_j}} \frac{\partial^2 V}{\partial R_i \partial R_j} \right)|_{R_i=R_j=0}.
 \end{equation}
 Here, $Q_i$ are mass weighted coordinates $Q_i=\sqrt{m_i}R_i$, with the mass $m_i$ and the displacement from the equilibrium position $R_i$.
 With this, the matrix problem for the Hessian $\doubleunderline{H}$ has to be solved:
 \begin{equation}
- \doubleunderline{H} \vec{A}_i=\lambda_i\vec{A}_i.
+ \doubleunderline{H} \vec{A}_i=\lambda_i\vec{A}_i,
 \end{equation}
-with the vectors of the normal coordinates $\vec{A}_i$ and the eigenvalues $\lambda_i$ being the squares of vibrational freqencies $\omega_i$: 
+with the eigenvectors $\vec{A}_i$ and the eigenvalues $\lambda_i$ being the squares of vibrational freqencies $\omega_i$: 
 \begin{equation}\label{eq:omegafromlambda}
  \omega_i=\sqrt{\lambda_i}.
 \end{equation}
-All frequencies are delivered in the harmonic approximation.
-Note, although we use a periodic system, the vibrations here are only calculated at the $\Gamma$-point.
-It can be distinguished between two physically relevant cases: all eigenvalues are positive ($\lambda_i\geq 0 \forall i$) so the structure is a minimum on the PES.
-This could be the educt and product of a reaction.
-The second relevant case is if there is only one negative eigenvalue, which gives one imaginary frequency according to equation \ref{eq:omegafromlambda}.
+Within this approach, all frequencies are delivered in the harmonic approximation.
+Note, although we consider periodic systems, the vibrations here are only calculated at the $\Gamma$-point, \textit{i.e.} formally corresponding atoms in different cells move in phase.
+
+
+At minima, all eigenvalues are positive ($\lambda_i\geq 0 \forall i$).
+This could be the educts or products of a reaction.
+In this case frequencies $\omega_i$ are real and can be interpreted as vibrational frequencies, \textit{e.g.}, for vibrational spectroscopy.
+Another important case is, if there is only a single negative eigenvalue, which gives one imaginary frequency according to equation (\ref{eq:omegafromlambda}).
 In a mathematical sense this is a saddlepoint of first order and can be interpreted as a transition state.
 How to find these points is described in Section \ref{sec:tst}.
 \\\\
@@ -962,7 +993,7 @@ In this calculation the energetically highest image is "optimized" towards highe
 Any point found by this scheme must be checked whether it is a transition state via frequency analysis, since a TS of first order has to have one imaginary mode that vibrates along the reaction path.
 Otherwise there is no transition state.
 
-\section{Computational Details and Used Programs}
+\section{Software and Computational Details}
 The majority of simulations/computations in this work were carried out using the Vienna \textit{ab initio} simulation package (VASP version 4 and 5.2)\cite{kresse1993,kresse2,kresse3,kresse4,kresse99}
 
 
@@ -1095,7 +1126,7 @@ Direct neighbors do not have a $^\prime$, the next neighbor structure is display
 There is also one metastable molecular species that appears to be more stable than the found molecular minimum considering adsorption energy, but it cannot be classified as a stable minimum since there is one imaginary mode displaying the movement of the proton towards the dissociated species.
 
 
-The adsorption energy is defined by Equation \ref{eq:Eads} as the energy of the adsorbed species compared to the energies of the clean surface and the free water molecule:
+The adsorption energy is defined by Equation (\ref{eq:Eads}) as the energy of the adsorbed species compared to the energies of the clean surface and the free water molecule:
 \begin{equation}\label{eq:Eads}
  E_\textrm{ads}=E_\text{ads. species}-(E_\text{free water molecule}+E_\text{surface}).
 \end{equation}
@@ -1103,7 +1134,7 @@ The adsorption energy is defined by Equation \ref{eq:Eads} as the energy of the 
 \begin{table}[!ht]
   \centering
  \caption{For molecular and (singly) dissociated water on $\upalpha$-Al$_2$O$_3$(11\=20) adsorption energies E$_\textrm{ads}$ and Gibb's free energies $G_\textrm{ads}$ for different temperatures for the ten layer slab are given in eV.
-E$_\textrm{ads}$ was calculated from Equation \ref{eq:Eads} and G$_\textrm{ads}$ is defined analogously.
+E$_\textrm{ads}$ was calculated from Equation (\ref{eq:Eads}) and G$_\textrm{ads}$ is defined analogously.
 These results were obtained with PBE+D2.
 The three most stable configurations are marked with bold letters.
 \vspace*{.2cm} 
@@ -1191,7 +1222,7 @@ Dissociated systems occupying the threefold coordinated surface oxygen atom rema
 %This might be due to less interaction between neighboring oxygen atoms with the inter-CUSb adsorbed OH group.
 \begin{table}[!ht]
   \centering
-  \caption{Adsorption energies calculated from Equation \ref{eq:Eads} for molecular and dissociated species for different vertical slab sizes.
+  \caption{Adsorption energies calculated from Equation (\ref{eq:Eads}) for molecular and dissociated species for different vertical slab sizes.
 All values are given in eV.
 The most stable systems (inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$ are highlighted in bold letters.}
  \begin{tabular}{l|cccc}
@@ -1309,7 +1340,7 @@ The reaction D-a leads from the molecular minimum at CUSb to the twofold coordin
       \label{dissa}
 \end{equation}
 The barrier is very low, about $0.002\,$eV as one can see from Table \ref{tab:reaction-rates} and Figure \ref{mep}(a), hence the reaction rate constant is very high, in the order of $k(\textrm{300\,K})=5.76\times 10^{12}$s$^{-1}$.
-This low barrier might be due to the underestimation of barrier heights\cite{Zhao05} with the used functional PBE (compare section \ref{theorybeyond}).
+This low barrier might be due to the underestimation of barrier heights\cite{Zhao05} with the used functional PBE. %(compare section \ref{theorybeyond}).
 
 
 For the other dissociation reaction D-b from CUSb to CUSb$\parallel$O-$\mu_3$, there is no barrier found at all with the applied method.
@@ -2227,7 +2258,7 @@ These calculations were conducted by Dr. J. Wirth and are partially unpublished.
 \end{table}
 \\
 
-It is now our goal to expand these methods to the following: by first calculating the adsorption energies and the barrier within an atom centered orbital method with the hybrid functional B3LYP and also going beyond density functional theory by employing perturbation theory (local M\o{}ller-Plesset perturbation theory of second order, LMP2).
+It is now our goal to expand these methods to the following: by first calculating the adsorption energies and the barrier within an atom centered orbital method with the hybrid functional B3LYP and also going beyond density functional theory by employing perturbation theory (local M\o{}ller Plesset perturbation theory of second order, LMP2).
 After this, the transition state shall be reoptimized with B3LYP and the respective rates shall be calculated for this geometry both with density functional theory (PBE and B3LYP) and LMP2.
 %\\
 %Apart from that, we study this reaction with the help of Path Integral Molecular Dynamics, where the system is represented as a couple of beads that are connected and henceforth act as a more delocalized particle which can contribute to quantum effects, proton tunneling.
@@ -3681,6 +3712,7 @@ For this reason the input is given here:
 \begin{table*}[!h]
  \centering
   \begin{tabular}{ll}
+AIMD & \textit{ab initio} molecular dynamics\\
 BEC & Born effective charges\\
 BSSE & basis set superposition error\\
 B3LYP & Becke 3 parameters Lee Yang Parr, hybrid functional\\
@@ -3712,8 +3744,9 @@ PW & plane waves\\
 SFG & sum frequency generation\\
 TDS &thermal desorption spectroscopy\\
 TS(T) & transition state (theory)\\
-VASP & vienna ab-initio simulation package\\
+VASP & Vienna ab-initio simulation package\\
 VSF & vibrational sum frequency\\
+WFT & wave function theory\\
 
   \end{tabular}
 \end{table*}
