@@ -454,8 +454,8 @@ A further development is the local M\o{}ller Plesset perturbation theory\cite{us
 In contrast to regular MP2 that scales with $\mathcal{O}(N^5)$, local MP2 allows for scaling of $\mathcal{O}(N)$ with the number of atoms per unit cell $N$ so that it is considerably faster and more efficient also for larger systems.
 This is gained by a description of the electron correlation by localized orbitals (Wannier functions) since dynamical correlation is not a long-range effect but can be analyzed locally.
 These localized Wannier functions are not highly compuationally demanding.
+However, the bottleneck is the evaluation of the AO integrals and their transformation to the MO basis.
 As a disadvantage large basis sets are needed so that on top of the regular HF calculation a dual basis set expansion is recommended\cite{Usvyat2010}.
-\todo{periodic systems? scaling of $N^5$ also for periodic systems? Limitations of LMP2 (Wannier)?}
 %% While the occupied space is calculated with orthogonal localized orbitals this is not possible for the virtual space which is more diffuse and in order to be localized as well has to be computed with nonorthogonal orbitals.
 % This is easy applicable for occupied orbitals but not so easy for virtual orbitals: here the orthogonality has to be quit to become local.
 % Due to locality additional couplings occur (inter-pair coupling between individual amplitudes via the corresponding overlap matrix) which increases the computational costs.
@@ -570,20 +570,20 @@ To overcome this problem it is possible to add dispersion corrections to account
 These are important, especially for the adsorbate-surface interaction and the adsorbate-adsorbate interaction.
 In the work of Grimme\cite{grimme06} and coworkers corrections for attractive dispersion interactions contributing to van der Waals interactions were developed and implemented to overcome this issue; these range from D over D2 to D3 corrections.
 In this work, D2 and D3 corrections were used.
-For the dispersion corrected energy, the dispersion energy has to be substracted from the DFT based energy:
+For the dispersion corrected energy, the dispersion energy has to be added to the DFT based energy:
 \begin{equation}
-E_{DFT+D2/3}=E_{KS-DFT} - E_{disp}^{(2)/(3)}
+E_{DFT+D2/3}=E_{KS-DFT} + E_{disp}^{(2)/(3)}
 \end{equation}
 
 The D2 correction describes pair interactions between atoms $A$ and $B$ in the form
 \begin{equation}\label{eq:d2}
- E_{disp}^{(2)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_6 \frac{C_6^{AB}}{R_{AB}^6}f_{damp}(R_{AB}),
+ E_{disp}^{(2)} =-\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_6 \frac{C_6^{AB}}{R_{AB}^6}f_{damp}(R_{AB}),
 \end{equation}
 with the number of atoms $N_A$, the scaling factor $s_6$ which is dependent on the functional, the averaged dispersion coefficient $C^{AB}_6$, the interatomic distance $R_{AB}$ and a damping function $f_{damp}(R_{AB})$.
 This equation gives the D2 correction $E_{disp}^{(2)}$, which is added to the total energy.
 For the more advanced D3 method, $E_{disp}^{(2)}$ is altered by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added:
 \begin{equation}
-  E_{disp}^{(3)} =\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3\,cos\gamma_a\, cos\gamma_b\, cos\gamma_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
+  E_{disp}^{(3)} =-\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{AB}(3\,cos\gamma_a\, cos\gamma_b\, cos\gamma_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
 \end{equation}
 Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are further averaged dispersion coefficients, $\gamma_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$ and $\bar{R}_{ABC}$ is the geometrically averaged distance of the three atoms.
 
@@ -731,7 +731,7 @@ As a consequence of plane waves, the system is periodic in 3D and it is possible
 Many basis functions are necessary which is very costly for calculations that depend not only on the density (like hybrid functionals or MP2).
 In comparison plane waves (PW) and atom centered orbitals have different advantages and disadvantages\cite{Tosoni2007}.
 For solid state systems both the energy and the gradient converge better with plane waves (fewer steps).
-Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynman forces \todo{defines} have to be evaluated.
+Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynman forces (forces acting on the ions/atoms) have to be evaluated.
 The quality of the basis is simply dependent on the cutoff energy E$_\textrm{cutoff}$, the higher this energy is the better is the basis.
 Treating all electrons requires very high cutoff energies  which are computationally unfeasible, so usually pseudopotentials are used, where core electrons are not treated explicitly but their presence is considered indirectly.
 On the negative side, when norm-conserving pseudopotentials are applied more memory is needed.
@@ -864,29 +864,45 @@ None of those methods delivers intensities comparable to SFG spectroscopy, but c
 \begin{itemize}
  \item[I)]
  In the dipole model, we approximate an IR spectrum polarized perpendicular (z direction) to the surface.
+This was done, because only modes with a high perpendicular component can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy, see also Appendix \ref{exp_techniques}).
+These are not completely comparable to IR spectra.
+Selection rules for SFG include IR and Raman activity as well as a system without inversion symmetry, which is usually the case for interfaces and surfaces.
  Further, we invoke the double harmonic approximation, \textit{i.e.}, vibrational modes are treated in harmonic approximation, and the z component of the dipole moment is approximated as
  \begin{equation}
   \mu_z(R_1,...,R_{3N_A})=\mu_z(0) + \sum_{i=1}^{3N_A}\frac{\partial \mu_z}{\partial R_i}|_{R_1=R_2=...=0}\cdot R_i ,
  \end{equation}
  where $\mu_z(0)$ is the dipole moment at the equilibrium geometry, and $R_i$ are the displacements of normal modes from equilibrium.
- 
- {\color{red}The normal modes are done in double harmonic approximation, \textit{i.e.} the potential is harmonic and the selection rule for vibrational transitions is $\Delta \nu=\pm1$.
- The dipole moment $\vec{\mu}=\vec{\mu}_0 + \vec{\mu}^\prime \vec{R}$ (with  $\mu^\prime=\frac{d\vec{\mu}}{d\vec{R}}$), is evaluated numerically perpendicular to the surface (in $z$ direction).
- The intensity $I$ is proportional to 
- \begin{equation}
- I\propto |\langle \phi_0^{(n)}|\vec{\mu}|\phi_1^{(n)} \rangle|^2
- \end{equation}
- $\phi_i^{(n)}$ are eigenfunctions of the harmonic oscillator representing the $n$-th normal mode that are orthonormalized.
- With this, we get
- \begin{equation}
-  I\propto |\vec{\mu}_0\langle \phi_0^{(n)}|\phi_1^{(n)} \rangle + \vec{\mu}^\prime\langle \phi_0^{(n)}|\vec{R}|\phi_1^{(n)} \rangle|^2
- \end{equation}
- \begin{equation}
-  I\propto |0 + \vec{\mu}^\prime\times N|^2
- \end{equation}
- the first term is zero and the second is a factor $N=\sqrt{\frac{\hbar}{2m_\textrm{red}\omega}}$\cite{cohen-tannoudji} times the change of dipole moment with respect to the coordinates ($m_\textrm{red}$ is the reduced mass).
- This gives the relation $I\propto |\mu^\prime_z|^2$\cite{dyn-dip,Yang2012}.
-%  The IR intensities for each normal mode are estimated from the double harmonic approximation (potential is approximated harmonically and the selection rule is $\Delta \nu=\pm 1$).
+Assuming for the moment a single normal mode, $R_n$, in the double harmonic approximation the intensity for IR induced dipole transition from $\phi_{\nu=0}^{(n)}(R)$ to $\phi_{\nu=1}^{(n)}(R)$ is, according to Fermi's golden rule,
+\begin{equation}
+I_\mu^{(n)}\propto |\langle \phi_0^{(n)}(R)|\frac{\delta \mu_z}{\delta R_n}|_0\cdot R_n|\phi_1^{(n}(R) \rangle|^2
+\end{equation}
+\begin{equation}\label{eq:mu-int}
+I_\mu^{(n)}\propto \mu_{z,n}^{\prime 2} \frac{\hbar}{2m_{red}^{(n)}\omega_n}
+\end{equation}
+where $\mu_{z,n}^{\prime}=\frac{\delta \mu}{\delta R_n}|_0$, $m_{red}$ is the reduced mass and the $\phi_i^{(n)}$ are the vibrational eigenfunctions.
+In the harmonic approximation, using normal modes, the total dipol spectrum is given as 
+\begin{equation}
+I_\mu \propto \sum_{n=1}^{3N_A}I_{\mu}^{(n)}.
+\end{equation}
+
+
+% The normal modes are done in double harmonic approximation, \textit{i.e.} the potential is harmonic and the selection rule for vibrational transitions is $\Delta \nu=\pm1$.
+% The dipole moment $\vec{\mu}=\vec{\mu}_0 + \vec{\mu}^\prime \vec{R}$ (with  $\mu^\prime=\frac{d\vec{\mu}}{d\vec{R}}$), is evaluated numerically perpendicular to the surface (in $z$ direction).
+% The intensity $I$ is proportional to 
+% \begin{equation}
+% I\propto |\langle \phi_0^{(n)}|\vec{\mu}|\phi_1^{(n)} \rangle|^2
+% \end{equation}
+% $\phi_i^{(n)}$ are eigenfunctions of the harmonic oscillator representing the $n$-th normal mode that are orthonormalized.
+% With this, we get
+% \begin{equation}
+%  I\propto |\vec{\mu}_0\langle \phi_0^{(n)}|\phi_1^{(n)} \rangle + \vec{\mu}^\prime\langle \phi_0^{(n)}|\vec{R}|\phi_1^{(n)} \rangle|^2
+% \end{equation}
+% \begin{equation}
+%  I\propto |0 + \vec{\mu}^\prime\times N|^2
+% \end{equation}
+% the first term is zero and the second is a factor $N=\sqrt{\frac{\hbar}{2m_\textrm{red}\omega}}$\cite{cohen-tannoudji} times the change of dipole moment with respect to the coordinates ($m_\textrm{red}$ is the reduced mass).
+% This gives the relation $I\propto |\mu^\prime_z|^2$\cite{dyn-dip,Yang2012}.
+%%  The IR intensities for each normal mode are estimated from the double harmonic approximation (potential is approximated harmonically and the selection rule is $\Delta \nu=\pm 1$).
 %   The derivative of the dipole moment with respect to the atomic positions is calculated, also known as dynamical dipole moment\cite{dyn-dip,Yang2012}.
 % The dynamical dipole moment is evaluated by the dipole moment operator $\vec{\hat{\mu}}(\vec{R}_i)$ between two states $i$ and $f$, where $\vec{\hat{\mu}}(\vec{R}_i)$ is a three component vector.
 % The initial state $i$ is the vibrational ground state and final state $f$ is a vibrationally excited state.
@@ -897,37 +913,41 @@ None of those methods delivers intensities comparable to SFG spectroscopy, but c
 % %Für jeden Eigenvektor, d.h. jede Vibration Z.b H2O hat 3 Eigenvektoren (Für Vibrationen) Also wir nehmen <0|mu|v1> für die erste Vibration <0|mu|v2> für die zweite <0|mu|v3> für dritte Mu ist in jedem Fall ein Vektor (x,y,z) jetzt kannst du Gruppentheorie benutzen und in Charaktertafel gucken Dort http://symmetry.jacobs-university.de/cgi-bin/group.cgi?group=402&option=4 Character table for point group C2v symmetry.jacobs-university.de Dort siehst du "linear Funktions" Spalte - und siehst du wo genau x, y, und z stehen A1, B1, B2 - das bedeutet dass Vibrationen solcher Symmetrie können IR aktiv sein Z.b symmetric stretch hat A1 Symmetrie also ist nicht Symmetrieverboten Solche Kriterium ist nur "negativ" also sagt was ist durch Symmetrie verboten aber gibt keine Information  wie möglich es ist Also wir wissen das symmetric stretch ist für Wassermolekül erlaubt aber nicht wie groß das Übergangsdipolmoment ist Um genau zu wissen, müssen wir das rechnen Wir können das statisch oder dynamisch rechnen Die statische Rechnung basiert auf Vibrationeigenzustände die man von der Hessematrix kriegt
 % The respective intensities are determined by $I\propto |<i|\vec{\hat{\mu}}(\vec{R}_i)|f>|^2$.
 
-Note that for this approach, only the dipole components perpendicular to the surface are taken into account.
-That is why in the graphs of the spectra in Section \ref{sec:vib11-20} the $\mu^2$ (this refers to $|\mu^\prime|^2$ with respect to the $z$ axis) is given at the y axis.
-Only modes with a high perpendicular compound can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy, see also Appendix \ref{exp_techniques}).
-These are not completely comparable to IR spectra.
-Selection rules for SFG include IR and Raman activity as well as a system without inversion symmetry, which is usually the case for interfaces and surfaces.
-}
+%Note that for this approach, only the dipole components perpendicular to the surface are taken into account.
+%That is why in the graphs of the spectra in Section \ref{sec:vib11-20} the $\mu^2$ (this refers to $|\mu^\prime|^2$ with respect to the $z$ axis) is given at the y axis.
 
-\item[II)] Another way to obtain intensities is by applying density functional perturbation theory (DFPT)\cite{Baroni1987,Giannozzi1991}, which is a linear response theory.
-Within this approach Born effective charges matrix is determined\cite{Born1954}.
+
+
+\item[II)] Another way to obtain IR intensities for periodic systems is by applying density functional perturbation theory (DFPT)\cite{Baroni1987,Giannozzi1991}, which is a linear response theory.
+Within this approach a Born effective charge matrix is determined\cite{Born1954}.
 % These charges are calculated as the second derivative of the energy with respect to an applied electric field and to the amplitude of a vibrational distortion.
-These charges can be understood as a coefficient that is related to the change of the polarization due to displacing an atom.
-They can be expressed as the derivative of the polarization $P_\beta$ with respect to the coordinates $Z^\star_{\alpha\beta}=\frac{\partial{P_\beta}}{\partial{R_\alpha}}$.
+These charges can be understood as coefficients that are related to the change of the polarization due to displacing an atom.
+They can be expressed as the derivative of the macroscopic polarization in a (cartesian) direction $\beta$, with respect to the displacement of an atom $i$ in a direction $\alpha$, $\tau_{i\alpha}$ as\footnote{Strictly speaking, the dimension of $Z^\star_{\alpha\beta}$ is [$\frac{Asm}{m^3}$], but in this work it is not divided by the cell volume.}
+\begin{equation}
+Z^\star_{\alpha\beta}(i)=\frac{\delta P_\alpha}{\delta \tau_{i\alpha}}.
+\end{equation}
+%polarization $P_\beta$ with respect to the coordinates $Z^\star_{\alpha\beta}=\frac{\partial{P_\beta}}{\partial{R_\alpha}}$.
 
 % Another way to obtain intensities is by calculating Born effective charges\cite{Born1954}, as published in the work of Grillo \textit{et al.}\cite{BEC}.
 % These charges are calculated as the second derivative of the energy with respect to an applied electric field and to the amplitude of a vibrational distortion.
 % This is available through DFPT\cite{Baroni1987,Giannozzi1991} (density functional perturbation theory), which is a linear response theory.
-One can calculate the intensity $I(\omega)$\cite{Bruesch1986,Baroni2001}, as published in the work of Grillo \textit{et al.}\cite{BEC}:
+One can calculate the intensity $I^{(n)}_{BEC}$\cite{Bruesch1986,Baroni2001}, as published in the work of Grillo \textit{et al.}\cite{BEC}\footnote{In this work, they calculate HREELS spectra, but the software also computes IR intensities.}:
 \begin{equation}\label{eq:bec}
-  I(\omega) = \sum_{\alpha=1}^3|\sum_{i=1}^{N_A}\sum_{\beta=1}^3 Z_{\alpha\beta}^\star(i)e_\beta(i)|^2.
+  I_{BEC}^{(n)} \propto \sum_{\alpha=1}^3|\sum_{i=1}^{N_A}\sum_{\beta=1}^3 Z_{\alpha\beta}^\star(i)e^{(n)}_\beta(i)|^2.
 \end{equation}
-Here, $\alpha$ and $\beta$ range over three cartesian directions ($x$, $y$, $z$), $e_\beta(i)$ is the $\beta$ component of the normalized vibrational eigenvector of the $\omega$-th mode, $i$ deciphers the different atoms of the system with the total number $N_A$ and $Z_{\alpha\beta}^\star(i)$ is the Born effective charge matrix of the $i$-th atom.
-For example $Z_{x\beta}^\star$ is the change in polarization in $x$ direction produced by the displacement in $\beta$ direction.
-\\
+Here, $\alpha$ and $\beta$ range over three cartesian directions (1, 2, 3 for $x$, $y$, $z$), $e^{(n)}_\beta(i)$ is the $\beta$ component of atom $i$ in the normalized vibrational eigenvector of the $n$-th mode, $N_A$ is the total number of atoms in the unit cell.
+
+%$i$ deciphers the different atoms of the system with the total number $N_A$ and $Z_{\alpha\beta}^\star(i)$ is the Born effective charge matrix of the $i$-th atom.
+%For example $Z_{x\beta}^\star$ is the change in polarization in $x$ direction produced by the displacement in $\beta$ direction.
+
 \end{itemize}
-Both methods are based on normal mode analyses and therefore give IR intensities.
-While normal modes are a good approximation for high energy vibrations, for example OD stretch vibrations, they become worse for lattice vibrations, which are typically more delocalized.
+Both methods are based on normal mode analyses and equations (\ref{eq:mu-int}) and (\ref{eq:bec}) give stick spectra.
+While normal modes are a good approximation for high energy vibrations, for example OD stretch vibrations, they become worse for lattice vibrations, for which the minima are typically more shallow.
 \begin{itemize}
 \item[III)] As a fundamentally different method, power spectra can be calculated from \textit{ab initio} MD trajectories\cite{VAC}.
-This is conducted by analyzing the velocity of the atoms along the trajectories, giving the vibrational spectrum via fast Fourier transformation of the velocity-velocity autocorrelation function:
+This is carried out by analyzing the velocity of the atoms along the trajectories, giving the vibrational spectrum via Fourier transformation of the velocity-velocity autocorrelation function:
 \begin{equation}
- VDOS(\omega)=\sum_{i=1}^{N_A}\int_{0}^{+\infty}\langle\vec{v}_i(t)\cdot \vec{v}_i(0)\rangle e^{i\omega t}dt ~.
+ VDOS(\omega)\propto \sum_{i=1}^{N_A}\int_{0}^{+\infty}\langle\vec{v}_i(t)\cdot \vec{v}_i(0)\rangle e^{i\omega t}dt ~.
 \end{equation}
 % ?was ist N? Ist das Integral wirklich von $-\infty-\infty$ oder sind die Grenzen eingeschränkt? Ist $<x(0)*x(t)>$ ein Mittelwert? Was ist mit der Summe? Im Paper steht folgende Gleichung:
 % \begin{equation}
@@ -935,23 +955,25 @@ This is conducted by analyzing the velocity of the atoms along the trajectories,
 % \end{equation}
 % with $<\dot{r}(\tau)\dot{r}(t+\tau)>$ being the autocorrelation of the velocities, derivatives of the position $r$ with repect to the time $t$, and the $\int \star e^{-i\omega t}dt$ for the Fourier transform, which is scaled by the reduced mass $m$.
 % This leads to the conclusion that the intensity in a power spectrum $P$ is inversely proportional to the reduced mass (why inversely?).
-VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N_A$ atoms, Fourier transform of the velocity-velocity autocorrelation function $\langle\vec{v}_i(t)\cdot \vec{v}_i(0)\rangle$.
-$v_i$ are the velocities at different times $0$ and a later time $t$.
-The integration range is per definition from $-\infty$ to $\infty$ but because of symmetry (axisymmetric) reasons it is sufficient to calculate only the range from $0$ to $\infty$. (However, in practice this is just a huge number).
-The resulting spectra implicitly include anharmonic effects: no harmonic approximation for the potential energy surface and the modes are established and movement of the atoms are taken into account.
-Also, further anharmonic effects like mode coupling, overlapping of neighboring peaks and line broadening are included\cite{hornicek2007,hudecova2012}.
-The power spectrum contains peaks for each mode, apart from selection rules for vibrational spectroscopy.
-The obtained ``intensities'' correspond to the oscillator amplitudes.
+VDOS is the vibrational density of states as a function of the frequency $\omega$, summing over all $N_A$ atoms, Fourier transform of the ensemble average of the velocity-velocity autocorrelation function $\langle\vec{v}_i(t)\cdot \vec{v}_i(0)\rangle$.
+$\vec{v}_i$ are the atomic velocities at different times $0$ and a later time $t$.
+In practice one only integrates from 0 to a finite propagation time, $t_{prop}$.
+%The integration range is per definition from $-\infty$ to $\infty$ but because of symmetry (axisymmetric) reasons it is sufficient to calculate only the range from $0$ to $\infty$. (However, in practice this is just a huge number).
+The resulting spectra implicitly include anharmonic effects and mode couplings.
+%no harmonic approximation for the potential energy surface and the modes are established and movement
+Also, the thermal motion of the atoms are taken into account\cite{hornicek2007,hudecova2012}.
+%Also, further anharmonic effects like mode coupling, overlapping of neighboring peaks and line broadening are included.
+%The power spectrum contains peaks for each mode, apart from selection rules for vibrational spectroscopy.
+%The obtained ``intensities'' correspond to the oscillator amplitudes.
 \end{itemize}
 
 
-\section{Finding Transition States}\label{sec:tst}
-According to the Born-Oppenheimer approximation\cite{bornoppenheimer} nuclear and electronic degrees of freedom are separated.
-In this picture, stable systems are minima on the PES and chemical reactions can be understood as nuclei moving on the PES along the reaction coordinate $\xi$.
-On the $3N_A$-dimensional PES (with $N_A$ being the number of nuclei), the energetically most favorable reaction path is chosen.
-This is the one with the least energy necessary (minimum energy path, MEP, see Figure \ref{abb:mep}).
-The transition state (TS) is at the highest energy on this path.
-As mentioned before, it is a first-order saddle point, the energetically highest point along the MEP, but a minimum along all other coordinates.
+\section{Transition States and Kinetics}\label{sec:tst}
+According to the Born-Oppenheimer approximation\cite{bornoppenheimer}, nuclear and electronic degrees of freedom are separated.
+In this picture, stable systems are minima on the PES and chemical reactions can be understood as nuclei moving on the PES from educt to product valleys.
+On a multi-dimensional PES, one can define an energetically most favorable reaction path, which is the minimum energy path, MEP, see Figure \ref{abb:mep}.
+The highest point along the MEP is called the transition state (TS).
+As mentioned before, in a multi-dimensional space this is a first-order saddle point.
 % As a result of the Born-Oppenheimer approximation that separates nuclear and electronic coordinates, reactions can be understood as nuclei moving on a PES.
 % Finding the transition state between reactant and product requires finding the maximum of the minimum energy path (MEP).
 % The MEP describes the path of minimal energy connecting minima of the PES along the reaction coordinate $\xi$ (see Figure \ref{abb:mep}).
@@ -959,8 +981,8 @@ As mentioned before, it is a first-order saddle point, the energetically highest
 \begin{figure}[!h]
 \centering
  \includegraphics[width=0.4\textwidth]{figures/theory/MEP.pdf}
-   \caption{Schematic view of a minimum energy path (MEP) for a thermal reaction.
-The free energy $\Delta$G$^\ddagger= \Delta G_\textrm{TS}-\Delta G_\textrm{educt}$ for the reaction is also plotted.}
+   \caption{Schematic view of a minimum energy path (MEP) with coordinate $\xi$ for a chemical reaction.
+The activation energy $\Delta E^\ddagger= E_\textrm{TS}- E_\textrm{educt}$ for the reaction is also shown.}
             \label{abb:mep}
 \end{figure}
 
@@ -980,58 +1002,75 @@ The free energy $\Delta$G$^\ddagger= \Delta G_\textrm{TS}-\Delta G_\textrm{educt
 % These spring forces prevent the images from optimizing into the local minimum next to the transition state.
 % First a regular NEB, then on top of this climbing image was done which gives better convergence.
 % In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.For the point found by this scheme we checked whether this is a transition state via frequency analysis, since a TST of first order has to have one imaginary mode that vibrates along the reaction path.
-Transition state theory is a semi-classical theory: dynamics along the reaction coordinate $\xi$ are treated classically, but perpendicular directions allow for quantization of vibrational and rotational energy.
-In thermodynamical equilibrium, all possible quantum states along the reaction coordinate are occupied with respect to their relative Boltzmann weight $P=e^{-\Delta E/(k_BT)}$ depending on the energy $E$ (or free energy $G$) and the temperature $T$.
+
+Transition state theory is a semi-classical theory: dynamics along the reaction coordinate $\xi$ are treated classically, but perpendicular modes are treated quantum mechanically in harmonic approximation.
 
 
-Assuming the reaction
+Once a transition state is found (see below), $\Delta E^\ddagger$ and also the corresponding activation free energy
 \begin{equation}
-A+ B \rightleftarrows C^\ddagger \rightarrow D
+\Delta G^\ddagger = G_{TS} - G_{educt}
 \end{equation}
-where reactants $A$ and $B$ are in thermodynamical equilibrium with the transition state $C^\ddagger$ and from this the reaction goes to the product $D$.
-The rate constant can be determined with Eyring theory\cite{eyring,eyring-polanyi}:
+can be computed, where $G=H-TS$.
+The free energy $G$ is a sum of the components for translation, rotation and vibration: $G_{trans}+G_{rot}+G_{vib}$, where only the latter is non zero for surface systems.
+It can also be expressed by the sum of the SCF energy ($E_{SCF}$) and the vibrational component of the Gibbs free energy using the vibrational frequencies $\nu_i$ from a normal mode analysis:
+\begin{equation}
+G=E_{SCF} + G_{vib}=E_{SCF}+ \sum_{i=1}^{N_A}(\frac{h\nu_i}{2} + k_BT\ln(1-e^{-h\nu_i/(k_BT)})).
+\end{equation}
+
+With $\Delta G^\ddagger$, reaction rates $k(T)$ can be calculated with the help of transition state theory, according to Eyring\cite{eyring,eyring-polanyi}.
+%In thermodynamic equilibrium, all possible quantum states along the reaction coordinate are occupied with respect to their relative Boltzmann weight $P=e^{-\Delta E/(k_BT)}$ depending on the energy $E$ (or free energy $G$) and the temperature $T$.
+%Assuming the reaction
+%\begin{equation}
+%A+ B \rightleftarrows C^\ddagger \rightarrow D
+%\end{equation}
+%where reactants $A$ and $B$ are in thermodynamical equilibrium with the transition state $C^\ddagger$ and from this the reaction goes to the product $D$.
+%The rate constant can be determined with Eyring theory\cite{eyring,eyring-polanyi}:
 \begin{equation}\label{eq:eyring}
-k(T)=\kappa\frac{k_BT}{h}e^{-\Delta G^\ddagger(T)/(k_BT)}
+k(T)=\kappa\frac{k_BT}{h}e^{-\Delta G^\ddagger(T)/(k_BT)}.
 \end{equation}
-with the reaction rate constant $k(T)$, the transmission coefficient $\kappa$ which will be explained shortly, Boltzmann's constant $k_B$ and the difference of Gibb's free energy for the transition state and the educt $\Delta G^\ddagger = \Delta G_\textrm{TS} - \Delta G_\textrm{educt}$.
-The equation gives the reaction rate constant as a function of temperature and free energy barrier height.
+Here, $\kappa$ is a correction factor (accounting for, \textit{e.g.}, tunneling), which we won't use here. $k_B$ is Boltzmann's constant $k_B$.
+The equation gives the reaction rate constant as a function of temperature.
 Note that this equation is only valid for cases where all reactants reaching the TS react to the product site.
 No re-crossing is employed, so the rate is the upper limit in the classical picture.
-For quantum effects, the rate can be increased due to tunneling, where reactants can overcome the barrier although they do not possess sufficient amount of energy for the barrier.
-In order to account for this, the Eyring equation can be expanded with the transmission coefficient $\kappa$ which can be interpreted as a tunneling prefactor.
-For $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection or re-crossing to the educt side takes place.
+%For quantum effects, the rate can be increased due to tunneling, where reactants can overcome the barrier although they do not possess sufficient amount of energy for the barrier.
+%In order to account for this, the Eyring equation can be expanded with the transmission coefficient $\kappa$ which can be interpreted as a tunneling prefactor.
+%For $\kappa>1$ tunneling occurs and for $\kappa<1$ non-classical reflection or re-crossing to the educt side takes place.
 \\\\
 
 For the barrier height one needs to find the free energies of the transition state and the educt.
 The educt geometry can simply be obtained by geometry optimization as a minimum on the PES.
-Among different methods to find the transition state geometry and henceforth the energy we used nudged elastic band calculations (NEB)\cite{Henkelman00a}, with climbing image\cite{Henkelman00b}.
+Among different methods to find the transition state geometry, we used nudged elastic band calculations (NEB)\cite{Henkelman00a}, with climbing image\cite{Henkelman00b}.
 This method approximates the reaction path as a series of associated images, which are connected via spring forces.
 These spring forces prevent the images from optimizing into the local minimum next to the transition state.
 First a regular NEB, then on top of this climbing image was applied which gives better convergence.
-In this calculation the energetically highest image is "optimized" towards higher energies in the contrary direction of the gradient.
+In NEB calculations the energetically highest image is "optimized" towards higher energies in the opposite direction of the potential gradient.
 Any point found by this scheme must be checked whether it is a transition state via frequency analysis, since a TS of first order has to have one imaginary mode that vibrates along the reaction path.
 Otherwise there is no transition state.
 
 \section{Software and Computational Details}
-The majority of simulations/computations in this work were carried out using the Vienna \textit{ab initio} simulation package (VASP version 4 and 5.2)\cite{kresse1993,kresse2,kresse3,kresse4,kresse99}
+The majority of simulations/computations in this work were carried out using the Vienna \textit{ab initio} simulation package (VASP version 4 and 5.2)\cite{kresse1993,kresse2,kresse3,kresse4,kresse99}, which makes use of a plane wave basis.
+With VASP we did stationary, periodic DFT calculations and AIMD for a slab model.
 
 
 For all the VASP calculations for the (0001) surface the parameters from prior work in the Saalfrank workgroup were used, because these were converged carefully by Dr. Jonas Wirth\cite{WirthJPCC2012,Wirth2014,Wirth2015,Wirth2016}.
-Total energy convergence was achieved when energies between two SCF steps were smaller than $10^{-5}\,$eV and structures were assumed minima if the change in forces between two structures was below $0.01\,$eV/\AA{}.
+Total energy convergence was achieved when energies between two SCF steps were smaller than $10^{-5}\,$eV and structures were assumed minima if the change in forces between two structures was below $0.01\,$eV/\AA{} and if all frequencies are real.
 The energy cutoff was set to $400\,$eV.
 A vacuum gap of $26.4\,$\AA{} was used.
 
 
-These parameters were adopted for the (11\=20) surface.
+These parameters were also adopted for the (11\=20) surface.
 Here, the vacuum gap ranged from $17\,$\AA{} for the 10 layer slab to $11\,$\AA{} for the 25 layer slab, depending on the slab size in z-direction.
 %the vacuum region is in the range of 17 Å for the 10 layer slab, 15 for the 15 layer slab, 13 for the 20 layer slab and 11 for the 25 layer slab
 \\\\
 
-The atom centered basis calculations with the programs CRYSTAL\cite{crystal14} (version 14) and the LMP2 calculations with cryscor\cite{cryscor} were not applied in our group before so no convergence test had been made so far.
-The geometries and cell parameters from the VASP output were used as starting points and the usual convergence criteria of the programs were applied, convergence was achieved when energies between two steps were smaller than $2.7\times 10^{-6}\,$eV (with some exception when convergence was hard to achieve).
+For HF and DFT (PBE and B3LYP) we calculated energies with the program CRYSTAL\cite{crystal14} (version 14) and performed LMP2 calculations with cryscor\cite{cryscor}.
+Both use atom centered bases instead of plane waves.
+In all cases, no 3D slabs were calculated but 2D supercells were considered, treating only x and y directions periodically.
+Both programs were not applied in our group before so no convergence test had been done so far.
+The geometries and cell parameters from the VASP (PBE+D2) output were used as starting points and the usual convergence criteria of the programs were applied, convergence for SCF was achieved when energies between two steps were smaller than $2.7\times 10^{-6}\,$eV (with some exceptions when convergence was hard to achieve).
 \\\\
 
-Energy and MD plots shown in this work were prepared with gnuplot\cite{gnuplot}, surface structures and geometries were visualized with VMD\cite{vmd} and further illustrations were created with inkscape\cite{inkscape}.
+%Energy and plots for the MD shown in this work were prepared with gnuplot\cite{gnuplot}, surface structures and geometries were visualized with VMD\cite{vmd} and further illustrations were created with inkscape\cite{inkscape}.
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(11\=20)}
 
@@ -2651,7 +2690,7 @@ These results are shown in Table \ref{tab:k_crystal-reopt+noopt} (reopt).
    & reopt & no opt & reopt & no opt &reopt & no opt & reopt& \\\midrule
    $\Delta E^\ddagger$ &0.65 & 0.76 &0.65 &0.76 &0.69 & 0.84 & 0.60&0.44\\
    $\Delta G^\ddagger$ &0.53 &0.62 &0.54 &0.62 &0.58 & 0.70 &0.49$^\ast$ &0.29\\
-   $k$(300K) &$8.0\times 10^3$ &$2.4\times 10^2$ &$5.8\times 10^3$ &$2.2\times 10^2$ &$1.2\times 10^3$ &$1.0\times 10^1$ & $3.7\times 10^4$$^\ast$& $9.1\times 10^7$\\\bottomrule
+   $k$(300K) &$8.0\times 10^3$ &$2.4\times 10^2$ &$5.8\times 10^3$ &$2.2\times 10^2$ &$1.2\times 10^3$ &$1.0\times 10^1$ & $3.7\times 10^{4\ast}$& $9.1\times 10^7$\\\bottomrule
   \end{tabular}
   \begin{tablenotes}
  \footnotesize
