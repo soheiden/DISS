@@ -13,8 +13,11 @@
    height="554.54474"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="al2o3-crystal.png">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="al2o3-crystal.svg"
+   inkscape:export-filename="/scratch/dosse/sophia/DISS/figures/theory/al2o3-crystal.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <marker
@@ -103,8 +106,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1547842"
-     inkscape:cx="266.29131"
-     inkscape:cy="197.61843"
+     inkscape:cx="281.75606"
+     inkscape:cy="265.16352"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -112,10 +115,10 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1032"
-     inkscape:window-x="-3"
-     inkscape:window-y="-3"
+     inkscape:window-width="1280"
+     inkscape:window-height="995"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -246,65 +249,5 @@
        d="m 446.35427,412.68534 13.33915,0"
        id="path5846"
        inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)"
-       d="m 111.6788,596.81902 58.59201,-95.36268 113.77602,-10.43779"
-       id="path3920"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#Arrow2Mend)"
-       d="m 169.90274,501.37195 0,-149.43164"
-       id="path3922"
-       inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
-       x="117.55634"
-       y="619.65057"
-       id="text5711"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5713"
-         x="117.55634"
-         y="619.65057">a</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
-       x="276.98087"
-       y="478.84564"
-       id="text5711-3"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5713-7"
-         x="276.98087"
-         y="478.84564">b</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
-       x="185.94266"
-       y="356.10718"
-       id="text5711-3-1"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5713-7-9"
-         x="185.94266"
-         y="356.10718">c</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
-       x="390.87674"
-       y="711.59955"
-       id="text3017"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3025"
-         x="390.87674"
-         y="711.59955"
-         style="font-size:27px">α-Al<tspan
-   style="font-size:27px;baseline-shift:sub"
-   id="tspan3027">2</tspan>O<tspan
-   style="font-size:27px;baseline-shift:sub"
-   id="tspan3029">3</tspan></tspan></text>
   </g>
 </svg>
