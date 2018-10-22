@@ -1074,30 +1074,37 @@ The geometries and cell parameters from the VASP (PBE+D2) output were used as st
 
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(0001)}\label{sec:0001}
-The (0001) surface is the most stable surface site of alumina under UHV conditions, and was subject of several studies so far\cite{kuri10,hass98,hass00,Elam1998,Brown1999,Kelber2007}.
+As mentioned earlier, the (0001) surface is the most stable surface site of alumina under UHV conditions, and was subject of several studies so far\cite{kuri10,hass98,hass00,Elam1998,Brown1999,Kelber2007}.
 Both experimental and theoretical studies discovered characteristics and specialties of this crystal cut.
 In experimental studies, a whole zoo of methods was applied to study the (0001) surface, there are IR\cite{Tsyganenko1996}, LEED\cite{Chang1971} and TEM\cite{Lee1985} studies that contribute to the structure of the clean and the surface in contact with water.
-Laser induced thermal desorption spectroscopy\cite{Elam1998,Nelson1998} that showed a variety of hydroxyl surface sites with different binding energies and they could show that H$_2$O adsorbs dissociatively on the surface.
+Laser induced thermal desorption spectroscopy\cite{Elam1998,Nelson1998} showed a variety of hydroxyl surface sites with different binding energies, and that H$_2$O adsorbs dissociatively on the surface.
 Theoretical studies were conducted by means of periodic \textit{ab initio} calculations by Kurita\cite{kuri10} who studied the stability of distinct surface cuts without water. Also the system in contact with H$_2$O was studied by Hass and coworkers\cite{hass98,hass00} for \textit{ab initio} molecular dynamics and found that dissociation of molecular water is favored.
+\todo{further theoretical studies..}
 \\
 
-In our workgroup previous work concerned the stability of low water coverage limit and the vibrational spectroscopic behaviour, reaction pathways between stable minima, and furthermore we studied higher water coverages and hydroxylated surface systems\cite{WirthJPCC2012,Wirth2014,Wirth2015}.
+In our workgroup previous work concerned the adsorption, reactions and vibrational spectroscopy of water on $\upalpha$-Al$_2$O$_3$(0001) in the low-coverage limit.
+Furthermore, higher water coverages and hydroxylated surface systemswere studied\cite{WirthJPCC2012,Wirth2014,Wirth2015}\todo{also cite Giacomo}.
 \\\\
 
-In this work, the focus is on two topics:
+In these studies, periodic DFT in the generalized gradient approximation was used.
+It is known (from other systems) that this may lead to errors in computed vibrational frequencies and, notably, in reaction barriers - the latter being typically too low with DFT-GGA.
+Further, in none of the studies on Al$_2$O$_3$(0001) the water dosing of the surface with a molecular beam, as used by our experimental partners at the Fritz-Haber-Institut, was studied.
+In this work, the focus is therefore on two topics:
 \\
-(i) Improvement of reaction rates calculation with different methods beyond GGA functionals, as PBE.
+(i) The testig of methods beyond DFT with GGA functionals (as PBE) for adsorption energies, vibrational frequencies and activation energies for reactions.
 \\
-(ii) Understanding the scattering processes of a water molecule (D$_2$O) being shot at the surface with a molecular beam source with the help of AIMD and
+(ii) Understanding the scattering processes of a water being shot at the surface with a molecular beam source with the help of AIMD.
 \\\\
-First, the surface and the most stable adsorption patterns are introduced (Section \ref{sec_0001surf}), followed by the improvements for the reaction rates (Section \ref{crystal_calc}) and the results for the molecular beam scattering\cite{Heiden0001_2018} (Section \ref{sec_0001AIMD}).
+First, the surface and the most stable adsorption patterns are introduced (Section \ref{sec_0001surf}), followed by the testing of methods beyond DFT-GGA (Section \ref{crystal_calc}), and the results for the molecular beam scattering\cite{Heiden0001_2018} (Section \ref{sec_0001AIMD}).
 	
-\section{Surface Model and Static Calculations}\label{sec_0001surf}
+\section{Supercell Model for the Adsorption of Water}\label{sec_0001surf}
 
-The most stable surface cut is a stochiometric, Al terminated one, and in contrast to the (11\=20) surface there exists only one type of Al CUS atom, which acts as a reactive Lewis-acid site.
-Also, all oxygen atoms are threefold coordinated resulting in a less complex topography than the higher-indexed surfaces have.
-We apply here a $2\times 2$ supercell with vectors that were optimized from the bulk structure (adopted from previous work of Dr. J. Wirth\cite{WirthJPCC2012}).
-The surface slab consists of nine atomic layers that equal three repeating units in z direction of the type Al-O$_3$-Al..., with the top five layers being allowed to relax during optimization and AIMD and the lowest four layers being fixed to bulk values, see Figure \ref{abb:surf_0001}.
+In vacuum, the most stable surface cut of $\upalpha$-Al$_2$O$_3$(0001) is a stochiometric, Al terminated one.
+In this topmost Al layer, the aluminum atoms are undercoordinated and are referred to as coordinatively unsaturated site (CUS).
+%In contrast to the (11\=20) surface that will be studied in Section \todo{ref section 11-20} there exists only one type of Al CUS atom, which acts as a reactive Lewis-acid site.
+Also, all oxygen atoms are threefold coordinated. %resulting in a less complex topography than for the higher-indexed surfaces.
+We apply here a $2\times 2$ supercell for the Al-terminated (0001) surface with cell vectors that were optimized from the bulk structure (adopted from previous work of Dr. J. Wirth\cite{WirthJPCC2012}).
+The surface slab used in this work consists of nine atomic layers that equal three repeating units perpendicular to the surface of the type Al-O$_3$-Al-Al-O$_3$-Al-Al-O$_3$-Al, with the top five layers being allowed to relax during optimization and AIMD and the lowest four layers being fixed to bulk values, see Figure \ref{abb:surf_0001}.
 
 \begin{figure}[!ht]
  \centering
@@ -1105,14 +1112,16 @@ The surface slab consists of nine atomic layers that equal three repeating units
  \quad\quad
  \subfigure[(0001), side view]{\includegraphics[width=0.45\textwidth]{figures/0001/surf_0K-side.pdf}}
  \caption{Surface model of the (0001), the most stable surface cut under UHV conditions.
-The top view (a) shows four Al CUS atoms (gray) that are surrounded by three threefold coordinated surface oxygen atoms (pale red).
-(b) reveals the side view of the Al terminated surface cut in detail with the atomic layers.}
+The top view (a) shows four Al CUS atoms (gray) for the $2\times 2$ cell, which are surrounded by three threefold coordinated surface oxygen atoms (pale red).
+(b) reveals the side view of the Al terminated surface cut in detail with the atomic layers indicated.}
         \label{abb:surf_0001}
 \end{figure}
-The unit cell vectors are equal to $\vec{a}=\vec{b}=9.66\,$\AA  ~and there is a $60$\textdegree{} angle between them.
+The unit cell vectors are equal to $|\vec{a}|=|\vec{b}|=9.66\,$\AA  ~and there is a $60$\textdegree{} angle between them.
 The $\vec{c}$-vector of the slab model is perpendicular to the plane spanned by $\vec{a}$ and $\vec{b}$ and is $31.4\,$\AA{} long, hence the vacuum gap between two slabs in this direction is $26.4\,$\AA.
-The stability, vibrations and reactivity of one water  molecule per $2\times 2$ supercell were already studied by Dr. Jonas Wirth.
-As published in \cite{WirthJPCC2012}, there is one molecular minimum on top of a CUS atom and three dissociated states (see Figure \ref{abb:0001_ads}): the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the hydrogen atom being one position farther away and the 1-4$^\prime$ that is the configuration with the greatest possible distance for this cell size.
+
+
+The adsorption behavior, vibrations and reactivity of one water  molecule per $2\times 2$ supercell (coverage 1/4) were already studied in Reference\cite{WirthJPCC2012}.
+As mentioned there, there is one molecular minimum on top of a CUS atom and three most stable, dissociated states (see Figure \ref{abb:0001_ads}): the next neighboring 1-2 dissociated state, the 1-4 dissociated structure with the hydrogen atom being one position farther away and the 1-4$^\prime$ that is an example for a configuration with even greater distance from the OH group.
 \begin{figure} [!ht]
 \centering
 \subfigure[mol]{\includegraphics[width=0.4\textwidth]{figures/0001/0001_mol_top.jpg}}
@@ -1122,85 +1131,95 @@ As published in \cite{WirthJPCC2012}, there is one molecular minimum on top of a
 \subfigure[1-4]{\includegraphics[width=.4\textwidth]{figures/0001/0001_1-4-diss_top.jpg}}
  \quad
 \subfigure[1-4$^\prime$]{\includegraphics[width=.4\textwidth]{figures/0001/0001_1-4p-diss_top_label.pdf}}
-\caption{Adsorption geometries of the molecular and the three dissociated species.
+\caption{Adsorption geometries for the PBE+D2 optimized geometries of the molecular and the three dissociated species.
 Adsorption energies for these species can be found in Table \ref{tab:0001_eads}.
-Additionally, panel (d) shows the numbering of the surface atoms that provides the nomenclature.}
+Additionally, panel (d) shows the numbering of the surface atoms that provides the nomenclature.
+Adsorption energies are given in Table \ref{tab:vasp-results}.
+The adsorption energy of 1-4$^\prime$ is not listed there and is for PBE+D2 \todo{wert hinschreiben, ist es wirklich PBE+D2 oder PW91?}.
+These figures are from unpublished work of Dr. J. Wirth.}
        \label{abb:0001_ads}
 \end{figure}
-Of these, the 1-2 dissociated species is the most stable one and the 1-4$^\prime$ is the least stable one, see Table \ref{tab:0001_eads}.
+Of these, according to periodic DFT calculations of Reference\cite{WirthJPCC2012}} using a plane-wave basis and the PW91 exchange-correlation functional, the 1-2 dissociated species is the most stable one and the 1-4$^\prime$ is the least stable one, see Table \ref{tab:0001_eads} below.
 For the stability of the molecular and the 1-4 dissociated species, the situation is more controversial in the literature\cite{WirthJPCC2012,hass00,Ranea2009}.
-In our periodic DFT studies with VASP, the stability lies between the previously mentioned ones, depending on the exact method employed: For PBE+D2 the molecular adsorbed species is more stable than 1-4, for the functional PW91+D2 the 1-4 dissociated is more stable, whereas PW91 without dispersion corrections gives the same adsorption energy for both species (the values for the adsorption energy are calculated analogously to the (11\=20) surface cut, equation (\ref{eq:Eads})).
-Calculations with an atom centered basis instead of plane waves with the CRYSTAL code show that the molecular species is more stable for most basis sets and they are both equal in adsorption energy for the remaining ones, see Section \ref{crystal_calc}.
+In Reference\cite{WirthJPCC2012} PW91 with dispersion corrections gives almost the same adsorption energy for both species.
+%In periodic DFT studies with VASP, the stability lies between the previously mentioned ones, depending on the exact method employed: For PBE+D2 the molecular adsorbed species is more stable than 1-4, for the functional PW91+D2 the 1-4 dissociated is more stable, whereas PW91 without dispersion corrections gives the same adsorption energy for both species (the values for the adsorption energy are calculated analogously to the (11\=20) surface cut, equation (\ref{eq:Eads})).
+We shall see below (Section \ref{crystal_calc}) that the relative stability of the molecular and the various dissociated species, depends somewhat on the functional, on the treatment (or lack) of dispersion, on the basis (plane-wave vs. atomic orbital basis), and on the level of electronic structure method (DFT vs. WFT).
+Further, the influence of these methods/basis sets on vibrational frequencies will be studied in Section \todo{section with crystal freqs}.
+%Calculations with an atom centered basis instead of plane waves with the CRYSTAL code show that the molecular species is more stable for most basis sets and they are both equal in adsorption energy for the remaining ones, see Section \ref{crystal_calc}.
 
 
-Of course there are reactions linking these minima: dissociation, OH- and H-diffusion were studied, as well as rotation of an OH group and molecular water diffusion from CUS to CUS.
-The latter two do not play a crucial role in this work, especially the CUS to CUS diffusion of molecular water is very improbable due to the slow reaction rate.
-Adsorption energies and reaction rates which are of importance for this work are shown in Table \ref{tab:0001_eads} and \ref{tab:0001_rates} (the PBE results shown there are unpublished work obtained by Dr. J. Wirth).
-\begin{table}[!h]
-  \centering
-   \caption{Adsorption energies for the stable minima in eV.
-All values were calculated with PBE including D2 dispersion corrections by Dr. J. Wirth (unpublished).}
-  \begin{tabular}{cccc}
-  \toprule
-   \multicolumn{4}{c}{E$_\textrm{ads}$ [eV]}\\\midrule
-  mol &1-2 &1-4 &1-4$^\prime$  \\
-  -1.31 & -1.69 & -1.30 & -1.21\\\bottomrule
-    \end{tabular}
-  \label{tab:0001_eads}
-\end{table}
-\begin{table}[!h]
-  \centering
-   \caption{Reaction rate constants $k$ in s$^{-1}$ at $300\,$K with corresponding barrier heigths $\Delta E^\ddagger$ and $\Delta G^\ddagger_\textrm{300\,K}$ in eV for the processes connecting the minima.
-Calculations were executed with PBE+D2 (also from unpublished work of Dr. J. Wirth).}
-  \begin{tabular}{c|ccc||ccc}
-  \toprule
-   &\multicolumn{3}{c}{reaction} & \multicolumn{3}{c}{back reaction}\\
-   &              $\Delta E^\ddagger$ & $\Delta G^\ddagger(\textrm{300\,K})$ &$k(\textrm{300\,K})$&$\Delta E^\ddagger$ & $\Delta G^\ddagger(\textrm{300\,K})$ &$k(\textrm{300\,K})$\\\midrule
-diss-1-2         &0.13 & 0.11 & 8.0$\times 10^{10}$ & 0.50 & 0.50 & 2.3$\times 10^4$ \\
-diss-1-4         &0.19 & 0.14 & 2.8$\times 10^{10}$ & 0.19 & 0.14 & 2.7$\times 10^{10}$\\
-diff-2-4         &0.82 & 0.68 & 2.7$\times 10^1$ & 0.44 & 0.29 & 9.1$\times 10^7$ \\
-diff-2-4$^\prime$&0.81 & 0.67 & 3.8$\times 10^1$ & 0.33 & 0.20 & 3.1$\times 10^9$\\
-diff-4-4$^\prime$&0.61 & 0.41 & 7.1$\times 10^5$ & 0.51 & 0.33 & 1.7$\times 10^7$\\\bottomrule
-    \end{tabular}
-  \label{tab:0001_rates}
-\end{table}
-\\
-
-The desorption process from the surface itself was studied by starting from the molecular minimum, gradually doing optimizations with greater O-surface distance and letting everything relax except for the c coordinate of the water-oxygen atom.
-This calculations give an energy profile for the adsorption/desorption but no barrier could be found (see Figure \ref{abb:0001_desorption}), so the underlying adsorption process is assumed to be barrierless.
-  \begin{figure}[!ht]
-   \centering
-   \includegraphics[width=0.45\textwidth]{figures/0001/mol_ads_barrier.eps}
-   \caption{Energy profile of the adsorption process, relative to the energy of the system with a distance of $5.98\,$\AA.
-d(O-Al) denotes the distance between the oxygen atom of the water and the Al CUS where the water is/was adsorbed molecularly.
-%/und/sophia/0001_mol_ads_barrier/
-   }
-   \label{abb:0001_desorption}
-  \end{figure}
-\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Improvement of Reaction Rates}\label{crystal_calc}
-As stated in the introduction, GGA functionals deliver poor barriere heights and reaction rates.
-In order to improve reaction rates with a high level method, we chose a specific hydrogen diffusion reaction as a model reaction.
-This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction\cite{WirthJPCC2012} that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state (see Figure \ref{abb:df-h-4-2}).
+In Reference\cite{WirthJPCC2012}, also reactions linking these minima were studied: dissociation of adsorbed water, OH- and H-diffusion on the surface, as well as rotation of an OH group and molecular water diffusion from one CUS site to another CUS site.
+To study the influence of the method/basis set on reaction barriers and rates (the latter obtained by Eyring's transition state theory in Section \todo{section crystal rates}, we will exemplarily refer to the hydrogen diffusion from the 1-4 to the 1-2 configuration (called Df-H-4-2 in \cite{WirthJPCC2012} and here).
+The corresponding reaction path (obtained from a NEB calculation in \cite{WirthJPCC2012}} is shown in Figure\ref{abb:df-h-4-2} below.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/0001/NEB-path/df-h-4-2.pdf}
-\caption{Reaction path of the Df-H-4-2 proton diffusion reaction in the PBE-D2 level of theory, left is the educt (1-4), in the middle the minimum energy path with the transition state geometry as an inlay and on the right the product (1-2) of the reaction.
+\caption{Reaction path of the Df-H-4-2 proton diffusion reaction obtained on the PBE-D2 level of theory via a NEB calculation (middle panel, the inset there shows the transition state), the left panel shows the educt configuration (the 1-4 dissociated species), and on the right the product configuration (1-2).
 \textit{Data with friendly permission by Jonas Wirth}.}
        \label{abb:df-h-4-2}
 \end{figure}
-The transition state was calculated with PBE+D2 with the implementation of nudged elastic band in VASP.
+%The latter two do not play a crucial role in this work, especially the CUS to CUS diffusion of molecular water is very improbable due to the slow reaction rate.
+%Adsorption energies and reaction rates which are of importance for this work are shown in Table \ref{tab:0001_eads} and \ref{tab:0001_rates} (the PBE results shown there are unpublished work obtained by Dr. J. Wirth).
+%\begin{table}[!h]
+%  \centering
+%   \caption{Adsorption energies for the stable minima in eV.
+%All values were calculated with PBE including D2 dispersion corrections by Dr. J. Wirth (unpublished).}
+%  \begin{tabular}{cccc}
+%  \toprule
+%   \multicolumn{4}{c}{E$_\textrm{ads}$ [eV]}\\\midrule
+%  mol &1-2 &1-4 &1-4$^\prime$  \\
+%  -1.31 & -1.69 & -1.30 & -1.21\\\bottomrule
+%    \end{tabular}
+%  \label{tab:0001_eads}
+%\end{table}
+%\begin{table}[!h]
+%  \centering
+%   \caption{Reaction rate constants $k$ in s$^{-1}$ at $300\,$K with corresponding barrier heigths $\Delta E^\ddagger$ and $\Delta G^\ddagger_\textrm{300\,K}$ in eV for the processes connecting the minima.
+%Calculations were executed with PBE+D2 (also from unpublished work of Dr. J. Wirth).}
+%  \begin{tabular}{c|ccc||ccc}
+%  \toprule
+%   &\multicolumn{3}{c}{reaction} & \multicolumn{3}{c}{back reaction}\\
+%   &              $\Delta E^\ddagger$ & $\Delta G^\ddagger(\textrm{300\,K})$ &%$k(\textrm{300\,K})$&$\Delta E^\ddagger$ & $\Delta G^\ddagger(\textrm{300\,K})$ %&$k(\textrm{300\,K})$\\\midrule
+%diss-1-2         &0.13 & 0.11 & 8.0$\times 10^{10}$ & 0.50 & 0.50 & 2.3$\times 10^4$ \\
+%diss-1-4         &0.19 & 0.14 & 2.8$\times 10^{10}$ & 0.19 & 0.14 & 2.7$\times 10^{10}$\\
+%diff-2-4         &0.82 & 0.68 & 2.7$\times 10^1$ & 0.44 & 0.29 & 9.1$\times 10^7$ \\
+%diff-2-4$^\prime$&0.81 & 0.67 & 3.8$\times 10^1$ & 0.33 & 0.20 & 3.1$\times 10^9$\\
+%diff-4-4$^\prime$&0.61 & 0.41 & 7.1$\times 10^5$ & 0.51 & 0.33 & 1.7$\times 10^7$\\\bottomrule
+%    \end{tabular}
+%  \label{tab:0001_rates}
+%\end{table}
+%\\
+
+%The desorption process from the surface itself was studied by starting from the molecular minimum, gradually doing optimizations with greater O-surface distance and letting everything relax except for the c coordinate of the water-oxygen atom.
+%This calculations give an energy profile for the adsorption/desorption but no barrier could be found (see Figure \ref{abb:0001_desorption}), so the underlying adsorption process is assumed to be barrierless.
+%  \begin{figure}[!ht]
+%   \centering
+%   \includegraphics[width=0.45\textwidth]{figures/0001/mol_ads_barrier.eps}
+%   \caption{Energy profile of the adsorption process, relative to the energy of the system with a distance of $5.98\,$\AA.
+%d(O-Al) denotes the distance between the oxygen atom of the water and the Al CUS where the water is/was adsorbed molecularly.
+%%/und/sophia/0001_mol_ads_barrier/
+%   }
+%   \label{abb:0001_desorption}
+%  \end{figure}
+%\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Adsorption Energies, Vibrations and Reactions of Water on $\upalpha$-Al$_2$O$_3$(0001) with and beyond DFT-GGA}\label{crystal_calc}
+As stated in the introduction, GGA functionals deliver poor barrier heights and reaction rates.
+In order to improve reaction rates with a high level method, we chose the hydrogen diffusion reaction DF-H-4-2 as indicated in Figure \ref{abb:df-h-4-2}
+% a model reaction.
+%This reaction is a H-diffusion reaction on the (0001) surface studied before in our group, the Df-H-4-2 reaction\cite{WirthJPCC2012} that moves a proton in the 1-4 position to the OH residue to the 1-2 dissociated state (see Figure \ref{abb:df-h-4-2}).
+There, the transition state was calculated with PBE+D2 with the implementation of nudged elastic band in VASP using a plane-wave basis.
 Rates were calculated via Eyring transition state theory (equation (\ref{eq:eyring})).
-A further previous approach involving single point calculations at the HSE level of theory (hybrid functional) on top of PBE optimized geometries was analyzed for the minima and the transition state.
-Additionally, for this process a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization along the reaction pathway.
-These results are summarized in Table \ref{tab:4-2results_jonas}.
+
+%A further previous approach involving single point calculations at the HSE level of theory (hybrid functional) on top of PBE optimized geometries was analyzed for the minima and the transition state.
+%Additionally, for this process a 1-D potential energy surface was calculated and then the Schrödinger equation was solved to obtain the wave function and see the localization/delocalization along the reaction pathway.
+%These results are summarized in Table \ref{tab:4-2results_jonas}.
 \begin{table}[!h]
   \centering
   \caption{PW91, PBE+D2 after geometry optimization and transition state via NEB, HSE single point calculations on top of PBE optimized geometries.
 Both were calculated from Eyring equation (\ref{eq:eyring}).
 The exact tunneling was calculated from a 1-D potential and the calculation of the Schrödinger equation in this potential.
-These calculations were conducted by Dr. J. Wirth and are partially unpublished.}
+These calculations were conducted by Dr. J. Wirth and are partially unpublished.\todo{HSE and exact tunneling streichen, später in tabelle mit den crystal rate results integieren! inklusive der dG#-Werte}}
 \hspace*{-1cm}
  \begin{tabular}{l|c}
  \toprule
@@ -1215,8 +1234,20 @@ These calculations were conducted by Dr. J. Wirth and are partially unpublished.
 \end{table}
 \\
 
-It is now our goal to expand these methods to the following: by first calculating the adsorption energies and the barrier within an atom centered orbital method with the hybrid functional B3LYP and also going beyond density functional theory by employing perturbation theory (local M\o{}ller Plesset perturbation theory of second order, LMP2).
-After this, the transition state shall be reoptimized with B3LYP and the respective rates shall be calculated for this geometry both with density functional theory (PBE and B3LYP) and LMP2.
+It is now our goal to test the accuracy of gradient-corrected DFT using, plane-wave bases, against alternative methods/approaches.
+Specifically, the following will be done:
+\begin{enumerate}
+\item Using VASP, we will first compare various flavours of plane-wave, three-dimensional supercell DFT-GGA: PBE, PBE+D2, PBE+D3, PW91 and PW91+D2.
+\item We will then, using atom centered orbital bases (AO), test the performance of PBE+D3.
+This will be done with the CRYSTAL code, using a two-dimensional slab model.
+This allows us to test not only basis set effects, but also effects due to the choice of slab vs. supercell models.
+\item Using CRYSTAL, 2D slab models and AO bases, we will test a hybrid DFT functional common in molecular chemistry, B3LYP (with dispersion corrections, D3).
+\item Finally, we will also test pure wavefunction methods within 2D-slab/AO models,. namely the Hartree-Fock (using CRYSTAL) and local M\o{}ller-Plesset perturbation theory of second order, LMP2 (using cryscor).
+\end{enumerate}
+We will apply these methods for adsorption energies, vibrational frequency analysis and activation energies (for the Df-H-4-2 reaction) and Eyring rates derived thereof.
+
+%expand these methods to the following: by first calculating the adsorption energies and the barrier within an atom centered orbital method with the hybrid functional B3LYP and also going beyond density functional theory by employing perturbation theory (local M\o{}ller Plesset perturbation theory of second order, LMP2).
+%After this, the transition state shall be reoptimized with B3LYP and the respective rates shall be calculated for this geometry both with density functional theory (PBE and B3LYP) and LMP2.
 %\\
 %Apart from that, we study this reaction with the help of Path Integral Molecular Dynamics, where the system is represented as a couple of beads that are connected and henceforth act as a more delocalized particle which can contribute to quantum effects, proton tunneling.
 %\\
