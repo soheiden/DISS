@@ -121,7 +121,8 @@
 % %Worttrennung
 % \hyphenation{Dis-per-sion}
 
-
+\setcounter{secnumdepth}{3} % seting level of numbering (default for "report" is 3). With ''-1'' you have non number also for chapters
+ %\setcounter{tocdepth}{5} % if you want all the levels in your table of contents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -826,7 +827,7 @@ The heat bath is realized by a fictious particle which is propagated like real p
 Here, the trajectory is subject to random perturbations along the trajectory.
 Multiple simulations have to be performed in order to gain reliable statistics.
 
-\section{Vibrational Spectroscopy: Frequencies and Intensities}
+\section{Vibrational Spectroscopy: Frequencies and Intensities}\label{sec:freq_theo}
 In surface science vibrational spectroscopy is an important tool to characterize molecular adsorbates.
 One theoretical approach to simulate such spectra is to calculate frequencies and their intensities at minima of the potential energy surface (PES).
 A characteristic of minima and stationary points in general is that the derivatives with respect to all nuclear coordinates equal zero.
@@ -864,7 +865,7 @@ None of those methods delivers intensities comparable to SFG spectroscopy, but c
 \begin{itemize}
  \item[I)]
  In the dipole model, we approximate an IR spectrum polarized perpendicular (z direction) to the surface.
-This was done, because only modes with a high perpendicular component can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy, see also Appendix \ref{exp_techniques}).
+This was done, because only modes with a high perpendicular component can be measured in respective SFG spectra (sum frequency generation, a surface specific vibrational spectroscopy. %, see also Appendix \ref{exp_techniques}).
 These are not completely comparable to IR spectra.
 Selection rules for SFG include IR and Raman activity as well as a system without inversion symmetry, which is usually the case for interfaces and surfaces.
  Further, we invoke the double harmonic approximation, \textit{i.e.}, vibrational modes are treated in harmonic approximation, and the z component of the dipole moment is approximated as
@@ -880,7 +881,7 @@ I_\mu^{(n)}\propto |\langle \phi_0^{(n)}(R)|\frac{\delta \mu_z}{\delta R_n}|_0\c
 I_\mu^{(n)}\propto \mu_{z,n}^{\prime 2} \frac{\hbar}{2m_{red}^{(n)}\omega_n}
 \end{equation}
 where $\mu_{z,n}^{\prime}=\frac{\delta \mu}{\delta R_n}|_0$, $m_{red}$ is the reduced mass and the $\phi_i^{(n)}$ are the vibrational eigenfunctions.
-In the harmonic approximation, using normal modes, the total dipol spectrum is given as 
+In the harmonic approximation, using normal modes, the total dipole spectrum is given as 
 \begin{equation}
 I_\mu \propto \sum_{n=1}^{3N_A}I_{\mu}^{(n)}.
 \end{equation}
@@ -1099,7 +1100,7 @@ First, the surface and the most stable adsorption patterns are introduced (Secti
 	
 \section{Supercell Model for the Adsorption of Water}\label{sec_0001surf}
 
-In vacuum, the most stable surface cut of $\upalpha$-Al$_2$O$_3$(0001) is a stochiometric, Al terminated one.
+In vacuum, the most stable surface cut of $\upalpha$-Al$_2$O$_3$(0001) is a stoichiometric, Al terminated one.
 In this topmost Al layer, the aluminum atoms are undercoordinated and are referred to as coordinatively unsaturated site (CUS).
 %In contrast to the (11\=20) surface that will be studied in Section \todo{ref section 11-20} there exists only one type of Al CUS atom, which acts as a reactive Lewis-acid site.
 Also, all oxygen atoms are threefold coordinated. %resulting in a less complex topography than for the higher-indexed surfaces.
@@ -1243,7 +1244,7 @@ Specifically, the following will be done:
 This will be done with the CRYSTAL code, using a two-dimensional slab model.
 This allows us to test not only basis set effects, but also effects due to the choice of slab vs. supercell models.
 \item Using CRYSTAL, 2D slab models and AO bases, we will test a hybrid DFT functional common in molecular chemistry, B3LYP (with dispersion corrections, D3).
-\item Finally, we will also test pure wavefunction methods within 2D-slab/AO models,. namely the Hartree-Fock (using CRYSTAL) and local M\o{}ller-Plesset perturbation theory of second order, LMP2 (using cryscor).
+\item Finally, we will also test pure wave function methods within 2D-slab/AO models,. namely the Hartree-Fock (using CRYSTAL) and local M\o{}ller-Plesset perturbation theory of second order, LMP2 (using cryscor).
 \end{enumerate}
 We will apply these methods for adsorption energies, vibrational frequency analysis and activation energies (for the Df-H-4-2 reaction) and Eyring rates derived thereof.
 
@@ -1270,7 +1271,7 @@ We will apply these methods for adsorption energies, vibrational frequency analy
 % \\
 % We also reoptimized the transition state for the Df-H-4-2 reaction.
 
-\subsection{Adsorption Energies}
+\subsection{Adsorption Energies}\label{sec:eads_crystal}
 \todo{später: Going beyond pure density functionals and also beyond DFT has been too costly for a long time, it is simply not applicable for a surface adsorbate system as large and electron rich.
 In the CRYSTAL14\cite{crystal14} and cryscor\cite{cryscor} code atom centered bases are used instead of plane waves so that large scale systems can also be computed.
 With this methodology it is possible to calculate periodic structures with GGA as well as with hybrid functionals and, moreover, with wave function-based techniques like LMP2.}\\
@@ -1368,7 +1369,7 @@ In contrast the VASP PBE+D3 plane wave calculation predicts and almost equal ene
 % The absolute values of adsorption energies are larger than the PW values, which might be due to the basis set superposition error (BSSE).
 Most of the absolute values of the adsorption energies are too large when compared to the PBE+D3 values for the plane wave basis, by up to $\sim0.6\,$eV.
 We attribute these larger values to some extent to basis set superposition errors (BSSE) which occur in AO-based calculations but not when using plane wave bases.
-In fact, as shown in Appendix \ref{app:BSSE}\todo{erstellen!}, for the case of basis 4, where the BSSE was evaluated, about $10\%$ of the adsorption energy is due to it.
+In fact, as shown in Appendix \ref{app:BSSE}, for the case of basis 4, where the BSSE was evaluated, about $10\%$ of the adsorption energy is due to it.
 To overcome this problem, the larger ``customized'' basis set 8 was introduced for which the BSSE is expected to be smaller.
 In fact, the PBE+D3/AO absolute adsorption energies shown in Table \ref{tab:basisset-results-PBE+D3} agree with PBE+D3/plane wave to within $0.02\,$eV (for 1-4 diss) to $0.12\,$eV (for mol).
 Deviations in the order of $0.1\,$eV are easily expected also due to the (other) computational settings (\textit{e.g.}, 2D slab vs. 3D supercell models).
@@ -1434,7 +1435,7 @@ Henceforth, basis sets 4 and 7 are used in further calculations; for the more co
 % This larger basis set is a customized triple zeta basis set with high angular momentum (see Appendix \ref{app_combined_basis}).
 
 \begin{enumerate}
- \item[(4)] Wavefunction theory with AO basis
+ \item[(4)] Wave function theory with AO basis
 \end{enumerate}
 
 % As before, geometry optimizations were realized and the adsorption energies were evaluated, as shown in Table \ref{tab:combined_results}.
@@ -1562,7 +1563,7 @@ The first block gives results for VASP/PBE+D3/PW, the second for CRYSTAL/PBE+D3/
 B3LYP+D3/AO gives the shortest bond lengths and the smallest angles in the comparison but still the results are in very good agreement.
 
 
-\subsection{Frequency Analysis: Normal Modes and Beyond}
+\subsection{Frequency Analysis: Normal Modes and Beyond}\label{sec:AO_freq0001}
 Apart from calculating adsorption energies, also normal modes with CRYSTAL were calculated with the functional B3LYP+D3 and PBE+D3, both with basis set 7 from Table \ref{tab:basissets}.
 To compare with experimentally suggested values\cite{Wirth2014}, which presented OD-vibrational frequencies, we replaced O-H for the normal mode analysis, by O-D.
 Additionally, anharmonic corrections for both O-D bonds (OD$_{\textrm{1}}$ and OD$_{\textrm{2}}$ for molecular or for dissociated water OD$_{\textrm{surf}}$ and OD$_{\textrm{ads}}$ for the group with D from water and a surface atom and from the adsorbed OD species, respectively) for the three stable minima (molecular adsorbed, 1-2 and 1-4 dissociated water) have been performed.
@@ -1697,7 +1698,11 @@ On this basis, the results are not comparable to ours because the dynamical infl
 
 
 To tackle this question, AIMD calculations were conducted for a water (D$_2$O) molecule or a water cluster approaching the surface, with different beam and surface models applied.
-In all cases a $2\times 2$ supercell was applied with a $3\times 3 \times 1$ $\vec{k}$-point grid.\todo{continue with computational parameters..}
+In all cases VASP PBE+D2 calculations with a stoichiometric $2\times 2$ supercell were applied with a $3\times 3 \times 1$ $\vec{k}$-point grid.
+A plane-wave energy cutoff of $400\,$eV was used and SCF Energies were converged if the energy between two cycles was smaller than $10^{-5}\,$eV.
+Dipole corrections perpendicular to the surface were applied.
+For the MD simulations, a time step of $\Delta t=0.2\,$fs was used.
+As in the previous section, a slab with nine atomic layers was used with the lowest four layers fixed at bulk positions (compare Figure \ref{abb:surf_0001}).
 
 %%%%%%%%%%OLD VERSION%%%%%%%%%%%%%%%%%
 % Hass et. al. discussed the idea whether water will adsorb molecularly first and then dissociate or if direct dissociation upon adsorption is possible.
@@ -1723,23 +1728,26 @@ In all cases a $2\times 2$ supercell was applied with a $3\times 3 \times 1$ $\v
 %Also temperature effects of the thermalized trajectories (canonical MD) seem to have a positive influence on the dissociation.
 \subsection{Beam Model} \label{beammodel}
 For the understanding of a molecular beam source experiment, the introduction of a beam is an essential part of the model.
-As a first order approach to a beam, a single, cold water (D$_2$O) molecule (initial parameters are $d_{OD}=0.97\,$\AA{} and bond angle of $104.5$\textdegree) was sent in agreement with the experiment perpendicularly from a center of mass position from a distance of $4\,$\AA{} onto the surface.
-Also higher distances were tested but no difference could be detected, see Appendix \ref{sec:disttest} for more information.
-Having internal degrees of freedom excluded, six are still left which can be seen in Figures \ref{abb:initial_parameters}, \ref{abb:impact_points} and Table \ref{tab:orientations}): two for the impact site [$a_0$,$b_0$] given relative to the supercell vectors $\vec{a}$ and $\vec{b}$, three Euler angles $\alpha$, $\beta$ and $\gamma$ for the rotational orientation of the molecule with respect to the surface and the kinetic energy E$_\textrm{kin}$ that gives the molecule a momentum towards the surface, solely as translational motion, no vibration or rotation included.
+As a first order approach to a beam, a cold water (D$_2$O) molecule (initial parameters are $d_{OD}=0.97\,$\AA{} and bond angle of $104.5$\textdegree) was sent in agreement with the experiment perpendicularly to the surface.
+In the simulation this was done from a center of mass position with a distance of $4\,$\AA{} onto the surface.
+Also higher distances were tested but no difference could be detected. %, see Appendix \ref{sec:disttest} for more information.
+Having internal degrees of freedom excluded, five are still left which can be seen in Figures \ref{abb:initial_parameters}, \ref{abb:impact_points} and Table \ref{tab:orientations}: two for the impact site [$a_0$,$b_0$] given in units of the supercell vectors $\vec{a}$ and $\vec{b}$, three Euler angles $\alpha$, $\beta$ and $\gamma$ for the rotational orientation of the molecule with respect to the surface and as an additional parameter the kinetic energy E$_\textrm{kin}$ that gives the molecule a momentum towards the surface, solely as translational motion, no vibration or rotation included.
 These parameters were varied systematically to gain insight into the process.
+Six different impact points [$a_0,b_0$] are tested, which are shown in Figure \ref{abb:impact_points}, eight rotational orientations (see Table \ref{tab:orientations}) and kinetic energies were probed from $0.5\,$eV to $0.9\,$eV in steps of $0.1\,$eV.
 % Extensions to this model will be addressed later in Section \ref{preex}.
 
 
-As mentioned before, the barriers can be high (and corresponding rates low), especially for the H-diffusion reactions, but the adsorption process itself is barrierless, and additionally the incoming water molecule holds kinetic energy so that processes that are slow at room temperature otherwise, can be speeded up.
+As mentioned before and in Reference\cite{WirthJPCC2012}, the barriers for diffusion reactions on the surface can be high (and corresponding rates low), especially for the H-diffusion reactions, but the adsorption process itself was found to be barrierless, and additionally the incoming water molecule holds kinetic energy so that processes that are slow at room temperature otherwise, can be speeded up.
 
 
-This basic beam model is later enhanced through improvements presented in section \ref{refinedbeam}, which addresses clustering as well as rotationally and vibrationally excited water.
+This basic beam model is later refined through improvements presented in section \ref{refinedbeam}, which addresses clustering as well as rotationally and vibrationally excited water.
 
 \begin{figure}[!ht]
  \centering
 \includegraphics[width=0.3\textwidth]{figures/0001/perspective+h2o_new.png}
- \caption{Sketch for inital parameters of the trajectories.
-The water molecule's center of mass is situated $4\,$\AA{} above the surface and is arranged within the shown coordinate system, before being impinged to the surface with a defined kinetic energy E$_\textrm{kin}$.}
+ \caption{Inital parameters of the trajectories, gray spheres Al, pale red O of alumina, red O and white H.
+The water molecule approaches the surface perpendicular with its center of mass situated $4\,$\AA{} above the surface with a kinetic energy $E_\textrm{kin}$, at an impact site [$a_0,b_0$] given by fractions of the $\vec{a}$ and $\vec{b}$ vectors of the $2\times 2$ cell.
+The orientation is given by three Euler angles with respect to three perpendicular rotation axes, [$\alpha,\beta,\gamma$].}
         \label{abb:initial_parameters}
  \end{figure}
  
@@ -1756,9 +1764,11 @@ The water molecule's center of mass is situated $4\,$\AA{} above the surface and
  \subfigure[{[0.35,0.45]}]{\includegraphics[angle=90,scale=0.45]{figures/0001/0_35-0_45test.png}}
         \quad
  \subfigure[{[0.4,0.5]}]{\includegraphics[angle=90,scale=0.45]{figures/0001/0_4-0_5test.png}}
- \caption{The six impact points $[a_0,b_0]$ which were used in the AIMD calculations (shown for the rotational orientation $[0,0,0]$, topview). The different points reflect the most important sites of the surface, [0.33,0.33] is on top of an Al CUS, [0.5,0.5] on top of an Al in a subsurface layer.
-[0.35,0.5] is on top of a surface oxygen atom, whereas [0.5,0.35] is on top of a subsurface oxygen atom.
-[0.35,0.45] is in a gap between an Al CUS and a surface oxygen and [0.4,0.5] is in the gap between a surface O and a subsurface Al atom.}
+ \caption{The six impact points $[a_0,b_0]$ which were used in the AIMD calculations (shown for the rotational orientation $[0,0,0]$, topview). The different points reflect the most important sites of the surface. 
+%[0.33,0.33] is on top of an Al CUS, [0.5,0.5] on top of an Al in a subsurface layer.
+% [0.35,0.5] is on top of a surface oxygen atom, whereas [0.5,0.35] is on top of a subsurface oxygen atom.
+% [0.35,0.45] is in a gap between an Al CUS and a surface oxygen and [0.4,0.5] is in the gap between a surface O and a subsurface Al atom.
+}
         \label{abb:impact_points}
  \end{figure}
  
@@ -1795,9 +1805,13 @@ This is not feasible with the computational power available at the moment.
 Before going to the details, example trajectories for each process leading to one of the four most stable adsorbed species, molecular adsorption, 1-2 dissociation, 1-4 dissociation and 1-4$^\prime$ dissociation are shown in Figure~\ref{abb:ex_traj}.
 The applied parameters are reported in the respective caption.
 These figures were all obtained from canonical calculations (NVT) at $300\,$K (see Figure~\ref{abb:ex_traj}, the trajectory shown in (d) was additionally preexcited in the asymmetric stretch mode leading to 1-4$^\prime$ dissociation).
-As one can see, molecular, 1-2 and 1-4 dissociated species can occur directly at the impact time of the water molecule at the surface and is henceforth called direct dissociation from the gas phase.
-For the 1-4$^\prime$ dissociation shown in Figure \ref{abb:ex_traj}(d), this process does not happen directly at the impact but (in this case) ca.$~40\,$fs later, so this is referred to as indirect dissociation with a molecular intermediate.
-This indirect process is not unique for the 1-4$^\prime$ dissociated species, all the other species including the molecular one can be observed to happen indirectly by either being reflected first from the surface before adsorbing/dissociating or by adsorbing molecularly before dissociating.
+As one can see, molecular, 1-2 and 1-4 dissociated species can occur within subps scale at the surface and is henceforth called direct dissociation from the gas phase.
+Note that in the 1-2 and 1-4 dissociated species the dissociated deuteron undergoes large-amplitude motion, while the hydroxyl OD vibration is hardly excited after dissociation.
+For the 1-4$^\prime$ dissociation shown in Figure \ref{abb:ex_traj}(d), such direct process does not happen.
+Instead this species can be reached indirectly via a short-lived intermediate also within a subps timescale. %, in this case the 1-2 species ca.$~40\,$fs later, so this is referred to as indirect dissociation with a molecular intermediate.
+This is an example of a slow reaction ($\Delta G^\ddagger=0.67\,$eV) being enormously accelerated under MBS-like conditions.
+
+This indirect process, however, is not unique for the 1-4$^\prime$ dissociated species, all the other species including the molecular one can be observed to happen indirectly by either being reflected first from the surface before adsorbing/dissociating or by adsorbing molecularly before dissociating.
 However, the 1-4$^\prime$ species was the only one that could not be observed by dissociating directly.
   \begin{figure}[h!]
   \centering
@@ -1835,7 +1849,7 @@ Panel (d) shows that the 1-4$^\prime$ state is not obtained directly but reached
 \end{figure}
 
 
-\subsection{Microcanonical AIMD at clean surface}\label{sec:mic_clean}
+\subsection{Microcanonical AIMD at a clean surface at $T=0$}\label{sec:mic_clean}
 The effects of a single D$_2$O shot to the cool surface with an NVE ensemble (microcanonical AIMD, the $0\,$K optimized geometry of the surface has no initial momenta) were studied systematically by probing over six parameters: Five different kinetic energies (from $0.5$ to $0.9\,$eV in $0.1\,$eV steps), six lateral impact points at the surface ([0.33,0.33], [0.5,0.5], [0.35,0.5], [0.5,0.35], [0.35,0.45], [0.4,0.5], as introduced in Figure \ref{abb:impact_points}) and eight different orientations of the water molecule with respect to the surface ([0,0,0], [0,0,90], [0,90,0], [0,90,90], [90,0,0], [90,0,90], [90,90,0], [90,90,90], see also Table \ref{tab:orientations}).
 These $5\times 6\times 8=240$ AIMD trajectories for the clean surface at $T=0\,$K were simulated for ca.$~1.2\,$ps each.
 
@@ -1879,7 +1893,7 @@ In the case of E$_\textrm{kin}=0.1\,$eV, the trajectory only shows molecular ads
 This result was rather surprising, since the kinetic energy plus the adsorption energy minus the barrier height is with $(0.1+1.31-0.13)\,$eV=$0.28\,$eV in the same orde as the reaction barrier ($\Delta G^\ddagger=0.29\,$eV, compare Table \ref{tab:0001_rates}).
 %It seems that the excess energy is not available for the OD bond breaking and instead relaxes in other degrees of freedom of the system.
 This allows to draw the conclusion that a minimum kinetic energy is necessary for the dissociation process.
-In the experimental studies of R. K. Campen, a kinetic energy of the beam between $0.6$ and $0.75\,$eV is used.
+In the experimental studies of R. K. Campen\cite{Heiden11-20_2018}, a kinetic energy of the beam between $0.6$ and $0.75\,$eV is used.
 This minimum energy constraint can be one possible explanation of the difference between MBS and pinhole dosing.
 In the latter case, the only energy of a water molecule comes from the thermal energy.
 For a D$_2$O molecule in the gas phase at $300\,$K this can be estimated to be around $\frac{3}{2}k_BT\approx40\,$meV.
@@ -2144,7 +2158,7 @@ In this work we want to relate to SFG results for low-coverage experiments condu
 
 \section{Surface Models}
 To obtain the clean surface slab model of the O-I terminated (11\=20) surface a $2\times 2$ supercell was cut from the bulk.
-This termination is the most stable one of five possible terminations and is a stochiometric, oxygen terminated surface\cite{kuri10}.
+This termination is the most stable one of five possible terminations and is a stoichiometric, oxygen terminated surface\cite{kuri10}.
 The corresponding cell vectors were adopted from the bulk structure and a vacuum gap of in z direction (perpendicular to the surface, $17$\AA{} for the 10 layer slab) was introduced to avoid unphysical interaction between the slabs in this direction.
 In Figure \ref{abb:crystal_11-20}(a), the (11\=20) surface plane and the (0001) surface which was studied earlier in this work (Section \ref{sec:0001}) can be seen.
 \begin{figure}[!h]
@@ -2226,7 +2240,9 @@ The even values correspond to the $2\times 2 \times 1$ (2 $\vec{k}$-points in th
             \label{abb:11-20-kpointsampling}
 \end{figure}
 
-
+Tests with a symmetric slab (where at the top and the bottom water is adsorbed) were computed, confirming that the asymmetric model (water is only adsorbed on one side of the slab) including dipole corrections is sufficient to describe the system.
+% Only minor differences could be obtained.
+Details for this are given in Appendix \ref{symmetric_slab}.
 
 \section{Water Adsorption: Adsorption Energies and Geometries}\label{structure_search11-20}
 \subsection{Low Coverage}
@@ -2331,6 +2347,7 @@ Results are given in eV (10 layer slab).
 
 
 Additionally, water adsorption for systems with additional atomic layers (up to 25 in total) were studied to check convergence with layer thickness.
+These optimized geometries do not differ strongly from the 10 layer ones and hence are not shown.
 The corresponding adsorption energies are shown in Table \ref{tab:eads_layers}.
 Basically, the adsorption energeies do not change largely with increasing slab size.
 The molecular species still is less stable than the O-$\mu_2$ dissociated species and is more stable than the O-$\mu_3$ dissociated ones (except for inter-CUSb$\parallel$O-$\mu_3$ dissociated system).
@@ -2661,67 +2678,68 @@ In fact, as has been shown in section \ref{crystal-rate}, for H$_2$O at the (000
 % With this, the PBE results may not be perfectly accurate, but these are still the best we can afford with the computational power at the moment.
 
 \clearpage
-\section{Vibrational Frequencies}\label{sec:vib11-20}
+\section{Interpretation of Vibrational Spectra}\label{sec:vib11-20}
 
 Vibrational spectroscopy is a great source of knowledge about chemical systems.
 The frequencies of vibrations give hints about the chemical environment, \textit{e.g.} as hydrogen bonds and other atoms nearby that bind to each other.
 These vibrational frequencies were calculated for the surface system adsorbed with OD.
-Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are clearer with their applied Laser system, so that all results presented in this particular section are given for D$_2$O.
-The experimental sum frequency generation (SFG, a surface specific vibrational spectroscopy) spectra for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
+Our experimental partners from FHI use deuterated water (D$_2$O) instead of H$_2$O because the chemical reactivity is the same but the spectroscopic properties are clearer with their applied laser system, so that all results presented in this particular section are given for D$_2$O.
+The experimental sum frequency generation spectra for the OD range of the low coverage regime for two different coverages are shown in Figure \ref{abb:exp-sfg} as they were published in \cite{Heiden11-20_2018}.
 \begin{figure}[!h]
  \centering
 \includegraphics[width=0.9\textwidth]{figures/11-20/SFG_fit.jpg}
- \caption{Experimental SFG results for (11\=20) surface with 0.14ML (mono layer, left spectrum) and 0.05ML water coverage (right) including fit (colored lines).
-The experiment was conducted by Yanhua Yue from the ``Interfacial Molecular Spectroscopy'' group at the Fritz Haber institute (FHI) in Berlin.
-Coverage only influences intensity of the peaks but not the peak position itself.
+ \caption{Experimental SFG results for (11\=20) surface with 0.14ML (monolayer, left spectrum) and 0.05ML water coverage (right) including fit (colored lines) according to Reference \cite{Heiden11-20_2018}.
+ Coverage only influences intensity of the peaks but not the peak position itself.
 The different coverages are achieved via different preparing temperatures of the sample.}
         \label{abb:exp-sfg}
  \end{figure}
 % Of course, the frequencies for a deuterated system are different from OH, but the different isotopes can be calculated easily within vasp, just by changing the mass.
 
 
-In the experiment the alumina single crystal was cleaned in ethanol and Milli-Q water (ultrapure, deionized water) and dried with N$_2$ before being installed in the ultra high vacuum chamber.
-It was then sputtered in Ar, and annealed to high temperatures in ultra high vacuum (UHV, $2.5\times 10^{-10}\,$mbar) and afterwards sputtered three times in oxygen at different temperatures.
-After this treatment, D$_2$O was brought onto the surface with a molecular beam source (MBS).
+% In the experiment the alumina single crystal was cleaned in ethanol and Milli-Q water (ultrapure, deionized water) and dried with N$_2$ before being installed in the ultra high vacuum chamber.
+% It was then sputtered in Ar, and annealed to high temperatures in ultra high vacuum (UHV, $2.5\times 10^{-10}\,$mbar) and afterwards sputtered three times in oxygen at different temperatures.
+% After this treatment,
+In experiment D$_2$O was brought onto the (11\=20) surface with a molecular beam source (MBS).
 The SFG measurement was then conducted at $130\,$K.
-A short overview explaining the basics of experimental methods of interest for this work can be found in Appendix \ref{exp_techniques}.
+% A short overview explaining the basics of experimental methods of interest for this work can be found in Appendix \ref{exp_techniques}.
 For further experimental details see \cite{Heiden11-20_2018} and the supporting information therein.
-Test with a symmetric slab (where at the top and the bottom water is adsorbed) were computed, confirming that the asymmetric model including dipole corrections is sufficient to describe the system.
-% Only minor differences could be obtained.
-Details for this are given in Appendix \ref{symmetric_slab}.
 \\
 \\
 
-To calculate the vibrational modes in this work mainly two methods were applied: Normal mode analyses and power spectra from AIMD via the velocity-velocity autocorrelation function.
-However, the latter results are not fully converged yet and have to be propagated tens to hundred ps instead of $1$-$2\,$ps, so only preliminary results will be shown to illustrate the power of this method.
+To calculate the vibrational modes in this work mainly two methods were applied: Normal mode analyses and VDOS spectra from AIMD via the velocity-velocity autocorrelation function, see section \ref{vvacf}.
 
 
 The focus is mainly on the peak position rather than their intensities, because in the first place it is of greater importance what kind of vibrations gives which peak than the intensity of the peak itself.
 Also, it is still challenging to determine the frequencies in good comparison with experimental findings before heading to intensities.
 
-
-In the normal mode analyses this work follows two distinct approaches: dipole corrections and Born effective charges.
-However, in the power spectra from MD calculations the intensities are not directly retrieved but as said before, we are more interested in the peak position.
+Still, intensities for vibrational transitions are also computed.
+In the normal mode analyses this work follows two distinct approaches to do so: the dipole model and Born effective charges.
+Also, in the power spectra from MD calculations intensities are retrieved but.
+However, as stated earlier, these intensities are not directly related to intensities in SFG or IR vibrational spectroscopies, see section \ref{sec:freq_theo}.
 \\\\
 
-In subsection \ref{nma}, OD stretch vibrations are presented but also modes for higher coverage systems and lattice vibrations are examined.
+In subsection \ref{nma}, OD stretch vibrations are presented for low-coverage situations (one molecule per $2\times 2$ cell).
+However, also modes for higher coverage systems will be examined.
+Further, we will also consider lattice vibrations, which are dominantly of the Al-O type.
+Intensities in this section are calculated with the dipole model.
 % But not only the OD frequencies are of interest, but also the lattice vibrations, and are covered in both subsections.
 Subsection \ref{bec} gives the spectra including intensities determined via Born effective charges and in subsection \ref{vvacf} the results from the velocity-velocity autocorrelation function are shown.
 
-\subsection{Normal Mode Analysis}\label{nma}
-\subsubsection{OD Vibrations}
 
-The normal modes are calculated within the harmonic approximation and depend on the mass and the spring constant of the bond.
-This ansatz is quite good for high frequency modes like OD stretch vibrations.
-We assume that the OD stretching modes for the three most stable structures would contribute to the spectrum the most, since the less stable adsorbed species are improbable to appear (see discussion about the Boltzmann weight later).
+\subsection{Vibrational Analysis based on Normal Modes}\label{nma}
+\subsubsection{Normal Mode Frequencies for OD Vibrations}
+
+The normal modes are calculated within the harmonic approximation.
+We assume that the OD stretching modes for the three most stable dissociated structures (see bold entries in Tables \ref{tab:ads_1water} and \ref{tab:eads_layers}) would contribute to the spectrum the most, since the less stable adsorbed species are improbable to appear (see discussion about the Boltzmann weight later).
 The corresponding wavenumbers are presented in Table \ref{tab:freq_layers} for different slab sizes, as given in Figure \ref{abb:cell_sizes}.
-Also the angle of the OD bond with respect to the surface is given (see Table \ref{tab:freq_layers}), since vibrations which are in plane cannot be detected with SFG spectroscopy and hence the intensity is a function of this angle.
+Also the angle of the OD bond with respect to the surface is given (see Table \ref{tab:freq_layers}), since vibrations which are parallel to the surface cannot be detected with SFG spectroscopy and hence the intensity is a function of this angle.
 \begin{table*}[th]
   \centering
- \caption{Wavenumbers of normal modes for the different slab sizes: OD stretching modes for each of the most stable minima.
+ \caption{Wavenumbers $\tilde{\nu}$ of normal modes for single dissociated D$_2$O molecules on a $\upalpha$-Al$_2$O$_3$(11\=20) $2\times 2$ surface for different slab sizes: OD stretching modes for each of the most stable minima.
 All values are given in cm$^{-1}$; in parantheses, the angle of the OD bonding vector to the surface normal ($\theta$ in \textdegree) is provided.
 In each column, the left value reflects the adsorbed OD$_\textrm{ads}$ group and the right wavenumber the surface OD$_\textrm{surf}$ group, respectively.
- In the right part a sketch of the angle $\theta$ between the OD bond and the surface normal is shown.}
+ In the sketch the angle $\theta$ between the OD bond and the surface normal is shown.
+ Experimental values could be assigned in Reference \cite{Heiden11-20_2018}.}
 \vspace*{.2cm} 
  \begin{tabular}{l|ccccc}
  \toprule
@@ -2730,31 +2748,32 @@ In each column, the left value reflects the adsorbed OD$_\textrm{ads}$ group and
   15 &2728 (44), 2695 (36) &2783 (24), 1812 (60) &2711 (34), 2656 (60)& \\
   20 &2729 (44), 2694 (35) &2783 (24), 1838 (60) &2715 (34), 2665 (58)& \\
   25 &2728 (44), 2696 (35) &2767 (59), 1750 (62) &2764 (29), 2724 (41)& \\\midrule
-  exp. & \multicolumn{3}{c}{2839, 2812, 2762}& \\\bottomrule
+  Exp.\cite{Heiden11-20_2018} &2812, 2762& 2839 & \\\bottomrule
   \end{tabular} 
   \label{tab:freq_layers}
 \end{table*}
 \\\\
 
- Following this approach we expect six modes to appear: an OD$_\textrm{surf}$ and an OD$_\textrm{ads}$ for each of the three.
+ Following this approach we expect six modes to appear: an OD$_\textrm{surf}$ and an OD$_\textrm{ads}$ for each of the three, where ``ads'' corresponds to the O-D bond of the dissociated water, and ``surf'' to the O-D bond arising from the binding of the dissocaited D, to a surface aluminol O atom.
 In all cases the relationship between the two individual modes for each considered structure is portrayed by $\tilde{\nu}$(OD$_\textrm{ads}$)>$\tilde{\nu}$(OD$_\textrm{surf}$).
 This can be explained with the different reduced mass for both vibrations: The OD$_\textrm{surf}$ oscillator has a slightly larger reduced mass since the deuterium is bound directly to the surface, whereas the adsorbed OD group can act more as a quasi-free OD group \cite{Wirth2014}.
+Assuming the same force constant, we get $\tilde{\nu}$(OD$_\textrm{ads}$)>$\tilde{\nu}$(OD$_\textrm{surf}$, as observed.
 All these vibrations are clearly localized on one of the OD groups which suggests that the normal modes ansatz is reasonable.
-Of course, normal modes of all molecular and next neighbor dissociated structures from 10 to the 25 layer slab model were calculated, although the slab was already converged with 10 layers concerning OD stretch frequencies as mentioned in section \ref{structure_search11-20} and in Table \ref{tab:freq_layers}. 
+While normal modes of all molecular and next neighbor dissociated structures from 10 to the 25 layer slab model were calculated, we find that the results were already converged to within a few wavenumbers with 10 layers concerning OD stretch frequencies as mentioned above. % in section \ref{structure_search11-20} and in Table \ref{tab:freq_layers}. 
 \\
 \\
 
 To consider the probability of observing the three dissociated species, their respective Boltzmann weights $P_i$ were evaluated:
 \begin{equation}\label{boltzmann-weight}
- P_i=e^{-G_i/(k_BT)}
+ P_i\sim e^{-G_i/(k_BT)}
 \end{equation}
-with the free energy $G_i$ that is obtained from the frequencies of the vibrations.
-With this analysis it is possible to show the relative population for different temperatures, given in Table \ref{tab:boltzmann-pop}.
-In the temperature range relevant for the experiments, it is shown that the population of the species inter-CUSa$\parallel$O-$\mu_2$ clearly dominates and furthermore that the population of inter-CUSb$\parallel$O-$\mu_2$ is very low compared to the others.
+with the free energy $G_i$ of Table \ref{tab:ads_1water}.
+With this analysis it is possible to show the relative population for different temperatures for the three most stable dissociated species, as given in Table \ref{tab:boltzmann-pop}, for the 10 layer case.
+In the temperature range relevant for the experiments\footnote{Measurements were done at $130\,$K. Also the sample is flashed to either $300\,$K or $400\,$K during the sample preparation.}, it is shown that the population of the species inter-CUSa$\parallel$O-$\mu_2$ clearly dominates and furthermore that the population of inter-CUSb$\parallel$O-$\mu_2$ is very low compared to the other two.
 \begin{table*}[th]
   \centering
- \caption{Boltzmann population $P$ relative to the most stable inter-CUSa$\parallel$O-$\mu_2$, calculated according to equation \ref{boltzmann-weight} for $130$, $300$ and $400\,$K.
-Values are given for the 10 layer system.}
+ \caption{Boltzmann population $P$ relative to the most stable inter-CUSa$\parallel$O-$\mu_2$, calculated according to equation (\ref{boltzmann-weight}) for $130$, $300$ and $400\,$K.
+Values are given for the 10-layer system.}
 \vspace*{.2cm} 
  \begin{tabular}{l|ccc}
  \toprule
@@ -2767,17 +2786,19 @@ Values are given for the 10 layer system.}
 \end{table*}
 
 
-From the results for the frequencies of the three most stable structures (from Table \ref{tab:freq_layers}), one can see four relevant modes to be expected for all slab sizes.
-One of them is noticeably lower in energy due to hydrogen bonding (OD$_\textrm{surf}$ vibration of CUSb$\parallel$O-$\mu_2$).
-Also the angle of the bonding vector with respect to the surface normal is very high (\textit{i.e.} the bond is more in plane, values and schematic representation shown in Table \ref{tab:freq_layers}) so that the expected intensity is remarkably lower and may be not visible in experiment because of the angle dependence of the intensity in SFG.
+For these two most stable structures, we expect four relevant modes to be seen in a spectrum.
+For the 10 layer slab, there would be signals at $2731$, $2694$, $2785$ and $1711\,$cm$^{-1}$, respectively, according to Table \ref{tab:freq_layers}.
+One of them is noticeably lower in energy due to hydrogen bonding (OD$_\textrm{surf}$ vibration of CUSb$\parallel$O-$\mu_2$ at $1711\,$cm${-1}$).
+Also the angle of the corresponding bonding vector with respect to the surface normal is very high in this case (61\textdegree), so that the expected intensity is remarkably lower and may be not visible in experiment because the intensity of the SFG decreases rapidly with increasing angle\cite{Wirth2014}.
 
 
-With this in mind, we are able to predict three peaks, which fits well to the experimental results of Yanhua Yue from FHI Berlin (see Figure \ref{abb:exp-sfg}).
-Similar to existing literature\cite{Wirth2014}, comparing these results in absolute numbers is not very impressive, but relative wavenumbers are in good agreement, see results for experiment and all different sized layer slabs in Table \ref{tab:rel_modes}.
+With this in mind, we expect three visible peaks, which fits well to the experimental results shown in Figure \ref{abb:exp-sfg}.
+Similar to existing literature for other surface cuts\cite{Wirth2014}, absolute theoretical wavenumbers ($2731$, $2694$, $2785\,$cm$^{-1}$) are only in rough agreement with experiment ($2762$, $2812$, $2839$), showing a redshift in the order of $60$-$70\,$cm$^{-1}$ for the former.
+However, relative wavenumbers are in good agreement, see results for experiment and all different sized layer slabs in Table \ref{tab:rel_modes}.
 \begin{table*}[!h]
 \begin{center}
 \caption{Wave number differences $\Delta \tilde{\nu}$ are given in [cm$^{-1}$].
-$\Delta \tilde{\nu}_1$ depicts the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$.}
+$\Delta \tilde{\nu}_1$ is the difference between the surface OD group of the inter-CUSa$\parallel$O-$\mu_2$ species and the respective surface OD group on O-$\mu_2$ and  $\Delta \tilde{\nu}_2$ is the difference between the same surface OD group and the adsorbed OD group on CUSb from CUSb$\parallel$O-$\mu_2$.}
 \begin{tabular}{ccc}
 \toprule
 layers & $\Delta \tilde{\nu}_1$ &  $\Delta \tilde{\nu}_2$\\\midrule
@@ -2790,15 +2811,15 @@ exp.&50 &77 \\\bottomrule
 \label{tab:rel_modes}
 \end{center}
 \end{table*}
-It becomes clear that for OD stretching bonds there is no visible trend: The 10 layer system already gives reasonable results and none of the employed larger slab models brings any improvement.
+% It becomes clear that for OD stretching bonds there is no visible trend: The 10 layer system already gives reasonable results and none of the employed larger slab models brings any improvement.
 \\
 \\
 
-Two problems of this approach are that we neglect anharmonicities, which are especially important for hydrogen-bonded vibrations, and neighbor effects.
-The latter can be solved by computing higher coverage systems.
-\\\\
-
-Analogous to the AO basis calculations for the (0001) surface in Section \todo{add here the crystal freq section}, the most stable adsorbed species at the (11\=20) surface were optimized with PBE+D3 and B3LYP+D3, respectively and the corresponding vibrational frequencies were evaluated.
+% Two problems of this approach are that we neglect anharmonicities, which are especially important for hydrogen-bonded vibrations, and neighbor effects.
+% The latter can be solved by computing higher coverage systems.
+% \\\\
+\subsubsection{Normal Mode Frequencies and Anharmonic Corrections for an Atom Centered Basis}
+Analogous to the AO basis calculations for the (0001) surface in Section \ref{sec:AO_freq0001}, the most stable adsorbed species at the (11\=20) surface were optimized with PBE+D3 and B3LYP+D3, respectively and the corresponding vibrational frequencies were evaluated.
 % ($\vec{k}$-point grid and convergence criteria are the same as for the (0001) surface).
 These results are shown in Table \ref{tab:freqs_11-20_crystal}.
 \begin{table}[!h]
@@ -2851,32 +2872,27 @@ One has to mention that here influence of the basis set is strong and larger bas
 As shown before, anharmonic corrections shift the results to lower wavenumbers and decrease the overall agreement.
 With the computational power available during this work, B3LYP+D3 seems by far the best choice for reproducing experimental vibrations.
 
-\subsubsection{Complete Spectrum: Intensities from Dipole Corrections}\label{phonons}
+\subsubsection{Harmonic Vibrational Spectra from the Dipole Model}\label{phonons}
 
-The spectra for both the OD range and the lattice range are presented in this subsection.
-All spectra shown in this section were normalized to the most intense peak, with the intensities being determined by dipole corrections.
-Note, that the intensities in the OD range decrease with growing slab size since they are normalized to the most intense peak in the lattice region.
+In the following, vibrational spectra in the harmonic approximation in the form of stick spectra will be shown for the OD region ($1700$-$3000\,$cm$^{-1}$) and also for the low-frequency, lattice vibrational (mainly Al-O vibrations) region ($0$-$1000\,$cm$^{-1}$).
+We begin with the latter, and we compute spectra without and with water in this case
+All spectra shown in this section were normalized to the most intense peak, with the intensities being determined by dipole model in section \ref{sec:freq_theo}.
+\todo{später Note, that the intensities in the OD range decrease with growing slab size since they are normalized to the most intense peak in the lattice region.
 For smaller slab sizes the ratio between OD and lattice is higher than for bigger slab sizes, so that the OD intensities in direct comparison seems smaller.
-This however, has no physical meaning.
+This however, has no physical meaning.}
 In some figures short notations for the adsorbed species are used: iCa2 for inter-CUSa$\parallel$O-$\mu_2$, Cb2 for CUSb$\parallel$O-$\mu_2$ and iCb2 for inter-CUSb$\parallel$O-$\mu_2$.
 %Unfortunately, experimental results for the spectral range of the lattice vibrations are not obtained by our experimental partners yet, so that no comparison to SFG modes can be made.
 Unfortunately, not for all coverages experimental results for the spectral range of the lattice vibrations are obtained by our experimental partners yet, so that only the clean and the fully covered surface can be compared to SFG modes.
 % \todo{experimental results are still missing, compare modes of low coverage limit to spectra with higher coverage, ask Lu for more data of higher coverage.}
 
 
-In the spectra from the dipole corrections ($\Gamma$-point only calculated normal mode analyses with dipole corrections in z direction) the intensities are given by the square of the dipole moment $\mu^2$ to which it is proportional.
-That is why in the spectra the y-axis is given as $\mu^2$.
-For the lattice vibrations the same normal modes of the 10 layer slab were checked to get a first impression about the spectra.
-But for a better description of the deeper lying phonon vibrations we need to consider more layers of the bulk in order to get more reliable results.
-From an experimental point of view it is suggested that SFG spectra can give insight into at least three atomic layers of the bulk.
-To make sure these are described well, the system size was expanded, performing calculations for the most stable adsorption geometries for more layered systems, going up to $6\times 5=30$ atomic layers (with five being the number of atomic layers in the unit cell in z direction, compare Figure \ref{abb:cell_sizes}), for the clean surface and for 25 layers for the adsorbate covered surface.
-% The differences arise from slightly different modes because more or less atomic layers are taken into account.
-These more layered optimized geometries do not differ strongly from the 10 layer ones that were presented in Section \ref{structure_search11-20}, Figure \ref{abb:ads-geoms} and hence are not shown.
-% \todo{here, maybe Appendix? Not necessary}.
-Respective adsorption energies can be found in Table \ref{tab:eads_layers}.
+In contrast to OD vibrations, for the lattice Al-O vibrations we need to consider more layers of the bulk in order to get more reliable results.
+% From an experimental point of view it is suggested that SFG spectra can give insight into at least three atomic layers of the bulk.
+% To make sure these are described well, the system size was expanded,
+Therefore, we performed calculations for the most stable adsorption geometries for more layered systems, up to $30$ atomic layers, for the clean surface, and for up to 25 layers for the adsorbate covered surface as before.
 
 
-The results for the clean surface are shown in Figure \ref{abb:clean_comp_layer}.
+Vibrational spectra for the clean surface in the Al-O lattice regime are shown in Figure \ref{abb:clean_comp_layer}.
 For different sized slabs, the results differ largely.
 Especially the 10 layer system is shifted strongly to lower energy compared to the other slab sizes.
 From Table \ref{tab:comp_norm-modes_clean} it can be concluded that the most intense peak is shifted to higher wavenumbers with increasing slab size.
@@ -3127,114 +3143,120 @@ Due to this the differences between O-I and O-II termination get less significan
 
 %For the low energy modes, one has to keep in mind that normal modes may not be a perfect description of these deeply delocalized vibrations but still might be sufficient.
 
-\subsection{Complete Spectrum: Intensities from Born Effective Charges}\label{bec}
-As a second method to obtain vibrational intensities, Born effective charges were evaluated.
-These results were calculated for the three most stable adsorbed systems with ten layers.
+\subsection{Harmonic Vibrational Spectra from Born Effective Charges}\label{bec}
+As a second method to obtain vibrational intensities, Born effective charges were evaluated, again with frequencies obtained within the harmonic approximation.
+Spectra were calculated for the three most stable adsorbed, dissociated species inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$ of $\upalpha$-Al$_2$O$_3$(11\=20) with one D$_2$O per $2\times 2$ cell, using the 10 layer slab model.
 For getting the spectrum an angle of the IR beam of 45\textdegree~was assumed.
-This choice of this angle weighs the elements ($x$, $y$ and $z$) of the Born effective charge vector in equation (\ref{eq:bec}) that are in the sum of the intensity.
-Since both the dipole corrections intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities can differ.
-In Figure \ref{abb:bec} the spectra for the three most stable structures can be seen, (a) depicts the whole range and (b) the OD range only.
-\begin{figure}[!h]
-    \centering
-    \subfigure[BEC, D$_2$O]{\includegraphics[width=0.45\textwidth]{figures/11-20/bec_specs_dip_D2O_sticks.eps}}
-             \quad
-    \subfigure[BEC, D$_2$O, OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/bec_specs_dip_D2O_sticks_ODrange.eps}}
-             \caption{IR spectrum with intensities based on Born effective charges (BEC) evaluation for the three most stable species, (a) full spectrum, (b) OD range above $2600\,$cm$^{-1}$.}
-            \label{abb:bec}
-     \end{figure}
-The peak around $1700\,$cm$^{-1}$ originates solely from the hydrogen-bonded CUSb$\parallel$O-$\mu_2$ OD group.
-The other non hydrogen-bonded peaks arise above $2500\,$cm$^{-1}$ and the lattice region can be seen below $1000\,$cm$^{-1}$.
+This choice of this angle weighs the elements ($x$, $y$ and $z$) of the Born effective charge matrix in equation (\ref{eq:bec}) that are in the sum of the intensity\todo{was genau gewichtet?}.
+Since both the dipole model intensities and the BEC calculations are based on normal modes, the frequencies are equal and only the intensities can differ.
 
 
-In comparison to the results from the dipole corrections, the positions of the peaks are of course unaffected.
-For inter-CUSa$\parallel$O-$\mu_2$ the intensities in the OD range are nearly the same, although the more intense peaks are changed.
-In the lattice region the agreement is not as excellent.
-For the OD region of CUSb$\parallel$O-$\mu_2$, the agreement is worse, BEC predicts the H-bonded peak at $1711\,$cm$^{-1}$ to be the most intense whereas the dipole corrected intensities give this in the lattice region, whose appearance is significantly different from dipole corrected intensities.
-Concerning the inter-CUSb$\parallel$O-$\mu_2$ the OD region shows good agreement, also the most intense peak is the same.
-Again in the lattice region, the difference is larger.
-Overall, these differences might be based on the fact that low energy modes are less precisely represented by normal modes and both methods give low quality results.
-Errors can compensate or add up so that there is much uncertainty in those results.
+In Figure \ref{abb:bec-dip-comp} a comparison of NMA spectra with BEC and dipole model intensities is given.
+% In Figure \ref{abb:bec}, the spectra for the three most stable structures can be seen, (a) depicts the whole frequency range and (b) the OD range only.
+% \begin{figure}[!h]
+%     \centering
+%     \subfigure[BEC, D$_2$O]{\includegraphics[width=0.45\textwidth]{figures/11-20/bec_specs_dip_D2O_sticks.eps}}
+%              \quad
+%     \subfigure[BEC, D$_2$O, OD range]{\includegraphics[width=0.45\textwidth]{figures/11-20/bec_specs_dip_D2O_sticks_ODrange.eps}}
+%              \caption{IR spectrum with intensities based on Born effective charges (BEC) evaluation for the three most stable species, (a) full spectrum, (b) OD range above $2600\,$cm$^{-1}$.}
+%             \label{abb:bec}
+%      \end{figure}
+% The peak around $1700\,$cm$^{-1}$ originates solely from the hydrogen-bonded CUSb$\parallel$O-$\mu_2$ OD group.
+% The other non hydrogen-bonded peaks arise above $2500\,$cm$^{-1}$ and the lattice region can be seen below $1000\,$cm$^{-1}$.
+
+For inter-CUSa$\parallel$O-$\mu_2$, the intensities in the OD range are nearly the same, although the more intense peaks are changed (Figure \ref{abb:bec-dip-comp}(b)).
+In the lattice region the agreement is not as good, see Figure \ref{abb:bec-dip-comp}(a).
+For the OD region of CUSb$\parallel$O-$\mu_2$, the agreement is worse between BEC and the dipole model intensities, BEC predicts the H-bonded peak at $1711\,$cm$^{-1}$ to be the most intense whereas in the dipole model the most intense peak is in the lattice region, cf Figures \ref{abb:bec-dip-comp}(c) and (d). %, whose appearance is significantly different from dipole model intensities.
+Concerning the inter-CUSb$\parallel$O-$\mu_2$, the OD region shows good agreement between BEC and dipole model (Figure \ref{abb:bec-dip-comp}(f)), also the most intense peak is from the same vibration.
+Again in the lattice region, the difference is larger, see Figure \ref{abb:bec-dip-comp}(e).
+%Overall, these differences might be based on the fact that low energy modes are less precisely represented by normal modes and both methods give low quality results.
+%Errors can compensate or add up so that there is much uncertainty in those results.
 
 
-In Table \ref{tab:freq_lowcov_comp} a comparison between dipole and BEC intensity results of the OD stretch vibrations can be found.
+In Table \ref{tab:freq_lowcov_comp}, a comparison between dipole and BEC intensities of the OD stretch vibrations can be found.
 \begin{table}[!h]
 \centering
-\caption{Comparison of the IR intensities for the 10 layer system obtained from dipole corrected calculations and from the Born effective charges based approach.
-It was normalized to the most intense peak to make a reasonable comparison.}
-\begin{tabular}{cc|cc}
+\caption{Comparison of the intensities for the 10 layer system of D$_2$O/Al$_2$O$_3$(11\=20) obtained from the dipole model and from the Born effective charges based approach.
+They were normalized to the most intense peak within the full frequency range, to make a reasonable comparison.}
+\begin{tabular}{ccc|cc}
 \toprule
-&&\multicolumn{2}{c}{Intensity [a.u.]}\\
-&$\tilde{\nu}$ [cm$^{-1}$]& dip. & BEC \\\midrule
-\multirow{2}{3cm}{inter-CUSa$\parallel$O-$ \mu_2$}&2731 &0.034 &0.023 \\
- &2694&0.022 &0.029 \\\hline
-\multirow{2}{3cm}{CUSb$\parallel$O-$ \mu_2$} & 2785&0.262 &0.038 \\
- & 1711& 0.155&1.0 \\\hline
-\multirow{2}{3cm}{inter-CUSb$\parallel$O-$ \mu_2$}& 2692& 0.007&0.013 \\
- & 2689& 0.060& 0.072\\\bottomrule
+&&&\multicolumn{2}{c}{Intensity}\\
+&vibration&$\tilde{\nu}$ [cm$^{-1}$]& dipole model & BEC \\\midrule
+\multirow{2}{3cm}{inter-CUSa$\parallel$O-$ \mu_2$}&OD$_\textrm{ads}$&2731 &0.034 &0.023 \\
+ &OD$_\textrm{surf}$&2694&0.022 &0.029 \\\hline
+\multirow{2}{3cm}{CUSb$\parallel$O-$ \mu_2$}&OD$_\textrm{ads}$ & 2785&0.262 &0.038 \\
+ &OD$_\textrm{surf}$& 1711& 0.155&1.0 \\\hline
+\multirow{2}{3cm}{inter-CUSb$\parallel$O-$ \mu_2$}&OD$_\textrm{ads}$& 2692& 0.007&0.013 \\
+ &OD$_\textrm{surf}$& 2689& 0.060& 0.072\\\bottomrule
 \end{tabular}
 \label{tab:freq_lowcov_comp}
 \end{table}
 The results are in reasonable agreement for inter-CUSa$\parallel$O-$ \mu_2$ and inter-CUSb$\parallel$O-$ \mu_2$, but deviate largely for the hydrogen-bonded CUSb$\parallel$O-$ \mu_2$ system.
 % The geometry of the hydrogen-bonded OD group differs more than the non hydrogen-bonded and for this reason the vibrational mode differs strongly.
-Additionally, in Figure \ref{abb:bec-dip-comp} a comparison between the intensities from BEC and dipole correction is given.
-Overall the agreement of the inter-CUSa$\parallel$O-$\mu_2$ spectra is very good, only the most intense peak in the lattice region is a different one with a different wavenumber by $27\,$cm$^{-1}$.
+The overall agreement of the inter-CUSa$\parallel$O-$\mu_2$ spectra is very good, only the most intense peak in the lattice region is a different one with a different wavenumber by $27\,$cm$^{-1}$.
 \begin{figure}[!h]
     \centering
-     \subfigure[inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=0.5\textwidth]{figures/11-20/comp_bec-dip_iCa2.eps}}
+     \subfigure[inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=0.4\textwidth]{figures/11-20/comp_bec-dip_iCa2.eps}}
               \quad
-    \subfigure[CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.5\textwidth]{figures/11-20/comp_bec-dip_Cb2.eps}}
+    \subfigure[inter-CUSa$\parallel$O-$\mu_2$ OD region]{\includegraphics[width=0.4\textwidth]{figures/11-20/comp_bec-dip_iCa2_OD.eps}}
              \quad
-    \subfigure[inter-CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.5\textwidth]{figures/11-20/comp_bec-dip_iCb2.eps}}
-             \caption{Comparison of IR intensities for the three most stable adsorbed species for intensities from dipole corrections (dip., black) and from Born effective charges (BEC, red).
-             All calculations were conducted for the 10 layer system.}
+    \subfigure[CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.4\textwidth]{figures/11-20/comp_bec-dip_Cb2.eps}}
+             \quad
+    \subfigure[CUSb$\parallel$O-$\mu_2$ OD region]{\includegraphics[width=0.4\textwidth]{figures/11-20/comp_bec-dip_Cb2_OD.eps}}
+              \quad
+    \subfigure[inter-CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.4\textwidth]{figures/11-20/comp_bec-dip_iCb2.eps}}
+             \quad
+    \subfigure[inter-CUSb$\parallel$O-$\mu_2$ OD region]{\includegraphics[width=0.4\textwidth]{figures/11-20/comp_bec-dip_iCb2_OD.eps}}
+             \caption{Comparison of intensities for the three most stable adsorbed species for intensities from dipole model (black) and from Born effective charges (red).
+             All spectra were obtained for the 10 layer system.
+             The lattice region is shown from $0$ to $1000\,$cm$^{-1}$ and the OD region from $1650$ to $3000\,$cm$^{-1}$.
+             }
             \label{abb:bec-dip-comp}
 \end{figure}
 For the other two species the agreement is not so excellent, especially in the lattice region, where the most intense peak BEC peak is more in the blue region compared to the peak from dipole corrected intensities.
 It is about $30\,$cm$^{-1}$ for the most intense peak in the lattice region of CUSb$\parallel$O-$\mu_2$ and around $40\,$cm$^{-1}$ for the corresponding peaks in inter-CUSb$\parallel$O-$\mu_2$.
 
 
-Corresponding \textit{intensities} from AIMD calculations are presented in section \ref{vvacf}.
 \clearpage
-\subsection{Complete Spectrum: Velocity-Velocity Autocorrelation Function}\label{vvacf}
+\subsection{Vibrational Analysisbased on Vibrational Density of States Curves}\label{vvacf}
 
+To go beyond the harmonic approximation, we use vibrational density of state curves obtained from AIMD simulations (Section \ref{sec:freq_theo}).
 The velocity-velocity autocorrelation function is evaluated from AIMD calculations and Fourier transformed to get information from the time to the frequency domain.
-This is a radically different ansatz to calculating a spectrum.
-No frequency analysis has to be provided, \textit{i.e.} no harmonic approximation is applied.
-Instead the classical movement of the nuclei at a specific temperature is taken into account.
-Respective AIMD trajectories were calculated at $300\,$K for the clean surface (30 layers) and the three most stable adsorbed structures (inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$, 10 layers each), starting from the minimum structure with no velocities.
-The presented spectra are merely preliminary results, since the propagation duration is substantially too short, so that one cannot rule out the possibility that the system is not converged properly.
-Usually, for a converged study, a preequilibration phase of several ps is assumed and afterwards the production run is up to $100\,$ps or even more, but these results still give a good first glimpse to what the spectrum could look like.
+This is a radically different ansatz to calculating a spectrum, which gives besides frequencies also intensities and broadened signals.
+The intensities cannot be directly related to IR or SFG intensities as outlined earlier, however, they are often similar to them\cite{Melani2018}.
+The widths of VDOS curves arise from atomic motion, at finite temperature.
+Respective AIMD trajectories were calculated at $300\,$K for the clean surface (30 layers), and the three most stable adsorbed structures (inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$, 10-layer model in each case), starting from the minimum structures.
+For the clean surface the propagation time was $3\,$ps (with a time step of $1\,$fs) with the first ps being equilibration time and the last $2\,$ps being used for evaluating the spectrum.
+Similar, for the systems with adsorbed water, around $3.6\,$ps were simulated (time step of $0.2\,$fs) and the last $2\,$ps were used for obtainig the VDOS.
 Here however, for the clean surface $3\,$ps of equilibration was considered and the spectrum was evaluated from $2\,$ps of trajectory.
 For the adsorbed species, the total propagation time was $3.6\,$ps and also the last $2\,$ps were examined for the power spectrum.
 Also in all cases a Hann window function was applied\cite{Ohto2015} to gain better smoothness, but which does not affect the peak positions.
+The presented spectra are merely preliminary results, since the propagation duration is substantially too short, so that one cannot rule out the possibility that the system is not converged properly.
+Usually, for a converged study, a preequilibration phase of several ps is assumed and afterwards the production run is up to $100\,$ps or even more, but these results still give a good first glimpse to what the spectrum could look like.
 
-
-The shown ``intensities'' are probabilities and correspond to oscillator amplitudes and can not be compared reasonably to the IR intensities obtained from BEC or dipole corrected normal modes.
-Nonetheless it serves as a useful approximation for a first impression.
 
 
 For the clean surface, the 30 layer model was applied, with a propagation duration of $5\,$ps, but only the last $2\,$ps were considered for the autocorrelation function.
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/11-20/comp_cleansurf_all.eps}%spec_surf_30layer-300K.eps}
-             \caption{Power spectrum of the clean surface of the 30 layer slab, calculated from velocity-velocity autocorrelation function for the last $2\,$ps of a canonical (NVT) AIMD trajectory at $300\,$K (in total 5000 steps, $5\,$ps).
-In addition to the power spectrum, the stick spectra of the dipole corrected normal modes for different slab sizes are shown.
-The quantity given on the y-axis is $\mu^2$ for the normal mode results and VDOS for the power spectrum.} \label{abb:velvelclean}
+             \caption{VDOS curve of the clean surface of the 30 layer slab, calculated from velocity-velocity autocorrelation function for the last $2\,$ps of a canonical (NVT) AIMD trajectory at $300\,$K (in total 5000 steps, $5\,$ps).
+In addition to the VDOS, the stick spectrum with intensities from the dipole model based on normal modes for the 25 layer slab is shown in black.
+Both spectra are normalized to the highest peak.}
+\label{abb:velvelclean}
 \end{figure}
 As for the normal mode results, all peaks are below $900\,$cm$^{-1}$, see Figure \ref{abb:velvelclean}.
 The most prominent peak in the power spectrum can be observed at significantly lower energy than for any normal mode based result.
 Also more peaks are present in the whole range from $0$ to around $900\,$cm$^{-1}$.
-Assumingly, the low energy modes are described better or at least in a different way, so that this strong discrepancy can be understood.
-The temperature of the simulation is considerably lower than the Debye temperature ($300\,$K which corresponds to approximately $280\,$cm$^{-1}$) so that the maximum of the Debye model is not reached.
-This is supported by the product of the probability distribution that decreases exponentially with temperature and the DOS that grows quadratic and thus has a lower maximum than the pure DOS.
+Compared to the stick spectrum from NMA with intensities from the dipole model also shown in Figure \ref{abb:velvelclean}, there is no good agreement.
+% Assumingly, the low energy modes are described better or at least in a different way, so that this strong discrepancy can be understood.
 \\\\
 
-The results for the adsorbed species were obtained by AIMD calculations of the 10 layer system at a temperature of $300\,$K.
-Again, the three most stable species were researched.
+For the adsorbed species, results are shown in Figure \ref{abb:velvel_ads_spec}
 The system inter-CUSa$\parallel$O-$\mu_2$ was propagated for $3.68\,$ps.
 The respective spectrum is shown in Figure \ref{abb:velvel_ads_spec}(a) and shows two outstanding peaks in the OD region at $2691$ and $2726\,$cm$^{-1}$.
 These two fit very well to the peaks in the normal mode calculations at $2694$ and $2731\,$cm$^{-1}$.
-In the lattice region, as it could be observed for the clean surface as well, the eminent peaks are at lower wavenumbers and there is no strong agreement (\textit{cp.} Figure \ref{abb:clean_comp_layer}).
+In the lattice region, as it could be observed for the clean surface as well, the eminent peaks are at lower wavenumbers and there is no strong agreement (\textit{cf.} Figure \ref{abb:clean_comp_layer}).
 \begin{figure}[!h]
     \centering
     \subfigure[inter-CUSa$\parallel$O-$\mu_2$]{\includegraphics[width=0.54\textwidth]{figures/11-20/spec_d2o_iCa2-300K_comp.eps}}
@@ -3244,9 +3266,10 @@ In the lattice region, as it could be observed for the clean surface as well, th
 %              \quad
              %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. (or a blank line to force the subfigure onto a new line)
     \subfigure[inter-CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.54\textwidth]{figures/11-20/spec_d2o_iCb2-300K_comp.eps}}
-             \caption{Power spectra are shown in red, obtained from NVT AIMD trajectories at $300\,$K for the geometries (starting points were geometry optimized structures) of the most stable structures via velocity-velocity autocorrelation function.
+             \caption{VDOS curves are shown in red, obtained from NVT AIMD trajectories at $300\,$K, obtained via velocity-velocity autocorrelation functions.
 Duration of the trajectories is $3.68\,$ps for inter-CUSa$\parallel$O-$\mu_2$, $3.67\,$ps for CUSb$\parallel$O-$\mu_2$ and $3.68\,$ps for inter-CUSb$\parallel$O-$\mu_2$, but for the spectra shown, only the last $2\,$ps were studied for the VDOS.
-In black the spectrum with intensities ($\propto\mu^2$) from dipole corrected normal modes is shown (10 layer slab).}
+In black the spectrum with intensities ($I_\mu$) from the dipole model based on normal modes is shown (10 layer slab).
+For each spectrum, the peaks were normalized to the highest peaks.}
             \label{abb:velvel_ads_spec}
 \end{figure}
 \\
@@ -3391,7 +3414,7 @@ Christiane Wunderlich who was my school teacher in chemistry, without whom I wou
 % }
 \section{Basis Set Superposition Error}\label{app:BSSE}
 For AO basis calculations a possible error source is the basis set superposition error.
-As mentioned in section \ref{}, the BSSE was calculted, and corresponding results can be found here.
+As mentioned in section \ref{sec:eads_crystal}, the BSSE was calculated for basis set 4, and corresponding results can be found here.
 
 One basic problem that does not occur in the plane wave based periodic calculations is the so called basis set superposition error (BSSE).
 This error is due to overlapping basis functions from different atom centers, leading to an overstabilization of the adsorbed system.
@@ -3475,60 +3498,61 @@ On the other hand it is likely that in 1-4 diss the BSSE is of similar magnitude
 From the results also follows that the relaxation energy is rather small, at least for the case of molecular adsorption. %(the results for the 1-2 results can not be trusted).
 
 
-\section{Experimental Techniques}\label{exp_techniques}
-In this work several experimental techniques were referred to from our collaborating group at the FHI in Berlin.
-In this section the basics of those methods shall be explained briefly.
-\subsection{Vibrational Sum Frequency Generation}
-This method is a surface specific vibrational spectroscopy.
-An UV/Vis and an IR Laser beam are overlapped spatially and in time to produce the so called sum frequency signal, see Figure \ref{abb:sfg_scheme}.
-There also the energy scheme is given: The system is excited with a pulse to a vibrationally excited state and with a UV/Vis pulse to a virtual state.
-The resulting SFG signal is a sum of both frequencies.
-\begin{figure}[!h]
-\centering
- \includegraphics[width=0.7\textwidth]{figures/theory/sfg-scheme.pdf}
-   \caption{Scheme of the SFG Process, left side the spatially overlapping Laser beams are shown, on the right side the orbital representation with the excitation to a virtual orbital is given.}
-            \label{abb:sfg_scheme}
-\end{figure}
-For this, the polarization of the beam is important, it can be either s or p polarized.
-The selection rules result in the surface specifity: The SFG only occurs if the vibration is IR and Raman active and additionally only in systems without inversion symmetry.
-This makes this method predestinated for analysis of surfaces, because the bulk and the gas phase are inversion symmetric.
-However, the interface (=surface, at least the depth of three atomic layers) is not, so that the only signals come from this region.
-It is usually abbreviated SFG (sum frequency generation) but also named VSF(G) (vibrational sum frequency (generation)).
- 
-\subsection{Thermal Desorption Spectroscopy}
-In thermal desorption spectroscopy (TDS, also temperature programmed desorption, TPD) the prepared sample is heated with a defined temperature program.
-Thus, adsorbates are removed from surface according their binding energies and detected as a function of temperature with any detection method required.
-The analysis sheds light on adsorption strength and probable reaction networks.
+% \section{Experimental Techniques}\label{exp_techniques}
+% In this work several experimental techniques were referred to from our collaborating group at the FHI in Berlin.
+% In this section the basics of those methods shall be explained briefly.
+% \subsection{Vibrational Sum Frequency Generation}
+% This method is a surface specific vibrational spectroscopy.
+% An UV/Vis and an IR Laser beam are overlapped spatially and in time to produce the so called sum frequency signal, see Figure \ref{abb:sfg_scheme}.
+% There also the energy scheme is given: The system is excited with a pulse to a vibrationally excited state and with a UV/Vis pulse to a virtual state.
+% The resulting SFG signal is a sum of both frequencies.
+% \begin{figure}[!h]
+% \centering
+%  \includegraphics[width=0.7\textwidth]{figures/theory/sfg-scheme.pdf}
+%    \caption{Scheme of the SFG Process, left side the spatially overlapping Laser beams are shown, on the right side the orbital representation with the excitation to a virtual orbital is given.}
+%             \label{abb:sfg_scheme}
+% \end{figure}
+% For this, the polarization of the beam is important, it can be either s or p polarized.
+% The selection rules result in the surface specifity: The SFG only occurs if the vibration is IR and Raman active and additionally only in systems without inversion symmetry.
+% This makes this method predestinated for analysis of surfaces, because the bulk and the gas phase are inversion symmetric.
+% However, the interface (=surface, at least the depth of three atomic layers) is not, so that the only signals come from this region.
+% It is usually abbreviated SFG (sum frequency generation) but also named VSF(G) (vibrational sum frequency (generation)).
+%  
+% \subsection{Thermal Desorption Spectroscopy}
+% In thermal desorption spectroscopy (TDS, also temperature programmed desorption, TPD) the prepared sample is heated with a defined temperature program.
+% Thus, adsorbates are removed from surface according their binding energies and detected as a function of temperature with any detection method required.
+% The analysis sheds light on adsorption strength and probable reaction networks.
+% 
+% \subsection{Molecular Beam Source vs. Pinhole Dosing}\label{mbs_vs_pd}
+% When doing the experiment the method of preparation seems crucial for the results, because they produce different surface situations.
+% Our collaborators use the so called Molecular Beam Source but also widely used is pinhole dosing.
+% Here the basics and the main differences shall be explained:
+% 
+% 
+% Pinhole Dosing: Water is brought with a high partial pressure onto the surface.
+% This leads to an equilibrium situation.
+% Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water left which can influence the measurement.
+% 
+% 
+% Molecular Beam Source (MBS): A medium, \textit{e.g.} water is probed onto the surface at a very low pressure.
+% Non-equilibrium situations are generated by the kinetic energy of the beam.
+% 
+% 
+% The difference between pinhole doser and MBS is that the former cannot heat the gas source to higher temperature but MBS can heat it to more than $800\,$K.
+% This high energy is capable of increasing the dissociation of the gas source for example water or CH$_4$.
+% MBS is used instead of pinhole doser to enhance the dissociated population on the sample surface.
+% 
+% \subsection{Low-Energy Electron Diffraction}
+% Low-Energy Electron Diffraction, abbreviated with LEED is a spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV.
+% Electrons are observed as a diffraction pattern on a flourescent screen.
+% The structure can be derived from the geometry of this pattern and the lattice geometry can be determined.
+% A problem is the high energy of the beam that can lead to damage in the sample.
+% %\\\todo{Other methods as tunneling based methods do not work on isolating materials like alumina, so that it is simply not possible to measure STM. Others? Rasterkraft? ATM?}
+% \def\thefigure{B.\arabic{figure}}
+% \def\thetable{B.\arabic{table}}
 
-\subsection{Molecular Beam Source vs. Pinhole Dosing}\label{mbs_vs_pd}
-When doing the experiment the method of preparation seems crucial for the results, because they produce different surface situations.
-Our collaborators use the so called Molecular Beam Source but also widely used is pinhole dosing.
-Here the basics and the main differences shall be explained:
-
-
-Pinhole Dosing: Water is brought with a high partial pressure onto the surface.
-This leads to an equilibrium situation.
-Problem here: in the gas phase and on the walls of the measuring chamber can be amounts of water left which can influence the measurement.
-
-
-Molecular Beam Source (MBS): A medium, \textit{e.g.} water is probed onto the surface at a very low pressure.
-Non-equilibrium situations are generated by the kinetic energy of the beam.
-
-
-The difference between pinhole doser and MBS is that the former cannot heat the gas source to higher temperature but MBS can heat it to more than $800\,$K.
-This high energy is capable of increasing the dissociation of the gas source for example water or CH$_4$.
-MBS is used instead of pinhole doser to enhance the dissociated population on the sample surface.
-
-\subsection{Low-Energy Electron Diffraction}
-Low-Energy Electron Diffraction, abbreviated with LEED is a spectroscopical method for determining crystal structures in crystalline materials by an electron beam with an energy in the range from $20$ to $200\,$eV.
-Electrons are observed as a diffraction pattern on a flourescent screen.
-The structure can be derived from the geometry of this pattern and the lattice geometry can be determined.
-A problem is the high energy of the beam that can lead to damage in the sample.
-%\\\todo{Other methods as tunneling based methods do not work on isolating materials like alumina, so that it is simply not possible to measure STM. Others? Rasterkraft? ATM?}
-\def\thefigure{B.\arabic{figure}}
-\def\thetable{B.\arabic{table}}
-
-\section{Symmetric Slab Frequency}\label{symmetric_slab}
+\section{Frequency Test for a Symmetric Slab}\label{symmetric_slab}
+To prove that for the (11\=20) surface it is sufficient to calculate frequencies for the asymmetric slab (Section \ref{sec:vib11-20}), we did test calculations with a slab containing an inversion center.
 In addition to the different sized slabs, a symmetric model of the surface with 15 layers was built.
 On both the top and the bottom, D$_2$O adsorbed dissociatively in inter-CUSa$\parallel$O-$\mu_2$.
 An optimized structure can be found in Figure \ref{abb:symm-slab}.
@@ -3563,21 +3587,21 @@ It can be concluded that although the computational costs are increased the symm
 \\
 \def\thefigure{C.\arabic{figure}}
 \def\thetable{C.\arabic{table}}
-\section{Distance Test for Water Molecule}\label{sec:disttest}
-As explained in the main text, Subsection \ref{beammodel}, the initial distance of the water molecule and the surface was set to $4\,$\AA{}.
-Further test calculations were run to prove that this distance is sufficient.
-In Figure \ref{abb:MBS-dist} it could be shown that there is only a difference in the impact time, caused by the longer distance to the surface but no difference in the outcomes of the trajectories, since all other parameters stay the same.
- \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/11-20/MD_all.eps}
-  \caption{Trajectories for D$_2$O approaching the surface for initial molecule-surface distances of $4$, $5$, $6$ and $7\,$\AA{} from left to right.
-Black lines depict the O-Al distance whereas the blue lines show the O-D distance of the dissociating deuterium, respectively.
-The impact time is, of course, different.
-Parameters for these calculations were: impact point [0.35,0.5], orientation [0,0,0] and kinetic energy E$_\textrm{kin}=0.7\,$eV.
-All four trajectories give 1-2 dissociation.}
-  \label{abb:MBS-dist}
- \end{figure}
-\\
+% \section{Distance Test for Water Molecule}\label{sec:disttest}
+% As explained in the main text, Subsection \ref{beammodel}, the initial distance of the water molecule and the surface was set to $4\,$\AA{}.
+% Further test calculations were run to prove that this distance is sufficient.
+% In Figure \ref{abb:MBS-dist} it could be shown that there is only a difference in the impact time, caused by the longer distance to the surface but no difference in the outcomes of the trajectories, since all other parameters stay the same.
+%  \begin{figure}[!h]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{figures/11-20/MD_all.eps}
+%   \caption{Trajectories for D$_2$O approaching the surface for initial molecule-surface distances of $4$, $5$, $6$ and $7\,$\AA{} from left to right.
+% Black lines depict the O-Al distance whereas the blue lines show the O-D distance of the dissociating deuterium, respectively.
+% The impact time is, of course, different.
+% Parameters for these calculations were: impact point [0.35,0.5], orientation [0,0,0] and kinetic energy E$_\textrm{kin}=0.7\,$eV.
+% All four trajectories give 1-2 dissociation.}
+%   \label{abb:MBS-dist}
+%  \end{figure}
+% \\
 \def\thefigure{D.\arabic{figure}}
 \def\thetable{D.\arabic{table}}
 \section{Reaction Probabilities}\label{reactionprobabilities}
@@ -3761,100 +3785,320 @@ $P_\textrm{mol}$ & P$_\textrm{diss}$(1-2) &  $P_\textrm{diss}$(1-4) & $P_\textrm
 \def\thefigure{E.\arabic{figure}}
 \def\thetable{E.\arabic{table}}
 \section{Crystal Basis Set}\label{app_combined_basis}
-The customized basis set 8 and 9, containing high angular momentum basis functions were not a standard basis sets implemented in CRYSTAL but an individualized one, constructed by Dr. Denis Usvyat, HU Berlin.
+The customized basis sets 8 and 9, containing high angular momentum basis functions were not a standard basis sets implemented in CRYSTAL but constructed by Dr. Denis Usvyat, HU Berlin.
 For Al, s- and p-AOs from $Al\_m-6-311G(d)\_Heyd\_2005$, d-AOs from $Al\_s8511p511d11\_Heifets\_2013$ and f-AOs with a standard exponent of 0.6 were used.
 For O, s-, p- and d-AOs from $O\_8411(d11)\_Heifets\_2013$ plus f-AOs from cc-pVTZ were considered.
 For H s from $H\_pob\_TZVP$ plus p and d from cc-pVTZ were utilized.\\
 In addition, for the dual basis (basis set 9) of O, further the d- and f- diffuse orbitals from aug-cc-pVTZ were added, for Al, also diffuse d- and f-AOs with exponents of 0.12 and 0.2 were added, respectively (as 1/4 and 1/3 of the exponents of the most diffuse d- and f-AOs in the non-dual basis).
-\todo{meaning of those numbers!}
+
+The input is given in CRYSTAL format.
+The first line contains the atomic number (13 for Al, 8 for O and 1 for H) and the number of shells.
+The following lines contain the specification for each shell.
+The leading 0 means that the basis is give explicitly, the second number gives the type of the shell (0 - s, 1 - sp, 2 - p, 3 - d, 4 - f).
+The third number gives the number of primitive Gaussian type orbitals (GTO) that were used to build this shell.
+The fourth number gives formally the number of electrons in this shell.
+The last number is a scaling factor that is used to scale the following exponents.
 \\
+The followig indented lines give the exponents and contraction coefficients.\\
+For basis set 8, we have 39 AOs for Al, 30 for O and 14 AOs for H, which makes a total of 83 basis functions.
+For basis set 9, we have 51 AOs for Al, 42 AOs for O and 14 AOs for H, giving in total 107 basis functions.
+\\\\\\\\\\
+Basis set 8
 \begin{spacing}{0.5}
-{\tiny \textit{Al atom:}\\
+{\tiny \textit{Al atom: }
 13 15\\
 0 0 6 2. 1.\\
-       54866.4890         0.839000000E-03\\
+     
+     54866.4890         0.839000000E-03\\
+     
        8211.76650         0.652700000E-02\\
+       
        1866.17610         0.336660000E-01\\
+       
        531.129340         0.132902000\\
+       
        175.117970         0.401266000\\
+       
        64.0055000         0.531338000\\
 0 0 3 2. 1.\\
+
        64.0055000         0.202305000\\
+       
        25.2925070         0.624790000\\
+       
        10.5349100         0.227439000\\
 0 0 1 2. 1.\\
+
        3.20671100          1.00000000\\
 0 0 1 0. 1.\\
+
        1.15255500          1.00000000\\
 0 0 1 0. 1.\\
+
        0.70000000          1.00000000\\
 0 0 1 0. 1.\\
+
        0.35000000          1.00000000\\
 0 0 1 0. 1.\\
+
       0.176678000          1.00000000\\
 0 2 4 6. 1.\\
+
        259.283620         0.944800000E-02\\
+
        61.0768700         0.709740000E-01\\
+       
        19.3032370         0.295636000\\
+       
        7.01088200         0.728219000\\
 0 2 2 1. 1.\\
+       
        2.67386500         0.644467000\\
+       
        1.03659600         0.417413000\\
 0 2 1 0. 1.\\
+      
       0.700000000          1.00000000\\
 0 2 1 0. 1.\\
+      
       0.316819000          1.00000000\\
 0 2 1 0. 1.\\
+      
       0.150          1.00000000\\
 0  3  1  0.  1.\\
-       2.329027007      1.\\
+      
+      2.329027007      1.\\
 0  3  1  0.  1.\\
-       0.480048498      1.\\
+      
+      0.480048498      1.\\
 0  4  1  0.  1.\\
-       0.6      1.\\
-\textit{O atom:}\\
+      
+      0.6      1.\\
+      
+\textit{O atom: } 
 8 7\\
 0 0 8 2.0 1.0\\
- 26591.015149286   0.000338543\\
- 4069.713048219    0.002548773\\
- 943.177385588     0.012944513\\
- 270.377217602     0.051837807\\
- 88.721659363      0.164372032\\
- 32.042734201      0.3855\\
- 12.430169888      0.562307539\\
- 4.976247393       0.350155411\\
+
+26591.015149286   0.000338543\\
+
+4069.713048219    0.002548773\\
+
+943.177385588     0.012944513\\
+
+270.377217602     0.051837807\\
+
+88.721659363      0.164372032\\
+
+32.042734201      0.3855\\
+
+12.430169888      0.562307539\\
+
+4.976247393       0.350155411\\
 0 1 4 6.0 1.0\\
- 62.977656261     -0.006945266     0.006338931\\
- 14.905934605     -0.076543237     0.043166905\\
- 4.611711867      -0.132826481     0.157278934\\
- 1.603131709       0.379           0.347\\
+
+62.977656261     -0.006945266     0.006338931\\
+
+14.905934605     -0.076543237     0.043166905\\
+
+4.611711867      -0.132826481     0.157278934\\
+
+1.603131709       0.379           0.347\\
 0 1 1 0.0 1.0\\
- 0.568730447       1.0             1.0\\
+
+0.568730447       1.0             1.0\\
 0 1 1 0.0 1.0\\
- 0.184511607       1.0             1.0\\
+
+0.184511607       1.0             1.0\\
 0 3 1 0.0 1.0\\
- 1.387304921       1.0\\
+
+1.387304921       1.0\\
 0 3 1 0.0 1.0\\
- 0.450916551       1.0\\
+
+0.450916551       1.0\\
 0 4 1 0.0 1.0\\
- 1.428             1.0\\
-\textit{H atom:}\\
+
+1.428             1.0\\
+
+\textit{H atom: }
 1 6\\
 0 0 3 1.0 1.0\\
- 34.061341000 0.00602519780\\
- 5.1235746000 0.04502109400\\
- 1.1646626000 0.20189726000\\
+
+
+34.061341000 0.00602519780\\
+
+5.1235746000 0.04502109400\\
+
+1.1646626000 0.20189726000\\
 0 0 1 0.0 1.0\\
- 0.4157455100 1.00000000000\\
+
+0.4157455100 1.00000000000\\
 0 0 1 0.0 1.0\\
- 0.1795111000 1.00000000000\\
+
+0.1795111000 1.00000000000\\
 0 2 1 0.0 1.0\\
- 1.4070000000 1.00000000000\\
+
+1.4070000000 1.00000000000\\
 0 2 1 0.0 1.0\\
- 0.3880000000 1.00000000000\\
+
+0.3880000000 1.00000000000\\
 0 3 1 0.0 1.0\\
- 1.0570000000 1.00000000000\\}
+
+1.0570000000 1.00000000000\\}
  \end{spacing}
+ 
+Basis set 9\\
+\begin{spacing}{0.5}
+{\tiny \textit{Al atom: }
+13 17\\
+0 0 6 2. 1.\\
+
+54866.4890         0.839000000E-03\\
+
+8211.76650         0.652700000E-02\\
+
+1866.17610         0.336660000E-01\\
+
+531.129340         0.132902000\\
+
+175.117970         0.401266000\\
+
+64.0055000         0.531338000\\
+0 0 3 2. 1.\\
+
+64.0055000         0.202305000\\
+
+25.2925070         0.624790000\\
+
+10.5349100         0.227439000\\
+0 0 1 2. 1.\\
+
+3.20671100          1.00000000\\
+0 0 1 0. 1.\\
+
+1.15255500          1.00000000\\
+0 0 1 0. 1.\\
+
+0.70000000          1.00000000\\
+0 0 1 0. 1.\\
+
+0.35000000          1.00000000\\
+0 0 1 0. 1.\\
+
+0.176678000          1.00000000\\
+0 2 4 6. 1.\\
+
+259.283620         0.944800000E-02\\
+
+61.0768700         0.709740000E-01\\
+
+19.3032370         0.295636000\\
+
+7.01088200         0.728219000\\
+0 2 2 1. 1.\\
+
+2.67386500         0.644467000\\
+
+1.03659600         0.417413000\\
+0 2 1 0. 1.\\
+
+0.700000000          1.00000000\\
+0 2 1 0. 1.\\
+
+0.316819000          1.00000000\\
+0 2 1 0. 1.\\
+
+0.150          1.00000000\\
+0  3  1  0.  1.\\
+
+2.329027007      1.\\
+0  3  1  0.  1.\\
+
+0.480048498      1.\\
+0  4  1  0.  1.\\
+
+0.6      1.\\
+0  3  1  0.  1.\\
+
+0.120000000      1.\\
+0  4  1  0.  1.\\
+
+0.20     1.\\
+
+\textit{O atom: }
+8 9\\
+0 0 8 2.0 1.0\\
+
+26591.015149286   0.000338543\\
+
+4069.713048219    0.002548773\\
+
+943.177385588     0.012944513\\
+
+270.377217602     0.051837807\\
+
+88.721659363      0.164372032\\
+
+32.042734201      0.3855\\
+
+12.430169888      0.562307539\\
+
+4.976247393       0.350155411\\
+0 1 4 6.0 1.0\\
+
+62.977656261     -0.006945266     0.006338931\\
+
+14.905934605     -0.076543237     0.043166905\\
+
+4.611711867      -0.132826481     0.157278934\\
+
+1.603131709       0.379           0.347\\
+0 1 1 0.0 1.0\\
+
+0.568730447       1.0             1.0\\
+0 1 1 0.0 1.0\\
+
+0.184511607       1.0             1.0\\
+0 3 1 0.0 1.0\\
+
+1.387304921       1.0\\
+0 3 1 0.0 1.0\\
+
+0.450916551       1.0\\
+0 4 1 0.0 1.0\\
+
+1.428             1.0\\
+0 3 1 0.0 1.0\\
+
+0.214             1.0\\
+0 4 1 0.0 1.0\\
+
+0.5               1.0\\
+
+\textit{H atom: }
+1 6\\
+0 0 3 1.0 1.0\\
+
+34.061341000 0.00602519780\\
+
+5.1235746000 0.04502109400\\
+
+1.1646626000 0.20189726000\\
+0 0 1 0.0 1.0\\
+
+0.4157455100 1.00000000000\\
+0 0 1 0.0 1.0\\
+
+0.1795111000 1.00000000000\\
+0 2 1 0.0 1.0\\
+
+1.4070000000 1.00000000000\\
+0 2 1 0.0 1.0\\
+
+0.3880000000 1.00000000000\\
+0 3 1 0.0 1.0\\
+
+1.0570000000 1.00000000000}
+\end{spacing}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
