@@ -1,5 +1,5 @@
 set term postscript color font "Helvetica,30" enhanced eps
-set ylabel "{{/Symbol m}^2 [a.u.]"
+set ylabel "I_{/Symbol m}"
 set xlabel '~{/Symbol n}{.4\~}_{} / cm^{-1}' 
 #unset key
 #set key left top #spacing .9 font ",22"
