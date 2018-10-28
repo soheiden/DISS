@@ -2515,9 +2515,9 @@ As can be seen from Section \ref{structure_search11-20} (Table \ref{tab:ads_1wat
 The reaction D-I leads from the molecular minimum at CUSb to the twofold coordinated CUSb$\parallel$O-$\mu_2$:
  \begin{equation}
  \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \tag{D-I}
-      \label{dissa}
+      \label{dissI}
 \end{equation}
-This reaction is very exoenergetic and exoergic.
+This reaction is very exoenergetic and exergonic.
 The free energy barrier is very low, about $0.002\,$eV as one can see from Table \ref{tab:reaction-rates} and Figure \ref{mep}(a), hence the reaction rate constant is very high, in the order of $k(\textrm{300\,K})=5.76\times 10^{12}$s$^{-1}$.
 This low barrier could be expected due to the underestimation of barrier heights\cite{Zhao05} with the used functional PBE. %(compare section \ref{theorybeyond}).
 However, the same applies for all other transition states and rate constant for analogous dissociation reaction also on (0001) and (1\=102) surfaces so that a comparison can be made.
@@ -2528,7 +2528,7 @@ This analysis suggests, that the (11\=20) surface is the most reactive of the th
 A second possible dissociation reaction is D-II from CUSb to the less favorable CUSb$\parallel$O-$\mu_3$.
 \begin{equation}
   \text{H$_2$O(CUSb)} \rightarrow \text{OH(CUSb)} + \text{H(O-$\mu_3$)} \tag{D-II}
-      \label{dissb}
+      \label{dissII}
 \end{equation}
 This reaction is endoenergetic ($\Delta E=0.59\,$eV) and endoergic ($\Delta G=0.53\,$eV).
 No additional energy barrier could be found although both educt and product are minima.
@@ -2537,8 +2537,8 @@ Thus, the reaction rate constant can only by approximated by using the product a
 The molecular minimum is by $0.15\,$eV more stable than the dissociated structure on CUSb$\parallel$O-$\mu_3$.
 
 Other dissociated minima can not be reached from the molecular minimum CUSb directly, because both fragments (OH and H) have to move after the dissociation.
-With the low barrier the dissociation channel to CUSb$\parallel$O-$\mu_2$ will clearly dominate those reactions.
-Starting from CUSb$\parallel$O-$\mu_2$, further diffusion reactions are possible.
+With the low barrier the dissociation channel to CUSb$\parallel$O-$\mu_2$, reaction D-I will clearly dominate those reactions.
+Starting from the product of D-I, CUSb$\parallel$O-$\mu_2$, further diffusion reactions are possible.
 
 % A further dissociation D-c from the metastable inter-CUSa species which is no confirmed minimum also shows no barrier (without Figure), assumingly because the educt  has a much lower stability than the product:
 % \begin{equation}
@@ -2548,31 +2548,34 @@ Starting from CUSb$\parallel$O-$\mu_2$, further diffusion reactions are possible
 % It remains unclear whether this is due to the methodology and that the barrier is too low to be detected with the computational settings employed, or for other chemical reasons.
 
 
-Besides dissociation, which is highly favored on this surface cut compared to more stable alumina surfaces\cite{Heiden11-20_2018}, diffusion reactions starting from the dissociated species are important for understanding further processes.
-The OH diffusion reaction, Df-OH-III, moves from CUSb$\parallel$O-$\mu_2$ to the inter-CUSb position, which is relatively fast for OH diffusion reactions compared to the reactions at other alumina surfaces\cite{WirthJPCC2012,Wirth2016}.
+%Besides dissociation, which is highly favored on this surface cut compared to more stable alumina surfaces\cite{Heiden11-20_2018}, diffusion reactions starting from the dissociated species are important for understanding further processes.
+The OH diffusion reaction, Df-OH-III, moves from CUSb$\parallel$O-$\mu_2$ to the inter-CUSb position, which is the third most stable species (see Table \ref{tab:ads_1water}).
 \begin{equation}
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_2$)} \tag{Df-OH-III}
-     \label{diffOHa}
+     \label{diffOHIII}
 \end{equation}
 In this particular reaction, the OH residue diffuses from a CUSb position into a gap between two CUSb atoms (inter-CUSb position), where there is not much repulsion with neighboring surface oxygen atoms and other CUS atoms nearby during the diffusion, see Figure \ref{mep}(c).
-Also the distance that has to be overcome is very small.
-The barrier height equals $0.35\,$eV and the corresponding rate constant is $k(\textrm{300\,K})=1.88\times 10^6$s$^{-1}$.
+The process is slightly endoenergetic/endoergic with $\sim 0.2\,$eV and has a barrier of $\Delta E^\ddagger=0.35\,$eV/$\Delta G^\ddagger(\textrm{300\,K})=0.39\,$eV.
+With the corresponding rate constant of $k(\textrm{300\,K})=1.8\times 10^6$s$^{-1}$, it is relatively fast for OH diffusion reactions compared to the reactions at other alumina surfaces\cite{WirthJPCC2012,Wirth2016}.
+
 
 
 In contrast to that the real CUS-to-CUS diffusion reaction, Df-OH-IV, is much slower.
-It is a diffusion from CUSb to inter-CUSa with the hydrogen residue staying at an O-$\mu_2$ position (see Figure \ref{mep}(d)).
-This barrier of $1.07\,$eV is relatively high and leads to $k(\textrm{300\,K})=2.41\times 10^{-6}$s$^{-1}$.
+It is a diffusion of the OH fragment from CUSb to inter-CUSa with the hydrogen residue staying at an O-$\mu_2$ position (see Figure \ref{mep}(d)).
 \begin{equation}
  \text{OH(CUSb)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \tag{Df-OH-IV}
-     \label{diffOHb}
+     \label{diffOHIV}
 \end{equation}
-This is still faster than OH diffusion on the alumina(0001) surface\cite{WirthJPCC2012,Wirth2014thesis}, where the rate constant of a comparable CUS-to-CUS diffusion reaction is $k(\textrm{300\,K})=4\times 10^{-45}$s$^{-1}$.
+This process is exoenergetic/exergonic because the inter-CUSa$\parallel$O-$\mu_2$ is $0.22\,$eV more stable than CUSb$\parallel$O-$\mu_2$.
+However, the barrier of $\Delta G^\ddagger=1.10\,$eV is relatively high and leads to a slow reaction rate constant $k(\textrm{300\,K})=2.41\times 10^{-6}$s$^{-1}$ (slow when compared to Df-OH-III).
+This is still faster than OH diffusion on the alumina(0001) surface\cite{WirthJPCC2012,Wirth2014thesis} due to high activation barriers, where the rate constant of a comparable CUS-to-CUS diffusion reaction is $k(\textrm{300\,K})=4\times 10^{-45}$s$^{-1}$.
 For the (1\=102) surface no OH diffusion was calculated, but the corresponding H$_2$O diffusion process is around $k(\textrm{300\,K})=1.4\times 10^{-3}$s$^{-1}$, and a comparable H$_2$O diffusion process for the (0001) surface has a rate constant of $k(\textrm{300\,K})=8\times 10^{-3}$s$^{-1}$.
 For the (11\=20) surface no H$_2$O diffusion reactions can be observed due to the instability of the molecularly adsorbed species which would rather dissociate than diffuse.
 
 
-A larger variety of reaction rate values can be achieved looking at hydrogen diffusion reactions.
+In addition to OH diffusion processes, also diffusion of adsorbed H$^+$ can be imagined.
 The different types of surface oxygen atoms and also the distances between OH and H residues can affect the adsorption energy and the relative reaction kinetics.
+Two of these processes were studied.
 % As seen before, the hydrogen is preferably found on the twofold coordinated oxygen atom, but the reaction to a neighboring threefold coordinated oxygen is possible and opens the gate to structures with greater distance.
 % The reaction can take place with the OH residue being on a CUSb site:
 % \begin{equation}
@@ -2584,16 +2587,15 @@ The different types of surface oxygen atoms and also the distances between OH an
 %  %investigate? is this normal/acceptable? MAYBE NOT MENTION IT AT ALL?
 
 
-A further reaction, called Df-H-V, starting from the most stable inter-CUSa$\parallel$O-$\mu_2$ to the threefold coordinated oxygen can be seen in Figure \ref{mep2}(a):
+One reaction, called Df-H-V, starting from the most stable inter-CUSa$\parallel$O-$\mu_2$ with a twofold coordinated oxygen atom to a threefold coordinated oxygen atom can be seen in Figure \ref{mep2}(a):
 \begin{equation}
  \text{OH(inter-CUSa)} + \text{H(O-$\mu_2$)} \rightarrow \text{OH(inter-CUSa)} + \text{H(O-$\mu_3^\prime$)} \tag{Df-H-V}
-     \label{diffHb}
+     \label{diffHV}
 \end{equation}
-The free energy barrier is $1.50\,$eV, giving a rate constant at $300\,$K of $4.90\times 10^{-13}$s$^{-1}$.
+Here, the prime indicates a second next neighbor position rather than a next neigbor adsorbed species.
+The reaction is significantly endoenergetic/endoergic with a free energy barrier of $1.50\,$eV, giving a rate constant at $300\,$K of $4.90\times 10^{-13}$s$^{-1}$.
 This process is so unlikely because a less favored O-$\mu_3$ position is occcupied and this position is also less stabilized because of the greater distance between OH$_{\text{surf}}$ and OH$_{\text{ads}}$ groups.
-This reaction increases the distance to a position farther away than next neighbor.
-As mentioned before, the nomenclature for these structures uses primes ($\prime$) to display the distance.
-
+In general, reactions that invole an H atom traveling from an O-$\mu_2$ position to an O-$\mu_3$ position are energetically costly and often show high barriers, making these reactions unmeasurably slow.
 
 % A similar reaction can be seen in Figure \ref{mep2}(c) for the OH being situated on inter-CUSb and the hydrogen being adsorbed on an O-$\mu_2^{(\prime)}$ position, diffusing farther away to O-$\mu_3^{\prime\prime}$, which is less stable:
 % \begin{equation}
@@ -2609,8 +2611,10 @@ The second type of hydrogen diffusion reaction studied is
  \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime}$)} \rightarrow \text{OH(inter-CUSb)} + \text{H(O-$\mu_3^{\prime\prime\prime}$)} \tag{Df-H-VI}
      \label{diffHd}
 \end{equation}
-where H diffuses from an O-$\mu_3$ position to another O-$\mu_3$ position, with an energy barrier of $0.94\,$eV the rate at $300\,$K is $1.1\times 10^{-3}$s$^{-1}$, see also Figure \ref{mep}(b).
-
+where H diffuses from an O-$\mu_3$ position to another neighboring O-$\mu_3$ position
+Double and triple primes indicate even higher distances between OH and H fragments.
+The adsorption energies for both educt and product are similar now because the only difference is the distance between fragments.
+Nevertheless, the energy barrier of $0.94\,$eV is quite high and the corresponding rate constant is $k(\textrm{300\,K})=1.1\times 10^{-3}$s$^{-1}$, see also Figure \ref{mep}(b).
 % 
 % These H diffusion paths can be assembled to a longer diffusion path leading from inter-CUSb$\parallel$O-$\mu_3$ to O-$\mu_2^\prime$ to O-$\mu_3^{\prime\prime}$ and to the furthest possible O-$\mu_3^{\prime\prime\prime}$.
 % An attempt to calculate the first reaction step was made but it did not converge for unknown reasons (not shown here).
@@ -2621,6 +2625,13 @@ where H diffuses from an O-$\mu_3$ position to another O-$\mu_3$ position, with 
 % % The corresponding adsorption energy profile is different from that: $-1.89$, $-2.09$, $-1.16$ and $-1.22$eV.
 % One can conclude that hydrogen migration in principle is possible but not likely because the O-$\mu_2$ acts as a trap for H that hinders further reactions.
 
+The simulation of all possible reactions forming the complete kinetic network was not possible yet, already from the results above the following conclusions can be made:
+Starting from molecularly adsorbed water, dissociated species can be obtained fast, especially the CUSb$\parallel$O-$\mu_2$ can be reached easily from the molecular CUSb state.
+
+The other two most stable adsorbed species, inter-CUSa$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$, can be reached at room temperature by OH diffusion reactions from CUSb$\parallel$O-$\mu_2$ fast (inter-CUSa$\parallel$O-$\mu_2$) or slow (inter-CUSb$\parallel$O-$\mu_2$) reactions.
+
+Hydrogen diffusion reactions involving the energetically less stable O-$\mu_3$ sites are typically also kinetically hindered.
+With this we come to the conclusion that the low-energy dissociated species with protonated O-$\mu_2$ sites will form on the surface in the course of time.
 
 \begin{table*}[ht]
   \centering
@@ -2649,11 +2660,11 @@ Numbers are given in italics if no barrier was confirmed or found.}
   \label{tab:reaction-rates}
 \end{table*}
 
-Proton diffusion reactions are much more variable than OH diffusions or dissociation reactions, providing reaction rates ranging from $10^{-13}$ to $10^{-3}$s$^{-1}$ at $300\,$K.
-The barriers and therefore also rate constants for H-diffusion cover a wider range depending on two facts: the question whether O-$\mu_2$ or O-$\mu_3$ is occupied and the distance between the OH and H residues.
+%Proton diffusion reactions are much more variable than OH diffusions or dissociation reactions, providing reaction rates ranging from $10^{-13}$ to $10^{-3}$s$^{-1}$ at $300\,$K.
+%The barriers and therefore also rate constants for H-diffusion cover a wider range depending on two facts: the question whether O-$\mu_2$ or O-$\mu_3$ is occupied and the distance between the OH and H residues.
 
 
-It was shown that reactions leading to another situation than next neighbored, increasing the distance between OH and H are less favorable since geometries with the residues farther apart are energetically less stable (compare Table \ref{tab:ads_1waterfurther}).
+%It was shown that reactions leading to another situation than next neighbored, increasing the distance between OH and H are less favorable since geometries with the residues farther apart are energetically less stable (compare Table \ref{tab:ads_1waterfurther}).
 \begin{figure*} [!ht]
 \centering
 \subfigure[D-I: CUSb $\rightarrow$CUSb$\parallel$O-$\mu_2$]{\includegraphics[width=0.9\textwidth]{figures/11-20/Diss_Cb-Cb2.pdf}}
