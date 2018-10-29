@@ -395,7 +395,7 @@ This equation can be solved iteratively with the self consistent field method (S
 
 \subsection{M\o{}ller Plesset Peturbation Theory}
 Hartree-Fock theory contains no electron correlation.
-In order to include correlation in wave function theory, it is necessary to apply so-called post-HF wave function methods.
+In order to include correlation in wave function theory, it is necessary to apply so called post-HF wave function methods.
 Although these calculations are significantly more computationally demanding they provide better results on a higher level of theory.
 From these, M\o{}ller Plesset peturbation theory of second order (MP2)\cite{mollerplesset} is one of the simplest methods to do so.
 The method is also known for periodic systems\cite{Suhai1984}.
@@ -450,13 +450,6 @@ However, a main limitation of MP2 is that the wave function of the zeroth order 
 If the zeroth order wave function describes the system poorly, the corrections need to be higher and eventually, convergence can be slow or not be achieved at all.
 In this case perturbation theory might not be a good option to describe correlation.
 
-
-A further development is the local M\o{}ller Plesset perturbation theory\cite{usvyat2015,usvyatbook,Maschio2007} of 2$^{\textrm{nd}}$ order (LMP2) as implemented in cryscor\cite{cryscor} for periodic systems.
-In contrast to regular MP2 that scales with $\mathcal{O}(N^5)$, local MP2 allows for scaling of $\mathcal{O}(N)$ with the number of atoms per unit cell $N$ so that it is considerably faster and more efficient also for larger systems.
-This is gained by a description of the electron correlation by localized orbitals (Wannier functions) since dynamical correlation is not a long-range effect but can be analyzed locally.
-These localized Wannier functions are not highly compuationally demanding.
-However, the bottleneck is the evaluation of the AO integrals and their transformation to the MO basis.
-As a disadvantage large basis sets are needed so that on top of the regular HF calculation a dual basis set expansion is recommended\cite{Usvyat2010}.
 %% While the occupied space is calculated with orthogonal localized orbitals this is not possible for the virtual space which is more diffuse and in order to be localized as well has to be computed with nonorthogonal orbitals.
 % This is easy applicable for occupied orbitals but not so easy for virtual orbitals: here the orthogonality has to be quit to become local.
 % Due to locality additional couplings occur (inter-pair coupling between individual amplitudes via the corresponding overlap matrix) which increases the computational costs.
@@ -499,7 +492,7 @@ Problematic in this approach is that the exact form of the interacting kinetic e
 Initial attempts to calculate all energy components from the pure density were not very successful because the exact form of $T[n]$ and $E_{xc}[n]$ is not known and approximations, especially the ones for $T[n]$, delivered poor results so that instead wave function-based methods were applied commonly.
 In 1965 Kohn and Sham showed in their work\cite{Kohn-Sham1965} that the kinetic energy can be calculated from non-interacting auxiliary particles in a set of orbitals that is used for representing the electron density, \textit{i.e.} a test system with non-interacting electrons reflecting the real system's electron density is defined.
 The use of orbitals makes it possible to avoid a direct calculation of $T[n]$\cite{Gross03}. %use the same methods and algorithms previously known from wave function methods
-A variational calculation similar to HF leads to the so-called Kohn-Sham equations:
+A variational calculation similar to HF leads to the so called Kohn-Sham equations:
 \begin{equation}\label{eq:KS}
  \left(-\frac{1}{2}\vec{\nabla}^2_1 + v_{ext}(\vec{r}_1) + v_{H}(\vec{r}_1) + v_{xc}(\vec{r}_1) \right)\psi^{KS}_i(\vec{r}_1) = \varepsilon_i^{KS}\psi^{KS}_i(\vec{r}_1).
 \end{equation}
@@ -664,10 +657,11 @@ In general this vector is not perpendicular to the plane (uvw), only for cubic l
 
 
 To describe a periodic system with quantum mechanical methods, one has to introduce periodic boundary conditions.
-\todo{hier weiter schreiben!}
+According to the Bloch theorem\cite{Bloch1928}, the wavefunction can be expressed by a phase factor and a periodic function $u_{\vec{k}}(\vec{r})$
 \begin{equation}
 \phi(\vec{r})=e^{i\vec{k}\vec{r}}u_{\vec{k}}(\vec{r})
 \end{equation}
+with the periodicity
 \begin{equation}
 u_{\vec{k}}(\vec{r})=u_{\vec{k}}(\vec{r}+\vec{B})
 \end{equation}
@@ -675,47 +669,75 @@ u_{\vec{k}}(\vec{r})=u_{\vec{k}}(\vec{r}+\vec{B})
 \phi(\vec{r}+\vec{B})=e^{i\vec{k}(\vec{r}+\vec{B})}u_{\vec{k}}(\vec{r})=e^{i\vec{k}\vec{B}}\phi(\vec{r})
 \end{equation}
 
-The periodicity is reflected by the periodicity of the wave function.
+In case of periodic HF, we express the electronic wavefunction with the help of orbitals, which are now crystal rather than molecular orbitals.
+They depend on a band index ($n$, in analogy to the MO index $i$), and on the $\vec{k}$-value within the first Brillouin zone above):
+\begin{equation}
+ \psi_n(\vec{r})\rightarrow\psi_{n,\vec{k}}(\vec{r}).
+\end{equation}
+The $\psi_{n,\vec{k}}(\vec{r})$ can be expanded, similar to the MOs, in a basis.
+
+If the crystal orbital $\psi_{n,\vec{k}}(\vec{r})$ is represented by an atomic orbital basis (compare equation (\ref{eq:basis})), then one obtains in the HF case the following Roothaan-Hall equations:
+\begin{equation}\label{eq:RH-mat}
+  \doubleunderline{F}^{\vec{k}}\vec{C}_n^{\vec{k}}=\doubleunderline{S}^{\vec{k}}\vec{C}_n^{\vec{k}}\varepsilon_n^{\vec{k}}
+\end{equation}
+Here, $\vec{C}_n^{\vec{k}}$ contains the AO coefficients of band $n$ at $\vec{k}$-point $\vec{k}$.
+Further $(\doubleunderline{F})^{\vec{k}}_{nm}=\langle \psi_{n,\vec{k}}|\hat{f}|\psi_{n,\vec{k}}\rangle$ is the Fock matrix ($\langle \psi_{n,\vec{k}}|\hat{f}|\psi_{m,\vec{k}^\prime}\rangle=0$ if $\vec{k}\neq \vec{k}^\prime$) and $(\doubleunderline{S})^{\vec{k}}_{nm}=\langle \psi_{n,\vec{k}}|\psi_{m,\vec{k}}\rangle$ the overlap matrix.
+Equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in the first Brillouin zone, fore $K$ bands.
+
+Density functional theory in the Kohn-Sham scheme for periodic boundary conditions is analog to HF, equations analog to the Roothaan-Hall equation (\ref{eq:RH-mat}) can be solved with respective periodic Kohn-Sham orbitals. %$\psi_{i\vec{k}}(\vec{r})=\frac{1}{\sqrt{V}}\sum_{\vec{K}} C_{\vec{K}i}e^{(\vec{k}+\vec{K})\vec{r}}$.
+The DFT integrals are not evaluated in real space over the extended system but by integrals over a finite number of points in the first Brillouin zone in reciprocal space ($\vec{k}$-point grid).
+Due to symmetry considerations only a reduced number of $\vec{k}$-points need to be evaluated ($\vec{k}$-points in the irreducible part of the first Brillouin zone).
+
+
+In the periodic case of MP2, here a further development, the so called local M\o{}ller Plesset perturbation theory of second order\cite{usvyat2015,usvyatbook,Maschio2007} is applied, as implemented in cryscor\cite{cryscor} for periodic systems.
+In contrast to regular MP2 that scales with $\mathcal{O}(N^5)$, local MP2 allows for scaling of $\mathcal{O}(N)$ with the number of atoms per unit cell $N$ so that it is considerably faster and more efficient also for larger systems.
+This is gained by a description of the electron correlation by localized orbitals (Wannier functions) since dynamical correlation is not a long-range effect but can be analyzed locally.
+These localized Wannier functions are not highly compuationally demanding.
+However, the bottleneck is the evaluation of the AO integrals and their transformation to the MO basis.
+As a disadvantage large basis sets are needed so that on top of the regular HF calculation a dual basis set expansion is recommended\cite{Usvyat2010}.
+
+
+% The periodicity is reflected by the periodicity of the wave function.
 % , which has to be the same in all cells whose symmetry is given by $\vec{B}$:
 % \begin{equation}
 %  v_{eff}(\vec{r})= v_{eff}(\vec{r}+\vec{B}).
 % \end{equation}
-According to the Bloch theorem\cite{Bloch1928} the wave function $\phi(\vec{r})$ values at equivalent positions in different cells are related to each other with a phase factor containing the reciprocal space vector $\vec{k}$ and the lattice vector $\vec{B}$:
-\begin{equation}
- \phi_{\vec{k}}(\vec{r} + \vec{B})=e^{i\vec{k}\cdot\vec{B}}\phi_{\vec{k}}(\vec{r})
-\end{equation}
-In this equation the crystalline orbital $\phi$ for the $n^\textrm{th}$ band can be understood as having one wave-like and one cell periodic part $\varphi$, also known as Bloch orbital:
-\begin{equation}
- \phi_{n,\vec{k}}(\vec{r})=e^{i\vec{k}\cdot\vec{r}}\varphi_n(\vec{r}).
-\end{equation}
-This equation depends on the crystal momentum $\vec{k}$.
-Bloch orbitals can be expanded as a set of plane wave functions ($\chi^\textrm{PW}$).
-In principle the number of plane waves required in a calculation could be infinite.
-But they are weighted due to their kinetic energy, so that one can give an energy cutoff E$_\textrm{cutoff}$ and only plane waves below this cutoff are conisdered.
-It is calculated with
-\begin{equation}
- E_\textrm{cutoff}=\frac{\hbar^2(\vec{k}+\vec{G})^2}{2m_e}
-\end{equation}
-with the electron mass $m_e$.
-
-The Bloch orbital $\varphi_{n}(\vec{r})$ is represented by a basis (compare equation (\ref{eq:basis})):
-\begin{equation}
- \varphi_n(\vec{r})=\sum_\mu^K C_{n\mu}\Phi_n
-\end{equation}
-giving a $K\times K$ matrix for the number of basis functions $K$ and the vector $C_n$ of the size $K$.
-For this must apply
-\begin{equation}
- \langle\varphi_{n,\vec{k}}|\hat{f}|\varphi_{n,\vec{k}^\prime}\rangle=0 ~~ \forall ~~\vec{k}^\prime\neq \vec{k}
-\end{equation}
-
-From the periodicity claimed by the Bloch theorem we know that the Fockmatrix (or Kohn-Sham matrix) has to be block diagonal, hence it is sufficient to solve equation (\ref{eq:RH-mat}) only at a few $\vec{k}$-points in the first Brillouin zone, especially for non-metallic systems\cite{monkhorst}.
-
-In analogy to the Roothaan-Hall equation (\ref{eq:RH}), we can now introduce the Roothaan-Hall expression, depending on the reciprocal space vector $\vec{k}$:
- \begin{equation}\label{eq:RH-mat}
-  \doubleunderline{F}^{\vec{k}}\vec{C}_n^{\vec{k}}=\doubleunderline{S}^{\vec{k}}\vec{C}_n^{\vec{k}}\varepsilon_n^{\vec{k}}
- \end{equation}
-with the Fockmatrix $\doubleunderline{F}$, the overlap matrix $\doubleunderline{S}$, the vector containing the coefficients $\vec{C}$ and the crystal orbital energies $\varepsilon$.
-equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in the first Brillouin zone, for $K$ bands.
+% According to the Bloch theorem\cite{Bloch1928} the wave function $\phi(\vec{r})$ values at equivalent positions in different cells are related to each other with a phase factor containing the reciprocal space vector $\vec{k}$ and the lattice vector $\vec{B}$:
+% \begin{equation}
+%  \phi_{\vec{k}}(\vec{r} + \vec{B})=e^{i\vec{k}\cdot\vec{B}}\phi_{\vec{k}}(\vec{r})
+% \end{equation}
+% In this equation the crystalline orbital $\phi$ for the $n^\textrm{th}$ band can be understood as having one wave-like and one cell periodic part $\varphi$, also known as Bloch orbital:
+% \begin{equation}
+%  \phi_{n,\vec{k}}(\vec{r})=e^{i\vec{k}\cdot\vec{r}}\varphi_n(\vec{r}).
+% \end{equation}
+% This equation depends on the crystal momentum $\vec{k}$.
+% Bloch orbitals can be expanded as a set of plane wave functions ($\chi^\textrm{PW}$).
+% In principle the number of plane waves required in a calculation could be infinite.
+% But they are weighted due to their kinetic energy, so that one can give an energy cutoff E$_\textrm{cutoff}$ and only plane waves below this cutoff are conisdered.
+% It is calculated with
+% \begin{equation}
+%  E_\textrm{cutoff}=\frac{\hbar^2(\vec{k}+\vec{G})^2}{2m_e}
+% \end{equation}
+% with the electron mass $m_e$.
+% 
+% The Bloch orbital $\varphi_{n}(\vec{r})$ is represented by a basis (compare equation (\ref{eq:basis})):
+% \begin{equation}
+%  \varphi_n(\vec{r})=\sum_\mu^K C_{n\mu}\Phi_n
+% \end{equation}
+% giving a $K\times K$ matrix for the number of basis functions $K$ and the vector $C_n$ of the size $K$.
+% For this must apply
+% \begin{equation}
+%  \langle\varphi_{n,\vec{k}}|\hat{f}|\varphi_{n,\vec{k}^\prime}\rangle=0 ~~ \forall ~~\vec{k}^\prime\neq \vec{k}
+% \end{equation}
+% 
+% From the periodicity claimed by the Bloch theorem we know that the Fockmatrix (or Kohn-Sham matrix) has to be block diagonal, hence it is sufficient to solve equation (\ref{eq:RH-mat}) only at a few $\vec{k}$-points in the first Brillouin zone, especially for non-metallic systems\cite{monkhorst}.
+% 
+% In analogy to the Roothaan-Hall equation (\ref{eq:RH}), we can now introduce the Roothaan-Hall expression, depending on the reciprocal space vector $\vec{k}$:
+%  \begin{equation}\label{eq:RH-mat}
+%   \doubleunderline{F}^{\vec{k}}\vec{C}_n^{\vec{k}}=\doubleunderline{S}^{\vec{k}}\vec{C}_n^{\vec{k}}\varepsilon_n^{\vec{k}}
+%  \end{equation}
+% with the Fockmatrix $\doubleunderline{F}$, the overlap matrix $\doubleunderline{S}$, the vector containing the coefficients $\vec{C}$ and the crystal orbital energies $\varepsilon$.
+% equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in the first Brillouin zone, for $K$ bands.
 
 
 %  The solutions give a band (range of energies) and are a continuous function.
@@ -724,37 +746,42 @@ equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in 
 %  The band gap, equivalent to HOMO-LUMO gap, is between the highest filled and the lowest empty band.
 %  In metallic systems, there is no bandgap, whereas in insulating systems the band gap is large ($>4\,$eV\cite{holleman2007lehrbuch}).
 
-\todo{DFT, MP2 periodic case}
+
 \section{Plane Wave Bases, Atom Centered Bases and Peculiarities}
-It is necessary for calculation of \textit{e.g.} equation (\ref{eq:KS}) for DFT to use a basis set for the orbitals, as shown in equation (\ref{eq:basis}).
-Basis functions within a unit cell can be either delocalized in the form of plane waves or localized as a Gaussian basis set (atom centered basis functions).
-As a consequence of plane waves, the system is periodic in 3D and it is possible to improve the basis systematically by setting the cutoff energy higher.
-Many basis functions are necessary which is very costly for calculations that depend not only on the density (like hybrid functionals or MP2).
-In comparison plane waves (PW) and atom centered orbitals have different advantages and disadvantages\cite{Tosoni2007}.
-For solid state systems both the energy and the gradient converge better with plane waves (fewer steps).
-Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynman forces (forces acting on the ions/atoms) have to be evaluated.
-The quality of the basis is simply dependent on the cutoff energy E$_\textrm{cutoff}$, the higher this energy is the better is the basis.
+It is necessary for calculation of equations (\ref{eq:hf}) and (\ref{eq:KS}) to use a basis set for the orbitals, as shown in equation (\ref{eq:basis}).
+Basically there are two different types of bases, atom centered basis sets and plane waves.
+Both types are used in this work so we introduce advantages and disadvantages\cite{Tosoni2007}.
+
+When using a plane wave basis, for solid state systems both the energy and the gradient converge better (fewer steps).
+The system is intrinsically described periodically in 3D (no matter if the system is a 1D (polymer), 2D (surface) or 3D system (bulk)).
+It is possible to improve the basis systematically by setting the cutoff energy higher, which defines the number of basis functions that are considered: $E_{cutoff}\geq \frac{1}{2}|\vec{k}+\vec{G}|^2$, with the wave vector $\vec{k}$ and the reciprocal lattice vector $\vec{G}$.
+The basis is not geometry dependent.
 Treating all electrons requires very high cutoff energies  which are computationally unfeasible, so usually pseudopotentials are used, where core electrons are not treated explicitly but their presence is considered indirectly.
 On the negative side, when norm-conserving pseudopotentials are applied more memory is needed.
 To treat this, the PAW (projector augmented-wave method)\cite{paw1,Kresse1999} is applied which delivers explicit treatment of the core electrons so that the accuracy is greatly increased.
-The system is intrinsically defined in 3D, no matter if the system is a 1D (polymer), 2D (surface) or 3D system (bulk).
+The system is intrinsically defined in 3D.
+For a good convergence however, many basis functions are necessary which is very costly, especially for calculations that depend not only on the density (like hybrid functionals or MP2).
 It is computationally demanding to calculate exact (Fock) exchange, which makes the use of hybrid functionals so costly, although the precision of the results is considerably enhanced.
+In addition, for treating surface systems, an ''empty space``, vaccum has to be considered, which increases the computational costs.
+% Additionally, the calculation of atomic forces is simpler because only Hellmann-Feynman forces (forces acting on the ions/atoms) have to be evaluated.
+% The quality of the basis is simply dependent on the cutoff energy E$_\textrm{cutoff}$, the higher this energy is the better is the basis.
 \\
 
-Whenever there are atom-centered basis sets the orbitals of different atoms can overlap.
-This can result in the so-called basis set superposition error (BSSE)\cite{BSSE1970}, which only appears if atom centered bases are utilized.
+For atom-centered bases, the basis functions correspond to atomic orbitals.
+The use of only a small basis set already gives good results, relatively few basis functions are necessary.
+However, the basis is geometry dependent: whenever there are atom-centered basis sets the orbitals of different atoms can overlap.
+This can result in the so called basis set superposition error (BSSE)\cite{BSSE1970}, which is not a problem for the plane wave basis.
 Let's assume a dissociation reaction: in the molecular case, the electrons can occupy orbitals of both residues (each atom has in total a higher basis set, the binding energy is stabilized), whereas in the dissociated case, this is not possible (the energy of the isolated fragments is not stabilized).
 Due to this difference, it is necessary to either correct the BSSE or to use a large basis, ideally at the basis set limit.
-One can apply counterpoise corrections (CP)\cite{Boys1970} to approximately compensate this error.
+By adding more basis functions, computational costs increase and linear dependencies can also be a problem, so that it makes sense to apply further corrections.
+With these so called counterpoise corrections (CP)\cite{Boys1970} one can approximately compensate for this error.
 This is done here by performing "ghosted" calculations with the system as a whole, the adsorbate alone, and the adsorbate with surface from ghost atoms.
 Then one applies a substractive scheme to cancel out the effect of the orbital overlap.
-On the other hand one can use a huge basis set that does not have this problem, but comes with a higher computational demand.
-In contrast to PW calculations the true dimensionality is obeyed due to the locality of the basis.
+
+% In contrast to PW calculations the true dimensionality is obeyed due to the locality of the basis.
 Probably, the most powerful advantage of atom centerd bases is that exact exchange and hybrid methods are available as standard methods because fewer basis functions are required, compared to plane waves.
 % Transferring atom centered bases to periodic systems is not trivial, especially for bases including many diffuse Gaussians, but there are programs available.
 
-\todo{eher in das Kapitel über plane waves? For periodic systems, the DFT integrals are not evaluated in real space over the extended system but by integrals over a finite number of points in the first Brillouin zone in reciprocal space ($\vec{k}$-point grid).
-Due to symmetry considerations only a reduced number of $\vec{k}$-points need to be evaluated (irreducible $\vec{k}$-points).}
 
 \section{\textit{Ab Initio} Molecular Dynamics}
 Apart from solving stationary problems, \textit{ab initio} molecular dynamics (AIMD) can deliver dynamical results for time dependent processes\cite{jensen,marx_hutter_AIMD}.
@@ -1075,12 +1102,15 @@ The geometries and cell parameters from the VASP (PBE+D2) output were used as st
 
 
 \chapter{Water on $\upalpha$-Al$_2$O$_3$(0001)}\label{sec:0001}
-As mentioned earlier, the (0001) surface is the most stable surface site of alumina under UHV conditions, and was subject of several studies so far\cite{kuri10,hass98,hass00,Elam1998,Brown1999,Kelber2007}.
+As mentioned earlier, the (0001) surface is the most stable surface site of alumina under UHV conditions, and was subject of several studies so far\cite{kuri10,hass98,hass00,Elam1998,Brown1999,Kelber2007,Tsyganenko1996,Chang1971,Lee1985,Nelson1998,Ranea2009,Thissen2009,Shapovalov2000,Wittbrodt1998,Wang2011}.
 Both experimental and theoretical studies discovered characteristics and specialties of this crystal cut.
 In experimental studies, a whole zoo of methods was applied to study the (0001) surface, there are IR\cite{Tsyganenko1996}, LEED\cite{Chang1971} and TEM\cite{Lee1985} studies that contribute to the structure of the clean and the surface in contact with water.
 Laser induced thermal desorption spectroscopy\cite{Elam1998,Nelson1998} showed a variety of hydroxyl surface sites with different binding energies, and that H$_2$O adsorbs dissociatively on the surface.
-Theoretical studies were conducted by means of periodic \textit{ab initio} calculations by Kurita\cite{kuri10} who studied the stability of distinct surface cuts without water. Also the system in contact with H$_2$O was studied by Hass and coworkers\cite{hass98,hass00} for \textit{ab initio} molecular dynamics and found that dissociation of molecular water is favored.
-\todo{further theoretical studies..}
+Theoretical studies were conducted by means of periodic \textit{ab initio} calculations by Kurita\cite{kuri10} who studied the stability of distinct surface cuts without water. Also the system in contact with H$_2$O was studied by Hass and coworkers\cite{hass98,hass00} with \textit{ab initio} molecular dynamics and found that dissociation of molecular water is favored.
+Several studies found, that water adsorption is preferred at aluminum sites of the Al terminated surface\cite{hass00,Ranea2009}, but dissociation is energetically more stable than molecular adsorption.
+Dissociation creates two distinct OH groups, the so called OH$_\textrm{ads}$ (adsorbed OH fragment) and OH$_\textrm{surf}$ (OH from surface O and dissocited H atom)\cite{Thissen2009,Ranea2009}.
+Further, vibrational frequencies were calculated and compared to experiment\cite{Wirth2014,Wang2011}, and also reaction rates for the dissociation were evaluated\cite{WirthJPCC2012,Wang2011}.
+Also cluster studies were conducted approving the findings with periodic models\cite{Wittbrodt1998,Shapovalov2000}.
 \\
 
 In our workgroup previous work concerned the adsorption, reactions and vibrational spectroscopy of water on $\upalpha$-Al$_2$O$_3$(0001) in the low-coverage limit.
@@ -1142,7 +1172,11 @@ These figures are from unpublished work of Dr. J. Wirth.}
 \end{figure}
 Of these, according to periodic DFT calculations of Reference\cite{WirthJPCC2012} using a plane wave basis and the PW91 exchange-correlation functional, the 1-2 dissociated species is the most stable one and the 1-4$^\prime$ is the least stable one, see Table \ref{tab:vasp-results} below.
 For the stability of the molecular and the 1-4 dissociated species, the situation is more controversial in the literature\cite{WirthJPCC2012,hass00,Ranea2009}.
-In Reference\cite{WirthJPCC2012} PW91 with dispersion corrections gives almost the same adsorption energy for both species.
+In Reference\cite{WirthJPCC2012} PW91 with dispersion corrections gives almost the same adsorption energy for both species:
+\begin{equation}\label{eq:Eads1}
+  E_\textrm{ads}=E_\textrm{ads. species}-(E_\text{free water molecule}+E_\text{surface}).
+\end{equation}
+
 %In periodic DFT studies with VASP, the stability lies between the previously mentioned ones, depending on the exact method employed: For PBE+D2 the molecular adsorbed species is more stable than 1-4, for the functional PW91+D2 the 1-4 dissociated is more stable, whereas PW91 without dispersion corrections gives the same adsorption energy for both species (the values for the adsorption energy are calculated analogously to the (11\=20) surface cut, equation (\ref{eq:Eads})).
 We shall see below (Section \ref{crystal_calc}) that the relative stability of the molecular and the various dissociated species, depends somewhat on the functional, on the treatment (or lack) of dispersion, on the basis (plane wave vs. atomic orbital basis), and on the level of electronic structure method (DFT vs. WFT).
 Further, the influence of these methods/basis sets on vibrational frequencies will be studied in Section \ref{sec:AO_freq0001}.
@@ -1272,9 +1306,6 @@ We will apply these methods for adsorption energies, vibrational frequency analy
 % We also reoptimized the transition state for the Df-H-4-2 reaction.
 
 \subsection{Adsorption Energies}\label{sec:eads_crystal}
-\todo{später: Going beyond pure density functionals and also beyond DFT has been too costly for a long time, it is simply not applicable for a surface adsorbate system as large and electron rich.
-In the CRYSTAL14\cite{crystal14} and cryscor\cite{cryscor} code atom centered bases are used instead of plane waves so that large scale systems can also be computed.
-With this methodology it is possible to calculate periodic structures with GGA as well as with hybrid functionals and, moreover, with wave function-based techniques like LMP2.}\\
 \begin{enumerate}
  \item[(1)] GGA-DFT calculations using PW bases
 \end{enumerate}
@@ -1400,6 +1431,9 @@ For basis set 8, for example, the energy difference between mol and 1-2 diss is 
 % Interestingly, the non optimized system seems more stable which is suprising at first sight.
 % Due to different amounts of stabilization in the clean surface, the adsorbed system and the free water molecule, the adsorption energies are stabilized more for the calculations with the VASP optimized geometries than for the CRYSTAL reoptimized ones.
 % \\\\
+Going beyond pure density functionals and also beyond DFT has been too costly for a long time, it is simply not applicable for a surface adsorbate system as large and electron rich.
+In the CRYSTAL14\cite{crystal14} and cryscor\cite{cryscor} code atom centered bases are used instead of plane waves so that large scale systems can also be computed.
+With this methodology it is possible to calculate periodic structures with GGA as well as with hybrid functionals and, moreover, with wave function-based techniques like LMP2.
 \begin{enumerate}
  \item[(3)] Hybrid-DFT calculations using AO bases
 \end{enumerate}
@@ -2272,7 +2306,7 @@ By doing this one molecular minimum and several dissociated species including bo
 The multitude of different surface atoms gives rise, for the dissociated water molecule, to a large variety of possible adsorption geometries for the next neighboring situation (OH and H residue are adsorbed on two neighboring surface atoms).
 The variety is even increased when considering adsorbate structures with greater distance between the dissociated water fragments.
 Adsorption energies and Gibbs free energies at various temperatures of the resulting, dissociated next neighbor species can be seen in Table \ref{tab:ads_1water}, along with the molecular species.
-The adsorption energy is defined by equation (\ref{eq:Eads}) as the energy of the adsorbed species compared to the energies of the clean surface and the free water molecule:
+The adsorption energy is defined (analogously to equation (\ref{eq:Eads1}) in section \ref{sec:0001}) by equation (\ref{eq:Eads}) as the energy of the adsorbed species compared to the energies of the clean surface and the free water molecule:
 \begin{equation}\label{eq:Eads}
  E_\textrm{ads}=E_\textrm{ads. species}-(E_\text{free water molecule}+E_\text{surface}).
 \end{equation}
@@ -2521,7 +2555,7 @@ This reaction is very exoenergetic and exergonic.
 The free energy barrier is very low, about $0.002\,$eV as one can see from Table \ref{tab:reaction-rates} and Figure \ref{mep}(a), hence the reaction rate constant is very high, in the order of $k(\textrm{300\,K})=5.76\times 10^{12}$s$^{-1}$.
 This low barrier could be expected due to the underestimation of barrier heights\cite{Zhao05} with the used functional PBE. %(compare section \ref{theorybeyond}).
 However, the same applies for all other transition states and rate constant for analogous dissociation reaction also on (0001) and (1\=102) surfaces so that a comparison can be made.
-This analysis suggests, that the (11\=20) surface is the most reactive of the three surfaces\cite{WirthJPCC2012,Wirth2016}. \todo{Tabelle aus dem Paper einfügen?}
+This analysis suggests, that the (11\=20) surface is the most reactive of the three surfaces\cite{WirthJPCC2012,Wirth2016}. %\todo{Tabelle aus dem Paper einfügen?}
 
 
 
@@ -2923,9 +2957,9 @@ With the computational power available during this work, B3LYP+D3 seems by far t
 In the following, vibrational spectra in the harmonic approximation in the form of stick spectra will be shown for the OD region ($1700$-$3000\,$cm$^{-1}$) and also for the low-frequency, lattice vibrational (mainly Al-O vibrations) region ($0$-$1000\,$cm$^{-1}$).
 We begin with the latter, and we compute spectra without and with water in this case
 All spectra shown in this section were normalized to the most intense peak, with the intensities being determined by dipole model in section \ref{sec:freq_theo}.
-\todo{später Note, that the intensities in the OD range decrease with growing slab size since they are normalized to the most intense peak in the lattice region.
-For smaller slab sizes the ratio between OD and lattice is higher than for bigger slab sizes, so that the OD intensities in direct comparison seems smaller.
-This however, has no physical meaning.}
+% \todo{später Note, that the intensities in the OD range decrease with growing slab size since they are normalized to the most intense peak in the lattice region.
+% For smaller slab sizes the ratio between OD and lattice is higher than for bigger slab sizes, so that the OD intensities in direct comparison seems smaller.
+% This however, has no physical meaning.}
 In some figures short notations for the adsorbed species are used: iCa2 for inter-CUSa$\parallel$O-$\mu_2$, Cb2 for CUSb$\parallel$O-$\mu_2$ and iCb2 for inter-CUSb$\parallel$O-$\mu_2$.
 %Unfortunately, experimental results for the spectral range of the lattice vibrations are not obtained by our experimental partners yet, so that no comparison to SFG modes can be made.
 Unfortunately, not for all coverages experimental results for the spectral range of the lattice vibrations are obtained by our experimental partners yet, so that only the clean and the fully covered surface can be compared to SFG modes.
