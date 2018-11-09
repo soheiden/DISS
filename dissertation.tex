@@ -1359,7 +1359,8 @@ The basis sets which were tested are summarized in Table \ref{tab:basissets}.
    \caption{Applied basis sets for Al, O and H in the CRYSTAL calculations.
    The ordering is according to their size.
    Citations can be found in the table footnotes.
-   Basis sets 8 and 9 are developed further from basis sets in the CRYSTAL basis set data base and can be found in Appendix \ref{app_combined_basis}.}
+   Basis sets 8 and 9 are developed further from basis sets in the CRYSTAL basis set data base.
+   Further details can be found in Appendix \ref{app_combined_basis}.}
   \begin{tabular}{c|lll}
   \toprule
   basis set & Al & O & H \\\midrule
@@ -3446,7 +3447,28 @@ The last number is a scaling factor that is used to scale the following exponent
 The following indented lines give the exponents and contraction coefficients.\\
 For basis set 8, we have 39 AOs for Al, 30 for O and 14 AOs for H, which makes a total of 83 basis functions.
 For basis set 9, we have 51 AOs for Al, 42 AOs for O and 14 AOs for H, giving in total 107 basis functions.
-\\\\\\\\\\
+Similarly, we have for the other basis sets:
+\begin{table}
+ \centering
+   \caption{Number of AOs for basis sets from Table \ref{tab:basissets}.
+   The basis sets are numbered corresponding to their size.
+   Note, \textit{e.g.} for bases 6 and 7, that a larger basis might have less AOs but have higher exponents for diffuse functions.}
+  \begin{tabular}{l|cccc}
+  \toprule
+basis& Al & O & H & total\\\midrule
+1 &18 &18 &6 &42 \\ 
+2 &15 &18 &6 &39 \\ 
+3 &18 &18 &6 &42 \\ 
+4 &18 &18 &6 &42 \\ 
+5 &23 &23 &6 &52 \\ 
+6 &27 &18 &6 &51 \\ 
+7 &22 &18 &6 &46 \\ 
+8 &39 &30 &14 &83 \\ 
+9 &51 &42 &14 &107 \\\bottomrule
+  \end{tabular}
+\label{tab:number-of-AOs}
+\end{table}
+\\\\\\\\\\\\\\\\
 Basis set 8
 \begin{spacing}{0.5}
 {\tiny \textit{Al atom: }

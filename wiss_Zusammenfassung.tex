@@ -53,7 +53,26 @@ Close collaboration with the experimental ``Interfacial Molecular Spectroscopy''
 \\
 
 
-The first project that makes up the biggest part of this work studied the (11\=20) surface which is the third most stable under ultra high vacuum (UHV) conditions and has not been studied to a large extent yet.
+The first project is themed at the most stable surface cut under UHV conditions, the (0001) surface that has been studied earlier in our group extensively considering water adsorption, vibrational frequencies and dissociation and diffusion reactivity.
+In contrast to previous work we do not apply a plane wave basis but atom centered orbital basis functions.
+With this we calculate adsorption energies with PBE, the hybrid functional B3LYP (both with D3 dispersion corrections) and also with the wave function based local M\o{}ller-Plesset perturbation theory of second order (LMP2).
+In addition we compute vibrational frequencies, showing better agreement with experimental spectra than previous plane wave based results.
+
+From the literature it is known, that GGA functionals like PBE, which is standard for such surface calculations nowadays, gives too low barrier heights for reactions and hence overestimates reaction rate constants.
+To overcome this issue, we reoptimize for an exemplary hydrogen diffusion reaction (called Df-H-4-2) the transition state with a hybrid functional (B3LYP+D3) and evaluate the barrier height and reaction rate with B3LYP and also with LMP2.
+These methods give indeed higher barriers and slower rate constants, although with a higher computational cost leading to a better understanding of the system.
+\\
+\\
+In a second project, molecular beam scattering at the (0001) surface was examined with the help of plane wave DFT.
+In a molecular beam experiment, a water beam is shot in UHV at the surface, resulting in a non-equilibrium situation.
+Recent experiments showed, that with this method water dissociation is enhanced in comparison to other probing techniques like pinhole dosing.
+For this \textit{ab initio} molecular dynamics simulations were conducted to reproduce and explain these experimental findings.
+There we find molecular adsorption but also dissociative adsorption, the latter directly after impact and also after initial bouncing or molecular adsorption processes up to $1\,$ps after the impact, which we call indirect.
+We used different surface and beam models, with and without temperature effects which allowed us not only to reproduce but also to understand this increased dissociation probability mechanistically.
+\\
+\\
+The last project that makes up the biggest part of this work studied the (11\=20) surface with periodic DFT in a plane wave basis and the functional PBE.
+It is the third most stable surface cut under ultra high vacuum (UHV) conditions and has not been studied to a large extent yet.
 The structure of the clean surface slab ($2\times 2$ supercell) was optimized and analyzed to predict most probable adsorption sites.
 The surface is relatively complex with two distinct alumina atom dimers and both twofold and threefold coordinated oxygen atoms, offering a variety of adsorption sites.
 
@@ -61,38 +80,24 @@ The adsorption of water was studied in the low coverage limit, concerning the st
 In comparison to the molecular minimum, the dissociated structures are substantially more stable.
 
 From these stable minima, reactions were investigated with nudged elastic band (NEB) to determine reaction rate constants for dissociation, and diffusion reactions of H and OH residues to learn about the mobility of surface species.
-We could find, that dissociation is very fast, and that rates for diffusion reactions cover a wide range from very to very slow and thus improbable, depending on the reaction and the type of surface oxygen atom involved. 
+We could find, that dissociation is very fast, and that rates for diffusion reactions cover a wide range from $10^{-13}$-$10^6$s$^{-1}$, depending on the specific reaction and the type of surface oxygen atom involved. 
 
 
-In addition to this, vibrational frequencies for all minima were evaluated, here for OD species to be able to compare to experimental results.
+In addition to this, vibrational frequencies for all minima were evaluated, here for OD species to be able to compare to experimental results, that employ heavy water (D$_2$O).
 For this SFG spectra (sum frequency generation, an interface specific vibrational spectroscopy method) were measured by Yanhua Yue from Kramer Campen's group and compared to theory with good agreement such that single modes could be assigned to their respective OD stretch vibration.
 Two of the most stable species contribute to the peaks, since they are likely to be occupied with respect to Boltzmann distribution.
-
 Furthermore we studied higher water coverages and the effects on the vibrational frequencies.
-For geometries were the neighboring residues have a considerable influence on the stability, the wavenumbers of the respective vibrations are shifted strongly.
-Especially the fully covered system has a multitude of peaks from different adsorbed OD and surface OD groups.
-
-
-Intensities were adopted from three different approaches from the literature: via dipole corrections, Born effective charges and as a fundamentally different ansatz from velocity-velocity autocorrelation function from \textit{ab initio} molecular dynamics simulations.
-These approaches deliver results that are in good agreement especially in the OD region.
+% For geometries were the neighboring residues have a considerable influence on the stability, the wavenumbers of the respective vibrations are shifted strongly.
+% Especially the fully covered system has a multitude of peaks from different adsorbed OD and surface OD groups.
+% 
+% 
+% Intensities were adopted from three different approaches from the literature: via dipole corrections, Born effective charges and as a fundamentally different ansatz from velocity-velocity autocorrelation function from \textit{ab initio} molecular dynamics simulations.
+% These approaches deliver results that are in good agreement especially in the OD region.
 \\
 \\
-The second project is themed at the most stable surface cut under UHV conditions, the (0001) surface that has been studied earlier in our group extensively condidering water adsorption, vibrational frequencies and dissociation and diffusion reactivity.
-From the literature it is known, that GGA functionals like PBE, which is standard for such calculations, gives too low barrier heights for reactions and hence overestimates reaction rate constants.
-To overcome this issue, we reoptimize for an exemplary hydrogen diffusion reaction (called Df-H-4-2) educt and product geometry and the transition state with a hybrid functional (B3LYP+D3) and using these geometries evaluating the barrier height and reaction rate with B3LYP and also with local M\o{}ller-Plesset perturbation theory of second order (LMP2).
-These methods give indeed higher barriers and slower rate constants, although with a higher computational cost leading to a better understanding of the system.
-\\
-\\
-In a third project, molecular beam scattering at the (0001) surface was examined.
-In a molecular beam experiment, a water beam is shot in UHV at the surface, resulting in a non-equilibrium situation.
-Recent experiments showed, that with this method water dissociation is enhanced in comparison to other probing techniques like pinhole dosing.
-For this \textit{ab initio} molecular dynamics simulations were conducted to reproduce these experimental findings.
-We used different surface and beam models which allowed us to understand this increased dissociation probability mechanistically.
-\\
-\\
-This work projects could unravel open questions in the scientific community, the behaviour of water at the $\upalpha$-alumina(11\=20) surface with low and higher coverages, the vibrations and reactivity.
-Furthermore we were able to improve the reaction rates with the help of hybrid functionals and higher level methods such as LMP2.
+In this work we were able to recalculate adsorption energies, vibrational frequencies with a better agreement to experiment and to improve the reaction rates with the help of hybrid functionals and higher level methods such as LMP2 using atom centered bases.
 Additionally, in this work the microscopic processes during molecular beam scattering at the (0001) surface could be observed and explained mechanistically, helping to understand dynamical processes better.
+This work could unravel open questions in the scientific community as the behavior of water at the $\upalpha$-alumina(11\=20) surface with low and higher coverages, the vibrations and reactivity.
 Although great progress was made, still more question arose during the work, which will be answered hopefully in future work.
 
 
