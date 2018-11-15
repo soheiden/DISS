@@ -280,7 +280,7 @@ The electronic Schrödinger equation for the time independent case  with the ele
 \end{equation}
 The wave function $\Psi_e(\{\vec{r}_i\})$ is a function of the coordinate vectors $\vec{r}_i$ ($i=1,...,N_e$), with the number of electrons $N_e$.
 $\Psi_e$ depends also parametrically on the nuclear coordinates, $\{\vec{R}_A\}$, which is not explicitly indicated here.
-The Hamiltonian in atomic units contains the kinetic energy of the electrons, the Coloumb interaction between the electrons and between electrons and nuclei:
+The Hamiltonian in atomic units contains the kinetic energy of the electrons, the Coulomb interaction between the electrons and between electrons and nuclei:
 \begin{equation}
  \hat{H}_e= -\frac{1}{2}\sum_i^{N_e}\vec{\nabla}_i^2 - \sum_A^{N_A}\sum_i^{N_e}\frac{Z_A}{r_{iA}} + \sum_{i<j}^{N_e}\frac{1}{r_{ij}}.
 \end{equation}
@@ -399,7 +399,7 @@ This equation can be solved iteratively with the self consistent field method (S
 Hartree-Fock theory contains no electron correlation.
 In order to include correlation in wave function theory, it is necessary to apply so called post-HF wave function methods.
 Although these calculations are significantly more computationally demanding they provide better results on a higher level of theory.
-From these, M\o{}ller Plesset peturbation theory of second order (MP2)\cite{mollerplesset} is one of the simplest methods to do so.
+From these, M\o{}ller Plesset perturbation theory of second order (MP2)\cite{mollerplesset} is one of the simplest methods to do so.
 The method is also known for periodic systems\cite{Suhai1984}.
 The method nicely accounts for dynamical correlation and also for dispersion interactions (see below).
 
@@ -429,7 +429,7 @@ Using Equations (\ref{eq:psimp2}) and (\ref{eq:Emp2}) in (\ref{eq:SEmp2}) and ga
 \begin{equation}
  \hat{H}^{(0)}\Psi^{(0)}=(\sum_{i=1}^{N_e} n_i\varepsilon_i)\Psi^{(0)},
 \end{equation}
-with the HF Slater determinant $\Psi^{(0)}$, the o ccupation number $n_i$ and the HF orbital energies $\varepsilon_i$.\\
+with the HF Slater determinant $\Psi^{(0)}$, the occupation number $n_i$ and the HF orbital energies $\varepsilon_i$.\\
 The unperturbed energy $E^{(0)}$ is therefore:
 \begin{equation}
  E^{(0)} = \langle\Psi^{(0)}|\hat{H}^{(0)}|\Psi^{(0)}\rangle=\sum\limits_{i=1}^{N_e}\varepsilon_i.
@@ -582,7 +582,7 @@ with the number of atoms $N_A$, the scaling factor $s_6$ which is dependent on t
 For the more advanced D3 method, $E_{disp}^{(2)}$ is altered as follows:
 %by substracting the term $E_{disp}^{\prime(2)}=E_{disp}^{(2)} -\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB})$ and in addition a three body term $E^{(3)}$ is added:
 \begin{equation}
-  E_{disp}^{(3)} =E_{disp}^{(2)} - \sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB}) +\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{ABC}(3\,cos\gamma_a\, cos\gamma_b\, cos\gamma_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
+  E_{disp}^{(3)} =E_{disp}^{(2)} - \sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A} s_8 \frac{C_8^{AB}}{R_{AB}^8}f_{damp}(R_{AB}) +\sum\limits_{A}^{N_A}\sum\limits_{B>A}^{N_A}\sum\limits_{C>B}^{N_A} f_{damp}(\bar{R}_{ABC}) \frac{C_9^{ABC}(3\,\cos\gamma_a\, \cos\gamma_b\, \cos\gamma_c+1)}{(R_{AB}R_{BC}R_{AC})^3}.
 \end{equation}
 Here, $s_8$ is a scaling factor, $C_8^{AB}$ and $C_9^{AB}$ are averaged dispersion coefficients, $\gamma_i$ are the angles of the corresponding triangle that is built by the three atoms A, B and C, and $C_9^{ABC}=\sqrt{C_6^{AB}C_6^{BC}C_6^{AC}}$ and $\bar{R}_{ABC}=\sqrt[3]{R_{AB}R_{BC}R_{AC}}$ is the geometrically averaged distance of the three atoms.
 
@@ -679,24 +679,27 @@ They depend on a band index ($n$, in analogy to the MO index $i$), and on the $\
 \end{equation}
 The $\psi_{n,\vec{k}}(\vec{r})$ can be expanded, similar to the MOs, in a basis.
 
-If the crystal orbital $\psi_{n,\vec{k}}(\vec{r})$ is represented by an atomic orbital basis (compare Equation (\ref{eq:basis})), then one obtains in the HF case the following Roothaan-Hall equations:
+If the crystal orbital $\psi_{n,\vec{k}}(\vec{r})$ is represented by an atomic orbital basis (AO, compare Equation (\ref{eq:basis})), then one obtains in the HF case the following Roothaan-Hall equations:
 \begin{equation}\label{eq:RH-mat}
   \doubleunderline{F}^{\vec{k}}\vec{C}_n^{\vec{k}}=\doubleunderline{S}^{\vec{k}}\vec{C}_n^{\vec{k}}\varepsilon_n^{\vec{k}}
 \end{equation}
 Here, $\vec{C}_n^{\vec{k}}$ contains the AO coefficients of band $n$ at $\vec{k}$-point $\vec{k}$.
-Further $(\doubleunderline{F})^{\vec{k}}_{nm}=\langle \psi_{n,\vec{k}}|\hat{f}|\psi_{m,\vec{k}}\rangle$ are the Fock matrix elements ($\langle \psi_{n,\vec{k}}|\hat{f}|\psi_{m,\vec{k}^\prime}\rangle=0$ if $\vec{k}\neq \vec{k}^\prime$) and $(\doubleunderline{S})^{\vec{k}}_{nm}=\langle \psi_{n,\vec{k}}|\psi_{m,\vec{k}}\rangle$ the overlap matrix.
+Further $(\doubleunderline{F})^{\vec{k}}_{\mu\nu}=\sum_j e^{i\vec{k}\vec{B}_j} f_{\mu\nu}^{0j}$ with $f_{\mu\nu}^{0j}=\langle \phi_{\mu}^0|\hat{f}|\phi_{\nu}^j\rangle$ are the Fock matrix elements
+(here $\phi_\mu^i$ is the AO $\mu$ in cell $i$ with position vector $\vec{B}_i$ with $i=0,j$ where $0$ denotes the reference cell and $j$ the cell with position vector $\vec{B}_j$)
+%($\langle \phi_{\mu,\vec{k}}|\hat{f}|\phi_{\nu,\vec{k}^\prime}\rangle=0$ if $\vec{k}\neq \vec{k}^\prime$)
+and $(\doubleunderline{S})^{\vec{k}}_{\mu\nu}=\sum_j e^{i\vec{k}\vec{B}}s^{0j}_{\mu\nu}$ with $s^{0j}_{\mu\nu}=\langle \phi_{\mu}^0|\phi_{\nu}^j\rangle$ the overlap matrix.
 Equation (\ref{eq:RH-mat}) is solved for a finite number of $\vec{k}$-points in the first Brillouin zone, for $K$ bands.
 
 In the periodic case of MP2, here a further development, the so called local M\o{}ller Plesset perturbation theory of second order\cite{usvyat2015,usvyatbook,Maschio2007} is applied, as implemented in CRYSCOR\cite{cryscor} for periodic systems.
 In contrast to regular MP2 that scales with $\mathcal{O}(N^5)$, local MP2 allows for scaling of $\mathcal{O}(N)$ with the number of atoms per unit cell $N$ so that it is considerably faster and more efficient also for larger systems.
 This is gained by a description of the electron correlation by localized orbitals (Wannier functions) since dynamical correlation is not a long-range effect but can be analyzed locally.
-These localized Wannier functions are not highly computationally demanding.
-However, the bottleneck is the evaluation of the AO integrals and their transformation to the MO basis.
+% These localized Wannier functions are not highly computationally demanding.
+% However, the bottleneck is the evaluation of the AO integrals and their transformation to the MO basis.
 As a disadvantage large basis sets are needed so that on top of the regular HF calculation a dual basis set expansion is recommended\cite{Usvyat2010}.
 
 
 Density functional theory in the Kohn-Sham scheme for periodic boundary conditions is analogous to HF, where equations analogous to the Roothaan-Hall Equation (\ref{eq:RH-mat}) can be solved with respective periodic Kohn-Sham orbitals. %$\psi_{i\vec{k}}(\vec{r})=\frac{1}{\sqrt{V}}\sum_{\vec{K}} C_{\vec{K}i}e^{(\vec{k}+\vec{K})\vec{r}}$.
-The DFT integrals can be evaluated in real space over the extended system but by integrals over a finite number of points in the first Brillouin zone in reciprocal space ($\vec{k}$-point grid).
+The DFT integrals can be evaluated in real space over the extended system but also by integrals over a finite number of points in the first Brillouin zone in reciprocal space ($\vec{k}$-point grid).
 Due to symmetry considerations only a reduced number of $\vec{k}$-points need to be evaluated ($\vec{k}$-points in the irreducible part of the first Brillouin zone).
 
 
@@ -762,7 +765,7 @@ When using a plane wave basis, for solid state systems both the energy and the g
 The system is intrinsically described periodically in 3D (no matter if the system is a 1D (polymer), 2D (surface) or 3D system (bulk)).
 It is possible to improve the basis systematically by setting the cutoff energy higher, which defines the number of basis functions that are considered in representing the single-particle wave functions in DFT, for example:
 \begin{equation}
- \psi_{n,\vec{k}}(\vec{r}=\frac{1}{\sqrt{V}}\sum_{\vec{G}}C_{\vec{G}n}e^{i(\vec{k}+\vec{G})\vec{r}},
+ \psi_{n,\vec{k}}(\vec{r})=\frac{1}{\sqrt{V}}\sum_{\vec{G}}C_{\vec{G}n}e^{i(\vec{k}+\vec{G})\vec{r}},
 \end{equation}
 where $V$ is the cell volume.
 \begin{equation}
@@ -876,7 +879,7 @@ One theoretical approach to simulate such spectra is to calculate vibrational fr
 A characteristic of minima and stationary points in general is that the derivatives with respect to all nuclear coordinates equal zero.
 For stationary points the eigenvalues and -vectors of the Hessian matrix $\doubleunderline{H}$ are of interest.
 The elements of this Hessian are the derivative of the potential $V$ with respect to coordinates $i$ and $j$ ($i,j=1,...,3N_A$, where $N_A$ is the number of atoms (per cell)):
-\begin{equation}
+\begin{equation}\label{eq:hesse}
  H_{ij}=\left( \frac{\partial^2 V}{\partial Q_i \partial Q_j} \right)|_{Q_i=Q_j=0}=\left(\frac{1}{\sqrt{m_i m_j}} \frac{\partial^2 V}{\partial R_i \partial R_j} \right)|_{R_i=R_j=0} ~.
 \end{equation}
 Here, $Q_i$ are mass weighted coordinates $Q_i=\sqrt{m_i}R_i$, with the mass $m_i$ corresponding to coordinate $i$ and the displacement from the equilibrium positions, $R_i$.
@@ -926,7 +929,12 @@ I_\mu^{(n)}\propto |\langle \phi_0^{(n)}(\tilde{Q}_n)|\frac{\partial \mu_z}{\par
 I_\mu^{(n)}\propto \mu_{z,n}^{\prime 2} \frac{\hbar}{2m_{red}^{(n)}\omega_n}
 \end{equation}
 where $\mu_{z,n}^{\prime}=\frac{\partial \mu}{\partial \tilde{Q}_n}|_0$, $m_{red}^{(n)}$ is the reduced mass of mode $\tilde{Q}_n$ and the $\phi_i^{(n)}$ are the vibrational eigenfunctions.
-In the harmonic approximation, using normal modes, the total dipole spectrum is then given as\cite{dyn-dip,Yang2012}
+
+In practice, \textit{e.g.} in VASP, the vibrational frequencies are calculated numerically by displacing each atom.
+For each displaced structure we obtain a dipole moment (here only in z-direction).
+From the difference in dipole moment for the equilibrium position and the displaced one, we can calculate the derivative of the dipole moment for each atom individually.
+Since we know the displacement of each atom for each normal mode, we can add the contributions to the dipole moment (and its derivative) to gain the intensity according to Equation \ref{eq:mu-int}.
+With this, in the harmonic approximation, using normal modes, the total dipole spectrum is then given as\cite{dyn-dip,Yang2012}
 \begin{equation}\label{eq:mu-int-total}
 I_\mu(\omega) \propto \sum_{n=1}^{3N_A}I_{\mu}^{(n)}\cdot \delta(\omega - \omega_n).
 \end{equation}
@@ -984,7 +992,7 @@ One can calculate the contribution $I^{(n)}_{BEC}$\cite{Bruesch1986,Baroni2001} 
 Here, $\alpha$ and $\beta$ range over three cartesian directions (1, 2, 3 for $x$, $y$, $z$), $e^{(n)}_\beta(i)$ is the $\beta$ component of atom $i$ in the normalized vibrational eigenvector of the $n$-th mode, $N_A$ is the total number of atoms in the unit cell.
 It is possible to weight the results to consider a fictional beam angle, corresponding to weights for $x$, $y$ and $z$.
 Here an angle of of 45\textdegree{} is applied.
-For this the sum over $\alpha$ in Equation (\ref{eq:bec}) is split into three parts, where $x, y$ is weighted with $0.5$ and $z$ with $1/\sqrt{2}$.
+For this the sum over $\alpha$ in Equation (\ref{eq:bec}) is split into three parts, where $x, y$ is weighted with $0.5$ and $z$ with $1/\sqrt{2}$\footnote{The $z$-component is calculated as $\cos\theta=\cos(\pi/4)=\frac{1}{\sqrt{2}}$. It is then $x=y$ and for $x^2+y^2+z^2=1$ we obtain values for $x=y=0.5$.}.
 
 A total IR intensity is then given as
 \begin{equation}\label{eq:bec-total}
@@ -1660,7 +1668,7 @@ For both functionals anharmonic corrections decrease the wavenumbers of the OD v
 In comparison with experimental SFG spectra\cite{Wirth2014}, the vibrations could be assigned to respective OD vibrations of different (dissociatively) adsorbed species.
 The suggested OD vibrational wavenumbers in the SFG experiments\cite{Wirth2014} are: $2729$ (1-2: OD$_{\textrm{surf}}$), $2764$ (1-4: OD$_{\textrm{surf}}$), $2790$ (1-4$^\prime$: OD$_{\textrm{surf}}$, was not considered here), $2900$ (1-4: OD$_{\textrm{ads}}$, 1-4$^\prime$: OD$_{\textrm{ads}}$) and $2910\,$cm$^{-1}$ (1-2: OD$_{\textrm{ads}}$).
 Hence, the absolute agreement with plane wave PBE+D2 results was not very good (see Table \ref{tab:freqs_0001_crystal})\footnote{In Reference \cite{Martin2015}, average scaling factors for B3LYP $=1.004$ and for PBE $=1.034$ are reported.
-If one multiplies $\tilde{\nu}$(harm.) with those factors, we approach the experiment by $\approx 15-30$cm$^{-1}$ (B3LYP), and $\approx15-50$cm$^{-1}$ (PBE), respectively.}.
+If one multiplies $\tilde{\nu}$(harm.) with those factors, we approach the experiment by $\approx 15-30\,$cm$^{-1}$ (B3LYP), and $\approx15-50\,$cm$^{-1}$ (PBE), respectively.}.
 % \textit{Here the 1-4$^\prime$ species was not considered with CRYSTAL}.
 However, differences between the peaks with respect to the highest energy peak (OD$_\textrm{ads}$ of 1-2 diss) were in very good agreement, see Table \ref{tab:freqs_0001_crystal-relative}.
 Applying the same for the AO basis calculations, even better results can be reached with B3LYP+D3.
@@ -1867,7 +1875,7 @@ $[90, 90, 90]$ & \includegraphics[width=2cm,angle=90]{figures/0001/Ausrichtungsb
 \end{tabular}
  \label{tab:orientations}
 \end{table}
-While many initial conditions were considerd, it was not possible to compute a fully realistic beam, because this would require wide knowledge about energy and velocity distributions and a systematic high dimensional sampling.
+While many initial conditions were considered, it was not possible to compute a fully realistic beam, because this would require wide knowledge about energy and velocity distributions and a systematic high dimensional sampling.
 This is not feasible with the computational power available for this work.
 \clearpage
 \subsection{Example Trajectories}
@@ -1878,7 +1886,7 @@ As one can see, molecular, 1-2 and 1-4 dissociated species can occur within sub-
 Note that in the 1-2 and 1-4 dissociated species, the dissociated deuteron undergoes large-amplitude motion, while the hydroxyl OD vibration is hardly excited after dissociation.
 For the 1-4$^\prime$ dissociation shown in Figure \ref{abb:ex_traj}(d), such direct process does not happen.
 Instead this species can be reached indirectly via a short-lived intermediate also within a sub-ps time scale. %, in this case the 1-2 species ca.$~40\,$fs later, so this is referred to as indirect dissociation with a molecular intermediate.
-This is an example of a slow reaction (diffusion from 1-2 to 1-4$^\prime$ dissociated species with $\Delta G^\ddagger=0.67\,$eV) being enormously accelerated under MBS-like conditions.
+This is an example of a slow reaction (diffusion from 1-2 to 1-4$^\prime$ dissociated species with $\Delta G^\ddagger=0.67\,$eV\cite{WirthJPCC2012}) being enormously accelerated under MBS-like conditions.
 
 This indirect process, however, is not unique for the 1-4$^\prime$ dissociated species, all the other species including the molecular one can be observed to happen indirectly by either being reflected first from the surface before adsorbing/dissociating or by adsorbing molecularly before dissociating.
 However, the 1-4$^\prime$ species was the only one that could not be reached by direct dissociation.
@@ -2011,25 +2019,25 @@ g.} for the initial orientation [0,90,90] only indirect dissociation is observed
 
  \clearpage
 \subsection{Thermalized Surface}\label{therm_surf}
-The effects of a thermal surface were studied for single D$_2$O molecules approaching a clean $\alpha$-Al$_{\text{2}}$O$_{\text{3}}$(0001) surface, using an initial kinetic energy of 0.7 eV with momentum perpendicular to the surface.
+The effects of a thermal surface were studied for single D$_2$O molecules approaching a clean $\alpha$-Al$_2$O$_3$(0001) surface, using an initial kinetic energy of $0.7\,$eV with momentum perpendicular to the surface.
 First, we selected five initial parameter sets, which all led to (1-2) dissociation in the microcanonical (NVE, $T=0$) case: $[a_0,b_0],[\alpha,\beta,\gamma]=$ $[0.35,0.45],[0,0,0]$; $[0.35,0.45],[0,90,90]$; $[0.35,0,45],[90,90,90]$; $[0.4,0.5],[0,0,0]$;  $[0.5,0.35],[90,0,90]$.
-For all of these sets, 100 NVT trajectories were run at a temperature of 300 K, following the protocol: (1) The naked surface was preequilibrated for 1 ps; (2) then the water was fired using an analogous setting as in Section \ref{sec:mic_clean} on the thermal surface now, and the AIMD trajectories were run for another 1-ps period. For testing longer propagation periods, see below.
+For all of these sets, 100 NVT trajectories were run at a temperature of $300\,$K, following the protocol: (1) The naked surface was preequilibrated for $1\,$ps; (2) then the water was fired using an analogous setting as in Section \ref{sec:mic_clean} on the thermal surface now, and the AIMD trajectories were run for another 1-ps period. For testing longer propagation periods, see below.
 In practice in step (2), the thermostat acted also on water, however, since the molecule quickly hits the surface (400 steps, $\sim 0.08\,$ps), this slight inconsistency hardly affects the dynamics.
 \\
 
 As a result of this procedure, we found that \textit{all} 500 trajectories (100 trajectories $\times$ 5 parameter sets) led to 1-2 dissociation in this case also.
 No reflection, molecular adsorption and other modes of dissociation (1-4 or 1-4$^\prime$) were observed, at least on the time scale considered.
-The inefficiency of thermal surface motion was slightly surprising (and dissappointing) to us, since the energy of a thermalized surface, $\sim N_s \times 3 k_B T = 2.8\,$eV (where $N_s=36$ is the number of movable surface atoms), is comparable to the kinetic energy of the molecule when crashing into the surface ($\sim 2\,$eV). On the other hand, when only a single surface atom (\textit{e.g.}, an impact site) is considered, the surface atom's energy is much smaller than that of the impinging molecule which may rationalize the observation.
+The inefficiency of thermal surface motion was slightly surprising (and disappointing) to us, since the energy of a thermalized surface, $\sim N_s \times 3 k_B T = 2.8\,$eV (where $N_s=36$ is the number of movable surface atoms), is comparable to the kinetic energy of the molecule when crashing into the surface ($\sim 2\,$eV). On the other hand, when only a single surface atom (\textit{e.g.}, an impact site) is considered, the surface atom's energy is much smaller than that of the impinging molecule which may rationalize the observation.
 \\
 
 Next, all $6\times 8=48$ combinations of impact sites $[a_0,b_0]$ and rotational orientations  $[\alpha,\beta,\gamma]$ as in Section \ref{sec:mic_clean} were (re-)considered, for a single initial translational energy of $E_\textrm{kin}=0.7\,$eV.
-Now, only two NVT AIMD calculations were run per initial condition, after the surface had been equilibrated at $300\,$K for 1 ps before.
-The restriction to two trajectories gives only a quite limited statistical significance but was dictated by restricted computational ressources.
+Now, only two NVT AIMD calculations were run per initial condition, after the surface had been equilibrated at $300\,$K for $1\,$ps before.
+The restriction to two trajectories gives only a quite limited statistical significance but was dictated by restricted computational resources.
 We did allow for longer propagation times after the equilibration phase, though, propagating  each trajectory for $4\,$ps now.
 For six of the 48 initial conditions, our NVT AIMD trajectories terminated due to numerical problems.
 For the remaining $42\times2=84$ AIMD trajectories, a ``statistics'' for various events, reflection, molecular and dissociative adsorption, was obtained as shown in Table \ref{tab:nvt-nve_comp}, third line.
 These values are to be compared to the corresponding 42 microcanonical, $T=0$ trajectories for $E_\textrm{kin}=0.7\,$eV, given in the second row of Table \ref{tab:nvt-nve_comp}.
-For reference, the corresponding values for $E_\textrm{kin}=0.7$ eV averaged over all 48 initial conditions (see also Figure \ref{abb:barchart_mic}(a) and Table \ref{tab:NVE-clean}), are given in the first row of the table.
+For reference, the corresponding values for $E_\textrm{kin}=0.7\,$eV averaged over all 48 initial conditions (see also Figure \ref{abb:barchart_mic}(a) and Table \ref{tab:NVE-clean}), are given in the first row of the table.
 Probabilities for other impact energies are supplied in Appendix \ref{reactionprobabilities}.
 \\
 \begin{table}[!h]
@@ -2049,8 +2057,8 @@ of trajectories & $P_\textrm{refl}$ & $P_\textrm{mol}$ & $P_\textrm{diss}$ (1-2)
   \end{tabular}
 \begin{tablenotes}
  \footnotesize
-\item[] $^1$ Propagation time $1.22$ ps.
-$^2$ Propagation time 4 ps.
+\item[] $^1$ Propagation time $1.22\,$ps.
+$^2$ Propagation time $4\,$ps.
 $^3$ A subset of the NVE/48 data set,  corresponding to the same initial impact parameters as used for the NVT ensembles.
 \end{tablenotes}
 \label{tab:nvt-nve_comp}
@@ -2128,19 +2136,19 @@ Further inspection of the canonical / NVT trajectories shows that among the case
  
 \subsection{Refined Surface Model}
 During a MBS experiment, after some time the surface will be precovered with water (fragments), which in turn will affect the reactivity of further molecules approaching the surface.
-In order to study the effects of precoverage, we considered a single water (D$_2$O) molecule on a $2 \times 2$ $\alpha$-Al$_{\text{2}}$O$_{\text{3}}$(0001), adsorbed as shown in Figure \ref{abb:0001_ads}, either molecularly (a), as 1-2 dissociated species (b), or as 1-4 dissociated species (c).
-Note that in all cases, the water or hydroxyl group is adsorbed in the lower right $1 \times 1$ sub-cell, on the CUS Al site at lateral position $[0.33,0.33]$ (\textit{cf.} Figure \ref{abb:impact_points}(a)).
+In order to study the effects of precoverage, we considered a single water (D$_2$O) molecule on a $2\times 2$ $\alpha$-Al$_2$O$_3$(0001), adsorbed as shown in Figure \ref{abb:0001_ads}, either molecularly (a), as 1-2 dissociated species (b), or as 1-4 dissociated species (c).
+Note that in all cases, the water or hydroxyl group is adsorbed in the lower right $1\times 1$ sub-cell, on the CUS Al site at lateral position $[0.33,0.33]$ (\textit{cf.} Figure \ref{abb:impact_points}(a)).
 \\
 
 We now fire a second D$_2$O molecule with an initial kinetic energy of $E_\textrm{kin}=0.7\,$eV onto the surface as described in the previous section(s), choosing various rotational orientations and impact sites.
 The total propagation time is $1\,$ps.
-The selected, lateral impact points $[a_0,b_0]$ were chosen to be  (i) either in the lower-right $1 \times 1$ sub-cell close to the Al CUS where the preadsorbed water (fragment) is situated, or (ii) in a neighbour (the lower left) $1 \times 1$ sub-cell around the corresponding CUS there.
-Individual trajectories are analyzed with respect to two criteria: (i) Their influence on the preadsorbed molecule (or molecular fragment), and (ii) the (reactive) behaviour of the second, incoming molecule.
+The selected, lateral impact points $[a_0,b_0]$ were chosen to be  (i) either in the lower-right $1\times 1$ sub-cell close to the Al CUS where the preadsorbed water (fragment) is situated, or (ii) in a neighbor (the lower left) $1\times 1$ sub-cell around the corresponding CUS there.
+Individual trajectories are analyzed with respect to two criteria: (i) Their influence on the preadsorbed molecule (or molecular fragment), and (ii) the (reactive) behavior of the second, incoming molecule.
 We do this first for $T=0$, using NVE AIMD calculations as in Section \ref{sec:mic_clean}. 
 \\
 
 
-Let us consider what happens when D$_2$O hits the $1\times1$ subcell with already preadsorbed water (fragments).
+Let us consider what happens when D$_2$O hits the $1\times 1$ subcell with already preadsorbed water (fragments).
 In Table \ref{tab:preads_mic}, we list in analogy to Table \ref{tab:NVE-clean}, the outcomes  of a subset of NVE trajectories for two selected impact sites $[a_0,b_0]=[0,33,0.33]$ (\textit{i.e.}, direct hit of preadsorbed water or water fragment), and $[a_0,b_0]=[0,35,0.45]$ (\textit{i.e.}, slightly nearby the Al CUS site, see Figure \ref{abb:impact_points}(e)).
 The table gives information for all preadsorption cases: molecular, 1-2 dissociated and 1-4 dissociated.
 In contrast to Table \ref{tab:NVE-clean}, we show \textit{two} symbols for each entry, \textit{e.g.}, ``M, D(1-2)'' to illustrate the fates both of the incoming molecule (the first symbol, ``M'' in this case) and the preadsorbed species (the second symbol, ``D(1-2)'' in this example).
@@ -2183,25 +2191,25 @@ From the table, the following observations can be made.
 When the \textit{incoming} molecule hits the Al CUS site with preadsorbed water or hydroxyl (\textit{i.e.}, $[a_0,b_0]=[0.33,0.33]$), in the (six) cases shown it is either reflected from there (first symbol, R), or it molecularly adsorbs after having diffused to another Al CUS site (first symbol, M).
 
 Interestingly, during scattering the \textit{preadsorbed} species may change its character in case of molecular preadsorption.
-In this case, pradsorbed D$_2$O is dissociated to 1-2 (second symbol, D(1-2)$^*$), showing that part of the energy of the incoming water is used to overcome the barrier towards dissociation.
+In this case, preadsorbed D$_2$O is dissociated to 1-2 (second symbol, D(1-2)$^*$), showing that part of the energy of the incoming water is used to overcome the barrier towards dissociation.
 Note that the character of the preadsorbed dissociated species (1-2 or 1-4) didn't change in any of the examples shown.
 \item  When the \textit{incoming} molecule hits a position near the Al CUS of the preadsorbed species (\textit{i.e.}, $[a_0,b_0]=[0.35,0.45]$), we find a number of possible outcomes.
 In case of molecular preadsorption, the second molecule physisorbs on the surface (P), adsorbing on the first water molecule or molecular fragment (hydroxyl).
 In general in this work we define a D$_2$O molecule as being physisorbed if it does not directly bind to an Al CUS, but instead to water (fragments), \textit{e.g.}, by hydrogen bonds.
 As a result, one observes water clustering on the surface.
 
-If the preadsorbed species on the CUS Al is hydroxyl (for 1-2 and 1-4), then reflection (R), molecular adsorption on a neighbour CUS (M), dissociation on a neighbour CUS (D), or physisorption (P) may occur.
-Note that molecular adsorption (on a neighbour CUS) clearly dominates, in particular for the 1-2 dissociated preadsorbed species.
-Concerning the fate of the \textit{preadsorbed} species, we note that in case of molecular preadsorption all except one previously intact molecules have dissociated after 1 ps.
+If the preadsorbed species on the CUS Al is hydroxyl (for 1-2 and 1-4), then reflection (R), molecular adsorption on a neighbor CUS (M), dissociation on a neighbor CUS (D), or physisorption (P) may occur.
+Note that molecular adsorption (on a neighbor CUS) clearly dominates, in particular for the 1-2 dissociated preadsorbed species.
+Concerning the fate of the \textit{preadsorbed} species, we note that in case of molecular preadsorption all except one previously intact molecules have dissociated after $1\,$ps.
 Among the eight trajectories shown for $[a_0,b_0]=[0.35,0.45]$, three dissociate to 1-2, three to 1-4, one to 1-4$^\prime$ and one preserves its molecular character.
 Again, none of the 1-2 or 1-4 preadsorbed species change their character upon impact of a second molecule, for the examples shown.
 \end{itemize}
-We also considered the case when  D$_2$O hits the lower-left $1 \times 1$ sub-cell of the $2 \times 2$ cell where \textit{no} water (fragment) is preadsorbed.
+We also considered the case when  D$_2$O hits the lower-left $1\times 1$ sub-cell of the $2\times 2$ cell where \textit{no} water (fragment) is preadsorbed.
 First of all, we find that the preadsorbed water (fragment) is hardly affected in this case: out of 36 trajectories in total, only in a single trajectory the preadsorbed species changed its character.
-Concerning the incoming D$_2$O, we find, somewhat surprisingly, an effect of preadsorbed neighbours: The dissociation probability increases, and, as a new reaction compared to Tab.\ref{tab:NVE-clean}, 1-4 dissociation occurs to some extent.
+Concerning the incoming D$_2$O, we find, somewhat surprisingly, an effect of preadsorbed neighbors: The dissociation probability increases, and, as a new reaction compared to Tab.\ref{tab:NVE-clean}, 1-4 dissociation occurs to some extent.
 Quantitatively, from 36 AIMD trajectories the incoming molecule dissociated in 13 cases ($P_\textrm{diss}=0.36$), in five cases 1-4 dissocation was found ($P_\textrm{diss}$(1-4)=0.14).
-Further, the reflection probability drastically decreased to $P_\textrm{refl}$=0.06. Despite limited statistics, we interprete the reduced reflection probability as being due to attractive interaction of the incoming molecule with preadsorbed water, which also leads to enhanced dissociation.
-For a more complete statistics and a figure showing the impact points on the neighbouring CUS see the Supporting Information.
+Further, the reflection probability drastically decreased to $P_\textrm{refl}$=0.06. Despite limited statistics, we interpret the reduced reflection probability as being due to attractive interaction of the incoming molecule with preadsorbed water, which also leads to enhanced dissociation.
+For a more complete statistics and a figure showing the impact points on the neighboring CUS see the Supporting Information.
 \\
 
 
@@ -2209,11 +2217,11 @@ In summary, we observe that preadsorption leads to new outcomes in water-alumina
 Not too surprisingly, the effects are larger if the incoming molecule hits an area around an Al CUS where water or water fragments were preadsorbed.
 \\
 
-We have also performed analogous calculations for thermal NVT ensembles at $T=300$ K, with a single water molecule or its fragments preadsorbed on the surface.
-As in Section \ref{therm_surf} we used molecular, 1-2 and 1-4 dissociated species of Figure \ref{abb:0001_ads} as starting points, equilibrated at $300\,$K for $1\,$ps and started a 1-ps ``production run''  with an incoming, additional water molecule ($E_\textrm{kin}=0.7$ eV) from there.
-Here, once again, one has to differentiate between the incoming molecule hitting the  $1\times1$ sub-cell with preadsorbed water (fragments), or a nearby sub-cell.
+We have also performed analogous calculations for thermal NVT ensembles at $T=300\,$K, with a single water molecule or its fragments preadsorbed on the surface.
+As in Section \ref{therm_surf} we used molecular, 1-2 and 1-4 dissociated species of Figure \ref{abb:0001_ads} as starting points, equilibrated at $300\,$K for $1\,$ps and started a 1-ps ``production run''  with an incoming, additional water molecule ($E_\textrm{kin}=0.7\,$eV) from there.
+Here, once again, one has to differentiate between the incoming molecule hitting the  $1\times 1$ sub-cell with preadsorbed water (fragments), or a nearby sub-cell.
 Without going into details for 144 calculated trajectories run (see Supporting Information for probabilities), we find similar results as for the NVE ensemble calculations with preadsorption, \textit{e.g.}, physisorption (and clustering) and dissociation of molecularly preadsorbed species in addition to previously observed processes.
-However, there are also differences compared to the NVE calculations: For instance, reactivity towards dissociation for the preadsorbed, molecular species is somewhat diminished. As a further difference, in case of the second molecule hitting not the same, but a neighbouring $1\times1$ sub-cell of the preadsorbed species instead, the dissociation probability of the incoming molecule increases somewhat compared to NVE, \textit{i.e.}, the processes becomes more ``non-local''  in the thermal ensemble.
+However, there are also differences compared to the NVE calculations: For instance, reactivity towards dissociation for the preadsorbed, molecular species is somewhat diminished. As a further difference, in case of the second molecule hitting not the same, but a neighboring $1\times 1$ sub-cell of the preadsorbed species instead, the dissociation probability of the incoming molecule increases somewhat compared to NVE, \textit{i.e.}, the processes becomes more ``non-local'' in the thermal ensemble.
 
 Furthermore, compared with the microcanonical clean surface AIMD, there is less dissociation.
 
@@ -3409,7 +3417,7 @@ In Figure \ref{abb:bec-dip-comp} a comparison of NMA spectra with BEC and dipole
 
 For inter-CUSa$\parallel$O-$\mu_2$, the intensities in the OD range are nearly the same, although the more intense peaks are changed (Figure \ref{abb:bec-dip-comp}(b)).
 In the lattice region the agreement is not as good, see Figure \ref{abb:bec-dip-comp}(a).
-For the OD region of CUSb$\parallel$O-$\mu_2$, the agreement is worse between BEC and the dipole model intensities, BEC predicts the H-bonded peak at $1711\,$cm$^{-1}$ to be the most intense whereas in the dipole model the most intense peak is in the lattice region, textit{cf.} Figures \ref{abb:bec-dip-comp}(c) and (d). %, whose appearance is significantly different from dipole model intensities.
+For the OD region of CUSb$\parallel$O-$\mu_2$, the agreement is worse between BEC and the dipole model intensities, BEC predicts the H-bonded peak at $1711\,$cm$^{-1}$ to be the most intense whereas in the dipole model the most intense peak is in the lattice region, \textit{cf.} Figures \ref{abb:bec-dip-comp}(c) and (d). %, whose appearance is significantly different from dipole model intensities.
 Concerning the inter-CUSb$\parallel$O-$\mu_2$, the OD region shows good agreement between BEC and dipole model (Figure \ref{abb:bec-dip-comp}(f)), also the most intense peak is from the same vibration.
 Again in the lattice region, the difference is larger, see Figure \ref{abb:bec-dip-comp}(e).
 %Overall, these differences might be based on the fact that low energy modes are less precisely represented by normal modes and both methods give low quality results.
@@ -3470,7 +3478,7 @@ The intensities cannot be directly related to IR or SFG intensities as outlined 
 The widths of VDOS curves arise from atomic motion, at finite temperature.
 Respective AIMD trajectories were calculated at $300\,$K for the clean surface (30 layers), and the three most stable adsorbed structures (inter-CUSa$\parallel$O-$\mu_2$, CUSb$\parallel$O-$\mu_2$ and inter-CUSb$\parallel$O-$\mu_2$, 10 layer model in each case), starting from the minimum structures.
 For the clean surface the propagation time was $5\,$ps (with a time step of $1\,$fs) with the first ps being equilibration time and the last $2\,$ps being used for evaluating the spectrum.
-Similar, for the systems with adsorbed water, around $3.6\,$ps were simulated (time step of $0.2\,$fs) and the last $2\,$ps were used for obtainig the VDOS.
+Similar, for the systems with adsorbed water, around $3.6\,$ps were simulated (time step of $0.2\,$fs) and the last $2\,$ps were used for obtaining the VDOS.
 Also in all cases a Hann window function was applied\cite{Ohto2015} to gain better smoothness, but which does not affect the peak positions.
 The presented spectra are merely preliminary results, since the propagation duration is substantially too short, so that one cannot rule out the possibility that the system is not converged properly.
 Usually, for a converged study, a preequilibration phase of several ps is assumed and afterwards the production run is up to $100\,$ps or even more, but these results still give a good first glimpse to what the spectrum could look like.
