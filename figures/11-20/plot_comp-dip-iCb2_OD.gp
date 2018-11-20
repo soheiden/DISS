@@ -6,7 +6,7 @@ set key right top
 set xtics 0,200
 set xtics out nomirror
 set mxtics 4
-set ytics 0,1
+set ytics -0.3,0.1
 set border lw 3
 #set format x ""
 #set format y "%.1f"
@@ -14,6 +14,7 @@ set border lw 3
 set xrange [1650:3000]
 set yrange [-0.3:0.3]
 #set border 3
+set zeroaxis lc black lt 1
 
 set output "comp_bec-dip_iCb2_OD.eps"
 

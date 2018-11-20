@@ -14,6 +14,7 @@ set border lw 3
 set xrange [0:1000]
 #set yrange [-1:1]
 #set border 3
+set zeroaxis lt 1 lc black
 
 set output "comp_bec-dip_iCb2.eps"
 
