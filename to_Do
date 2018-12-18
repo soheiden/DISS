@@ -1,2 +1,13 @@
-add figures
-	crystal structures or comparison to vasp..(?)
+Änderungen im fertigen Manuskript:
+Eads Wert für PBE basis 4, bei mol: -1.48 anstatt -1.58! (in Tab B.2 and 2.3)
+BSSE tabelle (B.2):
+Eads		-1.48
+EadsBSSE	-1.34
+dEBsse		-0.14
+Eint		-1.58
+Erelax		0.24
+
+In der Erklärung Dezember anstatt December
+
+In Tabelle 2.7, PBE/AO, anh, 1-4 ODads, Zahl falsch
+In Tabelle 3.10 PBE/AO, anh. iCb2 Werte für ODads und ODsurf vertauscht
