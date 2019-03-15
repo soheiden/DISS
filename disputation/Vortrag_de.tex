@@ -56,6 +56,12 @@
 % \beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
 % klappt auch bei Tabellen, wenn teTeX verwendet wird\ldots
 %\begin{document}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 \begin{document}
 \title{Water at $\upalpha$-Alumina Surfaces: Energetics, Dynamics and Kinetics}
@@ -66,31 +72,18 @@
 \date{18.03.2019}
 
 \begin{frame}[plain]
- \addtocounter{framenumber}{-2}
+ \addtocounter{framenumber}{-3}
 \titlepage
 \end{frame} 
 
-\section[]{Einleitung}
+
 \begin{frame}[plain]
-\frametitle{Inhalt}
- Untersuchung von Wasser auf $\upalpha$-Aluminiumoxid Oberflächen: \newline 
-\begin{itemize}
- \item \textbf{Motivation}
- \item \textbf{Methodik}
- \item \textbf{H$_2$O@$\upalpha$-Al$_2$O$_3$(0001)}: Stabilität, Vibrationsfrequenzen und Reaktivität
- \item \textbf{H$_2$O@$\upalpha$-Al$_2$O$_3$(0001)}: Simulation von Molekularstrahlexperimenten mit AIMD
- \item \textbf{H$_2$O@$\upalpha$-Al$_2$O$_3$(11\=20)}: Stabilität, Reaktivität und Vibrationsfrequenzen
- \item \textbf{Zusammenfassung und Ausblick}
- \end{itemize}
-\end{frame}
-
-
-\begin{frame}
+% \addtocounter{framenumber}{0}
  \frametitle{Motivation}
  \begin{columns}[c]
   \column{0.5\textwidth}
   \begin{itemize}
-   \item Oberflächenwissenschaft, Katalyse
+   \item Surface science, heterogene Katalyse
    \item Computerbasierte Modellierung von Prozessen
   \end{itemize}
   \column{0.5\textwidth}
@@ -98,6 +91,7 @@
    \includegraphics[width=1.in]{figures/scientist-clipart-nerd.jpg}\tiny{$^1$} %https://mbtskoudsalg.com/images/scientist-clipart-nerd.jpg
    ~\includegraphics[width=1.in]{figures/surfaceprocess.pdf}}
  \end{columns}
+ \blfootnote{\tiny{$^1$https://goo.gl/images/tXHjDc, $^2$https://goo.gl/images/kAcRcR}}%https://external-preview.redd.it/raUdEwh8-J01prs80mqdLGG-sVTfg-80YXxwnfwVRtY.jpg?s=eabf5472b6d7a49b7a66ebfecade4f2b9d49dc2f}}
  \pause
  \begin{columns}[c]
   \column{0.7\textwidth}
@@ -106,7 +100,7 @@
    \item Rubinlaser
    \item Katalysator: Clausprozess
    \item Keramisches Material
-   \item Abgase von Festtreibstoffraketen
+   \item Abgase von Festtreibstoffraketen $\rightarrow$ Probennahme schwierig
   \end{itemize}
   \column{0.3\textwidth}
    \framebox{\includegraphics[width=1.in]{figures/8y0ObUW.jpg}}\tiny{$^2$} %https://external-preview.redd.it/raUdEwh8-J01prs80mqdLGG-sVTfg-80YXxwnfwVRtY.jpg?s=eabf5472b6d7a49b7a66ebfecade4f2b9d49dc2f
@@ -114,85 +108,108 @@
  ~\\
  \pause
  \boxed{\textbf{$\rightarrow$ Prozesse auf mikroskopischer Skala verstehen!}}\\
- \tiny{$^1$ https://mbtskoudsalg.com/images/scientist-clipart-nerd.jpg, 
- $^2$https://external-preview.redd.it/raUdEwh8-J01prs80mqdLGG-sVTfg-80YXxwnfwVRtY.jpg?s=eabf5472b6d7a49b7a66ebfecade4f2b9d49dc2f}
+\end{frame}
+
+\section[]{Einleitung}
+\begin{frame}[plain]
+% \addtocounter{framenumber}{0}
+\frametitle{Inhalt}
+\begin{itemize}
+ \item \textbf{Methodik}
+ \item \textbf{H$_2$O@$\upalpha$-Al$_2$O$_3$(0001)}: Stabilität, Vibrationsfrequenzen und Reaktivität
+ \item \textbf{H$_2$O@$\upalpha$-Al$_2$O$_3$(0001)}: Simulation von Molekularstrahlexperimenten mit AIMD
+ \item \textbf{H$_2$O@$\upalpha$-Al$_2$O$_3$(11\=20)}: Stabilität und Vibrationsfrequenzen
+% \item \textbf{Zusammenfassung und Ausblick}
+ \end{itemize}
 \end{frame}
 
 
 \begin{frame}
- \frametitle{Eigenschaften von $\upalpha$-Al$_2$O$_3$}
+% \addtocounter{framenumber}{1}
+ \frametitle{Aufbau und Eigenschaften von $\upalpha$-Al$_2$O$_3$}
  \begin{columns}
   \column{.5\textwidth}
   \begin{figure}
+  \centering
   \includegraphics[width=0.3\textwidth]{figures/al2o3-crystal.png}
-  \caption{Schematischer Aufbau der (0001) und (11\=20) Oberflächenschnitte}
+  \includegraphics[width=0.2\textwidth]{figures/bulk_UC.jpg}
+  \caption{Schema und Einheitszelle}
   \end{figure}
   \column{.5\textwidth}
   \begin{itemize}
-  \item Hart
+  \item hexagonale Zelle
+  \item ($2\times 2$) Superzelle
+  \item Mohshärte von 9-9,5
   \item Isolator
-  \item Nicht-korrosiv
-  \item Weißer Feststoff, Verfärbung durch Unreinheiten
+ % \item Passiviert
+ % \item Weißer Feststoff, Verfärbung durch Unreinheiten
  % \item Im UHV (0001) stabiler als (11\=20)
   \end{itemize}
  \end{columns}
  \pause
+ \vspace{-.3cm}
 \begin{columns}
   \column{.5\textwidth}
   \begin{figure}
-  \includegraphics[width=0.6\textwidth]{figures/Al2O3.jpg}
-  \caption{Al$_2$O$_3$-Probe des experimentellen Aufbaus (FHI Berlin)}
+  \includegraphics[width=0.7\textwidth]{figures/Al2O3.jpg}
+  \caption{Al$_2$O$_3$-Probe (FHI Berlin)}
  \end{figure}
   \column{.5\textwidth}
    \begin{figure}
-  \includegraphics[width=0.6\textwidth]{figures/emerald-ruby.eps}
-  \caption{Smaragd (grün, Cr/V); Rubin (rot, Cr)}
+  \includegraphics[width=0.9\textwidth]{figures/emerald-ruby.eps}
+  \caption{Smaragd (Cr/V); Rubin (Cr)\blfootnote{\tiny{https://goo.gl/images/ZXweQe, https://goo.gl/images/rcqUkB}}}
   \end{figure}
  \end{columns}
 \end{frame}
 
-\begin{frame}
- \frametitle{Methodik}
- \begin{itemize}
-  \item Elektronenstrukturrechnungen (KS-DFT, HF, LMP2)
-  \begin{equation*}
-    \left(-\frac{1}{2}\vec{\nabla}^2_1 + v_{ext}(\vec{r}_1) + v_{H}(\vec{r}_1) + v_{xc}(\vec{r}_1) \right)\psi^{KS}_i(\vec{r}_1) = \varepsilon_i^{KS}\psi^{KS}_i(\vec{r}_1)
-  \end{equation*}
-  \pause
-  \item Schwingungsfrequenzen (harmonische Näherung)
-  \begin{equation*}
-    \textbf{H} \vec{A}_i=\lambda_i\vec{A}_i; ~~~  \omega_i=\sqrt{\lambda_i}
-  \end{equation*}
-  \pause
-  \item \textit{Ab-initio} Molekulardynamik
-    \begin{equation*}
-      -\vec{\nabla}_A V(\{\vec{R}_i\})=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
-    \end{equation*}
- \end{itemize}
-\end{frame}
-
-
-\begin{frame}
- \frametitle{Methodik}
- \begin{itemize}
-  \item Periodische \textit{slab} Rechnungen
-  \item Funktionale PBE und B3LYP
-  \item Dispersionskorrekturen
-  \item HF und LMP2
-  \item Basis aus ebenen Wellen (PW)
-  \item Basis aus atomzentrierten Orbitalen (AO)
-  %\item VASP Programmpaket
- \end{itemize}
+%\begin{frame}
+% \frametitle{Methodik}
 % \begin{itemize}
-%  \item PBE, B3LYP mit Dispersionskorrekturen und LMP2, in AO Basis
+%  \item Elektronenstrukturrechnungen (KS-DFT, HF, LMP2)
+%  \begin{equation*}
+%    \left(-\frac{1}{2}\vec{\nabla}^2_1 + v_{ext}(\vec{r}_1) + v_{H}(\vec{r}_1) + v_{xc}(\vec{r}_1) \right)\psi^{KS}_i(\vec{r}_1) = \varepsilon_i^{KS}\psi^{KS}_i(\vec{r}_1)
+%  \end{equation*}
+%  \pause
+%  \item Vibrationsfrequenzen (harmonische Näherung)
+%  \begin{equation*}
+%    \textbf{H} \vec{A}_i=\lambda_i\vec{A}_i; ~~~  \omega_i=\sqrt{\lambda_i}
+%  \end{equation*}
+%  \pause
+%  \item \textit{Ab-initio} Molekulardynamik
+%    \begin{equation*}
+%      -\vec{\nabla}_A V(\{\vec{R}_i\})=M_A\frac{d^2 \vec{R}_A(t)}{dt^2}
+%    \end{equation*}
 % \end{itemize}
+%\end{frame}
+
+\begin{frame}
+ \frametitle{Methodik}
+ \begin{itemize}
+  \item Periodische \textit{slab}-Rechnungen
+  \item $\vec{k}$-Raum
+  \item Dichtefunktionaltheorie (DFT) vs. Wellenfunktionstheorie (HF, LMP2)
+  \item Basis: ebene Wellen (PW) vs. atomzentrierte Orbitale (AO)
+  \item Funktionale PBE und B3LYP
+  \item Dispersionskorrekturen (D2/D3)
+ \end{itemize}
+
  \centering
  \includegraphics[width=0.7\textwidth]{figures/programs-logos.eps}
 \end{frame}
 
+\begin{frame}
+\frametitle{Methodik: Eigenschaften}
+\begin{itemize}
+\item Geometrien
+\item Adsorptionsenergien
+\item Vibrationsfrequenzen
+\item Barrierenhöhen mit Nudged Elastic Band (NEB)
+\end{itemize}
+\end{frame}
+
 \section{H$_2$O@Al$_2$O$_3$(0001): Stabilität, Schwingungen und Reaktivität}
 \begin{frame}
- \frametitle{Model der Al$_2$O$_3$(0001) Oberfläche}
+ \frametitle{Modell der $\upalpha$-Al$_2$O$_3$(0001) Oberfläche}
  \begin{columns}
   \column{0.5\textwidth}
    \begin{figure}
@@ -202,22 +219,22 @@
   \column{0.5\textwidth}
   \begin{figure}
   \includegraphics[width=1.\textwidth]{figures/surf_0K-side.pdf}
-  \caption{Seitenansicht, Sequenz der Atomschichten Al-O$_3$-Al...}
+  \caption{Seitenansicht, Sequenz Al-O$_3$-Al...}
   \end{figure}
   \end{columns}
  \hrule
  \begin{itemize}
-  \item UHV $0\,$K geometrieoptimierte Struktur
+  \item Optimierte Struktur (UHV $0\,$K)
   \item Al terminierte Oberfläche
   \item 4 CUS Al Atome, 12 dreifach-koordinierte O Atome
- % \item ($2\times 2$) Superzelle
+  \item ($2\times 2$) Superzelle
  \end{itemize}
 \end{frame}
 
 \begin{frame}
  \frametitle{H$_2$O-Adsorption}
  \begin{itemize}
- \item Stabilste adsorbierte Spezies:
+ \item Stabilste adsorbierte Spezies, 1/4 Bedeckung
 \end{itemize}
 \vspace{-.2cm}
  \begin{figure}
@@ -243,20 +260,20 @@
  \frametitle{Adsorptionsenergien}
  \begin{table}[!h]
   \centering
-   \caption{Adsorptionsenergien $E_\textrm{ads}$ in eV der molekularen und der zwei dissoziierten adsorbierten Spezies von H$_2$O auf der Al$_2$O$_3$(0001) Oberfläche, Vergleich von plane wave Basis (PW) und Atomorbitalbasis (AO).
-   $E_{\textrm{ads}}=E_{\textrm{ads. Spezies}}-(E_{\textrm{freies Wassermolekül}}+E_{\textrm{Oberfläche}})$}
-  \begin{tabular}{ll|ccc}%c}
+   \caption{Adsorptionsenergien $E_\textrm{ads}$ in eV.} %der molekularen und der zwei dissoziierten adsorbierten Spezies von H$_2$O auf der Al$_2$O$_3$(0001) Oberfläche, Vergleich von plane wave Basis (PW) und Atomorbitalbasis (AO).
+   %$E_{\textrm{ads}}=E_{\textrm{ads. Spezies}}-(E_{\textrm{freies Wassermolekül}}+E_{\textrm{Oberfläche}})$}
+  \begin{tabular}{ll|cc}
   \toprule
-Basis& Methode & mol & 1-2 diss & 1-4 diss\\\midrule
-  \multirow{3}{1cm}{PW}&PW91 &{\color{orange}-1.25} &-1.59 &{\color{orange}-1.25} \\
-  &PW91+D2&-1.40 &-1.81 &{\color{red}-1.45} \\
-  &PBE+D2 & {\color{red}-1.31} & -1.69 & -1.21 \\
+Basis& Methode & mol &1-4 diss\\\midrule
+  \multirow{3}{1cm}{PW}&PW91$^1$\blfootnote{$^1$\textit{J. Phys. Chem. C} \textbf{116}, 26829 (2012)} &\textbf{-1.25} &\textbf{-1.25} \\
+  &PW91+D2$^1$&-1.40 &\textbf{-1.45} \\\hline
+  &PBE+D2 & \textbf{-1.31} & -1.21 \\
   %&PBE+D3 &-1.29&-1.63 &-1.30 \\
   \midrule \pause
-  \multirow{4}{1cm}{AO}&PBE+D3 &{\color{red}-1.41} &-1.68 &-1.32 \\
-  &B3LYP+D3 &{\color{red}-1.43} &-1.81 &-1.40 \\
-  &HF &-1.14 &-1.67 &{\color{red}-1.19} \\
-  &LMP2 &{\color{red}-1.34} & -1.69&-1.26\\
+  \multirow{4}{1cm}{AO}&PBE+D3 &\textbf{-1.41} &-1.32 \\
+  &B3LYP+D3 &\textbf{-1.43} &-1.40 \\
+  &HF &-1.14 &\textbf{-1.19} \\
+  &LMP2 &\textbf{-1.34} &-1.26\\
   %&LMP2 (basis 9) &-1.31 &-1.61 &-1.18 \\
   \bottomrule
   \end{tabular}
@@ -264,15 +281,16 @@ Basis& Methode & mol & 1-2 diss & 1-4 diss\\\midrule
 \end{frame}
 
 \begin{frame}
- \frametitle{Vibrationsfrequenzen der Dissoziierten Wasser Spezies}
- \begin{columns}
- \column{0.4\textwidth}
+ \frametitle{Vibrationsfrequenzen der Dissoziierten Wasserspezies}
+% \begin{columns}
+% \column{0.4\textwidth}
   \centering
-  \includegraphics[width=1.1\textwidth]{figures/0001_OD_vib_exp.jpeg}\\
+  \includegraphics[width=.7\textwidth]{figures/0001_OD_vib_exp.jpeg}\\
   \footnotesize{J. Phys. Chem. C \textbf{2014}, \textit{118}, 13623--13630.}
- \column{0.6\textwidth}
+% \column{0.6\textwidth}
   \begin{table}[!h]
   \centering
+  \caption{$\tilde{\nu}$ in cm$^{-1}$, gerechnet für deuteriertes Wasser.}
   \begin{tabular}{l|cc}
   \toprule
  Streckschw. &B3LYP+D3/AO & Exp.\\\midrule
@@ -284,12 +302,13 @@ Basis& Methode & mol & 1-2 diss & 1-4 diss\\\midrule
  1-2 OD$_{ads}$&2883&2910\\\bottomrule
   \end{tabular}
  \end{table}
- \end{columns}
- \vspace{-.5cm}
- \pause
+ %\end{columns}
+ \end{frame}
+ \begin{frame}
+ \frametitle{Relative Vibrationsfrequenzen}
   \begin{table}[!h]
   \centering
-    \caption{Vibrationsfrequenzen $\Delta \tilde{\nu}$ der dissoziierten Wasserspezies in cm$^{-1}$.}
+    \caption{$\Delta \tilde{\nu}$ der dissoziierten Wasserspezies in cm$^{-1}$.}
     \vspace{-0.5cm}
   \begin{tabular}{c|cc|c|c}
   \toprule
@@ -346,10 +365,10 @@ $^\ast$ \textit{Beitrag der Schwingungen ist abgeschätzt durch B3LYP+D3.}
  \frametitle{Motivation: (0001) Molekularstrahlexperiment}
 Aufbringen von Wasser auf die Oberfläche: 
  \begin{itemize}
- \item MBS vs. Pinhole Dosing
+ \item MBS (molecular beam source) vs. Pinhole Dosing
  \item UHV, Molekularstrahl auf Oberfläche vs. Wasser mit hohem Druck
  \item Nicht-Gleichgewichtsbedingungen vs. Gleichgewichtssituation
- \item {\color{red} Erhöhte Dissoziationswahrscheinlichkeit mit MBS}
+ \item \textbf{Erhöhte Dissoziationswahrscheinlichkeit mit MBS}
  \newline~
  \pause \hrule
  \newline~
@@ -362,12 +381,12 @@ Aufbringen von Wasser auf die Oberfläche:
 \end{frame}
 
 \begin{frame}
- \frametitle{(0001) Oberfläche und Strahlenmodelle}
+ \frametitle{(0001) Oberflächen- und Strahlenmodelle}
  \begin{columns}
   \column{.5\textwidth}
   Oberflächenmodelle
   \begin{itemize}
-   \item Reine Oberfläche bei $0$ and $300\,$K
+   \item Reine Oberfläche bei $0$ und $300\,$K
    \item Präadsorbierte Oberfläche bei $0$ und $300\,$K
   \end{itemize} 
   \centering
@@ -389,24 +408,38 @@ Aufbringen von Wasser auf die Oberfläche:
 \begin{frame}
  \frametitle{Adsorption und Dissoziationsprozess}
  Beispieltrajektorien für molekulare Adsorption, Dissoziation
+ \begin{columns}
+ \column{0.75\textwidth}
   \begin{figure}[h!]
   \centering
-   \subfigure[molekulare Adsorption]{\includegraphics[width=0.35\textwidth]{figures/mol.eps}}
+   \subfigure[molekulare Ads.]{\includegraphics[width=0.4\textwidth]{figures/mol.eps}}
 %    \quad
-   \subfigure[1-2 Dissoziation]{\includegraphics[width=0.35\textwidth]{figures/1-2.eps}}
+   \subfigure[1-2 Diss.]{\includegraphics[width=0.4\textwidth]{figures/1-2.eps}}
  %    \quad\\
-   \subfigure[1-4 Dissoziation]{\includegraphics[width=0.35\textwidth]{figures/1-4.eps}}
+   \subfigure[1-4 Diss.]{\includegraphics[width=0.4\textwidth]{figures/1-4.eps}}
 %    \quad
-   \subfigure[1-4$^\prime$ Dissoziation]{\includegraphics[width=0.35\textwidth]{figures/1-4d.eps}}
+   \subfigure[1-4$^\prime$ Diss.]{\includegraphics[width=0.4\textwidth]{figures/1-4d.eps}}
 \end{figure}
-   
+\column{0.25\textwidth}
+\begin{figure}
+\flushleft
+\includegraphics[width=1.\textwidth]{figures/0001_1-4p-diss_top_label.pdf}
+\end{figure}
+\end{columns}   
 \end{frame}
 
 
 \begin{frame}
  \frametitle{Dissoziations- und Adsorptionswahrscheinlichkeiten}
- \includegraphics[width=0.45\textwidth]{figures/impactpoint.png}
-\includegraphics[width=0.45\textwidth]{figures/orientation.png}\hrule\pause
+ \begin{columns}
+ \column{0.5\textwidth}
+Beispiel: Wahrscheinlichkeiten für starres Wasser, reine Oberfläche, dargestellt für Auftreffpunkte	
+ \column{0.5\textwidth}
+ \centering
+ \includegraphics[width=0.9\textwidth]{figures/impactpoint.png}
+%\includegraphics[width=0.45\textwidth]{figures/orientation.png}
+\end{columns}
+\hrule\pause
  \begin{columns}
   \column{0.5\textwidth}
   stark abhängig von
@@ -433,7 +466,7 @@ Aufbringen von Wasser auf die Oberfläche:
 \end{frame}
 
 
-\section{H$_2$O@Al$_2$O$_3$(11\=20): Stabilität, Reaktivität und Schwingungen}
+\section{H$_2$O@Al$_2$O$_3$(11\=20): Stabilität und Schwingungen~ ~ ~ ~ ~ ~ ~ ~ ~ ~}
 \begin{frame}
  \frametitle{(11\=20) Oberfläche}
 \includegraphics[width=0.4\textwidth]{figures/supercell_opt.png}~ ~ ~ ~ ~
@@ -442,8 +475,8 @@ Aufbringen von Wasser auf die Oberfläche:
 \newline
  \hrule
  \begin{itemize}
-  \item UHV $0\,$K geometrieoptimierte Struktur
-  \item O-I terminierte Oberfläche
+  \item Optimierte Struktur (UHV $0\,$K)
+ % \item O-I terminierte Oberfläche
   \item 8 CUSa und 8 CUSb Al-Atome, 8 dreifach-koordinierte und 4 zweifach-koordinierte O-Atome
   %\item ($2\times 2$) Superzelle
  \end{itemize}
@@ -474,30 +507,6 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
 
 \end{frame}
 
-\begin{frame}
- \frametitle{Dissoziations- und Diffusionsreaktionen}
- Eyring Gleichung: $k(T)=\frac{k_BT}{h}e^{-\Delta G^\ddagger/(k_BT)}$\newline~\newline
-\begin{table*}
-  \centering
-  \begin{tabular}{ll|cc|c}
- \toprule
-  \multicolumn{2}{c|}{\small{Reaktionstyp}}            & \small{$\Delta E^{\ddagger}$(eV)} & \small{$\Delta G^{\ddagger}_{\textrm{300\,K}}$(eV)} & \small{$k_{\textrm{300\,K}}$(s$^{-1}$)}  \\\midrule
-\small{H$_2$O Dissoziation} &
-   \small{\textit{D-I}}  &  \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\\midrule
- \small{OH-Diffusion} &
-   \small{\textit{Df-OH-III}} &  \small{0.35} & \small{0.39} & \small{1.88$\times 10^6$}\\\midrule
-%  & \small{Df-OH-IV}  & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\\midrule
-\small{H-Diffusion} &
- \small{\textit{Df-H-V}}  & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\\bottomrule
-% & \small{Df-H-VI} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\\bottomrule
-  \end{tabular}
-  \label{tab:reaction-rates}
-\end{table*}
-\centering
-\includegraphics<1>[width=0.8\textwidth]{figures/Diss_Cb-Cb2.pdf}\caption{H$_2$O dissociation}
-\includegraphics<2>[width=.8\textwidth]{figures/Diff-OH_Cb2-iCb2.pdf}\caption{OH diffusion}
-\includegraphics<3>[width=.8\textwidth]{figures/Diff-H_iCa2-iCa3p.pdf}\caption{H diffusion}
-\end{frame}
 
 \begin{frame}
 \frametitle{Vibrationsfrequenzen der OD Spezies}
@@ -571,7 +580,7 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
 
 \section*{}
 \begin{frame}
- \frametitle{Zusammenfassung and Ausblick}
+ \frametitle{Zusammenfassung}
  {\color{blue}(0001) Oberfläche}
 \begin{itemize}
  \item Neuberechnung von E$_{\textrm{ads}}$ 
@@ -615,5 +624,56 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
 \includegraphics[width=8cm]{figures/ag-wise1718.png}
 
 \end{frame}
+
+%%%%%%%%%%%%%%ANHANG%%%%%%%%%%%%%
+%\begin{frame}
+% \frametitle{Adsorptionsenergien}
+% \begin{table}[!h]
+%  \centering
+%   \caption{Adsorptionsenergien $E_\textrm{ads}$ in eV.} %der molekularen und der zwei dissoziierten adsorbierten Spezies von H$_2$O auf der Al$_2$O$_3$(0001) Oberfläche, Vergleich von plane wave Basis (PW) und Atomorbitalbasis (AO).
+%   $E_{\textrm{ads}}=E_{\textrm{ads. Spezies}}-(E_{\textrm{freies Wassermolekül}}+E_{\textrm{Oberfläche}})$}
+%  \begin{tabular}{ll|ccc}%c}
+%  \toprule
+%Basis& Methode & mol & 1-2 diss & 1-4 diss\\\midrule
+%  \multirow{3}{1cm}{PW}&PW91\footnote{\textit{J. Phys. Chem. C} \textbf{116}, 26829 (2012)} %&{\color{orange}-1.25} &-1.59 &{\color{orange}-1.25} \\
+%  &PW91+D2$^1$&-1.40 &-1.81 &{\color{red}-1.45} \\
+%  &PBE+D2 & {\color{red}-1.31} & -1.69 & -1.21 \\
+%  %&PBE+D3 &-1.29&-1.63 &-1.30 \\
+%  \midrule \pause
+%  \multirow{4}{1cm}{AO}&PBE+D3 &{\color{red}-1.41} &-1.68 &-1.32 \\
+%  &B3LYP+D3 &{\color{red}-1.43} &-1.81 &-1.40 \\
+%  &HF &-1.14 &-1.67 &{\color{red}-1.19} \\
+%  &LMP2 &{\color{red}-1.34} & -1.69&-1.26\\
+%  %&LMP2 (basis 9) &-1.31 &-1.61 &-1.18 \\
+%  \bottomrule
+%  \end{tabular}
+% \end{table}
+%\end{frame}
+
+%\begin{frame}
+% \frametitle{Dissoziations- und Diffusionsreaktionen}
+% Eyring Gleichung: $k(T)=\frac{k_BT}{h}e^{-\Delta G^\ddagger/(k_BT)}$\newline~\newline
+%\begin{table*}
+%  \centering
+%  \begin{tabular}{ll|cc|c}
+% \toprule
+%  \multicolumn{2}{c|}{\small{Reaktionstyp}}            & \small{$\Delta E^{\ddagger}$[eV]} & \small{$\Delta G^{\ddagger}(\textrm{300\,K})$[eV]} & \small{$k(\textrm{300\,K})$ [s$^{-1}$]}  \\\midrule
+%\small{H$_2$O Dissoziation} &
+%   \small{\textit{D-I}}  &  \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\\midrule
+% \small{OH-Diffusion} &
+%   \small{\textit{Df-OH-III}} &  \small{0.35} & \small{0.39} & \small{1.88$\times 10^6$}\\\midrule
+%%  & \small{Df-OH-IV}  & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\\midrule
+%\small{H-Diffusion} &
+% \small{\textit{Df-H-V}}  & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\\bottomrule
+%% & \small{Df-H-VI} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\\bottomrule
+%  \end{tabular}
+%  \label{tab:reaction-rates}
+%\end{table*}
+%\centering
+%\includegraphics<1>[width=0.8\textwidth]{figures/Diss_Cb-Cb2.pdf}\caption{H$_2$O dissociation}
+%\includegraphics<2>[width=.8\textwidth]{figures/Diff-OH_Cb2-iCb2.pdf}\caption{OH diffusion}
+%\includegraphics<3>[width=.8\textwidth]{figures/Diff-H_iCa2-iCa3p.pdf}\caption{H diffusion}
+%\end{frame}
+
 
  \end{document}
