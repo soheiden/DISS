@@ -139,8 +139,8 @@
   \begin{itemize}
   \item hexagonale Zelle
   \item ($2\times 2$) Superzelle
-  \item Mohshärte von 9-9,5
-  \item Isolator
+ % \item Mohshärte von 9-9,5
+ % \item Isolator
  % \item Passiviert
  % \item Weißer Feststoff, Verfärbung durch Unreinheiten
  % \item Im UHV (0001) stabiler als (11\=20)
@@ -187,7 +187,10 @@
  \begin{itemize}
   \item Periodische \textit{slab}-Rechnungen
   \item $\vec{k}$-Raum
+  \item \textit{Standardmodell}: Dichtefunktionaltheorie mit Basis aus ebenen Wellen
   \item Dichtefunktionaltheorie (DFT) vs. Wellenfunktionstheorie (HF, LMP2)
+  $$\textbf{F}^{\vec{k}}\vec{C}^{\vec{k}}_n=\textbf{S}{^\vec{k}}\vec{C}_n^{\vec{k}}\varepsilon_n^{\vec{k}}$$
+  \pause
   \item Basis: ebene Wellen (PW) vs. atomzentrierte Orbitale (AO)
   \item Funktionale PBE und B3LYP
   \item Dispersionskorrekturen (D2/D3)
@@ -197,13 +200,15 @@
  \includegraphics[width=0.7\textwidth]{figures/programs-logos.eps}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{Methodik: Eigenschaften}
 \begin{itemize}
 \item Geometrien
 \item Adsorptionsenergien
-\item Vibrationsfrequenzen
+\item Vibrationsfrequenzen (am $\Gamma$-Punkt)
 \item Barrierenhöhen mit Nudged Elastic Band (NEB)
+\item Dynamische Prozesse mit \textit{Ab initio} Molekulardynamik
 \end{itemize}
 \end{frame}
 
@@ -493,7 +498,7 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
   \centering
  \begin{tabular}{l|c}
   \toprule
-   Adsorbierte Spezies  & $E_\textrm{ads}$  \\\midrule
+   Adsorbierte Spezies  & $E_\textrm{ads}$  [eV] \\\midrule
  CUSb          &   -1.78   \\\hline
  inter-CUSa$\parallel$O-$\mu_2$ & \textbf{-2.50}  \\
  inter-CUSa$\parallel$O-$\mu_3$ & -1.67  \\
@@ -597,7 +602,7 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
  {\color{blue}(11\=20) Oberfläche}
 \begin{itemize}
  \item Verhalten und Adsorptionsenergien von Wasser auf der Oberfläche
- \item Analyse der Oberflächenreaktionen
+% \item Analyse der Oberflächenreaktionen
  \item Vibrationsfrequenzen von Wasser(-spezies)
 \end{itemize}
  \end{frame}
