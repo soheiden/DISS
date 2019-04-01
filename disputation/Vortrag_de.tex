@@ -522,14 +522,14 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
   \vspace{-.3cm}
  \begin{table}[!h]
   \centering
-  \begin{tabular}{l|ccc|cc}
+  \begin{tabular}{l|cc|ccc}
 %\newline
  %\caption{Wellenzahlen und Differenzen in cm$^{-1}$.}
  \toprule
- Spezies & $\tilde{\nu}_{\textrm{calc.}}$&$\Delta \tilde{\nu}_{\textrm{calc.}}$ &$\tilde{\nu}_{\textrm{exp.}}$   & $\Delta \tilde{\nu}_{\textrm{exp.}}$ [cm$^{-1}$]\\\midrule
-  inter-CUSa$\parallel$O-$\mu_2$ OD$_\textrm{surf}$& 2694& & 2762& \\
-  inter-CUSa$\parallel$O-$\mu_2$ OD$_\textrm{ads}$&2731 & 37 &2812 & 50\\
-  CUSb$\parallel$O-$\mu_2$ OD$_\textrm{ads}$& 2785& 91 &2839 & 77 \\\bottomrule
+ Spezies & $\tilde{\nu}_{\textrm{calc.}}$&$\Delta \tilde{\nu}_{\textrm{calc.}}$ &$\tilde{\nu}_{\textrm{exp.}}$   & $\Delta \tilde{\nu}_{\textrm{exp.}}$ &[cm$^{-1}$]\\\midrule
+  inter-CUSa$\parallel$O-$\mu_2$ OD$_\textrm{surf}$& 2694& & 2762&& \\
+  inter-CUSa$\parallel$O-$\mu_2$ OD$_\textrm{ads}$&2731 & 37 &2812 & 50&\\
+  CUSb$\parallel$O-$\mu_2$ OD$_\textrm{ads}$& 2785& 91 &2839 & 77 &\\\bottomrule
   \end{tabular} 
 \end{table}
 %\newline\newline\newline
@@ -617,7 +617,7 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
   \item PD Dr. Tillmann Klamroth
   \item Dr. R. K. Campen \& Yanhua Yue (FHI Berlin)
   \item Dr. Denis Usvyat (HU Berlin)
-  \item AG TC, speziell: G. Melani, Dr. J. Wirth, Dr. R. W\l{}odarczyk, Spa\ss{}raum 2
+  \item AG TC, speziell: Dr. Jan Götze, G. Melani, Dr. J. Wirth, Dr. R. W\l{}odarczyk, Spa\ss{}raum 2
  \end{itemize}
  \column{0.2\textwidth}
  \centering
@@ -630,17 +630,24 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
 
 \end{frame}
 
+
 %%%%%%%%%%%%%%ANHANG%%%%%%%%%%%%%
-%\begin{frame}
+\pagestyle{empty}
+\begin{frame}[noframenumbering]
+\frametitle{ANHANG}
+\end{frame}
+
+%\begin{frame}[noframenumbering]
 % \frametitle{Adsorptionsenergien}
+% Adsorptionsenergien $E_\textrm{ads}$ in eV.
 % \begin{table}[!h]
 %  \centering
-%   \caption{Adsorptionsenergien $E_\textrm{ads}$ in eV.} %der molekularen und der zwei dissoziierten adsorbierten Spezies von H$_2$O auf der Al$_2$O$_3$(0001) Oberfläche, Vergleich von plane wave Basis (PW) und Atomorbitalbasis (AO).
+%%   \caption{Adsorptionsenergien $E_\textrm{ads}$ in eV.} %der molekularen und der zwei dissoziierten adsorbierten Spezies von H$_2$O auf der Al$_2$O$_3$(0001) Oberfläche, Vergleich von plane wave Basis (PW) und Atomorbitalbasis (AO).
 %   $E_{\textrm{ads}}=E_{\textrm{ads. Spezies}}-(E_{\textrm{freies Wassermolekül}}+E_{\textrm{Oberfläche}})$}
 %  \begin{tabular}{ll|ccc}%c}
 %  \toprule
 %Basis& Methode & mol & 1-2 diss & 1-4 diss\\\midrule
-%  \multirow{3}{1cm}{PW}&PW91\footnote{\textit{J. Phys. Chem. C} \textbf{116}, 26829 (2012)} %&{\color{orange}-1.25} &-1.59 &{\color{orange}-1.25} \\
+%  \multirow{3}{1cm}{PW}&PW91\footnote{\textit{J. Phys. Chem. C} \textbf{116}, 26829 (2012)} &{\color{orange}-1.25} &-1.59 &{\color{orange}-1.25} \\
 %  &PW91+D2$^1$&-1.40 &-1.81 &{\color{red}-1.45} \\
 %  &PBE+D2 & {\color{red}-1.31} & -1.69 & -1.21 \\
 %  %&PBE+D3 &-1.29&-1.63 &-1.30 \\
@@ -655,30 +662,102 @@ inter-CUSa$\parallel$O-$\mu_2$ ~~~~~CUSb$\parallel$O-$\mu_2$  ~~~~~inter-CUSb$\p
 % \end{table}
 %\end{frame}
 
-%\begin{frame}
-% \frametitle{Dissoziations- und Diffusionsreaktionen}
-% Eyring Gleichung: $k(T)=\frac{k_BT}{h}e^{-\Delta G^\ddagger/(k_BT)}$\newline~\newline
-%\begin{table*}
-%  \centering
-%  \begin{tabular}{ll|cc|c}
-% \toprule
-%  \multicolumn{2}{c|}{\small{Reaktionstyp}}            & \small{$\Delta E^{\ddagger}$[eV]} & \small{$\Delta G^{\ddagger}(\textrm{300\,K})$[eV]} & \small{$k(\textrm{300\,K})$ [s$^{-1}$]}  \\\midrule
-%\small{H$_2$O Dissoziation} &
-%   \small{\textit{D-I}}  &  \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\\midrule
-% \small{OH-Diffusion} &
-%   \small{\textit{Df-OH-III}} &  \small{0.35} & \small{0.39} & \small{1.88$\times 10^6$}\\\midrule
-%%  & \small{Df-OH-IV}  & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\\midrule
-%\small{H-Diffusion} &
-% \small{\textit{Df-H-V}}  & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\\bottomrule
-%% & \small{Df-H-VI} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\\bottomrule
-%  \end{tabular}
-%  \label{tab:reaction-rates}
-%\end{table*}
-%\centering
-%\includegraphics<1>[width=0.8\textwidth]{figures/Diss_Cb-Cb2.pdf}\caption{H$_2$O dissociation}
-%\includegraphics<2>[width=.8\textwidth]{figures/Diff-OH_Cb2-iCb2.pdf}\caption{OH diffusion}
-%\includegraphics<3>[width=.8\textwidth]{figures/Diff-H_iCa2-iCa3p.pdf}\caption{H diffusion}
-%\end{frame}
+\begin{frame}[noframenumbering]
+ \frametitle{Dissoziations- und Diffusionsreaktionen}
+ Eyring Gleichung: $k(T)=\frac{k_BT}{h}e^{-\Delta G^\ddagger/(k_BT)}$\newline~\newline
+\begin{table*}
+  \centering
+  \begin{tabular}{ll|cc|c}
+ \toprule
+  \multicolumn{2}{c|}{\small{Reaktionstyp}}            & \small{$\Delta E^{\ddagger}$[eV]} & \small{$\Delta G^{\ddagger}(\textrm{300\,K})$[eV]} & \small{$k(\textrm{300\,K})$ [s$^{-1}$]}  \\\midrule
+\small{H$_2$O Dissoziation} &
+   \small{\textit{D-I}}  &  \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\\midrule
+ \small{OH-Diffusion} &
+   \small{\textit{Df-OH-III}} &  \small{0.35} & \small{0.39} & \small{1.88$\times 10^6$}\\\midrule
+  & \small{Df-OH-IV}  & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\\midrule
+\small{H-Diffusion} &
+ \small{\textit{Df-H-V}}  & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\\bottomrule
+ & \small{Df-H-VI} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\\bottomrule
+  \end{tabular}
+  \label{tab:reaction-rates}
+\end{table*}
+\centering
+\includegraphics<1>[width=0.8\textwidth]{figures/Diss_Cb-Cb2.pdf}\caption{H$_2$O dissociation}
+\includegraphics<2>[width=.8\textwidth]{figures/Diff-OH_Cb2-iCb2.pdf}\caption{OH diffusion}
+\includegraphics<3>[width=.8\textwidth]{figures/Diff-H_iCa2-iCa3p.pdf}\caption{H diffusion}
+\end{frame}
 
+\begin{frame}[noframenumbering]
+\frametitle{Dissoziations- und Diffusionsreaktionen II}
+Energie- und freie Energiedifferenzen:  $\Delta E=E(\textrm{product}) - E(\textrm{educt})$, $\Delta E^{\ddagger}=E^\ddagger - E(\textrm{educt})$, entsprechend für $G$, jeweils in eV.
+Thermodynamische Eigenschaften gegeben bei $T=300\,$K.
+$k$ ist die Reaktionsrate gemäß Eyring, in s$^{-1}$.
+\begin{table*}
+  \centering
+  \begin{tabular}{cl|cc|cc|c}
+ \toprule
+  \multicolumn{2}{c|}{\small{Reaktionstyp}}             & \small{$\Delta E$}& \small{$\Delta G$} & \small{$\Delta E^{\ddagger}$} & \small{$\Delta G^{\ddagger}$} & \small{$k$}  \\\midrule
+\multirow{2}{*}{\small{\ce{H2O}-Diss.}} &
+   \small{D-I}  & \small{-0.50} & \small{-0.52} & \small{0.01} & \small{0.002} & \small{5.76$\times 10^{12}$} \\
+ & \small{D-II} & \small{0.59} & \small{0.53} & n.f. & n.f. & n.f. \\\midrule
+ \multirow{2}{*}{\small{OH-Diff.}} &
+   \small{Df-OH-III} & \small{0.19} & \small{0.22} & \small{0.35} & \small{0.39} & \small{1.88 $\times  10^6$}\\
+ & \small{Df-OH-IV}  & \small{-0.21} & \small{-0.13} & \small{1.07} & \small{1.10} & \small{2.41$\times 10^{-6}$} \\\midrule
+\multirow{2}{*}{\small{H-Diff.}} &
+ \small{Df-H-V}  & \small{1.08} & \small{1.04} & \small{1.65} & \small{1.49} & \small{4.90$\times 10^{-13}$} \\
+& \small{Df-H-VI} & \small{-0.06} & \small{-0.07} & \small{1.05} & \small{0.94} & \small{1.05$\times 10^{-3}$} \\\bottomrule
+  \end{tabular}
+  \label{tab:reaction-rates}
+\end{table*}
+\end{frame}
 
- \end{document}
+\begin{frame}[noframenumbering]
+\frametitle{OD-Frequenzen auf der (0001) Oberfläche}
+Harmonische und anharmonische Wellenzahlen für OD Streckschwingungen (D$_2$O/Al$_2$O$_3$(0001)), berechnet mit PBE und B3LYP mit D3 Korrekturen mit AO Basissatz 7, verglichen mit harmonischen PBE+D2/PW Werten (Rechnungen von Dr. J. Wirth (Doktorarbeit 2014)) und experimentellen SFG Daten. Alle Werte in cm$^{-1}$.
+\begin{table}[!h]
+  \centering
+%%  \caption{Harmonische und anharmonische Wellenzahlen für OD Streckschwingungen (D$_2$O/Al$_2$O$_3$(0001)), berechnet mit PBE und B3LYP mit D3 Korrekturen mit AO Basissatz 7, verglichen mit harmonischen PBE+D2/PW Werten (Rechnungen von Dr. J. Wirth\cite{Doktorarbeit 2014) und experimentellen SFG Daten.}
+  \begin{tabular}{ccc|cc|c|c}
+  \toprule
+   & \multicolumn{2}{c}{PBE/AO} & \multicolumn{2}{c}{B3LYP/AO} &PBE/PW&Exp.\\
+  stretch & $\tilde{\nu}$ &$\tilde{\nu}_\textrm{anh}$  &$\tilde{\nu}$ & $\tilde{\nu}_\textrm{anh}$& $\tilde{\nu}$ & $\tilde{\nu}$ \\\midrule
+  mol: OD$_{\textrm{1}}$    &2657 &2562 &2747 &2650 & 2664&-\\
+  mol: OD$_{\textrm{2}}$    &2539 &2490 &2627 &2584 & 2550&-\\
+  1-2: OD$_{\textrm{surf}}$ &2596 &2521 &2697 &2623 & 2629&2729\\%VASP PBE+D3 2632
+  1-2: OD$_{\textrm{ads}}$  &2808 &2727 &2883 &2805 & 2810&2910\\%D3 2814
+  1-4: OD$_{\textrm{surf}}$ &2621 &2531 &2715 &2631 & 2647&2764\\%D3 2659
+  1-4: OD$_{\textrm{ads}}$  &2795 &- &2873 &2788 & 2795&2900\\%D3 2797
+  \bottomrule
+    \end{tabular}
+% % \label{tab:freqs_0001_crystal}
+\end{table}
+\end{frame}
+
+\begin{frame}[noframenumbering]
+\frametitle{OD-Frequenzen auf der (11\=20) Oberfläche}
+Wellenzahlen $\tilde{\nu}$ der Streckschwinungen für beide Arten von OD-Gruppen auf der (11\=20) Oberfläche für die drei stabilsten Spezies (10-lagiges Slabmodell).
+Frequenzen wurden mit CRYSTAL, B3LYP+D3 und PBE+D3 mit Basissatz 7 gerechnet. Wellenzahlen inklusive anharmonischen Korrekutren $\tilde{\nu}_\textrm{anh}$ sind auch gezeigt.
+PW Ergebnisse mit VASP wurden mit PBE+D2 erhalten.
+%Die Abkürzungen stehen für: iCa2=inter-CUSa$\parallel$O-$\mu_2$, Cb2=CUSb$\parallel$O-$\mu_2$ and iCb2=inter-CUSb$\parallel$O-$\mu_2$. Werte in cm$^{-1}$.
+\begin{table}[!h]
+  \centering
+%  %\caption{Wellenzahlen $\tilde{\nu}$ der Streckschwinungen für beide Arten von OD-Gruppen auf der (11\=20) Oberfläche für die drei stabilsten Spezies (10-lagiges Slabmodell).
+%%Frequenzen wurden mit CRYSTAL, B3LYP+D3 und PBE+D3 mit Basissatz 7 gerechnet. Wellenzahlen inklusive anharmonischen Korrekutren $\tilde{\nu}_\textrm{anh}$ sind auch gezeigt.
+%%PW Ergebnisse mit VASP wurden mit PBE+D2 erhalten.
+%%Die Abkürzungen stehen für: iCa2=inter-CUSa$\parallel$O-$\mu_2$, Cb2=CUSb$\parallel$O-$\mu_2$ and iCb2=inter-CUSb$\parallel$O-$\mu_2$.}
+  \begin{tabular}{ccc|cc|c|c}
+  \toprule
+   & \multicolumn{2}{c}{PBE/AO} & \multicolumn{2}{c}{B3LYP/AO} &PBE/PW&Exp\\
+  stretch & $\tilde{\nu}$ &$\tilde{\nu}_\textrm{anh}$ &$\tilde{\nu}$ & $\tilde{\nu}_\textrm{anh}$ &$\tilde{\nu}$ &$\tilde{\nu}$ \\\midrule
+  iCa2: OD$_{\textrm{surf}}$ &2682 &2599 &2773 &2695 & 2694&2762\\
+  iCa2: OD$_{\textrm{ads}}$  &2728 &2644 &2811 &2729 & 2731&2812\\
+  Cb2: OD$_{\textrm{surf}}$  &1658 &1310 &2019 &1722 & 1711&-\\
+  Cb2: OD$_{\textrm{ads}}$   &2769 &2687 &2843 &2765 & 2785&2839\\
+  iCb2: OD$_{\textrm{surf}}$ &2657 &2569 &2778 &2694 & 2689&-\\
+  iCb2: OD$_{\textrm{ads}}$  &2688 &2595 &2777 &2689 & 2692&-\\\bottomrule
+  \end{tabular}
+%  %\label{tab:freqs_11-20_crystal}
+\end{table}
+\end{frame}
+
+\end{document}
